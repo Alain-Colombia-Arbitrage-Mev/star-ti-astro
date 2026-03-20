@@ -1,0 +1,533 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Navbar from '@components/Navbar.astro';
+import Footer from '@components/Footer.astro';
+import WhatsAppButton from '@components/WhatsAppButton.astro';
+import RegionLanding from '@components/RegionLanding.astro';
+import { seoData } from '@data/seo';
+import { regions } from '@data/regions';
+
+const seo = seoData.miami;
+const region = regions.miami;
+
+const industries = [
+  {
+    icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z',
+    name: 'Healthcare & Medical',
+    compliance: 'HIPAA Compliance',
+    description: 'We protect patient records, medical devices, and telehealth platforms for hospitals, clinics, and healthcare networks across South Florida.',
+    color: 'bg-blue-50 border-blue-200 text-blue-700',
+    iconBg: 'bg-blue-100',
+    iconColor: 'text-blue-600',
+  },
+  {
+    icon: 'M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3',
+    name: 'Financial Services',
+    compliance: 'PCI DSS · SOC 2',
+    description: 'Banks, credit unions, investment firms, and FinTech companies in Miami\'s financial hub rely on us for PCI DSS compliance and advanced threat detection.',
+    color: 'bg-emerald-50 border-emerald-200 text-emerald-700',
+    iconBg: 'bg-emerald-100',
+    iconColor: 'text-emerald-600',
+  },
+  {
+    icon: 'M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4',
+    name: 'Legal Firms',
+    compliance: 'Client Data Protection',
+    description: 'Law firms and legal practices require ironclad data protection. We secure privileged communications, case files, and client confidentiality across your entire practice.',
+    color: 'bg-purple-50 border-purple-200 text-purple-700',
+    iconBg: 'bg-purple-100',
+    iconColor: 'text-purple-600',
+  },
+  {
+    icon: 'M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6',
+    name: 'Real Estate',
+    compliance: 'Wire Fraud Prevention',
+    description: 'South Florida\'s booming real estate market is a prime target for business email compromise (BEC) and wire fraud. We protect transactions and client communications.',
+    color: 'bg-orange-50 border-orange-200 text-orange-700',
+    iconBg: 'bg-orange-100',
+    iconColor: 'text-orange-600',
+  },
+  {
+    icon: 'M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4',
+    name: 'Technology Startups',
+    compliance: 'SOC 2 · ISO 27001',
+    description: 'Miami\'s growing tech scene demands security-by-design. We help startups achieve SOC 2 Type II and ISO 27001 certifications to close enterprise deals faster.',
+    color: 'bg-cyan-50 border-cyan-200 text-cyan-700',
+    iconBg: 'bg-cyan-100',
+    iconColor: 'text-cyan-600',
+  },
+  {
+    icon: 'M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2',
+    name: 'Manufacturing & Logistics',
+    compliance: 'OT/ICS Security',
+    description: 'PortMiami and the surrounding industrial corridor require OT/ICS security. We protect operational technology, supply chains, and logistics platforms from cyberattacks.',
+    color: 'bg-red-50 border-red-200 text-red-700',
+    iconBg: 'bg-red-100',
+    iconColor: 'text-red-600',
+  },
+];
+
+const miamiStats = [
+  { value: '#1', label: 'Florida ranks 3rd in the US for total cybercrime losses (FBI IC3 2024)' },
+  { value: '68%', label: 'of South Florida SMBs experienced at least one cyberattack in the past 12 months' },
+  { value: '$4.9M', label: 'average cost of a data breach for a Florida-based company (IBM Security 2024)' },
+  { value: '247', label: 'days average time to identify and contain a breach without managed detection' },
+];
+
+const faqItems = [
+  {
+    q: 'Do you offer cybersecurity services in Spanish?',
+    a: 'Yes. Our Miami team is fully bilingual English/Spanish, allowing us to serve both English-speaking and Latin American businesses in South Florida without language barriers. All deliverables, reports, and support are available in both languages.',
+  },
+  {
+    q: 'What areas in South Florida do you serve?',
+    a: 'We serve Miami-Dade, Broward, and Palm Beach counties, including Miami, Fort Lauderdale, Coral Gables, Doral, Boca Raton, Hollywood, Hialeah, Pembroke Pines, and surrounding areas.',
+  },
+  {
+    q: 'Do I need to be physically in Miami to use your services?',
+    a: 'No. We offer fully remote cybersecurity assessments, managed EDR/XDR, virtual CISO services, and pentesting for businesses anywhere in Florida and Latin America. On-site engagements are available for local clients.',
+  },
+  {
+    q: 'What compliance frameworks do you help with?',
+    a: 'We help South Florida businesses achieve and maintain HIPAA, SOC 2 Type I & II, PCI DSS, CMMC (for defense contractors), NIST CSF, and ISO 27001 compliance. Our team understands Florida-specific regulatory requirements.',
+  },
+  {
+    q: 'How quickly can you respond to a security incident in Miami?',
+    a: 'Our Miami SOC team provides under 1-hour incident response for managed clients, with 24/7 availability. For on-site response in Miami-Dade, Broward, or Palm Beach counties, we can typically dispatch within 4 hours during business hours.',
+  },
+  {
+    q: 'Do you work with Latin American companies that have operations in Miami?',
+    a: 'Absolutely. Many of our Miami clients are Latin American companies with US operations, or US companies with Latin American subsidiaries. Our bilingual team and cross-border experience make us uniquely qualified to handle these complex environments.',
+  },
+];
+---
+
+<BaseLayout seo={seo}>
+  <Navbar />
+  <RegionLanding region={region} />
+
+  <!-- Industries We Serve in South Florida -->
+  <section class="py-16 sm:py-24 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-14">
+        <span class="inline-block bg-red-100 text-red-700 text-sm font-semibold px-4 py-1 rounded-full mb-4 uppercase tracking-wide">Industry Expertise</span>
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Industries We Serve in South Florida</h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          From Brickell's financial district to PortMiami's logistics hub, we deliver sector-specific cybersecurity that understands your compliance obligations and threat landscape.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {industries.map((industry) => (
+          <div class={`bg-white border-2 ${industry.color.split(' ')[1]} rounded-2xl p-6 hover:shadow-lg transition-all duration-300`}>
+            <div class={`w-12 h-12 ${industry.iconBg} rounded-xl flex items-center justify-center mb-4`}>
+              <svg class={`w-6 h-6 ${industry.iconColor}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d={industry.icon} />
+              </svg>
+            </div>
+            <h3 class="font-bold text-gray-900 text-lg mb-1">{industry.name}</h3>
+            <span class={`inline-block text-xs font-semibold px-2 py-0.5 rounded-full mb-3 ${industry.color}`}>{industry.compliance}</span>
+            <p class="text-sm text-gray-600 leading-relaxed">{industry.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- South Florida Cybersecurity Landscape -->
+  <section class="py-16 sm:py-24 bg-gray-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <span class="inline-block bg-red-900/50 text-red-300 text-sm font-semibold px-4 py-1 rounded-full mb-4 uppercase tracking-wide">Threat Intelligence</span>
+          <h2 class="text-3xl sm:text-4xl font-bold text-white mb-6">
+            South Florida's Cybersecurity Landscape
+          </h2>
+          <p class="text-gray-300 text-lg mb-6 leading-relaxed">
+            Miami's position as the gateway to Latin America makes it a high-value target for threat actors. The concentration of financial services, international trade, and cross-border data flows creates unique attack surfaces that generic security vendors are not equipped to address.
+          </p>
+          <p class="text-gray-400 leading-relaxed mb-8">
+            Florida's healthcare and real estate sectors are among the most targeted in the nation. Business email compromise (BEC) attacks targeting real estate wire transfers, ransomware attacks on medical practices, and supply chain compromises affecting logistics firms at PortMiami are all growing threats. Starsolution's local SOC team monitors the regional threat landscape continuously, correlating global intelligence with South Florida-specific attack patterns.
+          </p>
+          <a href="/miami/contacto" class="inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white font-semibold px-6 py-3 rounded-full transition shadow-lg">
+            Get a Free Security Assessment
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+            </svg>
+          </a>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {miamiStats.map((stat) => (
+            <div class="bg-gray-800 border border-gray-700 rounded-2xl p-6 text-center">
+              <div class="text-4xl font-bold text-red-400 mb-2">{stat.value}</div>
+              <p class="text-sm text-gray-400 leading-snug">{stat.label}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Serving Miami-Dade, Broward & Palm Beach -->
+  <section class="py-16 sm:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+        <div>
+          <span class="inline-block bg-blue-100 text-blue-700 text-sm font-semibold px-4 py-1 rounded-full mb-4 uppercase tracking-wide">Coverage Area</span>
+          <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
+            Serving Miami-Dade, Broward &amp; Palm Beach Counties
+          </h2>
+          <p class="text-gray-600 text-lg mb-6 leading-relaxed">
+            Our South Florida presence covers the entire tri-county area with both remote and on-site cybersecurity services. From the startup corridors of Wynwood and Brickell to the corporate parks of Doral and Coral Gables, we protect businesses of all sizes across the region.
+          </p>
+          <div class="space-y-4">
+            <div class="flex items-start gap-3">
+              <div class="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg class="w-3.5 h-3.5 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+              </div>
+              <div>
+                <span class="font-semibold text-gray-900">Miami-Dade County</span>
+                <p class="text-sm text-gray-600">Miami, Coral Gables, Doral, Hialeah, Homestead, Miami Beach, Miami Gardens, Kendall</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg class="w-3.5 h-3.5 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+              </div>
+              <div>
+                <span class="font-semibold text-gray-900">Broward County</span>
+                <p class="text-sm text-gray-600">Fort Lauderdale, Hollywood, Pembroke Pines, Miramar, Davie, Plantation, Sunrise, Weston</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg class="w-3.5 h-3.5 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+              </div>
+              <div>
+                <span class="font-semibold text-gray-900">Palm Beach County</span>
+                <p class="text-sm text-gray-600">Boca Raton, West Palm Beach, Delray Beach, Boynton Beach, Lake Worth, Wellington</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bg-gradient-to-br from-blue-50 to-gray-50 border border-gray-200 rounded-2xl p-8">
+          <h3 class="text-xl font-bold text-gray-900 mb-4">Why Miami Businesses Choose Starsolution</h3>
+          <ul class="space-y-4">
+            <li class="flex items-start gap-3">
+              <span class="text-2xl font-bold text-blue-600 leading-none">01</span>
+              <div>
+                <p class="font-semibold text-gray-900">Bilingual English/Spanish Team</p>
+                <p class="text-sm text-gray-600">No language barriers for Miami's diverse business community, from Brickell multinationals to Doral's Latin American companies.</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-2xl font-bold text-blue-600 leading-none">02</span>
+              <div>
+                <p class="font-semibold text-gray-900">Cross-Border Expertise</p>
+                <p class="text-sm text-gray-600">12+ years securing companies across the US, Colombia, and Venezuela — understanding Latin American compliance nuances that local US firms miss.</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-2xl font-bold text-blue-600 leading-none">03</span>
+              <div>
+                <p class="font-semibold text-gray-900">Florida-Specific Compliance Guidance</p>
+                <p class="text-sm text-gray-600">Deep familiarity with Florida's cybersecurity laws, healthcare data regulations, and the specific requirements of South Florida's regulated industries.</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-2xl font-bold text-blue-600 leading-none">04</span>
+              <div>
+                <p class="font-semibold text-gray-900">Sub-1-Hour Incident Response</p>
+                <p class="text-sm text-gray-600">Managed clients get guaranteed incident response under 60 minutes, 24 hours a day, 7 days a week — backed by our regional SOC.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-16 sm:py-24 bg-gray-50">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <span class="inline-block bg-gray-200 text-gray-700 text-sm font-semibold px-4 py-1 rounded-full mb-4 uppercase tracking-wide">FAQ</span>
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
+        <p class="text-gray-600">Common questions from South Florida businesses about our cybersecurity services.</p>
+      </div>
+
+      <div class="space-y-3">
+        {faqItems.map((item) => (
+          <details class="group bg-white border border-gray-200 rounded-xl overflow-hidden">
+            <summary class="flex items-center justify-between gap-4 px-6 py-5 cursor-pointer select-none font-semibold text-gray-900 hover:bg-gray-50 transition">
+              <span>{item.q}</span>
+              <svg class="w-5 h-5 text-gray-500 flex-shrink-0 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+              </svg>
+            </summary>
+            <div class="px-6 pb-5 text-gray-600 leading-relaxed border-t border-gray-100 pt-4">{item.a}</div>
+          </details>
+        ))}
+      </div>
+
+      <div class="mt-10 text-center">
+        <a href="/miami/contacto" class="inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white font-semibold px-8 py-4 rounded-full transition shadow-lg">
+          Schedule a Free Consultation
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Compliance for South Florida Businesses -->
+  <section class="py-16 sm:py-20 lg:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-14">
+        <span class="inline-block bg-blue-100 text-blue-700 text-sm font-semibold px-4 py-1 rounded-full mb-4 uppercase tracking-wide">Regulatory Compliance</span>
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Compliance for South Florida Businesses</h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          South Florida's regulated industries face strict federal and state compliance requirements. Our team has deep experience helping local businesses achieve and maintain the certifications that matter most.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+        <!-- HIPAA -->
+        <div class="bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-lg transition-all duration-300 cursor-pointer">
+          <div class="flex items-start gap-4 mb-5">
+            <div class="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center flex-shrink-0">
+              <svg class="w-7 h-7 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-gray-900">HIPAA</h3>
+              <span class="text-xs text-blue-600 font-semibold uppercase tracking-wide">Healthcare Organizations</span>
+            </div>
+          </div>
+          <p class="text-sm text-gray-600 leading-relaxed mb-5">
+            South Florida is home to one of the largest healthcare ecosystems in the Southeast US. Hospitals, medical practices, dental offices, telehealth providers, and health insurance companies are all required to comply with HIPAA's Security Rule for electronic Protected Health Information (ePHI). A single breach can trigger OCR investigations, fines of up to $1.9M per violation category, and reputational damage that's nearly impossible to recover from.
+          </p>
+          <ul class="space-y-2 text-sm text-gray-600">
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-blue-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              HIPAA Security Risk Analysis (SRA)
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-blue-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Technical safeguards: encryption, access controls, audit logs
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-blue-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Breach notification procedures and incident response
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-blue-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Business Associate Agreements (BAA) review
+            </li>
+          </ul>
+        </div>
+
+        <!-- CMMC -->
+        <div class="bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-lg transition-all duration-300 cursor-pointer">
+          <div class="flex items-start gap-4 mb-5">
+            <div class="w-14 h-14 bg-green-50 rounded-xl flex items-center justify-center flex-shrink-0">
+              <svg class="w-7 h-7 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-gray-900">CMMC 2.0</h3>
+              <span class="text-xs text-green-600 font-semibold uppercase tracking-wide">Defense Contractors</span>
+            </div>
+          </div>
+          <p class="text-sm text-gray-600 leading-relaxed mb-5">
+            South Florida's proximity to US Southern Command (SOUTHCOM) in Doral and multiple military installations makes it a hub for defense contractors handling Controlled Unclassified Information (CUI). The Cybersecurity Maturity Model Certification (CMMC 2.0) is now mandatory for all DoD contractors. Without Level 2 certification, companies cannot bid on or continue existing DoD contracts — a business-ending consequence for many South Florida defense firms.
+          </p>
+          <ul class="space-y-2 text-sm text-gray-600">
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              CMMC Level 2 gap analysis and remediation roadmap
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              NIST SP 800-171 implementation (110 controls)
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              System Security Plan (SSP) documentation
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              CUI handling and multi-factor authentication
+            </li>
+          </ul>
+        </div>
+
+        <!-- SOX -->
+        <div class="bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-lg transition-all duration-300 cursor-pointer">
+          <div class="flex items-start gap-4 mb-5">
+            <div class="w-14 h-14 bg-purple-50 rounded-xl flex items-center justify-center flex-shrink-0">
+              <svg class="w-7 h-7 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-gray-900">SOX IT Controls</h3>
+              <span class="text-xs text-purple-600 font-semibold uppercase tracking-wide">Public Companies</span>
+            </div>
+          </div>
+          <p class="text-sm text-gray-600 leading-relaxed mb-5">
+            Publicly traded companies based or operating in South Florida must comply with the Sarbanes-Oxley Act's IT General Controls (ITGCs) under Section 404. This requires rigorous controls over financial systems: access management, change management, computer operations, and audit trails. External auditors scrutinize these controls annually, and weaknesses can trigger material weaknesses disclosures that damage stock value and investor confidence.
+          </p>
+          <ul class="space-y-2 text-sm text-gray-600">
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-purple-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              IT General Controls (ITGC) design and implementation
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-purple-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Privileged access management and separation of duties
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-purple-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Audit log management and tamper-evident records
+            </li>
+            <li class="flex items-start gap-2">
+              <svg class="w-4 h-4 text-purple-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Pre-audit readiness assessment and evidence packaging
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="bg-gray-50 border border-gray-200 rounded-2xl p-8">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-center">
+          <div class="lg:col-span-2">
+            <h3 class="text-xl font-bold text-gray-900 mb-2">Not sure which compliance frameworks apply to your business?</h3>
+            <p class="text-sm text-gray-600">Our South Florida compliance team provides free initial consultations to identify your regulatory obligations and build a prioritized roadmap. We also support PCI DSS, SOC 2 Type II, ISO 27001, and NIST CSF for South Florida companies. <a href="/miami/contacto" class="text-red-600 font-semibold hover:underline">Contact our Miami office</a> to schedule your assessment.</p>
+          </div>
+          <div class="text-center lg:text-right">
+            <a href="/miami/contacto" class="inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white font-semibold px-8 py-4 rounded-full transition shadow-lg">
+              Get Compliance Assessment
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Case Study: Miami Financial Institution -->
+  <section class="py-16 sm:py-20 lg:py-24 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-14">
+        <span class="inline-block bg-gray-200 text-gray-700 text-sm font-semibold px-4 py-1 rounded-full mb-4 uppercase tracking-wide">Case Study</span>
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Case Study: Miami Financial Institution</h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          How a Brickell-based financial services firm reduced their breach risk surface by 73% while achieving full PCI DSS and SOC 2 Type II compliance within one fiscal year.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+        <div>
+          <div class="bg-white border border-gray-200 rounded-2xl p-8 mb-6">
+            <h3 class="text-lg font-bold text-gray-900 mb-4">The Challenge</h3>
+            <p class="text-sm text-gray-600 leading-relaxed mb-4">
+              A mid-sized financial services company in Brickell managing over $2B in assets had grown rapidly through acquisitions, inheriting a fragmented security infrastructure across four legacy systems. They faced an upcoming PCI DSS assessment, a SOC 2 audit required by a new institutional client, and had no dedicated security staff — only an IT team stretched across operations and end-user support.
+            </p>
+            <p class="text-sm text-gray-600 leading-relaxed">
+              A prior pentest by another vendor had identified 47 medium-to-high severity vulnerabilities but provided no remediation roadmap, leaving leadership with a report they could not act on.
+            </p>
+          </div>
+
+          <div class="bg-white border border-gray-200 rounded-2xl p-8">
+            <h3 class="text-lg font-bold text-gray-900 mb-4">Our Approach</h3>
+            <div class="space-y-4">
+              <div class="flex items-start gap-3">
+                <div class="w-7 h-7 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <span class="text-red-600 font-bold text-xs">1</span>
+                </div>
+                <p class="text-sm text-gray-600"><strong class="text-gray-900">vCISO Engagement:</strong> Starsolution assigned a virtual CISO to own the security program, providing strategic direction without the cost of a full-time hire.</p>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="w-7 h-7 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <span class="text-red-600 font-bold text-xs">2</span>
+                </div>
+                <p class="text-sm text-gray-600"><strong class="text-gray-900">Managed EDR Deployment:</strong> Deployed Bitdefender GravityZone across 320 endpoints in 11 days, providing immediate visibility and threat detection.</p>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="w-7 h-7 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <span class="text-red-600 font-bold text-xs">3</span>
+                </div>
+                <p class="text-sm text-gray-600"><strong class="text-gray-900">Compliance Roadmap:</strong> Delivered a prioritized 90-day remediation plan for PCI DSS and a parallel SOC 2 Type II readiness program with evidence templates.</p>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="w-7 h-7 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <span class="text-red-600 font-bold text-xs">4</span>
+                </div>
+                <p class="text-sm text-gray-600"><strong class="text-gray-900">Penetration Testing:</strong> Conducted a comprehensive internal/external pentest with a remediation workshop — not just a report, but a hands-on fix session with the IT team.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="bg-gray-900 rounded-2xl p-8 mb-6">
+            <h3 class="text-lg font-bold text-white mb-6">Results After 12 Months</h3>
+            <div class="grid grid-cols-2 gap-4">
+              <div class="bg-gray-800 border border-gray-700 rounded-xl p-5 text-center">
+                <div class="text-3xl font-bold text-red-400 mb-1">73%</div>
+                <p class="text-xs text-gray-400">Reduction in attack surface</p>
+              </div>
+              <div class="bg-gray-800 border border-gray-700 rounded-xl p-5 text-center">
+                <div class="text-3xl font-bold text-green-400 mb-1">PCI DSS</div>
+                <p class="text-xs text-gray-400">Level 1 certified, first attempt</p>
+              </div>
+              <div class="bg-gray-800 border border-gray-700 rounded-xl p-5 text-center">
+                <div class="text-3xl font-bold text-blue-400 mb-1">SOC 2</div>
+                <p class="text-xs text-gray-400">Type II achieved in 9 months</p>
+              </div>
+              <div class="bg-gray-800 border border-gray-700 rounded-xl p-5 text-center">
+                <div class="text-3xl font-bold text-yellow-400 mb-1">$0</div>
+                <p class="text-xs text-gray-400">Breach cost during engagement period</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white border border-gray-200 rounded-2xl p-8">
+            <div class="flex items-start gap-4 mb-4">
+              <div class="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-red-600" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.338-3.123C2.493 12.767 2 11.434 2 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z" clip-rule="evenodd" />
+                </svg>
+              </div>
+              <div>
+                <p class="text-sm text-gray-700 italic leading-relaxed mb-3">
+                  "Starsolution didn't just give us a checklist — they built a real security program with us from the ground up. Having a bilingual team that understands both the US regulatory environment and our Latin American client base was invaluable."
+                </p>
+                <p class="text-sm font-semibold text-gray-900">Chief Operating Officer</p>
+                <p class="text-xs text-gray-500">Financial Services Firm — Brickell, Miami (name withheld for confidentiality)</p>
+              </div>
+            </div>
+            <div class="mt-4 p-3 rounded-lg bg-gray-50 border border-gray-200 text-xs text-gray-600">
+              Related: <a href="/miami/contacto" class="text-red-600 font-semibold hover:underline">Get a Free Assessment for your Miami Business</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+  <WhatsAppButton />
+</BaseLayout>

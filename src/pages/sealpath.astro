@@ -1,0 +1,703 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Navbar from '@components/Navbar.astro';
+import Footer from '@components/Footer.astro';
+import WhatsAppButton from '@components/WhatsAppButton.astro';
+import { seoData } from '@data/seo';
+
+const seo = seoData.sealpath;
+---
+
+<BaseLayout seo={seo}>
+  <Navbar />
+
+  <div class="bg-white min-h-screen font-['Instrument_Sans',sans-serif]">
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-b from-gray-50 to-white py-12 sm:py-16 lg:py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <div class="mb-6">
+              <span class="inline-block bg-red-50 text-red-600 text-xs font-medium px-3 py-1 rounded">
+                SEGURIDAD CENTRADA EN EL DATO
+              </span>
+            </div>
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+              SealPath: Protección Persistente{" "}
+              <span class="text-[#ed1c24]">de Documentos y Datos Sensibles.</span>
+            </h1>
+            <p class="text-lg sm:text-xl text-gray-600 mb-8 max-w-3xl">
+              Cifre, controle y rastree sus documentos sensibles donde quiera que vayan. Protección
+              que viaja con el archivo: revoque acceso remotamente, audite quién lo abrió y
+              mantenga el control incluso fuera de su red corporativa.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a href="/contacto" class="bg-gradient-to-r from-red-600 to-red-700 text-white font-semibold px-8 py-4 rounded-full hover:from-red-700 hover:to-red-800 transition shadow-lg inline-flex items-center justify-center gap-2">
+                Solicitar Demo
+              </a>
+              <a href="/contacto" class="bg-white border-2 border-gray-200 text-gray-800 font-semibold px-8 py-4 rounded-full hover:bg-gray-50 transition inline-flex items-center justify-center gap-2 focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2">
+                Ver Casos de Uso
+              </a>
+            </div>
+            <div class="mt-8 flex items-center gap-2 text-sm text-gray-500">
+              <svg class="w-4 h-4 text-green-600" fill="none" viewBox="0 0 14 14">
+                <path d="M11.6667 3.5L5.25 9.91667L2.33333 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.16667" />
+              </svg>
+              <span>Protección que viaja con el documento, incluso fuera de su organización</span>
+            </div>
+          </div>
+          <div class="hidden lg:flex items-center justify-center">
+            <img src="/assets/emblema-seguridad-cloud.webp" alt="Protección de datos centrada en el documento con SealPath" class="w-full max-w-sm rounded-2xl shadow-xl" width="384" height="384" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Data-Centric Security -->
+    <section class="py-16 sm:py-20 lg:py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+          <div>
+            <span class="text-[#ed1c24] text-xs font-medium uppercase tracking-wide">Nuevo Paradigma</span>
+            <h2 class="text-3xl sm:text-4xl font-bold mt-4 mb-6">
+              Por qué la Seguridad Centrada en el Dato?
+            </h2>
+            <p class="text-gray-600 mb-6">
+              Las soluciones DLP tradicionales protegen el perímetro: controlan que los datos no
+              salgan de la red. Pero en un mundo de trabajo remoto, nube y colaboración externa,
+              el perímetro ya no existe. Cuando un archivo sale de su red, pierde el control.
+            </p>
+            <p class="text-gray-600 mb-8">
+              SealPath adopta un enfoque diferente: la protección viaja con el documento. No importa
+              si el archivo está en un email, en la nube, en un USB o en el computador de un tercero.
+              Usted mantiene el control total: quién puede abrirlo, qué puede hacer con él, y puede
+              revocar el acceso en cualquier momento.
+            </p>
+
+            <div class="grid grid-cols-2 gap-6">
+              <div class="border-l-4 border-red-600 pl-4">
+                <div class="text-2xl font-bold text-gray-900 mb-1">68%</div>
+                <div class="text-sm text-gray-600">De brechas involucran datos compartidos externamente</div>
+              </div>
+              <div class="border-l-4 border-red-600 pl-4">
+                <div class="text-2xl font-bold text-gray-900 mb-1">$4.45M</div>
+                <div class="text-sm text-gray-600">Costo promedio de una brecha de datos (IBM 2023)</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex items-center">
+            <div class="bg-[#111827] rounded-2xl p-8 w-full">
+              <h3 class="text-xl font-semibold text-white mb-6">DLP tradicional vs SealPath:</h3>
+              <div class="space-y-4">
+                <div class="flex items-center gap-3">
+                  <div class="bg-red-600 rounded-full p-1.5">
+                    <svg class="w-3 h-3 text-white" fill="none" viewBox="0 0 14 14">
+                      <path d="M11.6667 3.5L5.25 9.91667L2.33333 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.16667" />
+                    </svg>
+                  </div>
+                  <span class="text-gray-300">Protección que acompaña al archivo, no al perímetro</span>
+                </div>
+                <div class="flex items-center gap-3">
+                  <div class="bg-red-600 rounded-full p-1.5">
+                    <svg class="w-3 h-3 text-white" fill="none" viewBox="0 0 14 14">
+                      <path d="M11.6667 3.5L5.25 9.91667L2.33333 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.16667" />
+                    </svg>
+                  </div>
+                  <span class="text-gray-300">Revocación remota en cualquier momento</span>
+                </div>
+                <div class="flex items-center gap-3">
+                  <div class="bg-red-600 rounded-full p-1.5">
+                    <svg class="w-3 h-3 text-white" fill="none" viewBox="0 0 14 14">
+                      <path d="M11.6667 3.5L5.25 9.91667L2.33333 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.16667" />
+                    </svg>
+                  </div>
+                  <span class="text-gray-300">Auditoría completa: quién, cuándo, dónde</span>
+                </div>
+                <div class="flex items-center gap-3">
+                  <div class="bg-red-600 rounded-full p-1.5">
+                    <svg class="w-3 h-3 text-white" fill="none" viewBox="0 0 14 14">
+                      <path d="M11.6667 3.5L5.25 9.91667L2.33333 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.16667" />
+                    </svg>
+                  </div>
+                  <span class="text-gray-300">Control granular: ver, editar, copiar, imprimir</span>
+                </div>
+                <div class="flex items-center gap-3">
+                  <div class="bg-red-600 rounded-full p-1.5">
+                    <svg class="w-3 h-3 text-white" fill="none" viewBox="0 0 14 14">
+                      <path d="M11.6667 3.5L5.25 9.91667L2.33333 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.16667" />
+                    </svg>
+                  </div>
+                  <span class="text-gray-300">Funciona con colaboración externa y nube</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Features (6 Cards) -->
+    <section class="bg-gray-50 py-16 sm:py-20 lg:py-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="mb-16">
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-semibold mb-4">
+            Funcionalidades{" "}<span class="text-[#ed1c24]">Principales</span>
+          </h2>
+          <p class="text-gray-600 max-w-3xl">
+            SealPath ofrece protección completa de documentos con control granular,
+            auditoría y trazabilidad en todo el ciclo de vida del dato.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="bg-white border border-gray-200 rounded-2xl p-6">
+            <div class="bg-gray-50 rounded-lg w-10 h-10 flex items-center justify-center mb-4">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 20 20">
+                <path d="M10 2L3 6v5c0 4.5 3 8.5 7 9.5 4-1 7-5 7-9.5V6l-7-4z" stroke="#374151" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.66667" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold mb-2">Cifrado Persistente</h3>
+            <p class="text-sm text-gray-600">
+              Cifrado AES-256 que viaja con el documento. Los archivos protegidos permanecen
+              cifrados en reposo, en tránsito y en uso, sin importar dónde se almacenen.
+            </p>
+          </div>
+
+          <div class="bg-white border border-gray-200 rounded-2xl p-6">
+            <div class="bg-gray-50 rounded-lg w-10 h-10 flex items-center justify-center mb-4">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 20 20">
+                <circle cx="10" cy="10" r="7" stroke="#374151" stroke-width="1.66667" fill="none" />
+                <path d="M7 10l2 2 4-4" stroke="#374151" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.66667" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold mb-2">Control de Acceso Granular</h3>
+            <p class="text-sm text-gray-600">
+              Defina exactamente qué puede hacer cada persona con el documento: solo ver, editar,
+              copiar, imprimir o compartir. Control diferenciado por usuario, grupo o dominio.
+            </p>
+          </div>
+
+          <div class="bg-white border border-gray-200 rounded-2xl p-6">
+            <div class="bg-gray-50 rounded-lg w-10 h-10 flex items-center justify-center mb-4">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 20 20">
+                <path d="M10 2a8 8 0 100 16 8 8 0 000-16zM10 6v4m0 4h.01" stroke="#374151" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.66667" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold mb-2">Auditoría y Trazabilidad</h3>
+            <p class="text-sm text-gray-600">
+              Registro completo de cada interacción con el documento: quién lo abrió, cuándo,
+              desde dónde, qué acciones realizó. Evidencia para cumplimiento normativo.
+            </p>
+          </div>
+
+          <div class="bg-white border border-gray-200 rounded-2xl p-6">
+            <div class="bg-gray-50 rounded-lg w-10 h-10 flex items-center justify-center mb-4">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 20 20">
+                <path d="M16 4L8 12M8 4l8 8" stroke="#374151" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.66667" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold mb-2">Revocación Remota</h3>
+            <p class="text-sm text-gray-600">
+              Revoque el acceso a cualquier documento en cualquier momento, incluso si ya fue
+              compartido externamente. El archivo se vuelve inaccesible instantáneamente.
+            </p>
+          </div>
+
+          <div class="bg-white border border-gray-200 rounded-2xl p-6">
+            <div class="bg-gray-50 rounded-lg w-10 h-10 flex items-center justify-center mb-4">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 20 20">
+                <rect x="3" y="3" width="14" height="14" rx="2" stroke="#374151" stroke-width="1.66667" fill="none" />
+                <path d="M7 8h6M7 12h4" stroke="#374151" stroke-linecap="round" stroke-width="1.66667" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold mb-2">Clasificación Automática</h3>
+            <p class="text-sm text-gray-600">
+              Clasifique documentos automáticamente según su contenido y aplique políticas de
+              protección correspondientes. Integración con Microsoft Information Protection.
+            </p>
+          </div>
+
+          <div class="bg-white border border-gray-200 rounded-2xl p-6">
+            <div class="bg-gray-50 rounded-lg w-10 h-10 flex items-center justify-center mb-4">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 20 20">
+                <path d="M3 10h14M10 3v14" stroke="#374151" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.66667" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold mb-2">Integración Microsoft 365</h3>
+            <p class="text-sm text-gray-600">
+              Protección nativa en Microsoft 365, SharePoint, OneDrive y Teams. Los usuarios
+              protegen documentos directamente desde las aplicaciones que ya utilizan diariamente.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How SealPath Works -->
+    <section class="py-16 sm:py-20 lg:py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl sm:text-4xl font-bold mb-4">
+            Cómo Funciona SealPath
+          </h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            Protección de documentos en 4 pasos simples que no interrumpen la productividad.
+          </p>
+        </div>
+
+        <div class="bg-gray-50 rounded-2xl p-8 border border-gray-200">
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+            <div class="text-center">
+              <div class="bg-red-100 text-red-600 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 font-bold text-lg">
+                1
+              </div>
+              <h3 class="font-semibold mb-2">Clasificar</h3>
+              <p class="text-sm text-gray-600">
+                Los documentos se clasifican automáticamente o manualmente según su sensibilidad
+                (confidencial, interno, público).
+              </p>
+            </div>
+            <div class="text-center">
+              <div class="bg-red-100 text-red-600 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 font-bold text-lg">
+                2
+              </div>
+              <h3 class="font-semibold mb-2">Proteger</h3>
+              <p class="text-sm text-gray-600">
+                Se aplica cifrado y políticas de acceso. El usuario protege con clic derecho
+                o de forma automática al guardar en carpetas protegidas.
+              </p>
+            </div>
+            <div class="text-center">
+              <div class="bg-red-100 text-red-600 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 font-bold text-lg">
+                3
+              </div>
+              <h3 class="font-semibold mb-2">Compartir</h3>
+              <p class="text-sm text-gray-600">
+                Los documentos se comparten normalmente por email, nube o USB. La protección
+                viaja con el archivo a donde vaya.
+              </p>
+            </div>
+            <div class="text-center">
+              <div class="bg-red-100 text-red-600 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 font-bold text-lg">
+                4
+              </div>
+              <h3 class="font-semibold mb-2">Controlar</h3>
+              <p class="text-sm text-gray-600">
+                Monitoree accesos en tiempo real, ajuste permisos o revoque acceso en cualquier
+                momento desde la consola central.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Industry Use Cases -->
+    <section class="py-16 sm:py-20 lg:py-24 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl sm:text-4xl font-bold mb-4">
+            Casos de Uso por Industria
+          </h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            SealPath se adapta a las necesidades de protección de datos de cada sector.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="bg-white border border-gray-200 rounded-2xl p-8">
+            <div class="bg-blue-50 rounded-lg p-3 w-12 h-12 flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+              </svg>
+            </div>
+            <h3 class="font-semibold text-lg mb-2">Sector Financiero</h3>
+            <p class="text-sm text-gray-600">
+              Protección de estados financieros, contratos, informes de auditoría y datos de
+              clientes que se comparten con reguladores, auditores y socios.
+            </p>
+          </div>
+          <div class="bg-white border border-gray-200 rounded-2xl p-8">
+            <div class="bg-green-50 rounded-lg p-3 w-12 h-12 flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+            </div>
+            <h3 class="font-semibold text-lg mb-2">Legal y Jurídico</h3>
+            <p class="text-sm text-gray-600">
+              Control de documentos legales confidenciales: contratos, demandas, propiedad
+              intelectual y comunicaciones privilegiadas entre abogado y cliente.
+            </p>
+          </div>
+          <div class="bg-white border border-gray-200 rounded-2xl p-8">
+            <div class="bg-purple-50 rounded-lg p-3 w-12 h-12 flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+              </svg>
+            </div>
+            <h3 class="font-semibold text-lg mb-2">Salud y Farmacéutica</h3>
+            <p class="text-sm text-gray-600">
+              Protección de historias clínicas, resultados de investigación, fórmulas y datos
+              de pacientes conforme a regulaciones de protección de datos personales.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SealPath vs DLP Tradicional -->
+    <section class="py-16 sm:py-20 lg:py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl sm:text-4xl font-bold mb-4 text-gray-900">
+            SealPath vs DLP Tradicional
+          </h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            Entienda por qué la seguridad centrada en el documento supera al enfoque de
+            DLP basado en perímetro para proteger datos en el mundo actual.
+          </p>
+        </div>
+
+        <div class="rounded-2xl overflow-hidden border border-gray-200">
+          <div class="grid grid-cols-3 bg-gray-900 text-white">
+            <div class="p-5 font-semibold text-sm">Escenario de riesgo</div>
+            <div class="p-5 font-semibold text-sm text-center border-l border-gray-700">
+              DLP Tradicional (endpoint)
+              <div class="text-xs font-normal text-gray-400 mt-1">Symantec, Forcepoint, McAfee DLP</div>
+            </div>
+            <div class="p-5 font-semibold text-sm text-center border-l border-gray-700">
+              SealPath (document-centric)
+              <div class="text-xs font-normal text-green-300 mt-1">Protección que viaja con el dato</div>
+            </div>
+          </div>
+
+          <div class="divide-y divide-gray-100">
+            <div class="grid grid-cols-3 bg-white hover:bg-gray-50 transition-colors">
+              <div class="p-5">
+                <div class="text-sm font-medium text-gray-900">Archivo enviado por email externo</div>
+                <div class="text-xs text-gray-500 mt-1">Empleado envía un contrato a un proveedor</div>
+              </div>
+              <div class="p-5 border-l border-gray-100">
+                <div class="flex items-center gap-2 mb-2">
+                  <svg class="w-4 h-4 text-yellow-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                  <span class="text-xs font-medium text-yellow-700">Control parcial</span>
+                </div>
+                <p class="text-xs text-gray-600">Puede bloquear el envío o alertar, pero una vez el archivo llega al destinatario pierde todo control sobre él.</p>
+              </div>
+              <div class="p-5 border-l border-gray-100">
+                <div class="flex items-center gap-2 mb-2">
+                  <svg class="w-4 h-4 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg>
+                  <span class="text-xs font-medium text-green-700">Control total</span>
+                </div>
+                <p class="text-xs text-gray-600">El archivo viaja cifrado. El proveedor puede abrirlo con los permisos que usted definió. Puede revocar el acceso en cualquier momento.</p>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-3 bg-gray-50 hover:bg-gray-100 transition-colors">
+              <div class="p-5">
+                <div class="text-sm font-medium text-gray-900">USB o dispositivo personal</div>
+                <div class="text-xs text-gray-500 mt-1">Empleado copia documentos a un USB</div>
+              </div>
+              <div class="p-5 border-l border-gray-100">
+                <div class="flex items-center gap-2 mb-2">
+                  <svg class="w-4 h-4 text-yellow-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                  <span class="text-xs font-medium text-yellow-700">Puede bloquear USBs</span>
+                </div>
+                <p class="text-xs text-gray-600">Bloquear USB es una política de endpoint, pero no protege el archivo en sí. Si el archivo ya salió, no hay control posible.</p>
+              </div>
+              <div class="p-5 border-l border-gray-100">
+                <div class="flex items-center gap-2 mb-2">
+                  <svg class="w-4 h-4 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg>
+                  <span class="text-xs font-medium text-green-700">Cifrado persistente</span>
+                </div>
+                <p class="text-xs text-gray-600">El archivo en el USB sigue cifrado. Sin credenciales autorizadas, el contenido es ilegible independientemente del dispositivo.</p>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-3 bg-white hover:bg-gray-50 transition-colors">
+              <div class="p-5">
+                <div class="text-sm font-medium text-gray-900">Trabajo remoto / BYOD</div>
+                <div class="text-xs text-gray-500 mt-1">Empleado accede desde su equipo personal</div>
+              </div>
+              <div class="p-5 border-l border-gray-100">
+                <div class="flex items-center gap-2 mb-2">
+                  <svg class="w-4 h-4 text-red-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12" /></svg>
+                  <span class="text-xs font-medium text-red-700">Sin control</span>
+                </div>
+                <p class="text-xs text-gray-600">Los agentes DLP no están instalados en equipos personales. El perímetro protegido no existe fuera de la red corporativa.</p>
+              </div>
+              <div class="p-5 border-l border-gray-100">
+                <div class="flex items-center gap-2 mb-2">
+                  <svg class="w-4 h-4 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg>
+                  <span class="text-xs font-medium text-green-700">Control total</span>
+                </div>
+                <p class="text-xs text-gray-600">La protección está en el archivo, no en el dispositivo. Cualquier equipo que intente abrir el documento es autenticado contra las políticas centrales.</p>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-3 bg-gray-50 hover:bg-gray-100 transition-colors">
+              <div class="p-5">
+                <div class="text-sm font-medium text-gray-900">Colaboración con terceros</div>
+                <div class="text-xs text-gray-500 mt-1">Auditoría externa necesita acceder a documentos</div>
+              </div>
+              <div class="p-5 border-l border-gray-100">
+                <div class="flex items-center gap-2 mb-2">
+                  <svg class="w-4 h-4 text-red-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12" /></svg>
+                  <span class="text-xs font-medium text-red-700">Dilema seguridad/productividad</span>
+                </div>
+                <p class="text-xs text-gray-600">Debe elegir entre dar acceso completo sin control o restringir tanto la colaboración que se vuelve inoperativa.</p>
+              </div>
+              <div class="p-5 border-l border-gray-100">
+                <div class="flex items-center gap-2 mb-2">
+                  <svg class="w-4 h-4 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg>
+                  <span class="text-xs font-medium text-green-700">Colaboración controlada</span>
+                </div>
+                <p class="text-xs text-gray-600">El auditor externo abre el documento con permisos de solo lectura, desde su propio equipo, por un período de tiempo limitado que usted define.</p>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-3 bg-white hover:bg-gray-50 transition-colors">
+              <div class="p-5">
+                <div class="text-sm font-medium text-gray-900">Acceso revocado urgente</div>
+                <div class="text-xs text-gray-500 mt-1">Ex-empleado conserva documentos confidenciales</div>
+              </div>
+              <div class="p-5 border-l border-gray-100">
+                <div class="flex items-center gap-2 mb-2">
+                  <svg class="w-4 h-4 text-red-400 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12" /></svg>
+                  <span class="text-xs font-medium text-red-700">Imposible retroactivamente</span>
+                </div>
+                <p class="text-xs text-gray-600">Los documentos ya descargados o enviados fuera del perímetro no pueden ser revocados. El DLP tradicional no tiene esta capacidad.</p>
+              </div>
+              <div class="p-5 border-l border-gray-100">
+                <div class="flex items-center gap-2 mb-2">
+                  <svg class="w-4 h-4 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg>
+                  <span class="text-xs font-medium text-green-700">Revocación instantánea</span>
+                </div>
+                <p class="text-xs text-gray-600">Un clic en la consola central revoca el acceso a cualquier documento, estén donde estén. El ex-empleado no puede abrirlos aunque los tenga descargados.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Integración con Microsoft 365 -->
+    <section class="py-16 sm:py-20 lg:py-24 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl sm:text-4xl font-bold mb-4 text-gray-900">
+            Integración con Microsoft 365
+          </h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            SealPath se integra de forma nativa en las aplicaciones de Microsoft 365 que
+            sus equipos ya usan a diario, sin fricción ni curva de aprendizaje.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-lg transition-all duration-300 cursor-pointer text-center">
+            <div class="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center mx-auto mb-5">
+              <svg class="w-7 h-7 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+              </svg>
+            </div>
+            <h3 class="font-bold text-gray-900 text-lg mb-3">SharePoint Online</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">
+              Proteja automáticamente documentos al guardarlos en bibliotecas de SharePoint.
+              Las políticas de clasificación se aplican según la carpeta de destino sin
+              intervención del usuario.
+            </p>
+            <div class="mt-4 pt-4 border-t border-gray-100">
+              <span class="text-xs text-blue-600 font-medium">Protección automática al subir archivos</span>
+            </div>
+          </div>
+
+          <div class="bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-lg transition-all duration-300 cursor-pointer text-center">
+            <div class="w-14 h-14 bg-purple-50 rounded-2xl flex items-center justify-center mx-auto mb-5">
+              <svg class="w-7 h-7 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" />
+              </svg>
+            </div>
+            <h3 class="font-bold text-gray-900 text-lg mb-3">Microsoft Teams</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">
+              Los archivos compartidos en canales de Teams mantienen su protección SealPath.
+              Los participantes externos solo ven lo que tienen permitido, incluso dentro de Teams.
+            </p>
+            <div class="mt-4 pt-4 border-t border-gray-100">
+              <span class="text-xs text-purple-600 font-medium">Control de permisos por canal y equipo</span>
+            </div>
+          </div>
+
+          <div class="bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-lg transition-all duration-300 cursor-pointer text-center">
+            <div class="w-14 h-14 bg-sky-50 rounded-2xl flex items-center justify-center mx-auto mb-5">
+              <svg class="w-7 h-7 text-sky-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
+              </svg>
+            </div>
+            <h3 class="font-bold text-gray-900 text-lg mb-3">OneDrive for Business</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">
+              Sincronización con OneDrive sin perder la protección. Los archivos protegidos
+              en escritorio permanecen cifrados en la nube y en cualquier dispositivo sincronizado.
+            </p>
+            <div class="mt-4 pt-4 border-t border-gray-100">
+              <span class="text-xs text-sky-600 font-medium">Cifrado transparente en la sincronización</span>
+            </div>
+          </div>
+
+          <div class="bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-lg transition-all duration-300 cursor-pointer text-center">
+            <div class="w-14 h-14 bg-orange-50 rounded-2xl flex items-center justify-center mx-auto mb-5">
+              <svg class="w-7 h-7 text-orange-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <h3 class="font-bold text-gray-900 text-lg mb-3">Outlook</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">
+              Adjunte documentos protegidos directamente desde Outlook. El destinatario recibe
+              el archivo cifrado y solo puede acceder a él con los permisos que usted definió
+              al adjuntarlo.
+            </p>
+            <div class="mt-4 pt-4 border-t border-gray-100">
+              <span class="text-xs text-orange-600 font-medium">Flujo de trabajo sin interrupciones</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-8 p-6 bg-white border border-gray-200 rounded-xl">
+          <div class="flex items-start gap-4">
+            <svg class="w-6 h-6 text-blue-600 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <p class="text-sm text-gray-600">
+              <span class="font-semibold text-gray-900">Integración con Microsoft Purview (MIP):</span>
+              SealPath es compatible con las etiquetas de Microsoft Information Protection.
+              Los documentos etiquetados como "Confidencial" en Purview pueden ser automáticamente
+              protegidos por SealPath, unificando la clasificación de Microsoft con la protección
+              persistente de SealPath. Para complementar la seguridad de datos, consulte también
+              <a href="/netwrix" class="text-red-600 underline hover:text-red-800">Netwrix para auditoría de accesos</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 sm:py-20 lg:py-24 bg-white">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4 text-center">
+          Preguntas Frecuentes sobre SealPath
+        </h2>
+        <p class="text-gray-600 text-center mb-12">
+          Lo que necesita saber sobre protección de documentos centrada en el dato.
+        </p>
+
+        <div class="space-y-4">
+          <details class="bg-gray-50 border border-gray-200 rounded-xl group">
+            <summary class="font-semibold text-lg p-6 cursor-pointer list-none flex items-center justify-between">
+              ¿Los usuarios externos necesitan instalar algo para abrir los documentos?
+              <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+            </summary>
+            <div class="px-6 pb-6 text-gray-600">
+              Los usuarios externos pueden abrir documentos protegidos a través de un visor web
+              sin instalar nada. Para funcionalidad completa (edición, etc.), se ofrece un agente
+              ligero compatible con Windows, Mac, iOS y Android.
+            </div>
+          </details>
+
+          <details class="bg-gray-50 border border-gray-200 rounded-xl group">
+            <summary class="font-semibold text-lg p-6 cursor-pointer list-none flex items-center justify-between">
+              ¿Qué tipos de archivos soporta SealPath?
+              <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+            </summary>
+            <div class="px-6 pb-6 text-gray-600">
+              SealPath soporta los formatos más utilizados en empresas: documentos de Microsoft Office
+              (Word, Excel, PowerPoint), PDF, AutoCAD, imágenes, y archivos de texto. También
+              protege carpetas completas y archivos adjuntos de email.
+            </div>
+          </details>
+
+          <details class="bg-gray-50 border border-gray-200 rounded-xl group">
+            <summary class="font-semibold text-lg p-6 cursor-pointer list-none flex items-center justify-between">
+              ¿SealPath afecta la productividad de los usuarios?
+              <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+            </summary>
+            <div class="px-6 pb-6 text-gray-600">
+              No. SealPath se integra directamente en el flujo de trabajo del usuario. Proteger
+              un documento es tan simple como hacer clic derecho y seleccionar una política. Los
+              documentos se abren normalmente en sus aplicaciones habituales (Word, Excel, etc.)
+              sin pasos adicionales.
+            </div>
+          </details>
+
+          <details class="bg-gray-50 border border-gray-200 rounded-xl group">
+            <summary class="font-semibold text-lg p-6 cursor-pointer list-none flex items-center justify-between">
+              ¿Cómo ayuda SealPath con el cumplimiento normativo?
+              <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+            </summary>
+            <div class="px-6 pb-6 text-gray-600">
+              SealPath genera evidencia de que los datos sensibles están cifrados y controlados,
+              independientemente de dónde residan. Los logs de acceso detallados demuestran
+              cumplimiento con GDPR, Ley 1581 (protección de datos en Colombia), HIPAA, PCI DSS
+              e ISO 27001. Ideal para auditorías y certificaciones.
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 sm:py-20 lg:py-24 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-gradient-to-r from-[#111827] to-[#1f2937] rounded-2xl overflow-hidden">
+          <div class="p-8 lg:p-12 text-center">
+            <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">
+              Sus datos más sensibles merecen protección que viaja con ellos.
+            </h2>
+            <p class="text-gray-300 mb-8 max-w-2xl mx-auto">
+              Solicite una demo personalizada y descubra cómo SealPath puede proteger la
+              información crítica de su organización sin afectar la productividad.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+              <a href="/contacto" class="bg-gradient-to-r from-red-600 to-red-700 text-white font-semibold px-8 py-4 rounded-full hover:from-red-700 hover:to-red-800 transition shadow-lg inline-flex items-center justify-center gap-2">
+                Solicitar Demo
+              </a>
+              <a href="/contacto" class="bg-white/10 backdrop-blur-sm border border-white/20 text-white font-semibold px-8 py-4 rounded-full hover:bg-white/20 transition inline-flex items-center justify-center gap-2 focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2">
+                Hablar con un Especialista
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Soluciones Relacionadas -->
+  <section class="py-12 bg-gray-50 border-t border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-lg font-bold text-gray-900 mb-6">Soluciones Relacionadas</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+        <a href="/dlp-prevencion-perdida-datos" class="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-all duration-300 text-center">
+          <p class="font-semibold text-sm text-gray-900">Software DLP</p>
+          <p class="text-xs text-gray-500 mt-1">Prevención pérdida datos</p>
+        </a>
+        <a href="/netwrix" class="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-all duration-300 text-center">
+          <p class="font-semibold text-sm text-gray-900">Netwrix</p>
+          <p class="text-xs text-gray-500 mt-1">Auditoría identidad</p>
+        </a>
+        <a href="/iso27001" class="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-all duration-300 text-center">
+          <p class="font-semibold text-sm text-gray-900">ISO 27001</p>
+          <p class="text-xs text-gray-500 mt-1">Consultoría certificación</p>
+        </a>
+        <a href="/black-duck" class="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-all duration-300 text-center">
+          <p class="font-semibold text-sm text-gray-900">Black Duck</p>
+          <p class="text-xs text-gray-500 mt-1">AppSec SAST/DAST</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+  <WhatsAppButton />
+</BaseLayout>

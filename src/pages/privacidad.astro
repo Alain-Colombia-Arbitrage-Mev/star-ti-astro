@@ -1,0 +1,290 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Navbar from '@components/Navbar.astro';
+import Footer from '@components/Footer.astro';
+import WhatsAppButton from '@components/WhatsAppButton.astro';
+import { seoData } from '@data/seo';
+
+const seo = seoData['privacidad'];
+---
+
+<BaseLayout seo={seo}>
+  <Navbar />
+
+  <!-- Header -->
+  <section class="bg-gradient-to-br from-gray-50 to-white py-16 border-b border-gray-200">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="flex items-center gap-3 mb-4">
+        <div class="w-12 h-12 bg-[#dbeafe] rounded-xl flex items-center justify-center">
+          <svg class="w-6 h-6 text-[#2563eb]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+          </svg>
+        </div>
+        <div>
+          <h1 class="text-4xl font-bold text-[#0f172a]">Política de Privacidad</h1>
+          <p class="text-sm text-gray-500 mt-1">Última actualización: Enero 2024</p>
+        </div>
+      </div>
+      <p class="text-lg text-[#64748b]">
+        En Starsolution respetamos su privacidad y nos comprometemos a proteger sus datos personales.
+      </p>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <section class="py-16">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="prose prose-slate max-w-none">
+
+        <div class="mb-12">
+          <h2 class="text-2xl font-bold text-[#0f172a] mb-4">Introducción</h2>
+          <p class="text-[#475569] leading-relaxed mb-4">
+            <strong>Starsolution S.A.S.</strong> (en adelante "nosotros", "nuestro" o "la Empresa") reconoce la importancia de la privacidad
+            y seguridad de la información personal. Esta Política de Privacidad describe cómo recopilamos, usamos, almacenamos, compartimos
+            y protegemos su información cuando visita nuestro sitio web o utiliza nuestros servicios.
+          </p>
+          <p class="text-[#475569] leading-relaxed">
+            Esta política se aplica en conjunto con nuestra <a href="/politica-de-proteccion-de-datos-personales" class="text-[#dc2626] hover:underline font-semibold">Política de Protección de Datos Personales</a>, que detalla el cumplimiento con la Ley 1581 de 2012 de Colombia.
+          </p>
+        </div>
+
+        <div class="mb-12">
+          <h2 class="text-2xl font-bold text-[#0f172a] mb-4">1. Información que Recopilamos</h2>
+
+          <h3 class="text-xl font-semibold text-[#0f172a] mt-6 mb-3">1.1 Información Proporcionada Directamente</h3>
+          <p class="text-[#475569] leading-relaxed mb-3">Recopilamos información que usted nos proporciona voluntariamente:</p>
+          <ul class="list-disc pl-6 text-[#475569] space-y-2 mb-4">
+            <li><strong>Formularios de contacto:</strong> Nombre, empresa, cargo, email, teléfono, mensaje</li>
+            <li><strong>Solicitudes de cotización:</strong> Detalles del proyecto, presupuesto, timeline, especificaciones técnicas</li>
+            <li><strong>Registro de newsletter:</strong> Dirección de correo electrónico</li>
+            <li><strong>Contratos de servicios:</strong> Información de facturación, NIT, dirección fiscal, representante legal</li>
+            <li><strong>Servicios de pentesting:</strong> Información técnica de infraestructura, dominios, IPs (bajo NDA estricto)</li>
+          </ul>
+
+          <h3 class="text-xl font-semibold text-[#0f172a] mt-6 mb-3">1.2 Información Recopilada Automáticamente</h3>
+          <p class="text-[#475569] leading-relaxed mb-3">Cuando visita nuestro sitio web, recopilamos automáticamente:</p>
+          <ul class="list-disc pl-6 text-[#475569] space-y-2 mb-4">
+            <li><strong>Datos de navegación:</strong> Dirección IP, tipo de navegador, sistema operativo, páginas visitadas, tiempo de permanencia</li>
+            <li><strong>Cookies y tecnologías similares:</strong> Para mejorar la experiencia del usuario (ver sección de Cookies)</li>
+            <li><strong>Datos de origen:</strong> Sitio web de referencia, términos de búsqueda utilizados</li>
+            <li><strong>Datos del dispositivo:</strong> Tipo de dispositivo, resolución de pantalla, zona horaria, idioma</li>
+          </ul>
+
+          <h3 class="text-xl font-semibold text-[#0f172a] mt-6 mb-3">1.3 Información de Terceros</h3>
+          <p class="text-[#475569] leading-relaxed">
+            Podemos recibir información de bases de datos públicas, partners comerciales o proveedores de servicios de marketing
+            (LinkedIn, Google Analytics, Meta Business Suite) para enriquecer nuestros registros y mejorar nuestros servicios.
+          </p>
+        </div>
+
+        <div class="mb-12">
+          <h2 class="text-2xl font-bold text-[#0f172a] mb-4">2. Cómo Usamos su Información</h2>
+          <p class="text-[#475569] leading-relaxed mb-4">Utilizamos la información recopilada para los siguientes propósitos:</p>
+
+          <div class="space-y-4">
+            <div class="bg-blue-50 border-l-4 border-blue-400 p-4 rounded">
+              <h4 class="font-semibold text-[#0f172a] mb-2">Prestación de Servicios</h4>
+              <ul class="text-sm text-[#475569] space-y-1">
+                <li>- Procesar cotizaciones y órdenes de compra</li>
+                <li>- Proveer servicios de consultoría, auditoría y pentesting</li>
+                <li>- Soporte técnico y atención al cliente</li>
+                <li>- Gestión de licencias de software (Bitdefender, Kaspersky, etc.)</li>
+              </ul>
+            </div>
+            <div class="bg-green-50 border-l-4 border-green-400 p-4 rounded">
+              <h4 class="font-semibold text-[#0f172a] mb-2">Comunicaciones</h4>
+              <ul class="text-sm text-[#475569] space-y-1">
+                <li>- Responder consultas y solicitudes de información</li>
+                <li>- Enviar boletines de seguridad y actualizaciones de productos (con su consentimiento)</li>
+                <li>- Notificaciones sobre cambios en servicios o políticas</li>
+                <li>- Alertas de vulnerabilidades críticas (para clientes de pentesting)</li>
+              </ul>
+            </div>
+            <div class="bg-purple-50 border-l-4 border-purple-400 p-4 rounded">
+              <h4 class="font-semibold text-[#0f172a] mb-2">Análisis y Mejora</h4>
+              <ul class="text-sm text-[#475569] space-y-1">
+                <li>- Analizar el comportamiento del usuario para mejorar el sitio web</li>
+                <li>- Generar estadísticas agregadas y anónimas</li>
+                <li>- Investigación de mercado y desarrollo de nuevos servicios</li>
+                <li>- Medir la efectividad de campañas de marketing</li>
+              </ul>
+            </div>
+            <div class="bg-red-50 border-l-4 border-red-400 p-4 rounded">
+              <h4 class="font-semibold text-[#0f172a] mb-2">Seguridad y Cumplimiento</h4>
+              <ul class="text-sm text-[#475569] space-y-1">
+                <li>- Prevenir fraude, spam y actividades ilegales</li>
+                <li>- Cumplir con obligaciones legales y regulatorias</li>
+                <li>- Proteger nuestros derechos legales y propiedad</li>
+                <li>- Responder a procesos judiciales o solicitudes gubernamentales</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-12">
+          <h2 class="text-2xl font-bold text-[#0f172a] mb-4">3. Base Legal para el Tratamiento</h2>
+          <p class="text-[#475569] leading-relaxed mb-4">Conforme a la Ley 1581 de 2012, procesamos sus datos personales bajo las siguientes bases legales:</p>
+          <ul class="list-disc pl-6 text-[#475569] space-y-2">
+            <li><strong>Consentimiento:</strong> Para marketing, newsletters y comunicaciones promocionales</li>
+            <li><strong>Ejecución de contrato:</strong> Para proveer servicios contratados</li>
+            <li><strong>Obligación legal:</strong> Para cumplir con requisitos fiscales, contables y regulatorios</li>
+            <li><strong>Interés legítimo:</strong> Para mejorar servicios, prevenir fraude y proteger nuestros derechos</li>
+          </ul>
+        </div>
+
+        <div class="mb-12">
+          <h2 class="text-2xl font-bold text-[#0f172a] mb-4">4. Compartir su Información</h2>
+          <p class="text-[#475569] leading-relaxed mb-4">No vendemos ni alquilamos su información personal a terceros. Podemos compartir su información con:</p>
+          <ul class="list-disc pl-6 text-[#475569] space-y-2 mb-4">
+            <li><strong>Fabricantes y proveedores:</strong> Bitdefender, Kaspersky, Brother, TeamViewer, SOTI (solo para provisión de licencias y soporte)</li>
+            <li><strong>Proveedores de servicios:</strong> Hosting, email marketing, CRM, procesamiento de pagos (bajo acuerdos de confidencialidad)</li>
+            <li><strong>Asesores profesionales:</strong> Abogados, auditores, contadores (sujetos a deber de confidencialidad)</li>
+            <li><strong>Autoridades:</strong> Cuando sea requerido por ley o para proteger derechos legales</li>
+            <li><strong>Compradores corporativos:</strong> En caso de fusión, adquisición o venta de activos (con notificación previa)</li>
+          </ul>
+          <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded">
+            <p class="text-sm text-yellow-800">
+              <strong>Confidencialidad en Pentesting:</strong> La información técnica recopilada durante servicios de hacking ético
+              está protegida por NDA bilateral y nunca se comparte con terceros bajo ninguna circunstancia.
+            </p>
+          </div>
+        </div>
+
+        <div class="mb-12">
+          <h2 class="text-2xl font-bold text-[#0f172a] mb-4">5. Cookies y Tecnologías de Rastreo</h2>
+          <p class="text-[#475569] leading-relaxed mb-4">Utilizamos cookies y tecnologías similares para mejorar su experiencia:</p>
+          <div class="overflow-x-auto mb-4">
+            <table class="min-w-full bg-white border border-gray-200 rounded-lg">
+              <thead class="bg-gray-100">
+                <tr>
+                  <th class="px-4 py-3 text-left text-sm font-semibold text-[#0f172a]">Tipo de Cookie</th>
+                  <th class="px-4 py-3 text-left text-sm font-semibold text-[#0f172a]">Propósito</th>
+                  <th class="px-4 py-3 text-left text-sm font-semibold text-[#0f172a]">Duración</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-gray-200">
+                <tr><td class="px-4 py-3 text-sm text-[#475569] font-medium">Esenciales</td><td class="px-4 py-3 text-sm text-[#475569]">Funcionamiento básico del sitio</td><td class="px-4 py-3 text-sm text-[#475569]">Sesión</td></tr>
+                <tr><td class="px-4 py-3 text-sm text-[#475569] font-medium">Analíticas</td><td class="px-4 py-3 text-sm text-[#475569]">Google Analytics, comportamiento de usuarios</td><td class="px-4 py-3 text-sm text-[#475569]">2 años</td></tr>
+                <tr><td class="px-4 py-3 text-sm text-[#475569] font-medium">Marketing</td><td class="px-4 py-3 text-sm text-[#475569]">Publicidad personalizada, retargeting</td><td class="px-4 py-3 text-sm text-[#475569]">1 año</td></tr>
+                <tr><td class="px-4 py-3 text-sm text-[#475569] font-medium">Preferencias</td><td class="px-4 py-3 text-sm text-[#475569]">Recordar configuraciones del usuario</td><td class="px-4 py-3 text-sm text-[#475569]">1 año</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="text-[#475569] text-sm leading-relaxed">
+            Puede controlar las cookies desde la configuración de su navegador. Sin embargo, deshabilitar ciertas cookies puede
+            afectar la funcionalidad del sitio.
+          </p>
+        </div>
+
+        <div class="mb-12">
+          <h2 class="text-2xl font-bold text-[#0f172a] mb-4">6. Seguridad de los Datos</h2>
+          <p class="text-[#475569] leading-relaxed mb-4">Como empresa especializada en ciberseguridad, implementamos medidas técnicas y organizativas avanzadas:</p>
+          <ul class="list-disc pl-6 text-[#475569] space-y-2 mb-4">
+            <li><strong>Encriptación:</strong> SSL/TLS para transmisión de datos, AES-256 para almacenamiento</li>
+            <li><strong>Acceso restringido:</strong> Control de acceso basado en roles (RBAC), autenticación multifactor (MFA)</li>
+            <li><strong>Servidores seguros:</strong> Hosting en centros de datos certificados ISO 27001</li>
+            <li><strong>Monitoreo continuo:</strong> Sistemas de detección de intrusos (IDS/IPS)</li>
+            <li><strong>Respaldo y recuperación:</strong> Backups diarios encriptados, plan de continuidad de negocio</li>
+            <li><strong>Auditorías periódicas:</strong> Pentesting interno semestral</li>
+          </ul>
+          <p class="text-[#475569] leading-relaxed">
+            A pesar de nuestros esfuerzos, ningún método de transmisión por Internet es 100% seguro. Le recomendamos proteger
+            sus credenciales y reportar cualquier actividad sospechosa.
+          </p>
+        </div>
+
+        <div class="mb-12">
+          <h2 class="text-2xl font-bold text-[#0f172a] mb-4">7. Sus Derechos de Privacidad</h2>
+          <p class="text-[#475569] leading-relaxed mb-4">Conforme a la Ley 1581 de 2012, usted tiene derecho a:</p>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+            <div class="border border-gray-200 rounded-lg p-4">
+              <h4 class="font-semibold text-[#0f172a] mb-2">Acceso</h4>
+              <p class="text-sm text-[#475569]">Conocer qué datos tenemos sobre usted</p>
+            </div>
+            <div class="border border-gray-200 rounded-lg p-4">
+              <h4 class="font-semibold text-[#0f172a] mb-2">Rectificación</h4>
+              <p class="text-sm text-[#475569]">Corregir datos inexactos o incompletos</p>
+            </div>
+            <div class="border border-gray-200 rounded-lg p-4">
+              <h4 class="font-semibold text-[#0f172a] mb-2">Supresión</h4>
+              <p class="text-sm text-[#475569]">Solicitar eliminación de sus datos</p>
+            </div>
+            <div class="border border-gray-200 rounded-lg p-4">
+              <h4 class="font-semibold text-[#0f172a] mb-2">Oposición</h4>
+              <p class="text-sm text-[#475569]">Oponerse al tratamiento de datos</p>
+            </div>
+          </div>
+          <p class="text-[#475569] leading-relaxed mb-3">
+            Para ejercer estos derechos, envíe un email a <a href="mailto:contacto@star-ti.com" class="text-[#dc2626] hover:underline font-semibold">contacto@star-ti.com</a> con:
+          </p>
+          <ul class="list-disc pl-6 text-[#475569] space-y-1 text-sm">
+            <li>Nombre completo y documento de identidad</li>
+            <li>Descripción del derecho que desea ejercer</li>
+            <li>Dirección de notificación (email o física)</li>
+            <li>Documentos que soporten la solicitud</li>
+          </ul>
+          <p class="text-sm text-[#475569] mt-3">Responderemos en un plazo máximo de <strong>15 días hábiles</strong> desde la recepción de la solicitud.</p>
+        </div>
+
+        <div class="mb-12">
+          <h2 class="text-2xl font-bold text-[#0f172a] mb-4">8. Retención de Datos</h2>
+          <p class="text-[#475569] leading-relaxed mb-4">Conservamos sus datos personales durante el tiempo necesario para cumplir con los fines establecidos:</p>
+          <ul class="list-disc pl-6 text-[#475569] space-y-2">
+            <li><strong>Clientes activos:</strong> Durante la relación contractual + 5 años (obligación fiscal/contable)</li>
+            <li><strong>Cotizaciones no concretadas:</strong> 2 años</li>
+            <li><strong>Newsletter:</strong> Hasta que retire el consentimiento</li>
+            <li><strong>Reportes de pentesting:</strong> 7 años (recomendación de auditoría ISO 27001)</li>
+            <li><strong>Registros de acceso (logs):</strong> 6 meses</li>
+          </ul>
+        </div>
+
+        <div class="mb-12">
+          <h2 class="text-2xl font-bold text-[#0f172a] mb-4">9. Transferencias Internacionales</h2>
+          <p class="text-[#475569] leading-relaxed mb-4">
+            Algunos de nuestros proveedores de servicios operan fuera de Colombia (servidores en EE.UU., Europa).
+            Estas transferencias se realizan garantizando niveles adecuados de protección mediante:
+          </p>
+          <ul class="list-disc pl-6 text-[#475569] space-y-2">
+            <li>Cláusulas contractuales estándar aprobadas</li>
+            <li>Certificaciones Privacy Shield / ISO 27001</li>
+            <li>Acuerdos de procesamiento de datos (DPA)</li>
+          </ul>
+        </div>
+
+        <div class="mb-12">
+          <h2 class="text-2xl font-bold text-[#0f172a] mb-4">10. Menores de Edad</h2>
+          <p class="text-[#475569] leading-relaxed">
+            Nuestros servicios están dirigidos a empresas y profesionales. No recopilamos intencionalmente información de menores
+            de 18 años. Si detectamos datos de menores, los eliminaremos inmediatamente.
+          </p>
+        </div>
+
+        <div class="mb-12">
+          <h2 class="text-2xl font-bold text-[#0f172a] mb-4">11. Cambios a esta Política</h2>
+          <p class="text-[#475569] leading-relaxed">
+            Podemos actualizar esta política ocasionalmente. Los cambios significativos serán notificados por email o mediante
+            aviso destacado en el sitio web. La versión actualizada indicará la fecha de "Última actualización" en la parte superior.
+          </p>
+        </div>
+
+        <!-- Contacto -->
+        <div class="bg-gradient-to-r from-[#f8fafc] to-white border-2 border-gray-200 rounded-2xl p-8">
+          <h2 class="text-2xl font-bold text-[#0f172a] mb-4">Oficial de Protección de Datos</h2>
+          <p class="text-[#475569] mb-4">Para consultas sobre privacidad y protección de datos:</p>
+          <div class="space-y-2 text-[#475569]">
+            <p><strong>País:</strong> Colombia</p>
+            <p><strong>Dirección:</strong> Calle 52 A # 22 – 16, Bogotá</p>
+            <p><strong>Teléfono:</strong> <a href="tel:+573007010017" class="text-[#dc2626] hover:underline">+57 300 701 0017</a></p>
+            <p><strong>Email:</strong> <a href="mailto:contacto@star-ti.com" class="text-[#dc2626] hover:underline">contacto@star-ti.com</a></p>
+            <p><strong>Horario:</strong> Lunes a Viernes, 8:00 AM - 6:00 PM (GMT-5)</p>
+            <p class="text-sm mt-4">También puede presentar quejas ante la <strong>Superintendencia de Industria y Comercio (SIC)</strong> de Colombia.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+  <WhatsAppButton />
+</BaseLayout>

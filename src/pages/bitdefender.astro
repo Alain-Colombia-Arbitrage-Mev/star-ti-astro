@@ -1,0 +1,721 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Navbar from '@components/Navbar.astro';
+import Footer from '@components/Footer.astro';
+import WhatsAppButton from '@components/WhatsAppButton.astro';
+import { seoData } from '@data/seo';
+
+const seo = seoData.bitdefender;
+---
+
+<BaseLayout seo={seo}>
+  <Navbar />
+
+  <div class="bg-white min-h-screen font-['Instrument_Sans',sans-serif]">
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-b from-gray-50 to-white py-12 sm:py-16 lg:py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <div class="mb-6">
+              <span class="inline-block bg-red-50 text-red-600 text-xs font-medium px-3 py-1 rounded">
+                LÍDER EN PROTECCIÓN EMPRESARIAL
+              </span>
+            </div>
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+              Antivirus Bitdefender para Empresas{" "}
+              <span class="text-[#ed1c24]">Sin Concesiones.</span>
+            </h1>
+            <p class="text-lg sm:text-xl text-gray-600 mb-8 max-w-3xl">
+              La solución líder en ciberseguridad empresarial que combina inteligencia artificial avanzada,
+              protección multicapa y gestión centralizada para mantener su infraestructura protegida sin
+              comprometer el rendimiento.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a href="/contacto" class="bg-[#111827] text-white font-semibold px-8 py-4 rounded hover:bg-gray-900 transition inline-block text-center focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2">
+                Solicitar Demo
+              </a>
+              <a href="/contacto" class="bg-white border-2 border-gray-300 text-gray-700 font-semibold px-8 py-4 rounded hover:bg-gray-50 transition inline-block text-center focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2">
+                Ver Planes
+              </a>
+            </div>
+            <div class="mt-8 flex items-center gap-2 text-sm text-gray-500">
+              <svg class="w-4 h-4 text-green-600" fill="none" viewBox="0 0 14 14">
+                <path d="M11.6667 3.5L5.25 9.91667L2.33333 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.16667" />
+              </svg>
+              <span>Implementación en menos de 48 horas</span>
+            </div>
+          </div>
+          <div class="hidden lg:flex items-center justify-center">
+            <img
+              src="/assets/robot-ia-ciberseguridad-perfil.webp"
+              alt="Robot de inteligencia artificial para protección empresarial Bitdefender"
+              class="w-full max-w-md mx-auto rounded-2xl shadow-xl"
+              width="400"
+              height="400"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Awards Section -->
+    <section class="bg-[#111827] py-12">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+          <div>
+            <h3 class="text-white font-bold text-xl mb-2">Gartner</h3>
+            <p class="text-white text-xs uppercase tracking-wider opacity-75">Magic Quadrant Visionary</p>
+          </div>
+          <div>
+            <h3 class="text-white font-bold text-xl mb-2">AV-TEST</h3>
+            <p class="text-white text-xs uppercase tracking-wider opacity-75">Best Protection Award</p>
+          </div>
+          <div>
+            <h3 class="text-white font-bold text-xl mb-2">MITRE Engenuity</h3>
+            <p class="text-white text-xs uppercase tracking-wider opacity-75">Top Detection Coverage</p>
+          </div>
+          <div>
+            <h3 class="text-white font-bold text-xl mb-2">Forrester</h3>
+            <p class="text-white text-xs uppercase tracking-wider opacity-75">Wave Strong Performer</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GravityZone Section -->
+    <section class="bg-gray-50 py-16 sm:py-20 lg:py-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="mb-16">
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-semibold mb-4">
+            GravityZone <span class="text-[#ed1c24]">Unified Security Platform</span>
+          </h2>
+          <p class="text-gray-600 max-w-3xl">
+            Una sola consola. Un solo agente. Control total sobre toda su infraestructura digital,
+            desde endpoints hasta la nube híbrida, con el motor de <span class="font-semibold">antivirus Bitdefender</span> líder en
+            la industria.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <!-- AI Card - Large -->
+          <div class="lg:col-span-2 bg-white border border-gray-200 rounded-2xl p-8 relative overflow-hidden">
+            <div class="absolute top-8 right-8 opacity-10">
+              <svg class="w-32 h-32" fill="none" viewBox="0 0 120 120">
+                <circle cx="60" cy="60" r="50" stroke="#111827" stroke-width="10" fill="none" />
+                <line x1="60" y1="10" x2="60" y2="110" stroke="#111827" stroke-width="10" />
+                <line x1="10" y1="60" x2="110" y2="60" stroke="#111827" stroke-width="10" />
+              </svg>
+            </div>
+
+            <div class="relative">
+              <span class="inline-block bg-red-50 text-[#ed1c24] text-xs font-medium px-2 py-1 rounded mb-4">
+                IA ENTRENADA DESDE 2008
+              </span>
+              <h3 class="text-2xl font-semibold mb-4">Inteligencia Artificial Adaptativa</h3>
+              <p class="text-gray-600 mb-8 max-w-lg">
+                Bitdefender perfecciona sus algoritmos de Machine Learning desde hace más de una década.
+                Esto se traduce en la tasa de detección más alta del mercado con el menor impacto en el
+                rendimiento de sus equipos.
+              </p>
+
+              <div class="grid grid-cols-2 gap-4">
+                <div class="bg-gray-50 border border-gray-200 rounded-lg p-6">
+                  <div class="text-3xl font-bold mb-1">99.9%</div>
+                  <div class="text-xs text-gray-500 uppercase tracking-wide">Tasa de Bloqueo</div>
+                </div>
+                <div class="bg-gray-50 border border-gray-200 rounded-lg p-6">
+                  <div class="text-3xl font-bold mb-1">&lt; 1%</div>
+                  <div class="text-xs text-gray-500 uppercase tracking-wide">Recursos CPU</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Anti-Ransomware Card -->
+          <div class="bg-white border border-gray-200 rounded-2xl p-6">
+            <div class="bg-gray-50 rounded-lg w-10 h-10 flex items-center justify-center mb-4">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 20 20">
+                <path d="M10 2L3 6v5c0 4.5 3 8.5 7 9.5 4-1 7-5 7-9.5V6l-7-4z" stroke="#374151" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.66667" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold mb-2">Anti-Ransomware</h3>
+            <p class="text-sm text-gray-600">
+              Recuperación automática de archivos encriptados y bloqueo de procesos maliciosos en tiempo real.
+            </p>
+          </div>
+
+          <!-- Network Defense Card -->
+          <div class="bg-white border border-gray-200 rounded-2xl p-6 lg:col-start-3">
+            <div class="bg-gray-50 rounded-lg w-10 h-10 flex items-center justify-center mb-4">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 20 20">
+                <path d="M10 1v18M1 10h18" stroke="#374151" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.66667" />
+                <circle cx="10" cy="10" r="6" stroke="#374151" stroke-width="1.66667" fill="none" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold mb-2">Defensa de Red</h3>
+            <p class="text-sm text-gray-600">
+              Bloquea ataques basados en red como Brute Force, Password Stealers y movimientos laterales.
+            </p>
+          </div>
+        </div>
+
+        <!-- EDR/XDR Banner -->
+        <div class="mt-6 bg-[#111827] rounded-2xl p-8 flex flex-col md:flex-row items-center justify-between gap-6">
+          <div>
+            <h3 class="text-xl font-semibold text-white mb-2">EDR & XDR Integrado</h3>
+            <p class="text-gray-300 max-w-lg">
+              Extienda la visibilidad más allá del endpoint. Correlacione eventos de red,
+              nube y usuarios para entender la cadena de ataque completa.
+            </p>
+          </div>
+          <a href="/contacto" class="bg-white text-[#111827] font-semibold px-6 py-3 rounded hover:bg-gray-100 transition whitespace-nowrap inline-block text-center focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2">
+            Explorar XDR
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bitdefender en Colombia -->
+    <section class="py-16 sm:py-20 lg:py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+          <div>
+            <span class="text-[#ed1c24] text-xs font-medium uppercase tracking-wide">Partner Local</span>
+            <h2 class="text-3xl sm:text-4xl font-bold mt-4 mb-6">
+              Antivirus Bitdefender en Bogota y Colombia
+            </h2>
+            <p class="text-gray-600 mb-6">
+              Starsolution es partner oficial de Bitdefender en Colombia. Desde 2015 ayudamos a organizaciones
+              en Bogotá y todo el país a implementar soluciones empresariales de ciberseguridad adaptadas a sus
+              necesidades específicas.
+            </p>
+            <p class="text-gray-600 mb-8">
+              Nuestro equipo técnico certificado maneja implementaciones desde 10 hasta más de 5,000 endpoints,
+              asegurando un despliegue controlado, capacitación personalizada y soporte técnico especializado
+              en español disponible 24/7.
+            </p>
+
+            <div class="grid grid-cols-2 gap-6">
+              <div class="border-l-4 border-red-600 pl-4">
+                <div class="text-2xl font-bold text-gray-900 mb-1">150+</div>
+                <div class="text-sm text-gray-600">Empresas protegidas</div>
+              </div>
+              <div class="border-l-4 border-red-600 pl-4">
+                <div class="text-2xl font-bold text-gray-900 mb-1">50K+</div>
+                <div class="text-sm text-gray-600">Dispositivos monitoreados</div>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="bg-gradient-to-br from-red-50 to-white border border-red-100 rounded-2xl p-8">
+              <h3 class="text-xl font-semibold mb-6">Incluye con nuestro servicio:</h3>
+              <div class="space-y-4">
+                <div class="flex items-start gap-3">
+                  <div class="bg-green-100 border border-green-200 rounded-full p-1 mt-0.5">
+                    <svg class="w-3.5 h-3.5 text-green-600" fill="none" viewBox="0 0 14 14">
+                      <path d="M11.6667 3.5L5.25 9.91667L2.33333 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.16667" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 class="font-semibold text-gray-900">Instalación y Configuración</h4>
+                    <p class="text-sm text-gray-600">Despliegue remoto sin afectar la operación diaria</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3">
+                  <div class="bg-green-100 border border-green-200 rounded-full p-1 mt-0.5">
+                    <svg class="w-3.5 h-3.5 text-green-600" fill="none" viewBox="0 0 14 14">
+                      <path d="M11.6667 3.5L5.25 9.91667L2.33333 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.16667" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 class="font-semibold text-gray-900">Capacitacion al Equipo IT</h4>
+                    <p class="text-sm text-gray-600">Sesión de 2 horas sobre uso de consola y políticas</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3">
+                  <div class="bg-green-100 border border-green-200 rounded-full p-1 mt-0.5">
+                    <svg class="w-3.5 h-3.5 text-green-600" fill="none" viewBox="0 0 14 14">
+                      <path d="M11.6667 3.5L5.25 9.91667L2.33333 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.16667" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 class="font-semibold text-gray-900">Monitoreo Activo</h4>
+                    <p class="text-sm text-gray-600">Revisión semanal de reportes y alertas críticas</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3">
+                  <div class="bg-green-100 border border-green-200 rounded-full p-1 mt-0.5">
+                    <svg class="w-3.5 h-3.5 text-green-600" fill="none" viewBox="0 0 14 14">
+                      <path d="M11.6667 3.5L5.25 9.91667L2.33333 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.16667" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 class="font-semibold text-gray-900">Soporte Técnico Prioritario</h4>
+                    <p class="text-sm text-gray-600">Tiempo de respuesta menor a 2 horas en casos críticos</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 sm:py-20 lg:py-24 bg-gray-50">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4 text-center">
+          Lo que los Gerentes de TI necesitan saber antes de decidir
+        </h2>
+        <p class="text-gray-600 text-center mb-12">
+          Respuestas a las preguntas técnicas más frecuentes sobre implementación de Bitdefender
+        </p>
+
+        <div class="space-y-6">
+          <div class="bg-white border border-gray-200 rounded-xl p-6">
+            <h3 class="font-semibold text-lg mb-2">
+              ¿La instalación masiva va a frenar la operación de la empresa?
+            </h3>
+            <p class="text-gray-600">
+              No. Utilizamos despliegue silencioso y programado. En la mayoría de casos, los usuarios ni siquiera
+              notan la instalación. El impacto en el ancho de banda es mínimo gracias a la descarga escalonada.
+            </p>
+          </div>
+
+          <div class="bg-white border border-gray-200 rounded-xl p-6">
+            <h3 class="font-semibold text-lg mb-2">
+              Me notifica cuando detecta amenaza?
+            </h3>
+            <p class="text-gray-600">
+              Sí. GravityZone puede enviar alertas instantáneas por correo o SMS cuando detecta amenazas críticas.
+              Además, genera reportes ejecutivos semanales con el estado de seguridad de toda la infraestructura.
+            </p>
+          </div>
+
+          <div class="bg-white border border-gray-200 rounded-xl p-6">
+            <h3 class="font-semibold text-lg mb-2">
+              Puedo bloquear dispositivos externos (USB)?
+            </h3>
+            <p class="text-gray-600">
+              Completamente. Las políticas de control de dispositivos permiten bloquear USB, CD/DVD, dispositivos
+              Bluetooth y más, ya sea completamente o solo en modo lectura.
+            </p>
+          </div>
+
+          <div class="bg-white border border-gray-200 rounded-xl p-6">
+            <h3 class="font-semibold text-lg mb-2">
+              ¿Qué tan complicado es implementar la herramienta para mi empresa?
+            </h3>
+            <p class="text-gray-600">
+              Para el administrador IT es simple. Nosotros configuramos la consola cloud, definimos las políticas
+              de seguridad y desplegamos los agentes automáticamente via Active Directory o mediante un instalador
+              silencioso. En promedio, una empresa de 50 equipos está protegida en menos de 2 horas.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Caracteristicas Detalladas -->
+    <section class="py-16 sm:py-20 lg:py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">
+          ¿Por qué elegir el Antivirus Bitdefender para su Empresa?
+        </h2>
+        <p class="text-gray-600 mb-12 max-w-3xl">
+          Bitdefender GravityZone es la solución de seguridad empresarial más completa del mercado,
+          diseñada específicamente para proteger organizaciones de todos los tamaños contra las amenazas
+          cibernéticas más avanzadas.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+          <div>
+            <h3 class="text-xl font-semibold mb-4">Protección Multicapa Avanzada</h3>
+            <p class="text-gray-600 mb-4">
+              El motor de detección de Bitdefender utiliza múltiples capas de seguridad que incluyen
+              análisis heurístico, sandboxing en la nube, y machine learning para identificar y bloquear
+              tanto amenazas conocidas como de día cero. Esta aproximación multicapa garantiza que su
+              empresa esté protegida contra ransomware, malware, spyware, phishing y ataques de ingeniería
+              social sin afectar la productividad de sus usuarios.
+            </p>
+            <p class="text-gray-600">
+              A diferencia de soluciones tradicionales que dependen únicamente de firmas de virus,
+              Bitdefender analiza el comportamiento de aplicaciones y procesos en tiempo real,
+              detectando actividades sospechosas antes de que puedan causar daño a su infraestructura.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-semibold mb-4">Gestión Centralizada Cloud-Native</h3>
+            <p class="text-gray-600 mb-4">
+              La consola GravityZone permite administrar toda su infraestructura de seguridad desde
+              cualquier lugar con conexión a internet. No requiere servidores locales ni mantenimiento
+              de hardware adicional. Su equipo IT puede desplegar agentes, configurar políticas,
+              generar reportes y responder a incidentes desde una única interfaz intuitiva.
+            </p>
+            <p class="text-gray-600">
+              Esta arquitectura cloud-native facilita la escalabilidad - puede agregar o remover
+              dispositivos en minutos sin necesidad de reconfigurar su infraestructura. Ideal para
+              empresas en crecimiento o con equipos distribuidos en múltiples sucursales en Colombia
+              y el mundo.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-semibold mb-4">Rendimiento Optimizado</h3>
+            <p class="text-gray-600 mb-4">
+              Bitdefender ha sido reconocido consistentemente por AV-Comparatives y AV-TEST por tener
+              el menor impacto en el rendimiento del sistema. El agente consume menos del 1% de recursos
+              de CPU en operacion normal, lo que significa que sus empleados pueden trabajar sin
+              interrupciones ni ralentizaciones.
+            </p>
+            <p class="text-gray-600">
+              Las actualizaciones de definiciones de virus se realizan de forma incremental cada hora,
+              consumiendo mínimo ancho de banda. El escaneo se ejecuta en momentos de baja actividad
+              del sistema, adaptándose automáticamente al uso del equipo.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-semibold mb-4">Cumplimiento Normativo y Auditoria</h3>
+            <p class="text-gray-600 mb-4">
+              Para empresas que deben cumplir con regulaciones como ISO 27001, Ley de Protección de
+              Datos, PCI-DSS o HIPAA, Bitdefender genera reportes de cumplimiento detallados que
+              documentan todas las actividades de seguridad. Estos reportes son fundamentales durante
+              auditorías externas y procesos de certificación.
+            </p>
+            <p class="text-gray-600">
+              El sistema mantiene logs completos de todas las amenazas detectadas, acciones tomadas,
+              y cambios de configuración. Esta trazabilidad es esencial para demostrar ante auditores
+              que su organización mantiene controles de seguridad activos y efectivos.
+            </p>
+          </div>
+        </div>
+
+        <!-- Casos de Uso -->
+        <div class="bg-gradient-to-br from-gray-50 to-white border border-gray-200 rounded-2xl p-8">
+          <h3 class="text-2xl font-semibold mb-6">Casos de Uso por Industria</h3>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div>
+              <div class="bg-blue-50 rounded-lg p-3 w-12 h-12 flex items-center justify-center mb-4">
+                <svg class="w-6 h-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                </svg>
+              </div>
+              <h4 class="font-semibold mb-2">Sector Financiero</h4>
+              <p class="text-sm text-gray-600">
+                Bancos y fintech confían en Bitdefender para proteger datos financieros sensibles
+                y cumplir con regulaciones de la Superintendencia Financiera de Colombia.
+              </p>
+            </div>
+            <div>
+              <div class="bg-green-50 rounded-lg p-3 w-12 h-12 flex items-center justify-center mb-4">
+                <svg class="w-6 h-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+              </div>
+              <h4 class="font-semibold mb-2">Salud</h4>
+              <p class="text-sm text-gray-600">
+                Clínicas y hospitales protegen historias clínicas y datos médicos confidenciales
+                cumpliendo con normativas de protección de datos personales.
+              </p>
+            </div>
+            <div>
+              <div class="bg-purple-50 rounded-lg p-3 w-12 h-12 flex items-center justify-center mb-4">
+                <svg class="w-6 h-6 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+                </svg>
+              </div>
+              <h4 class="font-semibold mb-2">Manufactura</h4>
+              <p class="text-sm text-gray-600">
+                Empresas industriales protegen sus sistemas SCADA, maquinaria conectada y propiedad
+                intelectual contra espionaje industrial y sabotaje.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Comparativa y Planes -->
+    <section class="py-16 sm:py-20 lg:py-24 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl sm:text-4xl font-bold mb-4">
+            Planes Adaptados a Cada Necesidad Empresarial
+          </h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            Desde pequeñas empresas hasta corporaciones con miles de endpoints,
+            tenemos la solución perfecta para proteger su infraestructura.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+          <div class="bg-white border-2 border-gray-200 rounded-2xl p-8">
+            <h3 class="text-xl font-bold mb-2">Business Security</h3>
+            <p class="text-gray-600 text-sm mb-6">Para empresas de 10 a 100 dispositivos</p>
+            <ul class="space-y-3 mb-8">
+              <li class="flex items-start gap-2 text-sm">
+                <svg class="w-5 h-5 text-green-600 mt-0.5" fill="none" viewBox="0 0 14 14">
+                  <path d="M11.6667 3.5L5.25 9.91667L2.33333 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.16667" />
+                </svg>
+                <span>Antimalware multicapa</span>
+              </li>
+              <li class="flex items-start gap-2 text-sm">
+                <svg class="w-5 h-5 text-green-600 mt-0.5" fill="none" viewBox="0 0 14 14">
+                  <path d="M11.6667 3.5L5.25 9.91667L2.33333 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.16667" />
+                </svg>
+                <span>Firewall y control web</span>
+              </li>
+              <li class="flex items-start gap-2 text-sm">
+                <svg class="w-5 h-5 text-green-600 mt-0.5" fill="none" viewBox="0 0 14 14">
+                  <path d="M11.6667 3.5L5.25 9.91667L2.33333 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.16667" />
+                </svg>
+                <span>Anti-ransomware</span>
+              </li>
+              <li class="flex items-start gap-2 text-sm">
+                <svg class="w-5 h-5 text-green-600 mt-0.5" fill="none" viewBox="0 0 14 14">
+                  <path d="M11.6667 3.5L5.25 9.91667L2.33333 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.16667" />
+                </svg>
+                <span>Consola cloud</span>
+              </li>
+            </ul>
+            <a href="/contacto" class="w-full bg-gray-900 text-white font-semibold py-3 rounded hover:bg-gray-800 transition block text-center focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2">
+              Cotizar Ahora
+            </a>
+          </div>
+
+          <div class="bg-white border-2 border-red-600 rounded-2xl p-8 relative">
+            <div class="absolute -top-4 left-1/2 -translate-x-1/2">
+              <span class="bg-red-600 text-white text-xs font-bold px-4 py-1 rounded-full">MÁS POPULAR</span>
+            </div>
+            <h3 class="text-xl font-bold mb-2">GravityZone Advanced</h3>
+            <p class="text-gray-600 text-sm mb-6">Para empresas de 100 a 1000 dispositivos</p>
+            <ul class="space-y-3 mb-8">
+              <li class="flex items-start gap-2 text-sm">
+                <svg class="w-5 h-5 text-green-600 mt-0.5" fill="none" viewBox="0 0 14 14">
+                  <path d="M11.6667 3.5L5.25 9.91667L2.33333 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.16667" />
+                </svg>
+                <span>Todo lo de Business Security</span>
+              </li>
+              <li class="flex items-start gap-2 text-sm">
+                <svg class="w-5 h-5 text-green-600 mt-0.5" fill="none" viewBox="0 0 14 14">
+                  <path d="M11.6667 3.5L5.25 9.91667L2.33333 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.16667" />
+                </svg>
+                <span>HyperDetect (IA avanzada)</span>
+              </li>
+              <li class="flex items-start gap-2 text-sm">
+                <svg class="w-5 h-5 text-green-600 mt-0.5" fill="none" viewBox="0 0 14 14">
+                  <path d="M11.6667 3.5L5.25 9.91667L2.33333 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.16667" />
+                </svg>
+                <span>Sandboxing en la nube</span>
+              </li>
+              <li class="flex items-start gap-2 text-sm">
+                <svg class="w-5 h-5 text-green-600 mt-0.5" fill="none" viewBox="0 0 14 14">
+                  <path d="M11.6667 3.5L5.25 9.91667L2.33333 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.16667" />
+                </svg>
+                <span>Patch management</span>
+              </li>
+              <li class="flex items-start gap-2 text-sm">
+                <svg class="w-5 h-5 text-green-600 mt-0.5" fill="none" viewBox="0 0 14 14">
+                  <path d="M11.6667 3.5L5.25 9.91667L2.33333 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.16667" />
+                </svg>
+                <span>Full disk encryption</span>
+              </li>
+            </ul>
+            <a href="/contacto" class="w-full bg-red-600 text-white font-semibold py-3 rounded hover:bg-red-700 transition block text-center focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2">
+              Cotizar Ahora
+            </a>
+          </div>
+
+          <div class="bg-white border-2 border-gray-200 rounded-2xl p-8">
+            <h3 class="text-xl font-bold mb-2">GravityZone Elite</h3>
+            <p class="text-gray-600 text-sm mb-6">Para empresas de +1000 dispositivos</p>
+            <ul class="space-y-3 mb-8">
+              <li class="flex items-start gap-2 text-sm">
+                <svg class="w-5 h-5 text-green-600 mt-0.5" fill="none" viewBox="0 0 14 14">
+                  <path d="M11.6667 3.5L5.25 9.91667L2.33333 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.16667" />
+                </svg>
+                <span>Todo lo de Advanced</span>
+              </li>
+              <li class="flex items-start gap-2 text-sm">
+                <svg class="w-5 h-5 text-green-600 mt-0.5" fill="none" viewBox="0 0 14 14">
+                  <path d="M11.6667 3.5L5.25 9.91667L2.33333 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.16667" />
+                </svg>
+                <span>EDR (Endpoint Detection)</span>
+              </li>
+              <li class="flex items-start gap-2 text-sm">
+                <svg class="w-5 h-5 text-green-600 mt-0.5" fill="none" viewBox="0 0 14 14">
+                  <path d="M11.6667 3.5L5.25 9.91667L2.33333 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.16667" />
+                </svg>
+                <span>XDR (Extended Detection)</span>
+              </li>
+              <li class="flex items-start gap-2 text-sm">
+                <svg class="w-5 h-5 text-green-600 mt-0.5" fill="none" viewBox="0 0 14 14">
+                  <path d="M11.6667 3.5L5.25 9.91667L2.33333 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.16667" />
+                </svg>
+                <span>MDR (Managed Detection)</span>
+              </li>
+              <li class="flex items-start gap-2 text-sm">
+                <svg class="w-5 h-5 text-green-600 mt-0.5" fill="none" viewBox="0 0 14 14">
+                  <path d="M11.6667 3.5L5.25 9.91667L2.33333 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.16667" />
+                </svg>
+                <span>Soporte 24/7 prioritario</span>
+              </li>
+            </ul>
+            <a href="/contacto" class="w-full bg-gray-900 text-white font-semibold py-3 rounded hover:bg-gray-800 transition block text-center focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2">
+              Cotizar Ahora
+            </a>
+          </div>
+        </div>
+
+        <!-- Proceso de Implementacion -->
+        <div class="bg-white rounded-2xl p-8 border border-gray-200">
+          <h3 class="text-2xl font-bold mb-8 text-center">Proceso de Implementación en 4 Pasos</h3>
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+            <div class="text-center">
+              <div class="bg-red-100 text-red-600 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 font-bold text-lg">
+                1
+              </div>
+              <h4 class="font-semibold mb-2">Auditoria Inicial</h4>
+              <p class="text-sm text-gray-600">
+                Análisis de su infraestructura actual, identificación de puntos críticos y definición de políticas.
+              </p>
+            </div>
+            <div class="text-center">
+              <div class="bg-red-100 text-red-600 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 font-bold text-lg">
+                2
+              </div>
+              <h4 class="font-semibold mb-2">Configuracion Cloud</h4>
+              <p class="text-sm text-gray-600">
+                Preparación de consola GravityZone, integración con Active Directory y configuración de políticas personalizadas.
+              </p>
+            </div>
+            <div class="text-center">
+              <div class="bg-red-100 text-red-600 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 font-bold text-lg">
+                3
+              </div>
+              <h4 class="font-semibold mb-2">Despliegue Gradual</h4>
+              <p class="text-sm text-gray-600">
+                Instalación por fases en grupos piloto, validación de funcionamiento y expansión a toda la organización.
+              </p>
+            </div>
+            <div class="text-center">
+              <div class="bg-red-100 text-red-600 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 font-bold text-lg">
+                4
+              </div>
+              <h4 class="font-semibold mb-2">Capacitacion y Soporte</h4>
+              <p class="text-sm text-gray-600">
+                Entrenamiento a equipo IT, documentación personalizada y activación de soporte técnico continuo.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 sm:py-20 lg:py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-gradient-to-r from-[#111827] to-[#1f2937] rounded-2xl overflow-hidden">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 p-8 lg:p-12">
+            <div>
+              <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">
+                No solo vendemos licencias. Implementamos Seguridad.
+              </h2>
+              <p class="text-gray-300 mb-8">
+                A diferencia de los revendedores tradicionales, en Starsolution hacemos consultoría,
+                implementación y soporte continuo. Su equipo IT tendrá respaldo directo de ingenieros
+                certificados que conocen la plataforma a fondo.
+              </p>
+              <form action="/gracias" method="GET" class="space-y-4">
+                <input
+                  type="text"
+                  placeholder="Nombre completo"
+                  class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded focus:outline-none focus:ring-2 focus:ring-red-500"
+                />
+                <input
+                  type="email"
+                  placeholder="Correo corporativo"
+                  class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded focus:outline-none focus:ring-2 focus:ring-red-500"
+                />
+                <button class="w-full bg-[#ed1c24] text-white font-semibold px-6 py-3 rounded hover:bg-red-700 transition focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2">
+                  Agendar Demo Tecnica
+                </button>
+              </form>
+            </div>
+
+            <div class="flex flex-col justify-center space-y-6">
+              <div class="flex items-start gap-4">
+                <div class="bg-red-600 rounded-full p-2">
+                  <svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 16 16">
+                    <path d="M13.854 3.646a.5.5 0 010 .708l-7 7a.5.5 0 01-.708 0l-3.5-3.5a.5.5 0 11.708-.708L6.5 10.293l6.646-6.647a.5.5 0 01.708 0z" fill="currentColor" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="text-white font-semibold mb-1">Demo Personalizada</h3>
+                  <p class="text-gray-400 text-sm">Revisión de su entorno actual y recomendaciones específicas</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <div class="bg-red-600 rounded-full p-2">
+                  <svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 16 16">
+                    <path d="M13.854 3.646a.5.5 0 010 .708l-7 7a.5.5 0 01-.708 0l-3.5-3.5a.5.5 0 11.708-.708L6.5 10.293l6.646-6.647a.5.5 0 01.708 0z" fill="currentColor" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="text-white font-semibold mb-1">Análisis de Riesgos</h3>
+                  <p class="text-gray-400 text-sm">Identificación de vulnerabilidades en su infraestructura</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <div class="bg-red-600 rounded-full p-2">
+                  <svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 16 16">
+                    <path d="M13.854 3.646a.5.5 0 010 .708l-7 7a.5.5 0 01-.708 0l-3.5-3.5a.5.5 0 11.708-.708L6.5 10.293l6.646-6.647a.5.5 0 01.708 0z" fill="currentColor" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="text-white font-semibold mb-1">ROI Proyectado</h3>
+                  <p class="text-gray-400 text-sm">Cálculo de ahorro vs. costo de incidente de seguridad</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Soluciones Relacionadas -->
+  <section class="py-12 bg-gray-50 border-t border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-lg font-bold text-gray-900 mb-6">Soluciones Relacionadas</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+        <a href="/kaspersky" class="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-all duration-300 text-center">
+          <p class="font-semibold text-sm text-gray-900">Kaspersky Endpoint</p>
+          <p class="text-xs text-gray-500 mt-1">Antivirus empresarial</p>
+        </a>
+        <a href="/hornet-security" class="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-all duration-300 text-center">
+          <p class="font-semibold text-sm text-gray-900">Hornetsecurity 365</p>
+          <p class="text-xs text-gray-500 mt-1">Seguridad email</p>
+        </a>
+        <a href="/antivirus-empresas" class="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-all duration-300 text-center">
+          <p class="font-semibold text-sm text-gray-900">Comparativa Antivirus</p>
+          <p class="text-xs text-gray-500 mt-1">Bitdefender vs Kaspersky</p>
+        </a>
+        <a href="/proofpoint" class="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-all duration-300 text-center">
+          <p class="font-semibold text-sm text-gray-900">Proofpoint</p>
+          <p class="text-xs text-gray-500 mt-1">Anti-phishing</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+  <WhatsAppButton />
+</BaseLayout>

@@ -1,0 +1,1026 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Navbar from '@components/Navbar.astro';
+import Footer from '@components/Footer.astro';
+import WhatsAppButton from '@components/WhatsAppButton.astro';
+import { seoData } from '@data/seo';
+
+const seo = seoData['informe-ciberseguridad-colombia-2026'];
+---
+
+<BaseLayout seo={seo}>
+  <Navbar />
+
+  <!-- Hero Section -->
+  <section class="relative overflow-hidden bg-gradient-to-br from-gray-950 via-slate-900 to-gray-900 pt-24 sm:pt-32 pb-20">
+    <!-- Grid decorativo -->
+    <div class="absolute inset-0 pointer-events-none opacity-5">
+      <div class="absolute inset-0" style="background-image: linear-gradient(to right, #6b7280 1px, transparent 1px), linear-gradient(to bottom, #6b7280 1px, transparent 1px); background-size: 50px 50px;"></div>
+    </div>
+    <!-- Glow effects -->
+    <div class="absolute top-16 right-1/4 w-[600px] h-[600px] bg-red-600/15 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute bottom-0 left-1/4 w-[400px] h-[400px] bg-blue-600/10 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Breadcrumb -->
+      <nav class="mb-8 flex items-center gap-2 text-sm text-gray-400">
+        <a href="/" class="hover:text-white transition">Inicio</a>
+        <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+        <span class="text-gray-300">Informe 2026</span>
+      </nav>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <!-- Left: Content -->
+        <div>
+          <!-- Badge -->
+          <div class="inline-flex items-center gap-2 bg-red-500/10 border border-red-500/30 rounded-full px-4 py-2 mb-6">
+            <span class="h-2 w-2 rounded-full bg-red-500 animate-pulse"></span>
+            <span class="text-red-400 text-sm font-semibold">Edición 2026 &bull; Datos de +3,000 Empresas</span>
+          </div>
+
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+            Informe de<br />
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-orange-400">Ciberseguridad</span><br />
+            Empresarial<br />
+            Colombia 2026
+          </h1>
+
+          <p class="text-lg sm:text-xl text-gray-300 mb-8 leading-relaxed">
+            El análisis más completo sobre el panorama de amenazas cibernéticas en Colombia. Datos reales de más de 3,000 empresas colombianas, tendencias de ransomware, costos de brechas y recomendaciones accionables para proteger su organización.
+          </p>
+
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a
+              href="/contacto?utm_source=informe&utm_medium=cta-hero&utm_campaign=informe-2026"
+              class="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white font-semibold px-8 py-4 rounded-xl transition shadow-xl shadow-red-900/30"
+            >
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
+              Descargar Informe Completo (PDF)
+            </a>
+            <a
+              href="#hallazgos"
+              class="inline-flex items-center justify-center gap-2 bg-white/10 border border-white/20 text-white font-semibold px-8 py-4 rounded-xl hover:bg-white/20 transition"
+            >
+              Ver Hallazgos Clave
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+            </a>
+          </div>
+
+          <!-- Meta badges -->
+          <div class="mt-8 flex flex-wrap gap-4 text-sm">
+            <div class="flex items-center gap-2 text-gray-400">
+              <svg class="w-4 h-4 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+              Acceso gratuito
+            </div>
+            <div class="flex items-center gap-2 text-gray-400">
+              <svg class="w-4 h-4 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+              Publicado: enero 2026
+            </div>
+            <div class="flex items-center gap-2 text-gray-400">
+              <svg class="w-4 h-4 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" /></svg>
+              47 páginas
+            </div>
+            <div class="flex items-center gap-2 text-gray-400">
+              <svg class="w-4 h-4 text-yellow-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" /></svg>
+              Citable y libre de uso
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Visual summary card -->
+        <div class="relative">
+          <div class="bg-white/5 border border-white/10 rounded-3xl p-8 backdrop-blur-sm">
+            <p class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-6">Resumen Ejecutivo</p>
+            <div class="space-y-5">
+              <div class="flex items-start gap-4">
+                <div class="bg-red-500/20 rounded-xl p-3 flex-shrink-0">
+                  <svg class="w-6 h-6 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
+                </div>
+                <div>
+                  <div class="text-2xl font-bold text-white">73%</div>
+                  <div class="text-sm text-gray-400">de empresas sufrieron al menos 1 incidente en 2025</div>
+                </div>
+              </div>
+              <div class="border-t border-white/5"></div>
+              <div class="flex items-start gap-4">
+                <div class="bg-orange-500/20 rounded-xl p-3 flex-shrink-0">
+                  <svg class="w-6 h-6 text-orange-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                </div>
+                <div>
+                  <div class="text-2xl font-bold text-white">$2.3M USD</div>
+                  <div class="text-sm text-gray-400">costo promedio de una brecha de datos en Colombia</div>
+                </div>
+              </div>
+              <div class="border-t border-white/5"></div>
+              <div class="flex items-start gap-4">
+                <div class="bg-yellow-500/20 rounded-xl p-3 flex-shrink-0">
+                  <svg class="w-6 h-6 text-yellow-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+                </div>
+                <div>
+                  <div class="text-2xl font-bold text-white">47%</div>
+                  <div class="text-sm text-gray-400">de ataques exitosos comenzaron por phishing</div>
+                </div>
+              </div>
+              <div class="border-t border-white/5"></div>
+              <div class="flex items-start gap-4">
+                <div class="bg-blue-500/20 rounded-xl p-3 flex-shrink-0">
+                  <svg class="w-6 h-6 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
+                </div>
+                <div>
+                  <div class="text-2xl font-bold text-white">Solo 12%</div>
+                  <div class="text-sm text-gray-400">de PYMES tienen plan de respuesta a incidentes</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hero Image -->
+          <div class="mt-6 flex items-center justify-center">
+            <img src="/assets/robot-ia-laboratorio-monitores.webp" alt="Informe de ciberseguridad empresarial Colombia 2026 - análisis de amenazas" class="w-full max-w-xs rounded-2xl shadow-xl" width="320" height="320" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Findings Section -->
+  <section id="hallazgos" class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-14">
+        <span class="text-red-600 text-sm font-bold uppercase tracking-widest">Hallazgos Clave 2025-2026</span>
+        <h2 class="text-4xl sm:text-5xl font-bold mt-3 mb-4 text-gray-900">Los números que debe conocer</h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">Cifras extraídas de incidentes reales en empresas colombianas de todos los tamaños y sectores.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Stat 1 -->
+        <div class="bg-white rounded-2xl p-8 border border-gray-200 shadow-sm hover:shadow-md transition group">
+          <div class="flex items-start gap-5">
+            <div class="bg-red-100 rounded-2xl p-4 flex-shrink-0 group-hover:bg-red-600 transition">
+              <svg class="w-8 h-8 text-red-600 group-hover:text-white transition" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
+            </div>
+            <div>
+              <div class="text-5xl font-black text-red-600 mb-2">73%</div>
+              <h3 class="text-xl font-bold text-gray-900 mb-2">Empresas con al menos 1 incidente</h3>
+              <p class="text-gray-600">El 73% de empresas colombianas sufrió al menos un incidente de seguridad significativo durante 2025, comparado con el 61% reportado en 2024. El incremento del 12 puntos porcentuales refleja la mayor sofisticación de los actores de amenaza que operan en la región.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stat 2 -->
+        <div class="bg-white rounded-2xl p-8 border border-gray-200 shadow-sm hover:shadow-md transition group">
+          <div class="flex items-start gap-5">
+            <div class="bg-orange-100 rounded-2xl p-4 flex-shrink-0 group-hover:bg-orange-600 transition">
+              <svg class="w-8 h-8 text-orange-600 group-hover:text-white transition" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+            </div>
+            <div>
+              <div class="text-5xl font-black text-orange-600 mb-2">$2.3M</div>
+              <h3 class="text-xl font-bold text-gray-900 mb-2">Costo promedio de una brecha (USD)</h3>
+              <p class="text-gray-600">El costo total promedio de una brecha de datos en Colombia alcanzó los 2.3 millones de dólares en 2025, incluyendo costos directos (respuesta, notificación, remediación) e indirectos (pérdida de clientes, daño reputacional, multas regulatorias de la SIC).</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stat 3 -->
+        <div class="bg-white rounded-2xl p-8 border border-gray-200 shadow-sm hover:shadow-md transition group">
+          <div class="flex items-start gap-5">
+            <div class="bg-yellow-100 rounded-2xl p-4 flex-shrink-0 group-hover:bg-yellow-500 transition">
+              <svg class="w-8 h-8 text-yellow-600 group-hover:text-white transition" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+            </div>
+            <div>
+              <div class="text-5xl font-black text-yellow-600 mb-2">47%</div>
+              <h3 class="text-xl font-bold text-gray-900 mb-2">Ataques iniciados por phishing</h3>
+              <p class="text-gray-600">Casi la mitad de todos los ataques exitosos en Colombia comenzaron con un correo de phishing. Los atacantes utilizan técnicas de spear phishing dirigidas a ejecutivos y personal financiero, suplantando identidades de entidades colombianas como la DIAN, Bancolombia y la SIC para aumentar credibilidad.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stat 4 -->
+        <div class="bg-white rounded-2xl p-8 border border-gray-200 shadow-sm hover:shadow-md transition group">
+          <div class="flex items-start gap-5">
+            <div class="bg-blue-100 rounded-2xl p-4 flex-shrink-0 group-hover:bg-blue-600 transition">
+              <svg class="w-8 h-8 text-blue-600 group-hover:text-white transition" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-2 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>
+            </div>
+            <div>
+              <div class="text-5xl font-black text-blue-600 mb-2">12%</div>
+              <h3 class="text-xl font-bold text-gray-900 mb-2">PYMES con plan de respuesta</h3>
+              <p class="text-gray-600">Solo el 12% de las pequeñas y medianas empresas colombianas cuenta con un plan documentado de respuesta a incidentes. Esta brecha crítica significa que cuando ocurre un ataque, la mayoría de organizaciones reacciona de forma improvisada, incrementando el tiempo de recuperación de días a semanas.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Additional stats row -->
+      <div class="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="bg-white rounded-xl p-5 border border-gray-200 text-center">
+          <div class="text-3xl font-black text-gray-900 mb-1">22 días</div>
+          <div class="text-sm text-gray-500">Tiempo promedio para detectar un ataque</div>
+        </div>
+        <div class="bg-white rounded-xl p-5 border border-gray-200 text-center">
+          <div class="text-3xl font-black text-gray-900 mb-1">68%</div>
+          <div class="text-sm text-gray-500">Ataques de ransomware con doble extorsión</div>
+        </div>
+        <div class="bg-white rounded-xl p-5 border border-gray-200 text-center">
+          <div class="text-3xl font-black text-gray-900 mb-1">$180K</div>
+          <div class="text-sm text-gray-500">Rescate promedio exigido en Colombia (USD)</div>
+        </div>
+        <div class="bg-white rounded-xl p-5 border border-gray-200 text-center">
+          <div class="text-3xl font-black text-gray-900 mb-1">3.4x</div>
+          <div class="text-sm text-gray-500">Más ataques vs. 3 años atrás</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sectores Más Atacados -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div>
+          <span class="text-red-600 text-sm font-bold uppercase tracking-widest">Distribución por sector</span>
+          <h2 class="text-4xl font-bold mt-3 mb-4 text-gray-900">Sectores más atacados en Colombia</h2>
+          <p class="text-lg text-gray-600 mb-8">El sector financiero sigue siendo el objetivo primario, pero la diversificación de ataques hacia salud y manufactura en 2025 representa una tendencia preocupante con implicaciones para la seguridad de datos de millones de colombianos.</p>
+          <p class="text-gray-600 mb-6">La concentración de ataques al gobierno refleja el incremento de grupos de ciberespionaje patrocinados por estados que buscan acceder a información estratégica y bases de datos de ciudadanos. El sector salud, por su parte, se ha convertido en objetivo por la alta rentabilidad de la venta de historias clínicas en mercados de datos ilegales.</p>
+          <a href="/hacking-etico" class="inline-flex items-center gap-2 text-red-600 font-semibold hover:text-red-700 transition">
+            Evalúe su exposición con hacking ético
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+          </a>
+        </div>
+
+        <!-- Bar chart visual -->
+        <div class="space-y-5">
+          <!-- Sector Financiero -->
+          <div>
+            <div class="flex justify-between mb-2">
+              <span class="font-semibold text-gray-800">Sector Financiero</span>
+              <span class="font-bold text-red-600">34%</span>
+            </div>
+            <div class="h-4 bg-gray-100 rounded-full overflow-hidden">
+              <div class="h-full bg-gradient-to-r from-red-500 to-red-600 rounded-full" style="width: 34%"></div>
+            </div>
+            <p class="text-xs text-gray-500 mt-1">Bancos, fintechs, aseguradoras, fiduciarias</p>
+          </div>
+          <!-- Gobierno -->
+          <div>
+            <div class="flex justify-between mb-2">
+              <span class="font-semibold text-gray-800">Gobierno y Sector Público</span>
+              <span class="font-bold text-orange-600">22%</span>
+            </div>
+            <div class="h-4 bg-gray-100 rounded-full overflow-hidden">
+              <div class="h-full bg-gradient-to-r from-orange-500 to-orange-600 rounded-full" style="width: 22%"></div>
+            </div>
+            <p class="text-xs text-gray-500 mt-1">Entidades estatales, alcaldías, empresas públicas</p>
+          </div>
+          <!-- Salud -->
+          <div>
+            <div class="flex justify-between mb-2">
+              <span class="font-semibold text-gray-800">Sector Salud</span>
+              <span class="font-bold text-yellow-600">18%</span>
+            </div>
+            <div class="h-4 bg-gray-100 rounded-full overflow-hidden">
+              <div class="h-full bg-gradient-to-r from-yellow-500 to-yellow-600 rounded-full" style="width: 18%"></div>
+            </div>
+            <p class="text-xs text-gray-500 mt-1">EPS, IPS, clínicas, laboratorios, farmacias</p>
+          </div>
+          <!-- Manufactura -->
+          <div>
+            <div class="flex justify-between mb-2">
+              <span class="font-semibold text-gray-800">Manufactura e Industria</span>
+              <span class="font-bold text-blue-600">14%</span>
+            </div>
+            <div class="h-4 bg-gray-100 rounded-full overflow-hidden">
+              <div class="h-full bg-gradient-to-r from-blue-500 to-blue-600 rounded-full" style="width: 14%"></div>
+            </div>
+            <p class="text-xs text-gray-500 mt-1">Petróleo, minería, alimentos, textiles, automotriz</p>
+          </div>
+          <!-- Retail -->
+          <div>
+            <div class="flex justify-between mb-2">
+              <span class="font-semibold text-gray-800">Retail y Comercio</span>
+              <span class="font-bold text-green-600">12%</span>
+            </div>
+            <div class="h-4 bg-gray-100 rounded-full overflow-hidden">
+              <div class="h-full bg-gradient-to-r from-green-500 to-green-600 rounded-full" style="width: 12%"></div>
+            </div>
+            <p class="text-xs text-gray-500 mt-1">E-commerce, supermercados, tiendas, franquicias</p>
+          </div>
+          <!-- Otros -->
+          <div>
+            <div class="flex justify-between mb-2">
+              <span class="font-semibold text-gray-800">Otros sectores</span>
+              <span class="font-bold text-gray-500">Resto</span>
+            </div>
+            <div class="h-4 bg-gray-100 rounded-full overflow-hidden">
+              <div class="h-full bg-gray-400 rounded-full" style="width: 100%"></div>
+            </div>
+            <p class="text-xs text-gray-500 mt-1">Educación, logística, telecomunicaciones, ONG</p>
+          </div>
+
+          <p class="text-xs text-gray-400 pt-2 border-t border-gray-100">Fuente: Análisis de incidentes Starsolution + COLCERT 2025. N=3,247 empresas.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Top 5 Amenazas -->
+  <section class="py-20 bg-gray-950 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-14">
+        <span class="text-red-400 text-sm font-bold uppercase tracking-widest">Panorama de Amenazas</span>
+        <h2 class="text-4xl sm:text-5xl font-bold mt-3 mb-4">Top 5 Amenazas en Colombia 2026</h2>
+        <p class="text-xl text-gray-400 max-w-3xl mx-auto">Análisis detallado de los vectores de ataque más prevalentes con contexto específico para el ecosistema empresarial colombiano.</p>
+      </div>
+
+      <div class="space-y-8">
+        <!-- Amenaza 1: Ransomware-as-a-Service -->
+        <div class="bg-white/5 border border-white/10 rounded-2xl p-8">
+          <div class="flex items-start gap-6">
+            <div class="flex-shrink-0">
+              <div class="w-14 h-14 bg-red-500/20 rounded-2xl flex items-center justify-center">
+                <span class="text-2xl font-black text-red-400">#1</span>
+              </div>
+            </div>
+            <div class="flex-1">
+              <div class="flex flex-wrap items-center gap-3 mb-3">
+                <h3 class="text-2xl font-bold">Ransomware-as-a-Service (RaaS)</h3>
+                <span class="bg-red-500/20 text-red-400 text-xs font-bold px-3 py-1 rounded-full">CRÍTICO</span>
+                <span class="bg-white/10 text-gray-300 text-xs px-3 py-1 rounded-full">LockBit 3.0 &bull; BlackCat/ALPHV &bull; Cl0p</span>
+              </div>
+              <p class="text-gray-300 mb-4 leading-relaxed">El modelo Ransomware-as-a-Service democratizó el cibercrimen: grupos como LockBit, BlackCat y Cl0p operan como franquicias que venden su malware a "afiliados" locales en Colombia. Esto significa que atacantes sin conocimientos técnicos avanzados pueden ejecutar ataques devastadores pagando una comisión del 20-30% del rescate al grupo desarrollador.</p>
+              <p class="text-gray-400 mb-4 leading-relaxed">En Colombia, LockBit afectó a múltiples entidades del sector financiero y gobierno durante 2024-2025, cifrando sistemas críticos y publicando datos sensibles cuando las víctimas no pagaron. El tiempo promedio de cifrado de toda la infraestructura es de apenas 45 minutos desde la infiltración inicial.</p>
+              <p class="text-gray-400 leading-relaxed">La doble extorsión —cifrar Y exfiltrar datos para amenazar con publicarlos— es ahora estándar en el 68% de los casos colombianos. Las empresas enfrentan el dilema de pagar sin garantía de recuperación o asumir multas de la SIC por exposición de datos personales bajo la Ley 1581.</p>
+              <div class="mt-4 flex flex-wrap gap-3">
+                <a href="/bitdefender" class="text-sm text-blue-400 hover:text-blue-300 transition flex items-center gap-1">
+                  <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" /></svg>
+                  Protección anti-ransomware con Bitdefender
+                </a>
+                <a href="/kaspersky" class="text-sm text-blue-400 hover:text-blue-300 transition flex items-center gap-1">
+                  <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" /></svg>
+                  Kaspersky Anti-Ransomware Technology
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Amenaza 2: Business Email Compromise -->
+        <div class="bg-white/5 border border-white/10 rounded-2xl p-8">
+          <div class="flex items-start gap-6">
+            <div class="flex-shrink-0">
+              <div class="w-14 h-14 bg-orange-500/20 rounded-2xl flex items-center justify-center">
+                <span class="text-2xl font-black text-orange-400">#2</span>
+              </div>
+            </div>
+            <div class="flex-1">
+              <div class="flex flex-wrap items-center gap-3 mb-3">
+                <h3 class="text-2xl font-bold">Business Email Compromise (BEC)</h3>
+                <span class="bg-orange-500/20 text-orange-400 text-xs font-bold px-3 py-1 rounded-full">ALTO</span>
+                <span class="bg-white/10 text-gray-300 text-xs px-3 py-1 rounded-full">Fraude CEO &bull; Suplantación proveedores</span>
+              </div>
+              <p class="text-gray-300 mb-4 leading-relaxed">El Business Email Compromise es el ataque más rentable por unidad de esfuerzo. Los atacantes estudian la estructura organizacional de la empresa por semanas usando LinkedIn, redes sociales y correos públicos, para luego suplantar al CEO o CFO y solicitar transferencias urgentes a cuentas controladas.</p>
+              <p class="text-gray-400 mb-4 leading-relaxed">En Colombia, la modalidad de suplantación de proveedores es especialmente efectiva: los atacantes comprometen el correo de un proveedor real y en el momento de una transacción legítima, modifican los datos bancarios para desviar el pago. Muchas empresas solo descubren el fraude semanas después, cuando el proveedor reclama el pago pendiente.</p>
+              <p class="text-gray-400 leading-relaxed">El FBI estima que los ataques BEC generaron pérdidas globales de más de $2.9 mil millones en 2023. En Colombia, el promedio por incidente exitoso supera los $85,000 USD, con casos documentados de más de $500,000 USD en el sector constructor y de servicios.</p>
+              <div class="mt-4">
+                <a href="/proofpoint" class="text-sm text-blue-400 hover:text-blue-300 transition flex items-center gap-1 w-fit">
+                  <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" /></svg>
+                  Protección BEC con Proofpoint
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Amenaza 3: Supply Chain -->
+        <div class="bg-white/5 border border-white/10 rounded-2xl p-8">
+          <div class="flex items-start gap-6">
+            <div class="flex-shrink-0">
+              <div class="w-14 h-14 bg-yellow-500/20 rounded-2xl flex items-center justify-center">
+                <span class="text-2xl font-black text-yellow-400">#3</span>
+              </div>
+            </div>
+            <div class="flex-1">
+              <div class="flex flex-wrap items-center gap-3 mb-3">
+                <h3 class="text-2xl font-bold">Ataques a Cadena de Suministro</h3>
+                <span class="bg-yellow-500/20 text-yellow-400 text-xs font-bold px-3 py-1 rounded-full">ALTO</span>
+                <span class="bg-white/10 text-gray-300 text-xs px-3 py-1 rounded-full">Software supply chain &bull; Terceros comprometidos</span>
+              </div>
+              <p class="text-gray-300 mb-4 leading-relaxed">Los ataques a la cadena de suministro explotan la confianza implícita que las empresas depositan en sus proveedores de software y servicios. Al comprometer un proveedor confiable, los atacantes obtienen acceso a cientos de organizaciones simultáneamente. El ataque a SolarWinds demostró en 2020 que incluso soluciones de seguridad pueden ser vectores de ataque.</p>
+              <p class="text-gray-400 mb-4 leading-relaxed">En Colombia, el mayor riesgo proviene de software local no auditado, plugins de WordPress o plataformas de comercio electrónico desarrolladas por terceros sin prácticas seguras de desarrollo. Muchas empresas colombianas confían en proveedores tecnológicos locales que no implementan revisión de código, controles de integridad o procesos de divulgación de vulnerabilidades.</p>
+              <p class="text-gray-400 leading-relaxed">Los sectores más afectados son aquellos con ecosistemas complejos de proveedores: manufactura (con sistemas SCADA y OT), sector financiero (con integraciones a pasarelas de pago) y sector salud (con sistemas de información hospitalaria de terceros).</p>
+              <div class="mt-4">
+                <a href="/netwrix" class="text-sm text-blue-400 hover:text-blue-300 transition flex items-center gap-1 w-fit">
+                  <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" /></svg>
+                  Auditoría y control de accesos con Netwrix
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Amenaza 4: Insider Threats -->
+        <div class="bg-white/5 border border-white/10 rounded-2xl p-8">
+          <div class="flex items-start gap-6">
+            <div class="flex-shrink-0">
+              <div class="w-14 h-14 bg-blue-500/20 rounded-2xl flex items-center justify-center">
+                <span class="text-2xl font-black text-blue-400">#4</span>
+              </div>
+            </div>
+            <div class="flex-1">
+              <div class="flex flex-wrap items-center gap-3 mb-3">
+                <h3 class="text-2xl font-bold">Exfiltración de Datos por Insiders</h3>
+                <span class="bg-blue-500/20 text-blue-400 text-xs font-bold px-3 py-1 rounded-full">MODERADO-ALTO</span>
+                <span class="bg-white/10 text-gray-300 text-xs px-3 py-1 rounded-full">Empleados &bull; Contratistas &bull; Ex-colaboradores</span>
+              </div>
+              <p class="text-gray-300 mb-4 leading-relaxed">Las amenazas internas —tanto maliciosas como accidentales— representan el 19% de todos los incidentes en Colombia. A diferencia de los atacantes externos, los insiders ya tienen acceso legítimo a los sistemas, lo que los hace más difíciles de detectar y contener. El tiempo promedio para detectar una amenaza interna es de 77 días.</p>
+              <p class="text-gray-400 mb-4 leading-relaxed">En el contexto colombiano, la alta rotación laboral en sectores tecnológicos y financieros, combinada con controles deficientes de desaprovisionamiento de accesos, crea ventanas de oportunidad. Ex-empleados que mantienen credenciales activas semanas o meses después de su salida representan el vector más común de amenaza interna.</p>
+              <p class="text-gray-400 leading-relaxed">El 34% de los casos de insider en Colombia involucran a personal de TI con acceso privilegiado que extrae bases de datos de clientes para venderlas a competidores o a redes de fraude. La implementación de soluciones DLP y monitoreo de usuarios privilegiados reduce el riesgo en un 71%.</p>
+              <div class="mt-4 flex flex-wrap gap-3">
+                <a href="/sealpath" class="text-sm text-blue-400 hover:text-blue-300 transition flex items-center gap-1">
+                  <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" /></svg>
+                  Protección de documentos con SealPath
+                </a>
+                <a href="/netwrix" class="text-sm text-blue-400 hover:text-blue-300 transition flex items-center gap-1">
+                  <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" /></svg>
+                  Monitoreo de usuarios privilegiados con Netwrix
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Amenaza 5: Cloud Misconfiguration -->
+        <div class="bg-white/5 border border-white/10 rounded-2xl p-8">
+          <div class="flex items-start gap-6">
+            <div class="flex-shrink-0">
+              <div class="w-14 h-14 bg-purple-500/20 rounded-2xl flex items-center justify-center">
+                <span class="text-2xl font-black text-purple-400">#5</span>
+              </div>
+            </div>
+            <div class="flex-1">
+              <div class="flex flex-wrap items-center gap-3 mb-3">
+                <h3 class="text-2xl font-bold">Ataques a Infraestructura Cloud Mal Configurada</h3>
+                <span class="bg-purple-500/20 text-purple-400 text-xs font-bold px-3 py-1 rounded-full">CRECIENTE</span>
+                <span class="bg-white/10 text-gray-300 text-xs px-3 py-1 rounded-full">AWS &bull; Azure &bull; GCP &bull; S3 expuestos</span>
+              </div>
+              <p class="text-gray-300 mb-4 leading-relaxed">La migración acelerada a la nube durante la pandemia dejó una herencia de configuraciones deficientes que siguen siendo explotadas en 2026. Buckets S3 públicos, grupos de seguridad demasiado permisivos, secretos hardcodeados en repositorios de código y claves de API expuestas son hallazgos comunes en las evaluaciones de superficie de ataque que realizamos.</p>
+              <p class="text-gray-400 mb-4 leading-relaxed">En Colombia, el 58% de las empresas que migraron a la nube entre 2020-2022 nunca realizó una auditoría de configuración posterior. Los atacantes utilizan herramientas automatizadas que escanean continuamente Internet en busca de recursos cloud mal configurados: un bucket S3 público con datos de clientes puede ser descubierto y exfiltrado en menos de 24 horas de su exposición.</p>
+              <p class="text-gray-400 leading-relaxed">El concepto de "Shared Responsibility Model" aún no está completamente interiorizado en el ecosistema empresarial colombiano: AWS, Azure y Google Cloud aseguran la infraestructura, pero la configuración segura de los servicios que se despliegan sobre ella es responsabilidad del cliente.</p>
+              <div class="mt-4 flex flex-wrap gap-3">
+                <a href="/enthec" class="text-sm text-blue-400 hover:text-blue-300 transition flex items-center gap-1">
+                  <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" /></svg>
+                  Monitoreo de superficie de ataque cloud con Enthec
+                </a>
+                <a href="/stellar-cyber" class="text-sm text-blue-400 hover:text-blue-300 transition flex items-center gap-1">
+                  <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" /></svg>
+                  Detección de amenazas cloud con Stellar Cyber
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Regulaciones y Cumplimiento -->
+  <section class="py-20 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-14">
+        <span class="text-blue-600 text-sm font-bold uppercase tracking-widest">Marco Normativo</span>
+        <h2 class="text-4xl font-bold mt-3 mb-4 text-gray-900">Regulaciones y Cumplimiento en Colombia</h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">El incumplimiento normativo ya no es solo un riesgo de reputación — las multas son reales y crecientes.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+        <!-- Ley 1581 -->
+        <div class="bg-white rounded-2xl p-8 border border-gray-200 shadow-sm">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="bg-blue-100 rounded-xl p-3">
+              <svg class="w-6 h-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-gray-900">Ley 1581 de 2012</h3>
+              <span class="text-sm text-blue-600 font-medium">Protección de Datos Personales</span>
+            </div>
+          </div>
+          <p class="text-gray-600 mb-4">La Ley Estatutaria de Protección de Datos establece los principios y obligaciones para el tratamiento de datos personales en Colombia. La Superintendencia de Industria y Comercio (SIC) puede imponer multas de hasta 2,000 SMLMV (~$600M COP) por incumplimiento.</p>
+          <ul class="space-y-2 text-sm text-gray-600">
+            <li class="flex items-start gap-2"><span class="text-blue-500 mt-0.5">&#10003;</span> Registro de Bases de Datos ante la SIC obligatorio</li>
+            <li class="flex items-start gap-2"><span class="text-blue-500 mt-0.5">&#10003;</span> Política de tratamiento de datos personales publicada</li>
+            <li class="flex items-start gap-2"><span class="text-blue-500 mt-0.5">&#10003;</span> Medidas de seguridad técnicas y administrativas</li>
+            <li class="flex items-start gap-2"><span class="text-blue-500 mt-0.5">&#10003;</span> Notificación de brechas a la SIC y titulares</li>
+          </ul>
+        </div>
+
+        <!-- Circular 007 SFC -->
+        <div class="bg-white rounded-2xl p-8 border border-gray-200 shadow-sm">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="bg-green-100 rounded-xl p-3">
+              <svg class="w-6 h-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-gray-900">Circular 007 SFC</h3>
+              <span class="text-sm text-green-600 font-medium">Ciberseguridad Sector Financiero</span>
+            </div>
+          </div>
+          <p class="text-gray-600 mb-4">La Superintendencia Financiera de Colombia exige a todas las entidades vigiladas implementar un marco de gestión de riesgos de ciberseguridad. La Circular Externa 007 de 2018 establece requerimientos específicos de controles, pruebas de penetración anuales y gestión de incidentes.</p>
+          <ul class="space-y-2 text-sm text-gray-600">
+            <li class="flex items-start gap-2"><span class="text-green-500 mt-0.5">&#10003;</span> Sistema de Gestión de Seguridad de la Información (SGSI)</li>
+            <li class="flex items-start gap-2"><span class="text-green-500 mt-0.5">&#10003;</span> Pruebas de penetración anuales obligatorias</li>
+            <li class="flex items-start gap-2"><span class="text-green-500 mt-0.5">&#10003;</span> Plan de continuidad de negocio ante ciberincidentes</li>
+            <li class="flex items-start gap-2"><span class="text-green-500 mt-0.5">&#10003;</span> Reporte de incidentes a la SFC en menos de 72 horas</li>
+          </ul>
+        </div>
+
+        <!-- ISO 27001:2022 -->
+        <div class="bg-white rounded-2xl p-8 border border-gray-200 shadow-sm">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="bg-purple-100 rounded-xl p-3">
+              <svg class="w-6 h-6 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" /></svg>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-gray-900">ISO/IEC 27001:2022</h3>
+              <span class="text-sm text-purple-600 font-medium">Estándar Internacional SGSI</span>
+            </div>
+          </div>
+          <p class="text-gray-600 mb-4">La versión 2022 de ISO 27001 incorpora 11 nuevos controles relacionados con seguridad cloud, gestión de amenazas y continuidad operacional. En Colombia, la certificación ISO 27001 es exigida en licitaciones de entidades como MinTIC, DIAN y el Ministerio de Salud para contratos de manejo de datos sensibles.</p>
+          <p class="text-gray-600 text-sm">Starsolution ha certificado más de 50 organizaciones en Colombia bajo ISO 27001:2022 con tasa de aprobación del 100%.</p>
+          <a href="/iso27001" class="inline-flex items-center gap-2 mt-4 text-purple-600 font-semibold text-sm hover:text-purple-700 transition">
+            Ver consultoría ISO 27001
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+          </a>
+        </div>
+
+        <!-- CONPES 3701 y 3854 -->
+        <div class="bg-white rounded-2xl p-8 border border-gray-200 shadow-sm">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="bg-red-100 rounded-xl p-3">
+              <svg class="w-6 h-6 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9" /></svg>
+            </div>
+            <div>
+              <h3 class="text-xl font-bold text-gray-900">CONPES 3701 y 3854</h3>
+              <span class="text-sm text-red-600 font-medium">Política Nacional de Ciberseguridad</span>
+            </div>
+          </div>
+          <p class="text-gray-600 mb-4">Los documentos CONPES establecen los lineamientos de política para la ciberseguridad y ciberdefensa nacional. El CONPES 3854 modernizó el marco institucional creando el Grupo de Respuesta a Emergencias Cibernéticas de Colombia (COLCERT) como entidad coordinadora de respuesta a incidentes.</p>
+          <ul class="space-y-2 text-sm text-gray-600">
+            <li class="flex items-start gap-2"><span class="text-red-500 mt-0.5">&#10003;</span> Infraestructuras críticas identificadas y reguladas</li>
+            <li class="flex items-start gap-2"><span class="text-red-500 mt-0.5">&#10003;</span> Coordinación sectorial ante incidentes nacionales</li>
+            <li class="flex items-start gap-2"><span class="text-red-500 mt-0.5">&#10003;</span> Colaboración público-privada en ciberdefensa</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="bg-blue-50 border border-blue-200 rounded-2xl p-6 text-center">
+        <p class="text-blue-800 font-medium">¿No sabe si su empresa cumple con la normativa colombiana? Solicite una evaluación de cumplimiento gratuita.</p>
+        <a href="/contacto?utm_source=informe&utm_medium=cta-regulaciones" class="inline-flex items-center gap-2 mt-4 bg-blue-600 text-white font-semibold px-6 py-3 rounded-xl hover:bg-blue-700 transition">
+          Evaluación de Cumplimiento Gratuita
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Inversión en Ciberseguridad -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-14">
+        <span class="text-green-600 text-sm font-bold uppercase tracking-widest">Benchmarking</span>
+        <h2 class="text-4xl font-bold mt-3 mb-4 text-gray-900">Inversión en Ciberseguridad: Colombia vs. el Mundo</h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">Entender cuánto invierten sus pares es el primer paso para justificar el presupuesto de seguridad ante la junta directiva.</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+        <!-- Colombia -->
+        <div class="bg-gradient-to-br from-yellow-50 to-orange-50 rounded-2xl p-8 border border-orange-200">
+          <div class="text-center mb-6">
+            <div class="text-5xl mb-2">🇨🇴</div>
+            <h3 class="text-2xl font-bold text-gray-900">Colombia</h3>
+            <p class="text-sm text-gray-500">Mercado emergente</p>
+          </div>
+          <div class="space-y-4">
+            <div class="bg-white/70 rounded-xl p-4">
+              <div class="text-2xl font-black text-orange-600">2.1%</div>
+              <div class="text-sm text-gray-600">del presupuesto TI en seguridad</div>
+            </div>
+            <div class="bg-white/70 rounded-xl p-4">
+              <div class="text-2xl font-black text-orange-600">$48M USD</div>
+              <div class="text-sm text-gray-600">mercado total ciberseguridad 2025</div>
+            </div>
+            <div class="bg-white/70 rounded-xl p-4">
+              <div class="text-2xl font-black text-orange-600">+23%</div>
+              <div class="text-sm text-gray-600">crecimiento anual del mercado</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Latinoamérica -->
+        <div class="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl p-8 border border-blue-200">
+          <div class="text-center mb-6">
+            <div class="text-5xl mb-2">🌎</div>
+            <h3 class="text-2xl font-bold text-gray-900">Latinoamérica</h3>
+            <p class="text-sm text-gray-500">Promedio regional</p>
+          </div>
+          <div class="space-y-4">
+            <div class="bg-white/70 rounded-xl p-4">
+              <div class="text-2xl font-black text-blue-600">3.4%</div>
+              <div class="text-sm text-gray-600">del presupuesto TI en seguridad</div>
+            </div>
+            <div class="bg-white/70 rounded-xl p-4">
+              <div class="text-2xl font-black text-blue-600">$1.2B USD</div>
+              <div class="text-sm text-gray-600">mercado total regional 2025</div>
+            </div>
+            <div class="bg-white/70 rounded-xl p-4">
+              <div class="text-2xl font-black text-blue-600">+18%</div>
+              <div class="text-sm text-gray-600">crecimiento anual del mercado</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Global -->
+        <div class="bg-gradient-to-br from-purple-50 to-indigo-50 rounded-2xl p-8 border border-purple-200">
+          <div class="text-center mb-6">
+            <div class="text-5xl mb-2">🌐</div>
+            <h3 class="text-2xl font-bold text-gray-900">Global</h3>
+            <p class="text-sm text-gray-500">Economías desarrolladas</p>
+          </div>
+          <div class="space-y-4">
+            <div class="bg-white/70 rounded-xl p-4">
+              <div class="text-2xl font-black text-purple-600">8.9%</div>
+              <div class="text-sm text-gray-600">del presupuesto TI en seguridad</div>
+            </div>
+            <div class="bg-white/70 rounded-xl p-4">
+              <div class="text-2xl font-black text-purple-600">$266B USD</div>
+              <div class="text-sm text-gray-600">mercado global 2025 (Gartner)</div>
+            </div>
+            <div class="bg-white/70 rounded-xl p-4">
+              <div class="text-2xl font-black text-purple-600">+14%</div>
+              <div class="text-sm text-gray-600">crecimiento anual del mercado</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-gray-900 rounded-2xl p-8 text-white">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+          <div>
+            <h3 class="text-2xl font-bold mb-4">La brecha de inversión tiene un costo</h3>
+            <p class="text-gray-300 mb-4">Colombia invierte 4.2 veces menos que el promedio de economías desarrolladas como porcentaje del presupuesto TI. Esta diferencia se refleja directamente en el tiempo de detección de incidentes (22 días en Colombia vs. 9 días en EE.UU.) y en el costo final de los ataques.</p>
+            <p class="text-gray-400 text-sm">Por cada USD que no se invierte en prevención, las empresas colombianas gastan en promedio USD 7 en recuperación. El retorno de inversión de un programa de ciberseguridad bien implementado supera el 400% en los primeros 3 años.</p>
+          </div>
+          <div class="grid grid-cols-2 gap-4">
+            <div class="bg-white/10 rounded-xl p-5 text-center">
+              <div class="text-3xl font-black text-red-400">22 días</div>
+              <div class="text-sm text-gray-400 mt-1">Detección en Colombia</div>
+            </div>
+            <div class="bg-white/10 rounded-xl p-5 text-center">
+              <div class="text-3xl font-black text-green-400">9 días</div>
+              <div class="text-sm text-gray-400 mt-1">Detección global (top quartile)</div>
+            </div>
+            <div class="bg-white/10 rounded-xl p-5 text-center">
+              <div class="text-3xl font-black text-orange-400">1:7</div>
+              <div class="text-sm text-gray-400 mt-1">ROI inversión vs. recuperación</div>
+            </div>
+            <div class="bg-white/10 rounded-xl p-5 text-center">
+              <div class="text-3xl font-black text-blue-400">400%</div>
+              <div class="text-sm text-gray-400 mt-1">ROI programa de seguridad (3 años)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10 Recomendaciones -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-14">
+        <span class="text-red-600 text-sm font-bold uppercase tracking-widest">Plan de Acción</span>
+        <h2 class="text-4xl font-bold mt-3 mb-4 text-gray-900">10 Recomendaciones de Starsolution para 2026</h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">Acciones concretas, priorizadas por impacto y aplicables a empresas colombianas de cualquier tamaño.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Rec 1 -->
+        <div class="bg-white rounded-xl p-6 border border-gray-200 shadow-sm flex gap-4">
+          <div class="flex-shrink-0 w-10 h-10 bg-red-600 text-white rounded-xl flex items-center justify-center font-black text-lg">1</div>
+          <div>
+            <h3 class="font-bold text-gray-900 mb-1">Implemente EDR/XDR en todos los endpoints</h3>
+            <p class="text-sm text-gray-600 mb-2">El antivirus tradicional no detecta el 45% de las amenazas modernas. Los endpoint detection &amp; response con IA identifican comportamientos anómalos antes de que el daño ocurra.</p>
+            <div class="flex gap-3">
+              <a href="/bitdefender" class="text-xs text-red-600 font-semibold hover:underline">Bitdefender GravityZone</a>
+              <a href="/kaspersky" class="text-xs text-red-600 font-semibold hover:underline">Kaspersky EDR</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Rec 2 -->
+        <div class="bg-white rounded-xl p-6 border border-gray-200 shadow-sm flex gap-4">
+          <div class="flex-shrink-0 w-10 h-10 bg-red-600 text-white rounded-xl flex items-center justify-center font-black text-lg">2</div>
+          <div>
+            <h3 class="font-bold text-gray-900 mb-1">Proteja el correo electrónico contra phishing y BEC</h3>
+            <p class="text-sm text-gray-600 mb-2">El 47% de los ataques comienzan por email. Las soluciones de seguridad de correo con análisis de sandbox, DMARC y detección de BEC son su primera línea de defensa.</p>
+            <a href="/proofpoint" class="text-xs text-red-600 font-semibold hover:underline">Proofpoint Email Security</a>
+          </div>
+        </div>
+
+        <!-- Rec 3 -->
+        <div class="bg-white rounded-xl p-6 border border-gray-200 shadow-sm flex gap-4">
+          <div class="flex-shrink-0 w-10 h-10 bg-orange-500 text-white rounded-xl flex items-center justify-center font-black text-lg">3</div>
+          <div>
+            <h3 class="font-bold text-gray-900 mb-1">Conozca su superficie de ataque externa</h3>
+            <p class="text-sm text-gray-600 mb-2">No puede proteger lo que no conoce. El monitoreo continuo de activos expuestos, credenciales filtradas y vulnerabilidades externas es la base de cualquier programa de seguridad.</p>
+            <a href="/enthec" class="text-xs text-red-600 font-semibold hover:underline">Enthec Attack Surface Management</a>
+          </div>
+        </div>
+
+        <!-- Rec 4 -->
+        <div class="bg-white rounded-xl p-6 border border-gray-200 shadow-sm flex gap-4">
+          <div class="flex-shrink-0 w-10 h-10 bg-orange-500 text-white rounded-xl flex items-center justify-center font-black text-lg">4</div>
+          <div>
+            <h3 class="font-bold text-gray-900 mb-1">Realice pentesting al menos una vez al año</h3>
+            <p class="text-sm text-gray-600 mb-2">Un atacante ético que identifique sus vulnerabilidades antes que un criminal. Las pruebas de penetración revelan vectores de ataque reales que los escaneos automatizados no detectan.</p>
+            <a href="/hacking-etico" class="text-xs text-red-600 font-semibold hover:underline">Hacking Ético Starsolution</a>
+          </div>
+        </div>
+
+        <!-- Rec 5 -->
+        <div class="bg-white rounded-xl p-6 border border-gray-200 shadow-sm flex gap-4">
+          <div class="flex-shrink-0 w-10 h-10 bg-yellow-500 text-white rounded-xl flex items-center justify-center font-black text-lg">5</div>
+          <div>
+            <h3 class="font-bold text-gray-900 mb-1">Implemente gestión de vulnerabilidades continua</h3>
+            <p class="text-sm text-gray-600 mb-2">Los atacantes explotan vulnerabilidades conocidas en promedio 15 días después de su publicación. Priorice y remedie CVEs basándose en riesgo real, no solo en severidad CVSS.</p>
+            <a href="/enthec" class="text-xs text-red-600 font-semibold hover:underline">Gestión de vulnerabilidades</a>
+          </div>
+        </div>
+
+        <!-- Rec 6 -->
+        <div class="bg-white rounded-xl p-6 border border-gray-200 shadow-sm flex gap-4">
+          <div class="flex-shrink-0 w-10 h-10 bg-yellow-500 text-white rounded-xl flex items-center justify-center font-black text-lg">6</div>
+          <div>
+            <h3 class="font-bold text-gray-900 mb-1">Proteja documentos sensibles con cifrado persistente</h3>
+            <p class="text-sm text-gray-600 mb-2">La protección de datos debe seguir al documento, no al perímetro. Las soluciones de Information Rights Management aseguran que solo usuarios autorizados puedan abrir, editar o imprimir archivos críticos.</p>
+            <a href="/sealpath" class="text-xs text-red-600 font-semibold hover:underline">SealPath Document Protection</a>
+          </div>
+        </div>
+
+        <!-- Rec 7 -->
+        <div class="bg-white rounded-xl p-6 border border-gray-200 shadow-sm flex gap-4">
+          <div class="flex-shrink-0 w-10 h-10 bg-blue-600 text-white rounded-xl flex items-center justify-center font-black text-lg">7</div>
+          <div>
+            <h3 class="font-bold text-gray-900 mb-1">Audite y monitoree accesos privilegiados</h3>
+            <p class="text-sm text-gray-600 mb-2">El 34% de los incidentes internos involucra personal con acceso privilegiado. El monitoreo continuo de administradores, DBA y usuarios con acceso especial es crítico para detectar comportamientos anómalos.</p>
+            <a href="/netwrix" class="text-xs text-red-600 font-semibold hover:underline">Netwrix Auditor</a>
+          </div>
+        </div>
+
+        <!-- Rec 8 -->
+        <div class="bg-white rounded-xl p-6 border border-gray-200 shadow-sm flex gap-4">
+          <div class="flex-shrink-0 w-10 h-10 bg-blue-600 text-white rounded-xl flex items-center justify-center font-black text-lg">8</div>
+          <div>
+            <h3 class="font-bold text-gray-900 mb-1">Adopte detección y respuesta extendida (XDR)</h3>
+            <p class="text-sm text-gray-600 mb-2">Correlacione eventos de endpoints, red, email y cloud en una sola plataforma. Los ataques modernos cruzan múltiples vectores y requieren visibilidad unificada para ser detectados a tiempo.</p>
+            <a href="/stellar-cyber" class="text-xs text-red-600 font-semibold hover:underline">Stellar Cyber Open XDR</a>
+          </div>
+        </div>
+
+        <!-- Rec 9 -->
+        <div class="bg-white rounded-xl p-6 border border-gray-200 shadow-sm flex gap-4">
+          <div class="flex-shrink-0 w-10 h-10 bg-purple-600 text-white rounded-xl flex items-center justify-center font-black text-lg">9</div>
+          <div>
+            <h3 class="font-bold text-gray-900 mb-1">Certifíquese en ISO 27001:2022</h3>
+            <p class="text-sm text-gray-600 mb-2">La certificación ISO 27001 no es solo un requisito para licitaciones — es la demostración más sólida de madurez en seguridad. Establece procesos repetibles y cultura de seguridad sostenible.</p>
+            <a href="/iso27001" class="text-xs text-red-600 font-semibold hover:underline">Consultoría ISO 27001 Colombia</a>
+          </div>
+        </div>
+
+        <!-- Rec 10 -->
+        <div class="bg-white rounded-xl p-6 border border-gray-200 shadow-sm flex gap-4">
+          <div class="flex-shrink-0 w-10 h-10 bg-purple-600 text-white rounded-xl flex items-center justify-center font-black text-lg">10</div>
+          <div>
+            <h3 class="font-bold text-gray-900 mb-1">Documente y pruebe su plan de respuesta a incidentes</h3>
+            <p class="text-sm text-gray-600 mb-2">El 88% de las empresas colombianas sin plan de respuesta tardan más de 5 días en contener un incidente. Con un plan probado, el tiempo de contención baja a menos de 8 horas. Realice simulacros anuales.</p>
+            <a href="/contacto?utm_source=informe&utm_medium=rec10" class="text-xs text-red-600 font-semibold hover:underline">Solicitar taller de incident response</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Metodología -->
+  <section class="py-16 bg-white border-t border-gray-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Metodología del Informe</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+          <div>
+            <h3 class="font-semibold text-gray-800 mb-3">Fuentes de Datos</h3>
+            <ul class="space-y-2 text-gray-600 text-sm">
+              <li class="flex items-start gap-2">
+                <span class="text-blue-500 mt-1">&#9632;</span>
+                <span><strong>Datos de clientes (anonimizados):</strong> Análisis de incidentes de seguridad reportados por +3,000 empresas clientes de Starsolution entre enero 2024 y diciembre 2025, con datos completamente anonimizados y agregados.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-blue-500 mt-1">&#9632;</span>
+                <span><strong>COLCERT:</strong> Reportes públicos del Grupo de Respuesta a Emergencias Cibernéticas de Colombia del MinTIC.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-blue-500 mt-1">&#9632;</span>
+                <span><strong>Verizon DBIR 2025:</strong> Data Breach Investigations Report con filtros para Latinoamérica y economías emergentes.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-blue-500 mt-1">&#9632;</span>
+                <span><strong>Bases de datos de brechas:</strong> Have I Been Pwned, DeHashed y registros públicos de la SIC sobre notificaciones de brechas.</span>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="font-semibold text-gray-800 mb-3">Alcance y Limitaciones</h3>
+            <ul class="space-y-2 text-gray-600 text-sm">
+              <li class="flex items-start gap-2">
+                <span class="text-gray-400 mt-1">&#9632;</span>
+                <span><strong>Período analizado:</strong> enero 2024 - diciembre 2025</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-gray-400 mt-1">&#9632;</span>
+                <span><strong>Muestra:</strong> 3,247 empresas colombianas de todos los tamaños (10 a 5,000+ empleados)</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-gray-400 mt-1">&#9632;</span>
+                <span><strong>Sectores:</strong> Financiero, gobierno, salud, manufactura, retail, educación y servicios</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-gray-400 mt-1">&#9632;</span>
+                <span><strong>Sesgo de muestra:</strong> Los datos están sesgados hacia empresas con mayor madurez de seguridad al ser clientes de servicios de ciberseguridad. El panorama real del ecosistema colombiano podría ser más crítico.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="bg-gray-50 rounded-xl p-5 text-sm text-gray-500">
+          <p><strong>Aviso legal:</strong> Los datos de este informe son con fines informativos. Los costos y estadísticas provienen de fuentes públicas y análisis anonimizados de incidentes. Starsolution S.A.S. no se responsabiliza por decisiones empresariales basadas exclusivamente en esta información sin un análisis personalizado. Para datos específicos de su empresa, solicite un diagnóstico de ciberseguridad.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Final -->
+  <section class="py-24 bg-gradient-to-br from-gray-950 via-slate-900 to-gray-900 relative overflow-hidden">
+    <div class="absolute top-0 left-1/4 w-[500px] h-[500px] bg-red-600/15 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-blue-600/10 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="inline-flex items-center gap-2 bg-red-500/10 border border-red-500/30 rounded-full px-4 py-2 mb-6">
+        <span class="h-2 w-2 rounded-full bg-red-500 animate-pulse"></span>
+        <span class="text-red-400 text-sm font-semibold">Descarga gratuita disponible</span>
+      </div>
+      <h2 class="text-4xl sm:text-5xl font-bold text-white mb-6">
+        Descargue el informe completo en PDF
+      </h2>
+      <p class="text-xl text-gray-300 mb-10 max-w-3xl mx-auto">
+        47 páginas con análisis completo, gráficos adicionales, casos de estudio anonimizados y hojas de trabajo para evaluar el estado de seguridad de su empresa.
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto mb-12">
+        <a
+          href="/contacto?utm_source=informe&utm_medium=cta-final-pdf"
+          class="flex flex-col items-center gap-3 bg-white/10 border border-white/20 rounded-2xl p-8 hover:bg-white/20 transition group"
+        >
+          <svg class="w-12 h-12 text-red-400 group-hover:scale-110 transition" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" /></svg>
+          <div>
+            <div class="font-bold text-white text-lg">Descargar Informe PDF</div>
+            <div class="text-sm text-gray-400">47 páginas &bull; Acceso inmediato</div>
+          </div>
+        </a>
+
+        <a
+          href="/contacto?utm_source=informe&utm_medium=cta-final-diagnostico"
+          class="flex flex-col items-center gap-3 bg-red-600/20 border border-red-500/30 rounded-2xl p-8 hover:bg-red-600/30 transition group"
+        >
+          <svg class="w-12 h-12 text-red-400 group-hover:scale-110 transition" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>
+          <div>
+            <div class="font-bold text-white text-lg">Diagnóstico Gratuito</div>
+            <div class="text-sm text-gray-400">¿Cómo está su empresa? Sepa en 48h</div>
+          </div>
+        </a>
+      </div>
+
+      <p class="text-gray-400 text-sm">
+        ¿Tiene preguntas? Escríbanos a
+        <a href="mailto:contacto@star-ti.com" class="text-blue-400 hover:text-blue-300 transition">contacto@star-ti.com</a>
+        o llámenos al <a href="tel:+573007010017" class="text-blue-400 hover:text-blue-300 transition">+57 300 701 0017</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <span class="text-gray-500 text-sm font-bold uppercase tracking-widest">Preguntas frecuentes</span>
+        <h2 class="text-4xl font-bold mt-3 mb-4 text-gray-900">Sobre el Informe</h2>
+      </div>
+
+      <div class="space-y-4">
+        <details class="group bg-gray-50 rounded-xl border border-gray-200 overflow-hidden">
+          <summary class="flex items-center justify-between p-6 cursor-pointer list-none font-semibold text-gray-900 hover:bg-gray-100 transition">
+            <span>&iquest;De dónde provienen los datos del informe?</span>
+            <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+          </summary>
+          <div class="px-6 pb-6 text-gray-600 leading-relaxed">
+            Los datos provienen de tres fuentes principales: (1) análisis anonimizado y agregado de incidentes registrados en nuestra base de más de 3,000 clientes empresariales activos en Colombia, sin identificación de empresas individuales; (2) bases de datos públicas de brechas de seguridad, incluyendo reportes de COLCERT, notificaciones a la SIC y registros de la Policía Nacional Cibernética; y (3) datos del Verizon Data Breach Investigations Report (DBIR) 2025, filtrados y contextualizados para el ecosistema latinoamericano. El informe fue revisado por nuestro equipo de especialistas certificados OSCP, CEH y CISSP antes de su publicación.
+          </div>
+        </details>
+
+        <details class="group bg-gray-50 rounded-xl border border-gray-200 overflow-hidden">
+          <summary class="flex items-center justify-between p-6 cursor-pointer list-none font-semibold text-gray-900 hover:bg-gray-100 transition">
+            <span>&iquest;Puedo citar este informe en presentaciones académicas o corporativas?</span>
+            <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+          </summary>
+          <div class="px-6 pb-6 text-gray-600 leading-relaxed">
+            Sí, absolutamente. Este informe es de libre difusión para uso académico, periodístico y corporativo no comercial. Le pedimos únicamente que cite la fuente de forma adecuada: <em>"Starsolution S.A.S. – Informe de Ciberseguridad Empresarial Colombia 2026. Disponible en starsolution.com.co/informe-ciberseguridad-colombia-2026"</em>. Universidades, medios de comunicación, gremios empresariales y consultoras pueden usar libremente las estadísticas con esta atribución. Para redistribución comercial o uso en publicaciones con fines de lucro, contáctenos previamente.
+          </div>
+        </details>
+
+        <details class="group bg-gray-50 rounded-xl border border-gray-200 overflow-hidden">
+          <summary class="flex items-center justify-between p-6 cursor-pointer list-none font-semibold text-gray-900 hover:bg-gray-100 transition">
+            <span>&iquest;Cada cuánto se actualiza el informe?</span>
+            <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+          </summary>
+          <div class="px-6 pb-6 text-gray-600 leading-relaxed">
+            La edición completa del informe se publica anualmente cada enero, cubriendo los datos del año calendario anterior. Adicionalmente, actualizamos las estadísticas más críticas (vectores de ataque más activos, grupos ransomware en operación, costos de brechas) de forma trimestral a través de esta misma página. Los incidentes de alta relevancia para el ecosistema colombiano se incorporan como actualizaciones de emergencia. Para recibir notificaciones de actualizaciones, puede suscribirse a través de nuestro formulario de contacto indicando que desea recibir el boletín del informe.
+          </div>
+        </details>
+
+        <details class="group bg-gray-50 rounded-xl border border-gray-200 overflow-hidden">
+          <summary class="flex items-center justify-between p-6 cursor-pointer list-none font-semibold text-gray-900 hover:bg-gray-100 transition">
+            <span>&iquest;Mi empresa podría estar en riesgo según los datos del informe?</span>
+            <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+          </summary>
+          <div class="px-6 pb-6 text-gray-600 leading-relaxed">
+            Estadísticamente, sí. El 73% de empresas colombianas sufrió al menos un incidente de seguridad significativo en 2025, y los datos muestran que ningún sector está exento. El riesgo es especialmente alto si su empresa opera en sectores financiero, salud, gobierno o manufactura, maneja datos personales bajo la Ley 1581, usa correo Microsoft 365 sin protección avanzada, tiene empleados con acceso remoto a sistemas críticos, o no ha realizado una prueba de penetración en los últimos 12 meses. Ofrecemos un diagnóstico gratuito de exposición que analiza su superficie de ataque externa en menos de 48 horas y entrega un reporte con hallazgos específicos, sin costo ni compromiso.
+          </div>
+        </details>
+
+        <details class="group bg-gray-50 rounded-xl border border-gray-200 overflow-hidden">
+          <summary class="flex items-center justify-between p-6 cursor-pointer list-none font-semibold text-gray-900 hover:bg-gray-100 transition">
+            <span>&iquest;Cómo solicito un diagnóstico personalizado de ciberseguridad?</span>
+            <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+          </summary>
+          <div class="px-6 pb-6 text-gray-600 leading-relaxed">
+            Puede solicitar su diagnóstico gratuito de tres formas: (1) completando el formulario en nuestra <a href="/contacto?utm_source=informe&utm_medium=faq" class="text-red-600 hover:underline">página de contacto</a> indicando que viene del Informe 2026; (2) escribiéndonos directamente a <a href="mailto:contacto@star-ti.com" class="text-red-600 hover:underline">contacto@star-ti.com</a> con el asunto "Diagnóstico Informe 2026"; o (3) llamándonos al <a href="tel:+573007010017" class="text-red-600 hover:underline">+57 300 701 0017</a>. El diagnóstico incluye análisis de superficie de ataque externa (activos expuestos, servicios vulnerables, credenciales filtradas en dark web) y un reporte ejecutivo con prioridades de remediación. No requiere instalación de software ni acceso a su red interna.
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Internal linking section -->
+  <section class="py-12 bg-gray-50 border-t border-gray-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl font-bold text-gray-900 mb-6 text-center">Soluciones para proteger su empresa</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
+        <a href="/bitdefender" class="bg-white rounded-xl p-4 border border-gray-200 hover:border-red-300 hover:shadow-md transition text-center">
+          <div class="text-sm font-semibold text-gray-800">Bitdefender EDR</div>
+          <div class="text-xs text-gray-500 mt-1">Endpoint Protection</div>
+        </a>
+        <a href="/kaspersky" class="bg-white rounded-xl p-4 border border-gray-200 hover:border-red-300 hover:shadow-md transition text-center">
+          <div class="text-sm font-semibold text-gray-800">Kaspersky</div>
+          <div class="text-xs text-gray-500 mt-1">Antivirus Empresarial</div>
+        </a>
+        <a href="/hacking-etico" class="bg-white rounded-xl p-4 border border-gray-200 hover:border-red-300 hover:shadow-md transition text-center">
+          <div class="text-sm font-semibold text-gray-800">Hacking Ético</div>
+          <div class="text-xs text-gray-500 mt-1">Pentesting Colombia</div>
+        </a>
+        <a href="/enthec" class="bg-white rounded-xl p-4 border border-gray-200 hover:border-red-300 hover:shadow-md transition text-center">
+          <div class="text-sm font-semibold text-gray-800">Enthec</div>
+          <div class="text-xs text-gray-500 mt-1">Surface Attack Mgmt</div>
+        </a>
+        <a href="/stellar-cyber" class="bg-white rounded-xl p-4 border border-gray-200 hover:border-red-300 hover:shadow-md transition text-center">
+          <div class="text-sm font-semibold text-gray-800">Stellar Cyber</div>
+          <div class="text-xs text-gray-500 mt-1">Open XDR / SOC</div>
+        </a>
+        <a href="/iso27001" class="bg-white rounded-xl p-4 border border-gray-200 hover:border-red-300 hover:shadow-md transition text-center">
+          <div class="text-sm font-semibold text-gray-800">ISO 27001</div>
+          <div class="text-xs text-gray-500 mt-1">Certificación SGSI</div>
+        </a>
+        <a href="/sealpath" class="bg-white rounded-xl p-4 border border-gray-200 hover:border-red-300 hover:shadow-md transition text-center">
+          <div class="text-sm font-semibold text-gray-800">SealPath</div>
+          <div class="text-xs text-gray-500 mt-1">Protección Documentos</div>
+        </a>
+        <a href="/netwrix" class="bg-white rounded-xl p-4 border border-gray-200 hover:border-red-300 hover:shadow-md transition text-center">
+          <div class="text-sm font-semibold text-gray-800">Netwrix</div>
+          <div class="text-xs text-gray-500 mt-1">Auditoría y Accesos</div>
+        </a>
+        <a href="/proofpoint" class="bg-white rounded-xl p-4 border border-gray-200 hover:border-red-300 hover:shadow-md transition text-center">
+          <div class="text-sm font-semibold text-gray-800">Proofpoint</div>
+          <div class="text-xs text-gray-500 mt-1">Email Security</div>
+        </a>
+        <a href="/contacto" class="bg-red-600 rounded-xl p-4 border border-red-700 hover:bg-red-700 transition text-center">
+          <div class="text-sm font-semibold text-white">Diagnóstico Gratis</div>
+          <div class="text-xs text-red-200 mt-1">¿Qué necesita mi empresa?</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+  <WhatsAppButton />
+</BaseLayout>

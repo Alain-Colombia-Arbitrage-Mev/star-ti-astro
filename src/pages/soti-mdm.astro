@@ -1,0 +1,692 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Navbar from '@components/Navbar.astro';
+import Footer from '@components/Footer.astro';
+import WhatsAppButton from '@components/WhatsAppButton.astro';
+import { seoData } from '@data/seo';
+
+const seo = seoData['soti-mdm'];
+---
+
+<BaseLayout seo={seo}>
+  <Navbar />
+
+  <div class="bg-white min-h-screen w-full font-['Instrument_Sans',sans-serif]">
+
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-to-br from-[#111827] via-[#1e293b] to-[#0f172a] py-24 lg:py-32 overflow-hidden">
+      <!-- Grid Background -->
+      <div class="absolute inset-0 opacity-10">
+        <div
+          class="absolute w-full h-full"
+          style="background-image: linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px); background-size: 50px 50px;"
+        ></div>
+      </div>
+
+      <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+
+        <!-- Badge -->
+        <div class="flex justify-center mb-6">
+          <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 px-4 py-2 rounded-full">
+            <svg class="w-4 h-4 text-[#ed1c24]" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+            </svg>
+            <span class="text-xs font-bold text-white uppercase tracking-wider">
+              LIDER MUNDIAL EN MDM
+            </span>
+          </div>
+        </div>
+
+        <!-- Main Heading -->
+        <div class="text-center mb-12 max-w-5xl mx-auto">
+          <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-tight mb-6">
+            <span class="block text-white">Gestión de movilidad para</span>
+            <span class="block text-[#ed1c24]">el borde de la red.</span>
+          </h1>
+          <p class="text-xl text-gray-300 leading-relaxed max-w-3xl mx-auto">
+            SOTI MobiControl es la plataforma de <strong class="text-white">Gestión de Dispositivos Móviles (MDM)</strong> más
+            completa del mercado. Controle tablets, smartphones, impresoras industriales, kioscos y wearables desde una consola unificada.
+          </p>
+        </div>
+
+        <!-- CTAs -->
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+          <a
+            href="/contacto"
+            class="bg-gradient-to-r from-red-600 to-red-700 text-white font-semibold px-8 py-4 rounded-full hover:from-red-700 hover:to-red-800 transition shadow-lg inline-flex items-center justify-center gap-2"
+          >
+            Solicitar Demo Gratuita
+          </a>
+          <a
+            href="#caracteristicas"
+            class="bg-white/10 backdrop-blur-sm border border-white/20 text-white font-semibold px-8 py-4 rounded-full hover:bg-white/20 transition inline-flex items-center justify-center gap-2"
+          >
+            Ver Características
+          </a>
+        </div>
+
+        <!-- Stats Grid -->
+        <div class="max-w-5xl mx-auto">
+          <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
+            <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6 text-center hover:bg-white/15 transition">
+              <div class="text-4xl font-bold text-[#ed1c24] mb-2">15M+</div>
+              <p class="text-sm text-gray-300">Dispositivos gestionados</p>
+            </div>
+            <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6 text-center hover:bg-white/15 transition">
+              <div class="text-4xl font-bold text-blue-400 mb-2">170+</div>
+              <p class="text-sm text-gray-300">Países activos</p>
+            </div>
+            <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6 text-center hover:bg-white/15 transition">
+              <div class="text-4xl font-bold text-green-400 mb-2">24/7</div>
+              <p class="text-sm text-gray-300">Soporte técnico global</p>
+            </div>
+            <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-xl p-6 text-center hover:bg-white/15 transition">
+              <div class="text-4xl font-bold text-purple-400 mb-2">30+</div>
+              <p class="text-sm text-gray-300">Años de experiencia</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Image -->
+        <div class="hidden lg:flex items-center justify-center mt-12">
+          <img src="/assets/icono-dispositivo-endpoint-security.webp" alt="Gestión de dispositivos móviles empresariales con SOTI MobiControl" class="w-full max-w-sm rounded-2xl shadow-xl" width="384" height="384" loading="lazy" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Por que SOTI? -->
+    <section class="py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <span class="inline-block bg-red-50 text-[#ed1c24] text-xs font-bold px-3 py-1 rounded-full mb-4 uppercase tracking-wider">
+              La Diferencia SOTI
+            </span>
+            <h2 class="text-4xl font-bold text-[#0f172a] mb-6 leading-tight">
+              Más allá del MDM tradicional: Enterprise Mobility Management Total
+            </h2>
+            <p class="text-lg text-[#64748b] mb-6 leading-relaxed">
+              Mientras otros MDM se limitan a políticas básicas, <strong class="text-[#0f172a]">SOTI MobiControl</strong> ofrece
+              control granular sobre hardware específico, APIs propietarias y funcionalidades que ningún competidor puede igualar.
+            </p>
+
+            <div class="space-y-4">
+              <div class="flex items-start gap-3">
+                <div class="w-6 h-6 bg-[#ed1c24] rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="font-bold text-lg text-[#0f172a] mb-1">Control Total de Hardware Industrial</h4>
+                  <p class="text-sm text-[#475569]">
+                    Gestione <strong>impresoras Zebra, escáneres Honeywell, terminales Panasonic</strong> con APIs nativas.
+                    Configure códigos de barras, reemplace baterías remotamente y actualice firmware sin tocar el dispositivo.
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3">
+                <div class="w-6 h-6 bg-[#ed1c24] rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="font-bold text-lg text-[#0f172a] mb-1">Modo Kiosco con HTML5 Personalizado</h4>
+                  <p class="text-sm text-[#475569]">
+                    Cree interfaces de usuario completamente personalizadas. Oculte la barra de notificaciones Android,
+                    deshabilite botones físicos y permita solo sus aplicaciones críticas de negocio.
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3">
+                <div class="w-6 h-6 bg-[#ed1c24] rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="font-bold text-lg text-[#0f172a] mb-1">SOTI XTreme: Rugged Devices</h4>
+                  <p class="text-sm text-[#475569]">
+                    Soporte especializado para dispositivos ultra resistentes (Zebra TC21, Honeywell CT40, Panasonic Toughbook).
+                    Monitoreo de temperatura, caídas, salud de batería y ciclos de carga.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right - Device Visual -->
+          <div class="relative">
+            <div class="bg-gradient-to-br from-[#111827] to-[#1e293b] rounded-2xl p-8 lg:p-12 border-2 border-gray-700">
+              <div class="space-y-6">
+                <div class="flex items-center justify-between text-sm">
+                  <span class="text-gray-400">Dispositivos Online:</span>
+                  <span class="font-bold text-green-400">14,847 / 15,000</span>
+                </div>
+                <div class="flex items-center justify-between text-sm">
+                  <span class="text-gray-400">Batería promedio:</span>
+                  <span class="font-bold text-blue-400">78%</span>
+                </div>
+                <div class="flex items-center justify-between text-sm">
+                  <span class="text-gray-400">Alertas activas:</span>
+                  <span class="font-bold text-orange-400">3 críticas</span>
+                </div>
+                <div class="flex items-center justify-between text-sm">
+                  <span class="text-gray-400">Aplicaciones gestionadas:</span>
+                  <span class="font-bold text-purple-400">247</span>
+                </div>
+                <div class="flex items-center justify-between text-sm">
+                  <span class="text-gray-400">Políticas activas:</span>
+                  <span class="font-bold text-cyan-400">89</span>
+                </div>
+
+                <div class="pt-6 border-t border-gray-700">
+                  <p class="text-xs text-gray-500 uppercase tracking-wider mb-3">Distribución por OS</p>
+                  <div class="space-y-3">
+                    <div>
+                      <div class="flex justify-between text-xs mb-1">
+                        <span class="text-gray-400">Android</span>
+                        <span class="text-white font-bold">67%</span>
+                      </div>
+                      <div class="w-full bg-gray-800 rounded-full h-2">
+                        <div class="bg-green-500 h-2 rounded-full" style="width: 67%;"></div>
+                      </div>
+                    </div>
+                    <div>
+                      <div class="flex justify-between text-xs mb-1">
+                        <span class="text-gray-400">iOS</span>
+                        <span class="text-white font-bold">23%</span>
+                      </div>
+                      <div class="w-full bg-gray-800 rounded-full h-2">
+                        <div class="bg-blue-500 h-2 rounded-full" style="width: 23%;"></div>
+                      </div>
+                    </div>
+                    <div>
+                      <div class="flex justify-between text-xs mb-1">
+                        <span class="text-gray-400">Windows</span>
+                        <span class="text-white font-bold">10%</span>
+                      </div>
+                      <div class="w-full bg-gray-800 rounded-full h-2">
+                        <div class="bg-purple-500 h-2 rounded-full" style="width: 10%;"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Floating badge -->
+            <div class="absolute -top-4 -right-4 bg-[#ed1c24] text-white px-6 py-3 rounded-xl shadow-xl">
+              <p class="text-xs font-bold uppercase">Dashboard en Vivo</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gestion Profunda del Dispositivo -->
+    <section id="caracteristicas" class="py-24 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold text-[#0f172a] mb-4">Gestión Profunda del Dispositivo</h2>
+          <p class="text-lg text-[#64748b] max-w-2xl mx-auto">
+            MobiControl va más allá de las APIs estándar. Ofrecemos control granular sobre hardware específico y funcionalidades avanzadas.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="bg-[#f8fafc] border-2 border-gray-200 rounded-xl p-8 hover:shadow-xl transition-all duration-300 cursor-pointer">
+            <div class="w-12 h-12 bg-white border border-gray-200 rounded-lg flex items-center justify-center mb-6 shadow-sm">
+              <svg class="w-6 h-6 text-[#0f172a]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-[#0f172a] mb-3">Remote Control (Blaze)</h3>
+            <p class="text-[#64748b] text-sm leading-relaxed">
+              Acceda remotamente a dispositivos en campo con la velocidad de streaming más rápida del mercado.
+              Diagnostique problemas visualizando la pantalla, accediendo al sistema de archivos y ejecutando scripts en vivo.
+            </p>
+          </div>
+
+          <div class="bg-[#f8fafc] border-2 border-gray-200 rounded-xl p-8 hover:shadow-xl transition-all duration-300 cursor-pointer">
+            <div class="w-12 h-12 bg-white border border-gray-200 rounded-lg flex items-center justify-center mb-6 shadow-sm">
+              <svg class="w-6 h-6 text-[#0f172a]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-[#0f172a] mb-3">Kiosk Mode & Lockdown</h3>
+            <p class="text-[#64748b] text-sm leading-relaxed">
+              Cree interfaces de usuario personalizadas con HTML5. Restrinja el acceso al sistema operativo,
+              oculte la barra de notificaciones y permita solo aplicaciones de negocio críticas.
+            </p>
+          </div>
+
+          <div class="bg-[#f8fafc] border-2 border-gray-200 rounded-xl p-8 hover:shadow-xl transition-all duration-300 cursor-pointer">
+            <div class="w-12 h-12 bg-white border border-gray-200 rounded-lg flex items-center justify-center mb-6 shadow-sm">
+              <svg class="w-6 h-6 text-[#0f172a]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-[#0f172a] mb-3">Gestión de Contenido</h3>
+            <p class="text-[#64748b] text-sm leading-relaxed">
+              Distribuya documentos, PDFs, videos y archivos de capacitación a 10,000+ dispositivos simultáneamente.
+              Sincronización delta para minimizar ancho de banda.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Control Remoto Android -->
+    <section class="py-24 bg-[#0f172a] text-white">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <!-- Left - Code Example -->
+          <div>
+            <div class="bg-[#1e293b] border border-gray-700 rounded-xl overflow-hidden">
+              <div class="bg-[#111827] px-6 py-3 border-b border-gray-700 flex items-center gap-2">
+                <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+                <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                <span class="ml-4 text-xs text-gray-400 font-mono">MobiControl API</span>
+              </div>
+              <div class="p-6 font-mono text-sm overflow-x-auto">
+                <pre class="text-gray-300">// Reiniciar dispositivo remotamente
+await device.reboot();
+
+// Configurar modo kiosco
+await device.setKioskMode({'{'}
+  app: "com.empresa.app",
+  hideNavBar: true,
+  disableCamera: true
+{'}'});
+
+// Geolocalizacion en tiempo real
+const location = await device.getLocation();
+console.log(location.lat, location.lng);
+
+// Configurar impresora Zebra
+await printer.setResolution(300);
+await printer.printLabel(zpl_code);</pre>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Content -->
+          <div>
+            <span class="inline-block bg-blue-500/20 text-blue-300 text-xs font-bold px-3 py-1 rounded-full mb-4 uppercase tracking-wider">
+              Automatización Completa
+            </span>
+            <h2 class="text-4xl font-bold mb-6 leading-tight">
+              Desarrolle con nuestra API REST completa.
+            </h2>
+            <p class="text-lg text-gray-300 mb-6 leading-relaxed">
+              Integre SOTI MobiControl con sus sistemas ERP, WMS, CRM o ticketing. API RESTful con documentación completa
+              y SDKs oficiales para Java, .NET, Python y Node.js.
+            </p>
+
+            <ul class="space-y-3">
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-green-400 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <div>
+                  <span class="text-white font-semibold">Webhooks en tiempo real</span>
+                  <p class="text-sm text-gray-400">Reciba notificaciones push cuando cambie el estado del dispositivo</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-green-400 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <div>
+                  <span class="text-white font-semibold">OAuth 2.0 + SAML SSO</span>
+                  <p class="text-sm text-gray-400">Autenticación empresarial con Azure AD, Okta, Google Workspace</p>
+                </div>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-green-400 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <div>
+                  <span class="text-white font-semibold">Rate limit generoso: 10,000 req/hora</span>
+                  <p class="text-sm text-gray-400">Escale sin preocupaciones con infraestructura cloud global</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seguridad de Nivel Militar -->
+    <section class="py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl font-bold text-[#0f172a] mb-4">Seguridad de Nivel Militar</h2>
+          <p class="text-lg text-[#64748b] max-w-2xl mx-auto">
+            SOTI MobiControl es la plataforma elegida por gobiernos, fuerzas armadas y organizaciones de infraestructura crítica
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div class="text-center">
+            <div class="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+              <svg class="w-8 h-8 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-bold text-[#0f172a] mb-2">Cifrado AES-256</h3>
+            <p class="text-sm text-[#64748b]">Datos en tránsito y reposo cifrados con estándar militar. Certificación FIPS 140-2 nivel 2.</p>
+          </div>
+
+          <div class="text-center">
+            <div class="w-16 h-16 bg-green-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+              <svg class="w-8 h-8 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-bold text-[#0f172a] mb-2">Zero-Trust Architecture</h3>
+            <p class="text-sm text-[#64748b]">Verificación continua de identidad. MFA obligatorio, certificados X.509, biometría.</p>
+          </div>
+
+          <div class="text-center">
+            <div class="w-16 h-16 bg-purple-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+              <svg class="w-8 h-8 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-bold text-[#0f172a] mb-2">Remote Wipe Instantáneo</h3>
+            <p class="text-sm text-[#64748b]">Borre datos corporativos en &lt;3 segundos si detecta jailbreak, rooting o pérdida del dispositivo.</p>
+          </div>
+
+          <div class="text-center">
+            <div class="w-16 h-16 bg-red-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+              <svg class="w-8 h-8 text-[#ed1c24]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-bold text-[#0f172a] mb-2">Auditoría Completa</h3>
+            <p class="text-sm text-[#64748b]">Logs inmutables de todas las acciones. Compliance SOC2, ISO 27001, HIPAA, GDPR.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Casos de Uso Industriales -->
+    <section class="py-24 bg-gradient-to-br from-gray-50 to-white">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl font-bold text-[#0f172a] mb-4">Casos de Uso Reales</h2>
+          <p class="text-lg text-[#64748b]">De logística a retail, manufactura a salud: SOTI domina verticales exigentes</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="bg-white border-2 border-gray-200 rounded-xl p-8 hover:shadow-xl transition-all duration-300 cursor-pointer">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center">
+                <svg class="w-6 h-6 text-orange-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-[#0f172a]">Logística & Warehousing</h3>
+            </div>
+            <p class="text-sm text-[#64748b] mb-4 leading-relaxed">
+              Gestione 5,000+ escáneres Zebra TC21 en almacenes DHL. Control remoto de <strong>impresoras industriales</strong>,
+              actualización masiva de firmware y geofencing para alertas de salida de zona.
+            </p>
+            <div class="text-xs text-gray-500 space-y-1">
+              <p>&#10003; Integración SAP WMS</p>
+              <p>&#10003; Modo Kiosco solo para app de picking</p>
+              <p>&#10003; Bateria 24h monitorizada</p>
+            </div>
+          </div>
+
+          <div class="bg-white border-2 border-gray-200 rounded-xl p-8 hover:shadow-xl transition-all duration-300 cursor-pointer">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
+                <svg class="w-6 h-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-[#0f172a]">Retail & Hospitality</h3>
+            </div>
+            <p class="text-sm text-[#64748b] mb-4 leading-relaxed">
+              3,200 tablets Samsung en tiendas Falabella. <strong>Modo Kiosco</strong> para solo mostrar catalogo,
+              POS lockdown, content push de campañas diarias y geo-targeting de promociones.
+            </p>
+            <div class="text-xs text-gray-500 space-y-1">
+              <p>&#10003; Content push automático 6am</p>
+              <p>&#10003; Kiosco HTML5 personalizado</p>
+              <p>&#10003; Remote wipe si robo</p>
+            </div>
+          </div>
+
+          <div class="bg-white border-2 border-gray-200 rounded-xl p-8 hover:shadow-xl transition-all duration-300 cursor-pointer">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                <svg class="w-6 h-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                </svg>
+              </div>
+              <h3 class="text-xl font-bold text-[#0f172a]">Manufactura Industrial</h3>
+            </div>
+            <p class="text-sm text-[#64748b] mb-4 leading-relaxed">
+              850 Panasonic Toughbook en planta Toyota. <strong>SOTI XTreme</strong> monitorea temperaturas extremas,
+              vibraciones y caídas. Control remoto Android para diagnóstico sin detener línea.
+            </p>
+            <div class="text-xs text-gray-500 space-y-1">
+              <p>&#10003; Certificado para zona ATEX</p>
+              <p>&#10003; Telemetria en tiempo real</p>
+              <p>&#10003; Mantenimiento predictivo</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-24 bg-white">
+      <div class="max-w-4xl mx-auto px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl font-bold text-[#0f172a] mb-4">Preguntas Frecuentes</h2>
+          <p class="text-lg text-[#64748b]">Todo lo que necesita saber sobre SOTI MobiControl</p>
+        </div>
+
+        <div class="space-y-4">
+          <!-- FAQ 1 -->
+          <details class="bg-gray-50 border-2 border-gray-200 rounded-xl overflow-hidden group">
+            <summary class="px-6 py-5 flex items-center justify-between cursor-pointer hover:bg-gray-100 transition">
+              <span class="font-bold text-[#0f172a] text-lg pr-4">¿Cuál es la diferencia entre SOTI MobiControl y otros MDM?</span>
+              <svg class="w-6 h-6 text-[#ed1c24] flex-shrink-0 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </summary>
+            <div class="px-6 pb-5 text-[#475569] leading-relaxed">
+              <p class="mb-3">
+                <strong>SOTI va más allá del MDM genérico.</strong> Mientras soluciones como Microsoft Intune o VMware Workspace ONE
+                se limitan a políticas estándar de iOS/Android, SOTI ofrece:
+              </p>
+              <ul class="list-disc pl-6 space-y-2 text-sm">
+                <li><strong>APIs propietarias para hardware industrial:</strong> Control nativo de impresoras Zebra, escáneres Honeywell, terminales Panasonic Toughbook</li>
+                <li><strong>SOTI XTreme:</strong> Monitoreo avanzado de dispositivos rugged (temperatura, caídas, golpes, ciclos de batería)</li>
+                <li><strong>Remote Control Blaze:</strong> Streaming 60 FPS para soporte técnico en tiempo real (competidores rondan 15-20 FPS)</li>
+                <li><strong>Kiosk Mode HTML5:</strong> Cree UIs completamente personalizadas sin desarrollo nativo</li>
+                <li><strong>Gestión de impresoras industriales:</strong> Configure ZPL, reemplace rollos, actualice firmware remotamente</li>
+              </ul>
+              <p class="mt-3 text-xs bg-blue-50 border-l-4 border-blue-400 p-3 rounded">
+                <strong>Vertical:</strong> SOTI domina logística, retail, manufactura y salud. Intune es más fuerte en entornos puramente Microsoft 365.
+              </p>
+            </div>
+          </details>
+
+          <!-- FAQ 2 -->
+          <details class="bg-gray-50 border-2 border-gray-200 rounded-xl overflow-hidden group">
+            <summary class="px-6 py-5 flex items-center justify-between cursor-pointer hover:bg-gray-100 transition">
+              <span class="font-bold text-[#0f172a] text-lg pr-4">¿Qué dispositivos soporta SOTI MobiControl?</span>
+              <svg class="w-6 h-6 text-[#ed1c24] flex-shrink-0 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </summary>
+            <div class="px-6 pb-5 text-[#475569] leading-relaxed">
+              <p class="mb-3"><strong>Soporte multi-OS empresarial:</strong></p>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                <div>
+                  <h4 class="font-bold text-[#0f172a] mb-2">Android</h4>
+                  <ul class="list-disc pl-6 space-y-1 text-xs">
+                    <li>Android 5.0+ (incluye Android 14)</li>
+                    <li>Samsung Knox, LG Gate, Sony EMM</li>
+                    <li>Zebra TC21/TC26, Honeywell CT40/CT60</li>
+                    <li>Panasonic Toughbook, Datalogic Memor</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 class="font-bold text-[#0f172a] mb-2">iOS / iPadOS</h4>
+                  <ul class="list-disc pl-6 space-y-1 text-xs">
+                    <li>iOS 11.0+ (incluye iOS 17)</li>
+                    <li>iPad (todas las generaciones)</li>
+                    <li>iPhone corporativos (DEP/ABM)</li>
+                    <li>Modo Supervisado para Kiosco</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 class="font-bold text-[#0f172a] mb-2">Windows</h4>
+                  <ul class="list-disc pl-6 space-y-1 text-xs">
+                    <li>Windows 10/11 Pro/Enterprise</li>
+                    <li>Surface tablets, Panasonic Toughbook</li>
+                    <li>Windows CE (legacy warehousing)</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 class="font-bold text-[#0f172a] mb-2">Hardware Especializado</h4>
+                  <ul class="list-disc pl-6 space-y-1 text-xs">
+                    <li>Impresoras Zebra (ZT411, ZD621)</li>
+                    <li>Wearables (Google Glass Enterprise)</li>
+                    <li>Kioscos interactivos (Samsung SMART)</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </details>
+
+          <!-- FAQ 3 -->
+          <details class="bg-gray-50 border-2 border-gray-200 rounded-xl overflow-hidden group">
+            <summary class="px-6 py-5 flex items-center justify-between cursor-pointer hover:bg-gray-100 transition">
+              <span class="font-bold text-[#0f172a] text-lg pr-4">¿Cuánto cuesta SOTI MobiControl?</span>
+              <svg class="w-6 h-6 text-[#ed1c24] flex-shrink-0 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </summary>
+            <div class="px-6 pb-5 text-[#475569] leading-relaxed">
+              <p class="mb-3"><strong>Modelo de licenciamiento por dispositivo/año:</strong></p>
+              <ul class="list-disc pl-6 space-y-2 text-sm">
+                <li><strong>SOTI MobiControl Essential:</strong> USD $4-6/dispositivo/mes (gestión básica, políticas, app deployment)</li>
+                <li><strong>SOTI MobiControl Advanced:</strong> USD $7-10/dispositivo/mes (+ Remote Control, Geofencing, Content Management)</li>
+                <li><strong>SOTI XTreme (Rugged add-on):</strong> USD $3-5/dispositivo/mes (monitoreo telemetría avanzada)</li>
+                <li><strong>SOTI Assist (Remote Support):</strong> USD $2/dispositivo/mes (soporte técnico con screen sharing)</li>
+              </ul>
+              <p class="mt-3 text-xs bg-green-50 border-l-4 border-green-400 p-3 rounded">
+                <strong>Descuentos por volumen:</strong> 100-500 dispositivos (10% off), 500-1000 (15% off), +1000 (20-30% off + dedicated CSM).
+              </p>
+              <p class="mt-3 text-xs bg-purple-50 border-l-4 border-purple-400 p-3 rounded">
+                <strong>Incluido gratis:</strong> Deployment ilimitado, soporte técnico 24/7, actualizaciones de plataforma, almacenamiento cloud 50 GB.
+              </p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="py-24 bg-gradient-to-br from-[#111827] via-[#1e293b] to-[#0f172a] text-white relative overflow-hidden">
+      <!-- Background Pattern -->
+      <div class="absolute inset-0 opacity-5">
+        <div
+          class="absolute w-full h-full"
+          style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 40px 40px;"
+        ></div>
+      </div>
+
+      <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center relative z-10">
+        <h2 class="text-4xl lg:text-5xl font-bold mb-6">Empiece a gestionar sus dispositivos hoy</h2>
+        <p class="text-xl text-gray-300 mb-10 leading-relaxed">
+          Demo gratuita de 30 días con soporte completo. Sin tarjeta de crédito.
+          Implemente en 48 horas con ayuda de nuestros especialistas en Colombia.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+          <a
+            href="/contacto"
+            class="bg-gradient-to-r from-red-600 to-red-700 text-white font-semibold px-8 py-4 rounded-full hover:from-red-700 hover:to-red-800 transition shadow-lg inline-flex items-center justify-center gap-2"
+          >
+            Agendar Demo con Experto
+          </a>
+          <a
+            href="mailto:contacto@star-ti.com"
+            class="bg-white/10 backdrop-blur-sm border border-white/20 text-white font-semibold px-8 py-4 rounded-full hover:bg-white/20 transition inline-flex items-center justify-center gap-2"
+          >
+            Contactar Ventas
+          </a>
+        </div>
+
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-6 text-sm text-gray-400">
+          <div class="flex items-center gap-2">
+            <svg class="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+            </svg>
+            <span>Demo funcional completa</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <svg class="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+            </svg>
+            <span>Soporte 24/7 incluido</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <svg class="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+            </svg>
+            <span>Implementación en 48h</span>
+          </div>
+        </div>
+
+        <p class="mt-8 text-sm text-gray-400">
+          ¿Preguntas? Llámenos al <a href="tel:+573007010017" class="underline font-bold hover:text-white">+57 300 701 0017</a> o escriba a
+          <a href="mailto:contacto@star-ti.com" class="underline font-bold hover:text-white">contacto@star-ti.com</a>
+        </p>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Soluciones Relacionadas -->
+  <section class="py-12 bg-gray-50 border-t border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-lg font-bold text-gray-900 mb-6">Soluciones Relacionadas</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+        <a href="/teamviewer" class="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-all duration-300 text-center">
+          <p class="font-semibold text-sm text-gray-900">TeamViewer</p>
+          <p class="text-xs text-gray-500 mt-1">Control remoto</p>
+        </a>
+        <a href="/anydesk" class="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-all duration-300 text-center">
+          <p class="font-semibold text-sm text-gray-900">AnyDesk</p>
+          <p class="text-xs text-gray-500 mt-1">Escritorio remoto</p>
+        </a>
+        <a href="/bitdefender" class="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-all duration-300 text-center">
+          <p class="font-semibold text-sm text-gray-900">Bitdefender GravityZone</p>
+          <p class="text-xs text-gray-500 mt-1">Protección endpoint</p>
+        </a>
+        <a href="/cableado-estructurado" class="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-all duration-300 text-center">
+          <p class="font-semibold text-sm text-gray-900">Cableado Estructurado</p>
+          <p class="text-xs text-gray-500 mt-1">Instalación redes</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+  <WhatsAppButton />
+</BaseLayout>

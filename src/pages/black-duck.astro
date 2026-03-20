@@ -1,0 +1,559 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Navbar from '@components/Navbar.astro';
+import Footer from '@components/Footer.astro';
+import WhatsAppButton from '@components/WhatsAppButton.astro';
+import { seoData } from '@data/seo';
+
+const seo = seoData['black-duck'];
+---
+
+<BaseLayout seo={seo}>
+  <Navbar />
+
+  <div class="bg-white min-h-screen font-['Instrument_Sans',sans-serif]">
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-b from-gray-50 to-white py-12 sm:py-16 lg:py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <div class="mb-6">
+              <span class="inline-block bg-red-50 text-red-600 text-xs font-medium px-3 py-1 rounded">
+                SEGURIDAD DE APLICACIONES
+              </span>
+            </div>
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+              Black Duck: Seguridad de Aplicaciones{" "}
+              <span class="text-[#ed1c24]">para el Ciclo de Desarrollo.</span>
+            </h1>
+            <p class="text-lg sm:text-xl text-gray-600 mb-8 max-w-3xl">
+              Detecte vulnerabilidades en su código fuente, dependencias open source y aplicaciones
+              en ejecución. Análisis estático (SAST), dinámico (DAST) y de composición de software
+              (SCA) integrados en su pipeline CI/CD para un desarrollo seguro desde el inicio.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a href="/contacto" class="bg-gradient-to-r from-red-600 to-red-700 text-white font-semibold px-8 py-4 rounded-full hover:from-red-700 hover:to-red-800 transition shadow-lg inline-flex items-center justify-center gap-2">
+                Solicitar Demo
+              </a>
+              <a href="/contacto" class="bg-white border-2 border-gray-200 text-gray-800 font-semibold px-8 py-4 rounded-full hover:bg-gray-50 transition inline-flex items-center justify-center gap-2 focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2">
+                Evaluar Mi Código
+              </a>
+            </div>
+            <div class="mt-8 flex items-center gap-2 text-sm text-gray-500">
+              <svg class="w-4 h-4 text-green-600" fill="none" viewBox="0 0 14 14">
+                <path d="M11.6667 3.5L5.25 9.91667L2.33333 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.16667" />
+              </svg>
+              <span>El 84% del código en aplicaciones modernas proviene de componentes open source</span>
+            </div>
+          </div>
+          <div class="hidden lg:flex items-center justify-center">
+            <img src="/assets/icono-escudo-tecnologico.webp" alt="Seguridad de aplicaciones y código con Black Duck" class="w-full max-w-sm rounded-2xl shadow-xl" width="384" height="384" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why AppSec -->
+    <section class="py-16 sm:py-20 lg:py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+          <div>
+            <span class="text-[#ed1c24] text-xs font-medium uppercase tracking-wide">Application Security</span>
+            <h2 class="text-3xl sm:text-4xl font-bold mt-4 mb-6">
+              ¿Por qué la Seguridad de Aplicaciones es Crítica?
+            </h2>
+            <p class="text-gray-600 mb-6">
+              Las aplicaciones son el punto de entrada más común para los atacantes. El 70% de las
+              brechas de seguridad explotan vulnerabilidades en el software. Cada línea de código
+              propio y cada librería open source que utiliza es un potencial punto de entrada.
+            </p>
+            <p class="text-gray-600 mb-8">
+              Black Duck (antes Synopsys Software Integrity) ofrece la suite de seguridad de
+              aplicaciones más completa del mercado, cubriendo análisis estático, dinámico y de
+              composición de software en una sola plataforma integrada con su pipeline de desarrollo.
+            </p>
+
+            <div class="grid grid-cols-2 gap-6">
+              <div class="border-l-4 border-red-600 pl-4">
+                <div class="text-2xl font-bold text-gray-900 mb-1">84%</div>
+                <div class="text-sm text-gray-600">Del código es open source con vulnerabilidades conocidas</div>
+              </div>
+              <div class="border-l-4 border-red-600 pl-4">
+                <div class="text-2xl font-bold text-gray-900 mb-1">48%</div>
+                <div class="text-sm text-gray-600">De las bases de código tienen vulnerabilidades de alto riesgo</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex items-center">
+            <div class="bg-[#111827] rounded-2xl p-8 w-full">
+              <h3 class="text-xl font-semibold text-white mb-6">Riesgos que Black Duck elimina:</h3>
+              <div class="space-y-4">
+                <div class="flex items-center gap-3">
+                  <div class="bg-red-600 rounded-full p-1.5">
+                    <svg class="w-3 h-3 text-white" fill="none" viewBox="0 0 14 14">
+                      <path d="M11.6667 3.5L5.25 9.91667L2.33333 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.16667" />
+                    </svg>
+                  </div>
+                  <span class="text-gray-300">Vulnerabilidades en código propio (SQL Injection, XSS, etc.)</span>
+                </div>
+                <div class="flex items-center gap-3">
+                  <div class="bg-red-600 rounded-full p-1.5">
+                    <svg class="w-3 h-3 text-white" fill="none" viewBox="0 0 14 14">
+                      <path d="M11.6667 3.5L5.25 9.91667L2.33333 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.16667" />
+                    </svg>
+                  </div>
+                  <span class="text-gray-300">CVEs en librerías y dependencias open source</span>
+                </div>
+                <div class="flex items-center gap-3">
+                  <div class="bg-red-600 rounded-full p-1.5">
+                    <svg class="w-3 h-3 text-white" fill="none" viewBox="0 0 14 14">
+                      <path d="M11.6667 3.5L5.25 9.91667L2.33333 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.16667" />
+                    </svg>
+                  </div>
+                  <span class="text-gray-300">Riesgos de licenciamiento open source</span>
+                </div>
+                <div class="flex items-center gap-3">
+                  <div class="bg-red-600 rounded-full p-1.5">
+                    <svg class="w-3 h-3 text-white" fill="none" viewBox="0 0 14 14">
+                      <path d="M11.6667 3.5L5.25 9.91667L2.33333 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.16667" />
+                    </svg>
+                  </div>
+                  <span class="text-gray-300">Configuraciones inseguras en aplicaciones desplegadas</span>
+                </div>
+                <div class="flex items-center gap-3">
+                  <div class="bg-red-600 rounded-full p-1.5">
+                    <svg class="w-3 h-3 text-white" fill="none" viewBox="0 0 14 14">
+                      <path d="M11.6667 3.5L5.25 9.91667L2.33333 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.16667" />
+                    </svg>
+                  </div>
+                  <span class="text-gray-300">Secretos y credenciales expuestos en repositorios</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Features (6 Cards) -->
+    <section class="bg-gray-50 py-16 sm:py-20 lg:py-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="mb-16">
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-semibold mb-4">
+            Capacidades de{" "}<span class="text-[#ed1c24]">Black Duck</span>
+          </h2>
+          <p class="text-gray-600 max-w-3xl">
+            Suite completa de seguridad de aplicaciones para proteger todo el ciclo de
+            desarrollo de software.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="bg-white border border-gray-200 rounded-2xl p-6">
+            <div class="bg-gray-50 rounded-lg w-10 h-10 flex items-center justify-center mb-4">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 20 20">
+                <rect x="3" y="3" width="14" height="14" rx="2" stroke="#374151" stroke-width="1.66667" fill="none" />
+                <path d="M7 8h6M7 12h4" stroke="#374151" stroke-linecap="round" stroke-width="1.66667" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold mb-2">Análisis Estático (SAST)</h3>
+            <p class="text-sm text-gray-600">
+              Escaneo de código fuente para identificar vulnerabilidades como SQL Injection, XSS,
+              buffer overflow y más. Soporta 20+ lenguajes de programación incluyendo Java,
+              Python, C/C++, JavaScript y Go.
+            </p>
+          </div>
+
+          <div class="bg-white border border-gray-200 rounded-2xl p-6">
+            <div class="bg-gray-50 rounded-lg w-10 h-10 flex items-center justify-center mb-4">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 20 20">
+                <circle cx="10" cy="10" r="7" stroke="#374151" stroke-width="1.66667" fill="none" />
+                <path d="M10 7v3l2 2" stroke="#374151" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.66667" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold mb-2">Análisis Dinámico (DAST)</h3>
+            <p class="text-sm text-gray-600">
+              Pruebas de seguridad en aplicaciones en ejecución. Simula ataques reales contra
+              sus APIs y aplicaciones web para descubrir vulnerabilidades que solo aparecen en
+              tiempo de ejecución.
+            </p>
+          </div>
+
+          <div class="bg-white border border-gray-200 rounded-2xl p-6">
+            <div class="bg-gray-50 rounded-lg w-10 h-10 flex items-center justify-center mb-4">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 20 20">
+                <path d="M3 3h14v4H3zM3 10h14v4H3z" stroke="#374151" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.66667" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold mb-2">Composición de Software (SCA)</h3>
+            <p class="text-sm text-gray-600">
+              Identifique todas las librerías open source en su aplicación, sus vulnerabilidades
+              conocidas (CVEs) y riesgos de licenciamiento. Base de datos de 6M+ componentes.
+            </p>
+          </div>
+
+          <div class="bg-white border border-gray-200 rounded-2xl p-6">
+            <div class="bg-gray-50 rounded-lg w-10 h-10 flex items-center justify-center mb-4">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 20 20">
+                <path d="M10 2L3 6v5c0 4.5 3 8.5 7 9.5 4-1 7-5 7-9.5V6l-7-4z" stroke="#374151" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.66667" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold mb-2">Gestión de Riesgo Open Source</h3>
+            <p class="text-sm text-gray-600">
+              Control completo de riesgo open source: vulnerabilidades, calidad del componente,
+              actividad de la comunidad y riesgos legales de licenciamiento (GPL, LGPL, Apache, MIT).
+            </p>
+          </div>
+
+          <div class="bg-white border border-gray-200 rounded-2xl p-6">
+            <div class="bg-gray-50 rounded-lg w-10 h-10 flex items-center justify-center mb-4">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 20 20">
+                <path d="M9 17H5a2 2 0 01-2-2V5a2 2 0 012-2h10a2 2 0 012 2v4" stroke="#374151" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.66667" />
+                <path d="M13 15l2 2 4-4" stroke="#374151" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.66667" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold mb-2">Cumplimiento de Licencias</h3>
+            <p class="text-sm text-gray-600">
+              Identifique y gestione obligaciones de licenciamiento de componentes open source.
+              Evite riesgos legales y asegure cumplimiento con políticas corporativas de uso de OSS.
+            </p>
+          </div>
+
+          <div class="bg-white border border-gray-200 rounded-2xl p-6">
+            <div class="bg-gray-50 rounded-lg w-10 h-10 flex items-center justify-center mb-4">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 20 20">
+                <path d="M3 10l4 4 10-10" stroke="#374151" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.66667" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold mb-2">Integración CI/CD</h3>
+            <p class="text-sm text-gray-600">
+              Integración nativa con Jenkins, GitHub Actions, GitLab CI, Azure DevOps y otras
+              herramientas. Escaneo automático en cada commit o pull request sin frenar al equipo.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testing Types Comparison -->
+    <section class="py-16 sm:py-20 lg:py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl sm:text-4xl font-bold mb-4">
+            SAST vs DAST vs SCA: Tipos de Análisis
+          </h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            Cada tipo de análisis cubre una capa diferente de seguridad. La protección completa
+            requiere los tres.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="bg-gray-50 border-2 border-gray-200 rounded-2xl p-8">
+            <div class="bg-blue-100 text-blue-600 w-12 h-12 rounded-full flex items-center justify-center mb-4 font-bold text-lg">
+              S
+            </div>
+            <h3 class="text-xl font-bold mb-2">SAST</h3>
+            <p class="text-sm text-gray-500 mb-4">Static Application Security Testing</p>
+            <ul class="space-y-2">
+              <li class="flex items-start gap-2 text-sm">
+                <svg class="w-5 h-5 text-green-600 mt-0.5 shrink-0" fill="none" viewBox="0 0 14 14">
+                  <path d="M11.6667 3.5L5.25 9.91667L2.33333 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.16667" />
+                </svg>
+                <span>Analiza código fuente sin ejecutar</span>
+              </li>
+              <li class="flex items-start gap-2 text-sm">
+                <svg class="w-5 h-5 text-green-600 mt-0.5 shrink-0" fill="none" viewBox="0 0 14 14">
+                  <path d="M11.6667 3.5L5.25 9.91667L2.33333 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.16667" />
+                </svg>
+                <span>Detecta errores en fase temprana</span>
+              </li>
+              <li class="flex items-start gap-2 text-sm">
+                <svg class="w-5 h-5 text-green-600 mt-0.5 shrink-0" fill="none" viewBox="0 0 14 14">
+                  <path d="M11.6667 3.5L5.25 9.91667L2.33333 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.16667" />
+                </svg>
+                <span>Indica línea exacta del problema</span>
+              </li>
+              <li class="flex items-start gap-2 text-sm">
+                <svg class="w-5 h-5 text-green-600 mt-0.5 shrink-0" fill="none" viewBox="0 0 14 14">
+                  <path d="M11.6667 3.5L5.25 9.91667L2.33333 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.16667" />
+                </svg>
+                <span>20+ lenguajes soportados</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="bg-gray-50 border-2 border-red-600 rounded-2xl p-8 relative">
+            <div class="absolute -top-4 left-1/2 -translate-x-1/2">
+              <span class="bg-red-600 text-white text-xs font-bold px-4 py-1 rounded-full">COMPLEMENTARIO</span>
+            </div>
+            <div class="bg-red-100 text-red-600 w-12 h-12 rounded-full flex items-center justify-center mb-4 font-bold text-lg">
+              D
+            </div>
+            <h3 class="text-xl font-bold mb-2">DAST</h3>
+            <p class="text-sm text-gray-500 mb-4">Dynamic Application Security Testing</p>
+            <ul class="space-y-2">
+              <li class="flex items-start gap-2 text-sm">
+                <svg class="w-5 h-5 text-green-600 mt-0.5 shrink-0" fill="none" viewBox="0 0 14 14">
+                  <path d="M11.6667 3.5L5.25 9.91667L2.33333 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.16667" />
+                </svg>
+                <span>Prueba la aplicación en ejecución</span>
+              </li>
+              <li class="flex items-start gap-2 text-sm">
+                <svg class="w-5 h-5 text-green-600 mt-0.5 shrink-0" fill="none" viewBox="0 0 14 14">
+                  <path d="M11.6667 3.5L5.25 9.91667L2.33333 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.16667" />
+                </svg>
+                <span>Simula ataques reales</span>
+              </li>
+              <li class="flex items-start gap-2 text-sm">
+                <svg class="w-5 h-5 text-green-600 mt-0.5 shrink-0" fill="none" viewBox="0 0 14 14">
+                  <path d="M11.6667 3.5L5.25 9.91667L2.33333 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.16667" />
+                </svg>
+                <span>Encuentra errores de configuración</span>
+              </li>
+              <li class="flex items-start gap-2 text-sm">
+                <svg class="w-5 h-5 text-green-600 mt-0.5 shrink-0" fill="none" viewBox="0 0 14 14">
+                  <path d="M11.6667 3.5L5.25 9.91667L2.33333 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.16667" />
+                </svg>
+                <span>No requiere acceso al código</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="bg-gray-50 border-2 border-gray-200 rounded-2xl p-8">
+            <div class="bg-purple-100 text-purple-600 w-12 h-12 rounded-full flex items-center justify-center mb-4 font-bold text-lg">
+              C
+            </div>
+            <h3 class="text-xl font-bold mb-2">SCA</h3>
+            <p class="text-sm text-gray-500 mb-4">Software Composition Analysis</p>
+            <ul class="space-y-2">
+              <li class="flex items-start gap-2 text-sm">
+                <svg class="w-5 h-5 text-green-600 mt-0.5 shrink-0" fill="none" viewBox="0 0 14 14">
+                  <path d="M11.6667 3.5L5.25 9.91667L2.33333 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.16667" />
+                </svg>
+                <span>Inventario de componentes OSS</span>
+              </li>
+              <li class="flex items-start gap-2 text-sm">
+                <svg class="w-5 h-5 text-green-600 mt-0.5 shrink-0" fill="none" viewBox="0 0 14 14">
+                  <path d="M11.6667 3.5L5.25 9.91667L2.33333 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.16667" />
+                </svg>
+                <span>Detecta CVEs en dependencias</span>
+              </li>
+              <li class="flex items-start gap-2 text-sm">
+                <svg class="w-5 h-5 text-green-600 mt-0.5 shrink-0" fill="none" viewBox="0 0 14 14">
+                  <path d="M11.6667 3.5L5.25 9.91667L2.33333 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.16667" />
+                </svg>
+                <span>Riesgo de licenciamiento</span>
+              </li>
+              <li class="flex items-start gap-2 text-sm">
+                <svg class="w-5 h-5 text-green-600 mt-0.5 shrink-0" fill="none" viewBox="0 0 14 14">
+                  <path d="M11.6667 3.5L5.25 9.91667L2.33333 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.16667" />
+                </svg>
+                <span>6M+ componentes en base de datos</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DevSecOps Integration -->
+    <section class="py-16 sm:py-20 lg:py-24 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+          <div>
+            <span class="text-[#ed1c24] text-xs font-medium uppercase tracking-wide">DevSecOps</span>
+            <h2 class="text-3xl sm:text-4xl font-bold mt-4 mb-6">
+              Seguridad Integrada en su Pipeline de Desarrollo
+            </h2>
+            <p class="text-gray-600 mb-6">
+              Black Duck no es una herramienta que frena al equipo de desarrollo. Se integra
+              directamente en su pipeline CI/CD para ejecutar escaneos automáticos en cada
+              commit, pull request o build, sin cambiar la forma en que su equipo trabaja.
+            </p>
+            <p class="text-gray-600 mb-8">
+              Los desarrolladores reciben feedback de seguridad directamente en su IDE o en el
+              pull request, con sugerencias de remediación y prioridad basada en riesgo real.
+              Seguridad shift-left sin fricción.
+            </p>
+          </div>
+
+          <div>
+            <div class="bg-gradient-to-br from-red-50 to-white border border-red-100 rounded-2xl p-8">
+              <h3 class="text-xl font-semibold mb-6">Integraciones DevSecOps:</h3>
+              <div class="space-y-4">
+                <div class="flex items-start gap-3">
+                  <div class="bg-green-100 border border-green-200 rounded-full p-1 mt-0.5">
+                    <svg class="w-3.5 h-3.5 text-green-600" fill="none" viewBox="0 0 14 14">
+                      <path d="M11.6667 3.5L5.25 9.91667L2.33333 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.16667" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 class="font-semibold text-gray-900">CI/CD</h3>
+                    <p class="text-sm text-gray-600">Jenkins, GitHub Actions, GitLab CI, Azure DevOps, CircleCI</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3">
+                  <div class="bg-green-100 border border-green-200 rounded-full p-1 mt-0.5">
+                    <svg class="w-3.5 h-3.5 text-green-600" fill="none" viewBox="0 0 14 14">
+                      <path d="M11.6667 3.5L5.25 9.91667L2.33333 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.16667" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 class="font-semibold text-gray-900">Repositorios</h3>
+                    <p class="text-sm text-gray-600">GitHub, GitLab, Bitbucket, Azure Repos</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3">
+                  <div class="bg-green-100 border border-green-200 rounded-full p-1 mt-0.5">
+                    <svg class="w-3.5 h-3.5 text-green-600" fill="none" viewBox="0 0 14 14">
+                      <path d="M11.6667 3.5L5.25 9.91667L2.33333 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.16667" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 class="font-semibold text-gray-900">IDEs</h3>
+                    <p class="text-sm text-gray-600">Visual Studio Code, IntelliJ, Eclipse, Visual Studio</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3">
+                  <div class="bg-green-100 border border-green-200 rounded-full p-1 mt-0.5">
+                    <svg class="w-3.5 h-3.5 text-green-600" fill="none" viewBox="0 0 14 14">
+                      <path d="M11.6667 3.5L5.25 9.91667L2.33333 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.16667" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 class="font-semibold text-gray-900">Ticketing</h3>
+                    <p class="text-sm text-gray-600">Jira, ServiceNow, Azure Boards</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 sm:py-20 lg:py-24 bg-white">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4 text-center">
+          Preguntas Frecuentes sobre Black Duck
+        </h2>
+        <p class="text-gray-600 text-center mb-12">
+          Lo que necesita saber sobre seguridad de aplicaciones empresarial.
+        </p>
+
+        <div class="space-y-4">
+          <details class="bg-gray-50 border border-gray-200 rounded-xl group">
+            <summary class="font-semibold text-lg p-6 cursor-pointer list-none flex items-center justify-between">
+              Black Duck es lo mismo que Synopsys?
+              <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+            </summary>
+            <div class="px-6 pb-6 text-gray-600">
+              Black Duck es la evolución de Synopsys Software Integrity Group. En 2024, la división
+              de seguridad de aplicaciones de Synopsys se convirtió en Black Duck, una empresa
+              independiente enfocada exclusivamente en application security. Los productos
+              (Coverity, Black Duck SCA, Polaris) mantienen su excelencia técnica.
+            </div>
+          </details>
+
+          <details class="bg-gray-50 border border-gray-200 rounded-xl group">
+            <summary class="font-semibold text-lg p-6 cursor-pointer list-none flex items-center justify-between">
+              ¿El escaneo ralentiza nuestro pipeline de CI/CD?
+              <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+            </summary>
+            <div class="px-6 pb-6 text-gray-600">
+              El impacto es mínimo. Los escaneos SCA toman segundos. Los escaneos SAST
+              se ejecutan de forma incremental (solo código modificado) para minimizar el tiempo.
+              Además, se pueden configurar en paralelo al build para no bloquear el pipeline.
+              En pull requests, el escaneo se ejecuta como un check más sin bloquear el merge.
+            </div>
+          </details>
+
+          <details class="bg-gray-50 border border-gray-200 rounded-xl group">
+            <summary class="font-semibold text-lg p-6 cursor-pointer list-none flex items-center justify-between">
+              ¿Qué lenguajes de programación soporta?
+              <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+            </summary>
+            <div class="px-6 pb-6 text-gray-600">
+              Black Duck soporta más de 20 lenguajes de programación para SAST, incluyendo
+              Java, C/C++, C#, Python, JavaScript/TypeScript, Go, Ruby, PHP, Kotlin, Swift y Scala.
+              Para SCA, soporta los principales gestores de paquetes: npm, Maven, pip, NuGet,
+              Go modules, Cargo, CocoaPods y más.
+            </div>
+          </details>
+
+          <details class="bg-gray-50 border border-gray-200 rounded-xl group">
+            <summary class="font-semibold text-lg p-6 cursor-pointer list-none flex items-center justify-between">
+              ¿Necesito ser una empresa de software para usar Black Duck?
+              <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+            </summary>
+            <div class="px-6 pb-6 text-gray-600">
+              No. Cualquier organización que desarrolle o consuma software se beneficia. Empresas
+              financieras, de salud, gobierno y cualquier sector que tenga aplicaciones internas
+              o portales web necesitan asegurar que su código no tenga vulnerabilidades. También
+              es fundamental para empresas que adquieren software de terceros y necesitan evaluar
+              su seguridad antes de desplegarlo.
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 sm:py-20 lg:py-24 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-gradient-to-r from-[#111827] to-[#1f2937] rounded-2xl overflow-hidden">
+          <div class="p-8 lg:p-12 text-center">
+            <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">
+              Asegure su código antes de que llegue a producción.
+            </h2>
+            <p class="text-gray-300 mb-8 max-w-2xl mx-auto">
+              Solicite una evaluación de seguridad de su código y descubra vulnerabilidades
+              ocultas en su aplicación y sus dependencias open source.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+              <a href="/contacto" class="bg-gradient-to-r from-red-600 to-red-700 text-white font-semibold px-8 py-4 rounded-full hover:from-red-700 hover:to-red-800 transition shadow-lg inline-flex items-center justify-center gap-2">
+                Solicitar Evaluación
+              </a>
+              <a href="/contacto" class="bg-white/10 backdrop-blur-sm border border-white/20 text-white font-semibold px-8 py-4 rounded-full hover:bg-white/20 transition inline-flex items-center justify-center gap-2 focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2">
+                Hablar con un Especialista
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Soluciones Relacionadas -->
+  <section class="py-12 bg-gray-50 border-t border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-lg font-bold text-gray-900 mb-6">Soluciones Relacionadas</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+        <a href="/vicarius" class="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-all duration-300 text-center">
+          <p class="font-semibold text-sm text-gray-900">Vicarius vRx</p>
+          <p class="text-xs text-gray-500 mt-1">Vulnerabilidades</p>
+        </a>
+        <a href="/netwrix" class="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-all duration-300 text-center">
+          <p class="font-semibold text-sm text-gray-900">Netwrix</p>
+          <p class="text-xs text-gray-500 mt-1">Auditoría identidad</p>
+        </a>
+        <a href="/sealpath" class="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-all duration-300 text-center">
+          <p class="font-semibold text-sm text-gray-900">SealPath</p>
+          <p class="text-xs text-gray-500 mt-1">Seguridad de datos</p>
+        </a>
+        <a href="/hacking-etico" class="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-all duration-300 text-center">
+          <p class="font-semibold text-sm text-gray-900">Hacking Ético</p>
+          <p class="text-xs text-gray-500 mt-1">Pentesting</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+  <WhatsAppButton />
+</BaseLayout>

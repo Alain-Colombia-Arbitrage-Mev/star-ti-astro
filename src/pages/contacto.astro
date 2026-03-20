@@ -1,0 +1,375 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Navbar from '@components/Navbar.astro';
+import Footer from '@components/Footer.astro';
+import WhatsAppButton from '@components/WhatsAppButton.astro';
+import { seoData } from '@data/seo';
+
+const seo = seoData['contacto'];
+---
+
+<BaseLayout seo={seo}>
+  <Navbar />
+
+  <!-- Hero Section -->
+  <section class="relative py-20 sm:py-24 lg:py-32 bg-white overflow-hidden">
+    <div class="absolute bg-[rgba(254,242,242,0.5)] blur-[32px] left-[-200px] rounded-[9999px] size-[600px] top-[-100px]"></div>
+
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div class="text-center lg:text-left max-w-4xl mx-auto lg:mx-0">
+        <!-- Badge -->
+        <div class="inline-flex items-center gap-2 bg-[#0f172a] px-3 py-1.5 rounded mb-8">
+          <div class="w-2 h-2 bg-[#dc2626] rounded-full animate-pulse"></div>
+          <span class="text-white text-[10px] font-semibold tracking-[0.5px] uppercase">Respuesta Garantizada en Menos de 2 Horas</span>
+        </div>
+
+        <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-tight mb-6">
+          <span class="block text-[#0f172a]">Hablemos de su</span>
+          <span class="block text-[#dc2626]">Proyecto Ahora.</span>
+        </h1>
+
+        <p class="text-xl text-[#64748b] leading-relaxed mb-8 max-w-3xl mx-auto">
+          Más de 500 empresas confían en nosotros para proteger su infraestructura tecnológica.
+          Nuestro equipo de especialistas está listo para diseñar la solución perfecta para su negocio.
+        </p>
+
+        <!-- Quick Stats -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
+          <div class="bg-[#f9fafb] border border-[#e5e7eb] rounded-xl p-4">
+            <div class="text-3xl font-bold text-[#dc2626] mb-1">&lt;2h</div>
+            <div class="text-xs text-[#64748b] uppercase tracking-wider">Tiempo de Respuesta</div>
+          </div>
+          <div class="bg-[#f9fafb] border border-[#e5e7eb] rounded-xl p-4">
+            <div class="text-3xl font-bold text-[#dc2626] mb-1">500+</div>
+            <div class="text-xs text-[#64748b] uppercase tracking-wider">Empresas Atendidas</div>
+          </div>
+          <div class="bg-[#f9fafb] border border-[#e5e7eb] rounded-xl p-4">
+            <div class="text-3xl font-bold text-[#dc2626] mb-1">3</div>
+            <div class="text-xs text-[#64748b] uppercase tracking-wider">Países</div>
+          </div>
+          <div class="bg-[#f9fafb] border border-[#e5e7eb] rounded-xl p-4">
+            <div class="text-3xl font-bold text-[#dc2626] mb-1">24/7</div>
+            <div class="text-xs text-[#64748b] uppercase tracking-wider">Soporte Disponible</div>
+          </div>
+        </div>
+
+        <!-- Quick Contact -->
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="mailto:contacto@star-ti.com" class="bg-[#dc2626] px-8 py-4 rounded text-white text-sm font-semibold hover:bg-[#b91c1c] transition shadow-lg inline-flex items-center gap-2 focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2">
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24"><path d="M3 8L10.8906 13.2604C11.5624 13.7083 12.4376 13.7083 13.1094 13.2604L21 8M5 19H19C20.1046 19 21 18.1046 21 17V7C21 5.89543 20.1046 5 19 5H5C3.89543 5 3 5.89543 3 7V17C3 18.1046 3.89543 19 5 19Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Enviar Email Ahora
+          </a>
+          <a href="https://wa.me/573007010017" target="_blank" rel="noopener noreferrer" class="border-2 border-[#e5e7eb] px-8 py-4 rounded text-[#0f172a] text-sm font-semibold hover:bg-[#f8fafc] transition inline-flex items-center gap-2">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+            WhatsApp Directo
+          </a>
+        </div>
+        </div>
+        <div class="hidden lg:flex items-center justify-center">
+          <img src="/assets/hero-ciberseguridad-infraestructura.webp" alt="Contacte a Starsolution para soluciones de ciberseguridad empresarial" class="w-full max-w-sm rounded-2xl shadow-xl" width="384" height="384" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Oficinas -->
+  <section class="py-16 sm:py-20 lg:py-24 bg-[#f9fafb]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <span class="text-[#dc2626] text-xs font-bold uppercase tracking-wider">Presencia Internacional</span>
+        <h2 class="text-3xl sm:text-4xl font-bold mt-4 mb-4 text-[#0f172a]">Oficinas en 3 Países</h2>
+        <p class="text-lg text-[#64748b] max-w-2xl mx-auto">Atención personalizada con presencia física en Colombia, Venezuela y Estados Unidos para servir mejor a nuestros clientes corporativos.</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <!-- Colombia -->
+        <div class="bg-white border-2 border-[#dc2626] rounded-2xl p-8 hover:shadow-xl transition-all duration-300 cursor-pointer">
+          <div class="flex items-center gap-4 mb-6">
+            <div class="bg-[#fef2f2] rounded-full p-3">
+              <svg class="w-8 h-8 text-[#dc2626]" fill="none" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22C12 22 19 14.25 19 9C19 5.13 15.87 2 12 2ZM12 11.5C10.62 11.5 9.5 10.38 9.5 9C9.5 7.62 10.62 6.5 12 6.5C13.38 6.5 14.5 7.62 14.5 9C14.5 10.38 13.38 11.5 12 11.5Z" fill="currentColor"/></svg>
+            </div>
+            <div>
+              <div class="text-xs font-semibold text-[#dc2626] uppercase tracking-wider mb-1">Oficina Principal</div>
+              <h3 class="text-2xl font-bold text-[#0f172a]">Colombia</h3>
+            </div>
+          </div>
+          <div class="space-y-4 mb-6">
+            <div class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-[#dc2626] mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <div><div class="text-sm font-semibold text-[#0f172a]">Dirección</div><div class="text-sm text-[#64748b]">Calle 52 A # 22 – 16<br/>Bogotá - Colombia</div></div>
+            </div>
+            <div class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-[#dc2626] mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <div><div class="text-sm font-semibold text-[#0f172a]">Teléfono</div><a href="tel:+573007010017" class="text-sm text-[#64748b] hover:text-[#dc2626] transition">+57 300 701 0017</a></div>
+            </div>
+            <div class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-[#dc2626] mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <div><div class="text-sm font-semibold text-[#0f172a]">Horario</div><div class="text-sm text-[#64748b]">Lun - Vie: 8:00 AM - 6:00 PM<br/>Sáb: 9:00 AM - 1:00 PM</div></div>
+            </div>
+          </div>
+          <a href="https://wa.me/573007010017" target="_blank" rel="noopener noreferrer" class="block w-full bg-[#0f172a] text-white text-center py-3 rounded font-semibold hover:bg-[#1e293b] transition">Contactar Colombia</a>
+        </div>
+
+        <!-- Venezuela -->
+        <div class="bg-white border border-[#e5e7eb] rounded-2xl p-8 hover:shadow-lg transition-all duration-300 cursor-pointer">
+          <div class="flex items-center gap-4 mb-6">
+            <div class="bg-[#f9fafb] rounded-full p-3">
+              <svg class="w-8 h-8 text-[#64748b]" fill="none" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22C12 22 19 14.25 19 9C19 5.13 15.87 2 12 2ZM12 11.5C10.62 11.5 9.5 10.38 9.5 9C9.5 7.62 10.62 6.5 12 6.5C13.38 6.5 14.5 7.62 14.5 9C14.5 10.38 13.38 11.5 12 11.5Z" fill="currentColor"/></svg>
+            </div>
+            <div>
+              <div class="text-xs font-semibold text-[#64748b] uppercase tracking-wider mb-1">Oficina Regional</div>
+              <h3 class="text-2xl font-bold text-[#0f172a]">Venezuela</h3>
+            </div>
+          </div>
+          <div class="space-y-4 mb-6">
+            <div class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-[#64748b] mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <div><div class="text-sm font-semibold text-[#0f172a]">Dirección</div><div class="text-sm text-[#64748b]">Ed. Centro Empresarial<br/>T. Araujo, M. OF A-1<br/>Caracas – Venezuela</div></div>
+            </div>
+            <div class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-[#64748b] mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <div><div class="text-sm font-semibold text-[#0f172a]">Teléfono</div><a href="tel:+584241499856" class="text-sm text-[#64748b] hover:text-[#dc2626] transition">+58 424 149 9856</a></div>
+            </div>
+            <div class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-[#64748b] mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <div><div class="text-sm font-semibold text-[#0f172a]">Horario</div><div class="text-sm text-[#64748b]">Lun - Vie: 8:00 AM - 5:00 PM</div></div>
+            </div>
+          </div>
+          <a href="https://wa.me/584241499856" target="_blank" rel="noopener noreferrer" class="block w-full bg-[#f9fafb] border border-[#e5e7eb] text-[#0f172a] text-center py-3 rounded font-semibold hover:bg-[#f1f5f9] transition">Contactar Venezuela</a>
+        </div>
+
+        <!-- USA -->
+        <div class="bg-white border border-[#e5e7eb] rounded-2xl p-8 hover:shadow-lg transition-all duration-300 cursor-pointer">
+          <div class="flex items-center gap-4 mb-6">
+            <div class="bg-[#f9fafb] rounded-full p-3">
+              <svg class="w-8 h-8 text-[#64748b]" fill="none" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22C12 22 19 14.25 19 9C19 5.13 15.87 2 12 2ZM12 11.5C10.62 11.5 9.5 10.38 9.5 9C9.5 7.62 10.62 6.5 12 6.5C13.38 6.5 14.5 7.62 14.5 9C14.5 10.38 13.38 11.5 12 11.5Z" fill="currentColor"/></svg>
+            </div>
+            <div>
+              <div class="text-xs font-semibold text-[#64748b] uppercase tracking-wider mb-1">Oficina USA</div>
+              <h3 class="text-2xl font-bold text-[#0f172a]">Estados Unidos</h3>
+            </div>
+          </div>
+          <div class="space-y-4 mb-6">
+            <div class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-[#64748b] mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24"><path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <div><div class="text-sm font-semibold text-[#0f172a]">Dirección</div><div class="text-sm text-[#64748b]">8103 Gables Commons Dr<br/>Orlando, FL 32827 - USA</div></div>
+            </div>
+            <div class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-[#64748b] mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <div><div class="text-sm font-semibold text-[#0f172a]">Teléfono</div><a href="tel:+13214386777" class="text-sm text-[#64748b] hover:text-[#dc2626] transition">+1 321 438 6777</a></div>
+            </div>
+            <div class="flex items-start gap-3">
+              <svg class="w-5 h-5 text-[#64748b] mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24"><path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <div><div class="text-sm font-semibold text-[#0f172a]">Horario</div><div class="text-sm text-[#64748b]">Mon - Fri: 9:00 AM - 6:00 PM EST</div></div>
+            </div>
+          </div>
+          <a href="https://wa.me/13214386777" target="_blank" rel="noopener noreferrer" class="block w-full bg-[#f9fafb] border border-[#e5e7eb] text-[#0f172a] text-center py-3 rounded font-semibold hover:bg-[#f1f5f9] transition">Contactar USA</a>
+        </div>
+      </div>
+
+      <!-- Email General -->
+      <div class="mt-12 bg-[#0f172a] border border-[#1e293b] rounded-2xl p-8 text-center">
+        <div class="flex items-center justify-center gap-3 mb-4">
+          <div class="bg-[#dc2626] rounded-full p-3">
+            <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24"><path d="M3 8L10.8906 13.2604C11.5624 13.7083 12.4376 13.7083 13.1094 13.2604L21 8M5 19H19C20.1046 19 21 18.1046 21 17V7C21 5.89543 20.1046 5 19 5H5C3.89543 5 3 5.89543 3 7V17C3 18.1046 3.89543 19 5 19Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div class="text-left">
+            <div class="text-xs text-[#94a3b8] uppercase tracking-wider font-semibold">Email Corporativo</div>
+            <a href="mailto:contacto@star-ti.com" class="text-xl font-bold text-white hover:text-[#dc2626] transition">contacto@star-ti.com</a>
+          </div>
+        </div>
+        <p class="text-sm text-[#94a3b8]">Respuesta garantizada en menos de 2 horas hábiles - Soporte 24/7 para clientes corporativos</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Formulario de Contacto -->
+  <section class="py-16 sm:py-20 lg:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+        <!-- Left - Razones -->
+        <div class="lg:sticky lg:top-8">
+          <span class="text-[#dc2626] text-xs font-bold uppercase tracking-wider">¿Por Qué Elegirnos?</span>
+          <h2 class="text-3xl sm:text-4xl font-bold mt-4 mb-6 text-[#0f172a]">Su Socio Tecnológico de Confianza</h2>
+          <p class="text-lg text-[#64748b] mb-8">No somos un proveedor más. Somos su departamento de TI externo, comprometidos con el éxito y la seguridad de su negocio.</p>
+
+          <div class="space-y-6">
+            <div class="flex items-start gap-4">
+              <div class="bg-[#fef2f2] rounded-lg p-3 flex-shrink-0">
+                <svg class="w-6 h-6 text-[#dc2626]" fill="none" viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-[#0f172a] mb-2">Respuesta Ultra Rápida</h3>
+                <p class="text-[#64748b]">Garantizamos respuesta en menos de 2 horas. Sus problemas tecnológicos no pueden esperar, nosotros tampoco.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="bg-[#fef2f2] rounded-lg p-3 flex-shrink-0">
+                <svg class="w-6 h-6 text-[#dc2626]" fill="none" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-[#0f172a] mb-2">Experiencia Certificada</h3>
+                <p class="text-[#64748b]">Equipo de ingenieros certificados en las principales tecnologías: BICSI, CompTIA Security+, ISO 27001 Lead Auditor.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="bg-[#fef2f2] rounded-lg p-3 flex-shrink-0">
+                <svg class="w-6 h-6 text-[#dc2626]" fill="none" viewBox="0 0 24 24"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-[#0f172a] mb-2">Soporte Multinacional</h3>
+                <p class="text-[#64748b]">Con oficinas en 3 países, brindamos soporte local con estándares internacionales. Su empresa crece, nosotros también.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="bg-[#fef2f2] rounded-lg p-3 flex-shrink-0">
+                <svg class="w-6 h-6 text-[#dc2626]" fill="none" viewBox="0 0 24 24"><path d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div>
+                <h3 class="text-lg font-semibold text-[#0f172a] mb-2">Precios Mayoristas</h3>
+                <p class="text-[#64748b]">Somos mayoristas especializados, no distribuidores. Esto significa mejores precios y mayor valor para su inversión.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-10 pt-8 border-t border-[#e5e7eb]">
+            <div class="flex items-center gap-6 flex-wrap">
+              <div class="text-center"><div class="text-2xl font-bold text-[#dc2626]">500+</div><div class="text-xs text-[#64748b]">Clientes Activos</div></div>
+              <div class="w-px h-10 bg-[#e5e7eb]"></div>
+              <div class="text-center"><div class="text-2xl font-bold text-[#dc2626]">15+</div><div class="text-xs text-[#64748b]">Años Experiencia</div></div>
+              <div class="w-px h-10 bg-[#e5e7eb]"></div>
+              <div class="text-center"><div class="text-2xl font-bold text-[#dc2626]">98%</div><div class="text-xs text-[#64748b]">Satisfacción</div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right - Formulario -->
+        <div class="bg-[#f9fafb] border border-[#e5e7eb] rounded-2xl p-8 lg:p-10">
+          <div class="mb-8">
+            <h3 class="text-2xl font-bold text-[#0f172a] mb-2">Solicite una Cotización Personalizada</h3>
+            <p class="text-[#64748b]">Complete el formulario y un especialista se comunicará con usted en menos de 2 horas con una solución a medida.</p>
+          </div>
+
+          <form action="/gracias" method="GET" class="space-y-5">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <div>
+                <label class="block text-sm font-semibold text-[#0f172a] mb-2">Nombre Completo *</label>
+                <input type="text" name="nombre" required class="w-full px-4 py-3 bg-white border border-[#e5e7eb] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#dc2626] transition" placeholder="Juan Pérez"/>
+              </div>
+              <div>
+                <label class="block text-sm font-semibold text-[#0f172a] mb-2">Email Corporativo *</label>
+                <input type="email" name="email" required class="w-full px-4 py-3 bg-white border border-[#e5e7eb] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#dc2626] transition" placeholder="juan@empresa.com"/>
+              </div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <div>
+                <label class="block text-sm font-semibold text-[#0f172a] mb-2">Teléfono *</label>
+                <input type="tel" name="telefono" required class="w-full px-4 py-3 bg-white border border-[#e5e7eb] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#dc2626] transition" placeholder="+57 300 000 0000"/>
+              </div>
+              <div>
+                <label class="block text-sm font-semibold text-[#0f172a] mb-2">País *</label>
+                <select name="pais" required class="w-full px-4 py-3 bg-white border border-[#e5e7eb] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#dc2626] transition">
+                  <option value="Colombia">Colombia</option>
+                  <option value="Venezuela">Venezuela</option>
+                  <option value="Estados Unidos">Estados Unidos</option>
+                  <option value="Otro">Otro</option>
+                </select>
+              </div>
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-[#0f172a] mb-2">Empresa *</label>
+              <input type="text" name="empresa" required class="w-full px-4 py-3 bg-white border border-[#e5e7eb] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#dc2626] transition" placeholder="Nombre de su empresa"/>
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-[#0f172a] mb-2">Servicio de Interés *</label>
+              <select name="servicio" required class="w-full px-4 py-3 bg-white border border-[#e5e7eb] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#dc2626] transition">
+                <option value="">Seleccione un servicio</option>
+                <option value="Antivirus Empresarial">Antivirus Empresarial (Bitdefender/Kaspersky)</option>
+                <option value="Cableado Estructurado">Cableado Estructurado</option>
+                <option value="Equipos de Cómputo">Equipos de Cómputo</option>
+                <option value="ISO 27001">Consultoría ISO 27001</option>
+                <option value="Impresoras Brother">Impresoras Brother</option>
+                <option value="Auditoría de Seguridad">Auditoría de Seguridad</option>
+                <option value="Otro">Otro</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-[#0f172a] mb-2">Presupuesto Estimado</label>
+              <select name="presupuesto" class="w-full px-4 py-3 bg-white border border-[#e5e7eb] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#dc2626] transition">
+                <option value="">Seleccione un rango (opcional)</option>
+                <option value="Menos de $5,000 USD">Menos de $5,000 USD</option>
+                <option value="$5,000 - $10,000 USD">$5,000 - $10,000 USD</option>
+                <option value="$10,000 - $25,000 USD">$10,000 - $25,000 USD</option>
+                <option value="$25,000 - $50,000 USD">$25,000 - $50,000 USD</option>
+                <option value="Más de $50,000 USD">Más de $50,000 USD</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-[#0f172a] mb-2">Mensaje / Detalles del Proyecto *</label>
+              <textarea name="mensaje" required rows="4" class="w-full px-4 py-3 bg-white border border-[#e5e7eb] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#dc2626] transition resize-none" placeholder="Cuéntenos sobre su proyecto, necesidades específicas, plazos, etc."></textarea>
+            </div>
+            <div class="bg-white border border-[#e5e7eb] rounded-lg p-4">
+              <div class="flex items-start gap-3">
+                <svg class="w-5 h-5 text-[#dc2626] mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <div class="text-xs text-[#64748b]">
+                  Al enviar este formulario, acepta que un especialista de Starsolution se comunique con usted
+                  para brindarle información sobre nuestros servicios. Sus datos están protegidos bajo nuestra política de privacidad.
+                </div>
+              </div>
+            </div>
+            <button type="submit" class="w-full bg-[#dc2626] text-white font-bold py-4 px-6 rounded-lg hover:bg-[#b91c1c] transition shadow-lg flex items-center justify-center gap-2 text-base focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24"><path d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Enviar Solicitud Ahora
+            </button>
+            <p class="text-center text-xs text-[#64748b]">Respuesta garantizada en menos de 2 horas - Sus datos están seguros</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Final -->
+  <section class="py-16 sm:py-20 bg-[#0f172a] relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute bg-[#dc2626] blur-[100px] rounded-full size-[400px] top-0 left-0"></div>
+      <div class="absolute bg-[#dc2626] blur-[100px] rounded-full size-[400px] bottom-0 right-0"></div>
+    </div>
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+      <div class="inline-flex items-center gap-2 bg-[#dc2626] px-4 py-2 rounded-full mb-6">
+        <div class="w-2 h-2 bg-white rounded-full animate-pulse"></div>
+        <span class="text-white text-xs font-bold uppercase tracking-wider">Oferta por Tiempo Limitado</span>
+      </div>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
+        Primera Consultoría Técnica
+        <span class="block text-[#dc2626]">100% Gratuita</span>
+      </h2>
+      <p class="text-xl text-[#94a3b8] mb-8 max-w-2xl mx-auto">
+        Programe una videollamada con nuestros expertos. Sin compromiso, sin letra pequeña.
+        Solo soluciones reales para sus desafíos tecnológicos.
+      </p>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="mailto:contacto@star-ti.com" class="bg-[#dc2626] px-8 py-4 rounded-lg text-white text-base font-bold hover:bg-[#b91c1c] transition shadow-xl inline-flex items-center gap-2 focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2">
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Agendar Consultoría Gratis
+        </a>
+        <a href="https://wa.me/573007010017" target="_blank" rel="noopener noreferrer" class="border-2 border-white px-8 py-4 rounded-lg text-white text-base font-bold hover:bg-white hover:text-[#0f172a] transition inline-flex items-center gap-2 focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2">
+          WhatsApp Ahora
+        </a>
+      </div>
+      <div class="mt-8 flex items-center justify-center gap-8 text-sm text-[#94a3b8]">
+        <div class="flex items-center gap-2">
+          <svg class="w-5 h-5 text-[#dc2626]" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+          Sin costo ni compromiso
+        </div>
+        <div class="flex items-center gap-2">
+          <svg class="w-5 h-5 text-[#dc2626]" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+          Respuesta inmediata
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+  <WhatsAppButton />
+</BaseLayout>

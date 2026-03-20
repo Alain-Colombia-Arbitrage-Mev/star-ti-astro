@@ -1,0 +1,663 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Navbar from '@components/Navbar.astro';
+import Footer from '@components/Footer.astro';
+import WhatsAppButton from '@components/WhatsAppButton.astro';
+import { seoData } from '@data/seo';
+
+const seo = seoData.proofpoint;
+---
+
+<BaseLayout seo={seo}>
+  <Navbar />
+
+  <div class="bg-white min-h-screen font-['Instrument_Sans',sans-serif]">
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-b from-gray-50 to-white py-12 sm:py-16 lg:py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <div class="mb-6">
+              <span class="inline-block bg-red-50 text-red-600 text-xs font-medium px-3 py-1 rounded">
+                LIDER EN SEGURIDAD EMAIL
+              </span>
+            </div>
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+              Proofpoint: Seguridad de Correo{" "}
+              <span class="text-[#ed1c24]">Avanzada para Empresas.</span>
+            </h1>
+            <p class="text-lg sm:text-xl text-gray-600 mb-8 max-w-3xl">
+              Proteja a su organización contra phishing, Business Email Compromise (BEC) y amenazas
+              dirigidas por correo electrónico con la plataforma lider reconocida por Gartner en
+              seguridad de email empresarial.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a href="/contacto" class="bg-gradient-to-r from-red-600 to-red-700 text-white font-semibold px-8 py-4 rounded-full hover:from-red-700 hover:to-red-800 transition shadow-lg inline-flex items-center justify-center gap-2">
+                Solicitar Demo
+              </a>
+              <a href="/contacto" class="bg-white border-2 border-gray-200 text-gray-800 font-semibold px-8 py-4 rounded-full hover:bg-gray-50 transition inline-flex items-center justify-center gap-2 focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2">
+                Hablar con un Experto
+              </a>
+            </div>
+            <div class="mt-8 flex items-center gap-2 text-sm text-gray-500">
+              <svg class="w-4 h-4 text-green-600" fill="none" viewBox="0 0 14 14">
+                <path d="M11.6667 3.5L5.25 9.91667L2.33333 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.16667" />
+              </svg>
+              <span>El 91% de los ciberataques comienzan por un correo electrónico</span>
+            </div>
+          </div>
+          <div class="hidden lg:flex items-center justify-center">
+            <img
+              src="/assets/icono-ojo-monitoreo-digital.webp"
+              alt="Icono de monitoreo digital para seguridad de correo Proofpoint"
+              class="w-full max-w-md mx-auto rounded-2xl shadow-xl"
+              width="400"
+              height="400"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Awards / Trust Section -->
+    <section class="bg-[#111827] py-12">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+          <div>
+            <h3 class="text-white font-bold text-xl mb-2">Gartner</h3>
+            <p class="text-white text-xs uppercase tracking-wider opacity-75">Lider en Email Security</p>
+          </div>
+          <div>
+            <h3 class="text-white font-bold text-xl mb-2">Fortune 100</h3>
+            <p class="text-white text-xs uppercase tracking-wider opacity-75">75% son clientes</p>
+          </div>
+          <div>
+            <h3 class="text-white font-bold text-xl mb-2">+8,000</h3>
+            <p class="text-white text-xs uppercase tracking-wider opacity-75">Empresas protegidas</p>
+          </div>
+          <div>
+            <h3 class="text-white font-bold text-xl mb-2">99.99%</h3>
+            <p class="text-white text-xs uppercase tracking-wider opacity-75">Efectividad anti-spam</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Benefits (6 Cards) -->
+    <section class="bg-gray-50 py-16 sm:py-20 lg:py-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="mb-16">
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-semibold mb-4">
+            Protección Integral del{" "}<span class="text-[#ed1c24]">Correo Empresarial</span>
+          </h2>
+          <p class="text-gray-600 max-w-3xl">
+            Proofpoint ofrece la defensa más completa contra amenazas basadas en correo electrónico,
+            protegiendo a las personas y los datos críticos de su organización.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="bg-white border border-gray-200 rounded-2xl p-6">
+            <div class="bg-gray-50 rounded-lg w-10 h-10 flex items-center justify-center mb-4">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 20 20">
+                <path d="M10 2L3 6v5c0 4.5 3 8.5 7 9.5 4-1 7-5 7-9.5V6l-7-4z" stroke="#374151" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.66667" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold mb-2">Protección Anti-Phishing</h3>
+            <p class="text-sm text-gray-600">
+              Detección avanzada de phishing con análisis de URLs en tiempo real, sandboxing de
+              adjuntos y proteccion contra sitios fraudulentos que suplantan su marca.
+            </p>
+          </div>
+
+          <div class="bg-white border border-gray-200 rounded-2xl p-6">
+            <div class="bg-gray-50 rounded-lg w-10 h-10 flex items-center justify-center mb-4">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 20 20">
+                <path d="M16 4L8 12M8 4l8 8" stroke="#374151" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.66667" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold mb-2">Defensa contra BEC</h3>
+            <p class="text-sm text-gray-600">
+              Bloquee intentos de Business Email Compromise que utilizan ingenieria social para
+              suplantar ejecutivos y solicitar transferencias o datos sensibles.
+            </p>
+          </div>
+
+          <div class="bg-white border border-gray-200 rounded-2xl p-6">
+            <div class="bg-gray-50 rounded-lg w-10 h-10 flex items-center justify-center mb-4">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 20 20">
+                <circle cx="10" cy="10" r="7" stroke="#374151" stroke-width="1.66667" fill="none" />
+                <path d="M10 7v3l2 2" stroke="#374151" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.66667" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold mb-2">Threat Intelligence</h3>
+            <p class="text-sm text-gray-600">
+              Inteligencia de amenazas en tiempo real basada en el análisis de miles de millones de
+              correos diarios, identificando campañas y actores maliciosos antes de que lleguen a usted.
+            </p>
+          </div>
+
+          <div class="bg-white border border-gray-200 rounded-2xl p-6">
+            <div class="bg-gray-50 rounded-lg w-10 h-10 flex items-center justify-center mb-4">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 20 20">
+                <path d="M3 10h14M10 3v14" stroke="#374151" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.66667" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold mb-2">Autenticación DMARC/DKIM/SPF</h3>
+            <p class="text-sm text-gray-600">
+              Implemente y gestione protocolos de autenticación de email para evitar que terceros
+              envien correos suplantando su dominio corporativo.
+            </p>
+          </div>
+
+          <div class="bg-white border border-gray-200 rounded-2xl p-6">
+            <div class="bg-gray-50 rounded-lg w-10 h-10 flex items-center justify-center mb-4">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 20 20">
+                <path d="M10 2a8 8 0 100 16 8 8 0 000-16zM10 6v4m0 4h.01" stroke="#374151" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.66667" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold mb-2">Security Awareness Training</h3>
+            <p class="text-sm text-gray-600">
+              Capacite a sus empleados con simulaciones de phishing realistas y programas de
+              concientizacion que reducen el riesgo humano hasta un 90%.
+            </p>
+          </div>
+
+          <div class="bg-white border border-gray-200 rounded-2xl p-6">
+            <div class="bg-gray-50 rounded-lg w-10 h-10 flex items-center justify-center mb-4">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 20 20">
+                <rect x="3" y="3" width="14" height="14" rx="2" stroke="#374151" stroke-width="1.66667" fill="none" />
+                <path d="M7 10h6" stroke="#374151" stroke-linecap="round" stroke-width="1.66667" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold mb-2">DLP para Email</h3>
+            <p class="text-sm text-gray-600">
+              Prevenga la fuga de datos sensibles por correo electronico con políticas automatizadas
+              que detectan y bloquean informacion confidencial antes de que salga de su organización.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Grid -->
+    <section class="py-16 sm:py-20 lg:py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+          <div>
+            <span class="text-[#ed1c24] text-xs font-medium uppercase tracking-wide">Plataforma Completa</span>
+            <h2 class="text-3xl sm:text-4xl font-bold mt-4 mb-6">
+              Seguridad de Email que Protege a las Personas, No Solo Buzones
+            </h2>
+            <p class="text-gray-600 mb-6">
+              Proofpoint adopta un enfoque centrado en las personas (People-Centric Security),
+              identificando quienes son sus usuarios más atacados (VAPs - Very Attacked People)
+              y aplicando controles adaptativos según el nivel de riesgo de cada persona.
+            </p>
+            <p class="text-gray-600 mb-8">
+              A diferencia de soluciones genericas, Proofpoint analiza el contexto completo de cada
+              mensaje: remitente, contenido, adjuntos, URLs, y comportamiento del usuario para tomar
+              decisiones precisas en milisegundos.
+            </p>
+
+            <div class="grid grid-cols-2 gap-6">
+              <div class="border-l-4 border-red-600 pl-4">
+                <div class="text-2xl font-bold text-gray-900 mb-1">2.8B+</div>
+                <div class="text-sm text-gray-600">Emails analizados diariamente</div>
+              </div>
+              <div class="border-l-4 border-red-600 pl-4">
+                <div class="text-2xl font-bold text-gray-900 mb-1">26M+</div>
+                <div class="text-sm text-gray-600">Ataques BEC bloqueados al ano</div>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="bg-gradient-to-br from-red-50 to-white border border-red-100 rounded-2xl p-8">
+              <h3 class="text-xl font-semibold mb-6">Capacidades clave de la plataforma:</h3>
+              <div class="space-y-4">
+                <div class="flex items-start gap-3">
+                  <div class="bg-green-100 border border-green-200 rounded-full p-1 mt-0.5">
+                    <svg class="w-3.5 h-3.5 text-green-600" fill="none" viewBox="0 0 14 14">
+                      <path d="M11.6667 3.5L5.25 9.91667L2.33333 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.16667" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 class="font-semibold text-gray-900">Targeted Attack Protection (TAP)</h3>
+                    <p class="text-sm text-gray-600">Deteccion de amenazas avanzadas, URLs y adjuntos maliciosos</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3">
+                  <div class="bg-green-100 border border-green-200 rounded-full p-1 mt-0.5">
+                    <svg class="w-3.5 h-3.5 text-green-600" fill="none" viewBox="0 0 14 14">
+                      <path d="M11.6667 3.5L5.25 9.91667L2.33333 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.16667" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 class="font-semibold text-gray-900">Email Fraud Defense</h3>
+                    <p class="text-sm text-gray-600">Protección contra suplantación de identidad y fraude BEC</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3">
+                  <div class="bg-green-100 border border-green-200 rounded-full p-1 mt-0.5">
+                    <svg class="w-3.5 h-3.5 text-green-600" fill="none" viewBox="0 0 14 14">
+                      <path d="M11.6667 3.5L5.25 9.91667L2.33333 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.16667" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 class="font-semibold text-gray-900">Cloud App Security Broker</h3>
+                    <p class="text-sm text-gray-600">Protección para Microsoft 365, Google Workspace y aplicaciones SaaS</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3">
+                  <div class="bg-green-100 border border-green-200 rounded-full p-1 mt-0.5">
+                    <svg class="w-3.5 h-3.5 text-green-600" fill="none" viewBox="0 0 14 14">
+                      <path d="M11.6667 3.5L5.25 9.91667L2.33333 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.16667" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 class="font-semibold text-gray-900">Security Awareness Training</h3>
+                    <p class="text-sm text-gray-600">Simulaciones de phishing y programas de educacion continua</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works (Deployment Phases) -->
+    <section class="py-16 sm:py-20 lg:py-24 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl sm:text-4xl font-bold mb-4">
+            Implementación en 4 Fases
+          </h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            Nuestro proceso de despliegue garantiza una transicion sin interrupciones
+            para su operacion de correo corporativo.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-2xl p-8 border border-gray-200">
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+            <div class="text-center">
+              <div class="bg-red-100 text-red-600 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 font-bold text-lg">
+                1
+              </div>
+              <h3 class="font-semibold mb-2">Descubrimiento</h3>
+              <p class="text-sm text-gray-600">
+                Análisis de su entorno de correo actual, identificación de usuarios VAP y
+                evaluacion del nivel de riesgo.
+              </p>
+            </div>
+            <div class="text-center">
+              <div class="bg-red-100 text-red-600 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 font-bold text-lg">
+                2
+              </div>
+              <h3 class="font-semibold mb-2">Configuracion</h3>
+              <p class="text-sm text-gray-600">
+                Redireccion de flujo de correo (MX records), configuración de políticas DMARC/DKIM/SPF
+                y reglas de filtrado personalizadas.
+              </p>
+            </div>
+            <div class="text-center">
+              <div class="bg-red-100 text-red-600 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 font-bold text-lg">
+                3
+              </div>
+              <h3 class="font-semibold mb-2">Optimizacion</h3>
+              <p class="text-sm text-gray-600">
+                Ajuste fino de politicas, reducción de falsos positivos y activacion de
+                modulos avanzados como TAP y DLP.
+              </p>
+            </div>
+            <div class="text-center">
+              <div class="bg-red-100 text-red-600 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 font-bold text-lg">
+                4
+              </div>
+              <h3 class="font-semibold mb-2">Monitoreo Continuo</h3>
+              <p class="text-sm text-gray-600">
+                Reportes ejecutivos, alertas en tiempo real, campañas de awareness
+                y soporte técnico permanente.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Anatomía de un Ataque de Phishing -->
+    <section class="py-16 sm:py-20 lg:py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl sm:text-4xl font-bold mb-4 text-gray-900">
+            Anatomía de un Ataque de Phishing
+          </h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            Así es como un atacante intenta comprometer su organización por correo electrónico,
+            y en qué fase exacta interviene Proofpoint para detenerlo.
+          </p>
+        </div>
+
+        <div class="relative">
+          <!-- Connecting line -->
+          <div class="hidden md:block absolute top-8 left-0 right-0 h-0.5 bg-gradient-to-r from-red-200 via-red-400 to-green-400 z-0" style="top: 2rem; left: 8%; right: 8%;"></div>
+
+          <div class="grid grid-cols-1 md:grid-cols-5 gap-6 relative z-10">
+            <div class="text-center">
+              <div class="w-16 h-16 bg-red-100 border-2 border-red-300 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg class="w-7 h-7 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207" />
+                </svg>
+              </div>
+              <h3 class="font-semibold text-gray-900 mb-2 text-sm">1. Reconocimiento</h3>
+              <p class="text-xs text-gray-600">El atacante recopila emails corporativos, estructura de la empresa y empleados clave (VAPs)</p>
+              <div class="mt-3 bg-red-50 border border-red-200 rounded-lg p-2">
+                <p class="text-xs text-red-700 font-medium">Proofpoint identifica sus VAPs y aplica controles adaptativos</p>
+              </div>
+            </div>
+
+            <div class="text-center">
+              <div class="w-16 h-16 bg-red-100 border-2 border-red-300 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg class="w-7 h-7 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <h3 class="font-semibold text-gray-900 mb-2 text-sm">2. Envío del Correo</h3>
+              <p class="text-xs text-gray-600">El email malicioso es enviado desde dominio suplantado, lookalike o cuenta comprometida</p>
+              <div class="mt-3 bg-red-50 border border-red-200 rounded-lg p-2">
+                <p class="text-xs text-red-700 font-medium">Filtros DMARC/DKIM/SPF y reputación del remitente bloquean el 99.9%</p>
+              </div>
+            </div>
+
+            <div class="text-center">
+              <div class="w-16 h-16 bg-yellow-100 border-2 border-yellow-300 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg class="w-7 h-7 text-yellow-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.414-6.586a4 4 0 00-5.656-5.656l-6.415 6.585a6 6 0 108.486 8.486L20.5 13" />
+                </svg>
+              </div>
+              <h3 class="font-semibold text-gray-900 mb-2 text-sm">3. Adjunto o URL</h3>
+              <p class="text-xs text-gray-600">El email contiene un adjunto malicioso o un enlace a sitio de phishing diseñado para robar credenciales</p>
+              <div class="mt-3 bg-yellow-50 border border-yellow-200 rounded-lg p-2">
+                <p class="text-xs text-yellow-700 font-medium">Sandbox analiza adjuntos y TAP reescribe URLs con verificación en tiempo real</p>
+              </div>
+            </div>
+
+            <div class="text-center">
+              <div class="w-16 h-16 bg-orange-100 border-2 border-orange-300 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg class="w-7 h-7 text-orange-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                </svg>
+              </div>
+              <h3 class="font-semibold text-gray-900 mb-2 text-sm">4. Clic del Usuario</h3>
+              <p class="text-xs text-gray-600">El empleado hace clic en el enlace o adjunto sin saber que es malicioso</p>
+              <div class="mt-3 bg-orange-50 border border-orange-200 rounded-lg p-2">
+                <p class="text-xs text-orange-700 font-medium">Security Awareness Training reduce la tasa de clic hasta un 90%</p>
+              </div>
+            </div>
+
+            <div class="text-center">
+              <div class="w-16 h-16 bg-green-100 border-2 border-green-300 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg class="w-7 h-7 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                </svg>
+              </div>
+              <h3 class="font-semibold text-gray-900 mb-2 text-sm">5. Contención</h3>
+              <p class="text-xs text-gray-600">Si el ataque logra pasar, Proofpoint alerta al SOC y facilita la respuesta y contención</p>
+              <div class="mt-3 bg-green-50 border border-green-200 rounded-lg p-2">
+                <p class="text-xs text-green-700 font-medium">CASB y DLP detectan exfiltración de datos y revocan sesiones comprometidas</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Proofpoint vs Competencia -->
+    <section class="py-16 sm:py-20 lg:py-24 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl sm:text-4xl font-bold mb-4 text-gray-900">
+            Proofpoint vs Competencia
+          </h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            Compare las capacidades de las principales plataformas de seguridad de correo
+            empresarial del mercado actual.
+          </p>
+        </div>
+
+        <div class="rounded-2xl overflow-hidden border border-gray-200">
+          <div class="grid grid-cols-5 bg-gray-900 text-white">
+            <div class="p-5 font-semibold text-sm">Capacidad</div>
+            <div class="p-5 font-semibold text-sm text-center border-l border-gray-700">
+              Proofpoint
+              <div class="text-xs font-normal text-blue-300 mt-1">Lider Gartner</div>
+            </div>
+            <div class="p-5 font-semibold text-sm text-center border-l border-gray-700">Microsoft Defender</div>
+            <div class="p-5 font-semibold text-sm text-center border-l border-gray-700">Mimecast</div>
+            <div class="p-5 font-semibold text-sm text-center border-l border-gray-700">Barracuda</div>
+          </div>
+
+          <div class="divide-y divide-gray-100">
+            <div class="grid grid-cols-5 bg-white hover:bg-gray-50 transition-colors">
+              <div class="p-4 text-sm font-medium text-gray-900">Detección BEC avanzada</div>
+              <div class="p-4 text-center border-l border-gray-100">
+                <svg class="w-5 h-5 text-green-500 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg>
+                <span class="text-xs text-gray-500">Análisis semántico</span>
+              </div>
+              <div class="p-4 text-center border-l border-gray-100">
+                <svg class="w-5 h-5 text-yellow-500 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                <span class="text-xs text-gray-500">Básico</span>
+              </div>
+              <div class="p-4 text-center border-l border-gray-100">
+                <svg class="w-5 h-5 text-green-500 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg>
+              </div>
+              <div class="p-4 text-center border-l border-gray-100">
+                <svg class="w-5 h-5 text-yellow-500 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-5 bg-gray-50 hover:bg-gray-100 transition-colors">
+              <div class="p-4 text-sm font-medium text-gray-900">Threat Intelligence propia</div>
+              <div class="p-4 text-center border-l border-gray-100">
+                <svg class="w-5 h-5 text-green-500 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg>
+                <span class="text-xs text-gray-500">2.8B emails/día</span>
+              </div>
+              <div class="p-4 text-center border-l border-gray-100">
+                <svg class="w-5 h-5 text-green-500 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg>
+                <span class="text-xs text-gray-500">Microsoft Signal</span>
+              </div>
+              <div class="p-4 text-center border-l border-gray-100">
+                <svg class="w-5 h-5 text-yellow-500 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+              </div>
+              <div class="p-4 text-center border-l border-gray-100">
+                <svg class="w-5 h-5 text-yellow-500 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-5 bg-white hover:bg-gray-50 transition-colors">
+              <div class="p-4 text-sm font-medium text-gray-900">Security Awareness Training</div>
+              <div class="p-4 text-center border-l border-gray-100">
+                <svg class="w-5 h-5 text-green-500 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg>
+                <span class="text-xs text-gray-500">Integrado</span>
+              </div>
+              <div class="p-4 text-center border-l border-gray-100">
+                <svg class="w-5 h-5 text-red-400 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12" /></svg>
+                <span class="text-xs text-gray-500">Adicional</span>
+              </div>
+              <div class="p-4 text-center border-l border-gray-100">
+                <svg class="w-5 h-5 text-green-500 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg>
+              </div>
+              <div class="p-4 text-center border-l border-gray-100">
+                <svg class="w-5 h-5 text-yellow-500 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-5 bg-gray-50 hover:bg-gray-100 transition-colors">
+              <div class="p-4 text-sm font-medium text-gray-900">DLP para email integrado</div>
+              <div class="p-4 text-center border-l border-gray-100">
+                <svg class="w-5 h-5 text-green-500 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg>
+              </div>
+              <div class="p-4 text-center border-l border-gray-100">
+                <svg class="w-5 h-5 text-yellow-500 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                <span class="text-xs text-gray-500">Requiere Purview</span>
+              </div>
+              <div class="p-4 text-center border-l border-gray-100">
+                <svg class="w-5 h-5 text-green-500 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg>
+              </div>
+              <div class="p-4 text-center border-l border-gray-100">
+                <svg class="w-5 h-5 text-yellow-500 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-5 bg-white hover:bg-gray-50 transition-colors">
+              <div class="p-4 text-sm font-medium text-gray-900">Gartner Magic Quadrant</div>
+              <div class="p-4 text-center border-l border-gray-100">
+                <svg class="w-5 h-5 text-green-500 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg>
+                <span class="text-xs text-gray-500">Lider</span>
+              </div>
+              <div class="p-4 text-center border-l border-gray-100">
+                <svg class="w-5 h-5 text-green-500 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg>
+                <span class="text-xs text-gray-500">Lider</span>
+              </div>
+              <div class="p-4 text-center border-l border-gray-100">
+                <svg class="w-5 h-5 text-green-500 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg>
+                <span class="text-xs text-gray-500">Visionario</span>
+              </div>
+              <div class="p-4 text-center border-l border-gray-100">
+                <svg class="w-5 h-5 text-yellow-500 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                <span class="text-xs text-gray-500">Nicho</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p class="text-center text-sm text-gray-500 mt-6">
+          Para una protección adicional de archivos y documentos compartidos por email, combine Proofpoint con
+          <a href="/sealpath" class="text-red-600 underline hover:text-red-800">SealPath</a> para cifrado persistente de documentos.
+        </p>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 sm:py-20 lg:py-24 bg-white">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4 text-center">
+          Preguntas Frecuentes sobre Proofpoint
+        </h2>
+        <p class="text-gray-600 text-center mb-12">
+          Resolvemos las dudas más comunes sobre la implementación de seguridad de correo avanzada.
+        </p>
+
+        <div class="space-y-4">
+          <details class="bg-gray-50 border border-gray-200 rounded-xl group">
+            <summary class="font-semibold text-lg p-6 cursor-pointer list-none flex items-center justify-between">
+              ¿Proofpoint funciona con Microsoft 365 y Google Workspace?
+              <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+            </summary>
+            <div class="px-6 pb-6 text-gray-600">
+              Si. Proofpoint se integra nativamente con Microsoft 365, Google Workspace y cualquier
+              servidor de correo on-premise. La configuracion se realiza a nivel de registros MX,
+              sin necesidad de instalar agentes en los equipos de los usuarios.
+            </div>
+          </details>
+
+          <details class="bg-gray-50 border border-gray-200 rounded-xl group">
+            <summary class="font-semibold text-lg p-6 cursor-pointer list-none flex items-center justify-between">
+              ¿Cuánto tiempo toma la implementación?
+              <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+            </summary>
+            <div class="px-6 pb-6 text-gray-600">
+              La implementación básica toma entre 3 y 5 dias habiles. La optimizacion completa,
+              incluyendo ajuste de políticas y módulos avanzados, se completa en 2 a 4 semanas
+              dependiendo del tamaño de la organización.
+            </div>
+          </details>
+
+          <details class="bg-gray-50 border border-gray-200 rounded-xl group">
+            <summary class="font-semibold text-lg p-6 cursor-pointer list-none flex items-center justify-between">
+              ¿Qué es Business Email Compromise (BEC) y como lo previene Proofpoint?
+              <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+            </summary>
+            <div class="px-6 pb-6 text-gray-600">
+              BEC es un tipo de fraude donde los atacantes suplantan a ejecutivos o proveedores para
+              solicitar transferencias de dinero o datos sensibles. Proofpoint detecta estos ataques
+              analizando patrones de comunicacion, metadata del remitente, tono del mensaje y
+              comportamiento historico para identificar anomalias, incluso cuando no contienen malware.
+            </div>
+          </details>
+
+          <details class="bg-gray-50 border border-gray-200 rounded-xl group">
+            <summary class="font-semibold text-lg p-6 cursor-pointer list-none flex items-center justify-between">
+              ¿Proofpoint puede capacitar a mis empleados contra phishing?
+              <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+            </summary>
+            <div class="px-6 pb-6 text-gray-600">
+              Si. El modulo Security Awareness Training incluye simulaciones de phishing personalizadas,
+              micro-capacitaciones interactivas y reportes de progreso por usuario y departamento.
+              Las empresas que implementan este programa reducen las tasas de clic en phishing hasta un 90%.
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 sm:py-20 lg:py-24 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-gradient-to-r from-[#111827] to-[#1f2937] rounded-2xl overflow-hidden">
+          <div class="p-8 lg:p-12 text-center">
+            <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">
+              El correo es el vector de ataque #1. Protejalo hoy.
+            </h2>
+            <p class="text-gray-300 mb-8 max-w-2xl mx-auto">
+              Solicite una evaluacion gratuita de la seguridad de su correo corporativo.
+              Nuestros ingenieros certificados en Proofpoint le mostraran exactamente donde
+              estan sus vulnerabilidades.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+              <a href="/contacto" class="bg-gradient-to-r from-red-600 to-red-700 text-white font-semibold px-8 py-4 rounded-full hover:from-red-700 hover:to-red-800 transition shadow-lg inline-flex items-center justify-center gap-2">
+                Solicitar Evaluación Gratuita
+              </a>
+              <a href="/contacto" class="bg-white/10 backdrop-blur-sm border border-white/20 text-white font-semibold px-8 py-4 rounded-full hover:bg-white/20 transition inline-flex items-center justify-center gap-2 focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2">
+                Agendar Demo Tecnica
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Soluciones Relacionadas -->
+  <section class="py-12 bg-gray-50 border-t border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-lg font-bold text-gray-900 mb-6">Soluciones Relacionadas</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+        <a href="/hornet-security" class="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-all duration-300 text-center">
+          <p class="font-semibold text-sm text-gray-900">Hornetsecurity 365</p>
+          <p class="text-xs text-gray-500 mt-1">Seguridad email</p>
+        </a>
+        <a href="/bitdefender" class="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-all duration-300 text-center">
+          <p class="font-semibold text-sm text-gray-900">Bitdefender GravityZone</p>
+          <p class="text-xs text-gray-500 mt-1">Protección endpoint</p>
+        </a>
+        <a href="/kaspersky" class="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-all duration-300 text-center">
+          <p class="font-semibold text-sm text-gray-900">Kaspersky Endpoint</p>
+          <p class="text-xs text-gray-500 mt-1">Antivirus empresarial</p>
+        </a>
+        <a href="/enthec" class="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-all duration-300 text-center">
+          <p class="font-semibold text-sm text-gray-900">Enthec</p>
+          <p class="text-xs text-gray-500 mt-1">Superficie de ataque</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+  <WhatsAppButton />
+</BaseLayout>

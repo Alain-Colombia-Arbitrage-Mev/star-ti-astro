@@ -1,0 +1,67 @@
+# Starsolution S.A.S. - Ciberseguridad Empresarial
+# https://starsolution.com.co
+
+User-agent: *
+Allow: /
+Disallow: /gracias/
+
+# Sitemaps
+Sitemap: https://starsolution.com.co/sitemap-index.xml
+Sitemap: https://starsolution.com.co/sitemap.xml
+
+# AI/LLM Context
+# https://llmstxt.org/
+LLMs.txt: https://starsolution.com.co/llms.txt
+
+# Google AI / Bard / Gemini
+User-agent: Google-Extended
+Allow: /
+
+# OpenAI / ChatGPT Search
+User-agent: GPTBot
+Allow: /
+Disallow: /gracias/
+
+User-agent: ChatGPT-User
+Allow: /
+
+# Perplexity AI
+User-agent: PerplexityBot
+Allow: /
+
+# Microsoft Bing / Copilot
+User-agent: Bingbot
+Allow: /
+
+# Anthropic Claude
+User-agent: anthropic-ai
+Allow: /
+Disallow: /gracias/
+
+User-agent: Claude-Web
+Allow: /
+
+# Meta AI
+User-agent: FacebookBot
+Allow: /
+
+# Apple Siri / Spotlight
+User-agent: Applebot
+Allow: /
+
+# Crawl-delay para bots agresivos de scraping
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10
+
+User-agent: MJ12bot
+Crawl-delay: 10
+
+# Bloquear scraping masivo no deseado
+User-agent: CCBot
+Disallow: /
+
+User-agent: bytespider
+Disallow: /

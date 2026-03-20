@@ -1,0 +1,321 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Navbar from '@components/Navbar.astro';
+import Footer from '@components/Footer.astro';
+import WhatsAppButton from '@components/WhatsAppButton.astro';
+import { seoData } from '@data/seo';
+
+const seo = seoData['equipos-computo'];
+---
+
+<BaseLayout seo={seo}>
+  <Navbar />
+
+  <!-- Hero Section -->
+  <section class="relative py-24 sm:py-32 lg:py-48 bg-white overflow-hidden">
+    <div class="absolute bg-[rgba(254,242,242,0.5)] blur-[32px] right-[-266.67px] rounded-[9999px] size-[800px] top-[-200px]"></div>
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div class="max-w-2xl">
+          <div class="inline-flex items-center gap-2 bg-[#0f172a] px-3 py-1.5 rounded mb-8">
+            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 14 14"><circle cx="7" cy="7" r="5" stroke="#EF4444" stroke-width="1.16667"/></svg>
+            <span class="text-white text-[10px] font-semibold tracking-[0.5px] uppercase">Nueva Serie NVIDIA RTX 6000 Ada Disponible</span>
+          </div>
+
+          <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-tight mb-6">
+            <span class="block text-[#0f172a]">Equipos de Computo</span>
+            <span class="block text-[#dc2626]">Empresariales</span>
+            <span class="block text-[#dc2626]">en Colombia</span>
+          </h1>
+
+          <p class="text-lg text-[#64748b] leading-relaxed mb-10 max-w-lg">
+            Construimos workstations y clusters de alto rendimiento para IA, Investigación Médica,
+            Trading y Gobierno. Potencia pura sin cuellos de botella.
+          </p>
+
+          <div class="flex flex-col sm:flex-row gap-4 mb-12">
+            <a href="#industrias" class="bg-[#0f172a] px-8 py-4 rounded text-white text-sm font-semibold hover:bg-[#1e293b] transition shadow-lg text-center">Ver Soluciones por Sector</a>
+            <a href="/contacto" class="bg-white border border-[#e2e8f0] px-8 py-4 rounded text-[#334155] text-sm font-medium hover:bg-gray-50 transition text-center">Hablar con un Experto</a>
+          </div>
+
+          <div class="flex flex-wrap gap-6">
+            <div class="flex items-center gap-2"><span class="text-[#64748b] text-[10px] font-semibold uppercase tracking-[1px]">NVIDIA Elite</span></div>
+            <div class="flex items-center gap-2"><span class="text-[#64748b] text-[10px] font-semibold uppercase tracking-[1px]">Xeon / Core Ultra</span></div>
+            <div class="flex items-center gap-2"><span class="text-[#64748b] text-[10px] font-semibold uppercase tracking-[1px]">Threadripper</span></div>
+          </div>
+        </div>
+
+        <!-- Right Visual -->
+        <div class="relative hidden lg:block">
+          <div class="flex items-center justify-center">
+            <img src="/assets/icono-escudo-tecnologico.webp" alt="Equipos de cómputo empresariales con garantía extendida" class="w-full max-w-sm rounded-2xl shadow-xl relative z-10" width="384" height="384" loading="lazy" />
+          </div>
+          <div class="absolute left-[56px] rounded-[240px] size-[480px] top-[10px] border border-[#f1f5f9] border-dashed"></div>
+          <div class="absolute left-[156px] rounded-[140px] size-[280px] top-[110px] border border-[#e2e8f0] border-dashed"></div>
+          <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-white border border-[#f1f5f9] rounded-2xl size-24 flex items-center justify-center shadow-[0px_25px_50px_-12px_rgba(0,0,0,0.25)]">
+            <svg class="w-10 h-10 text-[#dc2626]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/></svg>
+          </div>
+          <div class="absolute left-4 top-1/2 -translate-y-1/2 bg-white border border-[#f1f5f9] rounded-lg px-4 py-2 shadow-lg">
+            <span class="text-[#334155] text-xs font-semibold">AI Training</span>
+          </div>
+          <div class="absolute left-1/2 -translate-x-1/2 top-10 bg-white border border-[#f1f5f9] rounded-lg px-4 py-2 shadow-lg">
+            <span class="text-[#334155] text-xs font-semibold">Genomics</span>
+          </div>
+          <div class="absolute right-10 bottom-1/4 bg-white border border-[#f1f5f9] rounded-lg px-4 py-2 shadow-lg">
+            <div class="text-[#334155] text-xs font-semibold">Simulation</div>
+            <div class="text-[#94a3b8] text-[10px]">Low Latency</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Logos Section -->
+  <section class="py-8 border-t border-b border-[#f1f5f9] bg-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <p class="text-center text-[#94a3b8] text-xs font-semibold uppercase tracking-[1.2px] mb-6">Powered by industry leaders</p>
+      <div class="flex flex-wrap items-center justify-center gap-10 text-[#94a3b8] text-sm font-bold">
+        <span>NVIDIA</span><span>Intel</span><span>AMD</span><span>Lenovo</span><span>HP</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Especialización por Industria -->
+  <section id="industrias" class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="max-w-2xl mb-16">
+        <h2 class="text-4xl font-bold text-[#0f172a] tracking-tight mb-4">Especialización por Industria</h2>
+        <p class="text-base text-[#64748b] leading-relaxed">Cada sector requiere una arquitectura diferente. Desde refrigeración líquida para IA hasta certificaciones de seguridad para Gobierno.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="bg-white border border-[#e2e8f0] rounded-xl p-8 hover:shadow-lg transition-shadow">
+          <div class="bg-[#fef2f2] rounded-lg w-10 h-10 flex items-center justify-center mb-6">
+            <svg class="w-5 h-5 text-[#dc2626]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/></svg>
+          </div>
+          <h3 class="text-lg font-bold text-[#0f172a] mb-3">AI & Machine Learning</h3>
+          <p class="text-xs text-[#64748b] leading-relaxed mb-6">Workstations con multi-GPU (A6000 Ada, H100) para entrenamiento de modelos y LLMs locales.</p>
+          <div class="space-y-2"><div class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-[#ef4444] rounded-full"></div><span class="text-[10px] text-[#334155] font-semibold uppercase tracking-[0.5px]">NVLink Support</span></div><div class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-[#ef4444] rounded-full"></div><span class="text-[10px] text-[#334155] font-semibold uppercase tracking-[0.5px]">Ubuntu / Linux AI Stack</span></div></div>
+        </div>
+
+        <div class="bg-white border border-[#e2e8f0] rounded-xl p-8 hover:shadow-lg transition-shadow">
+          <div class="bg-[#ecfdf5] rounded-lg w-10 h-10 flex items-center justify-center mb-6">
+            <svg class="w-5 h-5 text-[#059669]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+          </div>
+          <h3 class="text-lg font-bold text-[#0f172a] mb-3">Investigación Médica</h3>
+          <p class="text-xs text-[#64748b] leading-relaxed mb-6">Estaciones certificadas para imagenología 3D, simulación molecular, genómica. Xeon W, RAM ECC.</p>
+          <div class="space-y-2"><div class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-[#059669] rounded-full"></div><span class="text-[10px] text-[#334155] font-semibold uppercase tracking-[0.5px]">Análisis TAC/MRI</span></div><div class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-[#059669] rounded-full"></div><span class="text-[10px] text-[#334155] font-semibold uppercase tracking-[0.5px]">FDA Compliant</span></div></div>
+        </div>
+
+        <div class="bg-white border border-[#e2e8f0] rounded-xl p-8 hover:shadow-lg transition-shadow">
+          <div class="bg-[#ede9fe] rounded-lg w-10 h-10 flex items-center justify-center mb-6">
+            <svg class="w-5 h-5 text-[#7c3aed]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"/></svg>
+          </div>
+          <h3 class="text-lg font-bold text-[#0f172a] mb-3">Gaming & Streaming Pro</h3>
+          <p class="text-xs text-[#64748b] leading-relaxed mb-6">PCs gaming grado profesional: RTX 4090, Intel i9, refrigeración líquida, monitores 360Hz.</p>
+          <div class="space-y-2"><div class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-[#7c3aed] rounded-full"></div><span class="text-[10px] text-[#334155] font-semibold uppercase tracking-[0.5px]">Centros Esports</span></div><div class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-[#7c3aed] rounded-full"></div><span class="text-[10px] text-[#334155] font-semibold uppercase tracking-[0.5px]">4K 240Hz Displays</span></div></div>
+        </div>
+
+        <div class="bg-white border border-[#e2e8f0] rounded-xl p-8 hover:shadow-lg transition-shadow">
+          <div class="bg-[#f0f9ff] rounded-lg w-10 h-10 flex items-center justify-center mb-6">
+            <svg class="w-5 h-5 text-[#0284c7]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+          </div>
+          <h3 class="text-lg font-bold text-[#0f172a] mb-3">High Frequency Trading</h3>
+          <p class="text-xs text-[#64748b] leading-relaxed mb-6">Latencia sub-microsegundo. Procesadores Core i9, conectividad 10GbE, multi-monitor.</p>
+          <div class="space-y-2"><div class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-[#0284c7] rounded-full"></div><span class="text-[10px] text-[#334155] font-semibold uppercase tracking-[0.5px]">Ultra Low Latency</span></div><div class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-[#0284c7] rounded-full"></div><span class="text-[10px] text-[#334155] font-semibold uppercase tracking-[0.5px]">6-Monitor Setup</span></div></div>
+        </div>
+
+        <div class="bg-white border border-[#e2e8f0] rounded-xl p-8 hover:shadow-lg transition-shadow">
+          <div class="bg-[#fef2f2] rounded-lg w-10 h-10 flex items-center justify-center mb-6">
+            <svg class="w-5 h-5 text-[#dc2626]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+          </div>
+          <h3 class="text-lg font-bold text-[#0f172a] mb-3">Software Development</h3>
+          <p class="text-xs text-[#64748b] leading-relaxed mb-6">Portátiles móviles potentes: 64GB RAM, SSD NVMe 2TB, pantallas 4K para DevOps.</p>
+          <div class="space-y-2"><div class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-[#ef4444] rounded-full"></div><span class="text-[10px] text-[#334155] font-semibold uppercase tracking-[0.5px]">Docker / Kubernetes</span></div><div class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-[#ef4444] rounded-full"></div><span class="text-[10px] text-[#334155] font-semibold uppercase tracking-[0.5px]">IDEs pesados</span></div></div>
+        </div>
+
+        <div class="bg-white border border-[#e2e8f0] rounded-xl p-8 hover:shadow-lg transition-shadow">
+          <div class="bg-[#eef2ff] rounded-lg w-10 h-10 flex items-center justify-center mb-6">
+            <svg class="w-5 h-5 text-[#4f46e5]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+          </div>
+          <h3 class="text-lg font-bold text-[#0f172a] mb-3">Gobierno & Enterprise</h3>
+          <p class="text-xs text-[#64748b] leading-relaxed mb-6">Equipos certificados para licitaciones. TPM 2.0, vPro, cumplimiento normativo total.</p>
+          <div class="space-y-2"><div class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-[#4f46e5] rounded-full"></div><span class="text-[10px] text-[#334155] font-semibold uppercase tracking-[0.5px]">Licitaciones Públicas</span></div><div class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-[#4f46e5] rounded-full"></div><span class="text-[10px] text-[#334155] font-semibold uppercase tracking-[0.5px]">Docs Completas</span></div></div>
+        </div>
+
+        <div class="bg-white border border-[#e2e8f0] rounded-xl p-8 hover:shadow-lg transition-shadow">
+          <div class="bg-[#ecfdf5] rounded-lg w-10 h-10 flex items-center justify-center mb-6">
+            <svg class="w-5 h-5 text-[#14b8a6]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+          </div>
+          <h3 class="text-lg font-bold text-[#0f172a] mb-3">Arquitectura & CAD</h3>
+          <p class="text-xs text-[#64748b] leading-relaxed mb-6">Certificados ISV para AutoCAD, Revit, 3ds Max. Quadro RTX, Xeon W, pantallas calibradas.</p>
+          <div class="space-y-2"><div class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-[#14b8a6] rounded-full"></div><span class="text-[10px] text-[#334155] font-semibold uppercase tracking-[0.5px]">BIM & Modelado 3D</span></div><div class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-[#14b8a6] rounded-full"></div><span class="text-[10px] text-[#334155] font-semibold uppercase tracking-[0.5px]">Certified ISV</span></div></div>
+        </div>
+
+        <div class="bg-white border border-[#e2e8f0] rounded-xl p-8 hover:shadow-lg transition-shadow">
+          <div class="bg-[#f1f5f9] rounded-lg w-10 h-10 flex items-center justify-center mb-6">
+            <svg class="w-5 h-5 text-[#64748b]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+          </div>
+          <h3 class="text-lg font-bold text-[#0f172a] mb-3">Corporativo General</h3>
+          <p class="text-xs text-[#64748b] leading-relaxed mb-6">Flotas homogéneas: ThinkCentre, EliteDesk. Gestión centralizada, garantía 3-5 años.</p>
+          <div class="space-y-2"><div class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-[#64748b] rounded-full"></div><span class="text-[10px] text-[#334155] font-semibold uppercase tracking-[0.5px]">Oficinas / Call Centers</span></div><div class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-[#64748b] rounded-full"></div><span class="text-[10px] text-[#334155] font-semibold uppercase tracking-[0.5px]">vPro Management</span></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEO Content Section -->
+  <section class="py-24 bg-[#f9fafb]">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="max-w-4xl">
+        <h2 class="text-4xl font-bold text-[#0f172a] tracking-tight mb-6">Computadores Empresariales: La Solución Tecnológica que su Empresa Necesita</h2>
+        <div class="prose prose-lg max-w-none">
+          <p class="text-base text-[#64748b] leading-relaxed mb-6">En el competitivo mundo empresarial actual, los <strong class="text-[#0f172a]">computadores empresariales</strong> se han convertido en la columna vertebral de cualquier organización exitosa. En Starsolution, somos mayoristas especializados en proveer <strong>computadores corporativos</strong> de alta gama que impulsan la productividad, seguridad y eficiencia operacional de empresas en Colombia, Venezuela y Estados Unidos.</p>
+
+          <h3 class="text-2xl font-bold text-[#0f172a] mt-12 mb-4">¿Qué son los Computadores Empresariales y Por Qué son Diferentes?</h3>
+          <p class="text-base text-[#64748b] leading-relaxed mb-6">Los <strong>computadores empresariales</strong> no son simplemente equipos de escritorio comunes. Son soluciones tecnológicas diseñadas específicamente para entornos corporativos demandantes, con características que los diferencian radicalmente de los equipos de consumo masivo. Estos <strong>computadores corporativos</strong> incorporan componentes de nivel empresarial, incluyendo procesadores Intel Xeon o AMD Threadripper PRO, memoria ECC (Error-Correcting Code) que previene corrupción de datos críticos, y sistemas de gestión remota como Intel vPro que permiten administración centralizada de flotas completas.</p>
+          <p class="text-base text-[#64748b] leading-relaxed mb-6">A diferencia de los equipos convencionales, nuestros <strong>computadores empresariales</strong> cuentan con certificaciones industriales, garantías extendidas de 3 a 5 años con soporte prioritario, y arquitecturas térmicas diseñadas para operación continua 24/7.</p>
+
+          <div class="bg-white border-l-4 border-[#dc2626] p-6 my-8 rounded-r-lg">
+            <p class="text-sm font-semibold text-[#0f172a] mb-2">Dato Importante:</p>
+            <p class="text-sm text-[#64748b]">Los computadores corporativos profesionales pueden reducir hasta un 40% los costos de soporte técnico y aumentar la productividad en un 35% comparado con equipos de consumo general.</p>
+          </div>
+
+          <h3 class="text-2xl font-bold text-[#0f172a] mt-12 mb-4">Computadores Gamer Portátil: Potencia Profesional en Movilidad</h3>
+          <p class="text-base text-[#64748b] leading-relaxed mb-6">El segmento de <strong class="text-[#0f172a]">computadores gamer portátil</strong> ha evolucionado dramáticamente, trascendiendo el entretenimiento para convertirse en herramientas profesionales indispensables. Nuestros <strong>computadores gamer portátil</strong> profesionales incorporan tarjetas gráficas NVIDIA RTX Serie 40, procesadores Intel Core i9 de 14ª generación o AMD Ryzen 9 Serie 7000, y pantallas de 144Hz a 360Hz con tecnología G-SYNC.</p>
+          <p class="text-base text-[#64748b] leading-relaxed mb-6">Estos <strong>computadores gamer portátil</strong> son ideales para arquitectos que requieren renderizar modelos BIM complejos en campo, ingenieros que ejecutan simulaciones CAD/CAM, diseñadores multimedia, y desarrolladores que compilan proyectos grandes mientras viajan.</p>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 my-8">
+            <div class="bg-white border border-[#e5e7eb] rounded-xl p-6"><div class="text-3xl font-bold text-[#dc2626] mb-2">RTX 4090</div><div class="text-sm text-[#64748b]">GPU más potente en portátiles gaming profesionales</div></div>
+            <div class="bg-white border border-[#e5e7eb] rounded-xl p-6"><div class="text-3xl font-bold text-[#dc2626] mb-2">64GB RAM</div><div class="text-sm text-[#64748b]">Capacidad máxima DDR5 para multitasking extremo</div></div>
+            <div class="bg-white border border-[#e5e7eb] rounded-xl p-6"><div class="text-3xl font-bold text-[#dc2626] mb-2">360Hz</div><div class="text-sm text-[#64748b]">Pantallas ultra-rápidas para precisión visual</div></div>
+          </div>
+
+          <h3 class="text-2xl font-bold text-[#0f172a] mt-12 mb-4">Ventajas de Adquirir Computadores Empresariales con Starsolution</h3>
+          <p class="text-base text-[#64748b] leading-relaxed mb-6">Como <strong>mayoristas especializados en computadores empresariales y corporativos</strong>, ofrecemos ventajas competitivas únicas. Nuestro modelo mayorista elimina intermediarios, traduciendo en <strong>precios hasta 30% menores</strong> que distribuidores tradicionales en volúmenes de 10+ unidades. Mantenemos <strong>stock permanente en Bogotá</strong> de las marcas líderes como Lenovo ThinkStation/ThinkCentre, HP Z-Series/EliteDesk, Dell Precision/OptiPlex, y ASUS ProArt/ExpertCenter.</p>
+
+          <div class="bg-white border border-[#e5e7eb] rounded-xl p-8 my-8">
+            <h4 class="text-xl font-bold text-[#0f172a] mb-4">Beneficios Clave de Nuestros Computadores Empresariales:</h4>
+            <ul class="space-y-3">
+              <li class="flex items-start gap-3"><div class="flex-shrink-0 w-6 h-6 bg-[#fef2f2] rounded-full flex items-center justify-center mt-0.5"><svg class="w-3 h-3 text-[#dc2626]" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div><span class="text-sm text-[#64748b]"><strong class="text-[#0f172a]">Garantía extendida 3-5 años</strong> con reemplazo on-site en menos de 24 horas</span></li>
+              <li class="flex items-start gap-3"><div class="flex-shrink-0 w-6 h-6 bg-[#fef2f2] rounded-full flex items-center justify-center mt-0.5"><svg class="w-3 h-3 text-[#dc2626]" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div><span class="text-sm text-[#64748b]"><strong class="text-[#0f172a]">Soporte técnico nivel 3</strong> por ingenieros especializados con respuesta en menos de 2 horas</span></li>
+              <li class="flex items-start gap-3"><div class="flex-shrink-0 w-6 h-6 bg-[#fef2f2] rounded-full flex items-center justify-center mt-0.5"><svg class="w-3 h-3 text-[#dc2626]" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div><span class="text-sm text-[#64748b]"><strong class="text-[#0f172a]">Gestión de ciclo de vida completo</strong> incluyendo buy-back y disposición segura (NIST 800-88)</span></li>
+              <li class="flex items-start gap-3"><div class="flex-shrink-0 w-6 h-6 bg-[#fef2f2] rounded-full flex items-center justify-center mt-0.5"><svg class="w-3 h-3 text-[#dc2626]" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg></div><span class="text-sm text-[#64748b]"><strong class="text-[#0f172a]">Certificaciones industriales</strong> de partners Gold/Platinum de Intel, AMD, NVIDIA</span></li>
+            </ul>
+          </div>
+
+          <h3 class="text-2xl font-bold text-[#0f172a] mt-12 mb-4">¿Por Qué Elegir Starsolution para sus Computadores Empresariales?</h3>
+          <p class="text-base text-[#64748b] leading-relaxed mb-6">Con más de 15 años proveyendo <strong>computadores empresariales y corporativos</strong> a empresas líderes en Colombia, Venezuela y Estados Unidos, Starsolution se ha consolidado como el mayorista de confianza para organizaciones que no comprometen la calidad. Además de <strong>computadores empresariales</strong>, ofrecemos soluciones complementarias como cableado estructurado certificado, impresoras corporativas Brother, y ciberseguridad con Bitdefender y Kaspersky.</p>
+
+          <div class="bg-gradient-to-r from-[#0f172a] to-[#1e293b] rounded-2xl p-8 my-12 text-white">
+            <h4 class="text-2xl font-bold mb-4">Solicite una Cotización Personalizada Ahora</h4>
+            <p class="text-[#94a3b8] mb-6">Nuestros especialistas están listos para diseñar la solución perfecta de computadores empresariales, corporativos o gamer portátil para su organización. Respuesta garantizada en menos de 2 horas.</p>
+            <a href="/contacto" class="inline-block bg-[#dc2626] text-white px-8 py-4 rounded-lg font-semibold hover:bg-[#b91c1c] transition">Contactar Ahora</a>
+          </div>
+
+          <p class="text-base text-[#64748b] leading-relaxed">Contáctenos hoy mismo a través de nuestro WhatsApp +57 300 701 0017, email contacto@star-ti.com, o visite nuestras oficinas en Bogotá. Garantizamos respuesta en menos de 2 horas con propuesta técnica y cotización personalizada. Su empresa merece la mejor tecnología, y nosotros sabemos cómo entregarla.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section class="py-24 bg-[#0f172a] text-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="max-w-2xl mb-12">
+        <h2 class="text-4xl font-bold mb-4">No vendemos cajas, diseñamos rendimiento.</h2>
+        <p class="text-lg text-gray-400">A diferencia de ensambladores estándar, construimos cada workstation optimizando térmicas, alimentación y cuellos de botella. Cada componente justifica su existencia técnicamente.</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div class="bg-[#1e293b] border border-gray-700 rounded-xl p-8">
+          <div class="flex items-center justify-between mb-6">
+            <span class="text-xs text-gray-400 uppercase tracking-wider">Custom Built Config</span>
+            <span class="text-xs text-[#dc2626] font-semibold">En stock - 24h entrega</span>
+          </div>
+          <div class="space-y-4 mb-8">
+            <div class="flex justify-between items-center py-2 border-b border-gray-700"><span class="text-sm text-gray-400">CPU</span><span class="text-sm font-semibold">AMD Threadripper PRO 7995WX</span></div>
+            <div class="flex justify-between items-center py-2 border-b border-gray-700"><span class="text-sm text-gray-400">GPU</span><span class="text-sm font-semibold">4x NVIDIA RTX 6000 Ada</span></div>
+            <div class="flex justify-between items-center py-2 border-b border-gray-700"><span class="text-sm text-gray-400">RAM</span><span class="text-sm font-semibold">512GB DDR5 ECC REG</span></div>
+            <div class="flex justify-between items-center py-2 border-b border-gray-700"><span class="text-sm text-gray-400">Storage</span><span class="text-sm font-semibold">8TB NVMe RAID 10 (Gen5)</span></div>
+            <div class="flex justify-between items-center py-2 border-b border-gray-700"><span class="text-sm text-gray-400">PSU</span><span class="text-sm font-semibold">2000W 80+ Titanium Redundante</span></div>
+            <div class="flex justify-between items-center py-2"><span class="text-sm text-gray-400">Cooling</span><span class="text-sm font-semibold">Líquido Custom Loop</span></div>
+          </div>
+          <div class="flex items-baseline justify-between mb-6">
+            <span class="text-sm text-gray-400">Total</span>
+            <div class="text-right"><div class="text-3xl font-bold text-white">$180M COP</div><div class="text-xs text-gray-400">Precio mayorista (10+ unidades)</div></div>
+          </div>
+          <a href="/contacto" class="block w-full bg-[#dc2626] text-white py-4 rounded font-semibold hover:bg-[#b91c1c] transition text-center">Solicitar Asesoría</a>
+        </div>
+
+        <div class="space-y-6">
+          <div class="flex gap-4">
+            <div class="flex-shrink-0"><div class="w-12 h-12 bg-[#1e293b] border border-gray-700 rounded-lg flex items-center justify-center"><svg class="w-6 h-6 text-[#dc2626]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div></div>
+            <div><h3 class="text-lg font-bold mb-2">Thermal-Threaded Cooling</h3><p class="text-sm text-gray-400">Diseño de refrigeración inteligente que prioriza componentes críticos. Deltas térmicos &lt;5°C bajo carga sostenida.</p></div>
+          </div>
+          <div class="flex gap-4">
+            <div class="flex-shrink-0"><div class="w-12 h-12 bg-[#1e293b] border border-gray-700 rounded-lg flex items-center justify-center"><svg class="w-6 h-6 text-[#dc2626]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></div></div>
+            <div><h3 class="text-lg font-bold mb-2">Power Delivery Oversizing</h3><p class="text-sm text-gray-400">PSU con 30% overhead garantizado. Filtros activos PFC, protección contra sobretensiones industriales.</p></div>
+          </div>
+          <div class="flex gap-4">
+            <div class="flex-shrink-0"><div class="w-12 h-12 bg-[#1e293b] border border-gray-700 rounded-lg flex items-center justify-center"><svg class="w-6 h-6 text-[#dc2626]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/></svg></div></div>
+            <div><h3 class="text-lg font-bold mb-2">Zero-Bottleneck Architecture</h3><p class="text-sm text-gray-400">Análisis de ancho de banda en cada subsistema. PCIe Gen5, RAM con XMP validado, NVMe en RAID hardware.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact CTA -->
+  <section class="py-24 bg-white">
+    <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+      <h2 class="text-4xl font-bold text-[#0f172a] mb-4">Hablemos de su Proyecto</h2>
+      <p class="text-lg text-[#64748b] mb-8 max-w-2xl mx-auto">Comparta los detalles de su aplicación y reciba una propuesta personalizada para presupuestos y requerimientos.</p>
+
+      <form action="/gracias" method="GET" class="max-w-md mx-auto space-y-4">
+        <input type="email" name="email" placeholder="Email corporativo" required class="w-full px-4 py-3 border border-[#e2e8f0] rounded text-[#0f172a] placeholder-[#94a3b8] focus:outline-none focus:ring-2 focus:ring-[#dc2626] focus:border-transparent"/>
+        <input type="text" name="empresa" placeholder="Empresa" required class="w-full px-4 py-3 border border-[#e2e8f0] rounded text-[#0f172a] placeholder-[#94a3b8] focus:outline-none focus:ring-2 focus:ring-[#dc2626] focus:border-transparent"/>
+        <select name="caso" class="w-full px-4 py-3 border border-[#e2e8f0] rounded text-[#0f172a] focus:outline-none focus:ring-2 focus:ring-[#dc2626] focus:border-transparent">
+          <option value="">Seleccione caso de uso</option>
+          <option value="ai">IA & Machine Learning</option>
+          <option value="gaming">Gaming Pro</option>
+          <option value="medical">Investigación Médica</option>
+          <option value="trading">Trading</option>
+          <option value="dev">Desarrollo Software</option>
+          <option value="cad">CAD / Arquitectura</option>
+          <option value="gov">Gobierno</option>
+          <option value="corp">Corporativo</option>
+        </select>
+        <button type="submit" class="w-full bg-[#dc2626] text-white py-4 rounded font-semibold hover:bg-[#b91c1c] transition shadow-lg">Solicitar Asesoría</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Soluciones Relacionadas -->
+  <section class="py-12 bg-gray-50 border-t border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-lg font-bold text-gray-900 mb-6">Soluciones Relacionadas</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+        <a href="/brother" class="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition text-center">
+          <p class="font-semibold text-sm text-gray-900">Brother</p>
+          <p class="text-xs text-gray-500 mt-1">Impresoras</p>
+        </a>
+        <a href="/cableado-estructurado" class="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition text-center">
+          <p class="font-semibold text-sm text-gray-900">Cableado Estructurado</p>
+          <p class="text-xs text-gray-500 mt-1">Instalacion redes</p>
+        </a>
+        <a href="/teamviewer" class="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition text-center">
+          <p class="font-semibold text-sm text-gray-900">TeamViewer</p>
+          <p class="text-xs text-gray-500 mt-1">Control remoto</p>
+        </a>
+        <a href="/anydesk" class="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition text-center">
+          <p class="font-semibold text-sm text-gray-900">AnyDesk</p>
+          <p class="text-xs text-gray-500 mt-1">Escritorio remoto</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+  <WhatsAppButton />
+</BaseLayout>

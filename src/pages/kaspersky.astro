@@ -1,0 +1,603 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Navbar from '@components/Navbar.astro';
+import Footer from '@components/Footer.astro';
+import WhatsAppButton from '@components/WhatsAppButton.astro';
+import { seoData } from '@data/seo';
+
+const seo = seoData.kaspersky;
+---
+
+<BaseLayout seo={seo}>
+  <Navbar />
+
+  <div class="bg-white min-h-screen font-['Instrument_Sans',sans-serif]">
+
+    <!-- Hero Section -->
+    <section class="bg-[#111827] relative overflow-hidden">
+      <div class="absolute bg-[rgba(237,28,36,0.05)] blur-[60px] right-0 rounded-full w-[800px] h-[800px] top-0"></div>
+      <div class="absolute bg-[rgba(30,58,138,0.1)] blur-[50px] bottom-0 left-0 rounded-full w-[600px] h-[600px]"></div>
+
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-32 lg:py-48">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <!-- Left Content -->
+          <div class="max-w-xl">
+            <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight mb-8">
+              <span class="text-white">Ciberseguridad</span>
+              <br />
+              <span class="bg-clip-text bg-gradient-to-r from-[#ed1c24] to-[#dc2626]" style="--webkit-text-fill-color: transparent; -webkit-text-fill-color: transparent;">
+                Kaspersky
+              </span>
+              <br />
+              <span class="text-white">para Negocios.</span>
+            </h1>
+
+            <p class="text-lg text-[#94a3b8] mb-8">
+              Proteja su futuro digital con la tecnologia mas premiada del mundo. En{" "}
+              <span class="font-medium">StarSolutions</span> implementamos Kaspersky Endpoint Security Cloud con soporte experto en Colombia.
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a href="/contacto" class="bg-white text-[#111827] font-semibold px-8 py-4 rounded shadow-xl hover:bg-gray-100 transition flex items-center justify-center gap-2 focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2">
+                Cotizar Licencias
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 16 16">
+                  <path d="M6 12L10 8L6 4" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.33333" />
+                </svg>
+              </a>
+              <a href="/contacto" class="border border-[#334155] text-white font-semibold px-8 py-4 rounded hover:bg-white/10 transition inline-block text-center focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2">
+                Ver Características
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Content - Floating Cards -->
+          <div class="relative h-[500px] hidden lg:block">
+            <img
+              src="/assets/icono-escudo-proteccion-activa.webp"
+              alt="Escudo de protección activa Kaspersky para seguridad empresarial"
+              class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 object-contain opacity-15"
+              width="256"
+              height="256"
+              loading="lazy"
+            />
+            <!-- System Watcher Card - Top Right -->
+            <div class="absolute right-10 top-10 bg-[#1f2937] border border-[#334155] rounded-2xl shadow-2xl w-64 p-6">
+              <div class="flex items-center gap-3 mb-4">
+                <div class="w-2 h-2 bg-[#ed1c24] rounded-full"></div>
+                <span class="text-[#94a3b8] text-xs uppercase tracking-wider">System Watcher</span>
+              </div>
+              <p class="text-white text-sm font-medium mb-4">Cryptolocker Revertido</p>
+              <div class="bg-[#334155] rounded-full h-1 overflow-hidden">
+                <div class="bg-[#ed1c24] h-full w-full"></div>
+              </div>
+            </div>
+
+            <!-- KSN Network Card - Bottom Left -->
+            <div class="absolute left-10 bottom-20 bg-white rounded-2xl shadow-lg border border-[rgba(255,255,255,0.1)] p-6 w-72">
+              <div class="flex items-center justify-between mb-4">
+                <div class="flex items-center gap-2">
+                  <div class="bg-[#fef2f2] rounded p-2">
+                    <svg class="w-4 h-4" fill="none" viewBox="0 0 16 16">
+                      <path d="M8 1v14M1 8h14" stroke="#ED1C24" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.33333" />
+                    </svg>
+                  </div>
+                  <span class="font-bold text-sm text-[#111827]">KSN Network</span>
+                </div>
+                <div class="bg-[#f0fdf4] px-2 py-1 rounded">
+                  <span class="text-[#16a34a] text-xs font-medium">PROTEGIDO</span>
+                </div>
+              </div>
+              <p class="text-[#64748b] text-xs leading-relaxed">
+                HuMachine Intelligence detecto amenaza de dia cero en archivo adjunto.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Kaspersky Next Section -->
+    <section class="bg-[#f9fafb] py-16 sm:py-20 lg:py-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="mb-16">
+          <h2 class="text-4xl sm:text-5xl font-semibold mb-6">
+            Kaspersky Next
+            <br />
+            <span class="text-[#ed1c24]">Seguridad Simplificada</span>
+          </h2>
+          <p class="text-lg text-[#64748b] max-w-3xl">
+            Gestión centralizada en la nube. Un solo agente ligero. Control total sobre endpoints, móviles y servidores con la tecnología anti-malware más probada y premiada de la industria.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+          <!-- System Watcher Card -->
+          <div class="lg:col-span-4 bg-white border border-[#e2e8f0] rounded-2xl shadow-sm p-8">
+            <div class="bg-[#f8fafc] rounded-lg w-10 h-10 flex items-center justify-center mb-8">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 20 20">
+                <path d="M10 2v16M2 10h16" stroke="#334155" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.66667" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-medium mb-4 text-[#111827]">System Watcher</h3>
+            <p class="text-[#64748b]">
+              Tecnología patentada que detecta ransomware, detiene el ataque y revierte automáticamente los cambios maliciosos.
+            </p>
+          </div>
+
+          <!-- Prevencion de Intrusos Card -->
+          <div class="lg:col-span-4 bg-white border border-[#e2e8f0] rounded-2xl shadow-sm p-8">
+            <div class="bg-[#f8fafc] rounded-lg w-10 h-10 flex items-center justify-center mb-8">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 20 20">
+                <path d="M1.66667 10H18.3333" stroke="#334155" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.66667" />
+                <circle cx="10" cy="10" r="8" stroke="#334155" stroke-width="1.66667" fill="none" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-medium mb-4 text-[#111827]">Prevención de Intrusos</h3>
+            <p class="text-[#64748b]">
+              Sistema de Prevención de Intrusiones (HIPS) y Firewall avanzado para bloquear ataques de red y exploits.
+            </p>
+          </div>
+
+          <!-- HuMachine Intelligence Card - Large -->
+          <div class="lg:col-span-8 bg-[#111827] border border-[#1e293b] rounded-2xl p-8 relative overflow-hidden">
+            <div class="absolute bg-[rgba(237,28,36,0.1)] blur-[32px] right-[-63px] rounded-full w-64 h-64 top-[-63px]"></div>
+
+            <div class="relative">
+              <div class="bg-[rgba(127,29,29,0.3)] border border-[rgba(127,29,29,0.5)] inline-block px-2 py-1 rounded mb-6">
+                <span class="text-[#fecaca] text-xs font-medium tracking-wider uppercase">
+                  HuMachine Intelligence
+                </span>
+              </div>
+
+              <h3 class="text-2xl font-medium text-white mb-4">Inteligencia Artificial Hibrida</h3>
+              <p class="text-[#94a3b8] mb-12 max-w-lg">
+                Kaspersky combina Big Data, Machine Learning y la experiencia humana de sus analistas globales (GReAT) para detectar amenazas que otros pasan por alto.
+              </p>
+
+              <div class="border-t border-[#1e293b] pt-8 grid grid-cols-2 gap-8">
+                <div>
+                  <div class="text-2xl font-bold text-[#ed1c24] mb-1">Top 1</div>
+                  <div class="text-[#64748b] text-xs uppercase tracking-wider">Pruebas Independientes</div>
+                </div>
+                <div>
+                  <div class="text-2xl font-bold text-[#ed1c24] mb-1">400M+</div>
+                  <div class="text-[#64748b] text-xs uppercase tracking-wider">Usuarios Protegidos</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- EDR Optimum Card -->
+          <div class="lg:col-span-4 bg-white border border-[#e2e8f0] rounded-2xl shadow-sm p-8 flex flex-col justify-between">
+            <div>
+              <h3 class="text-xl font-medium mb-4 text-[#111827]">Kaspersky EDR Optimum</h3>
+              <p class="text-[#64748b]">
+                Visibilidad de causa raíz y respuesta automatizada sin necesidad de contratar expertos en seguridad adicionales.
+              </p>
+            </div>
+            <a href="/contacto" class="bg-[rgba(237,28,36,0.1)] text-[#ed1c24] text-xs font-bold uppercase px-6 py-3 rounded mt-6 hover:bg-[rgba(237,28,36,0.2)] transition inline-block text-center">
+              Ver EDR
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Personas en Ciberseguridad en Colombia -->
+    <section class="py-16 sm:py-20 lg:py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="mb-12">
+          <span class="text-[#ed1c24] text-xs font-bold uppercase tracking-wider">Contenido Especializado</span>
+          <h2 class="text-3xl font-bold mt-4 mb-6 text-[#111827]">
+            IP Personas en Ciberseguridad en Colombia
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div>
+            <h3 class="text-xl font-semibold mb-4">Por que las empresas colombianas confian en Kaspersky?</h3>
+            <p class="text-[#64748b] mb-4">
+              En un panorama de amenazas cada vez más complejo, las organizaciones en Colombia necesitan protección probada y confiable. Kaspersky ofrece más de 25 años de experiencia en ciberseguridad, respaldada por su equipo de investigación GReAT (Global Research and Analysis Team) que monitorea y neutraliza amenazas avanzadas en tiempo real.
+            </p>
+            <p class="text-[#64748b] mb-6">
+              A diferencia de soluciones que solo se enfocan en detección basada en firmas, Kaspersky utiliza su tecnología HuMachine Intelligence que combina el poder del machine learning con el análisis experto humano. Esto resulta en tasas de detección superiores y menos falsos positivos que interrumpan la productividad de su equipo.
+            </p>
+
+            <div class="bg-gray-50 border border-gray-200 rounded-xl p-6">
+              <h4 class="font-semibold mb-4">Proteccion Multinivel Incluida:</h4>
+              <ul class="space-y-3">
+                <li class="flex items-start gap-2">
+                  <svg class="w-5 h-5 text-green-600 mt-0.5" fill="none" viewBox="0 0 20 20">
+                    <circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.66667" />
+                    <path d="M7 10l2 2 4-4" stroke="currentColor" stroke-width="1.66667" />
+                  </svg>
+                  <span class="text-sm text-[#475569]">Anti-malware basado en comportamiento y firmas</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg class="w-5 h-5 text-green-600 mt-0.5" fill="none" viewBox="0 0 20 20">
+                    <circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.66667" />
+                    <path d="M7 10l2 2 4-4" stroke="currentColor" stroke-width="1.66667" />
+                  </svg>
+                  <span class="text-sm text-[#475569]">Protección anti-ransomware con reversión automática</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg class="w-5 h-5 text-green-600 mt-0.5" fill="none" viewBox="0 0 20 20">
+                    <circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.66667" />
+                    <path d="M7 10l2 2 4-4" stroke="currentColor" stroke-width="1.66667" />
+                  </svg>
+                  <span class="text-sm text-[#475569]">Firewall bidireccional y sistema HIPS</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg class="w-5 h-5 text-green-600 mt-0.5" fill="none" viewBox="0 0 20 20">
+                    <circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.66667" />
+                    <path d="M7 10l2 2 4-4" stroke="currentColor" stroke-width="1.66667" />
+                  </svg>
+                  <span class="text-sm text-[#475569]">Control web y filtrado de contenido</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-semibold mb-4">Kaspersky Security Network (KSN)</h3>
+            <p class="text-[#64748b] mb-4">
+              Una de las ventajas competitivas más importantes de Kaspersky es su red global de inteligencia de amenazas, KSN. Esta infraestructura en la nube procesa más de 400,000 nuevos objetos maliciosos diariamente, alimentando los modelos de machine learning con información actualizada cada minuto.
+            </p>
+            <p class="text-[#64748b] mb-6">
+              Cuando un endpoint protegido por Kaspersky encuentra un archivo sospechoso, este se envía instantáneamente a KSN para análisis en sandboxing en la nube. En cuestión de segundos, el veredicto se comparte con todos los usuarios de Kaspersky globalmente, creando una defensa colectiva contra amenazas emergentes.
+            </p>
+
+            <div class="bg-gradient-to-br from-red-50 to-white border border-red-100 rounded-xl p-6">
+              <h4 class="font-semibold mb-4 text-[#111827]">Gestion Cloud Simplificada</h4>
+              <p class="text-sm text-[#64748b] mb-4">
+                Kaspersky Endpoint Security Cloud elimina la necesidad de servidores locales, actualizaciones manuales y configuraciones complejas. Toda la administración se realiza desde una consola web intuitiva accesible desde cualquier dispositivo.
+              </p>
+              <ul class="space-y-2 text-sm text-[#475569]">
+                <li>&#10003; Despliegue automatico en minutos</li>
+                <li>&#10003; Políticas de seguridad personalizables por grupo</li>
+                <li>&#10003; Reportes ejecutivos y de cumplimiento</li>
+                <li>&#10003; Gestión de dispositivos móviles (MDM) integrada</li>
+                <li>&#10003; Actualizaciones automáticas sin intervención</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Preguntas Frecuentes -->
+    <section class="py-16 sm:py-20 lg:py-24 bg-gray-50">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4 text-center">
+          Preguntas Frecuentes sobre Kaspersky para Empresas
+        </h2>
+        <p class="text-[#64748b] text-center mb-12">
+          Respondemos las dudas más comunes de gerentes IT antes de implementar Kaspersky
+        </p>
+
+        <div class="space-y-6">
+          <div class="bg-white border border-gray-200 rounded-xl p-6">
+            <h3 class="font-semibold text-lg mb-2">
+              Kaspersky realmente protege contra ransomware moderno como LockBit o BlackCat?
+            </h3>
+            <p class="text-[#64748b]">
+              Sí. La tecnología System Watcher de Kaspersky monitorea el comportamiento de todos los procesos en tiempo real. Cuando detecta patrones típicos de ransomware (encriptación masiva de archivos), bloquea el proceso instantáneamente y revierte automáticamente los cambios. Hemos documentado casos donde clientes recuperaron archivos sin necesidad de backups ni pagar rescates.
+            </p>
+          </div>
+
+          <div class="bg-white border border-gray-200 rounded-xl p-6">
+            <h3 class="font-semibold text-lg mb-2">
+              ¿Cuál es la diferencia entre Kaspersky Standard, Plus y Select Cloud?
+            </h3>
+            <p class="text-[#64748b] mb-4">
+              <strong>Standard Cloud:</strong> Proteccion esencial con antimalware, firewall y gestion cloud. Ideal para pequenas empresas (10-50 usuarios).
+              <br /><br />
+              <strong>Plus Cloud:</strong> Agrega encriptación de datos, gestión de vulnerabilidades y control de aplicaciones. Recomendado para empresas medianas (50-250 usuarios).
+              <br /><br />
+              <strong>Select Cloud:</strong> Incluye EDR Optimum con analisis de causa raiz, threat hunting y respuesta automatizada. Para organizaciones con requisitos avanzados (+250 usuarios).
+            </p>
+          </div>
+
+          <div class="bg-white border border-gray-200 rounded-xl p-6">
+            <h3 class="font-semibold text-lg mb-2">
+              Puedo gestionar dispositivos moviles (Android/iOS) desde la misma consola?
+            </h3>
+            <p class="text-[#64748b]">
+              Absolutamente. Kaspersky Endpoint Security Cloud incluye MDM (Mobile Device Management) integrado. Puede aplicar políticas de seguridad, borrado remoto, geolocalización y contenedorización de datos corporativos en smartphones y tablets desde la misma interfaz que gestiona PCs y servidores.
+            </p>
+          </div>
+
+          <div class="bg-white border border-gray-200 rounded-xl p-6">
+            <h3 class="font-semibold text-lg mb-2">
+              Que tan complicado es migrar desde nuestro antivirus actual?
+            </h3>
+            <p class="text-[#64748b]">
+              El proceso típico toma menos de una semana para empresas de hasta 500 endpoints. Starsolution maneja todo el proceso: auditoría de infraestructura actual, configuración de consola cloud, desinstalación automática del antivirus anterior mediante scripts y despliegue silencioso de Kaspersky via GPO o instaladores remotos. Los usuarios finales generalmente no notan el cambio.
+            </p>
+          </div>
+
+          <div class="bg-white border border-gray-200 rounded-xl p-6">
+            <h3 class="font-semibold text-lg mb-2">
+              Afecta el rendimiento de equipos antiguos o de bajos recursos?
+            </h3>
+            <p class="text-[#64748b]">
+              Kaspersky está optimizado para consumo mínimo de recursos. En equipos con procesadores Core i3 o superiores y 4GB RAM, el impacto en rendimiento es imperceptible (&lt;2% CPU en operación normal). Para equipos legacy, podemos configurar políticas de escaneo programado fuera de horas laborales y desactivar módulos no críticos.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Implementacion en Colombia -->
+    <section class="py-16 sm:py-20 lg:py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <div>
+            <span class="text-[#ed1c24] text-xs font-medium uppercase tracking-wide">Partner Certificado</span>
+            <h2 class="text-3xl sm:text-4xl font-bold mt-4 mb-6">
+              Implementacion de Kaspersky en Bogota y toda Colombia
+            </h2>
+            <p class="text-[#64748b] mb-6">
+              Starsolution es partner certificado de Kaspersky en Colombia desde 2014. Nuestro equipo de ingenieros en seguridad tiene más de 200 implementaciones exitosas en sectores financiero, salud, manufactura y servicios.
+            </p>
+            <p class="text-[#64748b] mb-8">
+              No solo vendemos licencias. Ofrecemos consultoría estratégica, arquitectura de seguridad, implementación controlada, capacitación personalizada y soporte técnico especializado en español disponible de lunes a sábado.
+            </p>
+
+            <div class="grid grid-cols-2 gap-6">
+              <div class="border-l-4 border-[#ed1c24] pl-4">
+                <div class="text-2xl font-bold text-[#111827] mb-1">200+</div>
+                <div class="text-sm text-[#64748b]">Implementaciones exitosas</div>
+              </div>
+              <div class="border-l-4 border-[#ed1c24] pl-4">
+                <div class="text-2xl font-bold text-[#111827] mb-1">98%</div>
+                <div class="text-sm text-[#64748b]">Satisfaccion del cliente</div>
+              </div>
+              <div class="border-l-4 border-[#ed1c24] pl-4">
+                <div class="text-2xl font-bold text-[#111827] mb-1">24/48h</div>
+                <div class="text-sm text-[#64748b]">Tiempo de implementacion</div>
+              </div>
+              <div class="border-l-4 border-[#ed1c24] pl-4">
+                <div class="text-2xl font-bold text-[#111827] mb-1">9 anos</div>
+                <div class="text-sm text-[#64748b]">Como partner Kaspersky</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-br from-gray-50 to-white border border-gray-200 rounded-2xl p-8">
+            <h3 class="text-xl font-semibold mb-6">Que incluye nuestro servicio?</h3>
+
+            <div class="space-y-6">
+              <div class="flex gap-4">
+                <div class="bg-[#fef2f2] rounded-lg p-3 h-fit">
+                  <svg class="w-5 h-5 text-[#ed1c24]" fill="none" viewBox="0 0 20 20">
+                    <circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.66667" />
+                    <path d="M7 10l2 2 4-4" stroke="currentColor" stroke-width="1.66667" />
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="font-semibold mb-1">Auditoria de Seguridad Inicial</h4>
+                  <p class="text-sm text-[#64748b]">
+                    Evaluación de su infraestructura actual, identificación de brechas de seguridad y recomendaciones de mejora.
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex gap-4">
+                <div class="bg-[#fef2f2] rounded-lg p-3 h-fit">
+                  <svg class="w-5 h-5 text-[#ed1c24]" fill="none" viewBox="0 0 20 20">
+                    <circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.66667" />
+                    <path d="M7 10l2 2 4-4" stroke="currentColor" stroke-width="1.66667" />
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="font-semibold mb-1">Configuracion de Consola Cloud</h4>
+                  <p class="text-sm text-[#64748b]">
+                    Setup completo de Kaspersky Security Center Cloud, integración con Active Directory y configuración de políticas por grupos.
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex gap-4">
+                <div class="bg-[#fef2f2] rounded-lg p-3 h-fit">
+                  <svg class="w-5 h-5 text-[#ed1c24]" fill="none" viewBox="0 0 20 20">
+                    <circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.66667" />
+                    <path d="M7 10l2 2 4-4" stroke="currentColor" stroke-width="1.66667" />
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="font-semibold mb-1">Despliegue Automatizado</h4>
+                  <p class="text-sm text-[#64748b]">
+                    Instalación silenciosa en todos los endpoints via GPO, SCCM o paquetes ejecutables sin interrumpir la operación.
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex gap-4">
+                <div class="bg-[#fef2f2] rounded-lg p-3 h-fit">
+                  <svg class="w-5 h-5 text-[#ed1c24]" fill="none" viewBox="0 0 20 20">
+                    <circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.66667" />
+                    <path d="M7 10l2 2 4-4" stroke="currentColor" stroke-width="1.66667" />
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="font-semibold mb-1">Capacitacion y Documentacion</h4>
+                  <p class="text-sm text-[#64748b]">
+                    Sesión de 3 horas para administradores IT y documentación técnica personalizada con procedimientos de respuesta a incidentes.
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex gap-4">
+                <div class="bg-[#fef2f2] rounded-lg p-3 h-fit">
+                  <svg class="w-5 h-5 text-[#ed1c24]" fill="none" viewBox="0 0 20 20">
+                    <circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.66667" />
+                    <path d="M7 10l2 2 4-4" stroke="currentColor" stroke-width="1.66667" />
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="font-semibold mb-1">Soporte Tecnico Continuo</h4>
+                  <p class="text-sm text-[#64748b]">
+                    Mesa de ayuda especializada con tiempo de respuesta garantizado de 2 horas para incidentes críticos.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="py-16 sm:py-20 lg:py-24 bg-[#111827]">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
+          <div class="grid grid-cols-1 lg:grid-cols-2">
+            <!-- Form Side -->
+            <div class="p-8 lg:p-12">
+              <h2 class="text-3xl font-bold mb-4 text-[#111827]">
+                No entregamos licencias.<br />Implementamos Seguridad.
+              </h2>
+              <p class="text-[#64748b] mb-8">
+                Obtenga una cotización personalizada con análisis de riesgos y recomendaciones sin costo.
+              </p>
+
+              <form action="/gracias" method="GET" class="space-y-4">
+                <div>
+                  <input
+                    type="text"
+                    placeholder="Nombre completo"
+                    class="w-full px-4 py-3 bg-[#f8fafc] border border-[#e2e8f0] rounded focus:outline-none focus:ring-2 focus:ring-[#ed1c24]"
+                  />
+                </div>
+                <div>
+                  <input
+                    type="email"
+                    placeholder="Correo corporativo"
+                    class="w-full px-4 py-3 bg-[#f8fafc] border border-[#e2e8f0] rounded focus:outline-none focus:ring-2 focus:ring-[#ed1c24]"
+                  />
+                </div>
+                <div>
+                  <input
+                    type="tel"
+                    placeholder="Teléfono"
+                    class="w-full px-4 py-3 bg-[#f8fafc] border border-[#e2e8f0] rounded focus:outline-none focus:ring-2 focus:ring-[#ed1c24]"
+                  />
+                </div>
+                <div>
+                  <input
+                    type="number"
+                    placeholder="Numero de dispositivos a proteger"
+                    class="w-full px-4 py-3 bg-[#f8fafc] border border-[#e2e8f0] rounded focus:outline-none focus:ring-2 focus:ring-[#ed1c24]"
+                  />
+                </div>
+                <button
+                  type="submit"
+                  class="w-full bg-[#ed1c24] text-white font-semibold px-6 py-4 rounded hover:bg-[#dc2626] transition shadow-lg focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2"
+                >
+                  Solicitar Cotizacion Ahora
+                </button>
+              </form>
+
+              <p class="text-xs text-[#64748b] mt-4">
+                Respuesta en menos de 2 horas hábiles. No compartimos su información con terceros.
+              </p>
+            </div>
+
+            <!-- Benefits Side -->
+            <div class="bg-gradient-to-br from-[#111827] to-[#1f2937] p-8 lg:p-12 flex flex-col justify-center">
+              <h3 class="text-xl font-semibold text-white mb-8">Su cotizacion incluye:</h3>
+
+              <div class="space-y-6">
+                <div class="flex items-start gap-3">
+                  <div class="bg-[#ed1c24] rounded-full p-2 mt-1">
+                    <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 16 16">
+                      <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 class="text-white font-semibold mb-1">Análisis de Amenazas Específico</h4>
+                    <p class="text-[#94a3b8] text-sm">
+                      Evaluación de riesgos según su industria y tamaño de empresa
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-3">
+                  <div class="bg-[#ed1c24] rounded-full p-2 mt-1">
+                    <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 16 16">
+                      <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 class="text-white font-semibold mb-1">Comparativa de Planes</h4>
+                    <p class="text-[#94a3b8] text-sm">
+                      Recomendacion clara entre Standard, Plus y Select Cloud
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-3">
+                  <div class="bg-[#ed1c24] rounded-full p-2 mt-1">
+                    <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 16 16">
+                      <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 class="text-white font-semibold mb-1">Plan de Implementación</h4>
+                    <p class="text-[#94a3b8] text-sm">
+                      Cronograma detallado con fechas y entregables específicos
+                    </p>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-3">
+                  <div class="bg-[#ed1c24] rounded-full p-2 mt-1">
+                    <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 16 16">
+                      <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 class="text-white font-semibold mb-1">ROI Estimado</h4>
+                    <p class="text-[#94a3b8] text-sm">
+                      Calculo de retorno de inversion vs. costo de incidente
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Soluciones Relacionadas -->
+  <section class="py-12 bg-gray-50 border-t border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-lg font-bold text-gray-900 mb-6">Soluciones Relacionadas</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+        <a href="/bitdefender" class="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-all duration-300 text-center">
+          <p class="font-semibold text-sm text-gray-900">Bitdefender GravityZone</p>
+          <p class="text-xs text-gray-500 mt-1">Proteccion endpoint</p>
+        </a>
+        <a href="/hornet-security" class="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-all duration-300 text-center">
+          <p class="font-semibold text-sm text-gray-900">Hornetsecurity 365</p>
+          <p class="text-xs text-gray-500 mt-1">Seguridad email</p>
+        </a>
+        <a href="/antivirus-empresas" class="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-all duration-300 text-center">
+          <p class="font-semibold text-sm text-gray-900">Comparativa Antivirus</p>
+          <p class="text-xs text-gray-500 mt-1">Bitdefender vs Kaspersky</p>
+        </a>
+        <a href="/proofpoint" class="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-all duration-300 text-center">
+          <p class="font-semibold text-sm text-gray-900">Proofpoint</p>
+          <p class="text-xs text-gray-500 mt-1">Anti-phishing</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+  <WhatsAppButton />
+</BaseLayout>

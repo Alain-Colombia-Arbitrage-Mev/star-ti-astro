@@ -1,0 +1,193 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Navbar from '@components/Navbar.astro';
+import Footer from '@components/Footer.astro';
+import WhatsAppButton from '@components/WhatsAppButton.astro';
+import { seoData } from '@data/seo';
+
+const seo = seoData['antivirus-empresas'];
+---
+
+<BaseLayout seo={seo}>
+  <Navbar />
+
+  <!-- Hero Section -->
+  <section class="relative overflow-hidden pt-20 sm:pt-24 lg:pt-32 pb-16 sm:pb-20 lg:pb-24 bg-gradient-to-br from-blue-50 via-white to-purple-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+        <div class="inline-flex items-center gap-2 bg-blue-100 border border-blue-200 rounded-full px-4 py-2 mb-6">
+          <svg class="w-4 h-4 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
+          <span class="text-sm font-semibold text-blue-700 uppercase tracking-wide">Seguridad Corporativa</span>
+        </div>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-semibold leading-tight mb-6">
+          <span class="block">Antivirus Empresarial:</span>
+          <span class="block mt-2">Las Mejores</span>
+          <span class="block bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mt-2">Soluciones de Protección</span>
+        </h1>
+        <p class="text-lg sm:text-xl text-gray-600 mb-8 leading-relaxed max-w-3xl mx-auto">Implementamos soluciones antivirus de clase mundial para empresas que necesitan proteger su infraestructura crítica, datos sensibles y operaciones 24/7 contra las amenazas cibernéticas más avanzadas.</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+          <a href="/contacto" class="bg-gray-900 text-white font-semibold px-8 py-4 rounded-lg shadow-xl hover:bg-gray-800 transition flex items-center justify-center gap-2 focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2">
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
+            Proteger Mi Empresa
+          </a>
+          <a href="/contacto" class="bg-white border-2 border-gray-200 text-gray-700 font-semibold px-8 py-4 rounded-lg shadow-sm hover:bg-gray-50 transition inline-block text-center focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2">Comparar Soluciones</a>
+        </div>
+        <div class="flex flex-wrap items-center justify-center gap-6 sm:gap-12 pt-8 border-t border-gray-200">
+          <div class="flex items-center gap-2"><svg class="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span class="text-sm font-medium text-gray-700">Soporte 24/7</span></div>
+          <div class="flex items-center gap-2"><svg class="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span class="text-sm font-medium text-gray-700">Implementación Express</span></div>
+          <div class="flex items-center gap-2"><svg class="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span class="text-sm font-medium text-gray-700">Partners Certificados</span></div>
+        </div>
+        </div>
+        <div class="hidden lg:flex items-center justify-center">
+          <img src="/assets/icono-escudo-proteccion-activa.webp" alt="Comparativa de antivirus empresariales para protección corporativa en Colombia" class="w-full max-w-sm rounded-2xl shadow-xl" width="384" height="384" loading="lazy" />
+        </div>
+      </div>
+    </div>
+    <div class="absolute top-20 left-10 w-72 h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
+    <div class="absolute top-40 right-10 w-72 h-72 bg-purple-200 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+  </section>
+
+  <!-- Brand Logos -->
+  <section class="py-12 bg-white border-y border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <p class="text-center text-sm text-gray-500 uppercase tracking-wider mb-8">Partners Tecnológicos Oficiales</p>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-items-center">
+        <div class="flex items-center justify-center"><a href="/bitdefender" class="text-2xl font-bold text-gray-800 hover:text-blue-600 transition">Bitdefender</a></div>
+        <div class="flex items-center justify-center"><a href="/kaspersky" class="text-2xl font-bold text-gray-800 hover:text-blue-600 transition">Kaspersky</a></div>
+        <div class="flex items-center justify-center"><span class="text-2xl font-bold text-gray-800 uppercase">FORTINET</span></div>
+        <div class="flex items-center justify-center"><span class="text-2xl font-bold text-gray-800">Hornetsecurity</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Por Que Implementar -->
+  <section class="py-16 sm:py-20 lg:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mb-12 lg:mb-16"><h2 class="text-3xl sm:text-4xl lg:text-5xl font-semibold mb-6">&iquest;Por Qué Implementar un Antivirus Empresarial?</h2><p class="text-lg text-gray-600 leading-relaxed">Un antivirus doméstico no protege infraestructuras corporativas. Las empresas modernas requieren herramientas de gestión centralizada, visibilidad completa y defensa avanzada contra amenazas persistentes.</p></div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        <div class="bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-xl transition-all-shadow duration-300 cursor-pointer"><div class="bg-blue-50 border border-blue-200 rounded-xl w-14 h-14 flex items-center justify-center mb-6"><svg class="w-7 h-7 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg></div><h3 class="text-xl font-semibold mb-3 text-gray-900">Anti-Ransomware</h3><p class="text-gray-600 leading-relaxed">Protección avanzada contra ransomware, secuestro de datos y ataques dirigidos. Detección comportamental en tiempo real.</p></div>
+        <div class="bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-xl transition-all-shadow duration-300 cursor-pointer"><div class="bg-indigo-50 border border-indigo-200 rounded-xl w-14 h-14 flex items-center justify-center mb-6"><svg class="w-7 h-7 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2" /></svg></div><h3 class="text-xl font-semibold mb-3 text-gray-900">Gestión Centralizada</h3><p class="text-gray-600 leading-relaxed">Control total de endpoints, servidores y dispositivos móviles desde una única consola de administracion en la nube.</p></div>
+        <div class="bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-xl transition-all-shadow duration-300 cursor-pointer"><div class="bg-green-50 border border-green-200 rounded-xl w-14 h-14 flex items-center justify-center mb-6"><svg class="w-7 h-7 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" /></svg></div><h3 class="text-xl font-semibold mb-3 text-gray-900">Instalacion &amp; Monitoreo</h3><p class="text-gray-600 leading-relaxed">Implementación profesional con mínima interrupción operativa. Monitoreo 24/7 con alertas proactivas.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Detailed Content Section -->
+  <section class="py-16 sm:py-20 lg:py-24 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+        <div>
+          <h2 class="text-3xl sm:text-4xl font-semibold mb-6">La Diferencia Entre Seguridad Doméstica y Corporativa</h2>
+          <div class="prose prose-lg max-w-none text-gray-600">
+            <p class="mb-4">Las soluciones empresariales protegen infraestructuras completas con cientos o miles de endpoints simultáneamente.</p>
+            <p class="mb-4"><strong class="text-gray-900">Las empresas enfrentan amenazas diferentes:</strong> ataques dirigidos (APT), ransomware corporativo, phishing sofisticado, exfiltración de datos y malware polimorfico.</p>
+            <p class="mb-4">Un antivirus empresarial incorpora inteligencia artificial, machine learning, análisis comportamental, sandboxing y threat intelligence en tiempo real.</p>
+            <h3 class="text-2xl font-semibold mt-8 mb-4 text-gray-900">Componentes Clave</h3>
+            <ul class="space-y-3 mb-6">
+              <li class="flex items-start gap-3"><svg class="w-6 h-6 text-blue-600 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span><strong>Consola Cloud:</strong> Gestión centralizada desde cualquier lugar.</span></li>
+              <li class="flex items-start gap-3"><svg class="w-6 h-6 text-blue-600 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span><strong>Multi-Capa:</strong> Firewall, antimalware, antiphishing, control de aplicaciones.</span></li>
+              <li class="flex items-start gap-3"><svg class="w-6 h-6 text-blue-600 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span><strong>Compliance:</strong> Informes para GDPR, ISO 27001, SOC 2.</span></li>
+              <li class="flex items-start gap-3"><svg class="w-6 h-6 text-blue-600 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span><strong>Servidores:</strong> Windows Server, Linux, correo y bases de datos.</span></li>
+              <li class="flex items-start gap-3"><svg class="w-6 h-6 text-blue-600 shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span><strong>MDM:</strong> Protección de smartphones iOS y Android.</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="space-y-6">
+          <div class="bg-white border border-gray-200 rounded-2xl p-8 shadow-lg">
+            <h3 class="text-2xl font-semibold mb-6 text-gray-900">Estadísticas de Ciberseguridad 2025</h3>
+            <div class="space-y-6">
+              <div class="flex items-center justify-between pb-4 border-b border-gray-100"><div><p class="text-sm text-gray-500 mb-1">Aumento de Ransomware</p><p class="text-3xl font-bold text-red-600">+350%</p></div><svg class="w-12 h-12 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg></div>
+              <div class="flex items-center justify-between pb-4 border-b border-gray-100"><div><p class="text-sm text-gray-500 mb-1">Costo Promedio de Brecha</p><p class="text-3xl font-bold text-orange-600">$4.45M</p></div><svg class="w-12 h-12 text-orange-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg></div>
+              <div class="flex items-center justify-between"><div><p class="text-sm text-gray-500 mb-1">Tiempo Promedio de Detección</p><p class="text-3xl font-bold text-blue-600">287 días</p></div><svg class="w-12 h-12 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg></div>
+            </div>
+          </div>
+          <div class="bg-gradient-to-br from-blue-600 to-purple-600 rounded-2xl p-8 text-white">
+            <h3 class="text-2xl font-semibold mb-4">Beneficios Inmediatos</h3>
+            <ul class="space-y-3">
+              <li class="flex items-center gap-3"><svg class="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg><span>Reducción del 99.9% en amenazas conocidas</span></li>
+              <li class="flex items-center gap-3"><svg class="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg><span>Bloqueo proactivo de exploits Zero-Day</span></li>
+              <li class="flex items-center gap-3"><svg class="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg><span>Cumplimiento normativo automatizado</span></li>
+              <li class="flex items-center gap-3"><svg class="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg><span>ROI positivo en menos de 6 meses</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technology Comparison -->
+  <section class="py-16 sm:py-20 lg:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12 lg:mb-16"><span class="text-sm font-semibold text-blue-600 uppercase tracking-wider">Aliados de Confianza</span><h2 class="text-3xl sm:text-4xl lg:text-5xl font-semibold mt-3 mb-6">Tecnología de Clase Mundial</h2><p class="text-lg text-gray-600 max-w-3xl mx-auto">Trabajamos con los líderes globales en seguridad empresarial.</p></div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-white border-2 border-gray-200 rounded-2xl p-8 hover:border-red-500 transition-all duration-300 hover:shadow-2xl cursor-pointer">
+          <div class="flex items-start justify-between mb-6"><div class="flex items-center gap-3"><div class="w-12 h-12 bg-red-50 rounded-xl flex items-center justify-center"><div class="w-6 h-6 bg-red-600 rounded"></div></div><div><h3 class="text-2xl font-bold text-gray-900">Bitdefender</h3><p class="text-sm text-gray-500">GravityZone Business Security</p></div></div><a href="/bitdefender" class="text-blue-600 hover:text-blue-700 font-medium text-sm">Ver detalles &rarr;</a></div>
+          <p class="text-gray-600 mb-6">Líder en detección de amenazas avanzadas con Machine Learning. Protección para endpoints Windows, Mac, Linux y móviles.</p>
+          <ul class="space-y-2 mb-6"><li class="flex items-center gap-2 text-sm text-gray-700"><svg class="w-4 h-4 text-green-600 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span>99.9% de deteccion AV-TEST</span></li><li class="flex items-center gap-2 text-sm text-gray-700"><svg class="w-4 h-4 text-green-600 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span>HyperDetect para Zero-Day</span></li><li class="flex items-center gap-2 text-sm text-gray-700"><svg class="w-4 h-4 text-green-600 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span>Impacto mínimo en rendimiento</span></li></ul>
+          <div class="bg-red-50 border border-red-100 rounded-lg p-4"><p class="text-sm font-semibold text-red-900 mb-1">Ideal para:</p><p class="text-sm text-red-700">Empresas tecnológicas, startups y corporaciones con infraestructura mixta</p></div>
+        </div>
+        <div class="bg-white border-2 border-gray-200 rounded-2xl p-8 hover:border-green-600 transition-all duration-300 hover:shadow-2xl cursor-pointer">
+          <div class="flex items-start justify-between mb-6"><div class="flex items-center gap-3"><div class="w-12 h-12 bg-green-50 rounded-xl flex items-center justify-center"><div class="w-6 h-6 bg-green-600 rounded"></div></div><div><h3 class="text-2xl font-bold text-gray-900">Kaspersky</h3><p class="text-sm text-gray-500">Endpoint Security for Business</p></div></div><a href="/kaspersky" class="text-blue-600 hover:text-blue-700 font-medium text-sm">Ver detalles &rarr;</a></div>
+          <p class="text-gray-600 mb-6">Protección probada contra amenazas complejas con énfasis en prevención. Integración con SIEM y EDR avanzado.</p>
+          <ul class="space-y-2 mb-6"><li class="flex items-center gap-2 text-sm text-gray-700"><svg class="w-4 h-4 text-green-600 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span>Proteccion anti-APT</span></li><li class="flex items-center gap-2 text-sm text-gray-700"><svg class="w-4 h-4 text-green-600 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span>Threat Intelligence KSN</span></li><li class="flex items-center gap-2 text-sm text-gray-700"><svg class="w-4 h-4 text-green-600 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span>Sandbox automatizado</span></li></ul>
+          <div class="bg-green-50 border border-green-100 rounded-lg p-4"><p class="text-sm font-semibold text-green-900 mb-1">Ideal para:</p><p class="text-sm text-green-700">Empresas financieras, healthcare y sectores regulados con alta criticidad</p></div>
+        </div>
+        <div class="bg-white border-2 border-gray-200 rounded-2xl p-8 hover:border-blue-600 transition-all duration-300 hover:shadow-2xl cursor-pointer">
+          <div class="flex items-start justify-between mb-6"><div class="flex items-center gap-3"><div class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center"><svg class="w-6 h-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg></div><div><h3 class="text-2xl font-bold text-gray-900 uppercase">Fortinet</h3><p class="text-sm text-gray-500">FortiClient Endpoint Security</p></div></div></div>
+          <p class="text-gray-600 mb-6">Suite completa de seguridad integrada con FortiGate Firewall. Ideal para ecosistema unificado.</p>
+          <ul class="space-y-2 mb-6"><li class="flex items-center gap-2 text-sm text-gray-700"><svg class="w-4 h-4 text-blue-600 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span>Security Fabric integrado</span></li><li class="flex items-center gap-2 text-sm text-gray-700"><svg class="w-4 h-4 text-blue-600 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span>VPN nativa y segura</span></li><li class="flex items-center gap-2 text-sm text-gray-700"><svg class="w-4 h-4 text-blue-600 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span>FortiSandbox Cloud</span></li></ul>
+          <div class="bg-blue-50 border border-blue-100 rounded-lg p-4"><p class="text-sm font-semibold text-blue-900 mb-1">Ideal para:</p><p class="text-sm text-blue-700">Empresas con infraestructura Fortinet existente o necesidad de Zero Trust</p></div>
+        </div>
+        <div class="bg-white border-2 border-gray-200 rounded-2xl p-8 hover:border-purple-600 transition-all duration-300 hover:shadow-2xl cursor-pointer">
+          <div class="flex items-start justify-between mb-6"><div class="flex items-center gap-3"><div class="w-12 h-12 bg-purple-50 rounded-xl flex items-center justify-center"><svg class="w-6 h-6 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg></div><div><h3 class="text-2xl font-bold text-gray-900">Hornetsecurity</h3><p class="text-sm text-gray-500">Email &amp; Collaboration Security</p></div></div></div>
+          <p class="text-gray-600 mb-6">Especialistas en seguridad de correo electrónico y Microsoft 365. Protección avanzada contra phishing.</p>
+          <ul class="space-y-2 mb-6"><li class="flex items-center gap-2 text-sm text-gray-700"><svg class="w-4 h-4 text-purple-600 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span>Anti-Phishing con IA</span></li><li class="flex items-center gap-2 text-sm text-gray-700"><svg class="w-4 h-4 text-purple-600 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span>Backup de Microsoft 365</span></li><li class="flex items-center gap-2 text-sm text-gray-700"><svg class="w-4 h-4 text-purple-600 shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span>Email Encryption</span></li></ul>
+          <div class="bg-purple-50 border border-purple-100 rounded-lg p-4"><p class="text-sm font-semibold text-purple-900 mb-1">Ideal para:</p><p class="text-sm text-purple-700">Empresas que usan Microsoft 365 o Google Workspace intensivamente</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-16 sm:py-20 lg:py-24 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12"><h2 class="text-3xl sm:text-4xl font-semibold mb-4">Preguntas Frecuentes</h2><p class="text-lg text-gray-600">Todo lo que necesita saber sobre antivirus empresarial</p></div>
+      <div class="space-y-6">
+        <div class="bg-gray-50 border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-all duration-300-shadow cursor-pointer"><h3 class="text-lg font-semibold mb-3 text-gray-900">&iquest;Cuánto cuesta implementar un antivirus empresarial?</h3><p class="text-gray-600 leading-relaxed">Licencias van desde $30-80 USD por endpoint/año para SMB hasta $100-200 USD para soluciones enterprise con EDR. Ofrecemos planes flexibles con descuentos por volumen.</p></div>
+        <div class="bg-gray-50 border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-all duration-300-shadow cursor-pointer"><h3 class="text-lg font-semibold mb-3 text-gray-900">&iquest;Cuánto tiempo toma la implementación?</h3><p class="text-gray-600 leading-relaxed">Hasta 100 endpoints: 3-5 días hábiles. Organizaciones grandes (500+): 2-4 semanas con rollout por fases. La mayoría están protegidos en las primeras 48 horas.</p></div>
+        <div class="bg-gray-50 border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-all duration-300-shadow cursor-pointer"><h3 class="text-lg font-semibold mb-3 text-gray-900">&iquest;Puedo migrar desde mi antivirus actual?</h3><p class="text-gray-600 leading-relaxed">Sí, gestionamos la migración completa desde Symantec, McAfee, Trend Micro o cualquier antivirus existente sin interrumpir operaciones.</p></div>
+        <div class="bg-gray-50 border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-all duration-300-shadow cursor-pointer"><h3 class="text-lg font-semibold mb-3 text-gray-900">&iquest;Qué diferencia hay entre Bitdefender y Kaspersky?</h3><p class="text-gray-600 leading-relaxed">Bitdefender destaca en deteccion con IA y bajo impacto en rendimiento. Kaspersky ofrece mejor integración con SIEM y protección anti-APT para sectores regulados.</p></div>
+        <div class="bg-gray-50 border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-all duration-300-shadow cursor-pointer"><h3 class="text-lg font-semibold mb-3 text-gray-900">&iquest;Incluye protección para servidores Linux y macOS?</h3><p class="text-gray-600 leading-relaxed">Sí. Todas nuestras soluciones soportan Windows, macOS, Linux, Android e iOS desde una consola unificada.</p></div>
+        <div class="bg-gray-50 border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-all duration-300-shadow cursor-pointer"><h3 class="text-lg font-semibold mb-3 text-gray-900">&iquest;Qué pasa si detectan ransomware durante la implementación?</h3><p class="text-gray-600 leading-relaxed">Nuestro equipo actua de inmediato: aislamiento, análisis forense, eliminación y restauración. El incident response esta incluido sin costo adicional.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-blue-600 to-purple-600 text-white relative overflow-hidden">
+    <div class="absolute inset-0 bg-grid-white/10"></div>
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+      <svg class="w-16 h-16 mx-auto mb-6 opacity-90" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-semibold mb-6">&iquest;Listo para Proteger su Empresa?</h2>
+      <p class="text-xl mb-8 opacity-90 max-w-2xl mx-auto">Obtenga una cotización personalizada en menos de 24 horas. Nuestro equipo diseñará la solución perfecta para su infraestructura.</p>
+      <div class="max-w-md mx-auto mb-8">
+        <div class="flex flex-col sm:flex-row gap-4">
+          <input type="email" placeholder="correo@empresa.com" class="flex-1 px-6 py-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/50" />
+          <button class="bg-white text-blue-600 font-semibold px-8 py-4 rounded-lg hover:bg-gray-100 transition flex items-center justify-center gap-2 whitespace-nowrap focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2">
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
+            Solicitar Demo
+          </button>
+        </div>
+      </div>
+      <div class="flex flex-wrap items-center justify-center gap-6 text-sm">
+        <div class="flex items-center gap-2"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span>Sin compromiso</span></div>
+        <div class="flex items-center gap-2"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span>Respuesta en 24hrs</span></div>
+        <div class="flex items-center gap-2"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span>Asesoría gratuita</span></div>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+  <WhatsAppButton />
+</BaseLayout>

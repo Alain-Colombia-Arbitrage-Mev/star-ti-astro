@@ -1,0 +1,718 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Navbar from '@components/Navbar.astro';
+import Footer from '@components/Footer.astro';
+import WhatsAppButton from '@components/WhatsAppButton.astro';
+import { seoData } from '@data/seo';
+
+const seo = seoData['rthreat-bogota-colombia'];
+---
+
+<BaseLayout seo={seo}>
+  <Navbar />
+
+  <!-- Hero Section -->
+  <section class="relative pt-32 pb-24 lg:pt-36 lg:pb-32 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-red-50/50 to-transparent pointer-events-none"></div>
+    <div class="absolute top-20 right-0 w-[500px] h-[500px] bg-red-200/30 rounded-full blur-[50px]"></div>
+
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+      <!-- Hero 2-col -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+        <div>
+          <div class="flex mb-8">
+            <div class="inline-flex items-center gap-2 bg-white border border-gray-200 px-4 py-2 rounded-full shadow-sm">
+              <div class="w-2 h-2 bg-[#ed1c24] rounded-full animate-pulse"></div>
+              <span class="text-xs font-bold text-gray-700 uppercase tracking-wider">Powered by rThreat</span>
+            </div>
+          </div>
+          <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-tight mb-6">
+            <span class="block text-[#0f172a]">Valide su Seguridad con</span>
+            <span class="block text-[#ed1c24]">Amenazas Reales</span>
+          </h1>
+          <p class="text-xl text-[#64748b] leading-relaxed mb-8">
+            Starsolution implementa la tecnología BAS (Breach and Attack Simulation) de rThreat para exponer
+            brechas desconocidas antes de que los criminales las exploten.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="/contacto" class="bg-[#ed1c24] text-white px-8 py-4 rounded-lg text-base font-bold hover:bg-[#d41820] transition shadow-lg inline-flex items-center justify-center">
+              Iniciar Evaluación
+            </a>
+            <a href="#arquitectura" class="bg-white border-2 border-gray-200 text-[#334155] px-8 py-4 rounded-lg text-base font-semibold hover:border-[#ed1c24] hover:text-[#ed1c24] transition inline-flex items-center justify-center">
+              Ver Arquitectura Técnica
+            </a>
+          </div>
+        </div>
+        <div class="hidden lg:flex items-center justify-center">
+          <img src="/assets/icono-escudo-proteccion-activa.webp" alt="Simulación de ataques y Red Team con rThreat" class="w-full max-w-sm rounded-2xl shadow-xl" width="384" height="384" loading="lazy" />
+        </div>
+      </div>
+
+      <!-- Dashboard Stats Card -->
+      <div class="max-w-5xl mx-auto">
+        <div class="bg-white border border-gray-200 rounded-xl shadow-2xl p-2">
+          <div class="bg-[#1e1e1e] rounded-lg p-10">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div>
+                <p class="text-xs text-gray-400 uppercase tracking-wide mb-3 font-mono">Estado de Defensa</p>
+                <div class="flex items-center gap-3 mb-3">
+                  <div class="text-3xl font-bold text-white">98.5%</div>
+                  <div class="text-sm font-semibold text-green-400">Seguro</div>
+                </div>
+                <div class="bg-gray-700 h-1.5 rounded-full overflow-hidden">
+                  <div class="bg-green-400 h-full" style="width: 98.5%"></div>
+                </div>
+              </div>
+              <div>
+                <p class="text-xs text-gray-400 uppercase tracking-wide mb-3 font-mono">Amenazas Bloqueadas</p>
+                <div class="text-3xl font-bold text-white mb-2">1,420</div>
+                <p class="text-xs text-gray-400">Ransomware, APTs, Spyware</p>
+              </div>
+              <div>
+                <p class="text-xs text-gray-400 uppercase tracking-wide mb-3 font-mono">Brechas Críticas</p>
+                <div class="flex items-center gap-2 mb-2">
+                  <div class="w-2 h-2 bg-[#ed1c24] rounded-full"></div>
+                  <div class="text-3xl font-bold text-[#ed1c24]">3</div>
+                </div>
+                <p class="text-xs text-gray-400">Requieren atención inmediata</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BAS Section -->
+  <section class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+        <div>
+          <h2 class="text-4xl font-bold text-[#0f172a] mb-6 leading-tight">
+            Breach and Attack Simulation (BAS) de Próxima Generación
+          </h2>
+          <div class="space-y-6 mb-8">
+            <p class="text-[#475569] leading-relaxed">
+              A diferencia de los escaneres de vulnerabilidades tradicionales, nuestra solución con <strong class="text-[#0f172a]">rThreat</strong> desafia
+              sus controles de seguridad ejecutando malware real y personalizado dentro de un entorno seguro.
+            </p>
+            <p class="text-[#475569] leading-relaxed">
+              Esto permite a <strong class="text-[#0f172a]">Starsolution</strong> validar empíricamente la eficacia de sus firewalls, EDRs, SIEMs
+              y políticas de seguridad frente a amenazas Zero-Day y campañas de Ransomware activas.
+            </p>
+          </div>
+          <div class="space-y-4">
+            <div class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-[#ed1c24] flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span class="text-[#1e293b] font-medium">Uso de artefactos reales, no firmas estáticas.</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-[#ed1c24] flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span class="text-[#1e293b] font-medium">Ejecución segura en memoria o entornos aislados.</span>
+            </div>
+            <div class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-[#ed1c24] flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+              <span class="text-[#1e293b] font-medium">Métricas de &quot;Time-to-Detect&quot; y &quot;Time-to-Prevent&quot;.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Attack Chain Visualization -->
+        <div id="arquitectura" class="bg-gray-50 rounded-xl p-8 border border-gray-200">
+          <div class="flex items-center justify-between mb-6">
+            <p class="text-xs font-mono text-gray-500">ATTACK VECTOR</p>
+            <p class="text-xs font-mono text-gray-500">STATUS: <span class="text-[#ed1c24] font-bold">ACTIVE</span></p>
+          </div>
+          <div class="space-y-4">
+            <div class="bg-white border-l-4 border-[#ed1c24] rounded p-4 shadow-sm">
+              <p class="text-xs font-bold font-mono text-[#ed1c24] mb-1">INJECTION</p>
+              <p class="text-sm font-semibold text-[#0f172a]">Zero-Day Payload Delivery</p>
+            </div>
+            <div class="flex justify-center">
+              <svg class="w-6 h-6 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+              </svg>
+            </div>
+            <div class="bg-white border-l-4 border-gray-500 rounded p-4 shadow-sm">
+              <p class="text-xs font-bold font-mono text-gray-600 mb-1">DEFENSE LAYER</p>
+              <p class="text-sm font-semibold text-[#0f172a]">EDR Behaviour Analysis</p>
+            </div>
+            <div class="flex justify-center">
+              <svg class="w-6 h-6 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+              </svg>
+            </div>
+            <div class="bg-white border-l-4 border-green-500 rounded p-4 shadow-sm">
+              <p class="text-xs font-bold font-mono text-green-600 mb-1">DETECTION</p>
+              <p class="text-sm font-semibold text-[#0f172a]">SIEM Alert Triggered</p>
+            </div>
+            <div class="flex justify-center">
+              <svg class="w-6 h-6 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+              </svg>
+            </div>
+            <div class="bg-white border-l-4 border-blue-500 rounded p-4 shadow-sm">
+              <p class="text-xs font-bold font-mono text-blue-600 mb-1">RESPONSE</p>
+              <p class="text-sm font-semibold text-[#0f172a]">Threat Contained &amp; Quarantined</p>
+            </div>
+          </div>
+          <div class="mt-6 pt-6 border-t border-gray-200">
+            <div class="flex items-center justify-between text-xs">
+              <span class="text-gray-500">Time to Detect:</span>
+              <span class="font-bold text-green-600">142ms</span>
+            </div>
+            <div class="flex items-center justify-between text-xs mt-2">
+              <span class="text-gray-500">Time to Prevent:</span>
+              <span class="font-bold text-green-600">287ms</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Capacidades Ofensivas -->
+  <section class="py-24 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-[#0f172a] mb-4">Capacidades Ofensivas</h2>
+        <p class="text-lg text-[#64748b] max-w-3xl mx-auto">
+          Nuestro servicio con rThreat incluye la simulación de técnicas ofensivas avanzadas del
+          <strong> MITRE ATT&amp;CK Full Kill Chain</strong>
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-white rounded-xl p-8 border border-gray-200 hover:shadow-xl transition">
+          <div class="w-14 h-14 bg-red-100 rounded-xl flex items-center justify-center mb-6">
+            <svg class="w-7 h-7 text-[#ed1c24]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-[#0f172a] mb-3">Emulación de Ransomware</h3>
+          <p class="text-[#475569] text-sm mb-4 leading-relaxed">
+            Prueba la resistencia de su organización frente a múltiples variantes de Ransomware (Conti, BlackCat,
+            LockBit) simulando el cifrado controlado de archivos sin causar daño.
+          </p>
+          <ul class="text-sm text-[#475569] space-y-2">
+            <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-[#ed1c24] rounded-full"></div>Simulación de doble extorsión</li>
+            <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-[#ed1c24] rounded-full"></div>Validación de backups offline</li>
+          </ul>
+        </div>
+        <div class="bg-white rounded-xl p-8 border border-gray-200 hover:shadow-xl transition">
+          <div class="w-14 h-14 bg-yellow-100 rounded-xl flex items-center justify-center mb-6">
+            <svg class="w-7 h-7 text-yellow-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-[#0f172a] mb-3">Amenazas Zero-Day</h3>
+          <p class="text-[#475569] text-sm mb-4 leading-relaxed">
+            Accede a vulnerabilidades sin parches conocidos y ataques de día cero para evaluar si sus controles
+            detectan anomalías comportamentales en lugar de firmas estáticas.
+          </p>
+          <ul class="text-sm text-[#475569] space-y-2">
+            <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-yellow-600 rounded-full"></div>Exploits N-day recientes</li>
+            <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-yellow-600 rounded-full"></div>Técnicas de evasión de AV/EDR</li>
+          </ul>
+        </div>
+        <div class="bg-white rounded-xl p-8 border border-gray-200 hover:shadow-xl transition">
+          <div class="w-14 h-14 bg-purple-100 rounded-xl flex items-center justify-center mb-6">
+            <svg class="w-7 h-7 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-[#0f172a] mb-3">Validación de EDR/SIEM</h3>
+          <p class="text-[#475569] text-sm mb-4 leading-relaxed">
+            Verifica que sus herramientas de detección (CrowdStrike, SentinelOne, Splunk) realmente detecten
+            amenazas sofisticadas y generen alertas accionables.
+          </p>
+          <ul class="text-sm text-[#475569] space-y-2">
+            <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-purple-600 rounded-full"></div>Ataques living-off-the-land</li>
+            <li class="flex items-center gap-2"><div class="w-1.5 h-1.5 bg-purple-600 rounded-full"></div>Lateral movement testing</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Su red resistiria un ataque hoy -->
+  <section class="py-24 bg-white">
+    <div class="max-w-4xl mx-auto px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold text-[#0f172a] mb-4">&iquest;Su red resistiría un ataque hoy mismo?</h2>
+        <p class="text-lg text-[#64748b]">
+          Deje de suponer y mejore su postura. Conozca a los especialistas de <strong class="text-[#0f172a]">Star Solutions TI</strong> y
+          su programa para demostración.
+        </p>
+      </div>
+      <div class="bg-gray-50 rounded-2xl p-8 lg:p-12 border border-gray-200">
+        <form action="/gracias" method="GET" class="space-y-6">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label for="nombre" class="block text-sm font-semibold text-[#0f172a] mb-2">Nombre</label>
+              <input type="text" id="nombre" class="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#ed1c24] focus:border-transparent" placeholder="Juan Pérez" />
+            </div>
+            <div>
+              <label for="empresa" class="block text-sm font-semibold text-[#0f172a] mb-2">Nombre de la empresa</label>
+              <input type="text" id="empresa" class="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#ed1c24] focus:border-transparent" placeholder="Mi Empresa S.A." />
+            </div>
+          </div>
+          <div>
+            <label for="cargo" class="block text-sm font-semibold text-[#0f172a] mb-2">Cargo Corporativo</label>
+            <input type="text" id="cargo" class="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#ed1c24] focus:border-transparent" placeholder="CISO / Director de TI" />
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label for="email" class="block text-sm font-semibold text-[#0f172a] mb-2">Email</label>
+              <input type="email" id="email" class="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#ed1c24] focus:border-transparent" placeholder="email@empresa.com" />
+            </div>
+            <div>
+              <label for="telefono" class="block text-sm font-semibold text-[#0f172a] mb-2">Teléfono</label>
+              <input type="tel" id="telefono" class="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#ed1c24] focus:border-transparent" placeholder="+57 300 123 4567" />
+            </div>
+          </div>
+          <div>
+            <button type="submit" class="w-full bg-[#ed1c24] text-white px-8 py-4 rounded-lg text-base font-bold hover:bg-[#d41820] transition shadow-lg">
+              Solicitar Análisis de Seguridad
+            </button>
+            <p class="text-xs text-gray-500 text-center mt-4">
+              Al enviar este formulario, acepta nuestros <a href="/terminos" class="text-[#ed1c24] hover:underline">Términos y Condiciones</a> y
+              <a href="/politica-de-proteccion-de-datos-personales" class="text-[#ed1c24] hover:underline">Política de Datos</a>.
+            </p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why rThreat -->
+  <section class="py-24 bg-gradient-to-br from-gray-900 to-gray-800 text-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div>
+          <h2 class="text-4xl font-bold mb-6">&iquest;Por qué rThreat?</h2>
+          <p class="text-gray-300 leading-relaxed mb-8">
+            rThreat es la plataforma líder en BAS (Breach and Attack Simulation) utilizada por Fortune 500
+            y gobiernos para validar continuamente sus controles de seguridad contra amenazas del mundo real.
+          </p>
+          <div class="space-y-4">
+            <div class="flex items-start gap-4">
+              <div class="w-8 h-8 bg-[#ed1c24] rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-bold text-lg mb-1">Actualización Continua</h3>
+                <p class="text-gray-400 text-sm">Base de datos de amenazas actualizada diariamente con los últimos TTPs (Tácticas, Técnicas y Procedimientos)</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="w-8 h-8 bg-[#ed1c24] rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-bold text-lg mb-1">Safe Execution</h3>
+                <p class="text-gray-400 text-sm">Malware ejecutado en sandbox aislados o contenedores efímeros sin riesgo de daño a producción</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="w-8 h-8 bg-[#ed1c24] rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-bold text-lg mb-1">Reportes Accionables</h3>
+                <p class="text-gray-400 text-sm">Dashboards ejecutivos y técnicos con recomendaciones específicas de remediación priorizadas por riesgo</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="grid grid-cols-2 gap-6">
+          <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
+            <div class="text-5xl font-bold text-[#ed1c24] mb-2">24/7</div>
+            <p class="text-gray-300 text-sm">Simulación Continua</p>
+          </div>
+          <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
+            <div class="text-5xl font-bold text-[#ed1c24] mb-2">5,000+</div>
+            <p class="text-gray-300 text-sm">Amenazas Catalogadas</p>
+          </div>
+          <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
+            <div class="text-5xl font-bold text-[#ed1c24] mb-2">98%</div>
+            <p class="text-gray-300 text-sm">Precisión de Detección</p>
+          </div>
+          <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
+            <div class="text-5xl font-bold text-[#ed1c24] mb-2">Zero</div>
+            <p class="text-gray-300 text-sm">Falsos Positivos</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Por Qué Red Team con Malware Real -->
+  <section class="py-16 sm:py-20 lg:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-14 items-start">
+        <div>
+          <span class="text-[#ed1c24] text-xs font-bold uppercase tracking-wide">Metodología</span>
+          <h2 class="text-3xl sm:text-4xl font-bold text-[#0f172a] mt-4 mb-6">
+            ¿Por Qué Red Team con Malware Real?
+          </h2>
+          <p class="text-[#475569] leading-relaxed mb-5">
+            La diferencia entre un ataque simulado y uno con malware real no es académica: es la diferencia entre saber que su EDR tiene una regla de detección y verificar que esa regla realmente dispara una alerta cuando el código malicioso se ejecuta en memoria.
+          </p>
+          <p class="text-[#475569] leading-relaxed mb-5">
+            Las pruebas de penetración tradicionales y los ejercicios con herramientas genéricas como Metasploit son detectados por la mayoría de los EDR modernos porque están firmados como amenazas conocidas. Los atacantes reales no usan Metasploit: usan malware personalizado, técnicas living-off-the-land y payloads que evaden las firmas estáticas.
+          </p>
+          <p class="text-[#475569] leading-relaxed mb-8">
+            rThreat replica exactamente ese escenario: ejecuta artefactos de malware reales (LockBit, Conti, BlackCat) en un entorno controlado dentro de su infraestructura productiva, midiendo con precisión qué detecta, qué bloquea y qué se escapa sin generar alertas. Es la única manera de validar empíricamente la eficacia real de sus controles.
+          </p>
+          <div class="bg-[#1e293b] rounded-xl p-6 text-white">
+            <h3 class="font-bold mb-3 text-sm uppercase tracking-wide text-gray-400">Simulado vs Real: La Diferencia Crítica</h3>
+            <div class="grid grid-cols-2 gap-4 text-sm">
+              <div>
+                <p class="text-gray-400 text-xs font-bold mb-2">ATAQUE SIMULADO</p>
+                <ul class="space-y-1 text-gray-300">
+                  <li class="flex items-start gap-1.5"><span class="text-yellow-400 mt-0.5">-</span>Firmas conocidas por el EDR</li>
+                  <li class="flex items-start gap-1.5"><span class="text-yellow-400 mt-0.5">-</span>Detectado por heurísticas básicas</li>
+                  <li class="flex items-start gap-1.5"><span class="text-yellow-400 mt-0.5">-</span>No representa amenazas reales</li>
+                  <li class="flex items-start gap-1.5"><span class="text-yellow-400 mt-0.5">-</span>Resultado predecible, no accionable</li>
+                </ul>
+              </div>
+              <div>
+                <p class="text-green-400 text-xs font-bold mb-2">MALWARE REAL (rTHREAT)</p>
+                <ul class="space-y-1 text-gray-300">
+                  <li class="flex items-start gap-1.5"><span class="text-green-400 mt-0.5">+</span>Artefactos de grupos APT reales</li>
+                  <li class="flex items-start gap-1.5"><span class="text-green-400 mt-0.5">+</span>Técnicas de evasión actuales</li>
+                  <li class="flex items-start gap-1.5"><span class="text-green-400 mt-0.5">+</span>Mide TTD y TTP reales</li>
+                  <li class="flex items-start gap-1.5"><span class="text-green-400 mt-0.5">+</span>Resultados auditables y accionables</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="space-y-5">
+          <div class="bg-white border border-gray-200 rounded-2xl p-6 hover:shadow-lg transition-all duration-300 cursor-pointer">
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 bg-red-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-[#ed1c24]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-bold text-[#0f172a] mb-2">Ejecución en Sandbox Aislado</h3>
+                <p class="text-sm text-[#475569]">El malware se ejecuta en contenedores efímeros o en memoria, sin posibilidad de propagarse fuera del entorno de prueba. Riesgo cero para la producción, resultados 100% auténticos.</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white border border-gray-200 rounded-2xl p-6 hover:shadow-lg transition-all duration-300 cursor-pointer">
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 bg-yellow-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-yellow-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-bold text-[#0f172a] mb-2">Métricas Time-to-Detect y Time-to-Prevent</h3>
+                <p class="text-sm text-[#475569]">rThreat mide con precisión de milisegundos cuánto tiempo tarda su stack de seguridad en detectar y prevenir cada amenaza, generando datos comparables con benchmarks globales del sector.</p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white border border-gray-200 rounded-2xl p-6 hover:shadow-lg transition-all duration-300 cursor-pointer">
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-bold text-[#0f172a] mb-2">Reporte Ejecutivo y Técnico</h3>
+                <p class="text-sm text-[#475569]">Cada engagement incluye un reporte dual: versión ejecutiva con dashboard de riesgos para la dirección, y reporte técnico detallado con plan de remediación priorizado por nivel de criticidad para el equipo de seguridad.</p>
+              </div>
+            </div>
+          </div>
+          <div class="mt-4 p-4 rounded-xl bg-gray-50 border border-gray-200">
+            <p class="text-sm text-gray-600">Servicios relacionados: <a href="/hacking-etico" class="text-[#ed1c24] font-semibold hover:underline">Hacking Ético y Pentesting</a> — <a href="/stellar-cyber" class="text-[#ed1c24] font-semibold hover:underline">Stellar Cyber Open XDR</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Proceso de Engagement Red Team -->
+  <section class="py-16 sm:py-20 lg:py-24 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="text-center mb-14">
+        <span class="text-[#ed1c24] text-xs font-bold uppercase tracking-wide">Proceso</span>
+        <h2 class="text-3xl sm:text-4xl font-bold text-[#0f172a] mt-4 mb-4">
+          Proceso de Engagement Red Team
+        </h2>
+        <p class="text-[#64748b] max-w-2xl mx-auto">
+          Cada engagement sigue una metodología estructurada en seis fases que replica el ciclo de ataque real (kill chain) de grupos APT avanzados.
+        </p>
+      </div>
+
+      <div class="relative">
+        <!-- Línea conectora vertical (solo desktop) -->
+        <div class="hidden lg:block absolute left-1/2 top-0 bottom-0 w-px bg-gray-300 -translate-x-1/2"></div>
+
+        <div class="space-y-8">
+          <!-- Fase 1: Scoping -->
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
+            <div class="lg:text-right lg:pr-10">
+              <div class="inline-flex items-center gap-3 bg-white border border-gray-200 rounded-2xl p-6 hover:shadow-lg transition w-full lg:max-w-sm">
+                <div class="w-10 h-10 bg-red-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <span class="text-[#ed1c24] font-bold text-sm">01</span>
+                </div>
+                <div>
+                  <h3 class="font-bold text-[#0f172a]">Scoping y Autorización</h3>
+                  <p class="text-xs text-[#64748b] mt-1">Definición de alcance, activos en scope, reglas de enfrentamiento y firma del contrato de autorización formal. Sin este documento, ningún test comienza.</p>
+                </div>
+              </div>
+            </div>
+            <div class="hidden lg:block"></div>
+          </div>
+
+          <!-- Fase 2: Reconnaissance -->
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
+            <div class="hidden lg:block"></div>
+            <div class="lg:pl-10">
+              <div class="inline-flex items-center gap-3 bg-white border border-gray-200 rounded-2xl p-6 hover:shadow-lg transition w-full lg:max-w-sm">
+                <div class="w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <span class="text-orange-600 font-bold text-sm">02</span>
+                </div>
+                <div>
+                  <h3 class="font-bold text-[#0f172a]">Reconocimiento OSINT</h3>
+                  <p class="text-xs text-[#64748b] mt-1">Recopilación pasiva de inteligencia sobre la organización: dominios, tecnologías expuestas, empleados en LinkedIn, credenciales filtradas en la dark web y superficie de ataque externa.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Fase 3: Initial Access -->
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
+            <div class="lg:text-right lg:pr-10">
+              <div class="inline-flex items-center gap-3 bg-white border border-gray-200 rounded-2xl p-6 hover:shadow-lg transition w-full lg:max-w-sm">
+                <div class="w-10 h-10 bg-yellow-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <span class="text-yellow-600 font-bold text-sm">03</span>
+                </div>
+                <div>
+                  <h3 class="font-bold text-[#0f172a]">Acceso Inicial</h3>
+                  <p class="text-xs text-[#64748b] mt-1">Ejecución del primer vector de ataque: phishing dirigido, explotación de vulnerabilidades perimetrales, ataques de fuerza bruta o credenciales comprometidas, según lo acordado en el scoping.</p>
+                </div>
+              </div>
+            </div>
+            <div class="hidden lg:block"></div>
+          </div>
+
+          <!-- Fase 4: Lateral Movement -->
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
+            <div class="hidden lg:block"></div>
+            <div class="lg:pl-10">
+              <div class="inline-flex items-center gap-3 bg-white border border-gray-200 rounded-2xl p-6 hover:shadow-lg transition w-full lg:max-w-sm">
+                <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <span class="text-blue-600 font-bold text-sm">04</span>
+                </div>
+                <div>
+                  <h3 class="font-bold text-[#0f172a]">Movimiento Lateral</h3>
+                  <p class="text-xs text-[#64748b] mt-1">Una vez dentro, el equipo rojo se desplaza lateralmente intentando escalar privilegios, comprometer credenciales de dominio y acceder a activos críticos siguiendo rutas de ataque realistas.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Fase 5: Objective -->
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
+            <div class="lg:text-right lg:pr-10">
+              <div class="inline-flex items-center gap-3 bg-white border border-gray-200 rounded-2xl p-6 hover:shadow-lg transition w-full lg:max-w-sm">
+                <div class="w-10 h-10 bg-[#ed1c24]/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <span class="text-[#ed1c24] font-bold text-sm">05</span>
+                </div>
+                <div>
+                  <h3 class="font-bold text-[#0f172a]">Objetivo y Exfiltración Simulada</h3>
+                  <p class="text-xs text-[#64748b] mt-1">Simulación controlada del objetivo final del atacante: exfiltración de datos sensibles, cifrado tipo ransomware, persistencia en el sistema o acceso a infraestructura crítica definida.</p>
+                </div>
+              </div>
+            </div>
+            <div class="hidden lg:block"></div>
+          </div>
+
+          <!-- Fase 6: Report -->
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
+            <div class="hidden lg:block"></div>
+            <div class="lg:pl-10">
+              <div class="inline-flex items-center gap-3 bg-white border border-gray-200 rounded-2xl p-6 hover:shadow-lg transition w-full lg:max-w-sm">
+                <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <span class="text-green-600 font-bold text-sm">06</span>
+                </div>
+                <div>
+                  <h3 class="font-bold text-[#0f172a]">Reporte y Sesión de Cierre</h3>
+                  <p class="text-xs text-[#64748b] mt-1">Entrega de reporte ejecutivo y técnico con evidencias, MITRE ATT&amp;CK mapping, métricas TTD/TTP, plan de remediación priorizado y sesión de presentación con el equipo directivo.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Regulaciones que Exigen Pruebas BAS -->
+  <section class="py-16 sm:py-20 lg:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="text-center mb-14">
+        <span class="text-[#ed1c24] text-xs font-bold uppercase tracking-wide">Compliance y Regulación</span>
+        <h2 class="text-3xl sm:text-4xl font-bold text-[#0f172a] mt-4 mb-4">
+          Regulaciones que Exigen Pruebas BAS y Red Team
+        </h2>
+        <p class="text-[#64748b] max-w-2xl mx-auto">
+          Estas normativas internacionales y colombianas exigen explícitamente pruebas de penetración o simulación de ataques como parte del cumplimiento regulatorio. Un servicio BAS con rThreat genera la evidencia requerida.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- PCI DSS -->
+        <div class="bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-lg transition-all duration-300 cursor-pointer">
+          <div class="flex items-center gap-3 mb-5">
+            <div class="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center flex-shrink-0">
+              <svg class="w-6 h-6 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-bold text-[#0f172a] text-lg">PCI DSS v4.0</h3>
+              <span class="text-xs text-emerald-600 font-semibold">Requerimiento 11.3</span>
+            </div>
+          </div>
+          <p class="text-sm text-[#475569] leading-relaxed mb-4">
+            El estándar PCI DSS en su requerimiento 11.3 exige pruebas de penetración internas y externas al menos una vez al año y después de cambios significativos en la infraestructura. El requerimiento 11.3.2 específicamente exige pruebas desde el interior de la red del titular de datos.
+          </p>
+          <ul class="space-y-1 text-xs text-[#475569]">
+            <li class="flex items-start gap-2"><div class="w-1.5 h-1.5 bg-emerald-500 rounded-full mt-1.5 flex-shrink-0"></div>Pentesting anual obligatorio (11.3.1)</li>
+            <li class="flex items-start gap-2"><div class="w-1.5 h-1.5 bg-emerald-500 rounded-full mt-1.5 flex-shrink-0"></div>Pruebas internas de segmentación (11.3.2)</li>
+            <li class="flex items-start gap-2"><div class="w-1.5 h-1.5 bg-emerald-500 rounded-full mt-1.5 flex-shrink-0"></div>Validación de controles de seguridad (11.6)</li>
+          </ul>
+        </div>
+
+        <!-- SWIFT CSP -->
+        <div class="bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-lg transition-all duration-300 cursor-pointer">
+          <div class="flex items-center gap-3 mb-5">
+            <div class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center flex-shrink-0">
+              <svg class="w-6 h-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-bold text-[#0f172a] text-lg">SWIFT CSP 2024</h3>
+              <span class="text-xs text-blue-600 font-semibold">Control 2.9A</span>
+            </div>
+          </div>
+          <p class="text-sm text-[#475569] leading-relaxed mb-4">
+            El Customer Security Programme (CSP) de SWIFT exige en su control 2.9A pruebas periódicas de escenarios de ataque dirigidas a la infraestructura SWIFT del banco. Los controles de detección (2.9B) exigen validación de que los mecanismos anti-malware detectan amenazas específicas contra redes financieras.
+          </p>
+          <ul class="space-y-1 text-xs text-[#475569]">
+            <li class="flex items-start gap-2"><div class="w-1.5 h-1.5 bg-blue-500 rounded-full mt-1.5 flex-shrink-0"></div>Pruebas de ataque en entornos SWIFT (2.9A)</li>
+            <li class="flex items-start gap-2"><div class="w-1.5 h-1.5 bg-blue-500 rounded-full mt-1.5 flex-shrink-0"></div>Validación anti-malware (2.9B)</li>
+            <li class="flex items-start gap-2"><div class="w-1.5 h-1.5 bg-blue-500 rounded-full mt-1.5 flex-shrink-0"></div>Scenario-based testing obligatorio</li>
+          </ul>
+        </div>
+
+        <!-- SFC Colombia Circular 007 -->
+        <div class="bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-lg transition-all duration-300 cursor-pointer">
+          <div class="flex items-center gap-3 mb-5">
+            <div class="w-12 h-12 bg-red-50 rounded-xl flex items-center justify-center flex-shrink-0">
+              <svg class="w-6 h-6 text-[#ed1c24]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-bold text-[#0f172a] text-lg">SFC Colombia</h3>
+              <span class="text-xs text-[#ed1c24] font-semibold">Circular Externa 007 / 2018</span>
+            </div>
+          </div>
+          <p class="text-sm text-[#475569] leading-relaxed mb-4">
+            La Superintendencia Financiera de Colombia, mediante la Circular Externa 007 de 2018 y sus actualizaciones, exige a las entidades vigiladas implementar pruebas éticas de hacking y ejercicios de simulación de ataques como parte de su Sistema de Gestión de Riesgo Cibernético (SGRC). Las pruebas deben documentarse y presentarse ante la SFC en los informes periódicos de ciberseguridad.
+          </p>
+          <ul class="space-y-1 text-xs text-[#475569]">
+            <li class="flex items-start gap-2"><div class="w-1.5 h-1.5 bg-red-500 rounded-full mt-1.5 flex-shrink-0"></div>Pruebas de hacking ético obligatorias</li>
+            <li class="flex items-start gap-2"><div class="w-1.5 h-1.5 bg-red-500 rounded-full mt-1.5 flex-shrink-0"></div>Simulación de ataques en SGRC</li>
+            <li class="flex items-start gap-2"><div class="w-1.5 h-1.5 bg-red-500 rounded-full mt-1.5 flex-shrink-0"></div>Evidencia para informes SFC periódicos</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-10 bg-gray-50 border border-gray-200 rounded-2xl p-8">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-center">
+          <div class="lg:col-span-2">
+            <h3 class="text-xl font-bold text-[#0f172a] mb-2">¿Su organización debe cumplir alguna de estas normativas?</h3>
+            <p class="text-sm text-[#64748b]">
+              Starsolution entrega reportes de pruebas BAS con rThreat en el formato requerido por PCI DSS, SWIFT CSP y la SFC Colombia. Nuestros informes incluyen la evidencia documental necesaria para auditorías externas y presentaciones ante reguladores. También apoyamos el cumplimiento de <a href="/iso27001" class="text-[#ed1c24] font-semibold hover:underline">ISO 27001</a> y <a href="/hacking-etico" class="text-[#ed1c24] font-semibold hover:underline">pruebas de hacking ético</a>.
+            </p>
+          </div>
+          <div class="text-center lg:text-right">
+            <a href="/contacto" class="inline-flex items-center gap-2 bg-[#ed1c24] text-white font-semibold px-8 py-4 rounded-full hover:bg-[#d41820] transition shadow-lg">
+              Hablar con un Especialista
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Final -->
+  <section class="py-24 bg-white">
+    <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+      <h2 class="text-4xl font-bold text-[#0f172a] mb-6">No espere a que sea demasiado tarde</h2>
+      <p class="text-xl text-[#64748b] mb-10">
+        Detecte sus brechas críticas antes que los atacantes. Contacte con nuestro equipo de Red Team hoy mismo.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/contacto" class="bg-[#ed1c24] text-white px-10 py-5 rounded-lg text-lg font-bold hover:bg-[#d41820] transition shadow-xl">
+          Agendar Demo de rThreat
+        </a>
+        <a href="tel:+573007010017" class="bg-white border-2 border-gray-300 text-[#334155] px-10 py-5 rounded-lg text-lg font-semibold hover:border-[#ed1c24] hover:text-[#ed1c24] transition">
+          Llamar al Equipo
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Soluciones Relacionadas -->
+  <section class="py-12 bg-gray-50 border-t border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-lg font-bold text-gray-900 mb-6">Soluciones Relacionadas</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+        <a href="/hacking-etico" class="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition text-center">
+          <p class="font-semibold text-sm text-gray-900">Hacking Ético</p>
+          <p class="text-xs text-gray-500 mt-1">Pentesting</p>
+        </a>
+        <a href="/enthec" class="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition text-center">
+          <p class="font-semibold text-sm text-gray-900">Enthec</p>
+          <p class="text-xs text-gray-500 mt-1">Superficie de ataque</p>
+        </a>
+        <a href="/stellar-cyber" class="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition text-center">
+          <p class="font-semibold text-sm text-gray-900">Stellar Cyber</p>
+          <p class="text-xs text-gray-500 mt-1">Open XDR / SOC</p>
+        </a>
+        <a href="/vicarius" class="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition text-center">
+          <p class="font-semibold text-sm text-gray-900">Vicarius vRx</p>
+          <p class="text-xs text-gray-500 mt-1">Vulnerabilidades</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+  <WhatsAppButton />
+</BaseLayout>

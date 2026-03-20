@@ -1,0 +1,225 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Navbar from '@components/Navbar.astro';
+import Footer from '@components/Footer.astro';
+import WhatsAppButton from '@components/WhatsAppButton.astro';
+import { seoData } from '@data/seo';
+
+const seo = seoData['terminos'];
+---
+
+<BaseLayout seo={seo}>
+  <Navbar />
+
+  <!-- Header -->
+  <section class="bg-gradient-to-br from-gray-50 to-white py-16 border-b border-gray-200">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="flex items-center gap-3 mb-4">
+        <div class="w-12 h-12 bg-[#fee2e2] rounded-xl flex items-center justify-center">
+          <svg class="w-6 h-6 text-[#dc2626]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+          </svg>
+        </div>
+        <div>
+          <h1 class="text-4xl font-bold text-[#0f172a]">Términos y Condiciones</h1>
+          <p class="text-sm text-gray-500 mt-1">Última actualización: Enero 2024</p>
+        </div>
+      </div>
+      <p class="text-lg text-[#64748b]">
+        Por favor, lea estos términos y condiciones cuidadosamente antes de utilizar nuestros servicios.
+      </p>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <section class="py-16">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="prose prose-slate max-w-none">
+
+        <div class="mb-12">
+          <h2 class="text-2xl font-bold text-[#0f172a] mb-4">1. Aceptación de los Términos</h2>
+          <p class="text-[#475569] leading-relaxed mb-4">
+            Al acceder y utilizar el sitio web de <strong>Starsolution S.A.S.</strong> (en adelante, "la Empresa", "nosotros" o "nuestro"),
+            usted acepta estar legalmente vinculado por estos Términos y Condiciones. Si no está de acuerdo con alguna parte de estos términos,
+            no debe utilizar nuestros servicios.
+          </p>
+          <p class="text-[#475569] leading-relaxed">
+            Nos reservamos el derecho de modificar estos términos en cualquier momento. Los cambios serán efectivos inmediatamente después
+            de su publicación en el sitio web. Su uso continuado del sitio después de cualquier modificación constituye su aceptación de los nuevos términos.
+          </p>
+        </div>
+
+        <div class="mb-12">
+          <h2 class="text-2xl font-bold text-[#0f172a] mb-4">2. Descripción de Servicios</h2>
+          <p class="text-[#475569] leading-relaxed mb-4">Starsolution S.A.S. es una empresa mayorista especializada en:</p>
+          <ul class="list-disc pl-6 text-[#475569] space-y-2 mb-4">
+            <li><strong>Soluciones de Ciberseguridad:</strong> Bitdefender, Kaspersky, Hornet Security, TeamViewer, SOTI MobiControl</li>
+            <li><strong>Servicios de Hacking Ético y Pentesting</strong> profesional certificado</li>
+            <li><strong>Consultoría ISO 27001:</strong> Implementación y certificación de sistemas de gestión de seguridad de la información</li>
+            <li><strong>Equipos de Cómputo:</strong> Hardware empresarial y soluciones tecnológicas</li>
+            <li><strong>Impresoras Brother:</strong> Distribución autorizada de equipos multifuncionales</li>
+            <li><strong>Cableado Estructurado:</strong> Instalación y mantenimiento de redes</li>
+          </ul>
+          <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded">
+            <p class="text-sm text-yellow-800">
+              <strong>Importante:</strong> Somos mayoristas, no distribuidores directos al consumidor final.
+              No ofrecemos opciones de financiación. Todos los precios y disponibilidad están sujetos a confirmación.
+            </p>
+          </div>
+        </div>
+
+        <div class="mb-12">
+          <h2 class="text-2xl font-bold text-[#0f172a] mb-4">3. Uso Permitido del Sitio Web</h2>
+          <p class="text-[#475569] leading-relaxed mb-4">
+            Usted se compromete a utilizar este sitio web únicamente para fines lícitos y de acuerdo con estos términos. Está prohibido:
+          </p>
+          <ul class="list-disc pl-6 text-[#475569] space-y-2">
+            <li>Usar el sitio de manera que infrinja cualquier ley o regulación local, nacional o internacional aplicable</li>
+            <li>Transmitir, o procurar el envío de, cualquier material publicitario o promocional no solicitado o no autorizado (spam)</li>
+            <li>Realizar ingeniería inversa, descompilar o intentar acceder al código fuente del sitio</li>
+            <li>Introducir virus, troyanos, gusanos, bombas lógicas u otro material malicioso o tecnológicamente dañino</li>
+            <li>Intentar acceder sin autorización, interferir, dañar o interrumpir cualquier parte del sitio, servidor o red</li>
+            <li>Utilizar scrapers, bots o herramientas automatizadas para extraer contenido sin autorización expresa</li>
+          </ul>
+        </div>
+
+        <div class="mb-12">
+          <h2 class="text-2xl font-bold text-[#0f172a] mb-4">4. Propiedad Intelectual</h2>
+          <p class="text-[#475569] leading-relaxed mb-4">
+            Todo el contenido del sitio web, incluyendo pero no limitado a textos, gráficos, logotipos, iconos, imágenes, clips de audio,
+            descargas digitales y compilaciones de datos, es propiedad de Starsolution S.A.S. o de sus proveedores de contenido y está
+            protegido por las leyes de derechos de autor colombianas e internacionales.
+          </p>
+          <p class="text-[#475569] leading-relaxed mb-4">
+            Las marcas comerciales, logotipos y marcas de servicio mostradas en el sitio (Bitdefender, Kaspersky, Brother, TeamViewer,
+            SOTI, Hornet Security) son propiedad de sus respectivos titulares. Nada en estos términos le otorga el derecho a usar
+            dichas marcas sin el permiso previo por escrito del titular.
+          </p>
+          <p class="text-[#475569] leading-relaxed">
+            Se prohíbe la reproducción, distribución, modificación o uso comercial de cualquier material del sitio sin autorización
+            expresa por escrito.
+          </p>
+        </div>
+
+        <div class="mb-12">
+          <h2 class="text-2xl font-bold text-[#0f172a] mb-4">5. Cotizaciones y Precios</h2>
+          <p class="text-[#475569] leading-relaxed mb-4">
+            Todos los precios mostrados en el sitio web son <strong>únicamente referenciales</strong> y están sujetos a:
+          </p>
+          <ul class="list-disc pl-6 text-[#475569] space-y-2 mb-4">
+            <li>Confirmación de disponibilidad de inventario</li>
+            <li>Fluctuaciones del mercado y tipos de cambio</li>
+            <li>Volumen de compra (descuentos por cantidad)</li>
+            <li>Términos de pago acordados</li>
+            <li>Impuestos aplicables (IVA, retenciones)</li>
+          </ul>
+          <p class="text-[#475569] leading-relaxed mb-4">
+            Las cotizaciones formales tienen una <strong>validez de 15 días calendario</strong> a menos que se especifique lo contrario.
+            Después de este período, los precios pueden ser ajustados.
+          </p>
+          <div class="bg-blue-50 border-l-4 border-blue-400 p-4 rounded">
+            <p class="text-sm text-blue-800">
+              <strong>Nota:</strong> Como mayorista, nuestros servicios están dirigidos a empresas, revendedores y organizaciones.
+              No ofrecemos venta directa al consumidor final ni opciones de financiación.
+            </p>
+          </div>
+        </div>
+
+        <div class="mb-12">
+          <h2 class="text-2xl font-bold text-[#0f172a] mb-4">6. Servicios de Consultoría, Auditoría y Pentesting</h2>
+          <p class="text-[#475569] leading-relaxed mb-4">Para servicios profesionales (ISO 27001, Hacking Ético, Pentesting):</p>
+          <ul class="list-disc pl-6 text-[#475569] space-y-2 mb-4">
+            <li><strong>Acuerdos de Confidencialidad (NDA):</strong> Se firma un NDA bilateral antes de cualquier evaluación de seguridad</li>
+            <li><strong>Alcance Definido:</strong> El alcance del servicio (IPs, aplicaciones, sistemas) se define y acuerda por escrito</li>
+            <li><strong>Autorización Legal:</strong> El cliente declara tener autorización legal para solicitar pentesting de los sistemas objetivo</li>
+            <li><strong>Limitación de Responsabilidad:</strong> Los servicios de pentesting se realizan con máximo cuidado, pero el cliente acepta que existe un riesgo mínimo inherente. No somos responsables de daños causados por vulnerabilidades descubiertas durante la evaluación</li>
+            <li><strong>Reportes Confidenciales:</strong> Los informes de vulnerabilidades son confidenciales y no se divulgan a terceros sin autorización</li>
+          </ul>
+        </div>
+
+        <div class="mb-12">
+          <h2 class="text-2xl font-bold text-[#0f172a] mb-4">7. Garantías de Productos</h2>
+          <p class="text-[#475569] leading-relaxed mb-4">
+            Las garantías de productos de hardware y software son las provistas por los fabricantes originales. Starsolution actúa como
+            intermediario y facilitador de garantías, canalizando las reclamaciones con los fabricantes según sus políticas.
+          </p>
+          <p class="text-[#475569] leading-relaxed">
+            Las licencias de software (Bitdefender, Kaspersky, etc.) están sujetas a los Términos de Licencia de Usuario Final (EULA)
+            de cada fabricante. Es responsabilidad del cliente leer y aceptar dichos términos.
+          </p>
+        </div>
+
+        <div class="mb-12">
+          <h2 class="text-2xl font-bold text-[#0f172a] mb-4">8. Limitación de Responsabilidad</h2>
+          <p class="text-[#475569] leading-relaxed mb-4">En la máxima medida permitida por la ley, Starsolution S.A.S. no será responsable de:</p>
+          <ul class="list-disc pl-6 text-[#475569] space-y-2 mb-4">
+            <li>Daños indirectos, incidentales, especiales, consecuentes o punitivos</li>
+            <li>Pérdida de beneficios, ingresos, datos o uso</li>
+            <li>Interrupciones del servicio o errores en el sitio web</li>
+            <li>Acciones de terceros o links externos</li>
+            <li>Fuerza mayor o circunstancias fuera de nuestro control razonable</li>
+          </ul>
+          <p class="text-[#475569] leading-relaxed">
+            Nuestra responsabilidad máxima agregada no excederá el monto pagado por el cliente en los 12 meses anteriores al evento que generó la reclamación.
+          </p>
+        </div>
+
+        <div class="mb-12">
+          <h2 class="text-2xl font-bold text-[#0f172a] mb-4">9. Protección de Datos Personales</h2>
+          <p class="text-[#475569] leading-relaxed mb-4">
+            El tratamiento de sus datos personales se rige por nuestra <a href="/politica-de-proteccion-de-datos-personales" class="text-[#dc2626] hover:underline font-semibold">Política de Protección de Datos Personales</a>, en cumplimiento con la Ley 1581 de 2012 de Colombia y normas concordantes.
+          </p>
+          <p class="text-[#475569] leading-relaxed">
+            Al utilizar nuestros servicios, usted consiente el tratamiento de sus datos conforme a dicha política.
+          </p>
+        </div>
+
+        <div class="mb-12">
+          <h2 class="text-2xl font-bold text-[#0f172a] mb-4">10. Ley Aplicable y Jurisdicción</h2>
+          <p class="text-[#475569] leading-relaxed mb-4">
+            Estos términos se rigen e interpretan de acuerdo con las leyes de la República de Colombia. Cualquier disputa relacionada
+            con estos términos o el uso del sitio web estará sujeta a la jurisdicción exclusiva de los tribunales de Bogotá D.C., Colombia.
+          </p>
+          <p class="text-[#475569] leading-relaxed">
+            Para operaciones internacionales (Venezuela, Estados Unidos), las partes buscarán primero una solución amistosa. En caso de
+            arbitraje, se aplicarán las normas de la Cámara de Comercio de Bogotá.
+          </p>
+        </div>
+
+        <div class="mb-12">
+          <h2 class="text-2xl font-bold text-[#0f172a] mb-4">11. Terminación del Acceso</h2>
+          <p class="text-[#475569] leading-relaxed">
+            Nos reservamos el derecho de suspender o terminar su acceso al sitio web inmediatamente, sin previo aviso, si creemos
+            razonablemente que ha violado estos términos o ha participado en actividades ilegales o fraudulentas.
+          </p>
+        </div>
+
+        <div class="mb-12">
+          <h2 class="text-2xl font-bold text-[#0f172a] mb-4">12. Divisibilidad</h2>
+          <p class="text-[#475569] leading-relaxed">
+            Si alguna disposición de estos términos se considera inválida o inaplicable, dicha disposición se eliminará o limitará
+            en la medida mínima necesaria, y las disposiciones restantes continuarán en pleno vigor y efecto.
+          </p>
+        </div>
+
+        <!-- Contacto -->
+        <div class="bg-gradient-to-r from-[#f8fafc] to-white border-2 border-gray-200 rounded-2xl p-8">
+          <h2 class="text-2xl font-bold text-[#0f172a] mb-4">Información de Contacto</h2>
+          <p class="text-[#475569] mb-4">Si tiene preguntas sobre estos Términos y Condiciones, puede contactarnos:</p>
+          <div class="space-y-2 text-[#475569]">
+            <p><strong>Razón Social:</strong> Starsolution S.A.S.</p>
+            <p><strong>País:</strong> Colombia</p>
+            <p><strong>Dirección:</strong> Calle 52 A # 22 – 16, Bogotá</p>
+            <p><strong>Teléfono:</strong> <a href="tel:+573007010017" class="text-[#dc2626] hover:underline">+57 300 701 0017</a></p>
+            <p><strong>Email:</strong> <a href="mailto:contacto@star-ti.com" class="text-[#dc2626] hover:underline">contacto@star-ti.com</a></p>
+            <p><strong>Horario de Atención:</strong> Lunes a Viernes, 8:00 AM - 6:00 PM (GMT-5)</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+  <WhatsAppButton />
+</BaseLayout>

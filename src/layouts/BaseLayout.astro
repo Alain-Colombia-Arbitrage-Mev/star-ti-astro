@@ -1,0 +1,105 @@
+---
+import type { SEOData } from '@data/seo';
+import '@/styles/global.css';
+
+interface Props {
+  seo: SEOData;
+}
+
+const { seo } = Astro.props;
+const ogTitle = seo.ogTitle || seo.title;
+const ogType = seo.ogType || 'website';
+const ogImage = seo.ogImage || 'https://starsolution.com.co/og-default.png';
+const htmlLang = seo.lang || 'es';
+const BASE_URL = 'https://starsolution.com.co';
+
+// Build breadcrumb JSON-LD
+const breadcrumbJsonLd = seo.breadcrumb ? {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: seo.breadcrumb.map((item, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    name: item.name,
+    item: item.url.startsWith('http') ? item.url : `${BASE_URL}${item.url}`,
+  })),
+} : null;
+---
+
+<!DOCTYPE html>
+<html lang={htmlLang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Google Fonts - combined request, non-blocking -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400..700&family=Space+Grotesk:wght@400;500;600;700&display=swap" />
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400..700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400..700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" /></noscript>
+
+    <!-- SEO Meta Tags -->
+    <title>{seo.title}</title>
+    <meta name="description" content={seo.description} />
+    <meta name="keywords" content={seo.keywords} />
+    <link rel="canonical" href={seo.canonical} />
+    <meta name="robots" content={seo.noindex ? 'noindex, nofollow' : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'} />
+    <meta name="author" content="Starsolution S.A.S." />
+    <meta name="geo.region" content="CO" />
+    <meta name="geo.placename" content="Bogota" />
+
+    <!-- Hreflang for multi-region -->
+    <link rel="alternate" hreflang="es-CO" href={seo.canonical} />
+    <link rel="alternate" hreflang="es-VE" href={`${BASE_URL}/venezuela`} />
+    <link rel="alternate" hreflang="en-US" href={`${BASE_URL}/miami`} />
+    <link rel="alternate" hreflang="x-default" href={seo.canonical} />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={ogTitle} />
+    <meta property="og:description" content={seo.description} />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:url" content={seo.canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={ogTitle} />
+    <meta property="og:site_name" content="Starsolution" />
+    <meta property="og:locale" content="es_CO" />
+    <meta property="og:locale:alternate" content="es_VE" />
+    <meta property="og:locale:alternate" content="en_US" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={ogTitle} />
+    <meta name="twitter:description" content={seo.description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+
+    <!-- JSON-LD Structured Data -->
+    {seo.jsonLd && (
+      <script type="application/ld+json" set:html={JSON.stringify(seo.jsonLd)} />
+    )}
+
+    <!-- FAQ Schema -->
+    {seo.faqJsonLd && (
+      <script type="application/ld+json" set:html={JSON.stringify(seo.faqJsonLd)} />
+    )}
+
+    <!-- Breadcrumb Schema -->
+    {breadcrumbJsonLd && (
+      <script type="application/ld+json" set:html={JSON.stringify(breadcrumbJsonLd)} />
+    )}
+  </head>
+  <body class="bg-white min-h-screen w-full font-['Instrument_Sans',sans-serif]">
+    <main>
+      <slot />
+    </main>
+  </body>
+</html>

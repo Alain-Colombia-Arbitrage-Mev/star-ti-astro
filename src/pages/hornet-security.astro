@@ -1,0 +1,757 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Navbar from '@components/Navbar.astro';
+import Footer from '@components/Footer.astro';
+import WhatsAppButton from '@components/WhatsAppButton.astro';
+import { seoData } from '@data/seo';
+
+const seo = seoData['hornet-security'];
+---
+
+<BaseLayout seo={seo}>
+  <Navbar />
+
+  <div class="bg-white min-h-screen w-full font-['Instrument_Sans',sans-serif]">
+
+    <!-- Hero Section -->
+    <section class="relative py-20 sm:py-28 lg:py-36 bg-white overflow-hidden">
+      <div class="absolute bg-[rgba(254,242,242,0.5)] blur-[32px] left-[-200px] rounded-[9999px] w-[600px] h-[600px] top-[-100px]"></div>
+
+      <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <!-- Left Content -->
+          <div>
+            <!-- Badge -->
+            <div class="inline-flex items-center gap-2 bg-[#fff7ed] border border-[#ffedd5] px-4 py-2 rounded-full mb-8">
+              <svg class="w-4 h-4" fill="none" viewBox="0 0 16 16">
+                <path d="M8 2L9.5 5L13 5.5L10.5 8L11 11.5L8 10L5 11.5L5.5 8L3 5.5L6.5 5L8 2Z" fill="#e44d26"/>
+              </svg>
+              <span class="text-[#e44d26] text-xs font-semibold tracking-wider uppercase">
+                Lider en Seguridad Microsoft 365
+              </span>
+            </div>
+
+            <!-- Main Heading -->
+            <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-tight mb-6">
+              <span class="block text-[#0f172a]">Seguridad Cloud</span>
+              <span class="block bg-gradient-to-r from-[#e44d26] to-[#ea580c] bg-clip-text text-transparent" style="-webkit-text-fill-color: transparent;">
+                All-in-One
+              </span>
+              <span class="block text-[#0f172a]">para M365</span>
+            </h1>
+
+            <!-- Description -->
+            <p class="text-lg text-[#64748b] leading-relaxed mb-10">
+              Proteja su infraestructura de Microsoft 365 con la suite mas completa:
+              proteccion contra spam, ransomware, backup, archivado y continuity.
+            </p>
+
+            <!-- CTAs -->
+            <div class="flex flex-col sm:flex-row gap-4 mb-12">
+              <a
+                href="/contacto"
+                class="bg-gradient-to-r from-red-600 to-red-700 text-white font-semibold px-8 py-4 rounded-full hover:from-red-700 hover:to-red-800 transition shadow-lg inline-flex items-center justify-center gap-2"
+              >
+                Solicitar Asesoría Especializada
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+              </a>
+            </div>
+
+            <!-- Stats -->
+            <div class="flex items-center gap-8 pt-8 border-t border-[#f3f4f6]">
+              <div>
+                <div class="text-2xl font-bold text-[#0f172a] mb-1">50k+</div>
+                <div class="text-xs text-[#6b7280] uppercase tracking-wider">Clientes Globales</div>
+              </div>
+              <div class="w-px h-8 bg-[#e5e7eb]"></div>
+              <div>
+                <div class="text-2xl font-bold text-[#0f172a] mb-1">99.9%</div>
+                <div class="text-xs text-[#6b7280] uppercase tracking-wider">Deteccion de Spam</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right - Dashboard Preview -->
+          <div class="relative">
+            <div class="flex justify-center mb-6">
+              <img
+                src="/assets/emblema-seguridad-cloud.webp"
+                alt="Emblema de seguridad cloud para protección Microsoft 365 con Hornet Security"
+                class="w-full max-w-xs mx-auto rounded-2xl shadow-xl"
+                width="320"
+                height="320"
+                loading="lazy"
+              />
+            </div>
+            <div class="bg-white border border-[#f3f4f6] rounded-2xl p-8 shadow-2xl">
+              <!-- Live Protection Header -->
+              <div class="flex items-center justify-between mb-6 pb-6 border-b border-[#f3f4f6]">
+                <div class="flex items-center gap-3">
+                  <div class="h-2 w-20 bg-[#e5e7eb] rounded-full"></div>
+                  <div class="h-2 w-12 bg-[#f3f4f6] rounded-full"></div>
+                </div>
+                <div class="flex items-center gap-2">
+                  <div class="w-2 h-2 bg-[#22c55e] rounded-full animate-pulse"></div>
+                  <span class="text-[10px] text-[#9ca3af] uppercase tracking-wider">Live Protection</span>
+                </div>
+              </div>
+
+              <!-- Threats Card -->
+              <div class="bg-gradient-to-br from-[rgba(228,77,38,0.05)] to-transparent border border-[rgba(228,77,38,0.1)] rounded-xl p-6 mb-4">
+                <div class="flex items-center justify-between mb-4">
+                  <div class="flex items-center gap-2">
+                    <svg class="w-4 h-4 text-[#e44d26]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                    </svg>
+                    <span class="text-xs font-semibold text-[#e44d26] uppercase tracking-wider">Amenazas Bloqueadas</span>
+                  </div>
+                  <span class="text-[10px] text-[#9ca3af]">Hoy</span>
+                </div>
+                <div class="text-3xl font-mono font-bold text-[#0f172a] mb-2">1,284</div>
+                <div class="text-xs text-[#6b7280]">Ransomware, Phishing & Malware</div>
+              </div>
+
+              <!-- Backup Card -->
+              <div class="bg-white border border-[#f3f4f6] rounded-xl p-6 mb-4">
+                <div class="flex items-center gap-2 mb-3">
+                  <svg class="w-4 h-4 text-[#2563eb]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" />
+                  </svg>
+                  <span class="text-xs font-semibold text-[#2563eb] uppercase tracking-wider">Backup</span>
+                </div>
+                <div class="text-xl font-mono font-bold text-[#0f172a] mb-2">14.2 TB</div>
+                <div class="flex items-center gap-1">
+                  <svg class="w-3 h-3 text-[#16a34a]" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  <span class="text-[10px] text-[#16a34a] font-medium">Sincronizado</span>
+                </div>
+              </div>
+
+              <!-- Filter Card -->
+              <div class="bg-white border border-[#f3f4f6] rounded-xl p-6">
+                <div class="flex items-center gap-2 mb-3">
+                  <svg class="w-4 h-4 text-[#9333ea]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z" />
+                  </svg>
+                  <span class="text-xs font-semibold text-[#9333ea] uppercase tracking-wider">Filtrado</span>
+                </div>
+                <div class="text-xl font-mono font-bold text-[#0f172a] mb-2">99.99%</div>
+                <div class="text-[10px] text-[#9ca3af]">Precision de Spam</div>
+              </div>
+            </div>
+
+            <!-- Decorative Circle -->
+            <div class="absolute -bottom-12 -right-12 w-72 h-72 opacity-20 pointer-events-none">
+              <svg viewBox="0 0 300 300" fill="none">
+                <circle cx="150" cy="150" r="140" stroke="#e44d26" stroke-width="25" stroke-dasharray="10 20"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trust Logos -->
+    <section class="py-12 bg-[rgba(249,250,251,0.5)] border-y border-[#f3f4f6]">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <p class="text-center text-[#9ca3af] text-xs font-semibold uppercase tracking-wider mb-8">
+          Protegiendo organizaciones en todo el mundo
+        </p>
+        <div class="flex flex-wrap items-center justify-center gap-12 opacity-60">
+          <div class="text-[#1f2937] text-xl font-bold tracking-tight">TechCorp</div>
+          <div class="text-[#1f2937] text-xl font-bold tracking-tight">GlobalLogistics</div>
+          <div class="text-[#1f2937] text-xl font-bold tracking-tight">SecureBank</div>
+          <div class="text-[#1f2937] text-xl font-bold tracking-tight">NetSystems</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 365 Total Protection Features -->
+    <section class="py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <p class="text-[#e44d26] text-sm font-semibold uppercase tracking-wider mb-4">La Suite Completa</p>
+          <h2 class="text-4xl sm:text-5xl font-bold text-[#0f172a] mb-6">
+            365 Total Protection
+          </h2>
+          <p class="text-lg text-[#64748b] max-w-3xl mx-auto">
+            La única solución de seguridad y cumplimiento diseñada específicamente para Microsoft 365.
+            Configuracion en 30 segundos.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Email Security -->
+          <div class="bg-white border border-[#e5e7eb] rounded-xl p-8 hover:shadow-lg transition-all duration-300-shadow cursor-pointer">
+            <div class="bg-[#fef2f2] rounded-lg w-14 h-14 flex items-center justify-center mb-6">
+              <svg class="w-7 h-7 text-[#e44d26]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-[#0f172a] mb-3">Email Security</h3>
+            <p class="text-sm text-[#64748b] leading-relaxed mb-6">
+              Filtre el spam y proteja contra malware, ransomware y ataques APT usando la sandbox integrada y la ultima inteligencia de amenazas.
+            </p>
+            <ul class="space-y-2">
+              <li class="flex items-start gap-2 text-sm text-[#64748b]">
+                <svg class="w-5 h-5 text-[#e44d26] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                Spam & Malware Protection
+              </li>
+              <li class="flex items-start gap-2 text-sm text-[#64748b]">
+                <svg class="w-5 h-5 text-[#e44d26] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                ATP Sandbox Challenge
+              </li>
+              <li class="flex items-start gap-2 text-sm text-[#64748b]">
+                <svg class="w-5 h-5 text-[#e44d26] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                URL Rewriting
+              </li>
+            </ul>
+          </div>
+
+          <!-- Backup & Recovery -->
+          <div class="bg-white border border-[#e5e7eb] rounded-xl p-8 hover:shadow-lg transition-all duration-300-shadow cursor-pointer">
+            <div class="bg-[#fef2f2] rounded-lg w-14 h-14 flex items-center justify-center mb-6">
+              <svg class="w-7 h-7 text-[#e44d26]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-[#0f172a] mb-3">Backup & Recovery</h3>
+            <p class="text-sm text-[#64748b] leading-relaxed mb-6">
+              Respaldo automático e ilimitado para M365 con recuperacion granular. Proteja contra eliminaciones accidentales, malware y ransomware.
+            </p>
+            <ul class="space-y-2">
+              <li class="flex items-start gap-2 text-sm text-[#64748b]">
+                <svg class="w-5 h-5 text-[#e44d26] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                Almacenamiento Ilimitado
+              </li>
+              <li class="flex items-start gap-2 text-sm text-[#64748b]">
+                <svg class="w-5 h-5 text-[#e44d26] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                Recuperacion Granular
+              </li>
+              <li class="flex items-start gap-2 text-sm text-[#64748b]">
+                <svg class="w-5 h-5 text-[#e44d26] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                Retención Infinita
+              </li>
+            </ul>
+          </div>
+
+          <!-- Email Archiving -->
+          <div class="bg-white border border-[#e5e7eb] rounded-xl p-8 hover:shadow-lg transition-all duration-300-shadow cursor-pointer">
+            <div class="bg-[#f0f9ff] rounded-lg w-14 h-14 flex items-center justify-center mb-6">
+              <svg class="w-7 h-7 text-[#2563eb]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-[#0f172a] mb-3">Email Archiving</h3>
+            <p class="text-sm text-[#64748b] leading-relaxed mb-6">
+              Archivo legalmente conforme para la retencion permanente de emails y cumplimiento regulatorio. Búsqueda instantánea y e-Discovery.
+            </p>
+            <ul class="space-y-2">
+              <li class="flex items-start gap-2 text-sm text-[#64748b]">
+                <svg class="w-5 h-5 text-[#2563eb] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                Archivo Legal Compliance
+              </li>
+              <li class="flex items-start gap-2 text-sm text-[#64748b]">
+                <svg class="w-5 h-5 text-[#2563eb] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                Full Text Search
+              </li>
+              <li class="flex items-start gap-2 text-sm text-[#64748b]">
+                <svg class="w-5 h-5 text-[#2563eb] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                e-Discovery Ready
+              </li>
+            </ul>
+          </div>
+
+          <!-- Email Encryption -->
+          <div class="bg-white border border-[#e5e7eb] rounded-xl p-8 hover:shadow-lg transition-all duration-300-shadow cursor-pointer">
+            <div class="bg-[#ecfdf5] rounded-lg w-14 h-14 flex items-center justify-center mb-6">
+              <svg class="w-7 h-7 text-[#059669]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-[#0f172a] mb-3">Email Encryption</h3>
+            <p class="text-sm text-[#64748b] leading-relaxed mb-6">
+              Cifrado de extremo a extremo para emails sensibles. Firma digital S/MIME y envio seguro con portal web sin requerir software adicional.
+            </p>
+            <ul class="space-y-2">
+              <li class="flex items-start gap-2 text-sm text-[#64748b]">
+                <svg class="w-5 h-5 text-[#059669] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                TLS & S/MIME Encryption
+              </li>
+              <li class="flex items-start gap-2 text-sm text-[#64748b]">
+                <svg class="w-5 h-5 text-[#059669] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                Secure Portal
+              </li>
+              <li class="flex items-start gap-2 text-sm text-[#64748b]">
+                <svg class="w-5 h-5 text-[#059669] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                Digital Signatures
+              </li>
+            </ul>
+          </div>
+
+          <!-- Email Continuity -->
+          <div class="bg-white border border-[#e5e7eb] rounded-xl p-8 hover:shadow-lg transition-all duration-300-shadow cursor-pointer">
+            <div class="bg-[#ede9fe] rounded-lg w-14 h-14 flex items-center justify-center mb-6">
+              <svg class="w-7 h-7 text-[#7c3aed]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-[#0f172a] mb-3">Email Continuity</h3>
+            <p class="text-sm text-[#64748b] leading-relaxed mb-6">
+              Mantenga el flujo de emails incluso durante interrupciones de M365. Acceso webmail completo con sincronización automática al restaurar servicio.
+            </p>
+            <ul class="space-y-2">
+              <li class="flex items-start gap-2 text-sm text-[#64748b]">
+                <svg class="w-5 h-5 text-[#7c3aed] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                Uptime Garantizado
+              </li>
+              <li class="flex items-start gap-2 text-sm text-[#64748b]">
+                <svg class="w-5 h-5 text-[#7c3aed] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                Webmail Completo
+              </li>
+              <li class="flex items-start gap-2 text-sm text-[#64748b]">
+                <svg class="w-5 h-5 text-[#7c3aed] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                Auto-Sync
+              </li>
+            </ul>
+          </div>
+
+          <!-- Security Awareness -->
+          <div class="bg-white border border-[#e5e7eb] rounded-xl p-8 hover:shadow-lg transition-all duration-300-shadow cursor-pointer">
+            <div class="bg-[#fff7ed] rounded-lg w-14 h-14 flex items-center justify-center mb-6">
+              <svg class="w-7 h-7 text-[#ea580c]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-[#0f172a] mb-3">Security Awareness</h3>
+            <p class="text-sm text-[#64748b] leading-relaxed mb-6">
+              Capacite a sus empleados con simulaciones de phishing y training interactivo. Reduzca el riesgo humano con campañas automatizadas.
+            </p>
+            <ul class="space-y-2">
+              <li class="flex items-start gap-2 text-sm text-[#64748b]">
+                <svg class="w-5 h-5 text-[#ea580c] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                Simulaciones Phishing
+              </li>
+              <li class="flex items-start gap-2 text-sm text-[#64748b]">
+                <svg class="w-5 h-5 text-[#ea580c] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                Training Interactivo
+              </li>
+              <li class="flex items-start gap-2 text-sm text-[#64748b]">
+                <svg class="w-5 h-5 text-[#ea580c] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                Reportes & Analytics
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 365 Total Protection Planes -->
+    <section class="py-16 sm:py-20 lg:py-24 bg-[#f8fafc]">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl sm:text-4xl font-bold mb-4 text-gray-900">
+            365 Total Protection: Planes Disponibles
+          </h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            Elija el plan que se ajusta al nivel de protección que su organización necesita.
+            Todos incluyen seguridad de email, backup y archivado para Microsoft 365.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Business -->
+          <div class="bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-lg transition-all duration-300 cursor-pointer">
+            <div class="mb-6">
+              <span class="inline-block bg-blue-50 text-blue-700 text-xs font-semibold px-3 py-1 rounded-full mb-4">Business</span>
+              <h3 class="text-2xl font-bold text-gray-900 mb-2">365 Total Protection Business</h3>
+              <p class="text-sm text-gray-600">Protección esencial para organizaciones que migran o ya operan en Microsoft 365.</p>
+            </div>
+            <ul class="space-y-3 mb-6">
+              <li class="flex items-start gap-3 text-sm text-gray-700">
+                <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg>
+                Filtrado de spam y malware avanzado
+              </li>
+              <li class="flex items-start gap-3 text-sm text-gray-700">
+                <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg>
+                Email archiving con retención a largo plazo
+              </li>
+              <li class="flex items-start gap-3 text-sm text-gray-700">
+                <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg>
+                Email continuity (servicio de emergencia)
+              </li>
+              <li class="flex items-start gap-3 text-sm text-gray-700">
+                <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg>
+                Sandboxing ATP para adjuntos
+              </li>
+              <li class="flex items-start gap-3 text-sm text-gray-700">
+                <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg>
+                Informes y dashboards de seguridad
+              </li>
+            </ul>
+            <div class="border-t border-gray-100 pt-4">
+              <p class="text-xs text-gray-500">Ideal para: PYMES y medianas empresas</p>
+            </div>
+          </div>
+
+          <!-- Enterprise -->
+          <div class="bg-white border-2 border-[#e44d26] rounded-2xl p-8 hover:shadow-lg transition-all duration-300 cursor-pointer relative">
+            <div class="absolute -top-3 left-1/2 transform -translate-x-1/2">
+              <span class="bg-[#e44d26] text-white text-xs font-bold px-4 py-1 rounded-full">Más Popular</span>
+            </div>
+            <div class="mb-6">
+              <span class="inline-block bg-orange-50 text-[#e44d26] text-xs font-semibold px-3 py-1 rounded-full mb-4">Enterprise</span>
+              <h3 class="text-2xl font-bold text-gray-900 mb-2">365 Total Protection Enterprise</h3>
+              <p class="text-sm text-gray-600">Protección completa con capacidades avanzadas de threat intelligence y awareness.</p>
+            </div>
+            <ul class="space-y-3 mb-6">
+              <li class="flex items-start gap-3 text-sm text-gray-700">
+                <svg class="w-5 h-5 text-[#e44d26] flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg>
+                Todo lo incluido en Business
+              </li>
+              <li class="flex items-start gap-3 text-sm text-gray-700">
+                <svg class="w-5 h-5 text-[#e44d26] flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg>
+                Security Awareness Training con simulaciones de phishing
+              </li>
+              <li class="flex items-start gap-3 text-sm text-gray-700">
+                <svg class="w-5 h-5 text-[#e44d26] flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg>
+                AI-based email fraud detection (BEC)
+              </li>
+              <li class="flex items-start gap-3 text-sm text-gray-700">
+                <svg class="w-5 h-5 text-[#e44d26] flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg>
+                Cifrado S/MIME y firma digital
+              </li>
+              <li class="flex items-start gap-3 text-sm text-gray-700">
+                <svg class="w-5 h-5 text-[#e44d26] flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg>
+                Reportes de cumplimiento avanzados
+              </li>
+            </ul>
+            <div class="border-t border-gray-100 pt-4">
+              <p class="text-xs text-gray-500">Ideal para: Medianas y grandes empresas reguladas</p>
+            </div>
+          </div>
+
+          <!-- Enterprise Backup -->
+          <div class="bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-lg transition-all duration-300 cursor-pointer">
+            <div class="mb-6">
+              <span class="inline-block bg-purple-50 text-purple-700 text-xs font-semibold px-3 py-1 rounded-full mb-4">Enterprise Backup</span>
+              <h3 class="text-2xl font-bold text-gray-900 mb-2">365 Total Protection Enterprise Backup</h3>
+              <p class="text-sm text-gray-600">La suite más completa con backup ilimitado de toda la suite Microsoft 365.</p>
+            </div>
+            <ul class="space-y-3 mb-6">
+              <li class="flex items-start gap-3 text-sm text-gray-700">
+                <svg class="w-5 h-5 text-purple-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg>
+                Todo lo incluido en Enterprise
+              </li>
+              <li class="flex items-start gap-3 text-sm text-gray-700">
+                <svg class="w-5 h-5 text-purple-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg>
+                Backup ilimitado: Exchange, SharePoint, OneDrive, Teams
+              </li>
+              <li class="flex items-start gap-3 text-sm text-gray-700">
+                <svg class="w-5 h-5 text-purple-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg>
+                Recuperación granular a nivel de elemento
+              </li>
+              <li class="flex items-start gap-3 text-sm text-gray-700">
+                <svg class="w-5 h-5 text-purple-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg>
+                Retención infinita sin coste adicional
+              </li>
+              <li class="flex items-start gap-3 text-sm text-gray-700">
+                <svg class="w-5 h-5 text-purple-500 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg>
+                SLA de recuperación ante desastres
+              </li>
+            </ul>
+            <div class="border-t border-gray-100 pt-4">
+              <p class="text-xs text-gray-500">Ideal para: Empresas con requisitos de continuidad de negocio</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-8">
+          <a href="/contacto" class="bg-gradient-to-r from-red-600 to-red-700 text-white font-semibold px-8 py-4 rounded-full hover:from-red-700 hover:to-red-800 transition shadow-lg inline-flex items-center justify-center gap-2">
+            Solicitar Comparativa Detallada de Planes
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Migración desde su Solución Actual -->
+    <section class="py-16 sm:py-20 lg:py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl sm:text-4xl font-bold mb-4 text-gray-900">
+            Migración desde su Solución Actual
+          </h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            Muchas organizaciones llegan a Hornetsecurity desde G Suite / Google Workspace
+            o desde servidores Exchange on-premises. El proceso es más simple de lo que imagina.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+          <!-- From G Suite Security -->
+          <div class="bg-gray-50 border border-gray-200 rounded-2xl p-8">
+            <div class="flex items-center gap-4 mb-6">
+              <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
+                <svg class="w-6 h-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-bold text-gray-900 text-lg">Desde G Suite / Google Workspace</h3>
+                <p class="text-sm text-gray-500">Migración a Microsoft 365 con protección desde el día 1</p>
+              </div>
+            </div>
+            <div class="space-y-4">
+              <div class="flex items-start gap-3">
+                <div class="w-6 h-6 bg-[#e44d26] rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <span class="text-white text-xs font-bold">1</span>
+                </div>
+                <div>
+                  <p class="text-sm font-semibold text-gray-900">Evaluación de configuración existente</p>
+                  <p class="text-xs text-gray-600">Mapeamos sus reglas de filtrado, listas blancas y políticas de Google Workspace a las capacidades equivalentes de Hornetsecurity.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="w-6 h-6 bg-[#e44d26] rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <span class="text-white text-xs font-bold">2</span>
+                </div>
+                <div>
+                  <p class="text-sm font-semibold text-gray-900">Configuración paralela durante 30 días</p>
+                  <p class="text-xs text-gray-600">Hornetsecurity opera en paralelo con G Suite para ajustar la detección sin interrumpir el correo de producción.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="w-6 h-6 bg-[#e44d26] rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <span class="text-white text-xs font-bold">3</span>
+                </div>
+                <div>
+                  <p class="text-sm font-semibold text-gray-900">Cambio de MX Records y Go-Live</p>
+                  <p class="text-xs text-gray-600">Transición en 5 minutos con rollback disponible. Todos los emails en tránsito son capturados por la cola de continuidad.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- From Exchange On-Premises -->
+          <div class="bg-gray-50 border border-gray-200 rounded-2xl p-8">
+            <div class="flex items-center gap-4 mb-6">
+              <div class="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center">
+                <svg class="w-6 h-6 text-orange-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-bold text-gray-900 text-lg">Desde Exchange On-Premises</h3>
+                <p class="text-sm text-gray-500">Modernización sin perder el control ni el historial</p>
+              </div>
+            </div>
+            <div class="space-y-4">
+              <div class="flex items-start gap-3">
+                <div class="w-6 h-6 bg-[#e44d26] rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <span class="text-white text-xs font-bold">1</span>
+                </div>
+                <div>
+                  <p class="text-sm font-semibold text-gray-900">Inventario de políticas actuales</p>
+                  <p class="text-xs text-gray-600">Documentamos conectores de transporte, reglas de Hub Transport, listas negras y configuraciones anti-spam de Exchange.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="w-6 h-6 bg-[#e44d26] rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <span class="text-white text-xs font-bold">2</span>
+                </div>
+                <div>
+                  <p class="text-sm font-semibold text-gray-900">Modo híbrido Exchange + 365</p>
+                  <p class="text-xs text-gray-600">Hornetsecurity actúa como gateway de entrada unificado para buzones on-prem y en la nube durante la fase de migración híbrida.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="w-6 h-6 bg-[#e44d26] rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <span class="text-white text-xs font-bold">3</span>
+                </div>
+                <div>
+                  <p class="text-sm font-semibold text-gray-900">Archivado del historial on-prem</p>
+                  <p class="text-xs text-gray-600">Migramos el archivo de email de Exchange a Hornetsecurity para mantener disponibilidad del historial completo en la nube.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-8 p-6 bg-gray-50 border border-gray-200 rounded-xl">
+          <p class="text-sm text-gray-600 text-center">
+            <span class="font-semibold text-gray-900">Tiempo promedio de migración:</span>
+            Organizaciones de hasta 500 usuarios completan la migración en 5 días hábiles.
+            Nuestro equipo gestiona todo el proceso técnico sin impacto en su operación.
+            <a href="/contacto" class="text-[#e44d26] underline hover:text-red-700 ml-1">Consulte con un especialista.</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dark CTA Section - MSPs -->
+    <section class="py-24 bg-[#0f172a] text-white">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <div class="inline-flex items-center gap-2 bg-[#1e293b] px-4 py-2 rounded-full mb-6">
+              <div class="w-2 h-2 bg-[#e44d26] rounded-full animate-pulse"></div>
+              <span class="text-[#94a3b8] text-xs font-semibold uppercase tracking-wider">
+                Solucion Ideal Para MSPs
+              </span>
+            </div>
+
+            <h2 class="text-4xl font-bold mb-6">
+              La plataforma definitiva para MSPs
+            </h2>
+            <p class="text-lg text-[#94a3b8] mb-8">
+              Administre todos sus clientes desde una única consola multi-tenant. Herramientas especializadas,
+              facturación automatizada, branded emails y soporte prioritario.
+            </p>
+
+            <a
+              href="/contacto"
+              class="inline-flex items-center gap-2 text-[#e44d26] font-semibold hover:gap-3 transition-all"
+            >
+              Conviértase en Partner
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
+          </div>
+
+          <div class="space-y-4">
+            <div class="bg-[#1e293b] border border-[#334155] rounded-xl p-6 hover:border-[#e44d26] transition-colors cursor-pointer">
+              <div class="flex items-start gap-4">
+                <div class="w-10 h-10 bg-[#e44d26] rounded-lg flex items-center justify-center font-bold text-xl flex-shrink-0">
+                  1
+                </div>
+                <div>
+                  <h3 class="text-lg font-bold mb-2">Multi-Tenant Dashboard</h3>
+                  <p class="text-sm text-[#94a3b8]">Gestión centralizada de todos los clientes</p>
+                </div>
+              </div>
+            </div>
+            <div class="bg-[#1e293b] border border-[#334155] rounded-xl p-6 hover:border-[#e44d26] transition-colors cursor-pointer">
+              <div class="flex items-start gap-4">
+                <div class="w-10 h-10 bg-[#e44d26] rounded-lg flex items-center justify-center font-bold text-xl flex-shrink-0">
+                  2
+                </div>
+                <div>
+                  <h3 class="text-lg font-bold mb-2">White Label & Branding</h3>
+                  <p class="text-sm text-[#94a3b8]">Portal personalizado con su marca</p>
+                </div>
+              </div>
+            </div>
+            <div class="bg-[#1e293b] border border-[#334155] rounded-xl p-6 hover:border-[#e44d26] transition-colors cursor-pointer">
+              <div class="flex items-start gap-4">
+                <div class="w-10 h-10 bg-[#e44d26] rounded-lg flex items-center justify-center font-bold text-xl flex-shrink-0">
+                  3
+                </div>
+                <div>
+                  <h3 class="text-lg font-bold mb-2">Automated Billing</h3>
+                  <p class="text-sm text-[#94a3b8]">Facturación por uso automática</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ / Ready to Secure -->
+    <section class="py-24 bg-white">
+      <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+        <h2 class="text-4xl font-bold text-[#0f172a] mb-6">
+          ¿Listo para asegurar su entorno de Microsoft 365?
+        </h2>
+        <p class="text-lg text-[#64748b] mb-12">
+          Configuracion en menos de 30 segundos. Soporte técnico especializado 24/7.
+          Asesoría personalizada sin compromiso.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="/contacto"
+            class="bg-gradient-to-r from-red-600 to-red-700 text-white font-semibold px-8 py-4 rounded-full hover:from-red-700 hover:to-red-800 transition shadow-lg inline-flex items-center justify-center gap-2"
+          >
+            Solicitar Cotización Personalizada
+          </a>
+          <a
+            href="/contacto"
+            class="bg-white border-2 border-gray-200 text-gray-800 font-semibold px-8 py-4 rounded-full hover:bg-gray-50 transition inline-flex items-center justify-center gap-2 focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2"
+          >
+            Hablar con un Experto
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Soluciones Relacionadas -->
+  <section class="py-12 bg-gray-50 border-t border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-lg font-bold text-gray-900 mb-6">Soluciones Relacionadas</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+        <a href="/proofpoint" class="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-all duration-300 text-center">
+          <p class="font-semibold text-sm text-gray-900">Proofpoint</p>
+          <p class="text-xs text-gray-500 mt-1">Anti-phishing</p>
+        </a>
+        <a href="/bitdefender" class="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-all duration-300 text-center">
+          <p class="font-semibold text-sm text-gray-900">Bitdefender GravityZone</p>
+          <p class="text-xs text-gray-500 mt-1">Protección endpoint</p>
+        </a>
+        <a href="/kaspersky" class="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-all duration-300 text-center">
+          <p class="font-semibold text-sm text-gray-900">Kaspersky Endpoint</p>
+          <p class="text-xs text-gray-500 mt-1">Antivirus empresarial</p>
+        </a>
+        <a href="/sealpath" class="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-all duration-300 text-center">
+          <p class="font-semibold text-sm text-gray-900">SealPath</p>
+          <p class="text-xs text-gray-500 mt-1">Seguridad de datos</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+  <WhatsAppButton />
+</BaseLayout>

@@ -1,0 +1,518 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Navbar from '@components/Navbar.astro';
+import Footer from '@components/Footer.astro';
+import WhatsAppButton from '@components/WhatsAppButton.astro';
+import RegionLanding from '@components/RegionLanding.astro';
+import { seoData } from '@data/seo';
+import { regions } from '@data/regions';
+
+const seo = seoData.venezuela;
+const region = regions.venezuela;
+
+const industries = [
+  {
+    icon: 'M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3',
+    name: 'Banca y Finanzas',
+    compliance: 'Normativa SUDEBAN',
+    description: 'Instituciones financieras venezolanas confían en nosotros para cumplir con las normativas de SUDEBAN, proteger transacciones en USD y blindar su infraestructura contra fraudes internos y externos.',
+    color: 'bg-emerald-50 border-emerald-200 text-emerald-700',
+    iconBg: 'bg-emerald-100',
+    iconColor: 'text-emerald-600',
+  },
+  {
+    icon: 'M13 10V3L4 14h7v7l9-11h-7z',
+    name: 'Petróleo y Gas',
+    compliance: 'Seguridad OT/ICS',
+    description: 'El sector energético venezolano enfrenta amenazas específicas contra sistemas de control industrial. Protegemos SCADA, redes OT y la comunicación entre instalaciones con arquitecturas zero-trust.',
+    color: 'bg-orange-50 border-orange-200 text-orange-700',
+    iconBg: 'bg-orange-100',
+    iconColor: 'text-orange-600',
+  },
+  {
+    icon: 'M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0',
+    name: 'Telecomunicaciones',
+    compliance: 'Conatel · ISO 27001',
+    description: 'Operadoras de telecomunicaciones y proveedores de internet venezolanos requieren protección perimetral avanzada, monitoreo de red 24/7 y gestión de vulnerabilidades en infraestructura crítica.',
+    color: 'bg-blue-50 border-blue-200 text-blue-700',
+    iconBg: 'bg-blue-100',
+    iconColor: 'text-blue-600',
+  },
+  {
+    icon: 'M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z',
+    name: 'Retail y Comercio',
+    compliance: 'PCI DSS · Protección de Datos',
+    description: 'Cadenas de retail, e-commerce y empresas de distribución en Venezuela necesitan proteger puntos de venta, datos de clientes y transacciones en divisas contra robos de información y fraude.',
+    color: 'bg-purple-50 border-purple-200 text-purple-700',
+    iconBg: 'bg-purple-100',
+    iconColor: 'text-purple-600',
+  },
+  {
+    icon: 'M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4',
+    name: 'Gobierno y Sector Público',
+    compliance: 'Normativa Suscerte',
+    description: 'Organismos gubernamentales, alcaldías e instituciones públicas venezolanas requieren protección de datos ciudadanos, seguridad en sistemas de gestión y cumplimiento de las normas de Suscerte.',
+    color: 'bg-red-50 border-red-200 text-red-700',
+    iconBg: 'bg-red-100',
+    iconColor: 'text-red-600',
+  },
+  {
+    icon: 'M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2',
+    name: 'Manufactura',
+    compliance: 'Seguridad de Planta',
+    description: 'Plantas industriales y empresas manufactureras venezolanas confían en nuestra protección de redes OT/IT convergentes, control de acceso físico integrado y monitoreo de endpoints en entornos de planta.',
+    color: 'bg-gray-50 border-gray-200 text-gray-700',
+    iconBg: 'bg-gray-100',
+    iconColor: 'text-gray-600',
+  },
+];
+
+const challenges = [
+  {
+    title: 'Conectividad Limitada y Variable',
+    description: 'La intermitencia del servicio de internet en Venezuela exige soluciones que funcionen offline y sincronicen cuando hay conexión. Nuestras plataformas de seguridad operan con agentes que aplican políticas localmente, sin depender de conectividad permanente.',
+    icon: 'M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0',
+  },
+  {
+    title: 'Facturación y Presupuestos en USD',
+    description: 'Entendemos la realidad del mercado venezolano. Toda nuestra facturación se realiza en dólares estadounidenses con modelos de pago flexibles mediante transferencias internacionales, Zelle y otros métodos accesibles desde Venezuela.',
+    icon: 'M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z',
+  },
+  {
+    title: 'Soporte Remoto desde Colombia',
+    description: 'Nuestro equipo principal opera desde Bogotá, con zona horaria compatible (-30 minutos) y personal hispanohablante. Ofrecemos soporte remoto 24/7 con visitas presenciales en Caracas para proyectos críticos que lo requieran.',
+    icon: 'M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z',
+  },
+  {
+    title: 'Soluciones Adaptadas al Contexto Local',
+    description: 'No imponemos soluciones diseñadas para mercados con infraestructura óptima. Recomendamos y dimensionamos nuestras herramientas según la realidad de su empresa: ancho de banda disponible, capacidad de inversión en USD y necesidades específicas del sector.',
+    icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z',
+  },
+];
+
+const faqItems = [
+  {
+    q: '¿Trabajan con empresas de todos los tamaños en Venezuela?',
+    a: 'Sí. Atendemos desde PYMES con 10 equipos hasta corporaciones con miles de endpoints. Nuestros planes se adaptan al presupuesto en USD del mercado venezolano, con opciones flexibles de pago y licenciamiento.',
+  },
+  {
+    q: '¿Pueden facturar en dólares?',
+    a: 'Sí. Toda nuestra facturación para Venezuela se realiza en USD, facilitando la planificación presupuestaria en un entorno de alta inflación. Aceptamos transferencias internacionales, Zelle y otros métodos accesibles desde Venezuela.',
+  },
+  {
+    q: '¿Ofrecen soporte remoto desde Colombia?',
+    a: 'Sí. Nuestro equipo en Bogotá provee soporte remoto 24/7 para clientes en Venezuela, con zona horaria compatible (-30 minutos). Para proyectos de implementación críticos, podemos coordinar visitas presenciales en Caracas según el alcance del proyecto.',
+  },
+  {
+    q: '¿Qué soluciones funcionan mejor con la conectividad de Venezuela?',
+    a: 'Recomendamos soluciones cloud-native como Bitdefender GravityZone Cloud y Kaspersky Cloud que funcionan con bajo ancho de banda gracias a su arquitectura de agentes ligeros. Para empresas con conectividad muy limitada o entornos críticos, implementamos soluciones completamente on-premise que no dependen de internet para aplicar políticas de seguridad.',
+  },
+  {
+    q: '¿Pueden hacer pentesting remoto a empresas en Venezuela?',
+    a: 'Absolutamente. El 90% de nuestros pentests se realizan de forma remota. Solo necesitamos acceso VPN o credenciales de acceso previamente acordadas mediante un contrato de autorización formal. El reporte final incluye versión ejecutiva en español y plan de remediación priorizado.',
+  },
+  {
+    q: '¿Qué normativas de ciberseguridad aplican en Venezuela?',
+    a: 'En Venezuela aplican las normativas de Suscerte (para organismos públicos), las resoluciones de SUDEBAN (para el sector financiero) y la Ley Especial contra Delitos Informáticos. Adicionalmente, empresas con operaciones internacionales deben cumplir con ISO 27001 y normativas del sector de su país socio. Nuestro equipo conoce en detalle estos marcos regulatorios.',
+  },
+];
+---
+
+<BaseLayout seo={seo}>
+  <Navbar />
+  <RegionLanding region={region} />
+
+  <!-- Industrias que Atendemos en Venezuela -->
+  <section class="py-16 sm:py-24 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-14">
+        <span class="inline-block bg-red-100 text-red-700 text-sm font-semibold px-4 py-1 rounded-full mb-4 uppercase tracking-wide">Experiencia Sectorial</span>
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Industrias que Atendemos en Venezuela</h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          Desde el sector energético hasta la banca digital, entregamos ciberseguridad con conocimiento profundo de las normativas venezolanas y la realidad operativa local.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {industries.map((industry) => (
+          <div class={`bg-white border-2 ${industry.color.split(' ')[1]} rounded-2xl p-6 hover:shadow-lg transition-all duration-300`}>
+            <div class={`w-12 h-12 ${industry.iconBg} rounded-xl flex items-center justify-center mb-4`}>
+              <svg class={`w-6 h-6 ${industry.iconColor}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d={industry.icon} />
+              </svg>
+            </div>
+            <h3 class="font-bold text-gray-900 text-lg mb-1">{industry.name}</h3>
+            <span class={`inline-block text-xs font-semibold px-2 py-0.5 rounded-full mb-3 ${industry.color}`}>{industry.compliance}</span>
+            <p class="text-sm text-gray-600 leading-relaxed">{industry.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Desafíos de Ciberseguridad en Venezuela -->
+  <section class="py-16 sm:py-24 bg-gray-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-14">
+        <span class="inline-block bg-red-900/50 text-red-300 text-sm font-semibold px-4 py-1 rounded-full mb-4 uppercase tracking-wide">Contexto Local</span>
+        <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">Desafíos de Ciberseguridad en Venezuela</h2>
+        <p class="text-lg text-gray-400 max-w-2xl mx-auto">
+          El mercado venezolano presenta retos únicos que requieren un socio tecnológico que los entienda y haya desarrollado soluciones específicas para superarlos.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        {challenges.map((challenge) => (
+          <div class="bg-gray-800 border border-gray-700 rounded-2xl p-6 hover:border-gray-600 transition">
+            <div class="w-12 h-12 bg-red-900/40 rounded-xl flex items-center justify-center mb-4">
+              <svg class="w-6 h-6 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d={challenge.icon} />
+              </svg>
+            </div>
+            <h3 class="font-bold text-white text-lg mb-3">{challenge.title}</h3>
+            <p class="text-gray-400 leading-relaxed text-sm">{challenge.description}</p>
+          </div>
+        ))}
+      </div>
+
+      <div class="mt-10 text-center">
+        <a href="/venezuela/contacto" class="inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white font-semibold px-8 py-4 rounded-full transition shadow-lg">
+          Solicitar Consultoría Gratuita
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cobertura Nacional desde Caracas -->
+  <section class="py-16 sm:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+        <div>
+          <span class="inline-block bg-blue-100 text-blue-700 text-sm font-semibold px-4 py-1 rounded-full mb-4 uppercase tracking-wide">Cobertura Nacional</span>
+          <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
+            Cobertura Nacional desde Caracas
+          </h2>
+          <p class="text-gray-600 text-lg mb-6 leading-relaxed">
+            Aunque nuestra base operativa en Venezuela se encuentra en Caracas, atendemos clientes a nivel nacional mediante soporte remoto y desplazamientos para proyectos que lo requieran. Cada ciudad tiene su propio entorno empresarial y sus retos particulares de conectividad e infraestructura.
+          </p>
+          <div class="space-y-4">
+            <div class="flex items-start gap-3">
+              <div class="w-6 h-6 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg class="w-3.5 h-3.5 text-red-600" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+              </div>
+              <div>
+                <span class="font-semibold text-gray-900">Caracas (Región Capital)</span>
+                <p class="text-sm text-gray-600">Sede principal Venezuela. Soporte presencial y remoto, implementaciones in-situ para proyectos críticos en bancos, corporaciones y organismos gubernamentales.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="w-6 h-6 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg class="w-3.5 h-3.5 text-red-600" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+              </div>
+              <div>
+                <span class="font-semibold text-gray-900">Maracaibo (Zulia)</span>
+                <p class="text-sm text-gray-600">Segundo mercado más importante. Empresas del sector petrolero, portuario y comercial con alta demanda de seguridad OT/ICS y protección de redes industriales.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="w-6 h-6 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg class="w-3.5 h-3.5 text-red-600" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+              </div>
+              <div>
+                <span class="font-semibold text-gray-900">Valencia y Barquisimeto</span>
+                <p class="text-sm text-gray-600">Polos industriales y comerciales del centro-occidente venezolano. Servimos a empresas manufactureras, distribuidoras y del sector retail con soluciones adaptadas a su infraestructura.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="w-6 h-6 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg class="w-3.5 h-3.5 text-red-600" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+              </div>
+              <div>
+                <span class="font-semibold text-gray-900">Puerto La Cruz y Barcelona</span>
+                <p class="text-sm text-gray-600">Zona de alta actividad en el sector hidrocarburos y logística portuaria. Protegemos infraestructuras críticas con monitoreo remoto continuo y respuesta a incidentes.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bg-gradient-to-br from-red-50 to-gray-50 border border-gray-200 rounded-2xl p-8">
+          <h3 class="text-xl font-bold text-gray-900 mb-6">¿Por qué Starsolution en Venezuela?</h3>
+          <ul class="space-y-5">
+            <li class="flex items-start gap-3">
+              <span class="text-2xl font-bold text-red-600 leading-none">10+</span>
+              <div>
+                <p class="font-semibold text-gray-900">Años en el Mercado Venezolano</p>
+                <p class="text-sm text-gray-600">Más de una década entendiendo las particularidades del entorno empresarial, regulatorio y tecnológico venezolano.</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-2xl font-bold text-red-600 leading-none">300+</span>
+              <div>
+                <p class="font-semibold text-gray-900">Empresas Venezolanas Protegidas</p>
+                <p class="text-sm text-gray-600">Desde pequeñas empresas hasta grandes corporaciones en banca, energía, telecomunicaciones y retail.</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-2xl font-bold text-red-600 leading-none">USD</span>
+              <div>
+                <p class="font-semibold text-gray-900">Facturación en Dólares</p>
+                <p class="text-sm text-gray-600">Precios estables en USD con métodos de pago accesibles y planificación financiera predecible, sin sorpresas cambiarias.</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="text-2xl font-bold text-red-600 leading-none">24/7</span>
+              <div>
+                <p class="font-semibold text-gray-900">Soporte en Español, Siempre</p>
+                <p class="text-sm text-gray-600">Equipo de soporte hispanohablante disponible las 24 horas con zona horaria compatible con Venezuela.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-16 sm:py-24 bg-gray-50">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <span class="inline-block bg-gray-200 text-gray-700 text-sm font-semibold px-4 py-1 rounded-full mb-4 uppercase tracking-wide">Preguntas Frecuentes</span>
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Preguntas Frecuentes de Empresas Venezolanas</h2>
+        <p class="text-gray-600">Respuestas directas a las dudas más comunes sobre ciberseguridad en el contexto venezolano.</p>
+      </div>
+
+      <div class="space-y-3">
+        {faqItems.map((item) => (
+          <details class="group bg-white border border-gray-200 rounded-xl overflow-hidden">
+            <summary class="flex items-center justify-between gap-4 px-6 py-5 cursor-pointer select-none font-semibold text-gray-900 hover:bg-gray-50 transition">
+              <span>{item.q}</span>
+              <svg class="w-5 h-5 text-gray-500 flex-shrink-0 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+              </svg>
+            </summary>
+            <div class="px-6 pb-5 text-gray-600 leading-relaxed border-t border-gray-100 pt-4">{item.a}</div>
+          </details>
+        ))}
+      </div>
+
+      <div class="mt-10 text-center">
+        <a href="/venezuela/contacto" class="inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white font-semibold px-8 py-4 rounded-full transition shadow-lg">
+          Solicitar Consultoría Gratuita
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Soluciones Adaptadas al Mercado Venezolano -->
+  <section class="py-16 sm:py-20 lg:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-14">
+        <span class="inline-block bg-red-100 text-red-700 text-sm font-semibold px-4 py-1 rounded-full mb-4 uppercase tracking-wide">Propuesta de Valor Local</span>
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Soluciones Adaptadas al Mercado Venezolano</h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          No aplicamos plantillas genéricas. Cada aspecto de nuestro servicio para Venezuela está diseñado para funcionar con la realidad operativa, financiera y de conectividad del país.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+        <!-- Facturación USD -->
+        <div class="bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-lg transition-all duration-300 cursor-pointer">
+          <div class="w-14 h-14 bg-emerald-50 rounded-xl flex items-center justify-center mb-5">
+            <svg class="w-7 h-7 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Facturación Estable en USD</h3>
+          <p class="text-sm text-gray-600 leading-relaxed mb-4">
+            Toda nuestra facturación para clientes venezolanos se realiza en dólares estadounidenses, eliminando la incertidumbre cambiaria en su planificación presupuestaria anual. Los precios son fijos en USD y no se ajustan por variaciones del bolívar, lo que permite a los directores de TI y finanzas proyectar el costo de seguridad con total certeza.
+          </p>
+          <ul class="space-y-2 text-sm text-gray-600">
+            <li class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-emerald-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Transferencias internacionales y Zelle
+            </li>
+            <li class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-emerald-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Pagos desde Colombia o cuentas en el exterior
+            </li>
+            <li class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-emerald-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Planes anuales con descuento por pago anticipado
+            </li>
+          </ul>
+        </div>
+
+        <!-- Soporte Remoto 24/7 -->
+        <div class="bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-lg transition-all duration-300 cursor-pointer">
+          <div class="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center mb-5">
+            <svg class="w-7 h-7 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Soporte Remoto 24/7 desde Colombia</h3>
+          <p class="text-sm text-gray-600 leading-relaxed mb-4">
+            Nuestro equipo principal opera desde Bogotá con una diferencia horaria de solo 30 minutos respecto a Venezuela. Esto significa que el soporte técnico hispanohablante está disponible en horario prácticamente idéntico, sin la brecha de zona horaria que enfrentan empresas con soporte en Europa o Asia. Para proyectos críticos, coordinamos visitas presenciales en Caracas.
+          </p>
+          <ul class="space-y-2 text-sm text-gray-600">
+            <li class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-blue-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Respuesta en menos de 1 hora para incidentes críticos
+            </li>
+            <li class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-blue-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Zona horaria -30 min: máxima compatibilidad laboral
+            </li>
+            <li class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-blue-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Visitas presenciales Caracas para proyectos mayores
+            </li>
+          </ul>
+        </div>
+
+        <!-- Baja Conectividad -->
+        <div class="bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-lg transition-all duration-300 cursor-pointer">
+          <div class="w-14 h-14 bg-orange-50 rounded-xl flex items-center justify-center mb-5">
+            <svg class="w-7 h-7 text-orange-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Funciona con Baja Conectividad</h3>
+          <p class="text-sm text-gray-600 leading-relaxed mb-4">
+            Seleccionamos y dimensionamos soluciones que operan correctamente incluso con la conectividad intermitente característica del mercado venezolano. Los agentes de seguridad que implementamos aplican políticas localmente sin depender de conectividad permanente al servidor central, sincronizando cuando el enlace está disponible. Esto garantiza protección continua independientemente de la calidad del servicio de internet.
+          </p>
+          <ul class="space-y-2 text-sm text-gray-600">
+            <li class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-orange-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Agentes de seguridad con operación offline
+            </li>
+            <li class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-orange-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Opciones on-premise para infraestructuras aisladas
+            </li>
+            <li class="flex items-center gap-2">
+              <svg class="w-4 h-4 text-orange-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Sincronización incremental de bajo consumo de ancho de banda
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Caso de Éxito: Sector Financiero en Caracas -->
+  <section class="py-16 sm:py-20 lg:py-24 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-14">
+        <span class="inline-block bg-gray-200 text-gray-700 text-sm font-semibold px-4 py-1 rounded-full mb-4 uppercase tracking-wide">Caso de Éxito</span>
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Caso de Éxito: Empresa del Sector Financiero en Caracas</h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          Cómo una institución financiera venezolana modernizó su postura de seguridad, redujo incidentes en un 89% y cumplió con las normativas SUDEBAN en menos de seis meses.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+        <div>
+          <div class="bg-white border border-gray-200 rounded-2xl p-8 mb-6">
+            <h3 class="text-lg font-bold text-gray-900 mb-4">El Desafío</h3>
+            <p class="text-sm text-gray-600 leading-relaxed mb-4">
+              Una institución financiera venezolana con presencia en Caracas y cuatro ciudades del interior operaba con un antivirus corporativo desactualizado, sin centralización de logs ni visibilidad de amenazas en sus 600 endpoints. La conectividad intermitente impedía usar soluciones cloud tradicionales, y los intentos anteriores de implementar herramientas de seguridad extranjeras habían fallado por incompatibilidad con el entorno de red local.
+            </p>
+            <p class="text-sm text-gray-600 leading-relaxed">
+              Adicionalmente, la institución debía presentar evidencia de cumplimiento ante SUDEBAN y enfrentaba una auditoria en 90 días. El equipo de TI interno, de solo 3 personas, no contaba con el tiempo ni la experiencia para abordar ambos frentes simultáneamente.
+            </p>
+          </div>
+
+          <div class="bg-white border border-gray-200 rounded-2xl p-8">
+            <h3 class="text-lg font-bold text-gray-900 mb-4">Nuestra Solución</h3>
+            <div class="space-y-4">
+              <div class="flex items-start gap-3">
+                <div class="w-7 h-7 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <span class="text-red-600 font-bold text-xs">1</span>
+                </div>
+                <p class="text-sm text-gray-600"><strong class="text-gray-900">Despliegue Híbrido:</strong> Implementamos Bitdefender GravityZone en modo híbrido con servidor de comunicación local para funcionar con la conectividad disponible. Los agentes operaban offline y sincronizaban durante las ventanas de buen enlace.</p>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="w-7 h-7 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <span class="text-red-600 font-bold text-xs">2</span>
+                </div>
+                <p class="text-sm text-gray-600"><strong class="text-gray-900">Soporte Remoto Continuo:</strong> Asignamos un ingeniero de Bogotá como punto de contacto dedicado, disponible en horario venezolano, con acceso remoto vía AnyDesk a los sistemas de gestión para soporte en tiempo real.</p>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="w-7 h-7 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <span class="text-red-600 font-bold text-xs">3</span>
+                </div>
+                <p class="text-sm text-gray-600"><strong class="text-gray-900">Documentación SUDEBAN:</strong> Preparamos el paquete de evidencia de cumplimiento requerido por SUDEBAN, incluyendo políticas de seguridad, inventario de activos y reporte de gestión de vulnerabilidades.</p>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="w-7 h-7 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <span class="text-red-600 font-bold text-xs">4</span>
+                </div>
+                <p class="text-sm text-gray-600"><strong class="text-gray-900">Capacitación del Equipo:</strong> Entrenamos al equipo interno de TI en la operación diaria de la plataforma, reduciendo la dependencia de soporte externo para tareas rutinarias y transfiriendo el conocimiento de gestión.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="bg-gray-900 rounded-2xl p-8 mb-6">
+            <h3 class="text-lg font-bold text-white mb-6">Resultados a los 6 Meses</h3>
+            <div class="grid grid-cols-2 gap-4">
+              <div class="bg-gray-800 border border-gray-700 rounded-xl p-5 text-center">
+                <div class="text-3xl font-bold text-red-400 mb-1">89%</div>
+                <p class="text-xs text-gray-400">Reducción de incidentes de seguridad mensuales</p>
+              </div>
+              <div class="bg-gray-800 border border-gray-700 rounded-xl p-5 text-center">
+                <div class="text-3xl font-bold text-green-400 mb-1">600</div>
+                <p class="text-xs text-gray-400">Endpoints protegidos con visibilidad centralizada</p>
+              </div>
+              <div class="bg-gray-800 border border-gray-700 rounded-xl p-5 text-center">
+                <div class="text-3xl font-bold text-blue-400 mb-1">90 días</div>
+                <p class="text-xs text-gray-400">Cumplimiento SUDEBAN logrado en plazo acordado</p>
+              </div>
+              <div class="bg-gray-800 border border-gray-700 rounded-xl p-5 text-center">
+                <div class="text-3xl font-bold text-yellow-400 mb-1">USD</div>
+                <p class="text-xs text-gray-400">Facturación estable, sin impacto cambiario</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white border border-gray-200 rounded-2xl p-8">
+            <div class="flex items-start gap-4 mb-4">
+              <div class="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0">
+                <svg class="w-5 h-5 text-red-600" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.338-3.123C2.493 12.767 2 11.434 2 10c0-3.866 3.582-7 8-7s8 3.134 8 7z" clip-rule="evenodd" />
+                </svg>
+              </div>
+              <div>
+                <p class="text-sm text-gray-700 italic leading-relaxed mb-3">
+                  "Por primera vez tenemos visibilidad real de lo que pasa en cada equipo de la institución, incluyendo nuestras sedes en el interior del país. El equipo de Starsolution entendió nuestras limitaciones de conectividad desde el primer día y diseñó una solución que realmente funciona en Venezuela."
+                </p>
+                <p class="text-sm font-semibold text-gray-900">Director de Tecnología</p>
+                <p class="text-xs text-gray-500">Institución Financiera — Caracas, Venezuela (nombre reservado por confidencialidad)</p>
+              </div>
+            </div>
+            <div class="mt-4 p-3 rounded-lg bg-gray-50 border border-gray-200 text-xs text-gray-600">
+              Soluciones utilizadas: <a href="/antivirus-empresas" class="text-red-600 font-semibold hover:underline">Antivirus Empresarial</a> — <a href="/anydesk" class="text-red-600 font-semibold hover:underline">AnyDesk Remoto</a> — <a href="/iso27001" class="text-red-600 font-semibold hover:underline">Consultoría ISO 27001</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+  <WhatsAppButton />
+</BaseLayout>

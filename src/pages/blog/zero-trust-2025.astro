@@ -1,0 +1,466 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Navbar from '@components/Navbar.astro';
+import Footer from '@components/Footer.astro';
+import WhatsAppButton from '@components/WhatsAppButton.astro';
+import { seoData } from '@data/seo';
+
+const seo = seoData['blog/zero-trust-2025'];
+---
+
+<BaseLayout seo={seo}>
+  <Navbar />
+
+  <!-- Hero Section -->
+  <section class="relative bg-gradient-to-br from-[#0f172a] to-[#1a2744] overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute top-0 right-0 w-96 h-96 bg-blue-500 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-0 left-0 w-96 h-96 bg-cyan-500 rounded-full blur-3xl"></div>
+    </div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-16 lg:pb-20">
+      <!-- Breadcrumb -->
+      <nav class="mb-8 flex items-center gap-2 text-sm text-gray-400">
+        <a href="/" class="hover:text-white transition-colors">Inicio</a>
+        <span>/</span>
+        <a href="/#blog" class="hover:text-white transition-colors">Blog</a>
+        <span>/</span>
+        <span class="text-gray-200">Zero Trust 2025</span>
+      </nav>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <div class="flex items-center gap-3 mb-6">
+            <span class="bg-blue-500/20 border border-blue-500/30 text-blue-400 text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wide">
+              Tecnología
+            </span>
+            <span class="text-gray-400 text-sm">22 de enero de 2025</span>
+          </div>
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+            Arquitectura Zero Trust
+            <span class="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">
+              para Empresas en 2025
+            </span>
+          </h1>
+          <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+            El paradigma &quot;nunca confíes, siempre verifica&quot; dejó de ser teoría. En 2025,
+            Zero Trust es la arquitectura estándar para organizaciones que protegen activos críticos
+            en entornos híbridos y multi-nube.
+          </p>
+          <div class="flex items-center gap-4 text-sm text-gray-400">
+            <span>Por el equipo de Starsolution</span>
+            <span>&bull;</span>
+            <span>Tiempo de lectura: 9 min</span>
+          </div>
+        </div>
+        <div class="hidden lg:block">
+          <img
+            src="/assets/blog-inteligencia-artificial-seguridad.webp"
+            alt="Inteligencia artificial aplicada a la seguridad y arquitectura Zero Trust empresarial"
+            class="w-full rounded-2xl shadow-2xl"
+            width="600"
+            height="400"
+            loading="eager"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Article Body -->
+  <article class="bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+
+      <!-- Introduction -->
+      <section class="mb-12">
+        <p class="text-xl text-gray-700 leading-relaxed mb-6">
+          Durante décadas, la seguridad corporativa se basó en el modelo del castillo y el foso:
+          todo lo que estaba dentro del perímetro era confiable; todo lo externo era sospechoso.
+          El trabajo remoto masivo, la adopción de la nube y los ataques de movimiento lateral
+          demostraron que ese perímetro ya no existe. Zero Trust nació para reemplazarlo.
+        </p>
+        <p class="text-lg text-gray-600 leading-relaxed">
+          Esta guía explica qué es Zero Trust Architecture (ZTA), sus pilares fundamentales, cómo
+          las organizaciones colombianas están implementándola en 2025 y qué herramientas concretas
+          aceleran la adopción.
+        </p>
+      </section>
+
+      <!-- Key stats -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-12">
+        {[
+          { value: '62%', label: 'de brechas involucran credenciales comprometidas (Verizon DBIR 2024)' },
+          { value: '80%', label: 'de las empresas planean adoptar Zero Trust en 2025 (Gartner)' },
+          { value: '3x', label: 'mayor velocidad de detección de amenazas con ZTA vs perímetro tradicional' },
+          { value: '45%', label: 'reducción de costos de brechas en organizaciones con ZTA maduro' },
+        ].map(stat => (
+          <div class="bg-blue-50 border border-blue-100 rounded-xl p-4 text-center">
+            <div class="text-3xl font-bold text-blue-600 mb-1">{stat.value}</div>
+            <div class="text-xs text-gray-600">{stat.label}</div>
+          </div>
+        ))}
+      </div>
+
+      <!-- Section 1 -->
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">¿Qué es Zero Trust Architecture?</h2>
+        <p class="text-lg text-gray-600 leading-relaxed mb-6">
+          Zero Trust es un modelo de seguridad basado en el principio de que ninguna entidad &mdash;
+          usuario, dispositivo, servicio o paquete de red &mdash; debe ser confiada automáticamente,
+          independientemente de si se origina dentro o fuera de la red corporativa.
+        </p>
+        <p class="text-lg text-gray-600 leading-relaxed mb-6">
+          El concepto fue formalizado por el NIST en la publicación SP 800-207 (2020) y
+          complementado por el modelo CISA Zero Trust Maturity Model. En la práctica, ZTA
+          reemplaza la confianza implícita basada en ubicación de red por verificación continua
+          basada en contexto, identidad y postura de dispositivo.
+        </p>
+
+        <div class="bg-gray-900 text-gray-100 rounded-2xl p-6 mb-6">
+          <p class="text-sm font-mono text-green-400 mb-1">// Principio fundamental</p>
+          <p class="text-lg font-semibold">&quot;Nunca confíes. Siempre verifica. Asume que ya fuiste comprometido.&quot;</p>
+        </div>
+      </section>
+
+      <!-- Section 2 -->
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Los Siete Pilares de Zero Trust</h2>
+        <p class="text-lg text-gray-600 leading-relaxed mb-8">
+          El CISA Zero Trust Maturity Model organiza ZTA en siete pilares interdependientes.
+          La madurez en cada pilar se evalúa en tres niveles: Tradicional, Avanzado y Óptimo.
+        </p>
+
+        <div class="space-y-4">
+          {[
+            {
+              num: '01',
+              title: 'Identidad',
+              color: 'blue',
+              desc: 'Verificación continua de usuarios mediante autenticación multifactor (MFA), análisis de comportamiento de usuarios (UEBA) e identidades federadas. Cada acceso requiere autenticación, no solo el login inicial.',
+            },
+            {
+              num: '02',
+              title: 'Dispositivos',
+              color: 'cyan',
+              desc: 'Solo dispositivos verificados, actualizados y con postura de seguridad validada pueden acceder a recursos corporativos. Esto incluye gestión de parches, cifrado de disco y detección de jailbreak/root.',
+            },
+            {
+              num: '03',
+              title: 'Redes',
+              color: 'indigo',
+              desc: 'Microsegmentación de redes para contener movimiento lateral. Las conexiones entre segmentos requieren autorización explícita. ZTNA reemplaza la VPN tradicional con acceso basado en identidad.',
+            },
+            {
+              num: '04',
+              title: 'Aplicaciones y Cargas de Trabajo',
+              color: 'violet',
+              desc: 'Cada aplicación autentica y autoriza independientemente. Los privilegios se conceden en el contexto de la sesión, no de forma permanente. Las API entre servicios también requieren autenticación.',
+            },
+            {
+              num: '05',
+              title: 'Datos',
+              color: 'purple',
+              desc: 'Clasificación automática de datos, cifrado en reposo y en tránsito, y políticas de acceso granulares según la sensibilidad del dato. Los datos se protegen independientemente de su ubicación.',
+            },
+            {
+              num: '06',
+              title: 'Visibilidad y Analítica',
+              color: 'fuchsia',
+              desc: 'Telemetría completa de todos los pilares para detectar anomalías. Un SOC con capacidades SIEM/SOAR correlaciona eventos entre identidades, dispositivos y datos para detectar ataques que evaden controles individuales.',
+            },
+            {
+              num: '07',
+              title: 'Automatización y Orquestación',
+              color: 'pink',
+              desc: 'La respuesta a incidentes no puede depender de procesos manuales a la velocidad de los ataques modernos. SOAR automatiza el triaje, el aislamiento de entidades comprometidas y la notificación.',
+            },
+          ].map(pillar => (
+            <div class="flex gap-4 p-5 border border-gray-200 rounded-xl hover:border-blue-200 transition">
+              <span class="flex-shrink-0 text-2xl font-bold text-blue-100">{pillar.num}</span>
+              <div>
+                <h3 class="font-bold text-gray-900 mb-1">{pillar.title}</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">{pillar.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Section 3 -->
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Zero Trust vs. Seguridad Perimetral: La Diferencia Práctica</h2>
+
+        <div class="overflow-x-auto rounded-2xl border border-gray-200 mb-6">
+          <table class="w-full text-sm">
+            <thead class="bg-gray-50">
+              <tr>
+                <th class="text-left px-5 py-4 font-bold text-gray-900">Aspecto</th>
+                <th class="text-left px-5 py-4 font-bold text-red-600">Seguridad Perimetral</th>
+                <th class="text-left px-5 py-4 font-bold text-blue-600">Zero Trust</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-100">
+              {[
+                ['Modelo de confianza', 'Confiar por ubicación de red', 'Nunca confiar, siempre verificar'],
+                ['Acceso remoto', 'VPN con acceso amplio a la red', 'ZTNA con acceso granular por aplicación'],
+                ['Movimiento lateral', 'Sin restricción interna', 'Microsegmentación bloquea el movimiento'],
+                ['Identidad', 'Un solo login inicial', 'Verificación continua por sesión'],
+                ['Respuesta a brechas', 'Investigación manual post-incidente', 'Detección y respuesta automatizada en tiempo real'],
+                ['Nube e híbrido', 'Difícil extensión del perímetro', 'Diseñado nativamente para multi-nube'],
+              ].map(([aspect, perimeter, zt]) => (
+                <tr class="hover:bg-gray-50">
+                  <td class="px-5 py-4 font-medium text-gray-900">{aspect}</td>
+                  <td class="px-5 py-4 text-gray-600">{perimeter}</td>
+                  <td class="px-5 py-4 text-gray-600">{zt}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Section 4 - Internal links -->
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Herramientas que Aceleran la Adopción de Zero Trust</h2>
+        <p class="text-lg text-gray-600 leading-relaxed mb-8">
+          Zero Trust no es un producto que se compra; es una arquitectura que se construye con el
+          conjunto correcto de herramientas. Estas son las soluciones clave que Starsolution
+          implementa para cada pilar:
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 mb-8">
+          <a href="/bitdefender" class="group bg-white border border-gray-200 rounded-2xl p-6 hover:shadow-lg hover:border-blue-200 transition">
+            <div class="text-blue-600 font-bold text-lg mb-2 group-hover:underline">Bitdefender GravityZone</div>
+            <div class="text-xs text-gray-500 uppercase tracking-wide mb-3">Pilar: Dispositivos</div>
+            <p class="text-sm text-gray-600">EDR/XDR con análisis de comportamiento para verificar la postura de seguridad de cada endpoint antes de conceder acceso.</p>
+          </a>
+          <a href="/stellar-cyber" class="group bg-white border border-gray-200 rounded-2xl p-6 hover:shadow-lg hover:border-blue-200 transition">
+            <div class="text-blue-600 font-bold text-lg mb-2 group-hover:underline">Stellar Cyber Open XDR</div>
+            <div class="text-xs text-gray-500 uppercase tracking-wide mb-3">Pilar: Visibilidad y Analítica</div>
+            <p class="text-sm text-gray-600">Plataforma Open XDR que correlaciona eventos de todos los pilares Zero Trust para detectar anomalías y automatizar respuesta.</p>
+          </a>
+          <a href="/enthec" class="group bg-white border border-gray-200 rounded-2xl p-6 hover:shadow-lg hover:border-blue-200 transition">
+            <div class="text-blue-600 font-bold text-lg mb-2 group-hover:underline">Enthec</div>
+            <div class="text-xs text-gray-500 uppercase tracking-wide mb-3">Pilar: Identidad</div>
+            <p class="text-sm text-gray-600">Monitoreo de credenciales filtradas y superficie de ataque externa para detectar identidades comprometidas antes de que sean explotadas.</p>
+          </a>
+        </div>
+      </section>
+
+      <!-- Section 5 -->
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Hoja de Ruta para Implementar Zero Trust en Colombia</h2>
+        <p class="text-lg text-gray-600 leading-relaxed mb-8">
+          No existe una ruta única. La implementación de ZTA depende de la madurez actual de la
+          organización, su sector regulatorio y su arquitectura de TI. Esta es la secuencia que
+          Starsolution recomienda para empresas medianas en Colombia:
+        </p>
+
+        <div class="relative">
+          <div class="absolute left-4 top-0 bottom-0 w-0.5 bg-blue-100"></div>
+          <div class="space-y-8">
+            {[
+              {
+                phase: 'Fase 1',
+                title: 'Inventario y clasificación (meses 1-2)',
+                items: [
+                  'Inventario de identidades: usuarios, cuentas de servicio, dispositivos',
+                  'Clasificación de activos críticos y datos sensibles',
+                  'Mapeo de flujos de acceso existentes',
+                  'Evaluación de brechas contra el modelo CISA ZT Maturity',
+                ],
+              },
+              {
+                phase: 'Fase 2',
+                title: 'Identidad y dispositivos (meses 3-5)',
+                items: [
+                  'Implementación de MFA en todos los sistemas críticos',
+                  'Despliegue de EDR/XDR para visibilidad de endpoints',
+                  'Integración de Identity Provider (IdP) centralizado',
+                  'Políticas de acceso condicional basadas en postura de dispositivo',
+                ],
+              },
+              {
+                phase: 'Fase 3',
+                title: 'Red y aplicaciones (meses 6-9)',
+                items: [
+                  'Microsegmentación de la red interna',
+                  'Reemplazo de VPN por solución ZTNA para acceso remoto',
+                  'Implementación de PAM para cuentas privilegiadas',
+                  'Integración de aplicaciones críticas con IdP',
+                ],
+              },
+              {
+                phase: 'Fase 4',
+                title: 'Datos y automatización (meses 10-12)',
+                items: [
+                  'Clasificación automática de datos sensibles',
+                  'Implementación de DLP con políticas Zero Trust',
+                  'Integración de SIEM/SOAR para automatización de respuesta',
+                  'Revisión de madurez y ajuste de políticas',
+                ],
+              },
+            ].map(phase => (
+              <div class="flex gap-6">
+                <div class="flex-shrink-0 relative">
+                  <div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center z-10 relative">
+                    <div class="w-3 h-3 bg-white rounded-full"></div>
+                  </div>
+                </div>
+                <div class="pb-2">
+                  <div class="text-xs font-bold text-blue-600 uppercase tracking-wide mb-1">{phase.phase}</div>
+                  <h3 class="text-xl font-bold text-gray-900 mb-3">{phase.title}</h3>
+                  <ul class="space-y-1">
+                    {phase.items.map(item => (
+                      <li class="flex items-start gap-2 text-gray-600 text-sm">
+                        <span class="text-blue-500 mt-0.5 flex-shrink-0">&#9679;</span>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 6 -->
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Errores Comunes en la Implementación de Zero Trust</h2>
+
+        <div class="space-y-5">
+          {[
+            {
+              title: 'Confundir Zero Trust con un producto específico',
+              desc: 'Ningún proveedor ofrece "Zero Trust en una caja". ZTA es una arquitectura. Los productos son habilitadores de cada pilar, no la solución completa.',
+            },
+            {
+              title: 'Empezar por la red en lugar de la identidad',
+              desc: 'La identidad es el perímetro en Zero Trust. Implementar microsegmentación antes de resolver la gestión de identidades crea complejidad sin reducir el riesgo real.',
+            },
+            {
+              title: 'Implementar MFA solo en aplicaciones externas',
+              desc: 'Las aplicaciones internas son el campo de batalla del movimiento lateral. Un atacante que ya está dentro de la red explota exactamente las aplicaciones donde no se exige MFA.',
+            },
+            {
+              title: 'Subestimar la gestión del cambio',
+              desc: 'Zero Trust cambia la experiencia de acceso de los usuarios. Sin comunicación y capacitación, la resistencia interna puede paralizar la implementación o crear workarounds que anulan los controles.',
+            },
+          ].map((error, i) => (
+            <div class="flex gap-4 p-5 bg-red-50 border border-red-100 rounded-xl">
+              <span class="flex-shrink-0 w-6 h-6 bg-red-600 text-white rounded-full flex items-center justify-center text-xs font-bold">{i + 1}</span>
+              <div>
+                <h3 class="font-bold text-gray-900 mb-1">{error.title}</h3>
+                <p class="text-gray-600 text-sm">{error.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Section 7 -->
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Zero Trust y el Sector Empresarial Colombiano</h2>
+        <p class="text-lg text-gray-600 leading-relaxed mb-6">
+          En Colombia, sectores como finanzas, salud y gobierno tienen marcos normativos específicos
+          que se alinean naturalmente con los principios Zero Trust. La Superintendencia Financiera,
+          el Ministerio de Salud y la Presidencia han emitido circulares y decretos que implícitamente
+          exigen controles de acceso granular, monitoreo continuo y gestión de identidades.
+        </p>
+        <p class="text-lg text-gray-600 leading-relaxed mb-6">
+          Las organizaciones que adoptan ZTA no solo mejoran su postura de seguridad: también
+          construyen la evidencia documental que los auditores de cumplimiento exigen. Cada decisión
+          de acceso en una arquitectura Zero Trust se registra, lo que simplifica enormemente las
+          auditorías de ISO 27001, la Ley 1581 y requerimientos sectoriales.
+        </p>
+      </section>
+
+      <!-- Conclusion -->
+      <section class="mb-16">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Conclusión</h2>
+        <p class="text-lg text-gray-600 leading-relaxed mb-6">
+          Zero Trust Architecture en 2025 ya no es una aspiración de grandes corporaciones; es el
+          camino hacia la resiliencia para empresas de cualquier tamaño. La adopción puede iniciarse
+          con inversiones modestas en identidad y visibilidad, y expandirse incrementalmente hacia
+          los demás pilares.
+        </p>
+        <p class="text-lg text-gray-600 leading-relaxed">
+          El mayor riesgo no es comenzar Zero Trust; es no comenzar y seguir dependiendo de un
+          perímetro de red que los atacantes ya saben cómo eludir.
+        </p>
+      </section>
+
+    </div>
+  </article>
+
+  <!-- CTA Section -->
+  <section class="bg-gradient-to-br from-[#0f172a] to-[#1a2744] py-16 lg:py-24">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">
+        ¿Dónde está su empresa en el camino hacia Zero Trust?
+      </h2>
+      <p class="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
+        Realice una evaluación de madurez Zero Trust con el equipo de Starsolution. Identificamos
+        las brechas más críticas y diseñamos una hoja de ruta adaptada a su presupuesto y sector.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="/contacto"
+          class="bg-blue-600 text-white font-semibold px-8 py-4 rounded-lg hover:bg-blue-700 transition text-center"
+        >
+          Solicitar Evaluación Gratuita
+        </a>
+        <a
+          href="/hacking-etico"
+          class="bg-white/10 backdrop-blur-sm border border-white/20 text-white font-semibold px-8 py-4 rounded-lg hover:bg-white/20 transition text-center"
+        >
+          Ver Servicios de Seguridad
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Articles -->
+  <section class="bg-gray-50 py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl font-bold text-gray-900 mb-8">Artículos Relacionados</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <a href="/blog/perfect-forward-secrecy" class="group bg-white border border-gray-200 rounded-2xl overflow-hidden hover:shadow-lg transition">
+          <div class="h-40 overflow-hidden">
+            <img
+              src="/assets/blog-ciberseguridad-realidad-virtual.webp"
+              alt="Perfect Forward Secrecy"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              width="400"
+              height="160"
+              loading="lazy"
+            />
+          </div>
+          <div class="p-5">
+            <span class="text-xs font-bold text-red-600 uppercase tracking-wide">Seguridad</span>
+            <h3 class="font-bold text-gray-900 mt-1 group-hover:text-blue-600 transition-colors">Perfect Forward Secrecy Explicado para Empresas</h3>
+          </div>
+        </a>
+        <a href="/blog/iso-27001-regulaciones" class="group bg-white border border-gray-200 rounded-2xl overflow-hidden hover:shadow-lg transition">
+          <div class="h-40 overflow-hidden">
+            <img
+              src="/assets/blog-zero-trust-arquitectura.webp"
+              alt="ISO 27001 Regulaciones"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              width="400"
+              height="160"
+              loading="lazy"
+            />
+          </div>
+          <div class="p-5">
+            <span class="text-xs font-bold text-green-600 uppercase tracking-wide">Cumplimiento</span>
+            <h3 class="font-bold text-gray-900 mt-1 group-hover:text-blue-600 transition-colors">Nuevas Regulaciones ISO 27001:2022</h3>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+  <WhatsAppButton />
+</BaseLayout>

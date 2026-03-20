@@ -1,0 +1,692 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Navbar from '@components/Navbar.astro';
+import Footer from '@components/Footer.astro';
+import WhatsAppButton from '@components/WhatsAppButton.astro';
+import { seoData } from '@data/seo';
+
+const seo = seoData.vicarius;
+---
+
+<BaseLayout seo={seo}>
+  <Navbar />
+
+  <div class="bg-white min-h-screen font-['Instrument_Sans',sans-serif]">
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-b from-gray-50 to-white py-12 sm:py-16 lg:py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <div class="mb-6">
+              <span class="inline-block bg-red-50 text-red-600 text-xs font-medium px-3 py-1 rounded">
+                GESTIÓN DE VULNERABILIDADES CON IA
+              </span>
+            </div>
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+              Vicarius vRx: Gestión de Vulnerabilidades{" "}
+              <span class="text-[#ed1c24]">Inteligente y Automatizada.</span>
+            </h1>
+            <p class="text-lg sm:text-xl text-gray-600 mb-8 max-w-3xl">
+              Descubra, priorice y remedie vulnerabilidades críticas de forma automatizada.
+              Parcheo inteligente, protección virtual (patchless) y priorización basada en
+              riesgo real para reducir su superficie de ataque de manera medible.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a href="/contacto" class="bg-gradient-to-r from-red-600 to-red-700 text-white font-semibold px-8 py-4 rounded-full hover:from-red-700 hover:to-red-800 transition shadow-lg inline-flex items-center justify-center gap-2">
+                Solicitar Demo
+              </a>
+              <a href="/contacto" class="bg-white border-2 border-gray-200 text-gray-800 font-semibold px-8 py-4 rounded-full hover:bg-gray-50 transition inline-flex items-center justify-center gap-2 focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2">
+                Ver Cómo Funciona
+              </a>
+            </div>
+            <div class="mt-8 flex items-center gap-2 text-sm text-gray-500">
+              <svg class="w-4 h-4 text-green-600" fill="none" viewBox="0 0 14 14">
+                <path d="M11.6667 3.5L5.25 9.91667L2.33333 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.16667" />
+              </svg>
+              <span>Reducción promedio del 85% en tiempo de remediacion de CVEs críticos</span>
+            </div>
+          </div>
+          <div class="hidden lg:flex items-center justify-center">
+            <img
+              src="/assets/icono-dispositivo-endpoint-security.webp"
+              alt="Icono de seguridad de endpoint para gestión de vulnerabilidades Vicarius vRx"
+              class="w-full max-w-md mx-auto rounded-2xl shadow-xl"
+              width="400"
+              height="400"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Problem Statement -->
+    <section class="bg-[#111827] py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">
+            El Problema con la Gestión de Vulnerabilidades Tradicional
+          </h2>
+          <p class="text-gray-400 max-w-3xl mx-auto">
+            Las organizaciones enfrentan miles de CVEs nuevos cada ano, pero los equipos de TI
+            no tienen capacidad para parchearlos todos. El resultado: vulnerabilidades críticas
+            sin remediar durante meses.
+          </p>
+        </div>
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+          <div>
+            <h3 class="text-white font-bold text-3xl mb-2">25,000+</h3>
+            <p class="text-white text-xs uppercase tracking-wider opacity-75">CVEs publicados en 2024</p>
+          </div>
+          <div>
+            <h3 class="text-white font-bold text-3xl mb-2">60%</h3>
+            <p class="text-white text-xs uppercase tracking-wider opacity-75">De brechas usan vulnerabilidades conocidas</p>
+          </div>
+          <div>
+            <h3 class="text-white font-bold text-3xl mb-2">102 dias</h3>
+            <p class="text-white text-xs uppercase tracking-wider opacity-75">Promedio para aplicar un parche critico</p>
+          </div>
+          <div>
+            <h3 class="text-white font-bold text-3xl mb-2">15%</h3>
+            <p class="text-white text-xs uppercase tracking-wider opacity-75">De CVEs realmente son explotables</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Features (6 Cards) -->
+    <section class="bg-gray-50 py-16 sm:py-20 lg:py-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="mb-16">
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-semibold mb-4">
+            Capacidades de{" "}<span class="text-[#ed1c24]">Vicarius vRx</span>
+          </h2>
+          <p class="text-gray-600 max-w-3xl">
+            Una plataforma completa que va más allá del escaneo: descubre, prioriza, protege
+            y remedia vulnerabilidades de forma automatizada.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="bg-white border border-gray-200 rounded-2xl p-6">
+            <div class="bg-gray-50 rounded-lg w-10 h-10 flex items-center justify-center mb-4">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 20 20">
+                <circle cx="10" cy="10" r="7" stroke="#374151" stroke-width="1.66667" fill="none" />
+                <path d="M7 10l2 2 4-4" stroke="#374151" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.66667" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold mb-2">Escaneo Automatizado</h3>
+            <p class="text-sm text-gray-600">
+              Descubrimiento continuo de vulnerabilidades en sistemas operativos, aplicaciones de
+              terceros y software propietario. Sin agentes pesados ni escaneos que ralentizan la red.
+            </p>
+          </div>
+
+          <div class="bg-white border border-gray-200 rounded-2xl p-6">
+            <div class="bg-gray-50 rounded-lg w-10 h-10 flex items-center justify-center mb-4">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 20 20">
+                <path d="M3 10l4 4 10-10" stroke="#374151" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.66667" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold mb-2">Priorización Basada en Riesgo</h3>
+            <p class="text-sm text-gray-600">
+              No todos los CVEs son iguales. Vicarius prioriza usando contexto real: explotabilidad,
+              exposicion de la red, impacto en el negocio y disponibilidad de exploits activos.
+            </p>
+          </div>
+
+          <div class="bg-white border border-gray-200 rounded-2xl p-6">
+            <div class="bg-gray-50 rounded-lg w-10 h-10 flex items-center justify-center mb-4">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 20 20">
+                <path d="M10 2L3 6v5c0 4.5 3 8.5 7 9.5 4-1 7-5 7-9.5V6l-7-4z" stroke="#374151" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.66667" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold mb-2">Parcheo Virtual (Patchless Protection)</h3>
+            <p class="text-sm text-gray-600">
+              Cuando no puede aplicar un parche inmediatamente, Vicarius protege la vulnerabilidad
+              en memoria, eliminando el riesgo sin reiniciar equipos ni detener servicios.
+            </p>
+          </div>
+
+          <div class="bg-white border border-gray-200 rounded-2xl p-6">
+            <div class="bg-gray-50 rounded-lg w-10 h-10 flex items-center justify-center mb-4">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 20 20">
+                <rect x="3" y="3" width="14" height="14" rx="2" stroke="#374151" stroke-width="1.66667" fill="none" />
+                <path d="M7 8h6M7 12h4" stroke="#374151" stroke-linecap="round" stroke-width="1.66667" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold mb-2">Scripts de Remediación</h3>
+            <p class="text-sm text-gray-600">
+              Biblioteca de scripts pre-construidos y personalizables para automatizar el parcheo
+              y la remediación. Ejecute correcciones masivas con un solo clic.
+            </p>
+          </div>
+
+          <div class="bg-white border border-gray-200 rounded-2xl p-6">
+            <div class="bg-gray-50 rounded-lg w-10 h-10 flex items-center justify-center mb-4">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 20 20">
+                <path d="M3 3h14v4H3zM3 10h14v4H3z" stroke="#374151" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.66667" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold mb-2">Análisis SBOM</h3>
+            <p class="text-sm text-gray-600">
+              Inventario completo de software (Software Bill of Materials) para identificar
+              componentes vulnerables, dependencias y riesgos ocultos en su stack tecnológico.
+            </p>
+          </div>
+
+          <div class="bg-white border border-gray-200 rounded-2xl p-6">
+            <div class="bg-gray-50 rounded-lg w-10 h-10 flex items-center justify-center mb-4">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 20 20">
+                <path d="M9 17H5a2 2 0 01-2-2V5a2 2 0 012-2h10a2 2 0 012 2v4" stroke="#374151" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.66667" />
+                <path d="M13 15l2 2 4-4" stroke="#374151" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.66667" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold mb-2">Reportes de Cumplimiento</h3>
+            <p class="text-sm text-gray-600">
+              Genere reportes automatizados para cumplimiento normativo (ISO 27001, PCI DSS, HIPAA)
+              con evidencia de remediacion y seguimiento de SLAs de parcheo.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How vRx Works (4 Steps) -->
+    <section class="py-16 sm:py-20 lg:py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl sm:text-4xl font-bold mb-4">
+            Cómo Funciona vRx en 4 Pasos
+          </h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            De la detección a la remediación en un flujo automatizado e inteligente.
+          </p>
+        </div>
+
+        <div class="bg-gray-50 rounded-2xl p-8 border border-gray-200">
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+            <div class="text-center">
+              <div class="bg-red-100 text-red-600 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 font-bold text-lg">
+                1
+              </div>
+              <h3 class="font-semibold mb-2">Descubrir</h3>
+              <p class="text-sm text-gray-600">
+                El agente liviano escanea continuamente todos sus activos, identificando
+                software instalado, versiones y CVEs asociados.
+              </p>
+            </div>
+            <div class="text-center">
+              <div class="bg-red-100 text-red-600 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 font-bold text-lg">
+                2
+              </div>
+              <h3 class="font-semibold mb-2">Priorizar</h3>
+              <p class="text-sm text-gray-600">
+                IA analiza contexto real: explotabilidad, exposicion, impacto en negocio
+                y disponibilidad de exploits activos para cada CVE.
+              </p>
+            </div>
+            <div class="text-center">
+              <div class="bg-red-100 text-red-600 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 font-bold text-lg">
+                3
+              </div>
+              <h3 class="font-semibold mb-2">Proteger</h3>
+              <p class="text-sm text-gray-600">
+                Aplique parcheo virtual instantaneo para vulnerabilidades críticas mientras
+                planifica el parcheo definitivo sin afectar operaciones.
+              </p>
+            </div>
+            <div class="text-center">
+              <div class="bg-red-100 text-red-600 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 font-bold text-lg">
+                4
+              </div>
+              <h3 class="font-semibold mb-2">Remediar</h3>
+              <p class="text-sm text-gray-600">
+                Ejecute scripts de remediacion automatizados, aplique parches oficiales
+                y verifique la correccion de forma centralizada.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Integration Section -->
+    <section class="py-16 sm:py-20 lg:py-24 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+          <div>
+            <span class="text-[#ed1c24] text-xs font-medium uppercase tracking-wide">Ecosistema Integrado</span>
+            <h2 class="text-3xl sm:text-4xl font-bold mt-4 mb-6">
+              Se Integra con Su Stack de Seguridad Existente
+            </h2>
+            <p class="text-gray-600 mb-6">
+              Vicarius vRx no trabaja de forma aislada. Se integra con sus herramientas SIEM,
+              ticketing, EDR y herramientas de gestión de activos para crear un flujo de trabajo
+              unificado de gestión de vulnerabilidades.
+            </p>
+            <div class="grid grid-cols-2 gap-6">
+              <div class="border-l-4 border-red-600 pl-4">
+                <div class="text-2xl font-bold text-gray-900 mb-1">85%</div>
+                <div class="text-sm text-gray-600">Reducción en tiempo de remediación</div>
+              </div>
+              <div class="border-l-4 border-red-600 pl-4">
+                <div class="text-2xl font-bold text-gray-900 mb-1">70%</div>
+                <div class="text-sm text-gray-600">Menos carga operativa en equipo IT</div>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="bg-gradient-to-br from-red-50 to-white border border-red-100 rounded-2xl p-8">
+              <h3 class="text-xl font-semibold mb-6">Integraciones compatibles:</h3>
+              <div class="space-y-4">
+                <div class="flex items-start gap-3">
+                  <div class="bg-green-100 border border-green-200 rounded-full p-1 mt-0.5">
+                    <svg class="w-3.5 h-3.5 text-green-600" fill="none" viewBox="0 0 14 14">
+                      <path d="M11.6667 3.5L5.25 9.91667L2.33333 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.16667" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 class="font-semibold text-gray-900">SIEM / SOAR</h3>
+                    <p class="text-sm text-gray-600">Splunk, Microsoft Sentinel, IBM QRadar</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3">
+                  <div class="bg-green-100 border border-green-200 rounded-full p-1 mt-0.5">
+                    <svg class="w-3.5 h-3.5 text-green-600" fill="none" viewBox="0 0 14 14">
+                      <path d="M11.6667 3.5L5.25 9.91667L2.33333 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.16667" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 class="font-semibold text-gray-900">Ticketing</h3>
+                    <p class="text-sm text-gray-600">ServiceNow, Jira, PagerDuty</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3">
+                  <div class="bg-green-100 border border-green-200 rounded-full p-1 mt-0.5">
+                    <svg class="w-3.5 h-3.5 text-green-600" fill="none" viewBox="0 0 14 14">
+                      <path d="M11.6667 3.5L5.25 9.91667L2.33333 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.16667" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 class="font-semibold text-gray-900">EDR / XDR</h3>
+                    <p class="text-sm text-gray-600">CrowdStrike, SentinelOne, Bitdefender</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3">
+                  <div class="bg-green-100 border border-green-200 rounded-full p-1 mt-0.5">
+                    <svg class="w-3.5 h-3.5 text-green-600" fill="none" viewBox="0 0 14 14">
+                      <path d="M11.6667 3.5L5.25 9.91667L2.33333 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.16667" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 class="font-semibold text-gray-900">API Abierta</h3>
+                    <p class="text-sm text-gray-600">Integracion con cualquier herramienta via REST API</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- El Ciclo de Gestión de Vulnerabilidades -->
+    <section class="py-16 sm:py-20 lg:py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl sm:text-4xl font-bold mb-4 text-gray-900">
+            El Ciclo de Gestión de Vulnerabilidades
+          </h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            Vicarius vRx transforma la gestión de vulnerabilidades de un proceso reactivo
+            y manual a un ciclo continuo, automatizado y medible en 5 pasos.
+          </p>
+        </div>
+
+        <div class="relative">
+          <div class="grid grid-cols-1 md:grid-cols-5 gap-0">
+            <div class="flex flex-col items-center text-center p-6">
+              <div class="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center mb-4 relative z-10">
+                <svg class="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+              </div>
+              <div class="w-0.5 h-6 bg-red-200 md:hidden mb-4"></div>
+              <h3 class="font-bold text-gray-900 mb-2">1. Descubrimiento</h3>
+              <p class="text-xs text-gray-600 leading-relaxed">
+                El agente liviano escanea continuamente todos sus activos: Windows, Linux, macOS.
+                Inventario completo de software instalado y versiones en minutos.
+              </p>
+            </div>
+
+            <div class="hidden md:flex items-center justify-center">
+              <svg class="w-6 h-6 text-red-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </div>
+
+            <div class="flex flex-col items-center text-center p-6">
+              <div class="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center mb-4 relative z-10">
+                <svg class="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4h13M3 8h9m-9 4h6m4 0l4-4m0 0l4 4m-4-4v12" />
+                </svg>
+              </div>
+              <div class="w-0.5 h-6 bg-orange-200 md:hidden mb-4"></div>
+              <h3 class="font-bold text-gray-900 mb-2">2. Priorización con IA</h3>
+              <p class="text-xs text-gray-600 leading-relaxed">
+                No todos los CVEs son iguales. La IA de Vicarius evalúa explotabilidad real,
+                contexto del activo y disponibilidad de exploits activos para crear una lista
+                de acción priorizada.
+              </p>
+            </div>
+
+            <div class="hidden md:flex items-center justify-center">
+              <svg class="w-6 h-6 text-orange-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </div>
+
+            <div class="flex flex-col items-center text-center p-6">
+              <div class="w-16 h-16 bg-yellow-500 rounded-full flex items-center justify-center mb-4 relative z-10">
+                <svg class="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                </svg>
+              </div>
+              <div class="w-0.5 h-6 bg-yellow-200 md:hidden mb-4"></div>
+              <h3 class="font-bold text-gray-900 mb-2">3. Protección Virtual</h3>
+              <p class="text-xs text-gray-600 leading-relaxed">
+                Cuando no puede parchear inmediatamente, Vicarius aplica parcheo virtual en memoria.
+                El sistema queda protegido al instante, sin reiniciar ni interrumpir servicios.
+              </p>
+            </div>
+
+            <div class="hidden md:flex items-center justify-center">
+              <svg class="w-6 h-6 text-yellow-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </div>
+
+            <div class="flex flex-col items-center text-center p-6">
+              <div class="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mb-4 relative z-10">
+                <svg class="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+              </div>
+              <div class="w-0.5 h-6 bg-blue-200 md:hidden mb-4"></div>
+              <h3 class="font-bold text-gray-900 mb-2">4. Remediación</h3>
+              <p class="text-xs text-gray-600 leading-relaxed">
+                Scripts de remediación pre-construidos y personalizables. Aplique parches oficiales
+                de forma masiva con un clic, con verificación automática de éxito.
+              </p>
+            </div>
+
+            <div class="hidden md:flex items-center justify-center">
+              <svg class="w-6 h-6 text-blue-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </div>
+
+            <div class="flex flex-col items-center text-center p-6">
+              <div class="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mb-4 relative z-10">
+                <svg class="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+              </div>
+              <h3 class="font-bold text-gray-900 mb-2">5. Reporte y Cumplimiento</h3>
+              <p class="text-xs text-gray-600 leading-relaxed">
+                Reportes automáticos de SLA de parcheo, reducción de superficie de ataque y
+                evidencia de cumplimiento para ISO 27001, PCI DSS e HIPAA. El ciclo reinicia.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Vicarius vs Herramientas Tradicionales -->
+    <section class="py-16 sm:py-20 lg:py-24 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl sm:text-4xl font-bold mb-4 text-gray-900">
+            Vicarius vs Herramientas Tradicionales
+          </h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            Las herramientas de escaneo tradicionales solo identifican. Vicarius identifica,
+            prioriza, protege y remedia de forma automatizada.
+          </p>
+        </div>
+
+        <div class="rounded-2xl overflow-hidden border border-gray-200">
+          <div class="grid grid-cols-4 bg-gray-900 text-white">
+            <div class="p-5 font-semibold text-sm">Capacidad</div>
+            <div class="p-5 font-semibold text-sm text-center border-l border-gray-700">
+              Vicarius vRx
+              <div class="text-xs font-normal text-green-300 mt-1">Plataforma completa</div>
+            </div>
+            <div class="p-5 font-semibold text-sm text-center border-l border-gray-700">Nessus / Tenable</div>
+            <div class="p-5 font-semibold text-sm text-center border-l border-gray-700">Qualys / Rapid7</div>
+          </div>
+
+          <div class="divide-y divide-gray-100">
+            <div class="grid grid-cols-4 bg-white hover:bg-gray-50 transition-colors">
+              <div class="p-5 text-sm font-medium text-gray-900">Escaneo de vulnerabilidades</div>
+              <div class="p-5 text-center border-l border-gray-100">
+                <svg class="w-5 h-5 text-green-500 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg>
+              </div>
+              <div class="p-5 text-center border-l border-gray-100">
+                <svg class="w-5 h-5 text-green-500 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg>
+              </div>
+              <div class="p-5 text-center border-l border-gray-100">
+                <svg class="w-5 h-5 text-green-500 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-4 bg-gray-50 hover:bg-gray-100 transition-colors">
+              <div class="p-5 text-sm font-medium text-gray-900">Priorización por riesgo real</div>
+              <div class="p-5 text-center border-l border-gray-100">
+                <svg class="w-5 h-5 text-green-500 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg>
+                <span class="text-xs text-gray-500">IA contextual</span>
+              </div>
+              <div class="p-5 text-center border-l border-gray-100">
+                <svg class="w-5 h-5 text-yellow-500 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                <span class="text-xs text-gray-500">Solo CVSS score</span>
+              </div>
+              <div class="p-5 text-center border-l border-gray-100">
+                <svg class="w-5 h-5 text-yellow-500 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                <span class="text-xs text-gray-500">Limitado</span>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-4 bg-white hover:bg-gray-50 transition-colors">
+              <div class="p-5 text-sm font-medium text-gray-900">Parcheo virtual (sin reiniciar)</div>
+              <div class="p-5 text-center border-l border-gray-100">
+                <svg class="w-5 h-5 text-green-500 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg>
+                <span class="text-xs text-gray-500">Característica única</span>
+              </div>
+              <div class="p-5 text-center border-l border-gray-100">
+                <svg class="w-5 h-5 text-red-400 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12" /></svg>
+              </div>
+              <div class="p-5 text-center border-l border-gray-100">
+                <svg class="w-5 h-5 text-red-400 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12" /></svg>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-4 bg-gray-50 hover:bg-gray-100 transition-colors">
+              <div class="p-5 text-sm font-medium text-gray-900">Remediación automatizada</div>
+              <div class="p-5 text-center border-l border-gray-100">
+                <svg class="w-5 h-5 text-green-500 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg>
+                <span class="text-xs text-gray-500">Scripts incluidos</span>
+              </div>
+              <div class="p-5 text-center border-l border-gray-100">
+                <svg class="w-5 h-5 text-red-400 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12" /></svg>
+                <span class="text-xs text-gray-500">Solo identifica</span>
+              </div>
+              <div class="p-5 text-center border-l border-gray-100">
+                <svg class="w-5 h-5 text-yellow-500 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                <span class="text-xs text-gray-500">Parcial</span>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-4 bg-white hover:bg-gray-50 transition-colors">
+              <div class="p-5 text-sm font-medium text-gray-900">Agente ligero (&lt;50MB RAM)</div>
+              <div class="p-5 text-center border-l border-gray-100">
+                <svg class="w-5 h-5 text-green-500 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg>
+              </div>
+              <div class="p-5 text-center border-l border-gray-100">
+                <svg class="w-5 h-5 text-yellow-500 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                <span class="text-xs text-gray-500">Escaneo pesado</span>
+              </div>
+              <div class="p-5 text-center border-l border-gray-100">
+                <svg class="w-5 h-5 text-yellow-500 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-4 bg-gray-50 hover:bg-gray-100 transition-colors">
+              <div class="p-5 text-sm font-medium text-gray-900">Precio accesible para PYMES</div>
+              <div class="p-5 text-center border-l border-gray-100">
+                <svg class="w-5 h-5 text-green-500 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg>
+              </div>
+              <div class="p-5 text-center border-l border-gray-100">
+                <svg class="w-5 h-5 text-yellow-500 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                <span class="text-xs text-gray-500">Costo elevado</span>
+              </div>
+              <div class="p-5 text-center border-l border-gray-100">
+                <svg class="w-5 h-5 text-red-400 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12" /></svg>
+                <span class="text-xs text-gray-500">Enterprise pricing</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <p class="text-center text-sm text-gray-500 mt-6">
+          Para una defensa en profundidad, combine Vicarius con
+          <a href="/enthec" class="text-red-600 underline hover:text-red-800">Enthec para monitoreo de superficie de ataque externa</a>
+          y cubra tanto el interior como el exterior de su perímetro.
+        </p>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 sm:py-20 lg:py-24 bg-white">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4 text-center">
+          Preguntas Frecuentes sobre Vicarius
+        </h2>
+        <p class="text-gray-600 text-center mb-12">
+          Lo que necesita saber sobre gestión automatizada de vulnerabilidades.
+        </p>
+
+        <div class="space-y-4">
+          <details class="bg-gray-50 border border-gray-200 rounded-xl group">
+            <summary class="font-semibold text-lg p-6 cursor-pointer list-none flex items-center justify-between">
+              ¿Qué es parcheo virtual (patchless protection)?
+              <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+            </summary>
+            <div class="px-6 pb-6 text-gray-600">
+              El parcheo virtual protege la vulnerabilidad a nivel de memoria del proceso afectado,
+              sin necesidad de aplicar el parche oficial del fabricante. Esto permite proteger
+              sistemas críticos inmediatamente mientras se planifica una ventana de mantenimiento
+              para el parcheo definitivo. No requiere reinicio ni afecta la operacion.
+            </div>
+          </details>
+
+          <details class="bg-gray-50 border border-gray-200 rounded-xl group">
+            <summary class="font-semibold text-lg p-6 cursor-pointer list-none flex items-center justify-between">
+              ¿Vicarius reemplaza a mi escáner de vulnerabilidades actual?
+              <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+            </summary>
+            <div class="px-6 pb-6 text-gray-600">
+              Sí. Vicarius vRx es una solución completa que cubre escaneo, priorización, proteccion
+              y remediacion. Reemplaza herramientas como Nessus, Qualys o Rapid7 para la gestion
+              de vulnerabilidades en endpoints y servidores, añadiendo la capa de remediación
+              automatizada que las herramientas tradicionales no ofrecen.
+            </div>
+          </details>
+
+          <details class="bg-gray-50 border border-gray-200 rounded-xl group">
+            <summary class="font-semibold text-lg p-6 cursor-pointer list-none flex items-center justify-between">
+              ¿Qué sistemas operativos soporta?
+              <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+            </summary>
+            <div class="px-6 pb-6 text-gray-600">
+              Vicarius soporta Windows (Server y Desktop), las principales distribuciones Linux
+              (Ubuntu, CentOS, RHEL, Debian) y macOS. El agente es liviano (menos de 50MB de RAM)
+              y no afecta el rendimiento de los equipos.
+            </div>
+          </details>
+
+          <details class="bg-gray-50 border border-gray-200 rounded-xl group">
+            <summary class="font-semibold text-lg p-6 cursor-pointer list-none flex items-center justify-between">
+              ¿Cuánto tiempo toma ver resultados?
+              <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+            </summary>
+            <div class="px-6 pb-6 text-gray-600">
+              Desde el despliegue del agente, tendra un inventario completo de vulnerabilidades
+              en menos de 24 horas. La priorizacion y las primeras remediaciones automatizadas
+              pueden ejecutarse en la primera semana. Las empresas reportan una reducción del 85%
+              en el tiempo de remediación en los primeros 90 dias.
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 sm:py-20 lg:py-24 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-gradient-to-r from-[#111827] to-[#1f2937] rounded-2xl overflow-hidden">
+          <div class="p-8 lg:p-12 text-center">
+            <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">
+              Deje de perseguir CVEs. Automatice su gestión de vulnerabilidades.
+            </h2>
+            <p class="text-gray-300 mb-8 max-w-2xl mx-auto">
+              Solicite una demo personalizada y descubra como Vicarius vRx puede reducir su
+              superficie de ataque de forma medible y automatizada.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+              <a href="/contacto" class="bg-gradient-to-r from-red-600 to-red-700 text-white font-semibold px-8 py-4 rounded-full hover:from-red-700 hover:to-red-800 transition shadow-lg inline-flex items-center justify-center gap-2">
+                Solicitar Demo Gratuita
+              </a>
+              <a href="/contacto" class="bg-white/10 backdrop-blur-sm border border-white/20 text-white font-semibold px-8 py-4 rounded-full hover:bg-white/20 transition inline-flex items-center justify-center gap-2 focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2">
+                Hablar con un Especialista
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Soluciones Relacionadas -->
+  <section class="py-12 bg-gray-50 border-t border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-lg font-bold text-gray-900 mb-6">Soluciones Relacionadas</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+        <a href="/enthec" class="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-all duration-300 text-center">
+          <p class="font-semibold text-sm text-gray-900">Enthec</p>
+          <p class="text-xs text-gray-500 mt-1">Superficie de ataque</p>
+        </a>
+        <a href="/stellar-cyber" class="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-all duration-300 text-center">
+          <p class="font-semibold text-sm text-gray-900">Stellar Cyber</p>
+          <p class="text-xs text-gray-500 mt-1">Open XDR / SOC</p>
+        </a>
+        <a href="/black-duck" class="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-all duration-300 text-center">
+          <p class="font-semibold text-sm text-gray-900">Black Duck</p>
+          <p class="text-xs text-gray-500 mt-1">AppSec SAST/DAST</p>
+        </a>
+        <a href="/hacking-etico" class="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-all duration-300 text-center">
+          <p class="font-semibold text-sm text-gray-900">Hacking Ético</p>
+          <p class="text-xs text-gray-500 mt-1">Pentesting</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+  <WhatsAppButton />
+</BaseLayout>

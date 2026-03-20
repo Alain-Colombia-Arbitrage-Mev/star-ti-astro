@@ -1,0 +1,722 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Navbar from '@components/Navbar.astro';
+import Footer from '@components/Footer.astro';
+import WhatsAppButton from '@components/WhatsAppButton.astro';
+import { seoData } from '@data/seo';
+
+const seo = seoData.enthec;
+---
+
+<BaseLayout seo={seo}>
+  <Navbar />
+
+  <div class="bg-white min-h-screen font-['Instrument_Sans',sans-serif]">
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-b from-gray-50 to-white py-12 sm:py-16 lg:py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <div class="mb-6">
+              <span class="inline-block bg-red-50 text-red-600 text-xs font-medium px-3 py-1 rounded">
+                VISIBILIDAD DE SUPERFICIE DE ATAQUE
+              </span>
+            </div>
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+              Enthec: Monitoreo de Superficie de Ataque{" "}
+              <span class="text-[#ed1c24]">e Identidades Comprometidas.</span>
+            </h1>
+            <p class="text-lg sm:text-xl text-gray-600 mb-8 max-w-3xl">
+              Descubra credenciales filtradas, identidades expuestas y activos vulnerables antes
+              de que los atacantes los encuentren. Monitoreo continuo de la dark web y la superficie
+              de ataque externa de su organización.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a href="/contacto" class="bg-gradient-to-r from-red-600 to-red-700 text-white font-semibold px-8 py-4 rounded-full hover:from-red-700 hover:to-red-800 transition shadow-lg inline-flex items-center justify-center gap-2">
+                Solicitar Diagnóstico GRATUITO
+              </a>
+              <a href="/contacto" class="bg-white border-2 border-gray-200 text-gray-800 font-semibold px-8 py-4 rounded-full hover:bg-gray-50 transition inline-flex items-center justify-center gap-2 focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2">
+                Conocer Más
+              </a>
+            </div>
+            <div class="mt-8 flex items-center gap-2 text-sm text-gray-500">
+              <svg class="w-4 h-4 text-green-600" fill="none" viewBox="0 0 14 14">
+                <path d="M11.6667 3.5L5.25 9.91667L2.33333 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.16667" />
+              </svg>
+              <span>Diagnóstico inicial sin costo - Descubra su exposicion real</span>
+            </div>
+          </div>
+          <div class="hidden lg:flex items-center justify-center">
+            <img
+              src="/assets/icono-ojo-monitoreo-digital.webp"
+              alt="Icono de monitoreo digital para vigilancia de superficie de ataque Enthec"
+              class="w-full max-w-md mx-auto rounded-2xl shadow-xl"
+              width="400"
+              height="400"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What is Attack Surface Monitoring -->
+    <section class="py-16 sm:py-20 lg:py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+          <div>
+            <span class="text-[#ed1c24] text-xs font-medium uppercase tracking-wide">Visibilidad Total</span>
+            <h2 class="text-3xl sm:text-4xl font-bold mt-4 mb-6">
+              ¿Qué es el Monitoreo de Superficie de Ataque?
+            </h2>
+            <p class="text-gray-600 mb-6">
+              Su organizacion tiene una huella digital mucho mayor de lo que imagina. Dominios,
+              subdominios, servidores expuestos, credenciales filtradas en la dark web,
+              empleados con contraseñas comprometidas y servicios mal configurados representan
+              puertas abiertas para los atacantes.
+            </p>
+            <p class="text-gray-600 mb-8">
+              Enthec monitorea continuamente toda su superficie de ataque externa, alertándole
+              sobre nuevas exposiciones antes de que sean explotadas. Piense en ello como un
+              radar permanente que vigila lo que los atacantes pueden ver de su organización.
+            </p>
+
+            <div class="grid grid-cols-2 gap-6">
+              <div class="border-l-4 border-red-600 pl-4">
+                <div class="text-2xl font-bold text-gray-900 mb-1">80%</div>
+                <div class="text-sm text-gray-600">De brechas usan credenciales robadas</div>
+              </div>
+              <div class="border-l-4 border-red-600 pl-4">
+                <div class="text-2xl font-bold text-gray-900 mb-1">287 dias</div>
+                <div class="text-sm text-gray-600">Promedio para detectar una brecha</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex items-center">
+            <div class="bg-[#111827] rounded-2xl p-8 w-full">
+              <h3 class="text-xl font-semibold text-white mb-6">Lo que Enthec descubre:</h3>
+              <div class="space-y-4">
+                <div class="flex items-center gap-3">
+                  <div class="bg-red-600 rounded-full p-1.5">
+                    <svg class="w-3 h-3 text-white" fill="none" viewBox="0 0 14 14">
+                      <path d="M11.6667 3.5L5.25 9.91667L2.33333 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.16667" />
+                    </svg>
+                  </div>
+                  <span class="text-gray-300">Credenciales filtradas en la dark web</span>
+                </div>
+                <div class="flex items-center gap-3">
+                  <div class="bg-red-600 rounded-full p-1.5">
+                    <svg class="w-3 h-3 text-white" fill="none" viewBox="0 0 14 14">
+                      <path d="M11.6667 3.5L5.25 9.91667L2.33333 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.16667" />
+                    </svg>
+                  </div>
+                  <span class="text-gray-300">Dominios y subdominios expuestos</span>
+                </div>
+                <div class="flex items-center gap-3">
+                  <div class="bg-red-600 rounded-full p-1.5">
+                    <svg class="w-3 h-3 text-white" fill="none" viewBox="0 0 14 14">
+                      <path d="M11.6667 3.5L5.25 9.91667L2.33333 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.16667" />
+                    </svg>
+                  </div>
+                  <span class="text-gray-300">Suplantacion de marca en internet</span>
+                </div>
+                <div class="flex items-center gap-3">
+                  <div class="bg-red-600 rounded-full p-1.5">
+                    <svg class="w-3 h-3 text-white" fill="none" viewBox="0 0 14 14">
+                      <path d="M11.6667 3.5L5.25 9.91667L2.33333 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.16667" />
+                    </svg>
+                  </div>
+                  <span class="text-gray-300">Exposicion de ejecutivos clave</span>
+                </div>
+                <div class="flex items-center gap-3">
+                  <div class="bg-red-600 rounded-full p-1.5">
+                    <svg class="w-3 h-3 text-white" fill="none" viewBox="0 0 14 14">
+                      <path d="M11.6667 3.5L5.25 9.91667L2.33333 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.16667" />
+                    </svg>
+                  </div>
+                  <span class="text-gray-300">Riesgos en la cadena de suministro</span>
+                </div>
+                <div class="flex items-center gap-3">
+                  <div class="bg-red-600 rounded-full p-1.5">
+                    <svg class="w-3 h-3 text-white" fill="none" viewBox="0 0 14 14">
+                      <path d="M11.6667 3.5L5.25 9.91667L2.33333 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.16667" />
+                    </svg>
+                  </div>
+                  <span class="text-gray-300">Servicios y puertos vulnerables</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Features (6 Cards) -->
+    <section class="bg-gray-50 py-16 sm:py-20 lg:py-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="mb-16">
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-semibold mb-4">
+            Funcionalidades{" "}<span class="text-[#ed1c24]">Principales</span>
+          </h2>
+          <p class="text-gray-600 max-w-3xl">
+            Enthec combina inteligencia de amenazas, monitoreo automatizado y alertas en tiempo
+            real para darle visibilidad completa de su exposicion digital.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="bg-white border border-gray-200 rounded-2xl p-6">
+            <div class="bg-gray-50 rounded-lg w-10 h-10 flex items-center justify-center mb-4">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 20 20">
+                <circle cx="10" cy="10" r="7" stroke="#374151" stroke-width="1.66667" fill="none" />
+                <path d="M10 7v3l2 2" stroke="#374151" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.66667" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold mb-2">Monitoreo Continuo 24/7</h3>
+            <p class="text-sm text-gray-600">
+              Vigilancia permanente de su superficie de ataque externa. Detección automática de
+              nuevos activos expuestos, cambios de configuracion y amenazas emergentes.
+            </p>
+          </div>
+
+          <div class="bg-white border border-gray-200 rounded-2xl p-6">
+            <div class="bg-gray-50 rounded-lg w-10 h-10 flex items-center justify-center mb-4">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 20 20">
+                <path d="M10 2L3 6v5c0 4.5 3 8.5 7 9.5 4-1 7-5 7-9.5V6l-7-4z" stroke="#374151" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.66667" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold mb-2">Inteligencia Dark Web</h3>
+            <p class="text-sm text-gray-600">
+              Rastreo especializado en foros, mercados negros y canales de la dark web donde se
+              comercializan credenciales robadas y datos de su organización.
+            </p>
+          </div>
+
+          <div class="bg-white border border-gray-200 rounded-2xl p-6">
+            <div class="bg-gray-50 rounded-lg w-10 h-10 flex items-center justify-center mb-4">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 20 20">
+                <path d="M16 4L8 12M8 4l8 8" stroke="#374151" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.66667" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold mb-2">Alertas de Credenciales Filtradas</h3>
+            <p class="text-sm text-gray-600">
+              Notificacion inmediata cuando se detectan credenciales de sus empleados en bases
+              de datos comprometidas, permitiendo el cambio preventivo de contraseñas.
+            </p>
+          </div>
+
+          <div class="bg-white border border-gray-200 rounded-2xl p-6">
+            <div class="bg-gray-50 rounded-lg w-10 h-10 flex items-center justify-center mb-4">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 20 20">
+                <path d="M10 2a8 8 0 100 16 8 8 0 000-16zM10 6v4m0 4h.01" stroke="#374151" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.66667" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold mb-2">Deteccion de Suplantacion de Marca</h3>
+            <p class="text-sm text-gray-600">
+              Identificacion de dominios lookalike, sitios de phishing y perfiles falsos en
+              redes sociales que suplantan la identidad de su organización.
+            </p>
+          </div>
+
+          <div class="bg-white border border-gray-200 rounded-2xl p-6">
+            <div class="bg-gray-50 rounded-lg w-10 h-10 flex items-center justify-center mb-4">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 20 20">
+                <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0zM3 12a3 3 0 116 0 3 3 0 01-6 0z" stroke="#374151" stroke-width="1.66667" fill="none" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold mb-2">Monitoreo de Ejecutivos</h3>
+            <p class="text-sm text-gray-600">
+              Vigilancia especifica de la exposicion digital de directivos y personas clave,
+              incluyendo filtraciones personales que puedan afectar a la organizacion.
+            </p>
+          </div>
+
+          <div class="bg-white border border-gray-200 rounded-2xl p-6">
+            <div class="bg-gray-50 rounded-lg w-10 h-10 flex items-center justify-center mb-4">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 20 20">
+                <rect x="3" y="3" width="14" height="14" rx="2" stroke="#374151" stroke-width="1.66667" fill="none" />
+                <path d="M7 10h6" stroke="#374151" stroke-linecap="round" stroke-width="1.66667" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold mb-2">Riesgo de Cadena de Suministro</h3>
+            <p class="text-sm text-gray-600">
+              Evaluación del riesgo de sus proveedores y socios de negocio. Identifique si la
+              superficie de ataque de terceros puede convertirse en un vector de entrada a su red.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Free Diagnostic Offer -->
+    <section class="py-16 sm:py-20 lg:py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-gradient-to-r from-[#111827] to-[#1f2937] rounded-2xl overflow-hidden">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 p-8 lg:p-12">
+            <div>
+              <span class="inline-block bg-red-600 text-white text-xs font-bold px-4 py-1 rounded-full mb-6">
+                SIN COSTO
+              </span>
+              <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">
+                Diagnóstico Gratuito de Exposición Digital
+              </h2>
+              <p class="text-gray-300 mb-6">
+                Descubra en 48 horas que informacion de su empresa esta expuesta en internet
+                y la dark web. Sin compromiso, sin instalar nada, sin afectar su operacion.
+              </p>
+              <ul class="space-y-3 mb-8">
+                <li class="flex items-center gap-3">
+                  <svg class="w-5 h-5 text-green-400" fill="none" viewBox="0 0 14 14">
+                    <path d="M11.6667 3.5L5.25 9.91667L2.33333 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.16667" />
+                  </svg>
+                  <span class="text-gray-300">Credenciales filtradas de sus empleados</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <svg class="w-5 h-5 text-green-400" fill="none" viewBox="0 0 14 14">
+                    <path d="M11.6667 3.5L5.25 9.91667L2.33333 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.16667" />
+                  </svg>
+                  <span class="text-gray-300">Dominios y servicios expuestos</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <svg class="w-5 h-5 text-green-400" fill="none" viewBox="0 0 14 14">
+                    <path d="M11.6667 3.5L5.25 9.91667L2.33333 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.16667" />
+                  </svg>
+                  <span class="text-gray-300">Reporte ejecutivo con recomendaciones</span>
+                </li>
+              </ul>
+              <a href="/contacto" class="bg-gradient-to-r from-red-600 to-red-700 text-white font-semibold px-8 py-4 rounded-full hover:from-red-700 hover:to-red-800 transition shadow-lg inline-flex items-center justify-center gap-2">
+                Solicitar Diagnóstico Gratuito
+              </a>
+            </div>
+
+            <div class="flex flex-col justify-center space-y-6">
+              <div class="flex items-start gap-4">
+                <div class="bg-red-600 rounded-full p-2">
+                  <svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 16 16">
+                    <path d="M13.854 3.646a.5.5 0 010 .708l-7 7a.5.5 0 01-.708 0l-3.5-3.5a.5.5 0 11.708-.708L6.5 10.293l6.646-6.647a.5.5 0 01.708 0z" fill="currentColor" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="text-white font-semibold mb-1">No requiere instalacion</h3>
+                  <p class="text-gray-400 text-sm">Todo el analisis se realiza externamente, sin acceso a su red</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <div class="bg-red-600 rounded-full p-2">
+                  <svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 16 16">
+                    <path d="M13.854 3.646a.5.5 0 010 .708l-7 7a.5.5 0 01-.708 0l-3.5-3.5a.5.5 0 11.708-.708L6.5 10.293l6.646-6.647a.5.5 0 01.708 0z" fill="currentColor" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="text-white font-semibold mb-1">Resultados en 48 horas</h3>
+                  <p class="text-gray-400 text-sm">Reporte completo con hallazgos y recomendaciones accionables</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <div class="bg-red-600 rounded-full p-2">
+                  <svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 16 16">
+                    <path d="M13.854 3.646a.5.5 0 010 .708l-7 7a.5.5 0 01-.708 0l-3.5-3.5a.5.5 0 11.708-.708L6.5 10.293l6.646-6.647a.5.5 0 01.708 0z" fill="currentColor" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="text-white font-semibold mb-1">Sin compromiso</h3>
+                  <p class="text-gray-400 text-sm">El diagnóstico es completamente gratuito y sin obligacion de compra</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="py-16 sm:py-20 lg:py-24 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl sm:text-4xl font-bold mb-4">
+            Como Funciona Enthec
+          </h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            Un proceso simple que le da visibilidad total sobre su exposicion digital.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-2xl p-8 border border-gray-200">
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+            <div class="text-center">
+              <div class="bg-red-100 text-red-600 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 font-bold text-lg">
+                1
+              </div>
+              <h3 class="font-semibold mb-2">Registro de Activos</h3>
+              <p class="text-sm text-gray-600">
+                Definimos los dominios, direcciones IP y datos de identidad que desea monitorear.
+              </p>
+            </div>
+            <div class="text-center">
+              <div class="bg-red-100 text-red-600 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 font-bold text-lg">
+                2
+              </div>
+              <h3 class="font-semibold mb-2">Escaneo Automatico</h3>
+              <p class="text-sm text-gray-600">
+                Enthec rastrea internet, la dark web y fuentes de inteligencia en busca de exposiciones.
+              </p>
+            </div>
+            <div class="text-center">
+              <div class="bg-red-100 text-red-600 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 font-bold text-lg">
+                3
+              </div>
+              <h3 class="font-semibold mb-2">Alertas y Reporte</h3>
+              <p class="text-sm text-gray-600">
+                Reciba alertas inmediatas ante nuevas exposiciones y reportes periodicos de estado.
+              </p>
+            </div>
+            <div class="text-center">
+              <div class="bg-red-100 text-red-600 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 font-bold text-lg">
+                4
+              </div>
+              <h3 class="font-semibold mb-2">Remediación Guiada</h3>
+              <p class="text-sm text-gray-600">
+                Nuestro equipo le acompana en la correccion de cada hallazgo con recomendaciones claras.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ¿Qué Encuentra el Monitoreo? -->
+    <section class="py-16 sm:py-20 lg:py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl sm:text-4xl font-bold mb-4 text-gray-900">
+            ¿Qué Encuentra el Monitoreo?
+          </h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            Esto es lo que Enthec descubre habitualmente en las primeras 48 horas de monitoreo
+            de una organización que nunca ha realizado un diagnóstico de superficie de ataque.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-lg transition-all duration-300 cursor-pointer">
+            <div class="flex items-center gap-4 mb-5">
+              <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z" />
+                </svg>
+              </div>
+              <h3 class="font-bold text-gray-900 text-xl">Credenciales Filtradas</h3>
+            </div>
+            <p class="text-sm text-gray-600 leading-relaxed mb-4">
+              Enthec rastrea continuamente bases de datos de credenciales comprometidas en la
+              dark web, foros de hackers y canales de Telegram. Cuando detecta un email corporativo
+              con contraseña expuesta, genera una alerta inmediata con el hash o contraseña en
+              texto claro para que el equipo de seguridad actúe antes de que el atacante lo haga.
+            </p>
+            <div class="bg-red-50 border border-red-100 rounded-xl p-4">
+              <p class="text-xs text-red-700 font-medium">Ejemplo real:</p>
+              <p class="text-xs text-red-600 mt-1">
+                "Se detectaron 23 credenciales de empleados en una filtración de LinkedIn del
+                servicio X. 8 de ellas coinciden con el dominio @suempresa.com y la contraseña
+                es idéntica a la del sistema SAP interno."
+              </p>
+            </div>
+          </div>
+
+          <div class="bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-lg transition-all duration-300 cursor-pointer">
+            <div class="flex items-center gap-4 mb-5">
+              <div class="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-orange-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />
+                </svg>
+              </div>
+              <h3 class="font-bold text-gray-900 text-xl">Servicios Expuestos</h3>
+            </div>
+            <p class="text-sm text-gray-600 leading-relaxed mb-4">
+              Subdominios olvidados con paneles de administración públicos, instancias de Jira o
+              Confluence expuestas a internet, paneles de WordPress sin actualizar, servidores
+              de staging con credenciales por defecto y puertos abiertos que no deberían estar
+              accesibles desde el exterior de la organización.
+            </p>
+            <div class="bg-orange-50 border border-orange-100 rounded-xl p-4">
+              <p class="text-xs text-orange-700 font-medium">Ejemplo real:</p>
+              <p class="text-xs text-orange-600 mt-1">
+                "Se detectó dev.suempresa.com accesible públicamente con phpMyAdmin 5.0.2
+                (versión con vulnerabilidad CVE conocida) y credenciales admin/admin activas."
+              </p>
+            </div>
+          </div>
+
+          <div class="bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-lg transition-all duration-300 cursor-pointer">
+            <div class="flex items-center gap-4 mb-5">
+              <div class="w-12 h-12 bg-yellow-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-yellow-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <h3 class="font-bold text-gray-900 text-xl">Shadow IT</h3>
+            </div>
+            <p class="text-sm text-gray-600 leading-relaxed mb-4">
+              Aplicaciones SaaS que los empleados usan con el email corporativo sin aprobación
+              del área de TI: herramientas de productividad, almacenamiento en la nube personal,
+              plataformas de IA generativa con acceso a documentos de trabajo, o integraciones
+              OAuth que los empleados autorizaron sin supervisión y que tienen acceso amplio a
+              sus cuentas de Microsoft 365 o Google Workspace.
+            </p>
+            <div class="bg-yellow-50 border border-yellow-100 rounded-xl p-4">
+              <p class="text-xs text-yellow-700 font-medium">Ejemplo real:</p>
+              <p class="text-xs text-yellow-600 mt-1">
+                "47 cuentas corporativas autorizadas en Notion, 12 en una herramienta de IA
+                con acceso completo a Drive. Ninguna registrada en el inventario de aplicaciones."
+              </p>
+            </div>
+          </div>
+
+          <div class="bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-lg transition-all duration-300 cursor-pointer">
+            <div class="flex items-center gap-4 mb-5">
+              <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                </svg>
+              </div>
+              <h3 class="font-bold text-gray-900 text-xl">Menciones en Dark Web</h3>
+            </div>
+            <p class="text-sm text-gray-600 leading-relaxed mb-4">
+              Discusiones sobre su organización en foros de ciberdelincuentes, venta de accesos
+              RDP o VPN a redes corporativas, datos de clientes o empleados publicados en foros
+              de filtraciones, o debates sobre vulnerabilidades específicas de su infraestructura
+              que los atacantes están evaluando explotar.
+            </p>
+            <div class="bg-purple-50 border border-purple-100 rounded-xl p-4">
+              <p class="text-xs text-purple-700 font-medium">Ejemplo real:</p>
+              <p class="text-xs text-purple-600 mt-1">
+                "Se detectó en un foro de ransomware la venta de acceso VPN a una empresa del
+                sector financiero de Bogotá. Características coinciden con su organización."
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Enthec vs Escaneo de Vulnerabilidades -->
+    <section class="py-16 sm:py-20 lg:py-24 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl sm:text-4xl font-bold mb-4 text-gray-900">
+            Enthec vs Escaneo de Vulnerabilidades
+          </h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            Son herramientas complementarias, no competidoras. Entienda qué cubre cada una y
+            por qué necesita ambas para una postura de seguridad completa.
+          </p>
+        </div>
+
+        <div class="rounded-2xl overflow-hidden border border-gray-200 mb-8">
+          <div class="grid grid-cols-3 bg-gray-900 text-white">
+            <div class="p-5 font-semibold text-sm">Dimensión</div>
+            <div class="p-5 font-semibold text-sm text-center border-l border-gray-700">
+              Escaneo de Vulnerabilidades
+              <div class="text-xs font-normal text-gray-400 mt-1">Nessus, Qualys, Vicarius vRx</div>
+            </div>
+            <div class="p-5 font-semibold text-sm text-center border-l border-gray-700">
+              Enthec (EASM)
+              <div class="text-xs font-normal text-green-300 mt-1">Perspectiva del atacante externo</div>
+            </div>
+          </div>
+
+          <div class="divide-y divide-gray-100">
+            <div class="grid grid-cols-3 bg-white hover:bg-gray-50 transition-colors">
+              <div class="p-5 text-sm font-medium text-gray-900">Perspectiva de análisis</div>
+              <div class="p-5 border-l border-gray-100">
+                <div class="flex items-center gap-2 mb-1">
+                  <svg class="w-4 h-4 text-blue-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                  <span class="text-sm font-semibold text-gray-900">Desde adentro</span>
+                </div>
+                <p class="text-xs text-gray-600">Requiere agente instalado o acceso autenticado a la red interna. Ve lo que ve un administrador de sistemas.</p>
+              </div>
+              <div class="p-5 border-l border-gray-100">
+                <div class="flex items-center gap-2 mb-1">
+                  <svg class="w-4 h-4 text-red-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064" /></svg>
+                  <span class="text-sm font-semibold text-gray-900">Desde afuera</span>
+                </div>
+                <p class="text-xs text-gray-600">100% externo, sin instalación. Ve exactamente lo que ve un atacante que investiga su organización desde internet.</p>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-3 bg-gray-50 hover:bg-gray-100 transition-colors">
+              <div class="p-5 text-sm font-medium text-gray-900">Activos que cubre</div>
+              <div class="p-5 border-l border-gray-100">
+                <p class="text-xs text-gray-600">Endpoints, servidores y sistemas que están en el inventario de TI y tienen agente instalado.</p>
+              </div>
+              <div class="p-5 border-l border-gray-100">
+                <p class="text-xs text-gray-600">Dominios, subdominios, IPs expuestas, certificados SSL caducados, servicios mal configurados, shadow IT y presencia en dark web.</p>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-3 bg-white hover:bg-gray-50 transition-colors">
+              <div class="p-5 text-sm font-medium text-gray-900">Detecta credenciales filtradas</div>
+              <div class="p-5 border-l border-gray-100">
+                <svg class="w-5 h-5 text-red-400 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12" /></svg>
+              </div>
+              <div class="p-5 border-l border-gray-100">
+                <svg class="w-5 h-5 text-green-500 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg>
+                <p class="text-xs text-gray-600 text-center mt-1">Monitoreo dark web en tiempo real</p>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-3 bg-gray-50 hover:bg-gray-100 transition-colors">
+              <div class="p-5 text-sm font-medium text-gray-900">Detecta suplantación de marca</div>
+              <div class="p-5 border-l border-gray-100">
+                <svg class="w-5 h-5 text-red-400 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12" /></svg>
+              </div>
+              <div class="p-5 border-l border-gray-100">
+                <svg class="w-5 h-5 text-green-500 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg>
+                <p class="text-xs text-gray-600 text-center mt-1">Dominios lookalike y phishing</p>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-3 bg-white hover:bg-gray-50 transition-colors">
+              <div class="p-5 text-sm font-medium text-gray-900">Remediación de vulnerabilidades</div>
+              <div class="p-5 border-l border-gray-100">
+                <svg class="w-5 h-5 text-green-500 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg>
+                <p class="text-xs text-gray-600 text-center mt-1">Parcheo automático</p>
+              </div>
+              <div class="p-5 border-l border-gray-100">
+                <svg class="w-5 h-5 text-yellow-500 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                <p class="text-xs text-gray-600 text-center mt-1">Guía de remediación</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white border border-gray-200 rounded-xl p-6">
+          <div class="flex items-start gap-4">
+            <svg class="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+            </svg>
+            <p class="text-sm text-gray-600">
+              <span class="font-semibold text-gray-900">La combinación óptima:</span>
+              Use <a href="/vicarius" class="text-red-600 underline hover:text-red-800">Vicarius vRx</a> para gestionar y remediar vulnerabilidades en sus activos internos,
+              y Enthec para monitorear lo que un atacante ve desde afuera. Juntos cubren la
+              postura de seguridad completa: adentro y afuera del perímetro.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 sm:py-20 lg:py-24 bg-white">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4 text-center">
+          Preguntas Frecuentes sobre Enthec
+        </h2>
+        <p class="text-gray-600 text-center mb-12">
+          Resolvemos las dudas más comunes sobre monitoreo de superficie de ataque.
+        </p>
+
+        <div class="space-y-4">
+          <details class="bg-gray-50 border border-gray-200 rounded-xl group">
+            <summary class="font-semibold text-lg p-6 cursor-pointer list-none flex items-center justify-between">
+              ¿Necesito instalar algo en mis servidores?
+              <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+            </summary>
+            <div class="px-6 pb-6 text-gray-600">
+              No. Enthec trabaja de forma 100% externa, monitoreando unicamente lo que es visible desde
+              internet. No requiere agentes, acceso a su red ni cambios en su infraestructura.
+            </div>
+          </details>
+
+          <details class="bg-gray-50 border border-gray-200 rounded-xl group">
+            <summary class="font-semibold text-lg p-6 cursor-pointer list-none flex items-center justify-between">
+              ¿Qué tan frecuente es el monitoreo?
+              <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+            </summary>
+            <div class="px-6 pb-6 text-gray-600">
+              El monitoreo es continuo, 24 horas al dia, 7 dias a la semana. Las alertas de
+              credenciales filtradas se envian en tiempo real tan pronto se detecta la exposicion.
+            </div>
+          </details>
+
+          <details class="bg-gray-50 border border-gray-200 rounded-xl group">
+            <summary class="font-semibold text-lg p-6 cursor-pointer list-none flex items-center justify-between">
+              ¿En qué consiste el diagnóstico gratuito?
+              <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+            </summary>
+            <div class="px-6 pb-6 text-gray-600">
+              Es un análisis inicial de su dominio corporativo que revela credenciales filtradas,
+              servicios expuestos y vulnerabilidades visibles externamente. El resultado es un
+              reporte ejecutivo con hallazgos concretos y recomendaciones de remediación. Es
+              completamente gratuito y sin obligacion de compra.
+            </div>
+          </details>
+
+          <details class="bg-gray-50 border border-gray-200 rounded-xl group">
+            <summary class="font-semibold text-lg p-6 cursor-pointer list-none flex items-center justify-between">
+              ¿Qué tipo de empresas necesitan este servicio?
+              <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+            </summary>
+            <div class="px-6 pb-6 text-gray-600">
+              Cualquier organizacion con presencia digital se beneficia. Es especialmente critico
+              para empresas del sector financiero, salud, gobierno y cualquier organizacion que
+              maneje datos sensibles de clientes. Si tiene empleados con correo corporativo, ya
+              tiene superficie de ataque que necesita monitorear.
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 sm:py-20 lg:py-24 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-gradient-to-r from-[#111827] to-[#1f2937] rounded-2xl overflow-hidden">
+          <div class="p-8 lg:p-12 text-center">
+            <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">
+              Descubra lo que los atacantes ya saben de su empresa
+            </h2>
+            <p class="text-gray-300 mb-8 max-w-2xl mx-auto">
+              Solicite su diagnóstico gratuito hoy y reciba un reporte completo de su
+              exposicion digital en 48 horas. Sin costo, sin compromiso.
+            </p>
+            <a href="/contacto" class="bg-gradient-to-r from-red-600 to-red-700 text-white font-semibold px-8 py-4 rounded-full hover:from-red-700 hover:to-red-800 transition shadow-lg inline-flex items-center justify-center gap-2">
+              Solicitar Diagnóstico Gratuito
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Soluciones Relacionadas -->
+  <section class="py-12 bg-gray-50 border-t border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-lg font-bold text-gray-900 mb-6">Soluciones Relacionadas</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+        <a href="/vicarius" class="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-all duration-300 text-center">
+          <p class="font-semibold text-sm text-gray-900">Vicarius vRx</p>
+          <p class="text-xs text-gray-500 mt-1">Vulnerabilidades</p>
+        </a>
+        <a href="/stellar-cyber" class="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-all duration-300 text-center">
+          <p class="font-semibold text-sm text-gray-900">Stellar Cyber</p>
+          <p class="text-xs text-gray-500 mt-1">Open XDR / SOC</p>
+        </a>
+        <a href="/hacking-etico" class="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-all duration-300 text-center">
+          <p class="font-semibold text-sm text-gray-900">Hacking Etico</p>
+          <p class="text-xs text-gray-500 mt-1">Pentesting</p>
+        </a>
+        <a href="/rthreat-bogota-colombia" class="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-all duration-300 text-center">
+          <p class="font-semibold text-sm text-gray-900">Red Team & BAS</p>
+          <p class="text-xs text-gray-500 mt-1">Simulación ataques</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+  <WhatsAppButton />
+</BaseLayout>

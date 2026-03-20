@@ -1,0 +1,752 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Navbar from '@components/Navbar.astro';
+import Footer from '@components/Footer.astro';
+import WhatsAppButton from '@components/WhatsAppButton.astro';
+import { seoData } from '@data/seo';
+
+const seo = seoData['cableado-estructurado'];
+---
+
+<BaseLayout seo={seo}>
+  <Navbar />
+
+  <!-- Hero Section - Clean White Design -->
+  <section class="relative py-24 sm:py-32 lg:py-48 bg-white overflow-hidden">
+    <!-- Background blur effect -->
+    <div class="absolute bg-[rgba(254,242,242,0.5)] blur-[32px] right-[-266.67px] rounded-[9999px] size-[800px] top-[-200px]"></div>
+
+    <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <!-- Left Content -->
+        <div class="max-w-2xl">
+          <!-- Badge -->
+          <div class="inline-flex items-center gap-2 bg-[#0f172a] px-3 py-1.5 rounded mb-8">
+            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 14 14">
+              <circle cx="7" cy="7" r="5" stroke="#EF4444" stroke-width="1.16667" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span class="text-white text-[10px] font-semibold tracking-[0.5px] uppercase">
+              Infraestructura de Conectividad Empresarial
+            </span>
+          </div>
+
+          <!-- Main Heading -->
+          <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-tight mb-6">
+            <span class="block text-[#0f172a]">Cableado</span>
+            <span class="block text-[#dc2626]">Estructurado</span>
+            <span class="block text-[#0f172a]">Certificado.</span>
+          </h1>
+
+          <!-- Description -->
+          <p class="text-lg text-[#64748b] leading-relaxed mb-10 max-w-lg">
+            Diseñamos e implementamos infraestructura de red de clase empresarial con certificación Fluke,
+            garantía de 25 años y cumplimiento de estándares TIA/EIA para operaciones críticas.
+          </p>
+
+          <!-- CTAs -->
+          <div class="flex flex-col sm:flex-row gap-4 mb-12">
+            <a href="/contacto" class="bg-[#0f172a] px-8 py-4 rounded text-white text-sm font-semibold hover:bg-[#1e293b] transition shadow-lg text-center">
+              Solicitar Auditoría Técnica
+            </a>
+            <a href="#categorias" class="border-2 border-[#e5e7eb] px-8 py-4 rounded text-[#0f172a] text-sm font-semibold hover:bg-[#f8fafc] transition text-center">
+              Ver Certificaciones
+            </a>
+          </div>
+
+          <!-- Stats -->
+          <div class="grid grid-cols-3 gap-6">
+            <div>
+              <div class="text-3xl font-bold text-[#dc2626] mb-1">25 años</div>
+              <div class="text-xs text-[#64748b] uppercase tracking-wider">Garantía</div>
+            </div>
+            <div>
+              <div class="text-3xl font-bold text-[#dc2626] mb-1">Cat 6A</div>
+              <div class="text-xs text-[#64748b] uppercase tracking-wider">10 Gbps</div>
+            </div>
+            <div>
+              <div class="text-3xl font-bold text-[#dc2626] mb-1">TIA/EIA</div>
+              <div class="text-xs text-[#64748b] uppercase tracking-wider">Certificado</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Content - Image + Floating Info Cards -->
+        <div class="relative h-[500px] hidden lg:block">
+          <!-- Hero Image -->
+          <div class="absolute inset-0 flex items-center justify-center">
+            <img src="/assets/icono-firewall-bloques-seguridad.webp" alt="Infraestructura de cableado estructurado certificado para empresas" class="w-64 h-64 object-contain opacity-80" width="256" height="256" loading="lazy" />
+          </div>
+          <!-- Card 1 - Cat6A -->
+          <div class="absolute right-0 top-10 bg-white border border-[#e5e7eb] rounded-xl shadow-xl p-6 w-72">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="bg-[#fef2f2] rounded p-2">
+                <svg class="w-5 h-5" fill="none" viewBox="0 0 20 20">
+                  <path d="M10 3.33337V16.6667M10 16.6667L15.8333 10.8334M10 16.6667L4.16667 10.8334" stroke="#DC2626" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <span class="text-xs font-semibold text-[#64748b] uppercase tracking-wider">Categoría 6A</span>
+            </div>
+            <div class="text-2xl font-bold text-[#0f172a] mb-1">10 Gbps</div>
+            <div class="text-sm text-[#64748b]">Velocidad garantizada hasta 100 metros</div>
+          </div>
+
+          <!-- Card 2 - Certificación -->
+          <div class="absolute left-0 bottom-20 bg-[#0f172a] border border-[#1e293b] rounded-xl shadow-2xl p-6 w-80">
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-xs font-semibold text-[#94a3b8] uppercase tracking-wider">Certificación Fluke</span>
+              <div class="bg-[#16a34a] text-white text-[10px] font-bold px-2 py-1 rounded">
+                APROBADO
+              </div>
+            </div>
+            <div class="text-sm text-[#e2e8f0] mb-4">
+              Todos los enlaces certificados con equipos Fluke DSX-5000 según normas TIA/EIA-568-C
+            </div>
+            <div class="flex gap-2">
+              <div class="h-1 flex-1 bg-[#dc2626] rounded"></div>
+              <div class="h-1 flex-1 bg-[#dc2626] rounded"></div>
+              <div class="h-1 flex-1 bg-[#dc2626] rounded"></div>
+              <div class="h-1 flex-1 bg-[#334155] rounded"></div>
+            </div>
+          </div>
+
+          <!-- Card 3 - Standards -->
+          <div class="absolute right-10 bottom-0 bg-white border border-[#e5e7eb] rounded-xl shadow-lg p-5">
+            <div class="flex items-center gap-3">
+              <div class="text-xs font-semibold text-[#0f172a]">TIA/EIA</div>
+              <div class="w-px h-4 bg-[#e5e7eb]"></div>
+              <div class="text-xs font-semibold text-[#0f172a]">ANSI</div>
+              <div class="w-px h-4 bg-[#e5e7eb]"></div>
+              <div class="text-xs font-semibold text-[#0f172a]">ISO/IEC</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ¿Por Qué Implementar Infraestructura Profesional? -->
+  <section class="py-16 sm:py-20 lg:py-24 bg-[#f9fafb]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mb-12">
+        <span class="text-[#dc2626] text-xs font-bold uppercase tracking-wider">Infraestructura Crítica</span>
+        <h2 class="text-3xl sm:text-4xl font-bold mt-4 mb-6 text-[#0f172a]">
+          ¿Por Qué Implementar Cableado Estructurado Profesional?
+        </h2>
+        <p class="text-lg text-[#64748b] leading-relaxed">
+          Una red mal diseñada limita el crecimiento y genera costos ocultos. El cableado estructurado es la
+          columna vertebral de la tecnología empresarial; un diseño incorrecto provoca caídas de red, baja
+          velocidad y riesgos operativos.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-white border border-[#e5e7eb] rounded-xl p-6 hover:shadow-lg transition">
+          <div class="bg-[#fef2f2] rounded-lg w-12 h-12 flex items-center justify-center mb-6">
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24">
+              <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="#DC2626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-3 text-[#0f172a]">Estabilidad Operativa</h3>
+          <p class="text-[#64748b] leading-relaxed">
+            Eliminación de interferencias y tiempos de inactividad. Su red se convierte en un activo confiable,
+            no en un problema recurrente.
+          </p>
+        </div>
+
+        <div class="bg-white border border-[#e5e7eb] rounded-xl p-6 hover:shadow-lg transition">
+          <div class="bg-[#fef2f2] rounded-lg w-12 h-12 flex items-center justify-center mb-6">
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24">
+              <path d="M13 7H21M13 12H21M13 17H21M3 7L5 9L9 5M3 12L5 14L9 10M3 17L5 19L9 15" stroke="#DC2626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-3 text-[#0f172a]">Escalabilidad Garantizada</h3>
+          <p class="text-[#64748b] leading-relaxed">
+            Infraestructura preparada para tecnologías futuras, Cloud Computing, VoIP y crecimiento de usuarios
+            sin rediseños costosos.
+          </p>
+        </div>
+
+        <div class="bg-white border border-[#e5e7eb] rounded-xl p-6 hover:shadow-lg transition">
+          <div class="bg-[#fef2f2] rounded-lg w-12 h-12 flex items-center justify-center mb-6">
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24">
+              <path d="M12 15V3M12 15L8 11M12 15L16 11M2 17L2.621 19.485C2.72915 19.9177 2.78322 20.1341 2.88684 20.3024C2.97853 20.4507 3.10396 20.5761 3.25229 20.6678C3.42063 20.7714 3.63699 20.8255 4.06969 20.9335L11.3741 22.6529C11.562 22.6963 11.6559 22.718 11.7504 22.7268C11.8338 22.7346 11.9176 22.7346 12.001 22.7268C12.0955 22.718 12.1894 22.6963 12.3773 22.6529L19.6817 20.9335C20.1144 20.8255 20.3308 20.7714 20.4991 20.6678C20.6474 20.5761 20.7729 20.4507 20.8646 20.3024C20.9682 20.1341 21.0222 19.9177 21.1304 19.485L22 17" stroke="#DC2626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-3 text-[#0f172a]">Seguridad y Orden</h3>
+          <p class="text-[#64748b] leading-relaxed">
+            Organización profesional en racks y centros de datos, facilitando mantenimiento, certificación y
+            cumplimiento normativo.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Servicios Integrales -->
+  <section class="py-16 sm:py-20 lg:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4 text-[#0f172a]">
+          Servicios Integrales de Cableado
+        </h2>
+        <p class="text-lg text-[#64748b] max-w-3xl mx-auto">
+          Desde el diseño hasta el mantenimiento, cubrimos todas las fases del proyecto con expertise técnico
+          y certificaciones internacionales.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Diseño e Ingeniería -->
+        <div class="group">
+          <div class="bg-[#f9fafb] border border-[#e5e7eb] rounded-xl p-8 hover:border-[#dc2626] transition">
+            <div class="flex items-center gap-4 mb-6">
+              <div class="bg-white border-2 border-[#dc2626] rounded-lg p-3">
+                <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24">
+                  <path d="M14 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V8L14 2Z" stroke="#DC2626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M14 2V8H20" stroke="#DC2626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <h3 class="text-xl font-semibold text-[#0f172a]">Diseño e Ingeniería</h3>
+            </div>
+            <p class="text-[#64748b] leading-relaxed mb-4">
+              Análisis de necesidades, diseño de topología de red y planificación de crecimiento futuro según
+              mejores prácticas BICSI.
+            </p>
+            <ul class="space-y-2 text-sm text-[#64748b]">
+              <li class="flex items-center gap-2">
+                <div class="w-1.5 h-1.5 bg-[#dc2626] rounded-full"></div>
+                Visita técnica y levantamiento
+              </li>
+              <li class="flex items-center gap-2">
+                <div class="w-1.5 h-1.5 bg-[#dc2626] rounded-full"></div>
+                Planos AutoCAD certificados
+              </li>
+              <li class="flex items-center gap-2">
+                <div class="w-1.5 h-1.5 bg-[#dc2626] rounded-full"></div>
+                Cálculo de materiales optimizado
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Instalación Certificada -->
+        <div class="group">
+          <div class="bg-[#f9fafb] border border-[#e5e7eb] rounded-xl p-8 hover:border-[#dc2626] transition">
+            <div class="flex items-center gap-4 mb-6">
+              <div class="bg-white border-2 border-[#dc2626] rounded-lg p-3">
+                <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24">
+                  <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#DC2626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M8 12L11 15L16 9" stroke="#DC2626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <h3 class="text-xl font-semibold text-[#0f172a]">Instalación Certificada</h3>
+            </div>
+            <p class="text-[#64748b] leading-relaxed mb-4">
+              Instaladores certificados con cumplimiento de normas TIA/EIA. Certificación Fluke Networks incluida
+              en cada punto de red.
+            </p>
+            <ul class="space-y-2 text-sm text-[#64748b]">
+              <li class="flex items-center gap-2">
+                <div class="w-1.5 h-1.5 bg-[#dc2626] rounded-full"></div>
+                Técnicos BICSI certificados
+              </li>
+              <li class="flex items-center gap-2">
+                <div class="w-1.5 h-1.5 bg-[#dc2626] rounded-full"></div>
+                Fluke DSX-5000 testing
+              </li>
+              <li class="flex items-center gap-2">
+                <div class="w-1.5 h-1.5 bg-[#dc2626] rounded-full"></div>
+                Reportes digitales firmados
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Fibra Óptica -->
+        <div class="group">
+          <div class="bg-[#f9fafb] border border-[#e5e7eb] rounded-xl p-8 hover:border-[#dc2626] transition">
+            <div class="flex items-center gap-4 mb-6">
+              <div class="bg-white border-2 border-[#dc2626] rounded-lg p-3">
+                <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24">
+                  <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke="#DC2626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <h3 class="text-xl font-semibold text-[#0f172a]">Fibra Óptica</h3>
+            </div>
+            <p class="text-[#64748b] leading-relaxed mb-4">
+              Instalación de fibra óptica monomodo y multimodo. Fusión con equipo OTDR y certificación con
+              medidores de potencia óptica.
+            </p>
+            <ul class="space-y-2 text-sm text-[#64748b]">
+              <li class="flex items-center gap-2">
+                <div class="w-1.5 h-1.5 bg-[#dc2626] rounded-full"></div>
+                Fusión certificada (&lt; 0.1 dB)
+              </li>
+              <li class="flex items-center gap-2">
+                <div class="w-1.5 h-1.5 bg-[#dc2626] rounded-full"></div>
+                OTDR testing completo
+              </li>
+              <li class="flex items-center gap-2">
+                <div class="w-1.5 h-1.5 bg-[#dc2626] rounded-full"></div>
+                Hasta 40 Gbps/100 Gbps
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Rack Organization -->
+        <div class="group">
+          <div class="bg-[#f9fafb] border border-[#e5e7eb] rounded-xl p-8 hover:border-[#dc2626] transition">
+            <div class="flex items-center gap-4 mb-6">
+              <div class="bg-white border-2 border-[#dc2626] rounded-lg p-3">
+                <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24">
+                  <path d="M4 6H20M4 12H20M4 18H20" stroke="#DC2626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <h3 class="text-xl font-semibold text-[#0f172a]">Organización de Racks</h3>
+            </div>
+            <p class="text-[#64748b] leading-relaxed mb-4">
+              Instalación de gabinetes de piso y pared, patch panels, organizadores horizontales y verticales,
+              UPS y ventilación.
+            </p>
+            <ul class="space-y-2 text-sm text-[#64748b]">
+              <li class="flex items-center gap-2">
+                <div class="w-1.5 h-1.5 bg-[#dc2626] rounded-full"></div>
+                Racks 19" profesionales
+              </li>
+              <li class="flex items-center gap-2">
+                <div class="w-1.5 h-1.5 bg-[#dc2626] rounded-full"></div>
+                Etiquetado inteligente
+              </li>
+              <li class="flex items-center gap-2">
+                <div class="w-1.5 h-1.5 bg-[#dc2626] rounded-full"></div>
+                Sistema de gestión de cables
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Mantenimiento -->
+        <div class="group">
+          <div class="bg-[#f9fafb] border border-[#e5e7eb] rounded-xl p-8 hover:border-[#dc2626] transition">
+            <div class="flex items-center gap-4 mb-6">
+              <div class="bg-white border-2 border-[#dc2626] rounded-lg p-3">
+                <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24">
+                  <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#DC2626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M12 6V12L16 14" stroke="#DC2626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <h3 class="text-xl font-semibold text-[#0f172a]">Mantenimiento</h3>
+            </div>
+            <p class="text-[#64748b] leading-relaxed mb-4">
+              Mantenimiento preventivo y correctivo. Diagnóstico con equipos certificadores, reparación de enlaces
+              y actualización de infraestructura.
+            </p>
+            <ul class="space-y-2 text-sm text-[#64748b]">
+              <li class="flex items-center gap-2">
+                <div class="w-1.5 h-1.5 bg-[#dc2626] rounded-full"></div>
+                Soporte técnico 24/7
+              </li>
+              <li class="flex items-center gap-2">
+                <div class="w-1.5 h-1.5 bg-[#dc2626] rounded-full"></div>
+                Respuesta en 2 horas
+              </li>
+              <li class="flex items-center gap-2">
+                <div class="w-1.5 h-1.5 bg-[#dc2626] rounded-full"></div>
+                Contratos de mantenimiento
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Certificación Extendida -->
+        <div class="group">
+          <div class="bg-[#f9fafb] border border-[#e5e7eb] rounded-xl p-8 hover:border-[#dc2626] transition">
+            <div class="flex items-center gap-4 mb-6">
+              <div class="bg-white border-2 border-[#dc2626] rounded-lg p-3">
+                <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24">
+                  <path d="M9 12L11 14L15 10M20.6179 5.98434C20.4132 5.99472 20.2072 5.99997 20 5.99997C16.9265 5.99997 14.123 4.84453 11.9999 2.94434C9.87691 4.84446 7.07339 5.99985 4 5.99985C3.79277 5.99985 3.58678 5.9946 3.38213 5.98422C3.1327 6.94783 3 7.95842 3 9.00001C3 14.5915 6.82432 19.2898 12 20.622C17.1757 19.2898 21 14.5915 21 9.00001C21 7.95847 20.8673 6.94791 20.6179 5.98434Z" stroke="#DC2626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <h3 class="text-xl font-semibold text-[#0f172a]">Certificación Extendida</h3>
+            </div>
+            <p class="text-[#64748b] leading-relaxed mb-4">
+              Garantía de fabricante de 25 años. Cobertura total en materiales y mano de obra respaldada por
+              marcas líderes.
+            </p>
+            <ul class="space-y-2 text-sm text-[#64748b]">
+              <li class="flex items-center gap-2">
+                <div class="w-1.5 h-1.5 bg-[#dc2626] rounded-full"></div>
+                Panduit / CommScope / Belden
+              </li>
+              <li class="flex items-center gap-2">
+                <div class="w-1.5 h-1.5 bg-[#dc2626] rounded-full"></div>
+                25 años de garantía
+              </li>
+              <li class="flex items-center gap-2">
+                <div class="w-1.5 h-1.5 bg-[#dc2626] rounded-full"></div>
+                Documentación as-built
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Proceso de Implementación -->
+  <section class="py-16 sm:py-20 lg:py-24 bg-[#0f172a]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <span class="text-[#dc2626] text-xs font-bold uppercase tracking-wider">Metodología Probada</span>
+        <h2 class="text-3xl sm:text-4xl font-bold mt-4 mb-4 text-white">
+          Proceso de Implementación en 4 Fases
+        </h2>
+        <p class="text-lg text-[#94a3b8] max-w-3xl mx-auto">
+          Metodología estructurada que garantiza resultados exitosos en tiempo y presupuesto, cumpliendo
+          con todos los estándares internacionales.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="bg-[#1e293b] border border-[#334155] rounded-xl p-6 hover:border-[#dc2626] transition">
+          <div class="flex items-center justify-center w-12 h-12 bg-[#dc2626] rounded-full mb-6 text-xl font-bold text-white">1</div>
+          <h3 class="text-lg font-semibold mb-3 text-white">Análisis Técnico</h3>
+          <p class="text-sm text-[#94a3b8] mb-4 leading-relaxed">
+            Visita técnica para evaluar infraestructura actual, requerimientos de ancho de banda y proyecciones de crecimiento.
+          </p>
+          <div class="text-[#dc2626] text-xs font-semibold">Duración: 1-2 días</div>
+        </div>
+
+        <div class="bg-[#1e293b] border border-[#334155] rounded-xl p-6 hover:border-[#dc2626] transition">
+          <div class="flex items-center justify-center w-12 h-12 bg-[#dc2626] rounded-full mb-6 text-xl font-bold text-white">2</div>
+          <h3 class="text-lg font-semibold mb-3 text-white">Diseño y Cotización</h3>
+          <p class="text-sm text-[#94a3b8] mb-4 leading-relaxed">
+            Planos técnicos detallados en AutoCAD, especificación de materiales certificados y presupuesto itemizado completo.
+          </p>
+          <div class="text-[#dc2626] text-xs font-semibold">Duración: 3-5 días</div>
+        </div>
+
+        <div class="bg-[#1e293b] border border-[#334155] rounded-xl p-6 hover:border-[#dc2626] transition">
+          <div class="flex items-center justify-center w-12 h-12 bg-[#dc2626] rounded-full mb-6 text-xl font-bold text-white">3</div>
+          <h3 class="text-lg font-semibold mb-3 text-white">Instalación Certificada</h3>
+          <p class="text-sm text-[#94a3b8] mb-4 leading-relaxed">
+            Instalación por cuadrillas BICSI certificadas, supervisión continua y control de calidad en cada fase del proyecto.
+          </p>
+          <div class="text-[#dc2626] text-xs font-semibold">Duración: Según alcance</div>
+        </div>
+
+        <div class="bg-[#1e293b] border border-[#334155] rounded-xl p-6 hover:border-[#dc2626] transition">
+          <div class="flex items-center justify-center w-12 h-12 bg-[#dc2626] rounded-full mb-6 text-xl font-bold text-white">4</div>
+          <h3 class="text-lg font-semibold mb-3 text-white">Certificación Fluke</h3>
+          <p class="text-sm text-[#94a3b8] mb-4 leading-relaxed">
+            Test completo con Fluke DSX-5000, certificación de todos los puntos y documentación as-built digital entregada.
+          </p>
+          <div class="text-[#dc2626] text-xs font-semibold">Duración: 2-3 días</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Categorías de Cable -->
+  <section id="categorias" class="py-16 sm:py-20 lg:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-16">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-6 text-[#0f172a]">
+          ¿Qué Categoría de Cable Necesita su Empresa?
+        </h2>
+        <p class="text-lg text-[#64748b] max-w-4xl">
+          La elección correcta de categoría de cable impacta directamente en el rendimiento, escalabilidad y vida
+          útil de su infraestructura de red. Conocer las diferencias técnicas le permitirá tomar decisiones informadas.
+        </p>
+      </div>
+
+      <div class="overflow-x-auto">
+        <table class="w-full border-collapse">
+          <thead>
+            <tr class="bg-[#f9fafb]">
+              <th class="text-left p-4 border-b-2 border-[#e5e7eb] font-semibold text-[#0f172a]">Categoría</th>
+              <th class="text-left p-4 border-b-2 border-[#e5e7eb] font-semibold text-[#0f172a]">Velocidad</th>
+              <th class="text-left p-4 border-b-2 border-[#e5e7eb] font-semibold text-[#0f172a]">Frecuencia</th>
+              <th class="text-left p-4 border-b-2 border-[#e5e7eb] font-semibold text-[#0f172a]">Distancia</th>
+              <th class="text-left p-4 border-b-2 border-[#e5e7eb] font-semibold text-[#0f172a]">Aplicación Recomendada</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="hover:bg-[#f9fafb] transition">
+              <td class="p-4 border-b border-[#e5e7eb]"><span class="font-semibold text-[#0f172a]">Cat 5e</span></td>
+              <td class="p-4 border-b border-[#e5e7eb] text-[#64748b]">1 Gbps</td>
+              <td class="p-4 border-b border-[#e5e7eb] text-[#64748b]">100 MHz</td>
+              <td class="p-4 border-b border-[#e5e7eb] text-[#64748b]">100 metros</td>
+              <td class="p-4 border-b border-[#e5e7eb] text-[#64748b]">Pequeñas oficinas, uso básico</td>
+            </tr>
+            <tr class="hover:bg-[#f9fafb] transition">
+              <td class="p-4 border-b border-[#e5e7eb]">
+                <div class="flex items-center gap-2">
+                  <span class="font-semibold text-[#0f172a]">Cat 6</span>
+                  <span class="bg-[#fef2f2] text-[#dc2626] text-[10px] font-bold px-2 py-0.5 rounded">POPULAR</span>
+                </div>
+              </td>
+              <td class="p-4 border-b border-[#e5e7eb] text-[#64748b]">1-10 Gbps</td>
+              <td class="p-4 border-b border-[#e5e7eb] text-[#64748b]">250 MHz</td>
+              <td class="p-4 border-b border-[#e5e7eb] text-[#64748b]">55 metros (10G)</td>
+              <td class="p-4 border-b border-[#e5e7eb] text-[#64748b]">Empresas medianas, networking estándar</td>
+            </tr>
+            <tr class="hover:bg-[#f9fafb] transition bg-[#fef2f2]/30">
+              <td class="p-4 border-b border-[#e5e7eb]">
+                <div class="flex items-center gap-2">
+                  <span class="font-semibold text-[#dc2626]">Cat 6A</span>
+                  <span class="bg-[#dc2626] text-white text-[10px] font-bold px-2 py-0.5 rounded">RECOMENDADO</span>
+                </div>
+              </td>
+              <td class="p-4 border-b border-[#e5e7eb] font-semibold text-[#dc2626]">10 Gbps</td>
+              <td class="p-4 border-b border-[#e5e7eb] text-[#64748b]">500 MHz</td>
+              <td class="p-4 border-b border-[#e5e7eb] text-[#64748b]">100 metros</td>
+              <td class="p-4 border-b border-[#e5e7eb] text-[#64748b]">Empresas grandes, data centers, futureproof</td>
+            </tr>
+            <tr class="hover:bg-[#f9fafb] transition">
+              <td class="p-4 border-b border-[#e5e7eb]"><span class="font-semibold text-[#0f172a]">Cat 7</span></td>
+              <td class="p-4 border-b border-[#e5e7eb] text-[#64748b]">10 Gbps</td>
+              <td class="p-4 border-b border-[#e5e7eb] text-[#64748b]">600 MHz</td>
+              <td class="p-4 border-b border-[#e5e7eb] text-[#64748b]">100 metros</td>
+              <td class="p-4 border-b border-[#e5e7eb] text-[#64748b]">Entornos industriales, alta interferencia</td>
+            </tr>
+            <tr class="hover:bg-[#f9fafb] transition">
+              <td class="p-4 border-b border-[#e5e7eb]"><span class="font-semibold text-[#0f172a]">Fibra Óptica</span></td>
+              <td class="p-4 border-b border-[#e5e7eb] text-[#64748b]">40-100 Gbps</td>
+              <td class="p-4 border-b border-[#e5e7eb] text-[#64748b]">N/A</td>
+              <td class="p-4 border-b border-[#e5e7eb] text-[#64748b]">Hasta 100 km</td>
+              <td class="p-4 border-b border-[#e5e7eb] text-[#64748b]">Backbone, campus networks, ISP</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="mt-12 bg-[#f9fafb] border border-[#e5e7eb] rounded-xl p-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div>
+            <h3 class="text-xl font-semibold mb-4 text-[#0f172a]">¿Por qué recomendamos Cat 6A para empresas?</h3>
+            <p class="text-[#64748b] mb-4 leading-relaxed">
+              La categoría 6A ofrece el mejor balance costo-beneficio para instalaciones nuevas. Aunque el costo
+              inicial es 15-20% superior a Cat 6, la inversión se justifica por:
+            </p>
+            <ul class="space-y-3">
+              <li class="flex items-start gap-3">
+                <div class="w-5 h-5 bg-[#dc2626] rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                </div>
+                <span class="text-[#64748b]"><strong class="text-[#0f172a]">10 Gbps garantizados en 100 metros</strong> vs. solo 55 metros en Cat 6</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <div class="w-5 h-5 bg-[#dc2626] rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                </div>
+                <span class="text-[#64748b]"><strong class="text-[#0f172a]">Blindaje mejorado</strong> que elimina interferencias electromagnéticas</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <div class="w-5 h-5 bg-[#dc2626] rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                </div>
+                <span class="text-[#64748b]"><strong class="text-[#0f172a]">Futureproof</strong> para WiFi 6E, PoE++, 4K video streaming</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <div class="w-5 h-5 bg-[#dc2626] rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                </div>
+                <span class="text-[#64748b]"><strong class="text-[#0f172a]">ROI superior</strong> al evitar actualizaciones en 5-7 años</span>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-xl font-semibold mb-4 text-[#0f172a]">Cuándo NO necesita Cat 6A</h3>
+            <p class="text-[#64748b] mb-4 leading-relaxed">
+              En algunos casos específicos, categorías inferiores pueden ser suficientes:
+            </p>
+            <ul class="space-y-3">
+              <li class="flex items-start gap-3">
+                <div class="w-5 h-5 bg-[#64748b] rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <span class="text-white text-xs">&bull;</span>
+                </div>
+                <span class="text-[#64748b]">Oficinas pequeñas (&lt;10 usuarios) con tráfico ligero</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <div class="w-5 h-5 bg-[#64748b] rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <span class="text-white text-xs">&bull;</span>
+                </div>
+                <span class="text-[#64748b]">Instalaciones temporales o espacios de corta duración</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <div class="w-5 h-5 bg-[#64748b] rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <span class="text-white text-xs">&bull;</span>
+                </div>
+                <span class="text-[#64748b]">Áreas con longitudes de enlace menores a 30 metros</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <div class="w-5 h-5 bg-[#64748b] rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <span class="text-white text-xs">&bull;</span>
+                </div>
+                <span class="text-[#64748b]">Presupuestos muy limitados sin planes de crecimiento</span>
+              </li>
+            </ul>
+
+            <div class="mt-6 bg-white border-l-4 border-[#dc2626] p-4 rounded">
+              <p class="text-sm text-[#64748b]">
+                <strong class="text-[#0f172a]">Consejo profesional:</strong> En el 90% de los casos,
+                invertir en Cat 6A ahorra dinero a largo plazo. El costo de recablear supera ampliamente el diferencial inicial.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 sm:py-20 lg:py-24 bg-[#f9fafb]">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-white border border-[#e5e7eb] rounded-2xl shadow-xl overflow-hidden">
+        <div class="grid grid-cols-1 lg:grid-cols-2">
+          <!-- Form Side -->
+          <div class="p-8 lg:p-12">
+            <h2 class="text-3xl font-bold mb-4 text-[#0f172a]">
+              Solicite una Auditoría Técnica Gratuita
+            </h2>
+            <p class="text-[#64748b] mb-8">
+              Nuestros ingenieros certificados evaluarán su infraestructura actual y diseñarán una solución
+              personalizada sin costo ni compromiso.
+            </p>
+
+            <form action="/gracias" method="GET" class="space-y-4">
+              <div>
+                <input type="text" name="nombre" placeholder="Nombre completo" required class="w-full px-4 py-3 bg-[#f9fafb] border border-[#e5e7eb] rounded focus:outline-none focus:ring-2 focus:ring-[#dc2626]"/>
+              </div>
+              <div>
+                <input type="email" name="email" placeholder="Correo corporativo" required class="w-full px-4 py-3 bg-[#f9fafb] border border-[#e5e7eb] rounded focus:outline-none focus:ring-2 focus:ring-[#dc2626]"/>
+              </div>
+              <div>
+                <input type="tel" name="telefono" placeholder="Teléfono" required class="w-full px-4 py-3 bg-[#f9fafb] border border-[#e5e7eb] rounded focus:outline-none focus:ring-2 focus:ring-[#dc2626]"/>
+              </div>
+              <div>
+                <input type="text" name="empresa" placeholder="Empresa" required class="w-full px-4 py-3 bg-[#f9fafb] border border-[#e5e7eb] rounded focus:outline-none focus:ring-2 focus:ring-[#dc2626]"/>
+              </div>
+              <div>
+                <input type="number" name="puntos" placeholder="Puntos de red estimados" class="w-full px-4 py-3 bg-[#f9fafb] border border-[#e5e7eb] rounded focus:outline-none focus:ring-2 focus:ring-[#dc2626]"/>
+              </div>
+              <button type="submit" class="w-full bg-[#dc2626] text-white font-semibold px-6 py-4 rounded hover:bg-[#b91c1c] transition shadow-lg">
+                Solicitar Auditoría Ahora
+              </button>
+            </form>
+
+            <p class="text-xs text-[#64748b] mt-4 text-center">
+              Respuesta en menos de 2 horas - Visita técnica sin costo en Bogotá
+            </p>
+          </div>
+
+          <!-- Benefits Side -->
+          <div class="bg-[#0f172a] p-8 lg:p-12 flex flex-col justify-center">
+            <h3 class="text-xl font-semibold text-white mb-8">Su auditoría incluye:</h3>
+
+            <div class="space-y-6">
+              <div class="flex items-start gap-3">
+                <div class="bg-[#dc2626] rounded-full p-2 mt-1 flex-shrink-0">
+                  <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="text-white font-semibold mb-1">Evaluación de Infraestructura Actual</h4>
+                  <p class="text-[#94a3b8] text-sm">Inspección de racks, cableado existente y identificación de cuellos de botella</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3">
+                <div class="bg-[#dc2626] rounded-full p-2 mt-1 flex-shrink-0">
+                  <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="text-white font-semibold mb-1">Diseño Preliminar</h4>
+                  <p class="text-[#94a3b8] text-sm">Propuesta de topología de red optimizada para su espacio y necesidades</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3">
+                <div class="bg-[#dc2626] rounded-full p-2 mt-1 flex-shrink-0">
+                  <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="text-white font-semibold mb-1">Cotización Detallada</h4>
+                  <p class="text-[#94a3b8] text-sm">Presupuesto itemizado con materiales certificados y tiempos de ejecución</p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3">
+                <div class="bg-[#dc2626] rounded-full p-2 mt-1 flex-shrink-0">
+                  <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="text-white font-semibold mb-1">Recomendaciones Técnicas</h4>
+                  <p class="text-[#94a3b8] text-sm">Asesoría sobre categoría de cable, equipos activos y escalabilidad futura</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-8 pt-6 border-t border-[#334155]">
+              <div class="flex items-center gap-3">
+                <div class="flex -space-x-2">
+                  <div class="w-8 h-8 rounded-full bg-[#dc2626] border-2 border-[#0f172a] flex items-center justify-center text-white text-xs font-bold">JM</div>
+                  <div class="w-8 h-8 rounded-full bg-[#64748b] border-2 border-[#0f172a] flex items-center justify-center text-white text-xs font-bold">CP</div>
+                  <div class="w-8 h-8 rounded-full bg-[#94a3b8] border-2 border-[#0f172a] flex items-center justify-center text-white text-xs font-bold">LR</div>
+                </div>
+                <div class="text-sm text-[#94a3b8]">
+                  <strong class="text-white">12+ ingenieros certificados</strong> BICSI disponibles
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Soluciones Relacionadas -->
+  <section class="py-12 bg-gray-50 border-t border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-lg font-bold text-gray-900 mb-6">Soluciones Relacionadas</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+        <a href="/equipos-computo" class="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition text-center">
+          <p class="font-semibold text-sm text-gray-900">Equipos de Computo</p>
+          <p class="text-xs text-gray-500 mt-1">Hardware empresarial</p>
+        </a>
+        <a href="/brother" class="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition text-center">
+          <p class="font-semibold text-sm text-gray-900">Brother</p>
+          <p class="text-xs text-gray-500 mt-1">Impresoras</p>
+        </a>
+        <a href="/teamviewer" class="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition text-center">
+          <p class="font-semibold text-sm text-gray-900">TeamViewer</p>
+          <p class="text-xs text-gray-500 mt-1">Control remoto</p>
+        </a>
+        <a href="/soti-mdm" class="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition text-center">
+          <p class="font-semibold text-sm text-gray-900">SOTI MobiControl</p>
+          <p class="text-xs text-gray-500 mt-1">MDM moviles</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+  <WhatsAppButton />
+</BaseLayout>

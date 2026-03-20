@@ -1,0 +1,416 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Navbar from '@components/Navbar.astro';
+import Footer from '@components/Footer.astro';
+import WhatsAppButton from '@components/WhatsAppButton.astro';
+import { seoData } from '@data/seo';
+
+const seo = seoData['blog/iso-27001-regulaciones'];
+---
+
+<BaseLayout seo={seo}>
+  <Navbar />
+
+  <!-- Hero Section -->
+  <section class="relative bg-gradient-to-br from-[#0f2a1a] to-[#0f172a] overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute top-0 right-0 w-96 h-96 bg-green-500 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-0 left-0 w-96 h-96 bg-emerald-500 rounded-full blur-3xl"></div>
+    </div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-16 lg:pb-20">
+      <!-- Breadcrumb -->
+      <nav class="mb-8 flex items-center gap-2 text-sm text-gray-400">
+        <a href="/" class="hover:text-white transition-colors">Inicio</a>
+        <span>/</span>
+        <a href="/#blog" class="hover:text-white transition-colors">Blog</a>
+        <span>/</span>
+        <span class="text-gray-200">ISO 27001 Regulaciones</span>
+      </nav>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <div class="flex items-center gap-3 mb-6">
+            <span class="bg-green-500/20 border border-green-500/30 text-green-400 text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wide">
+              Cumplimiento
+            </span>
+            <span class="text-gray-400 text-sm">20 de enero de 2025</span>
+          </div>
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+            ISO 27001:2022
+            <span class="block text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-400">
+              Lo que Cambia para Empresas Colombianas
+            </span>
+          </h1>
+          <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+            La versión 2022 del estándar introdujo cambios estructurales significativos. Descubra
+            qué modificaciones afectan a su organización, cuáles son los plazos de transición y
+            cómo prepararse para la recertificación.
+          </p>
+          <div class="flex items-center gap-4 text-sm text-gray-400">
+            <span>Por el equipo de Starsolution</span>
+            <span>&bull;</span>
+            <span>Tiempo de lectura: 10 min</span>
+          </div>
+        </div>
+        <div class="hidden lg:block">
+          <img
+            src="/assets/blog-zero-trust-arquitectura.webp"
+            alt="Arquitectura de cumplimiento normativo ISO 27001 para empresas colombianas"
+            class="w-full rounded-2xl shadow-2xl"
+            width="600"
+            height="400"
+            loading="eager"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Article Body -->
+  <article class="bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+
+      <!-- Introduction -->
+      <section class="mb-12">
+        <p class="text-xl text-gray-700 leading-relaxed mb-6">
+          ISO 27001:2022 reemplazó a la versión 2013 con cambios que van mucho más allá de una
+          actualización cosmética. La nueva versión refleja una década de evolución en el panorama
+          de amenazas: la nube, el trabajo remoto, la cadena de suministro de software y las
+          amenazas persistentes avanzadas (APT) ahora tienen controles explícitos. Para las
+          empresas colombianas con certificación vigente o en proceso de obtenerla, estos cambios
+          son obligatorios.
+        </p>
+        <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-6">
+          <div class="flex items-start gap-3">
+            <span class="flex-shrink-0 text-amber-600 text-xl">&#9888;</span>
+            <div>
+              <strong class="text-amber-800">Plazo de transición vencido</strong>
+              <p class="text-amber-700 text-sm mt-1">El periodo de transición de ISO 27001:2013 a ISO 27001:2022 venció el 31 de octubre de 2025. Las organizaciones certificadas bajo la versión anterior debieron completar la recertificación. Si aún no lo han hecho, su certificado no refleja el estándar vigente.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 1 -->
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Los Cambios Estructurales de ISO 27001:2022</h2>
+        <p class="text-lg text-gray-600 leading-relaxed mb-6">
+          La actualización afecta tanto el cuerpo principal del estándar como el Anexo A (controles).
+          Estos son los cambios más relevantes para los responsables de seguridad:
+        </p>
+
+        <h3 class="text-2xl font-bold text-gray-900 mb-4">Reorganización del Anexo A: de 14 dominios a 4 temas</h3>
+        <p class="text-gray-600 leading-relaxed mb-6">
+          El Anexo A pasó de 114 controles organizados en 14 dominios a 93 controles organizados
+          en 4 temas temáticos. Este reordenamiento no elimina controles sino que los fusiona,
+          renombra y reorganiza para mayor coherencia con la realidad operativa moderna.
+        </p>
+
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
+          {[
+            { tema: 'A.5', title: 'Controles Organizacionales', count: '37 controles', color: 'blue' },
+            { tema: 'A.6', title: 'Controles de Personas', count: '8 controles', color: 'purple' },
+            { tema: 'A.7', title: 'Controles Físicos', count: '14 controles', color: 'orange' },
+            { tema: 'A.8', title: 'Controles Tecnológicos', count: '34 controles', color: 'green' },
+          ].map(tema => (
+            <div class="bg-gray-50 border border-gray-200 rounded-xl p-4 text-center">
+              <div class="text-2xl font-bold text-gray-400 mb-1">{tema.tema}</div>
+              <div class="font-bold text-gray-900 text-sm mb-1">{tema.title}</div>
+              <div class="text-xs text-gray-500">{tema.count}</div>
+            </div>
+          ))}
+        </div>
+
+        <h3 class="text-2xl font-bold text-gray-900 mb-4">11 Controles Completamente Nuevos</h3>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          Estos son los 11 controles que no existían en ISO 27001:2013 y que representan las
+          adiciones más significativas de la versión 2022:
+        </p>
+
+        <div class="overflow-x-auto rounded-2xl border border-gray-200 mb-6">
+          <table class="w-full text-sm">
+            <thead class="bg-green-50">
+              <tr>
+                <th class="text-left px-4 py-3 font-bold text-gray-900 w-24">Control</th>
+                <th class="text-left px-4 py-3 font-bold text-gray-900">Nombre</th>
+                <th class="text-left px-4 py-3 font-bold text-gray-900">Por qué importa</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-100">
+              {[
+                ['5.7', 'Threat Intelligence', 'Recopilación y análisis de inteligencia sobre amenazas relevantes para la organización'],
+                ['5.23', 'Seguridad de Servicios en Nube', 'Gestión de seguridad en la adquisición, uso y salida de servicios cloud'],
+                ['5.30', 'Preparación TIC para Continuidad', 'Planes de continuidad de TI alineados con la continuidad de negocio'],
+                ['7.4', 'Monitoreo de Seguridad Física', 'Vigilancia continua de áreas sensibles contra acceso no autorizado'],
+                ['8.9', 'Gestión de Configuración', 'Ciclo de vida completo de configuraciones seguras en sistemas y aplicaciones'],
+                ['8.10', 'Eliminación de Información', 'Borrado seguro de datos en dispositivos y medios de almacenamiento'],
+                ['8.11', 'Data Masking', 'Enmascaramiento de datos personales y sensibles según clasificación'],
+                ['8.12', 'Prevención de Fuga de Datos', 'Controles DLP para detectar y prevenir extracción no autorizada de datos'],
+                ['8.16', 'Actividades de Monitoreo', 'Monitoreo continuo de redes, sistemas y comportamiento de usuarios'],
+                ['8.23', 'Filtrado Web', 'Gestión de acceso web para reducir exposición a contenido malicioso'],
+                ['8.28', 'Codificación Segura', 'Principios de desarrollo seguro aplicados a software interno'],
+              ].map(([ctrl, name, why]) => (
+                <tr class="hover:bg-gray-50">
+                  <td class="px-4 py-3 font-mono font-bold text-green-700">{ctrl}</td>
+                  <td class="px-4 py-3 font-medium text-gray-900">{name}</td>
+                  <td class="px-4 py-3 text-gray-600">{why}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Section 2 -->
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Impacto Directo en Empresas Colombianas</h2>
+
+        <h3 class="text-2xl font-bold text-gray-900 mb-4">Sector Financiero y Entidades Vigiladas por la SFC</h3>
+        <p class="text-lg text-gray-600 leading-relaxed mb-6">
+          La Superfinanciera ya exige a entidades vigiladas implementar controles que ahora están
+          codificados explícitamente en ISO 27001:2022. El nuevo control 5.30 (Preparación TIC para
+          Continuidad) y el 8.16 (Actividades de Monitoreo) son directamente relevantes para los
+          requerimientos de la Circular Básica Jurídica en materia de ciberseguridad y gestión de
+          riesgos operacionales.
+        </p>
+
+        <h3 class="text-2xl font-bold text-gray-900 mb-4">Sector Salud y Datos de Pacientes</h3>
+        <p class="text-lg text-gray-600 leading-relaxed mb-6">
+          Las IPS, EPS y entidades del sector salud que manejan historias clínicas electrónicas
+          se benefician especialmente del nuevo control 8.11 (Data Masking) y del reforzado control
+          de gestión de acceso privilegiado. La Resolución 866 de 2021 del Ministerio de Salud
+          sobre interoperabilidad de datos de salud requiere garantías de confidencialidad que
+          ISO 27001:2022 ahora aborda más directamente.
+        </p>
+
+        <h3 class="text-2xl font-bold text-gray-900 mb-4">Empresas en Cadenas de Suministro Globales</h3>
+        <p class="text-lg text-gray-600 leading-relaxed mb-6">
+          Para organizaciones que proveen servicios a multinacionales o entidades del gobierno,
+          la certificación ISO 27001:2022 se está convirtiendo en requisito contractual. El nuevo
+          énfasis en gestión de la cadena de suministro (controles 5.19-5.22) es particularmente
+          relevante para proveedores TI que acceden a datos de sus clientes.
+        </p>
+      </section>
+
+      <!-- Section 3 - Internal links -->
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Herramientas para los Nuevos Controles</h2>
+        <p class="text-lg text-gray-600 leading-relaxed mb-6">
+          Los 11 nuevos controles de ISO 27001:2022 no son solo documentación: requieren controles
+          técnicos demostrables. Estas son las soluciones que Starsolution implementa para satisfacer
+          los controles más exigentes:
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 mb-8">
+          <a href="/iso27001" class="group bg-white border border-gray-200 rounded-2xl p-6 hover:shadow-lg hover:border-green-200 transition">
+            <div class="text-green-600 font-bold text-lg mb-2 group-hover:underline">Consultoría ISO 27001</div>
+            <div class="text-xs text-gray-500 uppercase tracking-wide mb-3">Implementación completa</div>
+            <p class="text-sm text-gray-600">Gap analysis, implementación del SGSI, capacitación de equipos y acompañamiento hasta la certificación con organismos acreditados.</p>
+          </a>
+          <a href="/netwrix" class="group bg-white border border-gray-200 rounded-2xl p-6 hover:shadow-lg hover:border-green-200 transition">
+            <div class="text-green-600 font-bold text-lg mb-2 group-hover:underline">Netwrix</div>
+            <div class="text-xs text-gray-500 uppercase tracking-wide mb-3">Controles 8.15, 8.16</div>
+            <p class="text-sm text-gray-600">Auditoria de cambios, monitoreo continuo y gobernanza de identidad con reportes preconfigurados para evidencia de cumplimiento ISO 27001.</p>
+          </a>
+          <a href="/sealpath" class="group bg-white border border-gray-200 rounded-2xl p-6 hover:shadow-lg hover:border-green-200 transition">
+            <div class="text-green-600 font-bold text-lg mb-2 group-hover:underline">SealPath</div>
+            <div class="text-xs text-gray-500 uppercase tracking-wide mb-3">Controles 8.11, 8.12</div>
+            <p class="text-sm text-gray-600">Cifrado persistente de documentos y prevención de fuga de datos con trazabilidad completa para los controles de data masking y DLP.</p>
+          </a>
+        </div>
+      </section>
+
+      <!-- Section 4 -->
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">El Proceso de Transición: Qué Hacer Ahora</h2>
+
+        <div class="space-y-6">
+          <div class="bg-gray-50 rounded-2xl p-6 border border-gray-200">
+            <h3 class="text-xl font-bold text-gray-900 mb-4">Si ya tiene certificación ISO 27001:2013</h3>
+            <p class="text-gray-600 mb-4">
+              El plazo de transición venció en octubre de 2025. Si aún no ha completado la recertificación,
+              necesita iniciar el proceso de urgencia. Los pasos esenciales son:
+            </p>
+            <ol class="space-y-3">
+              {[
+                'Realizar un gap analysis entre sus controles actuales y el Anexo A de la versión 2022',
+                'Actualizar la Declaración de Aplicabilidad (SOA) para reflejar los 93 controles de 2022',
+                'Implementar los nuevos controles aplicables a su organización',
+                'Actualizar la documentación del SGSI: políticas, procedimientos y registros',
+                'Realizar auditoría interna contra ISO 27001:2022',
+                'Coordinar con su organismo certificador la auditoría de transición',
+              ].map((step, i) => (
+                <li class="flex items-start gap-3">
+                  <span class="flex-shrink-0 w-6 h-6 bg-green-600 text-white rounded-full flex items-center justify-center text-xs font-bold">{i + 1}</span>
+                  <span class="text-gray-600">{step}</span>
+                </li>
+              ))}
+            </ol>
+          </div>
+
+          <div class="bg-green-50 rounded-2xl p-6 border border-green-100">
+            <h3 class="text-xl font-bold text-gray-900 mb-4">Si está iniciando el proceso de certificación</h3>
+            <p class="text-gray-600 mb-4">
+              Comience directamente con ISO 27001:2022. Las ventajas de empezar con la versión
+              vigente son claras: no tendrá que recertificarse en el corto plazo, su SGSI
+              abordará amenazas modernas desde el inicio y la documentación reflejará el estándar
+              que los auditores y clientes esperan.
+            </p>
+            <p class="text-gray-600">
+              El proceso completo desde cero (gap analysis hasta certificación) toma entre 8 y
+              12 meses para empresas medianas. Con consultoría especializada, la tasa de éxito
+              en la primera auditoría de certificación supera el 85%.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 5 -->
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">FAQ: Preguntas Frecuentes sobre ISO 27001:2022</h2>
+
+        <div class="space-y-6">
+          {[
+            {
+              q: '¿Los 11 nuevos controles son obligatorios para todas las organizaciones?',
+              a: 'No necesariamente. Los controles del Anexo A son de aplicabilidad condicional: deben incluirse en la Declaración de Aplicabilidad y aplicarse si son relevantes para los riesgos identificados. Sin embargo, los nuevos controles sobre cloud, DLP y monitoreo serán difícilmente excluibles para organizaciones con infraestructura digital moderna.',
+            },
+            {
+              q: '¿Cambió el proceso de auditoría de certificación?',
+              a: 'Los organismos certificadores (ICONTEC, SGS, Bureau Veritas) han actualizado sus criterios de auditoría para evaluar los controles de la versión 2022. Las auditorías de transición son auditorías completas que verifican la implementación de los nuevos controles, no solo una revisión documental.',
+            },
+            {
+              q: '¿ISO 27001:2022 reemplaza completamente a ISO 27002?',
+              a: 'ISO 27002:2022 también fue actualizada y sirve como guía de implementación para los controles del Anexo A. Mientras ISO 27001 es la norma certificable, ISO 27002 proporciona el contexto, el propósito y la guía detallada de implementación de cada control.',
+            },
+            {
+              q: '¿Qué pasa con los proyectos de certificación que empezaron con la versión 2013?',
+              a: 'Los proyectos que iniciaron antes de noviembre de 2022 podían elegir certificarse bajo la versión 2013, pero el certificado tendría vigencia limitada hasta la fecha límite de transición. Los proyectos activos deben ahora alinearse completamente con ISO 27001:2022.',
+            },
+            {
+              q: '¿Cuánto cuesta la transición para una empresa ya certificada?',
+              a: 'Para una empresa mediana (50-500 personas), la transición suele requerir entre 3 y 6 meses de trabajo y costos de consultoría entre 15 y 35 millones de COP, dependiendo de la brecha existente. A esto se suma la tarifa de la auditoría de certificación del organismo acreditado.',
+            },
+          ].map(faq => (
+            <div class="border-b border-gray-200 pb-6">
+              <h3 class="text-lg font-bold text-gray-900 mb-2">{faq.q}</h3>
+              <p class="text-gray-600 leading-relaxed">{faq.a}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Section 6 -->
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">ISO 27001:2022 y la Ley 1581 en Colombia</h2>
+        <p class="text-lg text-gray-600 leading-relaxed mb-6">
+          Una de las particularidades del contexto colombiano es la coexistencia de ISO 27001
+          con la Ley 1581 de 2012 sobre Protección de Datos Personales. Aunque son marcos distintos,
+          se complementan de forma natural: ISO 27001:2022 fortalece las medidas técnicas y
+          organizacionales que la Ley 1581 exige para el tratamiento de datos personales.
+        </p>
+        <p class="text-lg text-gray-600 leading-relaxed mb-6">
+          El nuevo control 8.11 (Data Masking) y el reforzado control de clasificación de
+          información (5.12) son especialmente relevantes para demostrar cumplimiento ante la
+          Superintendencia de Industria y Comercio (SIC), que es la autoridad de control de
+          datos personales en Colombia.
+        </p>
+        <div class="bg-blue-50 border border-blue-100 rounded-xl p-5">
+          <p class="text-blue-900 text-sm leading-relaxed">
+            <strong>Nota para auditores internos:</strong> La SIC ha incrementado las investigaciones
+            y sanciones por incumplimiento de la Ley 1581 en los últimos años. Una certificación
+            ISO 27001:2022 activa y documentada es la evidencia más sólida disponible de que
+            la organización toma en serio la protección de datos personales.
+          </p>
+        </div>
+      </section>
+
+      <!-- Conclusion -->
+      <section class="mb-16">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Conclusión</h2>
+        <p class="text-lg text-gray-600 leading-relaxed mb-6">
+          ISO 27001:2022 es una actualización sustancial que refleja las amenazas y contextos
+          tecnológicos actuales. Para las empresas colombianas, la transición no es opcional:
+          el plazo venció y los organismos de certificación ya evalúan bajo la nueva versión.
+        </p>
+        <p class="text-lg text-gray-600 leading-relaxed">
+          Las organizaciones que aprovechan este proceso de transición no solo actualizan un
+          certificado; implementan controles que reducen su exposición a amenazas reales como
+          el ransomware, la fuga de datos y el compromiso de la cadena de suministro.
+        </p>
+      </section>
+
+    </div>
+  </article>
+
+  <!-- CTA Section -->
+  <section class="bg-gradient-to-br from-[#0f2a1a] to-[#0f172a] py-16 lg:py-24">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">
+        ¿Su empresa ya migró a ISO 27001:2022?
+      </h2>
+      <p class="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
+        Starsolution ha acompañado más de 50 organizaciones colombianas en su camino hacia la
+        certificación ISO 27001. Solicite un diagnóstico gratuito y descubra su brecha actual.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="/contacto"
+          class="bg-green-600 text-white font-semibold px-8 py-4 rounded-lg hover:bg-green-700 transition text-center"
+        >
+          Solicitar Diagnóstico Gratuito
+        </a>
+        <a
+          href="/iso27001"
+          class="bg-white/10 backdrop-blur-sm border border-white/20 text-white font-semibold px-8 py-4 rounded-lg hover:bg-white/20 transition text-center"
+        >
+          Ver Consultoría ISO 27001
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Articles -->
+  <section class="bg-gray-50 py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl font-bold text-gray-900 mb-8">Artículos Relacionados</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <a href="/blog/perfect-forward-secrecy" class="group bg-white border border-gray-200 rounded-2xl overflow-hidden hover:shadow-lg transition">
+          <div class="h-40 overflow-hidden">
+            <img
+              src="/assets/blog-ciberseguridad-realidad-virtual.webp"
+              alt="Perfect Forward Secrecy"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              width="400"
+              height="160"
+              loading="lazy"
+            />
+          </div>
+          <div class="p-5">
+            <span class="text-xs font-bold text-red-600 uppercase tracking-wide">Seguridad</span>
+            <h3 class="font-bold text-gray-900 mt-1 group-hover:text-green-600 transition-colors">Perfect Forward Secrecy Explicado para Empresas</h3>
+          </div>
+        </a>
+        <a href="/blog/zero-trust-2025" class="group bg-white border border-gray-200 rounded-2xl overflow-hidden hover:shadow-lg transition">
+          <div class="h-40 overflow-hidden">
+            <img
+              src="/assets/blog-inteligencia-artificial-seguridad.webp"
+              alt="Zero Trust 2025"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              width="400"
+              height="160"
+              loading="lazy"
+            />
+          </div>
+          <div class="p-5">
+            <span class="text-xs font-bold text-blue-600 uppercase tracking-wide">Tecnología</span>
+            <h3 class="font-bold text-gray-900 mt-1 group-hover:text-green-600 transition-colors">Arquitectura Zero Trust para Empresas en 2025</h3>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+  <WhatsAppButton />
+</BaseLayout>

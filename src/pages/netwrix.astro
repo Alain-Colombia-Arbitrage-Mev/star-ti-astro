@@ -1,0 +1,638 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Navbar from '@components/Navbar.astro';
+import Footer from '@components/Footer.astro';
+import WhatsAppButton from '@components/WhatsAppButton.astro';
+import { seoData } from '@data/seo';
+
+const seo = seoData.netwrix;
+---
+
+<BaseLayout seo={seo}>
+  <Navbar />
+
+  <div class="bg-white min-h-screen font-['Instrument_Sans',sans-serif]">
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-b from-gray-50 to-white py-12 sm:py-16 lg:py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <div class="mb-6">
+              <span class="inline-block bg-red-50 text-red-600 text-xs font-medium px-3 py-1 rounded">
+                AUDITORÍA Y GOBERNANZA DE IDENTIDAD
+              </span>
+            </div>
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+              Netwrix: Auditoría, Gobernanza{" "}
+              <span class="text-[#ed1c24]">y Cumplimiento Normativo.</span>
+            </h1>
+            <p class="text-lg sm:text-xl text-gray-600 mb-8 max-w-3xl">
+              Sepa exactamente quién accede a qué, cuándo y cómo en toda su infraestructura.
+              Auditoría de cambios, clasificación de datos, gobernanza de identidad y gestión de
+              acceso privilegiado para cumplir con GDPR, HIPAA, PCI DSS e ISO 27001.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a href="/contacto" class="bg-gradient-to-r from-red-600 to-red-700 text-white font-semibold px-8 py-4 rounded-full hover:from-red-700 hover:to-red-800 transition shadow-lg inline-flex items-center justify-center gap-2">
+                Solicitar Demo
+              </a>
+              <a href="/contacto" class="bg-white border-2 border-gray-200 text-gray-800 font-semibold px-8 py-4 rounded-full hover:bg-gray-50 transition inline-flex items-center justify-center gap-2 focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2">
+                Evaluar Cumplimiento
+              </a>
+            </div>
+            <div class="mt-8 flex items-center gap-2 text-sm text-gray-500">
+              <svg class="w-4 h-4 text-green-600" fill="none" viewBox="0 0 14 14">
+                <path d="M11.6667 3.5L5.25 9.91667L2.33333 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.16667" />
+              </svg>
+              <span>Visibilidad total sobre datos, identidades y cambios en su infraestructura</span>
+            </div>
+          </div>
+          <div class="hidden lg:flex items-center justify-center">
+            <img src="/assets/icono-firewall-bloques-seguridad.webp" alt="Auditoría y gobernanza de identidad con Netwrix" class="w-full max-w-sm rounded-2xl shadow-xl" width="384" height="384" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Compliance Challenges -->
+    <section class="bg-[#111827] py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">
+            Desafíos de Cumplimiento que Netwrix Resuelve
+          </h2>
+          <p class="text-gray-400 max-w-3xl mx-auto">
+            Las organizaciones luchan con la falta de visibilidad, la complejidad regulatoria
+            y la incapacidad de demostrar controles ante auditores.
+          </p>
+        </div>
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+          <div>
+            <h3 class="text-white font-bold text-3xl mb-2">74%</h3>
+            <p class="text-white text-xs uppercase tracking-wider opacity-75">De empresas no saben dónde están sus datos sensibles</p>
+          </div>
+          <div>
+            <h3 class="text-white font-bold text-3xl mb-2">85%</h3>
+            <p class="text-white text-xs uppercase tracking-wider opacity-75">Tienen usuarios con permisos excesivos</p>
+          </div>
+          <div>
+            <h3 class="text-white font-bold text-3xl mb-2">$14.8M</h3>
+            <p class="text-white text-xs uppercase tracking-wider opacity-75">Costo promedio de no cumplimiento</p>
+          </div>
+          <div>
+            <h3 class="text-white font-bold text-3xl mb-2">53%</h3>
+            <p class="text-white text-xs uppercase tracking-wider opacity-75">De brechas por abuso de privilegios</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Key Features (6 Cards) -->
+    <section class="bg-gray-50 py-16 sm:py-20 lg:py-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="mb-16">
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-semibold mb-4">
+            Capacidades{" "}<span class="text-[#ed1c24]">de Netwrix</span>
+          </h2>
+          <p class="text-gray-600 max-w-3xl">
+            Visibilidad, control y cumplimiento en toda su infraestructura híbrida desde
+            una plataforma unificada.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="bg-white border border-gray-200 rounded-2xl p-6">
+            <div class="bg-gray-50 rounded-lg w-10 h-10 flex items-center justify-center mb-4">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 20 20">
+                <circle cx="10" cy="10" r="7" stroke="#374151" stroke-width="1.66667" fill="none" />
+                <path d="M10 7v3l2 2" stroke="#374151" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.66667" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold mb-2">Auditoría de Cambios</h3>
+            <p class="text-sm text-gray-600">
+              Registro detallado de quién cambió qué, cuándo y dónde en Active Directory,
+              servidores de archivos, Exchange, SharePoint, Azure AD y más. Alertas en
+              tiempo real ante cambios críticos.
+            </p>
+          </div>
+
+          <div class="bg-white border border-gray-200 rounded-2xl p-6">
+            <div class="bg-gray-50 rounded-lg w-10 h-10 flex items-center justify-center mb-4">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 20 20">
+                <rect x="3" y="3" width="14" height="14" rx="2" stroke="#374151" stroke-width="1.66667" fill="none" />
+                <path d="M7 8h6M7 12h4" stroke="#374151" stroke-linecap="round" stroke-width="1.66667" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold mb-2">Clasificación de Datos</h3>
+            <p class="text-sm text-gray-600">
+              Descubra y clasifique automáticamente datos sensibles (PII, PHI, PCI) en
+              servidores de archivos, SharePoint, bases de datos y almacenamiento en la nube.
+            </p>
+          </div>
+
+          <div class="bg-white border border-gray-200 rounded-2xl p-6">
+            <div class="bg-gray-50 rounded-lg w-10 h-10 flex items-center justify-center mb-4">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 20 20">
+                <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0zM3 12a3 3 0 116 0 3 3 0 01-6 0z" stroke="#374151" stroke-width="1.66667" fill="none" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold mb-2">Gobernanza de Identidad</h3>
+            <p class="text-sm text-gray-600">
+              Gestione el ciclo de vida de identidades: provisioning, deprovisioning, revisión
+              de accesos y certificación de permisos. Principio de mínimo privilegio automatizado.
+            </p>
+          </div>
+
+          <div class="bg-white border border-gray-200 rounded-2xl p-6">
+            <div class="bg-gray-50 rounded-lg w-10 h-10 flex items-center justify-center mb-4">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 20 20">
+                <path d="M10 2L3 6v5c0 4.5 3 8.5 7 9.5 4-1 7-5 7-9.5V6l-7-4z" stroke="#374151" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.66667" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold mb-2">Gestión de Acceso Privilegiado</h3>
+            <p class="text-sm text-gray-600">
+              Controle y audite cuentas de administrador y accesos privilegiados. Sesiones
+              grabadas, acceso Just-In-Time y elevación temporal de privilegios con aprobación.
+            </p>
+          </div>
+
+          <div class="bg-white border border-gray-200 rounded-2xl p-6">
+            <div class="bg-gray-50 rounded-lg w-10 h-10 flex items-center justify-center mb-4">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 20 20">
+                <path d="M10 2a8 8 0 100 16 8 8 0 000-16zM10 6v4m0 4h.01" stroke="#374151" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.66667" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold mb-2">Auditoría Active Directory</h3>
+            <p class="text-sm text-gray-600">
+              Monitoreo profundo de Active Directory: cambios en GPOs, grupos de seguridad,
+              cuentas de usuario, permisos y delegaciones. Detección de amenazas internas.
+            </p>
+          </div>
+
+          <div class="bg-white border border-gray-200 rounded-2xl p-6">
+            <div class="bg-gray-50 rounded-lg w-10 h-10 flex items-center justify-center mb-4">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 20 20">
+                <path d="M9 17H5a2 2 0 01-2-2V5a2 2 0 012-2h10a2 2 0 012 2v4" stroke="#374151" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.66667" />
+                <path d="M13 15l2 2 4-4" stroke="#374151" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.66667" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold mb-2">Auditoría de File Servers</h3>
+            <p class="text-sm text-gray-600">
+              Sepa quién accede, modifica o elimina archivos en sus servidores. Identifique
+              permisos excesivos y datos huérfanos. Optimice el almacenamiento y reduzca riesgos.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Platform Capabilities -->
+    <section class="py-16 sm:py-20 lg:py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+          <div>
+            <span class="text-[#ed1c24] text-xs font-medium uppercase tracking-wide">Plataforma Unificada</span>
+            <h2 class="text-3xl sm:text-4xl font-bold mt-4 mb-6">
+              Una Sola Plataforma para Toda su Infraestructura
+            </h2>
+            <p class="text-gray-600 mb-6">
+              Netwrix cubre entornos híbridos completos: Active Directory, Azure AD, Windows Server,
+              Exchange, SharePoint, OneDrive, SQL Server, VMware, y almacenamiento en la nube.
+              Todo visible desde una única consola con reportes unificados.
+            </p>
+            <p class="text-gray-600 mb-8">
+              Cada cambio, cada acceso y cada anomalía queda registrada con el detalle necesario
+              para satisfacer a auditores y demostrar cumplimiento continuo ante marcos regulatorios.
+            </p>
+
+            <div class="grid grid-cols-2 gap-6">
+              <div class="border-l-4 border-red-600 pl-4">
+                <div class="text-2xl font-bold text-gray-900 mb-1">160+</div>
+                <div class="text-sm text-gray-600">Reportes de cumplimiento pre-construidos</div>
+              </div>
+              <div class="border-l-4 border-red-600 pl-4">
+                <div class="text-2xl font-bold text-gray-900 mb-1">13,000+</div>
+                <div class="text-sm text-gray-600">Clientes a nivel mundial</div>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="bg-gradient-to-br from-red-50 to-white border border-red-100 rounded-2xl p-8">
+              <h3 class="text-xl font-semibold mb-6">Sistemas auditados:</h3>
+              <div class="space-y-4">
+                <div class="flex items-start gap-3">
+                  <div class="bg-green-100 border border-green-200 rounded-full p-1 mt-0.5">
+                    <svg class="w-3.5 h-3.5 text-green-600" fill="none" viewBox="0 0 14 14">
+                      <path d="M11.6667 3.5L5.25 9.91667L2.33333 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.16667" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 class="font-semibold text-gray-900">Active Directory & Azure AD</h3>
+                    <p class="text-sm text-gray-600">Cambios en usuarios, grupos, GPOs y permisos</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3">
+                  <div class="bg-green-100 border border-green-200 rounded-full p-1 mt-0.5">
+                    <svg class="w-3.5 h-3.5 text-green-600" fill="none" viewBox="0 0 14 14">
+                      <path d="M11.6667 3.5L5.25 9.91667L2.33333 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.16667" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 class="font-semibold text-gray-900">Windows Server & File Servers</h3>
+                    <p class="text-sm text-gray-600">Acceso a archivos, cambios de permisos y configuración</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3">
+                  <div class="bg-green-100 border border-green-200 rounded-full p-1 mt-0.5">
+                    <svg class="w-3.5 h-3.5 text-green-600" fill="none" viewBox="0 0 14 14">
+                      <path d="M11.6667 3.5L5.25 9.91667L2.33333 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.16667" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 class="font-semibold text-gray-900">Microsoft 365 & SharePoint</h3>
+                    <p class="text-sm text-gray-600">Exchange Online, OneDrive, Teams y SharePoint Online</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3">
+                  <div class="bg-green-100 border border-green-200 rounded-full p-1 mt-0.5">
+                    <svg class="w-3.5 h-3.5 text-green-600" fill="none" viewBox="0 0 14 14">
+                      <path d="M11.6667 3.5L5.25 9.91667L2.33333 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.16667" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 class="font-semibold text-gray-900">SQL Server & VMware</h3>
+                    <p class="text-sm text-gray-600">Bases de datos, máquinas virtuales y entornos híbridos</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Compliance Frameworks -->
+    <section class="py-16 sm:py-20 lg:py-24 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl sm:text-4xl font-bold mb-4">
+            Marcos Regulatorios Soportados
+          </h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            Netwrix incluye reportes pre-construidos y controles mapeados a los principales
+            marcos de cumplimiento normativo.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+          <div class="bg-white border border-gray-200 rounded-2xl p-6 text-center">
+            <h3 class="font-bold text-lg text-gray-900 mb-1">GDPR</h3>
+            <p class="text-xs text-gray-500">Protección de datos UE</p>
+          </div>
+          <div class="bg-white border border-gray-200 rounded-2xl p-6 text-center">
+            <h3 class="font-bold text-lg text-gray-900 mb-1">HIPAA</h3>
+            <p class="text-xs text-gray-500">Datos de salud</p>
+          </div>
+          <div class="bg-white border border-gray-200 rounded-2xl p-6 text-center">
+            <h3 class="font-bold text-lg text-gray-900 mb-1">PCI DSS</h3>
+            <p class="text-xs text-gray-500">Datos de tarjetas</p>
+          </div>
+          <div class="bg-white border border-gray-200 rounded-2xl p-6 text-center">
+            <h3 class="font-bold text-lg text-gray-900 mb-1">ISO 27001</h3>
+            <p class="text-xs text-gray-500">Seguridad de información</p>
+          </div>
+          <div class="bg-white border border-gray-200 rounded-2xl p-6 text-center">
+            <h3 class="font-bold text-lg text-gray-900 mb-1">SOX</h3>
+            <p class="text-xs text-gray-500">Controles financieros</p>
+          </div>
+          <div class="bg-white border border-gray-200 rounded-2xl p-6 text-center">
+            <h3 class="font-bold text-lg text-gray-900 mb-1">Ley 1581</h3>
+            <p class="text-xs text-gray-500">Datos personales Colombia</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Casos de Uso Empresarial -->
+    <section class="py-16 sm:py-20 lg:py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl sm:text-4xl font-bold mb-4 text-gray-900">
+            Casos de Uso Empresarial
+          </h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            Netwrix resuelve los cuatro desafíos de gobernanza más críticos en entornos
+            corporativos modernos con entornos híbridos y trabajo remoto.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-lg transition-all duration-300 cursor-pointer">
+            <div class="w-12 h-12 bg-red-50 rounded-xl flex items-center justify-center mb-5">
+              <svg class="w-6 h-6 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+              </svg>
+            </div>
+            <h3 class="font-bold text-gray-900 text-xl mb-3">Auditoría de Active Directory</h3>
+            <p class="text-sm text-gray-600 leading-relaxed mb-4">
+              Detecte cambios no autorizados en grupos de seguridad, GPOs y cuentas de usuario en tiempo real.
+              Netwrix registra quién modificó qué, cuándo y desde dónde, generando alertas inmediatas
+              ante escaladas de privilegios o creación de cuentas administrativas no planificadas.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="bg-red-50 text-red-700 text-xs font-medium px-3 py-1 rounded-full">Cambios en GPOs</span>
+              <span class="bg-red-50 text-red-700 text-xs font-medium px-3 py-1 rounded-full">Grupos privilegiados</span>
+              <span class="bg-red-50 text-red-700 text-xs font-medium px-3 py-1 rounded-full">Cuentas deshabilitadas</span>
+            </div>
+          </div>
+
+          <div class="bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-lg transition-all duration-300 cursor-pointer">
+            <div class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-5">
+              <svg class="w-6 h-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" />
+              </svg>
+            </div>
+            <h3 class="font-bold text-gray-900 text-xl mb-3">Monitoreo de File Servers</h3>
+            <p class="text-sm text-gray-600 leading-relaxed mb-4">
+              Sepa exactamente quién accede, modifica o elimina archivos en sus servidores de archivos,
+              SharePoint y NAS. Identifique carpetas con permisos excesivos y datos sensibles sin clasificar.
+              Responda a ransomware en segundos detectando comportamientos anómalos de escritura masiva.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="bg-blue-50 text-blue-700 text-xs font-medium px-3 py-1 rounded-full">Detección ransomware</span>
+              <span class="bg-blue-50 text-blue-700 text-xs font-medium px-3 py-1 rounded-full">Permisos excesivos</span>
+              <span class="bg-blue-50 text-blue-700 text-xs font-medium px-3 py-1 rounded-full">Datos huérfanos</span>
+            </div>
+          </div>
+
+          <div class="bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-lg transition-all duration-300 cursor-pointer">
+            <div class="w-12 h-12 bg-purple-50 rounded-xl flex items-center justify-center mb-5">
+              <svg class="w-6 h-6 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
+              </svg>
+            </div>
+            <h3 class="font-bold text-gray-900 text-xl mb-3">Gobernanza Azure AD</h3>
+            <p class="text-sm text-gray-600 leading-relaxed mb-4">
+              Extienda la visibilidad a su entorno de Azure Active Directory y Microsoft 365.
+              Audite accesos a aplicaciones en la nube, revise permisos de consentimiento OAuth,
+              y detecte usuarios con licencias asignadas sin uso o con permisos heredados de roles anteriores.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="bg-purple-50 text-purple-700 text-xs font-medium px-3 py-1 rounded-full">Microsoft 365</span>
+              <span class="bg-purple-50 text-purple-700 text-xs font-medium px-3 py-1 rounded-full">OAuth consent</span>
+              <span class="bg-purple-50 text-purple-700 text-xs font-medium px-3 py-1 rounded-full">Hybrid identity</span>
+            </div>
+          </div>
+
+          <div class="bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-lg transition-all duration-300 cursor-pointer">
+            <div class="w-12 h-12 bg-orange-50 rounded-xl flex items-center justify-center mb-5">
+              <svg class="w-6 h-6 text-orange-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+            </div>
+            <h3 class="font-bold text-gray-900 text-xl mb-3">Detección de Escalada de Privilegios</h3>
+            <p class="text-sm text-gray-600 leading-relaxed mb-4">
+              Identifique intentos de escalada de privilegios antes de que se conviertan en incidentes.
+              Netwrix correlaciona eventos sospechosos: múltiples intentos de inicio de sesión fallidos,
+              acceso fuera de horario, elevaciones de privilegio no aprobadas y uso de cuentas de servicio
+              de forma interactiva.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="bg-orange-50 text-orange-700 text-xs font-medium px-3 py-1 rounded-full">Amenazas internas</span>
+              <span class="bg-orange-50 text-orange-700 text-xs font-medium px-3 py-1 rounded-full">Cuentas de servicio</span>
+              <span class="bg-orange-50 text-orange-700 text-xs font-medium px-3 py-1 rounded-full">Comportamiento anómalo</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cumplimiento Normativo Simplificado -->
+    <section class="py-16 sm:py-20 lg:py-24 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl sm:text-4xl font-bold mb-4 text-gray-900">
+            Cumplimiento Normativo Simplificado
+          </h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            Netwrix mapea automáticamente sus controles técnicos a los requerimientos de los
+            principales marcos regulatorios, generando evidencia lista para auditores.
+          </p>
+        </div>
+
+        <div class="rounded-2xl overflow-hidden border border-gray-200">
+          <!-- Header -->
+          <div class="grid grid-cols-4 bg-gray-900 text-white">
+            <div class="p-5 font-semibold text-sm">Control de Seguridad</div>
+            <div class="p-5 font-semibold text-sm text-center border-l border-gray-700">ISO 27001</div>
+            <div class="p-5 font-semibold text-sm text-center border-l border-gray-700">Ley 1581 (Colombia)</div>
+            <div class="p-5 font-semibold text-sm text-center border-l border-gray-700">PCI DSS</div>
+          </div>
+
+          <div class="divide-y divide-gray-100">
+            <div class="grid grid-cols-4 bg-white hover:bg-gray-50 transition-colors">
+              <div class="p-5">
+                <div class="text-sm font-medium text-gray-900">Auditoría de accesos a datos</div>
+                <div class="text-xs text-gray-500 mt-1">Registro de quién accede a qué información</div>
+              </div>
+              <div class="p-5 text-center border-l border-gray-100">
+                <span class="bg-green-100 text-green-700 text-xs font-semibold px-2 py-1 rounded">A.9.4</span>
+                <div class="text-xs text-gray-500 mt-1">Control de acceso</div>
+              </div>
+              <div class="p-5 text-center border-l border-gray-100">
+                <span class="bg-green-100 text-green-700 text-xs font-semibold px-2 py-1 rounded">Art. 17</span>
+                <div class="text-xs text-gray-500 mt-1">Deberes del responsable</div>
+              </div>
+              <div class="p-5 text-center border-l border-gray-100">
+                <span class="bg-green-100 text-green-700 text-xs font-semibold px-2 py-1 rounded">Req. 10</span>
+                <div class="text-xs text-gray-500 mt-1">Log y monitoreo</div>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-4 bg-gray-50 hover:bg-gray-100 transition-colors">
+              <div class="p-5">
+                <div class="text-sm font-medium text-gray-900">Gestión de privilegios</div>
+                <div class="text-xs text-gray-500 mt-1">Mínimo privilegio y revisión de accesos</div>
+              </div>
+              <div class="p-5 text-center border-l border-gray-100">
+                <span class="bg-green-100 text-green-700 text-xs font-semibold px-2 py-1 rounded">A.9.2</span>
+                <div class="text-xs text-gray-500 mt-1">Gestión de identidades</div>
+              </div>
+              <div class="p-5 text-center border-l border-gray-100">
+                <span class="bg-green-100 text-green-700 text-xs font-semibold px-2 py-1 rounded">Art. 4</span>
+                <div class="text-xs text-gray-500 mt-1">Principio de necesidad</div>
+              </div>
+              <div class="p-5 text-center border-l border-gray-100">
+                <span class="bg-green-100 text-green-700 text-xs font-semibold px-2 py-1 rounded">Req. 7</span>
+                <div class="text-xs text-gray-500 mt-1">Restricción de acceso</div>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-4 bg-white hover:bg-gray-50 transition-colors">
+              <div class="p-5">
+                <div class="text-sm font-medium text-gray-900">Clasificación de datos sensibles</div>
+                <div class="text-xs text-gray-500 mt-1">Descubrimiento y etiquetado automático</div>
+              </div>
+              <div class="p-5 text-center border-l border-gray-100">
+                <span class="bg-green-100 text-green-700 text-xs font-semibold px-2 py-1 rounded">A.8.2</span>
+                <div class="text-xs text-gray-500 mt-1">Clasificación información</div>
+              </div>
+              <div class="p-5 text-center border-l border-gray-100">
+                <span class="bg-green-100 text-green-700 text-xs font-semibold px-2 py-1 rounded">Art. 5</span>
+                <div class="text-xs text-gray-500 mt-1">Datos sensibles</div>
+              </div>
+              <div class="p-5 text-center border-l border-gray-100">
+                <span class="bg-green-100 text-green-700 text-xs font-semibold px-2 py-1 rounded">Req. 3</span>
+                <div class="text-xs text-gray-500 mt-1">Protección datos tarjeta</div>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-4 bg-gray-50 hover:bg-gray-100 transition-colors">
+              <div class="p-5">
+                <div class="text-sm font-medium text-gray-900">Reportes de cumplimiento automáticos</div>
+                <div class="text-xs text-gray-500 mt-1">160+ reportes pre-construidos para auditores</div>
+              </div>
+              <div class="p-5 text-center border-l border-gray-100">
+                <svg class="w-5 h-5 text-green-500 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg>
+              </div>
+              <div class="p-5 text-center border-l border-gray-100">
+                <svg class="w-5 h-5 text-green-500 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg>
+              </div>
+              <div class="p-5 text-center border-l border-gray-100">
+                <svg class="w-5 h-5 text-green-500 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-8 p-5 bg-white border border-gray-200 rounded-xl">
+          <p class="text-sm text-gray-600">
+            <span class="font-semibold text-gray-900">Consejo para auditorías:</span> Si está preparando
+            su certificación ISO 27001 o una auditoría PCI DSS, consulte también nuestra
+            <a href="/iso27001" class="text-red-600 underline hover:text-red-800">consultoría ISO 27001</a>
+            para combinar los controles técnicos de Netwrix con el programa de gestión documental.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 sm:py-20 lg:py-24 bg-white">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4 text-center">
+          Preguntas Frecuentes sobre Netwrix
+        </h2>
+        <p class="text-gray-600 text-center mb-12">
+          Lo que necesita saber sobre auditoría y gobernanza de identidad.
+        </p>
+
+        <div class="space-y-4">
+          <details class="bg-gray-50 border border-gray-200 rounded-xl group">
+            <summary class="font-semibold text-lg p-6 cursor-pointer list-none flex items-center justify-between">
+              ¿Netwrix requiere cambios en mi Active Directory?
+              <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+            </summary>
+            <div class="px-6 pb-6 text-gray-600">
+              No. Netwrix se instala como una solución de monitoreo que lee logs y eventos sin
+              realizar modificaciones en su Active Directory ni en sus servidores. No requiere
+              cambios de esquema, GPOs adicionales ni agentes en los controladores de dominio.
+            </div>
+          </details>
+
+          <details class="bg-gray-50 border border-gray-200 rounded-xl group">
+            <summary class="font-semibold text-lg p-6 cursor-pointer list-none flex items-center justify-between">
+              ¿Cuánto tiempo toma la implementación?
+              <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+            </summary>
+            <div class="px-6 pb-6 text-gray-600">
+              La implementación básica para Active Directory y servidores de archivos toma entre
+              2 y 5 días. Para entornos híbridos completos (incluyendo Azure AD, SharePoint,
+              SQL Server), la implementación completa se realiza en 2 a 3 semanas.
+            </div>
+          </details>
+
+          <details class="bg-gray-50 border border-gray-200 rounded-xl group">
+            <summary class="font-semibold text-lg p-6 cursor-pointer list-none flex items-center justify-between">
+              ¿Netwrix puede ayudarme a preparar una auditoría ISO 27001?
+              <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+            </summary>
+            <div class="px-6 pb-6 text-gray-600">
+              Sí. Netwrix incluye reportes pre-construidos mapeados a los controles de ISO 27001
+              (y otros marcos). Genera evidencia automática de controles de acceso, cambios auditados,
+              revisión de permisos y clasificación de datos sensibles. Esto reduce significativamente
+              el esfuerzo de preparación para auditorías y certificaciones.
+            </div>
+          </details>
+
+          <details class="bg-gray-50 border border-gray-200 rounded-xl group">
+            <summary class="font-semibold text-lg p-6 cursor-pointer list-none flex items-center justify-between">
+              ¿Qué tipo de alertas genera Netwrix?
+              <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+            </summary>
+            <div class="px-6 pb-6 text-gray-600">
+              Netwrix genera alertas en tiempo real para eventos críticos como: cambios en grupos
+              de administradores, modificaciones de GPOs, accesos masivos a archivos, cambios
+              de permisos en carpetas sensibles, creación de cuentas privilegiadas y cualquier
+              actividad que viole las políticas definidas por su organización.
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 sm:py-20 lg:py-24 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-gradient-to-r from-[#111827] to-[#1f2937] rounded-2xl overflow-hidden">
+          <div class="p-8 lg:p-12 text-center">
+            <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">
+              Demuestre cumplimiento. Audite todo. Controle el acceso.
+            </h2>
+            <p class="text-gray-300 mb-8 max-w-2xl mx-auto">
+              Solicite una demo personalizada y descubra cómo Netwrix puede darle visibilidad
+              total sobre su infraestructura y simplificar el cumplimiento normativo.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+              <a href="/contacto" class="bg-gradient-to-r from-red-600 to-red-700 text-white font-semibold px-8 py-4 rounded-full hover:from-red-700 hover:to-red-800 transition shadow-lg inline-flex items-center justify-center gap-2">
+                Solicitar Demo
+              </a>
+              <a href="/contacto" class="bg-white/10 backdrop-blur-sm border border-white/20 text-white font-semibold px-8 py-4 rounded-full hover:bg-white/20 transition inline-flex items-center justify-center gap-2 focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2">
+                Evaluar Mi Cumplimiento
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Soluciones Relacionadas -->
+  <section class="py-12 bg-gray-50 border-t border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-lg font-bold text-gray-900 mb-6">Soluciones Relacionadas</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+        <a href="/sealpath" class="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-all duration-300 text-center">
+          <p class="font-semibold text-sm text-gray-900">SealPath</p>
+          <p class="text-xs text-gray-500 mt-1">Seguridad de datos</p>
+        </a>
+        <a href="/iso27001" class="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-all duration-300 text-center">
+          <p class="font-semibold text-sm text-gray-900">ISO 27001</p>
+          <p class="text-xs text-gray-500 mt-1">Consultoría certificación</p>
+        </a>
+        <a href="/black-duck" class="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-all duration-300 text-center">
+          <p class="font-semibold text-sm text-gray-900">Black Duck</p>
+          <p class="text-xs text-gray-500 mt-1">AppSec SAST/DAST</p>
+        </a>
+        <a href="/enthec" class="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-all duration-300 text-center">
+          <p class="font-semibold text-sm text-gray-900">Enthec</p>
+          <p class="text-xs text-gray-500 mt-1">Superficie de ataque</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+  <WhatsAppButton />
+</BaseLayout>

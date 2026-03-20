@@ -1,0 +1,747 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Navbar from '@components/Navbar.astro';
+import Footer from '@components/Footer.astro';
+import WhatsAppButton from '@components/WhatsAppButton.astro';
+import { seoData } from '@data/seo';
+
+const seo = seoData.anydesk;
+---
+
+<BaseLayout seo={seo}>
+  <Navbar />
+
+  <div class="bg-white min-h-screen w-full font-['Instrument_Sans',sans-serif]">
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-24 lg:pt-40 lg:pb-32 overflow-hidden bg-gradient-to-b from-red-50/30 to-white">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+
+        <!-- Badge -->
+        <div class="flex justify-center mb-6">
+          <div class="inline-flex items-center gap-2 bg-white border border-red-200 px-4 py-2 rounded-full shadow-sm">
+            <span class="text-xs font-bold text-[#ed1c24] uppercase tracking-wider">
+              RENDIMIENTO EXTREMO
+            </span>
+          </div>
+        </div>
+
+        <!-- Main Heading -->
+        <div class="text-center mb-12 max-w-4xl mx-auto">
+          <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-tight mb-6">
+            <span class="block text-[#0f172a]">El escritorio remoto</span>
+            <span class="block text-[#ed1c24]">más rápido del mundo.</span>
+          </h1>
+          <p class="text-xl text-[#64748b] leading-relaxed max-w-3xl mx-auto">
+            ¿Cansado de lag, congelamiento y conexiones inestables? AnyDesk redefine el control remoto
+            con 60 FPS fluidos, latencia inferior a 16ms y una experiencia tan ágil como estar frente al equipo.
+          </p>
+        </div>
+
+        <!-- CTAs -->
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+          <a
+            href="/contacto"
+            class="bg-gradient-to-r from-red-600 to-red-700 text-white font-semibold px-8 py-4 rounded-full hover:from-red-700 hover:to-red-800 transition shadow-lg inline-flex items-center justify-center gap-2"
+          >
+            Descargar AnyDesk Ahora
+          </a>
+          <a
+            href="#precios"
+            class="bg-white border-2 border-gray-200 text-gray-800 font-semibold px-8 py-4 rounded-full hover:bg-gray-50 transition inline-flex items-center justify-center gap-2"
+          >
+            Solicitar para Empresas
+          </a>
+        </div>
+
+        <!-- Stats Grid -->
+        <div class="max-w-5xl mx-auto">
+          <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
+            <div class="bg-white border-2 border-gray-200 rounded-xl p-6 text-center hover:border-[#ed1c24] transition cursor-pointer">
+              <div class="text-4xl font-bold text-[#ed1c24] mb-2">60 FPS</div>
+              <p class="text-sm text-gray-600">Fluidez ultra suave</p>
+            </div>
+            <div class="bg-white border-2 border-gray-200 rounded-xl p-6 text-center hover:border-blue-500 transition cursor-pointer">
+              <div class="text-4xl font-bold text-blue-600 mb-2">&lt; 16 ms</div>
+              <p class="text-sm text-gray-600">Latencia mínima</p>
+            </div>
+            <div class="bg-white border-2 border-gray-200 rounded-xl p-6 text-center hover:border-purple-500 transition cursor-pointer">
+              <div class="text-4xl font-bold text-purple-600 mb-2">TLS 1.2</div>
+              <p class="text-sm text-gray-600">Cifrado bancario</p>
+            </div>
+            <div class="bg-white border-2 border-gray-200 rounded-xl p-6 text-center hover:border-green-500 transition cursor-pointer">
+              <div class="text-4xl font-bold text-green-600 mb-2">100 kb/s</div>
+              <p class="text-sm text-gray-600">Tráfico mínimo</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Image -->
+        <div class="hidden lg:flex items-center justify-center mt-12">
+          <img src="/assets/icono-dispositivo-endpoint-security.webp" alt="AnyDesk escritorio remoto empresarial ultra rápido" class="w-full max-w-sm rounded-2xl shadow-xl" width="384" height="384" loading="lazy" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Velocidad Inalcanzable Section -->
+    <section class="py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <h2 class="text-4xl font-bold text-[#0f172a] mb-6 leading-tight">
+              Velocidad Inalcanzable: La Ventaja del Codec DeskRT
+            </h2>
+            <p class="text-lg text-[#64748b] mb-6 leading-relaxed">
+              AnyDesk no es "otro software de control remoto". Su motor grafico propietario <strong class="text-[#0f172a]">DeskRT</strong> comprime,
+              transmite y renderiza pantallas a velocidades que rivalizan con conexiones LAN locales.
+            </p>
+
+            <div class="space-y-4">
+              <div class="flex items-start gap-3">
+                <div class="w-6 h-6 bg-[#ed1c24] rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="font-bold text-lg text-[#0f172a] mb-1">60 Frames por Segundo Reales</h4>
+                  <p class="text-sm text-[#475569]">
+                    Edite videos en Premiere, trabaje en AutoCAD o juegue (sí, es posible) con movimientos fluidos.
+                    Competidores tradicionales rondan 15-20 FPS.
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3">
+                <div class="w-6 h-6 bg-[#ed1c24] rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="font-bold text-lg text-[#0f172a] mb-1">Latencia Sub-Frame (16ms)</h4>
+                  <p class="text-sm text-[#475569]">
+                    Desde click del mouse hasta respuesta visual en menos de 1 frame. Ideal para soporte técnico
+                    en tiempo real sin retrasos frustrantes.
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex items-start gap-3">
+                <div class="w-6 h-6 bg-[#ed1c24] rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                  <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                </div>
+                <div>
+                  <h4 class="font-bold text-lg text-[#0f172a] mb-1">100 KB/s: Funciona en 3G/4G</h4>
+                  <p class="text-sm text-[#475569]">
+                    Trafico de red 10x menor que VNC/RDP. Acceda a servidores desde hoteles, cafes o
+                    conexiones móviles sin buffering constante.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right - Speed Meter -->
+          <div class="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl p-12 text-center border-2 border-gray-700">
+            <div class="mb-8">
+              <p class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-4">RENDIMIENTO EN VIVO</p>
+              <div class="relative inline-block">
+                <div class="text-9xl font-black text-white">60</div>
+                <div class="absolute -bottom-2 right-0 text-2xl font-bold text-[#ed1c24]">FPS</div>
+              </div>
+            </div>
+            <div class="space-y-3">
+              <div class="flex items-center justify-between text-sm">
+                <span class="text-gray-400">Latencia:</span>
+                <span class="font-bold text-green-400">12 ms</span>
+              </div>
+              <div class="flex items-center justify-between text-sm">
+                <span class="text-gray-400">Ancho de banda:</span>
+                <span class="font-bold text-blue-400">87 KB/s</span>
+              </div>
+              <div class="flex items-center justify-between text-sm">
+                <span class="text-gray-400">Resolucion:</span>
+                <span class="font-bold text-purple-400">1920x1080</span>
+              </div>
+              <div class="flex items-center justify-between text-sm">
+                <span class="text-gray-400">Codec:</span>
+                <span class="font-bold text-orange-400">DeskRT v2.1</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seguridad de Grado Bancario -->
+    <section class="py-24 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold text-[#0f172a] mb-4">Seguridad de Grado Bancario</h2>
+          <p class="text-lg text-[#64748b] max-w-2xl mx-auto">
+            Proteja sus activos digitales con tecnología de cifrado estandarizada. Su seguridad es nuestra prioridad.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="bg-white border-2 border-gray-200 rounded-xl p-8 hover:shadow-xl transition-all duration-300 cursor-pointer">
+            <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-6">
+              <svg class="w-6 h-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-[#0f172a] mb-3">Cifrado TLS 1.2</h3>
+            <p class="text-[#64748b] text-sm leading-relaxed">
+              Utilizamos la misma tecnología que la banca online para proteger la conexion. Nadie puede interceptar su sesion.
+            </p>
+          </div>
+
+          <div class="bg-white border-2 border-gray-200 rounded-xl p-8 hover:shadow-xl transition-all duration-300 cursor-pointer">
+            <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-6">
+              <svg class="w-6 h-6 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-[#0f172a] mb-3">Intercambio RSA 2048</h3>
+            <p class="text-[#64748b] text-sm leading-relaxed">
+              Cifrado asimetrico para verificar cada conexion. Perfect Forward Secrecy garantiza que sesiones pasadas sean seguras.
+            </p>
+          </div>
+
+          <div class="bg-white border-2 border-gray-200 rounded-xl p-8 hover:shadow-xl transition-all duration-300 cursor-pointer">
+            <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-6">
+              <svg class="w-6 h-6 text-orange-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-[#0f172a] mb-3">Arquitectura Erlang</h3>
+            <p class="text-[#64748b] text-sm leading-relaxed">
+              Backend construido en Erlang/OTP, el mismo lenguaje de telecomunicaciones críticas. 99.999% uptime garantizado.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Diseñado para Profesionales TI -->
+    <section class="py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold text-[#0f172a] mb-4">Diseñado para Profesionales TI</h2>
+          <p class="text-lg text-[#64748b] max-w-2xl mx-auto">
+            Herramientas avanzadas que simplifican la administración masiva de endpoints corporativos
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div class="text-center">
+            <div class="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+              <svg class="w-8 h-8 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-bold text-[#0f172a] mb-2">Transferencia de Archivos</h3>
+            <p class="text-sm text-[#64748b]">Arrastre archivos de hasta 5 GB entre equipos como si fueran carpetas locales. Clipboard bidireccional.</p>
+          </div>
+
+          <div class="text-center">
+            <div class="w-16 h-16 bg-green-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+              <svg class="w-8 h-8 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-bold text-[#0f172a] mb-2">Grabacion Remota</h3>
+            <p class="text-sm text-[#64748b]">Registre sesiones completas para auditorías de compliance o capacitación. Formato MP4 estandar.</p>
+          </div>
+
+          <div class="text-center">
+            <div class="w-16 h-16 bg-purple-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+              <svg class="w-8 h-8 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-bold text-[#0f172a] mb-2">Libreta de Direcciones</h3>
+            <p class="text-sm text-[#64748b]">Organice 10,000+ endpoints con grupos, etiquetas y búsqueda inteligente. Sincronizacion multi-usuario.</p>
+          </div>
+
+          <div class="text-center">
+            <div class="w-16 h-16 bg-red-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+              <svg class="w-8 h-8 text-[#ed1c24]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-bold text-[#0f172a] mb-2">Acceso no Supervisado</h3>
+            <p class="text-sm text-[#64748b]">Configure contraseñas permanentes para servidores/kioscos. Reinicio remoto y reconexion automatica.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Multi-Plataforma -->
+    <section class="py-24 bg-gradient-to-br from-gray-50 to-white">
+      <div class="max-w-6xl mx-auto px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl font-bold text-[#0f172a] mb-4">Funciona en Todo Sistema Operativo</h2>
+          <p class="text-lg text-[#64748b]">Un solo ID de AnyDesk para controlar Windows, Mac, Linux, Android, iOS, Raspberry Pi y FreeBSD</p>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-5 gap-6">
+          <div class="bg-white border-2 border-gray-200 rounded-xl p-6 text-center hover:border-blue-500 transition cursor-pointer">
+            <div class="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+              <svg class="w-10 h-10 text-blue-600" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.9-1.801"/>
+              </svg>
+            </div>
+            <h4 class="font-bold text-sm text-[#0f172a]">Windows</h4>
+            <p class="text-xs text-gray-500 mt-1">7, 10, 11, Server</p>
+          </div>
+          <div class="bg-white border-2 border-gray-200 rounded-xl p-6 text-center hover:border-gray-700 transition cursor-pointer">
+            <div class="w-16 h-16 bg-gray-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+              <svg class="w-10 h-10 text-gray-700" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+              </svg>
+            </div>
+            <h4 class="font-bold text-sm text-[#0f172a]">macOS</h4>
+            <p class="text-xs text-gray-500 mt-1">10.13+</p>
+          </div>
+          <div class="bg-white border-2 border-gray-200 rounded-xl p-6 text-center hover:border-yellow-500 transition">
+            <div class="w-16 h-16 bg-yellow-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+              <svg class="w-10 h-10 text-yellow-600" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12.504 0c-.155 0-.315.008-.48.021-4.226.333-3.105 4.807-3.17 6.298-.076 1.092-.3 1.953-1.05 3.02-.885 1.051-2.127 2.75-2.716 4.521-.278.835-.41 1.684-.287 2.489.845 5.331 6.925 6.881 10.95 4.526.851-.498 1.421-1.352 1.678-2.355.249-.977.36-2.076.36-3.331 0-2.59-.38-4.537-.933-6.14-.553-1.604-1.38-2.85-2.127-3.757C13.84.984 13.059.365 12.504 0zm-.529 3.871c1.049 0 1.898.849 1.898 1.897 0 1.05-.849 1.899-1.898 1.899-1.05 0-1.898-.849-1.898-1.899 0-1.048.848-1.897 1.898-1.897z"/>
+              </svg>
+            </div>
+            <h4 class="font-bold text-sm text-[#0f172a]">Linux</h4>
+            <p class="text-xs text-gray-500 mt-1">Ubuntu, Debian, RPM</p>
+          </div>
+          <div class="bg-white border-2 border-gray-200 rounded-xl p-6 text-center hover:border-green-500 transition cursor-pointer">
+            <div class="w-16 h-16 bg-green-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+              <svg class="w-10 h-10 text-green-600" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M17.523 15.341c-.759 0-1.373.616-1.373 1.373s.615 1.373 1.373 1.373c.758 0 1.373-.615 1.373-1.373s-.616-1.373-1.373-1.373z"/>
+                <path d="M6.477 15.341c-.758 0-1.373.616-1.373 1.373s.616 1.373 1.373 1.373c.759 0 1.373-.615 1.373-1.373s-.615-1.373-1.373-1.373z"/>
+                <path d="M16.423 8.134l1.217-2.109c.084-.146.029-.334-.117-.418-.146-.083-.334-.029-.418.117l-1.234 2.137C14.698 7.363 13.392 7 12 7c-1.392 0-2.698.363-3.871.861L6.895 5.724c-.084-.146-.272-.2-.418-.117-.146.084-.2.272-.117.418l1.217 2.109C5.16 9.505 3.5 12.246 3.5 15.341h17c0-3.095-1.66-5.836-4.077-7.207z"/>
+              </svg>
+            </div>
+            <h4 class="font-bold text-sm text-[#0f172a]">Android</h4>
+            <p class="text-xs text-gray-500 mt-1">5.0+</p>
+          </div>
+          <div class="bg-white border-2 border-gray-200 rounded-xl p-6 text-center hover:border-gray-800 transition cursor-pointer">
+            <div class="w-16 h-16 bg-gray-800 rounded-xl flex items-center justify-center mx-auto mb-4">
+              <svg class="w-10 h-10 text-white" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+              </svg>
+            </div>
+            <h4 class="font-bold text-sm text-[#0f172a]">iOS</h4>
+            <p class="text-xs text-gray-500 mt-1">11.0+</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AnyDesk para Equipos de TI -->
+    <section class="py-16 sm:py-20 lg:py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="text-center mb-14">
+          <span class="inline-block bg-red-100 text-[#ed1c24] text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide mb-4">Casos de Uso TI</span>
+          <h2 class="text-3xl sm:text-4xl font-bold text-[#0f172a] mb-4">AnyDesk para Equipos de TI</h2>
+          <p class="text-lg text-[#64748b] max-w-2xl mx-auto">
+            Las áreas de tecnología lo utilizan como herramienta central para cuatro escenarios críticos en el día a día operativo.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- Soporte Helpdesk -->
+          <div class="bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-lg transition-all duration-300 cursor-pointer">
+            <div class="flex items-start gap-4 mb-5">
+              <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-[#0f172a] mb-1">Soporte Helpdesk Nivel 1 y 2</h3>
+                <span class="inline-block text-xs font-semibold bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full">El uso más frecuente</span>
+              </div>
+            </div>
+            <p class="text-[#64748b] text-sm leading-relaxed mb-4">
+              Los técnicos de soporte toman el control del equipo del usuario final en segundos, sin necesidad de desplazarse físicamente. Con AnyDesk, el ticket promedio de helpdesk se resuelve en la mitad del tiempo: el técnico ve exactamente lo mismo que el usuario, puede transferir parches o archivos de configuración y grabar la sesión para documentación de auditoría.
+            </p>
+            <ul class="space-y-2 text-sm text-[#475569]">
+              <li class="flex items-center gap-2">
+                <svg class="w-4 h-4 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                Sesiones de hasta 8 horas sin desconexión
+              </li>
+              <li class="flex items-center gap-2">
+                <svg class="w-4 h-4 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                Chat de texto integrado durante la sesión
+              </li>
+              <li class="flex items-center gap-2">
+                <svg class="w-4 h-4 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                Grabación en MP4 para auditorías de compliance
+              </li>
+            </ul>
+          </div>
+
+          <!-- Administración de Servidores -->
+          <div class="bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-lg transition-all duration-300 cursor-pointer">
+            <div class="flex items-start gap-4 mb-5">
+              <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-[#0f172a] mb-1">Administración Remota de Servidores</h3>
+                <span class="inline-block text-xs font-semibold bg-purple-100 text-purple-700 px-2 py-0.5 rounded-full">Sin VPN requerida</span>
+              </div>
+            </div>
+            <p class="text-[#64748b] text-sm leading-relaxed mb-4">
+              Los administradores de sistemas acceden a servidores Windows Server, Linux y appliances de red desde cualquier ubicación. AnyDesk establece conexión a través de firewalls corporativos sin abrir puertos adicionales, utilizando solo el puerto 443 saliente. Ideal para mantenimiento nocturno, aplicación de parches de seguridad y resolución de incidentes fuera del horario laboral.
+            </p>
+            <ul class="space-y-2 text-sm text-[#475569]">
+              <li class="flex items-center gap-2">
+                <svg class="w-4 h-4 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                Acceso no supervisado con contraseña permanente
+              </li>
+              <li class="flex items-center gap-2">
+                <svg class="w-4 h-4 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                Reinicio remoto con reconexión automática
+              </li>
+              <li class="flex items-center gap-2">
+                <svg class="w-4 h-4 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                Transferencia de archivos hasta 5 GB por sesión
+              </li>
+            </ul>
+          </div>
+
+          <!-- Teletrabajo -->
+          <div class="bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-lg transition-all duration-300 cursor-pointer">
+            <div class="flex items-start gap-4 mb-5">
+              <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-[#0f172a] mb-1">Teletrabajo Seguro y Eficiente</h3>
+                <span class="inline-block text-xs font-semibold bg-green-100 text-green-700 px-2 py-0.5 rounded-full">Modelo híbrido</span>
+              </div>
+            </div>
+            <p class="text-[#64748b] text-sm leading-relaxed mb-4">
+              Los empleados remotos acceden a su equipo de oficina con la misma experiencia visual que si estuvieran frente a él: 60 FPS, resolución completa y acceso a todas las aplicaciones corporativas instaladas localmente. Esto elimina la necesidad de VPN costosas o soluciones VDI complejas, reduciendo la carga operativa del área de TI para soportar modelos de trabajo híbrido.
+            </p>
+            <ul class="space-y-2 text-sm text-[#475569]">
+              <li class="flex items-center gap-2">
+                <svg class="w-4 h-4 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                Sin necesidad de VPN corporativa adicional
+              </li>
+              <li class="flex items-center gap-2">
+                <svg class="w-4 h-4 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                Funciona en redes 3G/4G de 100 KB/s mínimo
+              </li>
+              <li class="flex items-center gap-2">
+                <svg class="w-4 h-4 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                Política de privacidad: ocultar pantalla del equipo local
+              </li>
+            </ul>
+          </div>
+
+          <!-- Capacitación Remota -->
+          <div class="bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-lg transition-all duration-300 cursor-pointer">
+            <div class="flex items-start gap-4 mb-5">
+              <div class="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-orange-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.069A1 1 0 0121 8.876V15a1 1 0 01-1.447.894L15 14M3 8h8a2 2 0 012 2v4a2 2 0 01-2 2H3a2 2 0 01-2-2V10a2 2 0 012-2z" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-[#0f172a] mb-1">Capacitación Remota de Usuarios</h3>
+                <span class="inline-block text-xs font-semibold bg-orange-100 text-orange-700 px-2 py-0.5 rounded-full">Onboarding y training</span>
+              </div>
+            </div>
+            <p class="text-[#64748b] text-sm leading-relaxed mb-4">
+              Los instructores de TI capacitan a empleados en nuevas plataformas y aplicaciones tomando el control del equipo del estudiante para demostrar procedimientos en tiempo real. La función de grabación de sesión genera material de entrenamiento reutilizable. Especialmente útil para onboarding de nuevos empleados en empresas con sedes en múltiples ciudades o países.
+            </p>
+            <ul class="space-y-2 text-sm text-[#475569]">
+              <li class="flex items-center gap-2">
+                <svg class="w-4 h-4 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                Control compartido (instructor + alumno simultáneo)
+              </li>
+              <li class="flex items-center gap-2">
+                <svg class="w-4 h-4 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                Grabación automática en MP4 para biblioteca de training
+              </li>
+              <li class="flex items-center gap-2">
+                <svg class="w-4 h-4 text-green-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                Chat y anotaciones en pantalla en tiempo real
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seguridad en AnyDesk -->
+    <section class="py-16 sm:py-20 lg:py-24 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="text-center mb-14">
+          <span class="inline-block bg-blue-100 text-blue-700 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide mb-4">Arquitectura de Seguridad</span>
+          <h2 class="text-3xl sm:text-4xl font-bold text-[#0f172a] mb-4">Seguridad en AnyDesk: Cada Capa Explicada</h2>
+          <p class="text-lg text-[#64748b] max-w-2xl mx-auto">
+            AnyDesk combina cuatro mecanismos de seguridad independientes que actúan en capas sucesivas para garantizar que solo las personas autorizadas accedan a sus sistemas.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+          <!-- TLS 1.2 -->
+          <div class="bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-lg transition-all duration-300 cursor-pointer">
+            <div class="flex items-start gap-4 mb-4">
+              <div class="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                <svg class="w-7 h-7 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-[#0f172a]">Cifrado TLS 1.2 en Tránsito</h3>
+                <span class="text-xs text-blue-600 font-semibold">Capa de transporte</span>
+              </div>
+            </div>
+            <p class="text-[#64748b] text-sm leading-relaxed mb-4">
+              Todo el tráfico entre el cliente y el equipo remoto se cifra con TLS 1.2, el mismo estándar usado por la banca en línea y los sistemas de pago. Esto garantiza que ningún actor intermedio (ISP, ataques man-in-the-middle, redes WiFi públicas) pueda interceptar o leer el contenido de la sesión remota.
+            </p>
+            <div class="bg-blue-50 rounded-lg p-3 text-xs text-blue-700 font-mono">
+              TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 — Cipher Suite bancario
+            </div>
+          </div>
+
+          <!-- RSA 2048 -->
+          <div class="bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-lg transition-all duration-300 cursor-pointer">
+            <div class="flex items-start gap-4 mb-4">
+              <div class="w-14 h-14 bg-purple-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                <svg class="w-7 h-7 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-[#0f172a]">Intercambio de Claves RSA 2048</h3>
+                <span class="text-xs text-purple-600 font-semibold">Autenticación criptográfica</span>
+              </div>
+            </div>
+            <p class="text-[#64748b] text-sm leading-relaxed mb-4">
+              Antes de cada sesión, AnyDesk verifica la identidad del equipo remoto mediante criptografía asimétrica RSA 2048. Se genera un par de claves único por instalación: la clave privada nunca abandona el dispositivo, mientras la pública se intercambia de forma segura. El mecanismo de Perfect Forward Secrecy garantiza que descifrar sesiones pasadas sea computacionalmente imposible incluso si una clave futura es comprometida.
+            </p>
+            <div class="bg-purple-50 rounded-lg p-3 text-xs text-purple-700 font-mono">
+              RSA-2048 + Perfect Forward Secrecy — Clave única por sesión
+            </div>
+          </div>
+
+          <!-- Access Control Lists -->
+          <div class="bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-lg transition-all duration-300 cursor-pointer">
+            <div class="flex items-start gap-4 mb-4">
+              <div class="w-14 h-14 bg-green-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                <svg class="w-7 h-7 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-[#0f172a]">Listas de Control de Acceso (ACL)</h3>
+                <span class="text-xs text-green-600 font-semibold">Autorización granular</span>
+              </div>
+            </div>
+            <p class="text-[#64748b] text-sm leading-relaxed mb-4">
+              Las ACL de AnyDesk permiten a los administradores definir exactamente qué IDs de AnyDesk tienen permitido conectarse a cada equipo. Un servidor crítico puede configurarse para aceptar conexiones únicamente desde los IDs del equipo de administración de sistemas, bloqueando automáticamente cualquier otro intento de conexión, sin importar si el atacante conoce el ID de 9 dígitos.
+            </p>
+            <ul class="space-y-1 text-xs text-[#475569]">
+              <li class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Whitelist de IDs autorizados por equipo</li>
+              <li class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Permisos diferenciados: solo vista, teclado, portapapeles</li>
+              <li class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Registro de auditoría de cada intento de acceso</li>
+            </ul>
+          </div>
+
+          <!-- 2FA -->
+          <div class="bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-lg transition-all duration-300 cursor-pointer">
+            <div class="flex items-start gap-4 mb-4">
+              <div class="w-14 h-14 bg-orange-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                <svg class="w-7 h-7 text-orange-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-[#0f172a]">Autenticación de Dos Factores (2FA)</h3>
+                <span class="text-xs text-orange-600 font-semibold">Segunda capa de identidad</span>
+              </div>
+            </div>
+            <p class="text-[#64748b] text-sm leading-relaxed mb-4">
+              AnyDesk Enterprise soporta autenticación de dos factores mediante aplicaciones TOTP (Google Authenticator, Microsoft Authenticator, Authy). Incluso si un atacante obtiene las credenciales de un técnico, no puede iniciar sesión sin el segundo factor temporal. Para cuentas con acceso a servidores críticos, el 2FA es obligatorio según las mejores prácticas de seguridad.
+            </p>
+            <ul class="space-y-1 text-xs text-[#475569]">
+              <li class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Compatible con Google/Microsoft Authenticator</li>
+              <li class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>SSO con SAML 2.0 en plan Enterprise</li>
+              <li class="flex items-center gap-2"><svg class="w-3.5 h-3.5 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>Tokens TOTP de 30 segundos, sin SMS</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="bg-[#0f172a] rounded-2xl p-8 text-center">
+          <h3 class="text-xl font-bold text-white mb-3">¿Necesita AnyDesk con configuración de seguridad empresarial?</h3>
+          <p class="text-gray-300 text-sm mb-6 max-w-2xl mx-auto">
+            Starsolution implementa AnyDesk con ACL, 2FA y políticas de seguridad centralizadas para empresas en Colombia, Venezuela y Miami. Licencias con descuento por volumen y soporte local en español.
+          </p>
+          <a href="/contacto" class="inline-flex items-center gap-2 bg-[#ed1c24] text-white font-semibold px-8 py-3 rounded-full hover:bg-[#d41820] transition shadow-lg">
+            Solicitar Licencias Empresariales
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-24 bg-white">
+      <div class="max-w-4xl mx-auto px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl font-bold text-[#0f172a] mb-4">Preguntas Frecuentes</h2>
+          <p class="text-lg text-[#64748b]">Todo lo que necesita saber sobre AnyDesk para empresas</p>
+        </div>
+
+        <div class="space-y-4">
+          <!-- FAQ 1 -->
+          <details class="bg-gray-50 border-2 border-gray-200 rounded-xl overflow-hidden group">
+            <summary class="px-6 py-5 flex items-center justify-between cursor-pointer hover:bg-gray-100 transition">
+              <span class="font-bold text-[#0f172a] text-lg pr-4">¿Es gratis AnyDesk para uso comercial?</span>
+              <svg class="w-6 h-6 text-[#ed1c24] flex-shrink-0 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </summary>
+            <div class="px-6 pb-5 text-[#475569] leading-relaxed">
+              <p class="mb-3">
+                <strong>No, requiere licencia empresarial.</strong> La versión gratuita está limitada a uso personal/educativo.
+                Para soporte tecnico comercial, administracion remota de servidores o asistencia a clientes, necesita:
+              </p>
+              <ul class="list-disc pl-6 space-y-2 text-sm">
+                <li><strong>AnyDesk Professional:</strong> EUR10.90/mes por asiento (1 tecnico, conexiones ilimitadas)</li>
+                <li><strong>AnyDesk Power:</strong> EUR20.90/mes (incluye grabacion de sesiones, branding personalizado)</li>
+                <li><strong>AnyDesk Ultimate:</strong> EUR52.90/mes (SSO, API, prioridad en soporte 24/7)</li>
+                <li><strong>AnyDesk Enterprise:</strong> Licenciamiento on-premise para +1,000 usuarios. Contactar ventas.</li>
+              </ul>
+              <p class="mt-3 text-xs bg-blue-50 border-l-4 border-blue-400 p-3 rounded">
+                <strong>Nota:</strong> Starsolution Colombia ofrece licencias con descuento por volumen y soporte local en español.
+              </p>
+            </div>
+          </details>
+
+          <!-- FAQ 2 -->
+          <details class="bg-gray-50 border-2 border-gray-200 rounded-xl overflow-hidden group">
+            <summary class="px-6 py-5 flex items-center justify-between cursor-pointer hover:bg-gray-100 transition">
+              <span class="font-bold text-[#0f172a] text-lg pr-4">¿Qué necesito para conectarme remotamente?</span>
+              <svg class="w-6 h-6 text-[#ed1c24] flex-shrink-0 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </summary>
+            <div class="px-6 pb-5 text-[#475569] leading-relaxed">
+              <p class="mb-3">
+                <strong>Solo el ID de AnyDesk de 9 dígitos.</strong> No requiere configuracion de puertos, NAT traversal automático:
+              </p>
+              <ol class="list-decimal pl-6 space-y-2 text-sm">
+                <li>El equipo remoto instala AnyDesk (8 MB, 30 segundos) y obtiene un ID único (ej: 123 456 789)</li>
+                <li>Usted ingresa ese ID en su AnyDesk local y presiona "Conectar"</li>
+                <li>El usuario remoto acepta la solicitud (o usa contrasena no supervisada predefinida)</li>
+                <li>Listo. Funciona detrás de firewalls corporativos sin abrir puertos manuales.</li>
+              </ol>
+              <p class="mt-3 text-xs bg-green-50 border-l-4 border-green-400 p-3 rounded">
+                <strong>Ventaja vs RDP/VNC:</strong> No necesita IP publica estatica, VPN ni DMZ. Atraviesa CGNAT de ISPs.
+              </p>
+            </div>
+          </details>
+
+          <!-- FAQ 3 -->
+          <details class="bg-gray-50 border-2 border-gray-200 rounded-xl overflow-hidden group">
+            <summary class="px-6 py-5 flex items-center justify-between cursor-pointer hover:bg-gray-100 transition">
+              <span class="font-bold text-[#0f172a] text-lg pr-4">¿AnyDesk consume muchos recursos?</span>
+              <svg class="w-6 h-6 text-[#ed1c24] flex-shrink-0 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </summary>
+            <div class="px-6 pb-5 text-[#475569] leading-relaxed">
+              <p class="mb-3"><strong>Mínimo impacto.</strong> Optimizado para servidores con carga crítica:</p>
+              <ul class="list-disc pl-6 space-y-2 text-sm">
+                <li><strong>Tamaño:</strong> 8 MB instalado (vs 400 MB de TeamViewer)</li>
+                <li><strong>RAM idle:</strong> 15-30 MB</li>
+                <li><strong>RAM activo:</strong> 60-90 MB durante sesion remota</li>
+                <li><strong>CPU:</strong> 2-5% con transmision 60 FPS (Intel i5 8th gen)</li>
+                <li><strong>Ancho de banda:</strong> 100 KB/s promedio (vs 1-2 MB/s de VNC sin compresión)</li>
+              </ul>
+              <p class="mt-3 text-xs bg-purple-50 border-l-4 border-purple-400 p-3 rounded">
+                <strong>Benchmark:</strong> Puede ejecutar 50+ sesiones simultáneas en un servidor Windows Server 2019 con 16 GB RAM.
+              </p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section id="precios" class="py-24 bg-gradient-to-br from-[#ed1c24] to-[#c41820] text-white">
+      <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+        <h2 class="text-4xl lg:text-5xl font-bold mb-6">Comience a trabajar sin límites</h2>
+        <p class="text-xl text-red-100 mb-10 leading-relaxed">
+          Descargue AnyDesk en 30 segundos y experimente escritorio remoto de clase mundial.
+          Para licencias empresariales con soporte local, contacte a Starsolution.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+          <a
+            href="/contacto"
+            class="bg-gradient-to-r from-red-600 to-red-700 text-white font-semibold px-8 py-4 rounded-full hover:from-red-700 hover:to-red-800 transition shadow-lg inline-flex items-center justify-center gap-2"
+          >
+            Solicitar Licencia Empresarial
+          </a>
+          <a
+            href="https://anydesk.com/es/downloads"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="bg-white/10 backdrop-blur-sm border border-white/20 text-white font-semibold px-8 py-4 rounded-full hover:bg-white/20 transition inline-flex items-center justify-center gap-2"
+          >
+            Descargar Version Gratuita
+          </a>
+        </div>
+
+        <p class="text-sm text-red-100">
+          ¿Preguntas? Llámenos al <a href="tel:+573007010017" class="underline font-bold hover:text-white">+57 300 701 0017</a> o escriba a
+          <a href="mailto:contacto@star-ti.com" class="underline font-bold hover:text-white">contacto@star-ti.com</a>
+        </p>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Soluciones Relacionadas -->
+  <section class="py-12 bg-gray-50 border-t border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-lg font-bold text-gray-900 mb-6">Soluciones Relacionadas</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+        <a href="/teamviewer" class="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-all duration-300 text-center">
+          <p class="font-semibold text-sm text-gray-900">TeamViewer</p>
+          <p class="text-xs text-gray-500 mt-1">Control remoto</p>
+        </a>
+        <a href="/soti-mdm" class="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-all duration-300 text-center">
+          <p class="font-semibold text-sm text-gray-900">SOTI MobiControl</p>
+          <p class="text-xs text-gray-500 mt-1">MDM móviles</p>
+        </a>
+        <a href="/cableado-estructurado" class="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-all duration-300 text-center">
+          <p class="font-semibold text-sm text-gray-900">Cableado Estructurado</p>
+          <p class="text-xs text-gray-500 mt-1">Instalación redes</p>
+        </a>
+        <a href="/equipos-computo" class="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-all duration-300 text-center">
+          <p class="font-semibold text-sm text-gray-900">Equipos de Computo</p>
+          <p class="text-xs text-gray-500 mt-1">Hardware empresarial</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+  <WhatsAppButton />
+</BaseLayout>

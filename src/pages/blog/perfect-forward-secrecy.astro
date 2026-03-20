@@ -1,0 +1,436 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Navbar from '@components/Navbar.astro';
+import Footer from '@components/Footer.astro';
+import WhatsAppButton from '@components/WhatsAppButton.astro';
+import { seoData } from '@data/seo';
+
+const seo = seoData['blog/perfect-forward-secrecy'];
+---
+
+<BaseLayout seo={seo}>
+  <Navbar />
+
+  <!-- Hero Section -->
+  <section class="relative bg-gradient-to-br from-[#0f172a] to-[#1e293b] overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute top-0 right-0 w-96 h-96 bg-red-500 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-0 left-0 w-96 h-96 bg-orange-500 rounded-full blur-3xl"></div>
+    </div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-16 lg:pb-20">
+      <!-- Breadcrumb -->
+      <nav class="mb-8 flex items-center gap-2 text-sm text-gray-400">
+        <a href="/" class="hover:text-white transition-colors">Inicio</a>
+        <span>/</span>
+        <a href="/#blog" class="hover:text-white transition-colors">Blog</a>
+        <span>/</span>
+        <span class="text-gray-200">Perfect Forward Secrecy</span>
+      </nav>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <div class="flex items-center gap-3 mb-6">
+            <span class="bg-red-500/20 border border-red-500/30 text-red-400 text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wide">
+              Seguridad
+            </span>
+            <span class="text-gray-400 text-sm">24 de enero de 2025</span>
+          </div>
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+            Perfect Forward Secrecy
+            <span class="block text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-orange-400">
+              Explicado para Empresas
+            </span>
+          </h1>
+          <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+            Aprenda qué es PFS, por qué protege sus comunicaciones cifradas incluso cuando
+            las claves maestras son comprometidas, y cómo implementarlo en su organización.
+          </p>
+          <div class="flex items-center gap-4 text-sm text-gray-400">
+            <span>Por el equipo de Starsolution</span>
+            <span>&bull;</span>
+            <span>Tiempo de lectura: 8 min</span>
+          </div>
+        </div>
+        <div class="hidden lg:block">
+          <img
+            src="/assets/blog-ciberseguridad-realidad-virtual.webp"
+            alt="Tecnología de ciberseguridad avanzada con realidad virtual para protección empresarial"
+            class="w-full rounded-2xl shadow-2xl"
+            width="600"
+            height="400"
+            loading="eager"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Article Body -->
+  <article class="bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+
+      <!-- Introduction -->
+      <section class="mb-12">
+        <p class="text-xl text-gray-700 leading-relaxed mb-6">
+          En el panorama actual de amenazas cibernéticas, las empresas colombianas enfrentan un riesgo
+          que muchos directivos desconocen: los atacantes están grabando el tráfico cifrado de hoy para
+          descifrarlo mañana. Esta táctica, conocida como <strong>&quot;harvest now, decrypt later&quot;</strong>,
+          convierte conversaciones y transacciones que parecen seguras en vulnerabilidades diferidas.
+          Perfect Forward Secrecy es la respuesta técnica a esta amenaza.
+        </p>
+        <p class="text-lg text-gray-600 leading-relaxed">
+          En este artículo explicamos qué es PFS, cómo funciona en términos prácticos y qué pasos
+          debe tomar su organización para implementarlo en sus sistemas de comunicación críticos.
+        </p>
+      </section>
+
+      <!-- Section 1 -->
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">¿Qué es Perfect Forward Secrecy?</h2>
+        <p class="text-lg text-gray-600 leading-relaxed mb-6">
+          Perfect Forward Secrecy (PFS), también llamada Forward Secrecy (FS), es una propiedad
+          criptográfica que garantiza que las claves de sesión utilizadas para cifrar comunicaciones
+          sean completamente independientes entre sí y de la clave privada maestra del servidor.
+        </p>
+        <p class="text-lg text-gray-600 leading-relaxed mb-6">
+          En un sistema sin PFS, existe una única clave privada de larga duración. Si un atacante
+          intercepta y almacena años de tráfico cifrado y luego obtiene esa clave privada (por robo,
+          orden judicial o vulnerabilidad), puede descifrar retroactivamente toda la comunicación
+          histórica capturada.
+        </p>
+        <div class="bg-gray-50 border border-gray-200 rounded-2xl p-8 mb-6">
+          <h3 class="text-xl font-bold text-gray-900 mb-4">El problema del cifrado tradicional</h3>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div class="bg-red-50 border border-red-200 rounded-xl p-4">
+              <div class="text-red-600 font-bold mb-2">Sin PFS</div>
+              <ul class="text-sm text-gray-600 space-y-2">
+                <li>&bull; Una sola clave privada de larga duración</li>
+                <li>&bull; Si la clave se compromete, se descifra todo el historial</li>
+                <li>&bull; El tráfico puede almacenarse y descifrarse luego</li>
+                <li>&bull; Riesgo acumulado con el tiempo</li>
+              </ul>
+            </div>
+            <div class="bg-green-50 border border-green-200 rounded-xl p-4">
+              <div class="text-green-600 font-bold mb-2">Con PFS</div>
+              <ul class="text-sm text-gray-600 space-y-2">
+                <li>&bull; Clave única por sesión, generada dinámicamente</li>
+                <li>&bull; La clave se destruye al cerrar la sesión</li>
+                <li>&bull; Comprometer la clave maestra no afecta sesiones pasadas</li>
+                <li>&bull; Riesgo aislado por sesión individual</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 2 -->
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Cómo Funciona PFS Técnicamente</h2>
+        <p class="text-lg text-gray-600 leading-relaxed mb-6">
+          PFS se implementa a través de algoritmos de intercambio de claves efímeras, principalmente
+          <strong>Diffie-Hellman Efímero (DHE)</strong> y su variante de curva elíptica
+          <strong>ECDHE (Elliptic Curve Diffie-Hellman Ephemeral)</strong>. ECDHE es el estándar
+          moderno por ofrecer la misma seguridad que DHE con claves significativamente más pequeñas
+          y menor carga computacional.
+        </p>
+
+        <h3 class="text-2xl font-bold text-gray-900 mb-4">El proceso en una negociación TLS con PFS</h3>
+        <ol class="space-y-4 mb-8">
+          <li class="flex gap-4">
+            <span class="flex-shrink-0 w-8 h-8 bg-red-600 text-white rounded-full flex items-center justify-center font-bold text-sm">1</span>
+            <div>
+              <strong class="text-gray-900">El cliente solicita conexión</strong>
+              <p class="text-gray-600 text-sm mt-1">El navegador o aplicación anuncia que soporta conjuntos de cifrado con ECDHE durante el ClientHello del handshake TLS.</p>
+            </div>
+          </li>
+          <li class="flex gap-4">
+            <span class="flex-shrink-0 w-8 h-8 bg-red-600 text-white rounded-full flex items-center justify-center font-bold text-sm">2</span>
+            <div>
+              <strong class="text-gray-900">Generación de par de claves efímeras</strong>
+              <p class="text-gray-600 text-sm mt-1">El servidor genera un par de claves Diffie-Hellman completamente nuevo, único para esta sesión. Estas claves no se almacenan en disco.</p>
+            </div>
+          </li>
+          <li class="flex gap-4">
+            <span class="flex-shrink-0 w-8 h-8 bg-red-600 text-white rounded-full flex items-center justify-center font-bold text-sm">3</span>
+            <div>
+              <strong class="text-gray-900">Intercambio autenticado</strong>
+              <p class="text-gray-600 text-sm mt-1">El servidor firma la clave pública efímera con su clave privada de largo plazo (RSA o ECDSA). El cliente verifica la firma, confirmando la identidad del servidor.</p>
+            </div>
+          </li>
+          <li class="flex gap-4">
+            <span class="flex-shrink-0 w-8 h-8 bg-red-600 text-white rounded-full flex items-center justify-center font-bold text-sm">4</span>
+            <div>
+              <strong class="text-gray-900">Derivación del secreto compartido</strong>
+              <p class="text-gray-600 text-sm mt-1">Ambas partes calculan independientemente el mismo secreto compartido sin transmitirlo. Este secreto deriva las claves de cifrado simétricas para la sesión.</p>
+            </div>
+          </li>
+          <li class="flex gap-4">
+            <span class="flex-shrink-0 w-8 h-8 bg-red-600 text-white rounded-full flex items-center justify-center font-bold text-sm">5</span>
+            <div>
+              <strong class="text-gray-900">Destrucción de claves al cerrar sesión</strong>
+              <p class="text-gray-600 text-sm mt-1">Al terminar la sesión, el par de claves efímeras se descarta permanentemente. Ninguna copia persiste, imposibilitando el descifrado retroactivo.</p>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <!-- Section 3 -->
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Escenarios de Riesgo Reales para Empresas</h2>
+        <p class="text-lg text-gray-600 leading-relaxed mb-8">
+          Comprender PFS requiere entender las amenazas concretas que mitiga. Estos son los escenarios
+          más relevantes para empresas en Colombia y Latinoamérica:
+        </p>
+
+        <div class="space-y-6">
+          <div class="border border-gray-200 rounded-2xl p-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-3">1. Ataques de interceptación masiva (Nation-State)</h3>
+            <p class="text-gray-600 leading-relaxed">
+              Actores estatales con capacidad de interceptar tráfico de internet a escala nacional
+              pueden almacenar terabytes de comunicaciones cifradas durante años, esperando obtener
+              las claves privadas de los servidores afectados. PFS invalida esta estrategia: incluso
+              con la clave maestra, el tráfico histórico permanece inaccesible.
+            </p>
+          </div>
+          <div class="border border-gray-200 rounded-2xl p-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-3">2. Robo de certificados digitales</h3>
+            <p class="text-gray-600 leading-relaxed">
+              Incidentes de robo de certificados privados son más comunes de lo que se reporta.
+              Sin PFS, una clave privada robada permite descifrar toda la comunicación histórica
+              capturada por el atacante. Con PFS, el impacto se limita a la sesión activa en el
+              momento del robo, no a meses o años de conversaciones previas.
+            </p>
+          </div>
+          <div class="border border-gray-200 rounded-2xl p-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-3">3. Computación cuántica futura</h3>
+            <p class="text-gray-600 leading-relaxed">
+              Las computadoras cuánticas podrán eventualmente romper RSA y ECC clásicos. PFS con
+              ECDHE limita la superficie de ataque: solo la sesión actual sería vulnerable en el
+              futuro, no el acervo histórico de comunicaciones. Es la primera línea de defensa
+              mientras la industria migra a criptografía post-cuántica.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 4 -->
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Cómo Verificar si su Empresa Usa PFS</h2>
+        <p class="text-lg text-gray-600 leading-relaxed mb-6">
+          Existen métodos simples para auditar el estado de PFS en sus sistemas sin herramientas
+          especializadas:
+        </p>
+
+        <h3 class="text-2xl font-bold text-gray-900 mb-4">Verificación en navegador</h3>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          En Chrome o Firefox, abra las herramientas de desarrollador (F12), vaya a la pestaña
+          de Seguridad y revise el conjunto de cifrado activo. Si incluye
+          <code class="bg-gray-100 px-2 py-0.5 rounded text-sm font-mono">ECDHE</code> o
+          <code class="bg-gray-100 px-2 py-0.5 rounded text-sm font-mono">DHE</code>, la
+          conexión usa PFS.
+        </p>
+
+        <h3 class="text-2xl font-bold text-gray-900 mb-4">Herramientas de auditoría</h3>
+        <div class="bg-gray-50 rounded-xl p-6 mb-6">
+          <ul class="space-y-3 text-gray-600">
+            <li class="flex items-start gap-2">
+              <span class="text-green-500 font-bold mt-0.5">&#10003;</span>
+              <span><strong>SSL Labs (ssllabs.com/ssltest)</strong> &mdash; Análisis gratuito de la configuración TLS de sus dominios públicos, incluido soporte de PFS y calificación general.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-green-500 font-bold mt-0.5">&#10003;</span>
+              <span><strong>testssl.sh</strong> &mdash; Herramienta de línea de comandos para auditar servidores internos o aplicaciones sin exposición pública.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-green-500 font-bold mt-0.5">&#10003;</span>
+              <span><strong>Nmap con scripts ssl-*</strong> &mdash; Permite auditar múltiples servidores de forma programática en una red interna.</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Section 5 - Internal links -->
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Implementación Práctica en su Organización</h2>
+        <p class="text-lg text-gray-600 leading-relaxed mb-6">
+          Implementar PFS no requiere cambiar toda la infraestructura, pero sí una revisión sistemática
+          de puntos de comunicación críticos: servidores web, API gateways, correo corporativo y
+          conexiones VPN.
+        </p>
+
+        <div class="bg-gradient-to-br from-red-50 to-orange-50 border border-red-100 rounded-2xl p-8 mb-8">
+          <h3 class="text-xl font-bold text-gray-900 mb-4">Checklist de implementación de PFS</h3>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            {[
+              'Auditar configuración TLS de todos los servidores web',
+              'Priorizar cipher suites con ECDHE_RSA o ECDHE_ECDSA',
+              'Deshabilitar conjuntos de cifrado RSA sin DHE/ECDHE',
+              'Actualizar configuración de servidores de correo (SMTP/IMAP)',
+              'Revisar configuración de balanceadores de carga y proxies',
+              'Auditar conexiones VPN y gateways de acceso remoto',
+              'Documentar configuraciones para auditorías de cumplimiento',
+              'Programar revisiones semestrales de cipher suites',
+            ].map(item => (
+              <div class="flex items-start gap-2">
+                <span class="flex-shrink-0 w-5 h-5 bg-red-100 border border-red-300 rounded mt-0.5"></span>
+                <span class="text-sm text-gray-700">{item}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <h3 class="text-2xl font-bold text-gray-900 mb-4">PFS y sus soluciones de seguridad actuales</h3>
+        <p class="text-lg text-gray-600 leading-relaxed mb-6">
+          PFS es una capa de la estrategia de defensa en profundidad. Se complementa con soluciones
+          especializadas para garantizar que las comunicaciones cifradas no sean el único vector protegido:
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
+          <a href="/proofpoint" class="group bg-white border border-gray-200 rounded-xl p-5 hover:shadow-md hover:border-red-200 transition">
+            <div class="text-red-600 font-bold mb-1 group-hover:underline">Proofpoint</div>
+            <p class="text-sm text-gray-600">Seguridad de email con cifrado en tránsito para proteger comunicaciones empresariales críticas.</p>
+          </a>
+          <a href="/hornet-security" class="group bg-white border border-gray-200 rounded-xl p-5 hover:shadow-md hover:border-red-200 transition">
+            <div class="text-red-600 font-bold mb-1 group-hover:underline">Hornetsecurity</div>
+            <p class="text-sm text-gray-600">Archiving y cifrado de correo para Microsoft 365 con cumplimiento normativo integrado.</p>
+          </a>
+          <a href="/sealpath" class="group bg-white border border-gray-200 rounded-xl p-5 hover:shadow-md hover:border-red-200 transition">
+            <div class="text-red-600 font-bold mb-1 group-hover:underline">SealPath</div>
+            <p class="text-sm text-gray-600">Protección centrada en el documento con cifrado persistente que acompaña cada archivo sin importar dónde se comparta.</p>
+          </a>
+        </div>
+      </section>
+
+      <!-- Section 6 -->
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">PFS y Cumplimiento Normativo en Colombia</h2>
+        <p class="text-lg text-gray-600 leading-relaxed mb-6">
+          Para organizaciones en sectores regulados colombianos, PFS no es solo una buena práctica:
+          es frecuentemente un requisito implícito de los marcos de cumplimiento aplicables.
+        </p>
+        <div class="space-y-4">
+          <div class="flex items-start gap-4 p-4 bg-blue-50 rounded-xl">
+            <div class="flex-shrink-0 bg-blue-600 text-white text-xs font-bold px-2 py-1 rounded">Ley 1581</div>
+            <p class="text-gray-700 text-sm">La protección de datos personales exige medidas técnicas adecuadas. PFS refuerza la confidencialidad en tránsito de datos de clientes y empleados.</p>
+          </div>
+          <div class="flex items-start gap-4 p-4 bg-green-50 rounded-xl">
+            <div class="flex-shrink-0 bg-green-600 text-white text-xs font-bold px-2 py-1 rounded">ISO 27001</div>
+            <p class="text-gray-700 text-sm">El control A.10.1 sobre criptografía y A.14.1 sobre seguridad de comunicaciones en redes respaldan la implementación de PFS como control técnico.</p>
+          </div>
+          <div class="flex items-start gap-4 p-4 bg-purple-50 rounded-xl">
+            <div class="flex-shrink-0 bg-purple-600 text-white text-xs font-bold px-2 py-1 rounded">SFC</div>
+            <p class="text-gray-700 text-sm">Las circulares de la Superintendencia Financiera sobre seguridad de la información requieren cifrado robusto en canales transaccionales, donde PFS es el estándar esperado.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 7 -->
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Preguntas Frecuentes sobre PFS</h2>
+
+        <div class="space-y-6">
+          <div class="border-b border-gray-200 pb-6">
+            <h3 class="text-lg font-bold text-gray-900 mb-2">¿PFS afecta el rendimiento de nuestros servidores?</h3>
+            <p class="text-gray-600 leading-relaxed">El impacto es mínimo en hardware moderno. ECDHE agrega entre 1 y 5 milisegundos por handshake TLS. La diferencia es imperceptible para usuarios finales y los beneficios de seguridad superan ampliamente el costo computacional marginal.</p>
+          </div>
+          <div class="border-b border-gray-200 pb-6">
+            <h3 class="text-lg font-bold text-gray-900 mb-2">¿TLS 1.3 incluye PFS automáticamente?</h3>
+            <p class="text-gray-600 leading-relaxed">Sí. TLS 1.3 eliminó todos los conjuntos de cifrado sin forward secrecy. Si su organización ha migrado completamente a TLS 1.3, PFS está garantizado. Sin embargo, muchos sistemas todavía soportan TLS 1.2 como fallback, donde PFS debe configurarse explícitamente.</p>
+          </div>
+          <div class="border-b border-gray-200 pb-6">
+            <h3 class="text-lg font-bold text-gray-900 mb-2">¿PFS protege también el tráfico interno entre microservicios?</h3>
+            <p class="text-gray-600 leading-relaxed">Absolutamente. El tráfico interno entre servicios (API-to-API, bases de datos, colas de mensajes) es frecuentemente ignorado en las auditorías de PFS. Las comunicaciones internas son igual de valiosas para un atacante que haya comprometido un segmento de red.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Conclusion -->
+      <section class="mb-16">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Conclusión</h2>
+        <p class="text-lg text-gray-600 leading-relaxed mb-6">
+          Perfect Forward Secrecy no es una tecnología del futuro: es una configuración disponible
+          hoy en prácticamente todos los servidores modernos. La diferencia entre una empresa que
+          la usa y una que no radica en minutos de configuración, pero puede significar la diferencia
+          entre un incidente contenido y la exposición masiva de datos históricos confidenciales.
+        </p>
+        <p class="text-lg text-gray-600 leading-relaxed">
+          Si no sabe si sus sistemas usan PFS o cómo verificarlo, el equipo de Starsolution puede
+          realizar una auditoría técnica de su postura criptográfica como parte de una evaluación
+          de seguridad más amplia.
+        </p>
+      </section>
+
+    </div>
+  </article>
+
+  <!-- CTA Section -->
+  <section class="bg-gradient-to-br from-[#0f172a] to-[#1e293b] py-16 lg:py-24">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">
+        ¿Su empresa usa Perfect Forward Secrecy?
+      </h2>
+      <p class="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
+        Nuestro equipo puede auditar la configuración criptográfica de sus servidores, identificar
+        configuraciones inseguras y guiar la remediación. Solicite una evaluación gratuita hoy.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="/contacto"
+          class="bg-red-600 text-white font-semibold px-8 py-4 rounded-lg hover:bg-red-700 transition text-center"
+        >
+          Solicitar Auditoría Gratuita
+        </a>
+        <a
+          href="/hacking-etico"
+          class="bg-white/10 backdrop-blur-sm border border-white/20 text-white font-semibold px-8 py-4 rounded-lg hover:bg-white/20 transition text-center"
+        >
+          Ver Hacking Ético
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Articles -->
+  <section class="bg-gray-50 py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl font-bold text-gray-900 mb-8">Artículos Relacionados</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <a href="/blog/zero-trust-2025" class="group bg-white border border-gray-200 rounded-2xl overflow-hidden hover:shadow-lg transition">
+          <div class="h-40 overflow-hidden">
+            <img
+              src="/assets/blog-inteligencia-artificial-seguridad.webp"
+              alt="Arquitectura Zero Trust 2025"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              width="400"
+              height="160"
+              loading="lazy"
+            />
+          </div>
+          <div class="p-5">
+            <span class="text-xs font-bold text-blue-600 uppercase tracking-wide">Tecnología</span>
+            <h3 class="font-bold text-gray-900 mt-1 group-hover:text-red-600 transition-colors">Arquitectura Zero Trust en 2025</h3>
+          </div>
+        </a>
+        <a href="/blog/iso-27001-regulaciones" class="group bg-white border border-gray-200 rounded-2xl overflow-hidden hover:shadow-lg transition">
+          <div class="h-40 overflow-hidden">
+            <img
+              src="/assets/blog-zero-trust-arquitectura.webp"
+              alt="ISO 27001 Regulaciones"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              width="400"
+              height="160"
+              loading="lazy"
+            />
+          </div>
+          <div class="p-5">
+            <span class="text-xs font-bold text-green-600 uppercase tracking-wide">Cumplimiento</span>
+            <h3 class="font-bold text-gray-900 mt-1 group-hover:text-red-600 transition-colors">Nuevas Regulaciones ISO 27001:2022</h3>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+  <WhatsAppButton />
+</BaseLayout>
