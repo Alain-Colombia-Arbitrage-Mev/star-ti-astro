@@ -134,6 +134,12 @@ export const seoData: Record<string, SEOData> = {
     ogImage: `${BASE_URL}/og-default.png`,
     breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Star Protection', url: '/#star-protection' }, { name: 'Hornetsecurity', url: '/hornet-security' }],
     jsonLd: product('Hornetsecurity 365 Total Protection', 'Hornetsecurity', 'Seguridad email completa para Microsoft 365 con backup, archiving y cifrado'),
+    faqJsonLd: faqSchema([
+      { q: 'Hornetsecurity funciona solo con Microsoft 365?', a: 'Si, Hornetsecurity 365 Total Protection esta disenado exclusivamente para Microsoft 365. Se integra nativamente con Exchange Online, OneDrive y SharePoint para proteccion completa del ecosistema Microsoft.' },
+      { q: 'Que incluye la proteccion de Hornetsecurity?', a: 'Incluye filtrado de spam y malware, proteccion contra phishing y BEC, backup automatico de buzones, archiving de email con cumplimiento legal, y cifrado de comunicaciones. Todo gestionado desde una consola cloud unica.' },
+      { q: 'Cuanto cuesta Hornetsecurity para empresas?', a: 'Los planes van desde USD 2 por usuario al mes (Plan 1 - seguridad basica) hasta USD 6 por usuario al mes (Plan 4 - proteccion completa con backup, archiving y awareness training). Descuentos por volumen disponibles.' },
+      { q: 'Hornetsecurity reemplaza a Microsoft Defender?', a: 'Hornetsecurity complementa y refuerza la seguridad nativa de Microsoft 365. Mientras Defender ofrece proteccion basica, Hornetsecurity agrega capas avanzadas de filtrado, backup independiente y archiving que Microsoft no incluye.' },
+    ]),
   },
   proofpoint: {
     title: 'Proofpoint Email Security | Anti-Phishing | Starsolution',
@@ -236,6 +242,12 @@ export const seoData: Record<string, SEOData> = {
     ogImage: `${BASE_URL}/og-default.png`,
     breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Star Inspection', url: '/#star-inspection' }, { name: 'rThreat Red Team', url: '/rthreat-bogota-colombia' }],
     jsonLd: service('Red Team & Breach and Attack Simulation', 'Advanced Penetration Testing with BAS'),
+    faqJsonLd: faqSchema([
+      { q: 'Cual es la diferencia entre Red Team y pentesting?', a: 'El pentesting busca vulnerabilidades tecnicas en un alcance definido. El Red Team simula un atacante real sin restricciones de alcance, incluyendo ingenieria social, acceso fisico y ataques multi-vector, evaluando la capacidad de deteccion y respuesta de toda la organizacion.' },
+      { q: 'Que es Breach and Attack Simulation (BAS)?', a: 'BAS es una plataforma automatizada que simula ataques reales contra su infraestructura de forma continua. A diferencia del pentesting manual que es puntual, BAS ejecuta escenarios de ataque 24/7 validando que sus controles de seguridad detecten y bloqueen amenazas conocidas.' },
+      { q: 'Cada cuanto se debe realizar un ejercicio de Red Team?', a: 'Se recomienda al menos una vez al ano para empresas reguladas y cada 6 meses para organizaciones con alto perfil de riesgo. BAS puede ejecutarse continuamente como complemento entre ejercicios de Red Team.' },
+      { q: 'Es seguro ejecutar simulaciones de ataque en produccion?', a: 'Si, rThreat utiliza malware real pero en entornos controlados con kill switches automaticos. Las simulaciones no danan sistemas ni datos. Cada ejercicio incluye un plan de contingencia y comunicacion con su equipo de TI.' },
+    ]),
   },
 
   // =====================================================
@@ -420,6 +432,11 @@ export const seoData: Record<string, SEOData> = {
     ogImage: `${BASE_URL}/og-default.png`,
     breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Infraestructura', url: '/#infraestructura' }, { name: 'Cableado Estructurado', url: '/cableado-estructurado' }],
     jsonLd: service('Cableado Estructurado', 'Structured Cabling Installation'),
+    faqJsonLd: faqSchema([
+      { q: 'Que normas cumple el cableado estructurado de Starsolution?', a: 'Todas nuestras instalaciones cumplen las normas TIA/EIA 568, TIA/EIA 569 y TIA/EIA 606. Certificamos cada punto con equipos Fluke DSX y entregamos informe de certificacion digital por cada enlace instalado.' },
+      { q: 'Cual es la diferencia entre Cat6 y Cat6A?', a: 'Cat6 soporta hasta 10 Gbps en distancias cortas (hasta 55 metros). Cat6A soporta 10 Gbps en los 100 metros completos con mejor blindaje contra interferencia. Para proyectos nuevos, recomendamos Cat6A por su preparacion para el futuro.' },
+      { q: 'Cuanto tiempo toma una instalacion de cableado estructurado?', a: 'Un proyecto tipico de oficina (50-100 puntos de red) toma entre 1 y 3 semanas. Incluye survey inicial, instalacion de cableado, patch panels, racks, certificacion y documentacion completa de la red.' },
+    ]),
   },
   'equipos-computo': {
     title: 'Equipos de Computo Empresariales | Starsolution',
@@ -431,6 +448,11 @@ export const seoData: Record<string, SEOData> = {
     ogImage: `${BASE_URL}/og-default.png`,
     breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Infraestructura', url: '/#infraestructura' }, { name: 'Equipos de Computo', url: '/equipos-computo' }],
     jsonLd: product('Equipos de Computo Empresariales', 'Starsolution', 'Laptops, desktops, workstations y All-in-One para empresas'),
+    faqJsonLd: faqSchema([
+      { q: 'Que marcas de equipos de computo vende Starsolution?', a: 'Trabajamos con Dell, HP, Lenovo, Apple y ensamblamos equipos personalizados. Todos los equipos incluyen garantia extendida, soporte tecnico prioritario y configuracion de seguridad preinstalada con Bitdefender o Kaspersky.' },
+      { q: 'Pueden configurar los equipos antes de entregarlos?', a: 'Si. Ofrecemos servicio de imaging corporativo: instalamos sistema operativo, aplicaciones empresariales, politicas de grupo, antivirus y cifrado de disco antes de la entrega. Los equipos llegan listos para conectar y trabajar.' },
+      { q: 'Ofrecen leasing o financiacion de equipos?', a: 'Si. Ofrecemos modalidades de compra directa, leasing operativo (12-36 meses) y renting tecnologico con renovacion automatica. Incluimos seguro contra robo y dano accidental en todas las modalidades.' },
+    ]),
   },
   brother: {
     title: 'Distribuidor Brother Colombia | Starsolution',
@@ -442,6 +464,11 @@ export const seoData: Record<string, SEOData> = {
     ogImage: `${BASE_URL}/og-default.png`,
     breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Infraestructura', url: '/#infraestructura' }, { name: 'Brother', url: '/brother' }],
     jsonLd: product('Impresoras Brother Empresariales', 'Brother', 'Impresoras laser, multifuncion y etiquetadoras Brother con consumibles originales'),
+    faqJsonLd: faqSchema([
+      { q: 'Por que elegir Brother sobre otras marcas de impresoras?', a: 'Brother ofrece el menor costo por pagina del mercado en impresion laser, consumibles de alta duracion (hasta 12,000 paginas), y diseno compacto ideal para oficinas. Ademas, Brother tiene la tasa de falla mas baja del sector segun TechRadar.' },
+      { q: 'Starsolution es distribuidor autorizado de Brother?', a: 'Si. Somos distribuidor autorizado de Brother en Colombia. Esto garantiza productos originales con garantia de fabrica, acceso a precios corporativos y soporte tecnico directo del fabricante.' },
+      { q: 'Que modelos de Brother recomiendan para empresas?', a: 'Para oficinas pequenas: Brother HL-L2370DW (laser monocromo). Para equipos de trabajo: Brother MFC-L2750DW (multifuncion con escaner y fax). Para alto volumen: Brother MFC-L8900CDW (laser color con ADF duplex de 50 hojas).' },
+    ]),
   },
 
   // =====================================================
