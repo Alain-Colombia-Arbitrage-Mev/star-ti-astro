@@ -1,0 +1,870 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Navbar from '@components/Navbar.astro';
+import Footer from '@components/Footer.astro';
+import WhatsAppButton from '@components/WhatsAppButton.astro';
+import { seoData } from '@data/seo';
+
+const seo = seoData['blog/respuesta-incidentes-ciberseguridad'];
+---
+
+<BaseLayout seo={seo}>
+  <Navbar />
+
+  <!-- Hero Section -->
+  <section class="relative bg-gradient-to-br from-[#1a0f0f] to-[#0f172a] overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute top-0 right-0 w-96 h-96 bg-red-500 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-0 left-0 w-96 h-96 bg-orange-500 rounded-full blur-3xl"></div>
+    </div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-16 lg:pb-20">
+      <!-- Breadcrumb -->
+      <nav class="mb-8 flex items-center gap-2 text-sm text-gray-400">
+        <a href="/" class="hover:text-white transition-colors">Inicio</a>
+        <span>/</span>
+        <a href="/#blog" class="hover:text-white transition-colors">Blog</a>
+        <span>/</span>
+        <span class="text-gray-200">Respuesta a Incidentes</span>
+      </nav>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <div class="flex items-center gap-3 mb-6">
+            <span class="bg-red-500/20 border border-red-500/30 text-red-400 text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wide">
+              Gestión de Incidentes
+            </span>
+            <span class="text-gray-400 text-sm">22 de marzo de 2026</span>
+          </div>
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+            Respuesta a Incidentes
+            <span class="block text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-orange-400">
+              Plan Paso a Paso para Empresas
+            </span>
+          </h1>
+          <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+            Un ataque cibernético no es una pregunta de "si ocurrirá", sino de "cuándo". Las
+            empresas que responden con un plan estructurado minimizan el daño, recuperan
+            operaciones más rápido y evitan sanciones regulatorias. Esta guía explica las
+            6 fases del marco NIST para la respuesta a incidentes.
+          </p>
+          <div class="flex items-center gap-4 text-sm text-gray-400">
+            <span>Por el equipo de Starsolution</span>
+            <span>&bull;</span>
+            <span>Tiempo de lectura: 12 min</span>
+          </div>
+        </div>
+        <div class="hidden lg:block">
+          <img
+            src="/assets/robot-ia-laboratorio-monitores.webp"
+            alt="Centro de operaciones de seguridad respondiendo a incidente cibernético"
+            class="w-full rounded-2xl shadow-2xl"
+            width="600"
+            height="400"
+            loading="eager"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Article Body -->
+  <article class="bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+
+      <!-- Introduction -->
+      <section class="mb-12">
+        <p class="text-xl text-gray-700 leading-relaxed mb-6">
+          En Colombia, el tiempo promedio para detectar una brecha de datos es de 197 días.
+          Para el momento en que la organización detecta el incidente, el atacante ya ha
+          tenido más de seis meses para moverse lateralmente, exfiltrar información y
+          establecer persistencia. Sin un plan de respuesta a incidentes documentado y
+          practicado, ese tiempo se convierte en destrucción de valor, pérdida de clientes
+          y potenciales sanciones de la SIC bajo la Ley 1581.
+        </p>
+        <div class="bg-red-50 border border-red-200 rounded-xl p-5 mb-6">
+          <div class="flex items-start gap-3">
+            <span class="flex-shrink-0 text-red-700 text-xl">&#9888;</span>
+            <div>
+              <strong class="text-red-800">Dato crítico para Colombia</strong>
+              <p class="text-red-700 text-sm mt-1">El costo promedio de una brecha de datos en Latinoamérica superó los USD 2,46 millones en 2025. Las organizaciones con un plan de respuesta a incidentes maduro redujeron ese costo en un 54% comparado con las que no tenían plan, según el IBM Cost of a Data Breach Report.</p>
+            </div>
+          </div>
+        </div>
+        <p class="text-lg text-gray-700 leading-relaxed">
+          Esta guía cubre los fundamentos que toda empresa colombiana debería implementar:
+          desde la definición de qué constituye un incidente de seguridad, hasta las 6
+          fases del marco NIST SP 800-61 y las herramientas necesarias para ejecutar
+          cada fase con eficacia.
+        </p>
+      </section>
+
+      <!-- Section 1: Qué es un incidente -->
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">¿Qué es un Incidente de Seguridad?</h2>
+        <p class="text-lg text-gray-600 leading-relaxed mb-6">
+          Un incidente de seguridad es cualquier evento que amenaza la confidencialidad,
+          integridad o disponibilidad de los sistemas de información de una organización.
+          La distinción entre "evento" e "incidente" es fundamental: no todo evento adverso
+          es un incidente que requiere activar el plan de respuesta.
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
+          <div class="bg-gray-50 border border-gray-200 rounded-xl p-5">
+            <h3 class="font-bold text-gray-900 mb-3">Evento de Seguridad</h3>
+            <p class="text-sm text-gray-600 mb-3">Ocurrencia identificable en un sistema o red que podría tener implicaciones de seguridad, pero no necesariamente resulta en daño.</p>
+            <ul class="space-y-2 text-sm text-gray-600">
+              {[
+                'Intento de autenticación fallido (1-3 veces)',
+                'Escaneo de puertos desde IP externa',
+                'Correo de phishing recibido pero no abierto',
+                'Actualización de seguridad disponible sin instalar',
+              ].map(item => (
+                <li class="flex items-start gap-2">
+                  <span class="flex-shrink-0 text-gray-400 mt-0.5">&#9632;</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div class="bg-red-50 border border-red-200 rounded-xl p-5">
+            <h3 class="font-bold text-red-800 mb-3">Incidente de Seguridad</h3>
+            <p class="text-sm text-red-700 mb-3">Violación o amenaza inminente de violación de políticas de seguridad, procedimientos aceptables de uso o prácticas de seguridad estándar.</p>
+            <ul class="space-y-2 text-sm text-red-700">
+              {[
+                'Credenciales comprometidas con acceso confirmado',
+                'Malware activo detectado en endpoints',
+                'Exfiltración de datos hacia servidores externos',
+                'Ransomware cifrando archivos en red compartida',
+              ].map(item => (
+                <li class="flex items-start gap-2">
+                  <span class="flex-shrink-0 text-red-500 mt-0.5">&#9632;</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        <p class="text-lg text-gray-600 leading-relaxed">
+          La ISO 27035 (norma específica de gestión de incidentes de seguridad de la
+          información) complementa a ISO 27001 y establece que toda organización debe
+          definir, documentar y practicar sus procedimientos de respuesta antes de que
+          ocurra el primer incidente real.
+        </p>
+      </section>
+
+      <!-- Section 2: Tipos de incidentes -->
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Tipos de Incidentes más Frecuentes en Empresas Colombianas</h2>
+        <p class="text-lg text-gray-600 leading-relaxed mb-6">
+          Basado en los datos de la COLCERT y los incidentes gestionados por Starsolution
+          en 2025, estos son los tipos de incidentes con mayor frecuencia en el sector
+          empresarial colombiano:
+        </p>
+
+        <div class="overflow-x-auto rounded-2xl border border-gray-200 mb-6">
+          <table class="w-full text-sm">
+            <thead class="bg-red-50">
+              <tr>
+                <th class="text-left px-4 py-3 font-bold text-gray-900">Tipo de Incidente</th>
+                <th class="text-left px-4 py-3 font-bold text-gray-900">Frecuencia</th>
+                <th class="text-left px-4 py-3 font-bold text-gray-900">Impacto Típico</th>
+                <th class="text-left px-4 py-3 font-bold text-gray-900">Tiempo Promedio de Detección</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-100">
+              {[
+                ['Phishing / BEC (Business Email Compromise)', '38%', 'Alto — fraude financiero, pérdida de credenciales', '14-21 días'],
+                ['Ransomware', '22%', 'Crítico — cifrado de datos, interrupción operativa', '1-3 días (tardío)'],
+                ['Acceso no autorizado a sistemas', '18%', 'Alto — exfiltración de datos, movimiento lateral', '60-90 días'],
+                ['Malware / troyanos bancarios', '12%', 'Alto — robo de credenciales bancarias', '30-45 días'],
+                ['Ataques DDoS', '6%', 'Medio — interrupción de servicios', 'Inmediato'],
+                ['Insider threats (amenaza interna)', '4%', 'Variable — exfiltración deliberada de datos', '85+ días'],
+              ].map(([tipo, freq, impacto, tiempo]) => (
+                <tr class="hover:bg-gray-50">
+                  <td class="px-4 py-3 font-medium text-gray-900">{tipo}</td>
+                  <td class="px-4 py-3 text-red-700 font-bold">{freq}</td>
+                  <td class="px-4 py-3 text-gray-600">{impacto}</td>
+                  <td class="px-4 py-3 text-gray-600">{tiempo}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Section 3: Las 6 fases NIST -->
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Las 6 Fases del Marco NIST SP 800-61 para Respuesta a Incidentes</h2>
+        <p class="text-lg text-gray-600 leading-relaxed mb-8">
+          El marco de respuesta a incidentes del NIST (National Institute of Standards and
+          Technology) es el estándar de facto para gestión de incidentes de ciberseguridad.
+          Adoptado por organizaciones en todo el mundo, incluidas las entidades vigiladas
+          por la SFC y la SIC en Colombia, sus 6 fases constituyen la columna vertebral de
+          cualquier plan de respuesta maduro.
+        </p>
+
+        <div class="space-y-8">
+          <!-- Fase 1 -->
+          <div class="relative pl-8 border-l-4 border-red-200">
+            <div class="absolute -left-5 top-0 w-10 h-10 bg-red-700 text-white rounded-full flex items-center justify-center font-bold text-lg">1</div>
+            <div class="bg-gray-50 rounded-2xl p-6 border border-gray-200">
+              <h3 class="text-xl font-bold text-gray-900 mb-2">Preparación <span class="text-sm font-normal text-gray-500">(Preparation)</span></h3>
+              <p class="text-gray-600 mb-4">
+                La única fase que ocurre antes del incidente. Es también la más importante:
+                el 80% de la capacidad de respuesta efectiva se construye aquí. Una organización
+                que no se ha preparado tardará entre 3 y 10 veces más en contener un incidente.
+              </p>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <h4 class="font-bold text-gray-800 text-sm mb-2">Actividades clave:</h4>
+                  <ul class="space-y-1.5 text-sm text-gray-600">
+                    {[
+                      'Definir y documentar el plan de respuesta a incidentes',
+                      'Establecer el equipo CSIRT con roles y responsabilidades',
+                      'Crear la matriz de clasificación de incidentes',
+                      'Configurar herramientas de detección y monitoreo',
+                      'Establecer canales de comunicación de emergencia',
+                      'Realizar simulacros de respuesta (tabletop exercises)',
+                    ].map(item => (
+                      <li class="flex items-start gap-2">
+                        <span class="flex-shrink-0 text-red-500 mt-1">&#10003;</span>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div>
+                  <h4 class="font-bold text-gray-800 text-sm mb-2">Entregables requeridos:</h4>
+                  <ul class="space-y-1.5 text-sm text-gray-600">
+                    {[
+                      'Plan de respuesta a incidentes documentado',
+                      'Playbooks por tipo de incidente (ransomware, BEC, etc.)',
+                      'Inventario de activos críticos actualizado',
+                      'Contactos de emergencia (proveedores, autoridades)',
+                      'Acuerdos de retención de evidencia forense',
+                      'Backup verificado y aislado de sistemas críticos',
+                    ].map(item => (
+                      <li class="flex items-start gap-2">
+                        <span class="flex-shrink-0 text-gray-400 mt-1">&#9654;</span>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Fase 2 -->
+          <div class="relative pl-8 border-l-4 border-orange-200">
+            <div class="absolute -left-5 top-0 w-10 h-10 bg-orange-600 text-white rounded-full flex items-center justify-center font-bold text-lg">2</div>
+            <div class="bg-gray-50 rounded-2xl p-6 border border-gray-200">
+              <h3 class="text-xl font-bold text-gray-900 mb-2">Detección y Análisis <span class="text-sm font-normal text-gray-500">(Detection & Analysis)</span></h3>
+              <p class="text-gray-600 mb-4">
+                La capacidad de detectar incidentes rápidamente depende directamente de la
+                madurez del monitoreo implementado. Sin visibilidad de endpoints, red y
+                autenticación, los atacantes operan sin restricciones. En esta fase se confirma
+                si el evento es efectivamente un incidente y se evalúa su severidad.
+              </p>
+              <div class="bg-amber-50 border border-amber-200 rounded-lg p-4 mb-4">
+                <p class="text-sm text-amber-800">
+                  <strong>Criterios de clasificación de severidad:</strong> Crítico (datos sensibles comprometidos,
+                  sistemas de producción caídos), Alto (propagación activa, credenciales privilegiadas
+                  comprometidas), Medio (sistema no crítico afectado, sin evidencia de propagación),
+                  Bajo (intento fallido sin impacto confirmado).
+                </p>
+              </div>
+              <p class="text-sm text-gray-600">
+                Fuentes de detección principales: SIEM con correlación de eventos, EDR/XDR con
+                detección de comportamientos anómalos, alertas de autenticación anómala, reportes
+                de usuarios, monitoreo de inteligencia de amenazas y correlación con feeds de
+                indicadores de compromiso (IOC).
+              </p>
+            </div>
+          </div>
+
+          <!-- Fase 3 -->
+          <div class="relative pl-8 border-l-4 border-yellow-200">
+            <div class="absolute -left-5 top-0 w-10 h-10 bg-yellow-600 text-white rounded-full flex items-center justify-center font-bold text-lg">3</div>
+            <div class="bg-gray-50 rounded-2xl p-6 border border-gray-200">
+              <h3 class="text-xl font-bold text-gray-900 mb-2">Contención <span class="text-sm font-normal text-gray-500">(Containment)</span></h3>
+              <p class="text-gray-600 mb-4">
+                El objetivo es detener la propagación del incidente sin destruir evidencia
+                forense. Existen dos tipos de contención: a corto plazo (acciones inmediatas
+                para detener el daño) y a largo plazo (medidas más permanentes mientras se
+                trabaja en la erradicación).
+              </p>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="bg-red-50 rounded-lg p-4">
+                  <h4 class="font-bold text-red-800 text-sm mb-2">Contención a Corto Plazo</h4>
+                  <ul class="space-y-1 text-sm text-red-700">
+                    {[
+                      'Aislar sistemas afectados de la red',
+                      'Bloquear IPs y dominios maliciosos en firewall',
+                      'Revocar credenciales comprometidas',
+                      'Activar autenticación multifactor de emergencia',
+                      'Deshabilitar cuentas de servicio sospechosas',
+                    ].map(item => (
+                      <li class="flex items-start gap-2">
+                        <span class="flex-shrink-0 mt-1">&#9679;</span>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div class="bg-blue-50 rounded-lg p-4">
+                  <h4 class="font-bold text-blue-900 text-sm mb-2">Contención a Largo Plazo</h4>
+                  <ul class="space-y-1 text-sm text-blue-800">
+                    {[
+                      'Aplicar parches de seguridad críticos',
+                      'Reemplazar sistemas comprometidos con imágenes limpias',
+                      'Implementar controles de acceso adicionales',
+                      'Activar monitoreo intensificado de sistemas adyacentes',
+                      'Documentar toda la línea de tiempo del incidente',
+                    ].map(item => (
+                      <li class="flex items-start gap-2">
+                        <span class="flex-shrink-0 mt-1">&#9679;</span>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+              <div class="mt-4 bg-gray-100 rounded-lg p-4">
+                <p class="text-sm text-gray-700">
+                  <strong>Preservación de evidencia forense:</strong> Antes de cualquier acción
+                  de contención, crear imágenes forenses de discos y volcados de memoria RAM
+                  de los sistemas afectados. La evidencia destruida imposibilita la investigación
+                  posterior y puede comprometer procesos legales.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Fase 4 -->
+          <div class="relative pl-8 border-l-4 border-blue-200">
+            <div class="absolute -left-5 top-0 w-10 h-10 bg-blue-700 text-white rounded-full flex items-center justify-center font-bold text-lg">4</div>
+            <div class="bg-gray-50 rounded-2xl p-6 border border-gray-200">
+              <h3 class="text-xl font-bold text-gray-900 mb-2">Erradicación <span class="text-sm font-normal text-gray-500">(Eradication)</span></h3>
+              <p class="text-gray-600 mb-4">
+                Una vez contenido el incidente, se eliminan todas las trazas del atacante:
+                malware, backdoors, cuentas creadas, configuraciones modificadas y accesos
+                persistentes. Una erradicación incompleta resulta en reinfección,
+                generalmente más rápida y agresiva que el ataque inicial.
+              </p>
+              <ul class="space-y-2 text-sm text-gray-600">
+                {[
+                  'Identificar y eliminar todo el malware mediante análisis forense completo de sistemas afectados',
+                  'Buscar y eliminar mecanismos de persistencia: tareas programadas, claves de registro, servicios, backdoors',
+                  'Resetear todas las credenciales que pudieran haber sido expuestas, no solo las evidentemente comprometidas',
+                  'Parchear vulnerabilidades explotadas e implementar mitigaciones adicionales',
+                  'Validar que sistemas adyacentes no fueron comprometidos mediante análisis de logs y tráfico de red',
+                  'Verificar integridad de backups antes de usarlos para restauración',
+                ].map(item => (
+                  <li class="flex items-start gap-3">
+                    <span class="flex-shrink-0 w-5 h-5 bg-blue-700 text-white rounded-full flex items-center justify-center text-xs font-bold mt-0.5">&#10003;</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          <!-- Fase 5 -->
+          <div class="relative pl-8 border-l-4 border-green-200">
+            <div class="absolute -left-5 top-0 w-10 h-10 bg-green-700 text-white rounded-full flex items-center justify-center font-bold text-lg">5</div>
+            <div class="bg-gray-50 rounded-2xl p-6 border border-gray-200">
+              <h3 class="text-xl font-bold text-gray-900 mb-2">Recuperación <span class="text-sm font-normal text-gray-500">(Recovery)</span></h3>
+              <p class="text-gray-600 mb-4">
+                La restauración de sistemas y operaciones debe ser gradual y monitoreada.
+                Volver a producción precipitadamente sin confirmar la erradicación completa
+                es uno de los errores más costosos en gestión de incidentes.
+              </p>
+              <div class="space-y-3">
+                {[
+                  { paso: '5.1', titulo: 'Restauración desde backup verificado', desc: 'Utilizar únicamente backups cuya integridad ha sido verificada criptográficamente y que son anteriores al vector de infección confirmado.' },
+                  { paso: '5.2', titulo: 'Prueba en entorno aislado', desc: 'Antes de volver a producción, operar los sistemas restaurados en una red segregada con monitoreo intensivo durante al menos 24-48 horas.' },
+                  { paso: '5.3', titulo: 'Restauración progresiva', desc: 'Retornar a producción por fases, comenzando por sistemas no críticos, con monitoreo reforzado y capacidad de revertir rápidamente.' },
+                  { paso: '5.4', titulo: 'Comunicación a partes interesadas', desc: 'Notificar a empleados, clientes afectados, reguladores (SIC, SFC) y socios según las obligaciones legales y contractuales aplicables.' },
+                ].map(paso => (
+                  <div class="flex gap-4">
+                    <span class="flex-shrink-0 font-mono font-bold text-green-700 text-sm pt-1">{paso.paso}</span>
+                    <div>
+                      <span class="font-bold text-gray-900 text-sm">{paso.titulo}:</span>
+                      <span class="text-gray-600 text-sm"> {paso.desc}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <!-- Fase 6 -->
+          <div class="relative pl-8 border-l-4 border-purple-200">
+            <div class="absolute -left-5 top-0 w-10 h-10 bg-purple-700 text-white rounded-full flex items-center justify-center font-bold text-lg">6</div>
+            <div class="bg-gray-50 rounded-2xl p-6 border border-gray-200">
+              <h3 class="text-xl font-bold text-gray-900 mb-2">Lecciones Aprendidas <span class="text-sm font-normal text-gray-500">(Post-Incident Activity)</span></h3>
+              <p class="text-gray-600 mb-4">
+                La reunión de lecciones aprendidas debe realizarse dentro de los 7-15 días
+                posteriores al cierre del incidente, mientras la memoria de los eventos es
+                fresca. Esta fase transforma cada incidente en una mejora del plan de respuesta.
+              </p>
+              <div class="bg-purple-50 border border-purple-100 rounded-lg p-4">
+                <h4 class="font-bold text-purple-900 text-sm mb-2">Preguntas guía para la reunión post-incidente:</h4>
+                <ul class="space-y-1.5 text-sm text-purple-800">
+                  {[
+                    '¿Cómo se detectó el incidente? ¿Podría haberse detectado antes?',
+                    '¿Se siguió el plan de respuesta documentado? ¿Dónde falló?',
+                    '¿Los roles y responsabilidades del equipo CSIRT estaban claros?',
+                    '¿Cuánto tiempo tomó cada fase? ¿Dónde hubo demoras innecesarias?',
+                    '¿Qué información faltó durante la respuesta?',
+                    '¿Qué controles técnicos habrían prevenido o limitado el incidente?',
+                    '¿Se cumplieron las obligaciones regulatorias de notificación?',
+                  ].map(item => (
+                    <li class="flex items-start gap-2">
+                      <span class="flex-shrink-0 mt-1">&#10148;</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 4: Equipo de respuesta -->
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">El Equipo CSIRT: Roles y Responsabilidades</h2>
+        <p class="text-lg text-gray-600 leading-relaxed mb-6">
+          Un Computer Security Incident Response Team (CSIRT) efectivo para empresas
+          colombianas no requiere ser un equipo dedicado de tiempo completo. Para pymes
+          y medianas empresas, un modelo híbrido con roles asignados a personal existente
+          más un proveedor de respuesta a incidentes externo es una solución práctica.
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-6">
+          {[
+            {
+              rol: 'Líder de Incidentes (Incident Commander)',
+              responsabilidad: 'Toma decisiones ejecutivas durante el incidente. Coordina al equipo, aprueba acciones de contención mayor y gestiona la comunicación con la dirección.',
+              perfil: 'Director de TI o CISO. En ausencia, Gerente General o su delegado.',
+            },
+            {
+              rol: 'Analista Técnico Principal',
+              responsabilidad: 'Lidera la investigación forense, análisis de malware y determinación del alcance. Ejecuta acciones técnicas de contención y erradicación.',
+              perfil: 'Ingeniero de seguridad senior con experiencia en análisis forense.',
+            },
+            {
+              rol: 'Responsable de Comunicaciones',
+              responsabilidad: 'Gestiona las notificaciones internas, a clientes, reguladores y medios. Elabora los comunicados y coordina con legal.',
+              perfil: 'Dirección de Comunicaciones o Marketing, asesorado por Legal.',
+            },
+            {
+              rol: 'Asesor Legal',
+              responsabilidad: 'Evalúa obligaciones de notificación bajo Ley 1581, determina preservación de evidencia para posibles acciones legales y asesora sobre responsabilidad.',
+              perfil: 'Abogado interno o externo con experiencia en protección de datos.',
+            },
+            {
+              rol: 'Coordinador de Continuidad de Negocio',
+              responsabilidad: 'Activa el plan de continuidad, gestiona operaciones alternativas durante la interrupción y coordina la restauración progresiva.',
+              perfil: 'Gerente de Operaciones o responsable del BCP/DRP.',
+            },
+            {
+              rol: 'Proveedor Externo de IR',
+              responsabilidad: 'Capacidad técnica adicional en análisis forense avanzado, negociación con atacantes y herramientas especializadas de respuesta.',
+              perfil: 'Empresa de ciberseguridad con retainer de respuesta a incidentes.',
+            },
+          ].map(item => (
+            <div class="bg-white border border-gray-200 rounded-xl p-5 hover:shadow-md transition">
+              <h3 class="font-bold text-gray-900 mb-2 text-sm">{item.rol}</h3>
+              <p class="text-xs text-gray-600 mb-3">{item.responsabilidad}</p>
+              <div class="bg-gray-50 rounded-lg px-3 py-2">
+                <span class="text-xs font-bold text-gray-500">PERFIL: </span>
+                <span class="text-xs text-gray-600">{item.perfil}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div class="bg-blue-50 border border-blue-100 rounded-xl p-5">
+          <p class="text-blue-900 text-sm leading-relaxed">
+            <strong>Recomendación para empresas colombianas:</strong> Establezca un retainer
+            (contrato de disponibilidad) con un proveedor de respuesta a incidentes antes
+            de necesitarlo. El costo de un retainer anual es una fracción del costo de
+            contratar capacidad de respuesta durante una crisis activa, cuando la demanda
+            y los precios se disparan.
+          </p>
+        </div>
+      </section>
+
+      <!-- Section 5: Herramientas -->
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Herramientas Necesarias para una Respuesta Efectiva</h2>
+        <p class="text-lg text-gray-600 leading-relaxed mb-6">
+          La tecnología correcta reduce el tiempo de detección y respuesta en un factor
+          de 5 a 10 veces. Estas son las categorías de herramientas imprescindibles y las
+          soluciones que Starsolution implementa en empresas colombianas:
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 mb-8">
+          <a href="/stellar-cyber" class="group bg-white border border-gray-200 rounded-2xl p-6 hover:shadow-lg hover:border-red-200 transition">
+            <div class="text-red-700 font-bold text-lg mb-2 group-hover:underline">Stellar Cyber Open XDR</div>
+            <div class="text-xs text-gray-500 uppercase tracking-wide mb-3">Detección y Respuesta Unificada</div>
+            <p class="text-sm text-gray-600">Plataforma XDR que correlaciona eventos de endpoints, red, identidad y cloud en una sola consola. Reduce el tiempo de detección de semanas a minutos con IA integrada.</p>
+          </a>
+          <a href="/enthec" class="group bg-white border border-gray-200 rounded-2xl p-6 hover:shadow-lg hover:border-red-200 transition">
+            <div class="text-red-700 font-bold text-lg mb-2 group-hover:underline">Enthec</div>
+            <div class="text-xs text-gray-500 uppercase tracking-wide mb-3">Inteligencia de Amenazas</div>
+            <p class="text-sm text-gray-600">Monitoreo de dark web, credenciales filtradas y superficie de ataque externa. Detecta indicadores de compromiso antes de que el atacante actúe dentro de su red.</p>
+          </a>
+          <a href="/rthreat-bogota-colombia" class="group bg-white border border-gray-200 rounded-2xl p-6 hover:shadow-lg hover:border-red-200 transition">
+            <div class="text-red-700 font-bold text-lg mb-2 group-hover:underline">rThreat</div>
+            <div class="text-xs text-gray-500 uppercase tracking-wide mb-3">Simulación de Ataques</div>
+            <p class="text-sm text-gray-600">Plataforma de simulación continua de adversarios que valida si sus controles de seguridad y su equipo de respuesta detectarían un ataque real antes de que ocurra.</p>
+          </a>
+        </div>
+
+        <div class="bg-gray-50 rounded-2xl p-6 border border-gray-200">
+          <h3 class="font-bold text-gray-900 mb-4">Herramientas de Código Abierto para el Kit de Respuesta</h3>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
+            {[
+              { cat: 'Análisis Forense', tools: 'Autopsy, Volatility, Velociraptor, FTK Imager' },
+              { cat: 'Análisis de Malware', tools: 'Cuckoo Sandbox, YARA, VirusTotal Enterprise, Any.run' },
+              { cat: 'Respuesta en Red', tools: 'Wireshark, NetworkMiner, Zeek, Suricata' },
+              { cat: 'Gestión del Incidente', tools: 'TheHive, Cortex, MISP (intercambio de IOC)' },
+            ].map(item => (
+              <div class="flex gap-3">
+                <span class="flex-shrink-0 font-bold text-gray-700 w-36">{item.cat}:</span>
+                <span class="text-gray-600">{item.tools}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 6: Errores comunes -->
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Los 7 Errores más Costosos en Respuesta a Incidentes</h2>
+
+        <div class="space-y-4">
+          {[
+            {
+              n: '01',
+              titulo: 'Apagar el sistema comprometido inmediatamente',
+              desc: 'Instinto natural que destruye evidencia forense crítica en memoria RAM. La volatilidad de la evidencia digital exige capturar la memoria antes de cualquier apagado. Excepción: ransomware en propagación activa.',
+            },
+            {
+              n: '02',
+              titulo: 'No preservar la cadena de custodia',
+              desc: 'Si el incidente resulta en acción legal o regulatoria, la evidencia recolectada sin protocolo de cadena de custodia es inadmisible. Use herramientas forenses certificadas y documente cada acción.',
+            },
+            {
+              n: '03',
+              titulo: 'Comunicar el incidente prematuramente en canales internos',
+              desc: 'Si el atacante tiene acceso al correo corporativo, las comunicaciones sobre el incidente en esos canales alertan al adversario. Use canales fuera de banda (Signal, teléfono) para la comunicación del equipo de respuesta.',
+            },
+            {
+              n: '04',
+              titulo: 'Pagar el rescate sin consultar con expertos',
+              desc: 'El 80% de las organizaciones que pagan un rescate son atacadas nuevamente dentro de los 12 meses. El pago no garantiza recuperación de datos y puede violar regulaciones internacionales de sanciones.',
+            },
+            {
+              n: '05',
+              titulo: 'Restaurar desde backup sin confirmar la erradicación',
+              desc: 'Restaurar antes de erradicar el acceso del atacante resulta en reinfección inmediata. El backup restaurado vuelve a estar comprometido en horas si la vulnerabilidad inicial no fue cerrada.',
+            },
+            {
+              n: '06',
+              titulo: 'No notificar a reguladores dentro de los plazos legales',
+              desc: 'La Ley 1581 y su Decreto reglamentario exigen notificación a la SIC cuando el incidente involucra datos personales. Los plazos son estrictos; incumplirlos agrega sanciones regulatorias a las pérdidas operativas.',
+            },
+            {
+              n: '07',
+              titulo: 'Omitir la fase de lecciones aprendidas',
+              desc: 'Bajo la presión de volver a la normalidad, el equipo cancela la reunión post-incidente. Sin esta fase, los mismos vectores y fallos se repiten en el próximo incidente. Es la inversión con mayor ROI en seguridad.',
+            },
+          ].map(item => (
+            <div class="flex gap-4 bg-white border border-gray-200 rounded-xl p-5 hover:shadow-sm transition">
+              <span class="flex-shrink-0 font-mono font-bold text-3xl text-gray-200 leading-none">{item.n}</span>
+              <div>
+                <h3 class="font-bold text-gray-900 mb-1">{item.titulo}</h3>
+                <p class="text-gray-600 text-sm leading-relaxed">{item.desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Section 7: Normativa colombiana -->
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Marco Normativo Colombiano para la Respuesta a Incidentes</h2>
+        <p class="text-lg text-gray-600 leading-relaxed mb-6">
+          Colombia cuenta con un marco legal que impone obligaciones concretas sobre cómo
+          las organizaciones deben gestionar y notificar incidentes de seguridad que
+          involucren datos personales o afecten infraestructura crítica.
+        </p>
+
+        <div class="space-y-5">
+          <div class="bg-white border border-gray-200 rounded-xl p-5">
+            <h3 class="font-bold text-gray-900 mb-2">Ley 1581 de 2012 — Protección de Datos Personales</h3>
+            <p class="text-gray-600 text-sm mb-3">
+              Cuando un incidente involucra datos personales (nombres, correos, documentos de
+              identidad, datos financieros), las obligaciones son claras: el Responsable del
+              Tratamiento debe notificar a la Superintendencia de Industria y Comercio (SIC)
+              y potencialmente a los titulares afectados.
+            </p>
+            <div class="bg-amber-50 rounded-lg p-3 text-sm text-amber-800">
+              <strong>Plazos de notificación:</strong> El Decreto 1377 establece que la notificación debe realizarse
+              "a la mayor brevedad posible". La SIC ha interpretado este plazo como no superior
+              a 15 días hábiles desde que se tiene conocimiento del incidente para incidentes
+              de datos personales.
+            </div>
+          </div>
+
+          <div class="bg-white border border-gray-200 rounded-xl p-5">
+            <h3 class="font-bold text-gray-900 mb-2">CONPES 3995 de 2020 — Política Nacional de Confianza y Seguridad Digital</h3>
+            <p class="text-gray-600 text-sm mb-3">
+              Este documento de política establece el marco nacional para la gestión de
+              incidentes de ciberseguridad, incluyendo el rol coordinador del CSIRT-CCOC
+              (Comando Conjunto Cibernético) y el COLCERT del MinTIC. Los incidentes
+              que afecten infraestructura crítica nacional deben reportarse a estas entidades.
+            </p>
+          </div>
+
+          <div class="bg-white border border-gray-200 rounded-xl p-5">
+            <h3 class="font-bold text-gray-900 mb-2">Circular Básica Jurídica SFC — Sector Financiero</h3>
+            <p class="text-gray-600 text-sm mb-3">
+              Las entidades vigiladas por la Superintendencia Financiera deben reportar
+              incidentes operacionales significativos (incluidos los cibernéticos) dentro
+              de las 4 horas de su conocimiento. El plan de respuesta a incidentes es
+              un requisito obligatorio en las evaluaciones de la SFC desde 2022.
+            </p>
+            <a href="/iso27001" class="inline-flex items-center gap-2 text-sm text-red-700 font-semibold hover:underline">
+              Ver cómo ISO 27001 facilita el cumplimiento regulatorio &#8594;
+            </a>
+          </div>
+
+          <div class="bg-white border border-gray-200 rounded-xl p-5">
+            <h3 class="font-bold text-gray-900 mb-2">Ley 1273 de 2009 — Delitos Informáticos</h3>
+            <p class="text-gray-600 text-sm">
+              Esta ley tipifica los delitos informáticos en Colombia. Cuando el incidente
+              tiene un origen criminal (ransomware, fraude, acceso no autorizado deliberado),
+              la organización tiene la opción de interponer denuncia ante la Fiscalía General
+              de la Nación y el Grupo de Delitos Informáticos de la DIJIN.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-6 bg-blue-50 border border-blue-100 rounded-xl p-5">
+          <p class="text-blue-900 text-sm leading-relaxed">
+            <strong>Nota práctica:</strong> Muchas organizaciones evitan reportar incidentes
+            por temor a la exposición pública o sanciones. Sin embargo, la SIC ha establecido
+            que la cooperación y la notificación oportuna son consideradas factores atenuantes
+            al determinar sanciones. Ocultar un incidente tiene mayores consecuencias
+            regulatorias que reportarlo proactivamente.
+          </p>
+        </div>
+      </section>
+
+      <!-- Section 8: Internal links / products -->
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Fortalezca su Capacidad de Respuesta con Starsolution</h2>
+        <p class="text-lg text-gray-600 leading-relaxed mb-6">
+          Un plan de respuesta a incidentes es tan efectivo como las herramientas y el
+          equipo que lo ejecutan. Starsolution ofrece las capacidades técnicas y humanas
+          para que su organización responda con eficacia cuando más lo necesita:
+        </p>
+
+        <div class="space-y-4">
+          <a href="/hacking-etico" class="group flex gap-5 bg-white border border-gray-200 rounded-xl p-5 hover:shadow-md hover:border-red-200 transition">
+            <div class="flex-shrink-0 w-12 h-12 bg-red-50 rounded-xl flex items-center justify-center">
+              <span class="text-red-700 text-xl font-bold">&#9876;</span>
+            </div>
+            <div>
+              <div class="font-bold text-gray-900 group-hover:text-red-700 transition">Hacking Ético y Pentesting</div>
+              <p class="text-sm text-gray-600 mt-1">Pruebas de penetración que identifican las vulnerabilidades que un atacante explotaría antes de que lo haga. Incluye simulación del vector de ataque más probable para su sector.</p>
+            </div>
+          </a>
+          <a href="/stellar-cyber" class="group flex gap-5 bg-white border border-gray-200 rounded-xl p-5 hover:shadow-md hover:border-red-200 transition">
+            <div class="flex-shrink-0 w-12 h-12 bg-red-50 rounded-xl flex items-center justify-center">
+              <span class="text-red-700 text-xl font-bold">&#128065;</span>
+            </div>
+            <div>
+              <div class="font-bold text-gray-900 group-hover:text-red-700 transition">Stellar Cyber — Detección y Respuesta XDR</div>
+              <p class="text-sm text-gray-600 mt-1">Plataforma Open XDR que unifica detección, investigación y respuesta en una sola consola. Reduce el tiempo medio de detección (MTTD) de semanas a menos de 60 minutos.</p>
+            </div>
+          </a>
+          <a href="/enthec" class="group flex gap-5 bg-white border border-gray-200 rounded-xl p-5 hover:shadow-md hover:border-red-200 transition">
+            <div class="flex-shrink-0 w-12 h-12 bg-red-50 rounded-xl flex items-center justify-center">
+              <span class="text-red-700 text-xl font-bold">&#128270;</span>
+            </div>
+            <div>
+              <div class="font-bold text-gray-900 group-hover:text-red-700 transition">Enthec — Inteligencia de Amenazas y Dark Web</div>
+              <p class="text-sm text-gray-600 mt-1">Monitoreo continuo de credenciales de su empresa en dark web y foros de ciberdelincuentes. Detecta el compromiso antes de que el atacante lo use contra usted.</p>
+            </div>
+          </a>
+          <a href="/iso27001" class="group flex gap-5 bg-white border border-gray-200 rounded-xl p-5 hover:shadow-md hover:border-red-200 transition">
+            <div class="flex-shrink-0 w-12 h-12 bg-red-50 rounded-xl flex items-center justify-center">
+              <span class="text-red-700 text-xl font-bold">&#10003;</span>
+            </div>
+            <div>
+              <div class="font-bold text-gray-900 group-hover:text-red-700 transition">Consultoría ISO 27001 — Marco de Gestión de Incidentes</div>
+              <p class="text-sm text-gray-600 mt-1">Implementación del SGSI conforme a ISO 27001:2022, que incluye el diseño del proceso de gestión de incidentes (ISO 27035) y los playbooks operativos para su equipo.</p>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Preguntas Frecuentes sobre Respuesta a Incidentes</h2>
+
+        <div class="space-y-6">
+          {[
+            {
+              q: '¿Qué es un CSIRT y toda empresa colombiana necesita uno?',
+              a: 'Un CSIRT (Computer Security Incident Response Team) es el equipo responsable de gestionar incidentes de seguridad. No toda empresa necesita un CSIRT interno de tiempo completo, pero sí debe tener roles designados, un plan documentado y un proveedor externo con retainer de respuesta a incidentes. Para empresas con más de 100 empleados o que manejan datos sensibles, un modelo híbrido (equipo interno básico + soporte externo especializado) es la opción más costo-efectiva.',
+            },
+            {
+              q: '¿Cuánto tiempo toma desarrollar un plan de respuesta a incidentes?',
+              a: 'Para una empresa mediana (50-500 empleados), desarrollar un plan básico de respuesta a incidentes toma entre 4 y 8 semanas con apoyo de consultoría especializada. Un plan maduro con playbooks por tipo de incidente, simulacros y procedimientos de notificación legal toma entre 3 y 6 meses. El plan debe revisarse al menos una vez al año y después de cada incidente significativo.',
+            },
+            {
+              q: '¿Debo pagar el rescate si mi empresa es víctima de ransomware?',
+              a: 'La recomendación general de las agencias de seguridad (CISA, FBI, Europol, COLCERT) es no pagar. El 80% de las organizaciones que pagan son atacadas nuevamente dentro de 12 meses. Además, el pago puede financiar operaciones criminales sujetas a sanciones internacionales. La alternativa es: aislar los sistemas afectados, evaluar si los backups son recuperables, contactar a un especialista en respuesta a incidentes y denunciar ante la Fiscalía y COLCERT.',
+            },
+            {
+              q: '¿Estoy obligado a reportar un incidente de ciberseguridad en Colombia?',
+              a: 'Depende del sector y el tipo de incidente. Si el incidente involucra datos personales, la Ley 1581 exige notificación a la SIC. Si su empresa es del sector financiero y está vigilada por la SFC, debe notificar incidentes significativos en 4 horas. Si el incidente afecta infraestructura crítica, debe reportar al COLCERT. Ante la duda, notifique: la SIC considera la cooperación proactiva como factor atenuante en sanciones.',
+            },
+            {
+              q: '¿Cuál es la diferencia entre respuesta a incidentes y recuperación ante desastres?',
+              a: 'La respuesta a incidentes se enfoca en detectar, contener y erradicar amenazas de seguridad activas. La recuperación ante desastres (DR) cubre la restauración de operaciones después de cualquier interrupción mayor (incendio, fallo eléctrico, desastre natural, además de ataques). Ambos son componentes de la continuidad del negocio (BCP), pero el plan de respuesta a incidentes es más específico en el contexto de amenazas cibernéticas y tiene un énfasis en preservación de evidencia que el DR no requiere.',
+            },
+          ].map(faq => (
+            <div class="border-b border-gray-200 pb-6">
+              <h3 class="text-lg font-bold text-gray-900 mb-2">{faq.q}</h3>
+              <p class="text-gray-600 leading-relaxed">{faq.a}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Conclusion -->
+      <section class="mb-16">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Conclusión: La Preparación es la Única Estrategia</h2>
+        <p class="text-lg text-gray-600 leading-relaxed mb-6">
+          El marco NIST de 6 fases para respuesta a incidentes no es un documento
+          burocrático: es la diferencia entre una empresa que contiene un ataque en horas
+          y otra que lucha durante semanas para recuperarse mientras sus clientes,
+          empleados y reputación sufren el daño colateral.
+        </p>
+        <p class="text-lg text-gray-600 leading-relaxed mb-6">
+          Para las empresas colombianas, la presión normativa de la Ley 1581, la SFC y
+          las circulares sectoriales añade una dimensión regulatoria al imperativo
+          operativo: un plan de respuesta a incidentes no es opcional, es una obligación
+          de cumplimiento que los auditores y reguladores cada vez examinan con mayor rigor.
+        </p>
+        <p class="text-lg text-gray-600 leading-relaxed">
+          El momento de construir ese plan es ahora, antes del primer incidente.
+          La fase de preparación — la única que ocurre sin presión de tiempo — es donde
+          se gana o se pierde la batalla contra los ciberataques.
+        </p>
+      </section>
+
+    </div>
+  </article>
+
+  <!-- CTA Section -->
+  <section class="bg-gradient-to-br from-[#1a0f0f] to-[#0f172a] py-16 lg:py-24">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">
+        ¿Su empresa tiene un plan de respuesta a incidentes?
+      </h2>
+      <p class="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
+        Starsolution diseña planes de respuesta a incidentes y forma equipos CSIRT para
+        empresas colombianas. Solicite una evaluación de madurez gratuita y descubra
+        en qué fase de preparación está su organización.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="/contacto"
+          class="bg-red-700 text-white font-semibold px-8 py-4 rounded-lg hover:bg-red-800 transition text-center"
+        >
+          Solicitar Evaluación Gratuita
+        </a>
+        <a
+          href="/hacking-etico"
+          class="bg-white/10 backdrop-blur-sm border border-white/20 text-white font-semibold px-8 py-4 rounded-lg hover:bg-white/20 transition text-center"
+        >
+          Ver Hacking Ético
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Articles -->
+  <section class="bg-gray-50 py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl font-bold text-gray-900 mb-8">Artículos Relacionados</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <a href="/blog/zero-trust-2025" class="group bg-white border border-gray-200 rounded-2xl overflow-hidden hover:shadow-lg transition">
+          <div class="h-40 overflow-hidden">
+            <img
+              src="/assets/blog-inteligencia-artificial-seguridad.webp"
+              alt="Arquitectura Zero Trust para Empresas"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              width="400"
+              height="160"
+              loading="lazy"
+            />
+          </div>
+          <div class="p-5">
+            <span class="text-xs font-bold text-blue-700 uppercase tracking-wide">Tecnología</span>
+            <h3 class="font-bold text-gray-900 mt-1 group-hover:text-red-700 transition-colors">Arquitectura Zero Trust para Empresas en 2025</h3>
+          </div>
+        </a>
+        <a href="/blog/iso-27001-regulaciones" class="group bg-white border border-gray-200 rounded-2xl overflow-hidden hover:shadow-lg transition">
+          <div class="h-40 overflow-hidden">
+            <img
+              src="/assets/blog-zero-trust-arquitectura.webp"
+              alt="ISO 27001:2022 y Empresas Colombianas"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              width="400"
+              height="160"
+              loading="lazy"
+            />
+          </div>
+          <div class="p-5">
+            <span class="text-xs font-bold text-green-700 uppercase tracking-wide">Cumplimiento</span>
+            <h3 class="font-bold text-gray-900 mt-1 group-hover:text-red-700 transition-colors">ISO 27001:2022: Lo que Cambia para Empresas Colombianas</h3>
+          </div>
+        </a>
+      </div>
+      <h3 class="text-lg font-bold text-gray-900 mt-8 mb-4">Soluciones Relacionadas</h3>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+        <a href="/stellar-cyber" class="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-all duration-300 text-center">
+          <p class="font-semibold text-sm text-gray-900">Stellar Cyber</p>
+          <p class="text-xs text-gray-500 mt-1">Deteccion XDR unificada</p>
+        </a>
+        <a href="/enthec" class="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-all duration-300 text-center">
+          <p class="font-semibold text-sm text-gray-900">Enthec</p>
+          <p class="text-xs text-gray-500 mt-1">Inteligencia dark web</p>
+        </a>
+        <a href="/hacking-etico" class="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-all duration-300 text-center">
+          <p class="font-semibold text-sm text-gray-900">Hacking Etico</p>
+          <p class="text-xs text-gray-500 mt-1">Pentesting y simulacion</p>
+        </a>
+        <a href="/rthreat-bogota-colombia" class="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-all duration-300 text-center">
+          <p class="font-semibold text-sm text-gray-900">rThreat</p>
+          <p class="text-xs text-gray-500 mt-1">Simulacion adversarios</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+  <WhatsAppButton />
+</BaseLayout>

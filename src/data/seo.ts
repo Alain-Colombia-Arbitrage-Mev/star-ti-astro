@@ -714,6 +714,94 @@ export const seoData: Record<string, SEOData> = {
     },
   },
 
+  'blog/ransomware-empresas-colombia': {
+    title: 'Ransomware en Empresas Colombianas: Guia de Prevencion y Respuesta 2026 | Starsolution',
+    description: 'Como prevenir y responder al ransomware en Colombia. Estadisticas 2025-2026, fases del ataque, capas de defensa EDR/backup/email y plan de respuesta a incidentes.',
+    keywords: 'ransomware empresas Colombia, proteccion ransomware, como prevenir ransomware empresa, ataque ransomware Colombia, respuesta incidentes ransomware, EDR anti-ransomware',
+    canonical: `${BASE_URL}/blog/ransomware-empresas-colombia`,
+    ogTitle: 'Ransomware en Empresas Colombianas: Guia de Prevencion y Respuesta 2026',
+    ogType: 'article',
+    ogImage: `${BASE_URL}/assets/blog-ciberseguridad-realidad-virtual.webp`,
+    breadcrumb: [
+      { name: 'Inicio', url: '/' },
+      { name: 'Blog', url: '/#blog' },
+      { name: 'Ransomware Empresas Colombia', url: '/blog/ransomware-empresas-colombia' },
+    ],
+    jsonLd: {
+      '@context': 'https://schema.org',
+      '@type': 'Article',
+      headline: 'Ransomware en Empresas Colombianas: Guia de Prevencion y Respuesta 2026',
+      description: 'Guia completa sobre como prevenir y responder a ataques de ransomware en empresas colombianas, con estadisticas 2025-2026, fases del ataque y plan de respuesta a incidentes',
+      datePublished: '2026-03-22',
+      dateModified: '2026-03-22',
+      author: { '@type': 'Organization', name: 'Starsolution S.A.S.', url: BASE_URL },
+      publisher: {
+        '@type': 'Organization',
+        name: 'Starsolution S.A.S.',
+        url: BASE_URL,
+        logo: { '@type': 'ImageObject', url: `${BASE_URL}/logo.png` },
+      },
+      image: `${BASE_URL}/assets/blog-ciberseguridad-realidad-virtual.webp`,
+      url: `${BASE_URL}/blog/ransomware-empresas-colombia`,
+      about: { '@type': 'Thing', name: 'Ransomware' },
+      keywords: 'ransomware Colombia, proteccion ransomware empresas, respuesta incidentes, EDR, backup',
+    },
+    faqJsonLd: faqSchema([
+      {
+        q: '¿Puede el ransomware cifrar mis backups en la nube?',
+        a: 'Si los backups estan montados como unidad de red sincronizada (OneDrive, Google Drive), el ransomware puede cifrar los archivos locales y la sincronizacion propagara el cifrado a la nube. La proteccion requiere backups con versionado inmutable y retencion independiente del endpoint comprometido.',
+      },
+      {
+        q: '¿Que hago si ya recibi una nota de rescate de ransomware?',
+        a: 'Primer paso: aislar los equipos afectados de la red desconectando ethernet y deshabilitando WiFi, pero sin apagar los equipos para preservar evidencia forense en RAM. Segundo: notificar al CISO y equipo legal. Tercero: contactar a un especialista en respuesta a incidentes. No comunicar el ataque publicamente ni en redes sociales hasta tener asesoria legal.',
+      },
+      {
+        q: '¿Como previene el EDR los ataques de ransomware?',
+        a: 'Un EDR (Endpoint Detection and Response) monitorea el comportamiento de todos los procesos en tiempo real. Cuando detecta patrones tipicos de ransomware, como apertura masiva de archivos y cambios de extension en milisegundos, bloquea el proceso instantaneamente y puede revertir automaticamente los archivos modificados a su estado anterior, limitando el dano.',
+      },
+      {
+        q: '¿Cuanto cuesta un ataque de ransomware para una empresa colombiana?',
+        a: 'El costo promedio en Latinoamerica supero los USD 850,000 en 2025 segun IBM Cost of a Data Breach. Este costo incluye tiempo de inactividad operacional (el componente mas alto), recuperacion de sistemas, investigacion forense, notificaciones legales y dano reputacional. En algunos casos, el rescate exigido represento menos del 30% del costo total del incidente.',
+      },
+      {
+        q: '¿Que obligaciones legales tiene una empresa colombiana tras sufrir ransomware?',
+        a: 'Si el ataque compromete datos personales, la Ley 1581 de 2012 puede exigir notificacion a la Superintendencia de Industria y Comercio (SIC) dentro de los 15 dias habiles siguientes al conocimiento del incidente. Las empresas del sector financiero tienen un plazo de 48 horas para notificar a la Superintendencia Financiera. Se recomienda involucrar al equipo legal desde el primer momento del incidente.',
+      },
+    ]),
+  },
+
+  'blog/respuesta-incidentes-ciberseguridad': {
+    title: 'Respuesta a Incidentes de Ciberseguridad: Plan Paso a Paso | Starsolution',
+    description: 'Guia completa de respuesta a incidentes de ciberseguridad para empresas colombianas. Las 6 fases NIST, equipo CSIRT, herramientas y normativa Ley 1581 y SFC.',
+    keywords: 'respuesta a incidentes ciberseguridad, plan respuesta incidentes, CSIRT empresas Colombia, NIST SP 800-61, gestion incidentes seguridad, incidente ransomware Colombia',
+    canonical: `${BASE_URL}/blog/respuesta-incidentes-ciberseguridad`,
+    ogTitle: 'Respuesta a Incidentes de Ciberseguridad: Plan Paso a Paso para Empresas',
+    ogType: 'article',
+    ogImage: `${BASE_URL}/assets/robot-ia-laboratorio-monitores.webp`,
+    breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Blog', url: '/#blog' }, { name: 'Respuesta a Incidentes', url: '/blog/respuesta-incidentes-ciberseguridad' }],
+    jsonLd: {
+      '@context': 'https://schema.org',
+      '@type': 'Article',
+      headline: 'Respuesta a Incidentes de Ciberseguridad: Plan Paso a Paso para Empresas',
+      description: 'Guia completa con las 6 fases del marco NIST para respuesta a incidentes de ciberseguridad en empresas colombianas, incluyendo equipo CSIRT, herramientas y obligaciones regulatorias.',
+      datePublished: '2026-03-22',
+      dateModified: '2026-03-22',
+      author: { '@type': 'Organization', name: 'Starsolution S.A.S.', url: BASE_URL },
+      publisher: { '@type': 'Organization', name: 'Starsolution S.A.S.', url: BASE_URL, logo: { '@type': 'ImageObject', url: `${BASE_URL}/logo.png` } },
+      image: `${BASE_URL}/assets/robot-ia-laboratorio-monitores.webp`,
+      url: `${BASE_URL}/blog/respuesta-incidentes-ciberseguridad`,
+      about: { '@type': 'Thing', name: 'Respuesta a Incidentes de Ciberseguridad' },
+      keywords: 'respuesta incidentes, CSIRT, NIST SP 800-61, ciberseguridad Colombia, plan incidentes',
+    },
+    faqJsonLd: faqSchema([
+      { q: '¿Qué es un CSIRT y toda empresa colombiana necesita uno?', a: 'Un CSIRT (Computer Security Incident Response Team) es el equipo responsable de gestionar incidentes de seguridad. No toda empresa necesita un CSIRT interno de tiempo completo, pero sí debe tener roles designados, un plan documentado y un proveedor externo con retainer de respuesta a incidentes. Para empresas con más de 100 empleados o que manejan datos sensibles, un modelo híbrido es la opción más costo-efectiva.' },
+      { q: '¿Cuánto tiempo toma desarrollar un plan de respuesta a incidentes?', a: 'Para una empresa mediana (50-500 empleados), desarrollar un plan básico de respuesta a incidentes toma entre 4 y 8 semanas con apoyo de consultoría especializada. Un plan maduro con playbooks por tipo de incidente, simulacros y procedimientos de notificación legal toma entre 3 y 6 meses.' },
+      { q: '¿Debo pagar el rescate si mi empresa es víctima de ransomware?', a: 'La recomendación general de las agencias de seguridad (CISA, FBI, Europol, COLCERT) es no pagar. El 80% de las organizaciones que pagan son atacadas nuevamente dentro de 12 meses. La alternativa es: aislar los sistemas afectados, evaluar si los backups son recuperables, contactar a un especialista en respuesta a incidentes y denunciar ante la Fiscalía y COLCERT.' },
+      { q: '¿Estoy obligado a reportar un incidente de ciberseguridad en Colombia?', a: 'Depende del sector y el tipo de incidente. Si el incidente involucra datos personales, la Ley 1581 exige notificación a la SIC. Si su empresa es del sector financiero vigilada por la SFC, debe notificar en 4 horas. Si el incidente afecta infraestructura crítica, debe reportar al COLCERT. Ante la duda, notifique: la SIC considera la cooperación proactiva como factor atenuante en sanciones.' },
+      { q: '¿Cuál es la diferencia entre respuesta a incidentes y recuperación ante desastres?', a: 'La respuesta a incidentes se enfoca en detectar, contener y erradicar amenazas de seguridad activas. La recuperación ante desastres (DR) cubre la restauración de operaciones después de cualquier interrupción mayor. Ambos son componentes de la continuidad del negocio, pero el plan de respuesta a incidentes tiene un énfasis en preservación de evidencia que el DR no requiere.' },
+    ]),
+  },
+
   // =====================================================
   // REPORTS
   // =====================================================

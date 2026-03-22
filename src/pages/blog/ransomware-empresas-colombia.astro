@@ -1,0 +1,787 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Navbar from '@components/Navbar.astro';
+import Footer from '@components/Footer.astro';
+import WhatsAppButton from '@components/WhatsAppButton.astro';
+import { seoData } from '@data/seo';
+
+const seo = seoData['blog/ransomware-empresas-colombia'];
+---
+
+<BaseLayout seo={seo}>
+  <Navbar />
+
+  <!-- Hero Section -->
+  <section class="relative bg-gradient-to-br from-[#1a0a0a] to-[#2a1010] overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute top-0 right-0 w-96 h-96 bg-red-700 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-0 left-0 w-96 h-96 bg-orange-700 rounded-full blur-3xl"></div>
+    </div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-16 lg:pb-20">
+      <!-- Breadcrumb -->
+      <nav class="mb-8 flex items-center gap-2 text-sm text-gray-400">
+        <a href="/" class="hover:text-white transition-colors">Inicio</a>
+        <span>/</span>
+        <a href="/#blog" class="hover:text-white transition-colors">Blog</a>
+        <span>/</span>
+        <span class="text-gray-200">Ransomware Empresas Colombia 2026</span>
+      </nav>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <div class="flex items-center gap-3 mb-6">
+            <span class="bg-red-700/30 border border-red-600/40 text-red-300 text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wide">
+              Amenazas
+            </span>
+            <span class="text-gray-400 text-sm">22 de marzo de 2026</span>
+          </div>
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+            Ransomware en Empresas Colombianas
+            <span class="block text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-orange-400">
+              Guia de Prevencion y Respuesta 2026
+            </span>
+          </h1>
+          <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+            Colombia registra uno de los volumenes de ataques de ransomware mas altos de
+            Latinoamerica. Esta guia cubre como funciona, como prevenirlo y que hacer si
+            su empresa ya fue atacada.
+          </p>
+          <div class="flex items-center gap-4 text-sm text-gray-400">
+            <span>Por el equipo de Starsolution</span>
+            <span>&bull;</span>
+            <span>Tiempo de lectura: 12 min</span>
+          </div>
+        </div>
+        <div class="hidden lg:block">
+          <img
+            src="/assets/blog-ciberseguridad-realidad-virtual.webp"
+            alt="Ataque de ransomware en empresas colombianas: proteccion y respuesta a incidentes"
+            class="w-full rounded-2xl shadow-2xl"
+            width="600"
+            height="400"
+            loading="eager"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Article Body -->
+  <article class="bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+
+      <!-- Introduction -->
+      <section class="mb-12">
+        <p class="text-xl text-gray-700 leading-relaxed mb-6">
+          En 2025, Colombia reporto un incremento del 47% en ataques de ransomware contra empresas
+          del sector privado comparado con el ano anterior. Grupos como LockBit, BlackCat/ALPHV y
+          Clop operaron activamente contra organizaciones colombianas en sectores de salud, finanzas,
+          manufactura y gobierno. El costo promedio de un incidente de ransomware en la region supero
+          los USD 850,000 incluyendo tiempo de inactividad, rescate (cuando se pago), recuperacion
+          y dano reputacional.
+        </p>
+        <p class="text-lg text-gray-600 leading-relaxed">
+          Esta guia esta disenada para CISO, directores de IT y gerentes generales de empresas
+          colombianas que necesitan entender la amenaza, fortalecer sus defensas y contar con un
+          plan de respuesta concreto antes de que el ataque ocurra.
+        </p>
+      </section>
+
+      <!-- Key stats -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-12">
+        {[
+          { value: '47%', label: 'aumento de ataques ransomware en Colombia en 2025 vs 2024 (Starsolution Threat Intel)' },
+          { value: '$850K', label: 'costo promedio de un incidente ransomware en Latinoamerica (IBM Cost of Breach 2025)' },
+          { value: '21 dias', label: 'tiempo promedio de recuperacion operacional sin plan de respuesta definido' },
+          { value: '68%', label: 'de ataques ingresan via email de phishing o credenciales comprometidas' },
+        ].map(stat => (
+          <div class="bg-red-50 border border-red-100 rounded-xl p-4 text-center">
+            <div class="text-3xl font-bold text-red-700 mb-1">{stat.value}</div>
+            <div class="text-xs text-gray-600">{stat.label}</div>
+          </div>
+        ))}
+      </div>
+
+      <!-- Section 1: Que es ransomware -->
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">¿Que es el Ransomware?</h2>
+        <p class="text-lg text-gray-600 leading-relaxed mb-6">
+          El ransomware es un tipo de malware que cifra los archivos de la victima y exige un pago
+          (generalmente en criptomonedas) a cambio de la clave de descifrado. Las variantes modernas
+          como LockBit 3.0 y BlackCat/ALPHV van mas alla del cifrado: exfiltran datos antes de
+          cifrarlos y amenazan con publicarlos en sitios de filtracion si no se paga el rescate.
+          Esta tecnica, conocida como &ldquo;doble extorsion&rdquo;, hace que pagar o no pagar el
+          rescate sea igualmente dañino sin las defensas adecuadas.
+        </p>
+        <p class="text-lg text-gray-600 leading-relaxed mb-6">
+          Los operadores de ransomware modernos funcionan como verdaderas empresas criminales con
+          modelo de negocio Ransomware-as-a-Service (RaaS): los desarrolladores crean el malware
+          y lo alquilan a afiliados que ejecutan los ataques a cambio de un porcentaje del rescate.
+          Esto explica el rapido crecimiento del ecosistema y la sofisticacion de las campanas
+          contra empresas colombianas.
+        </p>
+
+        <div class="bg-gray-900 text-gray-100 rounded-2xl p-6 mb-6">
+          <p class="text-sm font-mono text-red-400 mb-1">// Modalidades actuales en Colombia</p>
+          <p class="text-base font-semibold">Cifrado + Exfiltracion (doble extorsion) &rarr; Mas del 80% de los casos reportados en 2025</p>
+        </div>
+      </section>
+
+      <!-- Section 2: Estadisticas Colombia -->
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Estadisticas de Ransomware en Colombia 2025-2026</h2>
+        <p class="text-lg text-gray-600 leading-relaxed mb-8">
+          Los datos del Centro Ciber del ColCERT y el seguimiento de amenazas de Starsolution
+          revelan un panorama preocupante para el sector empresarial colombiano:
+        </p>
+
+        <div class="space-y-4 mb-8">
+          {[
+            {
+              sector: 'Salud y Clinicas',
+              pct: '28%',
+              detail: 'Hospitales y clinicas son el objetivo mas frecuente por la criticidad de sus datos y la presion para pagar rapidamente',
+              color: 'red',
+            },
+            {
+              sector: 'Finanzas y Seguros',
+              pct: '22%',
+              detail: 'Cooperativas de ahorro, fiduciarias y brokers de seguros con datos de cuentas y polizas de alto valor',
+              color: 'orange',
+            },
+            {
+              sector: 'Manufactura y Logistica',
+              pct: '19%',
+              detail: 'Interrupciones de lineas de produccion generan perdidas de millones por hora, aumentando la disposicion a pagar',
+              color: 'yellow',
+            },
+            {
+              sector: 'Gobierno y Entidades Publicas',
+              pct: '16%',
+              detail: 'Alcaldias, gobernaciones y entidades descentralizadas con infraestructura de IT desactualizada',
+              color: 'amber',
+            },
+            {
+              sector: 'Retail y Comercio',
+              pct: '15%',
+              detail: 'Cadenas de retail con datos de tarjetas y sistemas POS como vector de entrada',
+              color: 'orange',
+            },
+          ].map(item => (
+            <div class="flex gap-4 items-start p-4 border border-gray-200 rounded-xl">
+              <div class="flex-shrink-0 w-14 text-center">
+                <div class="text-xl font-bold text-red-700">{item.pct}</div>
+              </div>
+              <div>
+                <h3 class="font-bold text-gray-900 text-sm mb-1">{item.sector}</h3>
+                <p class="text-gray-600 text-sm">{item.detail}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div class="bg-amber-50 border border-amber-200 rounded-xl p-5">
+          <p class="text-sm font-bold text-amber-900 mb-1">Dato clave para directivos</p>
+          <p class="text-sm text-amber-800">
+            El 71% de las empresas colombianas atacadas que pagaron el rescate no recuperaron
+            todos sus datos. El 34% fue atacado nuevamente dentro de los 6 meses siguientes.
+            Pagar no resuelve el problema estructural.
+          </p>
+        </div>
+      </section>
+
+      <!-- Section 3: Como atacan (fases) -->
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Como Funciona un Ataque de Ransomware: Las 6 Fases</h2>
+        <p class="text-lg text-gray-600 leading-relaxed mb-8">
+          Comprender las fases de ataque es fundamental para saber donde intervenir. La buena noticia:
+          hay multiples ventanas de oportunidad para detectar y detener el ataque antes de que el
+          cifrado ocurra.
+        </p>
+
+        <div class="relative">
+          <div class="absolute left-4 top-0 bottom-0 w-0.5 bg-red-100"></div>
+          <div class="space-y-8">
+            {[
+              {
+                phase: 'Fase 1',
+                title: 'Acceso inicial',
+                items: [
+                  'Phishing con adjunto malicioso o enlace a sitio comprometido',
+                  'Explotacion de vulnerabilidades en VPN, RDP o aplicaciones web expuestas',
+                  'Credenciales compradas en la dark web (de brechas previas)',
+                  'Compromisos de la cadena de suministro de software (supply chain)',
+                ],
+              },
+              {
+                phase: 'Fase 2',
+                title: 'Establecimiento y persistencia',
+                items: [
+                  'Instalacion de herramientas de administracion remota (RAT) legitimas: Cobalt Strike, Brute Ratel',
+                  'Creacion de cuentas de backdoor o modificacion de cuentas existentes',
+                  'Deshabilitacion de logs y herramientas de seguridad',
+                  'Establecimiento de canales de comunicacion con el servidor de comando y control (C2)',
+                ],
+              },
+              {
+                phase: 'Fase 3',
+                title: 'Reconocimiento interno',
+                items: [
+                  'Enumeracion de usuarios, grupos y controladores de dominio (Active Directory)',
+                  'Identificacion de servidores de archivos, bases de datos y sistemas de backup',
+                  'Mapeo de la red interna para planificar el movimiento lateral',
+                  'Identificacion de herramientas de seguridad instaladas para evasion',
+                ],
+              },
+              {
+                phase: 'Fase 4',
+                title: 'Movimiento lateral y escalada de privilegios',
+                items: [
+                  'Uso de herramientas nativas de Windows (LOLBins): PowerShell, WMI, PsExec',
+                  'Robo de hashes NTLM y ataques Pass-the-Hash o Pass-the-Ticket',
+                  'Comprometimiento de cuentas de dominio y administradores',
+                  'Propagacion lateral a servidores criticos y sistemas de backup',
+                ],
+              },
+              {
+                phase: 'Fase 5',
+                title: 'Exfiltracion de datos',
+                items: [
+                  'Identificacion y compresion de datos de alto valor (contratos, bases de datos, credenciales)',
+                  'Exfiltracion silenciosa usando servicios legitimos: Mega, Dropbox, rclone',
+                  'Este paso precede al cifrado en ataques de doble extorsion',
+                  'Tiempo promedio de exfiltracion antes de ser detectado: 18 dias',
+                ],
+              },
+              {
+                phase: 'Fase 6',
+                title: 'Cifrado y extorsion',
+                items: [
+                  'Eliminacion de copias de seguridad locales y shadow copies (VSS)',
+                  'Despliegue del ransomware en toda la red de forma simultanea',
+                  'Cifrado de archivos con algoritmos robustos (AES-256 + RSA-4096)',
+                  'Nota de rescate con instrucciones de pago y amenaza de publicacion de datos',
+                ],
+              },
+            ].map(phase => (
+              <div class="flex gap-6">
+                <div class="flex-shrink-0 relative">
+                  <div class="w-8 h-8 bg-red-700 rounded-full flex items-center justify-center z-10 relative">
+                    <div class="w-3 h-3 bg-white rounded-full"></div>
+                  </div>
+                </div>
+                <div class="pb-2">
+                  <div class="text-xs font-bold text-red-700 uppercase tracking-wide mb-1">{phase.phase}</div>
+                  <h3 class="text-xl font-bold text-gray-900 mb-3">{phase.title}</h3>
+                  <ul class="space-y-1">
+                    {phase.items.map(item => (
+                      <li class="flex items-start gap-2 text-gray-600 text-sm">
+                        <span class="text-red-500 mt-0.5 flex-shrink-0">&#9679;</span>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 4: Prevencion -->
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Como Prevenir el Ransomware: Capas de Defensa</h2>
+        <p class="text-lg text-gray-600 leading-relaxed mb-8">
+          La prevencion efectiva requiere multiples capas de defensa. Ninguna solucion individual
+          es suficiente. Estas son las cuatro capas criticas que Starsolution recomienda para
+          empresas colombianas de cualquier tamano:
+        </p>
+
+        <!-- Capa 1: EDR -->
+        <div class="mb-8">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="flex-shrink-0 w-8 h-8 bg-red-700 text-white rounded-full flex items-center justify-center text-sm font-bold">1</span>
+            <h3 class="text-xl font-bold text-gray-900">Proteccion de Endpoints con EDR/XDR</h3>
+          </div>
+          <p class="text-gray-600 leading-relaxed mb-4">
+            Un antivirus tradicional basado en firmas no puede detectar ransomware moderno que
+            usa tecnicas de evasion como empaquetadores polimorficos, living-off-the-land y
+            carga reflectiva de codigo. Un EDR (Endpoint Detection and Response) monitorea el
+            comportamiento en tiempo real y puede detener el cifrado antes de que se expanda.
+          </p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <a href="/bitdefender" class="group bg-white border border-gray-200 rounded-2xl p-5 hover:shadow-lg hover:border-red-200 transition">
+              <div class="text-red-700 font-bold text-base mb-1 group-hover:underline">Bitdefender GravityZone</div>
+              <div class="text-xs text-gray-500 uppercase tracking-wide mb-2">EDR/XDR con anti-ransomware integrado</div>
+              <p class="text-sm text-gray-600">Motor de comportamiento que detecta patrones de cifrado masivo y revierte cambios automaticamente. Tasa de deteccion del 99.9% en pruebas AV-Test 2025.</p>
+            </a>
+            <a href="/kaspersky" class="group bg-white border border-gray-200 rounded-2xl p-5 hover:shadow-lg hover:border-red-200 transition">
+              <div class="text-red-700 font-bold text-base mb-1 group-hover:underline">Kaspersky Endpoint Security</div>
+              <div class="text-xs text-gray-500 uppercase tracking-wide mb-2">System Watcher + Rollback</div>
+              <p class="text-sm text-gray-600">La tecnologia System Watcher bloquea procesos con comportamiento de ransomware y revierte archivos modificados a su estado anterior automaticamente.</p>
+            </a>
+          </div>
+        </div>
+
+        <!-- Capa 2: Backup -->
+        <div class="mb-8">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="flex-shrink-0 w-8 h-8 bg-red-700 text-white rounded-full flex items-center justify-center text-sm font-bold">2</span>
+            <h3 class="text-xl font-bold text-gray-900">Backup con Estrategia 3-2-1-1</h3>
+          </div>
+          <p class="text-gray-600 leading-relaxed mb-4">
+            Una estrategia de backup solida es la ultima linea de defensa. La regla 3-2-1 clasica
+            ya no es suficiente. Starsolution recomienda la regla 3-2-1-1: 3 copias en 2 medios
+            distintos, 1 offsite y 1 air-gapped (desconectado de la red). Los backups deben
+            probarse trimestralmente para verificar que la restauracion funciona en los tiempos
+            de RTO definidos.
+          </p>
+          <div class="bg-gray-50 border border-gray-200 rounded-xl p-5">
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
+              {[
+                { label: '3 copias', desc: 'de los datos criticos' },
+                { label: '2 medios', desc: 'distintos (disco + cloud)' },
+                { label: '1 offsite', desc: 'fuera de las instalaciones' },
+                { label: '1 air-gap', desc: 'desconectado de la red' },
+              ].map(item => (
+                <div>
+                  <div class="text-lg font-bold text-red-700 mb-0.5">{item.label}</div>
+                  <div class="text-xs text-gray-500">{item.desc}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <!-- Capa 3: Email Security -->
+        <div class="mb-8">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="flex-shrink-0 w-8 h-8 bg-red-700 text-white rounded-full flex items-center justify-center text-sm font-bold">3</span>
+            <h3 class="text-xl font-bold text-gray-900">Seguridad de Email Avanzada</h3>
+          </div>
+          <p class="text-gray-600 leading-relaxed mb-4">
+            El 68% de los ransomware en Colombia ingresan por correo electronico. Un gateway de
+            email con sandboxing analiza adjuntos en un entorno aislado antes de entregarlos al
+            usuario, detectando macros maliciosas, ejecutables disfrazados y documentos con
+            exploits de Zero Day.
+          </p>
+          <a href="/proofpoint" class="group flex gap-4 bg-white border border-gray-200 rounded-2xl p-5 hover:shadow-lg hover:border-red-200 transition">
+            <div class="flex-1">
+              <div class="text-red-700 font-bold text-base mb-1 group-hover:underline">Proofpoint Email Protection</div>
+              <div class="text-xs text-gray-500 uppercase tracking-wide mb-2">Lider Gartner Magic Quadrant Email Security</div>
+              <p class="text-sm text-gray-600">Sandboxing avanzado con analisis de comportamiento de adjuntos, proteccion anti-phishing con IA y bloqueo de URL maliciosas en tiempo real.</p>
+            </div>
+          </a>
+        </div>
+
+        <!-- Capa 4: Security Awareness -->
+        <div class="mb-8">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="flex-shrink-0 w-8 h-8 bg-red-700 text-white rounded-full flex items-center justify-center text-sm font-bold">4</span>
+            <h3 class="text-xl font-bold text-gray-900">Concientizacion y Simulacion de Phishing</h3>
+          </div>
+          <p class="text-gray-600 leading-relaxed mb-4">
+            El 95% de los incidentes de seguridad involucran error humano. Los programas de
+            security awareness training con simulaciones de phishing periodicas reducen la tasa
+            de clic en enlaces maliciosos hasta en un 90% en 12 meses. Los empleados que han
+            pasado por simulaciones son 3 veces mas rapidos en reportar correos sospechosos.
+          </p>
+        </div>
+
+        <!-- Capa 5: Monitoreo de superficie de ataque -->
+        <div class="mb-4">
+          <div class="flex items-center gap-3 mb-4">
+            <span class="flex-shrink-0 w-8 h-8 bg-red-700 text-white rounded-full flex items-center justify-center text-sm font-bold">5</span>
+            <h3 class="text-xl font-bold text-gray-900">Monitoreo de Credenciales y Superficie de Ataque</h3>
+          </div>
+          <p class="text-gray-600 leading-relaxed mb-4">
+            Las credenciales corporativas de sus empleados pueden estar circulando en mercados
+            underground sin que su empresa lo sepa. Starsolutions implementa monitoreo continuo
+            de credenciales filtradas para detectar y revocar accesos comprometidos antes de que
+            sean usados en un ataque.
+          </p>
+          <a href="/enthec" class="group flex gap-4 bg-white border border-gray-200 rounded-2xl p-5 hover:shadow-lg hover:border-red-200 transition">
+            <div class="flex-1">
+              <div class="text-red-700 font-bold text-base mb-1 group-hover:underline">Enthec Attack Surface Management</div>
+              <div class="text-xs text-gray-500 uppercase tracking-wide mb-2">Monitoreo continuo 24/7 sin agentes</div>
+              <p class="text-sm text-gray-600">Detecta credenciales filtradas, activos expuestos y vulnerabilidades externas. Alertas en tiempo real cuando sus datos aparecen en la dark web.</p>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <!-- Section 5: Deteccion y respuesta con XDR -->
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Deteccion Temprana: El Valor de la Visibilidad Unificada</h2>
+        <p class="text-lg text-gray-600 leading-relaxed mb-6">
+          El tiempo promedio entre la intrusion inicial y el despliegue del ransomware es de
+          4 a 6 dias segun datos de 2025. Eso significa que una empresa con visibilidad y
+          monitoreo adecuados tiene una ventana real para detectar y detener el ataque antes
+          del cifrado.
+        </p>
+        <p class="text-lg text-gray-600 leading-relaxed mb-6">
+          Las plataformas Open XDR correlacionan eventos de endpoints, red, email y nube para
+          identificar patrones de comportamiento pre-ransomware que pasan desapercibidos cuando
+          cada herramienta opera en silos. La deteccion de movimiento lateral, accesos anomalos
+          a servidores de backup y exfiltracion de datos son las senales de alerta mas criticas.
+        </p>
+        <a href="/stellar-cyber" class="group flex gap-4 bg-white border border-gray-200 rounded-2xl p-5 hover:shadow-lg hover:border-red-200 transition mb-6">
+          <div class="flex-1">
+            <div class="text-red-700 font-bold text-base mb-1 group-hover:underline">Stellar Cyber Open XDR</div>
+            <div class="text-xs text-gray-500 uppercase tracking-wide mb-2">Correlacion de amenazas entre todos los vectores</div>
+            <p class="text-sm text-gray-600">Detecta indicadores pre-ransomware correlacionando eventos de red, endpoint, email y nube. Automatiza la respuesta: aislamiento de equipos comprometidos en segundos.</p>
+          </div>
+        </a>
+      </section>
+
+      <!-- Section 6: Plan de respuesta a incidentes -->
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Plan de Respuesta a Incidentes de Ransomware</h2>
+        <p class="text-lg text-gray-600 leading-relaxed mb-8">
+          Si el ransomware logra ejecutarse, la velocidad y el orden de la respuesta determinan
+          si el incidente se convierte en un desastre total o en un incidente controlado. Este
+          es el protocolo que Starsolution recomienda:
+        </p>
+
+        <div class="overflow-x-auto rounded-2xl border border-gray-200 mb-8">
+          <table class="w-full text-sm">
+            <thead class="bg-gray-50">
+              <tr>
+                <th class="text-left px-5 py-4 font-bold text-gray-900">Tiempo</th>
+                <th class="text-left px-5 py-4 font-bold text-gray-900">Accion</th>
+                <th class="text-left px-5 py-4 font-bold text-gray-900">Responsable</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-100">
+              {[
+                ['0-15 min', 'Aislar equipos afectados de la red (desconectar ethernet, deshabilitar WiFi). NO apagar los equipos.', 'IT / SOC'],
+                ['0-30 min', 'Notificar al CISO, CEO y equipo legal. Activar el equipo de respuesta a incidentes.', 'CISO'],
+                ['30-60 min', 'Identificar el alcance: cuantos equipos afectados, que datos y sistemas estan comprometidos.', 'IT / Forense'],
+                ['1-4 horas', 'Preservar evidencia forense antes de cualquier remediacion. Capturar imagen de memoria RAM.', 'Forense'],
+                ['1-4 horas', 'Notificar a las autoridades: ColCERT (MINTIC) y, si hay datos personales, a la SIC bajo Ley 1581.', 'Legal / CISO'],
+                ['4-12 horas', 'Verificar si los backups estan intactos y no comprometidos. Identificar punto de restauracion limpio.', 'IT'],
+                ['12-48 horas', 'Identificar el vector de entrada inicial. Cerrar la brecha antes de iniciar la restauracion.', 'Forense / IT'],
+                ['2-7 dias', 'Restaurar sistemas desde backup limpio en el orden: infraestructura critica, luego sistemas de negocio.', 'IT'],
+                ['7-30 dias', 'Implementar controles adicionales. Comunicar a clientes y reguladores segun obligaciones legales.', 'Legal / CISO'],
+              ].map(([tiempo, accion, resp]) => (
+                <tr class="hover:bg-gray-50">
+                  <td class="px-5 py-4 font-medium text-red-700 whitespace-nowrap">{tiempo}</td>
+                  <td class="px-5 py-4 text-gray-600">{accion}</td>
+                  <td class="px-5 py-4 text-gray-500 text-xs whitespace-nowrap">{resp}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+
+        <div class="bg-red-50 border border-red-200 rounded-xl p-5 mb-6">
+          <p class="text-sm font-bold text-red-900 mb-2">Error critico que cometen la mayoria de empresas</p>
+          <p class="text-sm text-red-800">
+            Apagar los equipos afectados destruye la evidencia forense en memoria RAM que permite
+            identificar el vector de ataque, las cuentas comprometidas y el alcance real del
+            incidente. Siempre aislar de la red antes de apagar.
+          </p>
+        </div>
+
+        <h3 class="text-xl font-bold text-gray-900 mb-4">¿Debo pagar el rescate?</h3>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          La posicion de Starsolution y de organismos como el FBI y el CISA es clara: no se
+          recomienda pagar el rescate. Las razones son multiples:
+        </p>
+        <div class="space-y-3">
+          {[
+            'El 29% de las empresas que pagaron no recibieron la clave de descifrado funcional.',
+            'Pagar financia la operacion criminal y financia proximos ataques.',
+            'En algunos paises, pagar rescate a grupos sancionados puede violar regulaciones de OFAC (EE.UU.) con implicaciones para empresas con operaciones internacionales.',
+            'El 34% de las empresas que pagaron fueron atacadas nuevamente en los 6 meses siguientes.',
+          ].map((point, i) => (
+            <div class="flex gap-3 p-4 bg-gray-50 border border-gray-200 rounded-lg">
+              <span class="flex-shrink-0 w-5 h-5 bg-red-700 text-white rounded-full flex items-center justify-center text-xs font-bold">{i + 1}</span>
+              <p class="text-gray-600 text-sm">{point}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Section 7: Caso de estudio -->
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Caso de Estudio: Empresa Manufacturera en Bogota</h2>
+
+        <div class="bg-gray-50 border border-gray-200 rounded-2xl p-6 mb-6">
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-6">
+            <div>
+              <div class="text-xs font-bold text-gray-500 uppercase tracking-wide mb-1">Sector</div>
+              <div class="font-semibold text-gray-900">Manufactura industrial</div>
+            </div>
+            <div>
+              <div class="text-xs font-bold text-gray-500 uppercase tracking-wide mb-1">Tamano</div>
+              <div class="font-semibold text-gray-900">280 empleados, 195 endpoints</div>
+            </div>
+            <div>
+              <div class="text-xs font-bold text-gray-500 uppercase tracking-wide mb-1">Vector de ataque</div>
+              <div class="font-semibold text-gray-900">RDP expuesto con credenciales debiles</div>
+            </div>
+          </div>
+
+          <h3 class="font-bold text-gray-900 mb-3">Situacion inicial</h3>
+          <p class="text-gray-600 text-sm leading-relaxed mb-4">
+            Una empresa de manufactura en Bogota fue afectada por el grupo LockBit en septiembre
+            de 2025. El ataque ingreso por un puerto RDP expuesto con credenciales que habian
+            sido filtradas en una brecha anterior de un proveedor de software. El grupo opero
+            en la red durante 11 dias antes del cifrado, exfiltrando planos industriales, contratos
+            y datos de nomina de empleados.
+          </p>
+          <p class="text-gray-600 text-sm leading-relaxed mb-4">
+            Al momento del ataque, la empresa no tenia EDR (usaba antivirus de firma), sus backups
+            estaban conectados en red (y fueron cifrados tambien) y no existia un plan de respuesta
+            a incidentes documentado.
+          </p>
+
+          <h3 class="font-bold text-gray-900 mb-3">Impacto del incidente</h3>
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-4">
+            {[
+              { label: 'Inactividad', value: '18 dias' },
+              { label: 'Perdida produccion', value: '$1.2M USD' },
+              { label: 'Rescate exigido', value: '$380K USD' },
+              { label: 'Costo total real', value: '$1.8M USD' },
+            ].map(item => (
+              <div class="bg-white border border-gray-200 rounded-lg p-3 text-center">
+                <div class="text-lg font-bold text-red-700">{item.value}</div>
+                <div class="text-xs text-gray-500">{item.label}</div>
+              </div>
+            ))}
+          </div>
+
+          <h3 class="font-bold text-gray-900 mb-3">Solucion implementada post-incidente</h3>
+          <p class="text-gray-600 text-sm leading-relaxed mb-3">
+            Starsolution implemento un programa de resiliencia en 90 dias:
+          </p>
+          <ul class="space-y-1 mb-4">
+            {[
+              'Despliegue de Bitdefender GravityZone EDR en todos los endpoints y servidores',
+              'Cierre del RDP publico; implementacion de ZTNA para acceso remoto controlado',
+              'Estrategia de backup 3-2-1-1 con backup air-gapped semanal',
+              'Implementacion de Enthec para monitoreo de credenciales filtradas',
+              'Capacitacion de concientizacion para todos los empleados con simulaciones de phishing',
+              'Plan de respuesta a incidentes documentado y ejercicio de simulacion anual',
+            ].map(item => (
+              <li class="flex items-start gap-2 text-gray-600 text-sm">
+                <span class="text-green-600 mt-0.5 flex-shrink-0">&#10003;</span>
+                {item}
+              </li>
+            ))}
+          </ul>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            A doce meses del incidente, la empresa ha bloqueado 4 intentos de intrusion identificados
+            por el EDR y detectado 2 credenciales corporativas en mercados underground antes de que
+            fueran explotadas.
+          </p>
+        </div>
+      </section>
+
+      <!-- Section 8: Normativa colombiana -->
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Obligaciones Legales en Colombia tras un Ataque de Ransomware</h2>
+        <p class="text-lg text-gray-600 leading-relaxed mb-6">
+          Un ataque de ransomware que comprometa datos personales de clientes, empleados o terceros
+          puede activar obligaciones de notificacion bajo la Ley 1581 de 2012 y el Decreto 1074
+          de 2015. La Superintendencia de Industria y Comercio (SIC) puede exigir notificacion
+          dentro de los primeros 15 dias habiles desde el conocimiento del incidente.
+        </p>
+
+        <div class="overflow-x-auto rounded-2xl border border-gray-200 mb-6">
+          <table class="w-full text-sm">
+            <thead class="bg-gray-50">
+              <tr>
+                <th class="text-left px-5 py-4 font-bold text-gray-900">Marco normativo</th>
+                <th class="text-left px-5 py-4 font-bold text-gray-900">Obligacion</th>
+                <th class="text-left px-5 py-4 font-bold text-gray-900">Plazo</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-100">
+              {[
+                ['Ley 1581 / Decreto 1074', 'Notificar a la SIC si hay brecha de datos personales', '15 dias habiles'],
+                ['Circular SIC 003/2018', 'Medidas de seguridad para datos en bases de datos', 'Permanente'],
+                ['ColCERT / MINTIC', 'Reporte voluntario del incidente para analisis nacional de amenazas', 'Inmediato'],
+                ['Contrato con clientes', 'Notificacion segun clausulas de SLA y confidencialidad', 'Segun contrato'],
+                ['Sector financiero (SFC)', 'Reporte a la Superintendencia Financiera si aplica', '48 horas'],
+              ].map(([norma, obligacion, plazo]) => (
+                <tr class="hover:bg-gray-50">
+                  <td class="px-5 py-4 font-medium text-gray-900">{norma}</td>
+                  <td class="px-5 py-4 text-gray-600">{obligacion}</td>
+                  <td class="px-5 py-4 text-red-700 font-medium whitespace-nowrap">{plazo}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Section 9: FAQ -->
+      <section class="mb-16">
+        <h2 class="text-3xl font-bold text-gray-900 mb-8">Preguntas Frecuentes sobre Ransomware</h2>
+
+        <div class="space-y-5">
+          {[
+            {
+              q: '¿Puede el ransomware cifrar mis backups en la nube?',
+              a: 'Si los backups en la nube estan montados como unidad de red (por ejemplo, OneDrive o Google Drive sincronizados en Windows), el ransomware puede cifrar esos archivos locales y la sincronizacion automatica propagara el cifrado a la nube. La proteccion requiere backups con versionado inmutable y retention independiente del endpoint.',
+            },
+            {
+              q: '¿Que hago si ya recibi la nota de rescate?',
+              a: 'Primero: aislar los equipos afectados de la red inmediatamente. Segundo: no apagar los equipos (se pierde evidencia forense). Tercero: contactar a su equipo de respuesta a incidentes o a Starsolution. Cuarto: no comunicar el ataque publicamente ni en redes sociales hasta tener asesoria legal. Quinto: documentar todo lo que ocurrio para el proceso forense.',
+            },
+            {
+              q: '¿El seguro cibernetico cubre ataques de ransomware?',
+              a: 'Muchas polizas de seguro cibernetico cubren ransomware, pero los requisitos de elegibilidad se han vuelto mas estrictos. Las aseguradoras ahora exigen evidencia de controles minimos: MFA habilitado, backups verificados, EDR implementado y entrenamiento de concientizacion. Empresas sin estos controles pueden ver sus reclamaciones negadas o pagos reducidos.',
+            },
+            {
+              q: '¿Con que frecuencia debo hacer pruebas de restauracion de backups?',
+              a: 'Minimo trimestralmente para backups de sistemas criticos, y mensualmente para las copias mas recientes. Cada prueba debe documentar el tiempo de restauracion real para validar que el RTO (Recovery Time Objective) definido en su plan de continuidad de negocio es alcanzable.',
+            },
+            {
+              q: '¿El ransomware puede afectar servidores Linux y maquinas virtuales?',
+              a: 'Si. Grupos como ESXiArgs y Black Basta desarrollaron variantes especificamente para servidores VMware ESXi y Linux. En 2025, los ataques a hipervisores crecieron un 132%, ya que comprometer un servidor ESXi puede cifrar docenas de maquinas virtuales simultaneamente.',
+            },
+          ].map((item, i) => (
+            <div class="border border-gray-200 rounded-xl overflow-hidden">
+              <div class="p-5 bg-gray-50">
+                <h3 class="font-bold text-gray-900">{item.q}</h3>
+              </div>
+              <div class="p-5">
+                <p class="text-gray-600 text-sm leading-relaxed">{item.a}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <!-- Conclusion -->
+      <section class="mb-16">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Conclusion</h2>
+        <p class="text-lg text-gray-600 leading-relaxed mb-6">
+          El ransomware no es una amenaza que desaparecera: es un negocio criminal de miles de
+          millones de dolares al ano con un ecosistema maduro de herramientas, afiliados y
+          mercados de datos robados. Para las empresas colombianas, la pregunta ya no es si
+          seran atacadas, sino cuando y si estaran preparadas.
+        </p>
+        <p class="text-lg text-gray-600 leading-relaxed">
+          La buena noticia es que la prevencion funciona. Las organizaciones con capas de defensa
+          correctamente implementadas &mdash;EDR, backup probado, seguridad de email y monitoreo
+          continuo&mdash; experimentan incidentes menos frecuentes y costos de recuperacion
+          significativamente menores cuando un ataque ocurre. La resiliencia no es un lujo: es
+          la decision estrategica mas rentable que una empresa puede tomar hoy.
+        </p>
+      </section>
+
+    </div>
+  </article>
+
+  <!-- CTA Section -->
+  <section class="bg-gradient-to-br from-[#1a0a0a] to-[#2a1010] py-16 lg:py-24">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">
+        ¿Su empresa esta preparada para resistir un ataque de ransomware?
+      </h2>
+      <p class="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
+        Starsolution realiza evaluaciones de resiliencia ante ransomware: revisamos sus capas
+        de defensa, probamos sus backups y le entregamos un plan de accion concreto antes
+        de que el ataque ocurra.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="/contacto"
+          class="bg-red-700 text-white font-semibold px-8 py-4 rounded-lg hover:bg-red-800 transition text-center"
+        >
+          Solicitar Evaluacion Gratuita
+        </a>
+        <a
+          href="/bitdefender"
+          class="bg-white/10 backdrop-blur-sm border border-white/20 text-white font-semibold px-8 py-4 rounded-lg hover:bg-white/20 transition text-center"
+        >
+          Ver Soluciones Anti-Ransomware
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Related Articles -->
+  <section class="bg-gray-50 py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl font-bold text-gray-900 mb-8">Articulos Relacionados</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+        <a href="/blog/zero-trust-2025" class="group bg-white border border-gray-200 rounded-2xl overflow-hidden hover:shadow-lg transition">
+          <div class="h-40 overflow-hidden">
+            <img
+              src="/assets/blog-inteligencia-artificial-seguridad.webp"
+              alt="Arquitectura Zero Trust 2025"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              width="400"
+              height="160"
+              loading="lazy"
+            />
+          </div>
+          <div class="p-5">
+            <span class="text-xs font-bold text-blue-600 uppercase tracking-wide">Tecnologia</span>
+            <h3 class="font-bold text-gray-900 mt-1 group-hover:text-blue-600 transition-colors">Arquitectura Zero Trust para Empresas en 2025</h3>
+          </div>
+        </a>
+        <a href="/blog/perfect-forward-secrecy" class="group bg-white border border-gray-200 rounded-2xl overflow-hidden hover:shadow-lg transition">
+          <div class="h-40 overflow-hidden">
+            <img
+              src="/assets/blog-ciberseguridad-realidad-virtual.webp"
+              alt="Perfect Forward Secrecy"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              width="400"
+              height="160"
+              loading="lazy"
+            />
+          </div>
+          <div class="p-5">
+            <span class="text-xs font-bold text-red-700 uppercase tracking-wide">Seguridad</span>
+            <h3 class="font-bold text-gray-900 mt-1 group-hover:text-blue-600 transition-colors">Perfect Forward Secrecy Explicado para Empresas</h3>
+          </div>
+        </a>
+        <a href="/blog/iso-27001-regulaciones" class="group bg-white border border-gray-200 rounded-2xl overflow-hidden hover:shadow-lg transition">
+          <div class="h-40 overflow-hidden">
+            <img
+              src="/assets/blog-zero-trust-arquitectura.webp"
+              alt="ISO 27001 Regulaciones 2022"
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              width="400"
+              height="160"
+              loading="lazy"
+            />
+          </div>
+          <div class="p-5">
+            <span class="text-xs font-bold text-green-700 uppercase tracking-wide">Cumplimiento</span>
+            <h3 class="font-bold text-gray-900 mt-1 group-hover:text-blue-600 transition-colors">Nuevas Regulaciones ISO 27001:2022 en Colombia</h3>
+          </div>
+        </a>
+      </div>
+
+      <h3 class="text-lg font-bold text-gray-900 mt-10 mb-4">Soluciones Relacionadas</h3>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+        <a href="/bitdefender" class="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-all duration-300 text-center">
+          <p class="font-semibold text-sm text-gray-900">Bitdefender GravityZone</p>
+          <p class="text-xs text-gray-500 mt-1">EDR / Anti-ransomware</p>
+        </a>
+        <a href="/kaspersky" class="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-all duration-300 text-center">
+          <p class="font-semibold text-sm text-gray-900">Kaspersky Endpoint</p>
+          <p class="text-xs text-gray-500 mt-1">System Watcher + Rollback</p>
+        </a>
+        <a href="/proofpoint" class="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-all duration-300 text-center">
+          <p class="font-semibold text-sm text-gray-900">Proofpoint</p>
+          <p class="text-xs text-gray-500 mt-1">Seguridad email avanzada</p>
+        </a>
+        <a href="/enthec" class="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-all duration-300 text-center">
+          <p class="font-semibold text-sm text-gray-900">Enthec</p>
+          <p class="text-xs text-gray-500 mt-1">Credenciales filtradas</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+  <WhatsAppButton />
+</BaseLayout>

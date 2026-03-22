@@ -58,6 +58,8 @@ const pages: SitemapEntry[] = [
   { url: '/blog/perfect-forward-secrecy/', priority: 0.7, changefreq: 'monthly' },
   { url: '/blog/zero-trust-2025/', priority: 0.7, changefreq: 'monthly' },
   { url: '/blog/iso-27001-regulaciones/', priority: 0.7, changefreq: 'monthly' },
+  { url: '/blog/ransomware-empresas-colombia/', priority: 0.8, changefreq: 'monthly', lastmod: '2026-03-22' },
+  { url: '/blog/respuesta-incidentes-ciberseguridad/', priority: 0.7, changefreq: 'monthly', lastmod: '2026-03-22' },
 
   // Legal pages (low priority but needed)
   { url: '/terminos/', priority: 0.3, changefreq: 'yearly' },
