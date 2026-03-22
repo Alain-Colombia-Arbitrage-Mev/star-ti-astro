@@ -54,6 +54,11 @@ const pages: SitemapEntry[] = [
   { url: '/miami/', priority: 0.8, changefreq: 'monthly' },
   { url: '/miami/contacto/', priority: 0.7, changefreq: 'monthly' },
 
+  // Blog articles
+  { url: '/blog/perfect-forward-secrecy/', priority: 0.7, changefreq: 'monthly' },
+  { url: '/blog/zero-trust-2025/', priority: 0.7, changefreq: 'monthly' },
+  { url: '/blog/iso-27001-regulaciones/', priority: 0.7, changefreq: 'monthly' },
+
   // Legal pages (low priority but needed)
   { url: '/terminos/', priority: 0.3, changefreq: 'yearly' },
   { url: '/privacidad/', priority: 0.3, changefreq: 'yearly' },

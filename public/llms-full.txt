@@ -1,0 +1,283 @@
+# Starsolution S.A.S. - Full Documentation
+
+> Starsolution is an enterprise cybersecurity company headquartered in Bogota, Colombia, with regional offices in Caracas, Venezuela and Miami, Florida. Founded in 2013, we protect over 3,000 businesses across Latin America and the United States. Our approach is organized into three pillars of digital resilience: Star Protection (endpoint and email defense), Star Inspection (visibility, threat detection, and offensive security), and Star Compliance (governance, standards, and data protection).
+
+## Company Profile
+
+Starsolution S.A.S. is a Colombian cybersecurity company specializing in enterprise security solutions. We serve as authorized partners and distributors for leading global cybersecurity vendors including Bitdefender, Kaspersky, Hornetsecurity, Proofpoint, Enthec, Vicarius, Stellar Cyber, SealPath, Netwrix, Black Duck, TeamViewer, AnyDesk, SOTI, and Brother.
+
+Our team includes CEH and OSCP certified penetration testers, ISO 27001 lead auditors, and engineers with deep expertise across endpoint security, network security, application security, and compliance frameworks relevant to Colombian, Venezuelan, and US regulations.
+
+- Legal name: Starsolution S.A.S.
+- NIT (Colombian tax ID): Registered in Colombia
+- Founded: 2013
+- Headquarters: Calle 52 A # 22-16, Bogota, Colombia
+- Employees: 15+
+- Customers: 3,000+ businesses
+- Rating: 4.9/5 from 127 customer reviews
+- Certifications: ISO 27001, ISO 9001
+
+---
+
+## Star Protection - Endpoint & Email Security
+
+### Bitdefender GravityZone EDR/XDR
+**URL:** https://starsolution.com.co/bitdefender
+
+Bitdefender GravityZone is an AI-powered endpoint protection platform that provides multi-layered defense against ransomware, zero-day threats, fileless attacks, and advanced persistent threats. Features include EDR (Endpoint Detection and Response), XDR (Extended Detection and Response), risk analytics, and centralized cloud management.
+
+Key capabilities:
+- HyperDetect AI with adjustable machine learning models
+- Sandbox Analyzer for automated detonation of suspicious files
+- Patch Management integrated into the security console
+- Full Disk Encryption management
+- Network Attack Defense
+- Consistently rated #1 in AV-Test and AV-Comparatives
+
+Starsolution is an authorized Bitdefender partner in Colombia, providing deployment, configuration, and ongoing management services.
+
+### Kaspersky Endpoint Security
+**URL:** https://starsolution.com.co/kaspersky
+
+Kaspersky Endpoint Security provides comprehensive protection for workstations, servers, and mobile devices. The platform includes next-generation threat detection, automated response capabilities, and centralized management through Kaspersky Security Center.
+
+Key capabilities:
+- Advanced anti-ransomware technology
+- Application, device, and web control
+- Server protection for Windows and Linux
+- Vulnerability and patch management
+- Encryption management
+- Cloud-based or on-premises management console
+
+### Hornetsecurity 365
+**URL:** https://starsolution.com.co/hornet-security
+
+Hornetsecurity 365 Total Protection provides comprehensive email security, backup, and compliance for Microsoft 365 environments. It protects against phishing, malware, spam, and business email compromise (BEC) attacks while providing email archiving and backup capabilities.
+
+Key capabilities:
+- AI-powered threat detection for email
+- Microsoft 365 backup and recovery
+- Email encryption and secure communication
+- Email archiving for compliance
+- Security awareness training integration
+
+### Proofpoint
+**URL:** https://starsolution.com.co/proofpoint
+
+Proofpoint is the global leader in email security and human-centric cybersecurity. Their platform protects organizations against phishing, business email compromise, ransomware delivered via email, and social engineering attacks targeting employees.
+
+Key capabilities:
+- Targeted Attack Protection (TAP)
+- Email Fraud Defense against BEC/CEO fraud
+- Security Awareness Training
+- Cloud App Security Broker
+- Information Protection and DLP
+- Threat Intelligence
+
+---
+
+## Star Inspection - Visibility & Threat Detection
+
+### Enthec - Attack Surface Monitoring
+**URL:** https://starsolution.com.co/enthec
+
+Enthec provides continuous attack surface monitoring and leaked credential detection. The platform scans the dark web, deep web, and public internet to identify exposed credentials, vulnerable assets, misconfigured services, and shadow IT associated with your organization.
+
+Key capabilities:
+- Continuous external attack surface discovery
+- Dark web monitoring for leaked credentials and data
+- Compromised identity detection
+- Shadow IT discovery (unauthorized SaaS usage)
+- Exposed infrastructure identification
+- Automated alerting with risk scoring
+- Free initial diagnostic available
+
+### Vicarius vRx
+**URL:** https://starsolution.com.co/vicarius
+
+Vicarius vRx is an AI-powered vulnerability management platform that goes beyond traditional scanning. It uses machine learning to prioritize vulnerabilities based on actual exploitability and business context, and provides patchless protection through script-based remediation.
+
+Key capabilities:
+- AI-driven vulnerability prioritization
+- Patchless protection (virtual patching)
+- Automated remediation scripts
+- Asset discovery and inventory
+- Integration with SIEM/SOAR platforms
+- Risk-based vulnerability scoring (beyond CVSS)
+
+### Stellar Cyber Open XDR
+**URL:** https://starsolution.com.co/stellar-cyber
+
+Stellar Cyber is an Open XDR platform that provides automated SOC (Security Operations Center) capabilities. It correlates data from multiple security tools, network traffic, cloud workloads, and endpoints to detect and respond to threats with AI-driven analysis.
+
+Key capabilities:
+- Open XDR with 400+ integrations
+- AI-powered threat detection and correlation
+- Automated incident response playbooks
+- Network Detection and Response (NDR)
+- User and Entity Behavior Analytics (UEBA)
+- Cloud workload protection
+- Unified security operations dashboard
+
+### Ethical Hacking & Penetration Testing
+**URL:** https://starsolution.com.co/hacking-etico
+
+Starsolution's ethical hacking team conducts professional penetration testing services including web application testing, network penetration testing, wireless security assessments, social engineering campaigns, and red team exercises.
+
+Our team holds industry certifications including CEH (Certified Ethical Hacker), OSCP (Offensive Security Certified Professional), and follows OWASP, PTES, and NIST methodologies.
+
+Service types:
+- External and internal network penetration testing
+- Web and mobile application security testing
+- Wi-Fi and wireless security assessment
+- Social engineering and phishing simulation
+- Physical security assessment
+- PCI-DSS penetration testing
+
+### rThreat - Red Team & BAS
+**URL:** https://starsolution.com.co/rthreat-bogota-colombia
+
+rThreat is a Breach and Attack Simulation (BAS) platform that allows organizations to continuously test their security controls by simulating real-world attack scenarios. It validates whether your security stack effectively detects and prevents known attack techniques mapped to the MITRE ATT&CK framework.
+
+Key capabilities:
+- Automated breach and attack simulation
+- MITRE ATT&CK framework mapping
+- Security control validation
+- Continuous security posture assessment
+- Purple team exercise support
+- Compliance validation testing
+
+---
+
+## Star Compliance - Governance & Standards
+
+### ISO 27001 Consulting
+**URL:** https://starsolution.com.co/iso27001
+
+Starsolution provides end-to-end ISO 27001 consulting services including gap analysis, SGSI (Information Security Management System) implementation, internal audit preparation, and certification support. We help organizations comply with ISO 27001:2022, aligned with Colombian regulations (SFC, SIC, MinTIC).
+
+Service scope:
+- Gap analysis against ISO 27001:2022 controls
+- SGSI design and implementation
+- Risk assessment and treatment plans
+- Policy and procedure development
+- Internal audit execution
+- Certification body liaison and preparation
+- Post-certification maintenance support
+
+### SealPath
+**URL:** https://starsolution.com.co/sealpath
+
+SealPath provides document-centric data protection through digital rights management (DRM) and information rights management (IRM). It allows organizations to control who can access, edit, print, or share sensitive documents, even after they leave the organization's perimeter.
+
+Key capabilities:
+- Document encryption and access control
+- Usage tracking and audit trails
+- Remote document revocation
+- Integration with Microsoft 365, Google Workspace
+- Classification-based automatic protection
+- Multi-platform support (Windows, Mac, iOS, Android)
+
+### Netwrix
+**URL:** https://starsolution.com.co/netwrix
+
+Netwrix provides identity security, data access governance, and change auditing for hybrid IT environments. The platform helps organizations understand who has access to what, detect suspicious activity, and prove compliance with regulatory requirements.
+
+Key capabilities:
+- Active Directory and Azure AD auditing
+- Data classification and access governance
+- Privileged access management
+- Change detection and alerting
+- Compliance reporting (GDPR, HIPAA, PCI-DSS, SOX)
+- User behavior analytics
+
+### Black Duck
+**URL:** https://starsolution.com.co/black-duck
+
+Black Duck (formerly Synopsys Software Integrity) provides application security testing solutions including Static Application Security Testing (SAST), Dynamic Application Security Testing (DAST), and Software Composition Analysis (SCA) for identifying vulnerabilities in proprietary and open-source code.
+
+Key capabilities:
+- SAST - Static code analysis for security vulnerabilities
+- DAST - Dynamic runtime security testing
+- SCA - Open source component risk management
+- License compliance for open source
+- DevSecOps pipeline integration
+- SBOM (Software Bill of Materials) generation
+
+### DLP - Data Loss Prevention
+**URL:** https://starsolution.com.co/dlp-prevencion-perdida-datos
+
+Endpoint Protector by CoSoSys provides data loss prevention (DLP) for protecting sensitive data on endpoints. It monitors and controls data transfers through USB devices, email, cloud storage, instant messaging, and other channels.
+
+Key capabilities:
+- Content-aware protection (PII, PCI, PHI)
+- Device control for USB and peripherals
+- eDiscovery for data at rest
+- Cross-platform support (Windows, Mac, Linux)
+- Predefined compliance templates (GDPR, HIPAA, PCI-DSS)
+- 120+ report types
+
+---
+
+## Infrastructure & Productivity
+
+### TeamViewer
+**URL:** https://starsolution.com.co/teamviewer
+Enterprise remote access, support, and device management platform with end-to-end encryption, session recording, and centralized administration.
+
+### AnyDesk
+**URL:** https://starsolution.com.co/anydesk
+Ultra-fast remote desktop solution with proprietary DeskRT codec, multi-platform support, and enterprise security features including TLS 1.2 encryption.
+
+### SOTI MobiControl
+**URL:** https://starsolution.com.co/soti-mdm
+Enterprise mobile device management (MDM/EMM) platform for managing, securing, and supporting corporate and BYOD mobile devices across iOS, Android, and Windows.
+
+### Cableado Estructurado
+**URL:** https://starsolution.com.co/cableado-estructurado
+Structured cabling services including Cat6/Cat6A installation, fiber optic deployment, rack and patch panel configuration, and network infrastructure design following TIA/EIA standards.
+
+### Equipos de Computo
+**URL:** https://starsolution.com.co/equipos-computo
+Enterprise hardware procurement including workstations, servers, networking equipment, and peripherals from leading manufacturers.
+
+### Brother (Authorized Distributor)
+**URL:** https://starsolution.com.co/brother
+Authorized Brother distributor for enterprise printers, multifunction devices, label printers, and document scanners.
+
+---
+
+## Resources & Blog
+
+- [Enterprise Antivirus Comparison 2026](https://starsolution.com.co/antivirus-empresas): Detailed comparison of Bitdefender, Kaspersky, Hornetsecurity, and other enterprise antivirus solutions for businesses in Colombia
+- [Cybersecurity Report Colombia 2026](https://starsolution.com.co/informe-ciberseguridad-colombia-2026): Annual analysis of the cybersecurity landscape in Colombia with statistics, trends, sector-specific findings, and recommendations
+- [Perfect Forward Secrecy (PFS) Explained](https://starsolution.com.co/blog/perfect-forward-secrecy): Technical deep-dive on PFS, ephemeral key exchange, and why it matters for enterprise communications
+- [Zero Trust Architecture 2025](https://starsolution.com.co/blog/zero-trust-2025): Comprehensive guide to implementing Zero Trust security architecture
+- [ISO 27001:2022 Regulatory Changes](https://starsolution.com.co/blog/iso-27001-regulaciones): Analysis of ISO 27001:2022 changes and their impact on Colombian businesses
+
+---
+
+## Regional Offices & Contact
+
+### Colombia (Headquarters)
+- Address: Calle 52 A # 22-16, Bogota, Colombia
+- Phone: +57 300 701 0017
+- Email: contacto@star-ti.com
+- Website: https://starsolution.com.co
+- Contact form: https://starsolution.com.co/contacto
+- Hours: Monday to Friday, 8:00 AM - 6:00 PM (COT, UTC-5)
+
+### Venezuela
+- Location: Caracas, Venezuela
+- Phone: +58 424 123 4567
+- Email: venezuela@star-ti.com
+- Website: https://starsolution.com.co/venezuela
+- Contact form: https://starsolution.com.co/venezuela/contacto
+
+### Miami, FL (United States)
+- Location: Miami, Florida, USA
+- Phone: +1 (305) 123-4567
+- Email: miami@star-ti.com
+- Website: https://starsolution.com.co/miami
+- Contact form: https://starsolution.com.co/miami/contacto
+- Bilingual team (English/Spanish)

@@ -1,48 +1,72 @@
-# Starsolution S.A.S. - Cybersecurity Company
+# Starsolution S.A.S.
 
-> Starsolution is an enterprise cybersecurity company based in Bogota, Colombia with offices in Caracas, Venezuela and Miami, Florida. Founded in 2013, we protect 3,000+ businesses across Latin America and the United States.
+> Starsolution is an enterprise cybersecurity company based in Bogota, Colombia, with offices in Caracas, Venezuela and Miami, Florida. Founded in 2013, we protect 3,000+ businesses across Latin America and the United States through three pillars of digital resilience: Star Protection, Star Inspection, and Star Compliance.
 
-## What We Do
+## Company Overview
 
-Starsolution provides three pillars of digital resilience:
-
-### Star Protection (Endpoint & Email Security)
-- Bitdefender GravityZone EDR/XDR - Enterprise endpoint protection with AI
-- Kaspersky Endpoint Security - Endpoint + server protection
-- Hornetsecurity 365 - Email security for Microsoft 365
-- Proofpoint - Advanced email security and anti-phishing
-
-### Star Inspection (Visibility & Threat Detection)
-- Enthec - Attack surface monitoring and leaked credential detection
-- Vicarius vRx - AI-powered vulnerability management
-- Stellar Cyber Open XDR - Automated SOC platform
-- Ethical Hacking & Penetration Testing - CEH/OSCP certified team
-- rThreat - Red Team & Breach and Attack Simulation (BAS)
-
-### Star Compliance (Governance & Standards)
-- ISO 27001 Consulting - Gap analysis, SGSI implementation, certification
-- SealPath - Document-centric data protection (DLP)
-- Netwrix - Identity audit and governance
-- Black Duck - Application security testing (SAST/DAST/SCA)
-- Endpoint Protector DLP - Data loss prevention software
-
-## Key Facts
+- Full name: Starsolution S.A.S.
+- Industry: Enterprise Cybersecurity
 - Founded: 2013
 - Headquarters: Calle 52 A # 22-16, Bogota, Colombia
 - Employees: 15+
 - Businesses protected: 3,000+
-- Countries: Colombia, Venezuela, United States (Miami)
-- Certifications: ISO 27001/9001 compliant
-- Languages: Spanish, English (bilingual team in Miami)
+- Markets: Colombia, Venezuela, United States (Miami, FL)
+- Languages: Spanish (primary), English (Miami office)
+- Certifications: ISO 27001 and ISO 9001 compliant
+- Rating: 4.9/5 from 127 reviews
+
+## Services
+
+### Star Protection - Endpoint & Email Security
+- [Bitdefender GravityZone EDR/XDR](https://starsolution.com.co/bitdefender): AI-powered enterprise endpoint protection with multi-layered defense
+- [Kaspersky Endpoint Security](https://starsolution.com.co/kaspersky): Endpoint and server protection for businesses
+- [Hornetsecurity 365](https://starsolution.com.co/hornet-security): Email security and backup for Microsoft 365
+- [Proofpoint](https://starsolution.com.co/proofpoint): Advanced email security, anti-phishing, and threat intelligence
+
+### Star Inspection - Visibility & Threat Detection
+- [Enthec](https://starsolution.com.co/enthec): Attack surface monitoring, dark web surveillance, and leaked credential detection
+- [Vicarius vRx](https://starsolution.com.co/vicarius): AI-powered vulnerability management and prioritization
+- [Stellar Cyber Open XDR](https://starsolution.com.co/stellar-cyber): Automated SOC platform with AI-driven threat detection
+- [Ethical Hacking & Penetration Testing](https://starsolution.com.co/hacking-etico): CEH/OSCP certified penetration testing team
+- [rThreat - Red Team & BAS](https://starsolution.com.co/rthreat-bogota-colombia): Breach and Attack Simulation platform
+
+### Star Compliance - Governance & Standards
+- [ISO 27001 Consulting](https://starsolution.com.co/iso27001): Gap analysis, SGSI implementation, audit preparation, certification support
+- [SealPath](https://starsolution.com.co/sealpath): Document-centric data protection and digital rights management
+- [Netwrix](https://starsolution.com.co/netwrix): Identity audit, governance, and change monitoring
+- [Black Duck](https://starsolution.com.co/black-duck): Application security testing (SAST, DAST, SCA)
+- [DLP - Data Loss Prevention](https://starsolution.com.co/dlp-prevencion-perdida-datos): Endpoint Protector for data loss prevention
+
+### Infrastructure & Productivity
+- [TeamViewer](https://starsolution.com.co/teamviewer): Enterprise remote access and support
+- [AnyDesk](https://starsolution.com.co/anydesk): Ultra-fast remote desktop
+- [SOTI MobiControl](https://starsolution.com.co/soti-mdm): Enterprise mobile device management (MDM/EMM)
+- [Cableado Estructurado](https://starsolution.com.co/cableado-estructurado): Structured cabling and network installation
+- [Equipos de Computo](https://starsolution.com.co/equipos-computo): Enterprise hardware and workstations
+- [Brother](https://starsolution.com.co/brother): Authorized distributor of printers and multifunction devices
+
+## Resources
+- [Enterprise Antivirus Comparison](https://starsolution.com.co/antivirus-empresas): Compare Bitdefender, Kaspersky, and more for business
+- [Cybersecurity Report Colombia 2026](https://starsolution.com.co/informe-ciberseguridad-colombia-2026): Annual cybersecurity landscape analysis
+- [Blog: Perfect Forward Secrecy](https://starsolution.com.co/blog/perfect-forward-secrecy): Technical deep-dive on PFS
+- [Blog: Zero Trust 2025](https://starsolution.com.co/blog/zero-trust-2025): Zero Trust architecture guide
+- [Blog: ISO 27001 Regulations](https://starsolution.com.co/blog/iso-27001-regulaciones): ISO 27001:2022 changes and impact
+
+## Regional Offices
+- [Colombia (HQ)](https://starsolution.com.co): Bogota - Main office
+- [Venezuela](https://starsolution.com.co/venezuela): Caracas office
+- [Miami, FL](https://starsolution.com.co/miami): United States office
 
 ## Contact
 - Colombia: +57 300 701 0017 | contacto@star-ti.com
 - Venezuela: +58 424 123 4567 | venezuela@star-ti.com
 - Miami: +1 (305) 123-4567 | miami@star-ti.com
 - Website: https://starsolution.com.co
+- Contact form: https://starsolution.com.co/contacto
 
-## Documentation
-- Homepage: https://starsolution.com.co
-- Services: https://starsolution.com.co/bitdefender, /kaspersky, /iso27001, /hacking-etico
-- Blog: https://starsolution.com.co/blog/perfect-forward-secrecy
-- Contact: https://starsolution.com.co/contacto
+## Optional
+
+- [Full LLMs.txt](https://starsolution.com.co/llms-full.txt): Extended version with detailed product descriptions
+- [About Us](https://starsolution.com.co/sobre-nosotros)
+- [Privacy Policy](https://starsolution.com.co/privacidad)
+- [Terms of Service](https://starsolution.com.co/terminos)

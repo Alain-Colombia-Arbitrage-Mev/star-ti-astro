@@ -82,6 +82,10 @@ const breadcrumbJsonLd = seo.breadcrumb ? {
     <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="sitemap" href="/sitemap-index.xml" />
 
+    <!-- AI/LLM Context (llmstxt.org) -->
+    <link rel="llms" type="text/plain" href="/llms.txt" />
+    <link rel="llms-full" type="text/plain" href="/llms-full.txt" />
+
     <!-- JSON-LD Structured Data -->
     {seo.jsonLd && (
       <script type="application/ld+json" set:html={JSON.stringify(seo.jsonLd)} />
