@@ -57,9 +57,38 @@ const FAQS = [
 ];
 
 const CHECK_PATH = 'M11.6667 3.5L5.25 9.91667L2.33333 7';
+
+// Service schema adicional (complementa el Product schema del BaseLayout) para reforzar el angulo de implementacion local en Colombia
+const serviceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Implementacion y soporte de Bitdefender GravityZone en Colombia',
+  serviceType: 'Cybersecurity Implementation Service',
+  provider: {
+    '@type': 'Organization',
+    name: 'Starsolution S.A.S.',
+    url: 'https://starsolution.com.co',
+    telephone: '+573007010017',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'Calle 52 A # 22 - 16',
+      addressLocality: 'Bogota',
+      addressCountry: 'CO',
+    },
+  },
+  areaServed: { '@type': 'Country', name: 'Colombia' },
+  url: 'https://starsolution.com.co/bitdefender',
+  audience: { '@type': 'BusinessAudience', audienceType: 'Empresas medianas y grandes' },
+  offers: {
+    '@type': 'Offer',
+    availability: 'https://schema.org/InStock',
+    priceCurrency: 'COP',
+  },
+};
 ---
 
 <BaseLayout seo={seo}>
+  <script type="application/ld+json" set:html={JSON.stringify(serviceSchema)} />
   <Navbar />
 
   <div class="bg-white min-h-screen font-['Instrument_Sans',sans-serif]">

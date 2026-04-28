@@ -71,10 +71,14 @@ const breadcrumbJsonLd = seo.breadcrumb ? {
       }
     </style>
 
+    <!-- DNS prefetch / preconnect para CDN externo de Bitdefender (assets oficiales) -->
+    <link rel="preconnect" href="https://www.bitdefender.com" crossorigin />
+    <link rel="dns-prefetch" href="https://www.bitdefender.com" />
+
     <!-- SEO Meta Tags -->
     <title>{seo.title}</title>
     <meta name="description" content={seo.description} />
-    <meta name="keywords" content={seo.keywords} />
+    {/* Meta keywords removed: ignorado por Google desde 2009, tratado como spam signal por Bing */}
     <link rel="canonical" href={seo.canonical} />
     <meta name="robots" content={seo.noindex ? 'noindex, nofollow' : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1'} />
     <meta name="author" content="Starsolution S.A.S." />
