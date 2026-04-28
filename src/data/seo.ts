@@ -90,20 +90,21 @@ export const seoData: Record<string, SEOData> = {
   // STAR PROTECTION
   // =====================================================
   bitdefender: {
-    title: 'Bitdefender GravityZone Empresas | Starsolution',
-    description: 'Bitdefender GravityZone EDR/XDR: deteccion 99.9%, gestion cloud y anti-ransomware. Partner certificado en Colombia. Solicite demo gratuita.',
+    title: 'Bitdefender GravityZone Colombia | Starsolution',
+    description: 'Implementamos Bitdefender GravityZone EDR/XDR/MDR en empresas colombianas. Despliegue desde Bogota, soporte en espanol, integracion Active Directory y cumplimiento ISO 27001 / Habeas Data Ley 1581.',
     keywords: 'Bitdefender empresas Colombia, GravityZone EDR, antivirus corporativo, endpoint security, XDR, partner Bitdefender',
     canonical: `${BASE_URL}/bitdefender`,
-    ogTitle: 'Bitdefender GravityZone EDR/XDR para Empresas',
+    ogTitle: 'Bitdefender GravityZone | Seguridad Endpoint Empresarial',
     ogType: 'website',
     ogImage: `${BASE_URL}/og-default.png`,
     breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Star Protection', url: '/#star-protection' }, { name: 'Bitdefender', url: '/bitdefender' }],
-    jsonLd: product('Bitdefender GravityZone EDR/XDR', 'Bitdefender', 'Proteccion endpoint multicapa con IA, deteccion 99.9% y gestion cloud centralizada'),
+    jsonLd: product('Bitdefender GravityZone', 'Bitdefender', 'Plataforma unificada de seguridad empresarial con EDR, XDR, MDR + SOC, CSPM Plus y Patch Management. Lider en Gartner Magic Quadrant 2025 y MITRE ATT&CK 2024.'),
     faqJsonLd: faqSchema([
-      { q: 'La instalacion masiva va a frenar la operacion de la empresa?', a: 'No. Utilizamos despliegue silencioso y programado. En la mayoria de casos, los usuarios ni siquiera notan la instalacion. El impacto en el ancho de banda es minimo gracias a la descarga escalonada.' },
-      { q: 'Me notifica cuando detecta amenaza?', a: 'Si. GravityZone puede enviar alertas instantaneas por correo o SMS cuando detecta amenazas criticas. Ademas, genera reportes ejecutivos semanales con el estado de seguridad de toda la infraestructura.' },
-      { q: 'Puedo bloquear dispositivos externos (USB)?', a: 'Completamente. Las politicas de control de dispositivos permiten bloquear USB, CD/DVD, dispositivos Bluetooth y mas, ya sea completamente o solo en modo lectura.' },
-      { q: 'Que tan complicado es implementar la herramienta para mi empresa?', a: 'Para el administrador IT es simple. Nosotros configuramos la consola cloud, definimos las politicas de seguridad y desplegamos los agentes automaticamente via Active Directory o mediante un instalador silencioso. En promedio, una empresa de 50 equipos esta protegida en menos de 2 horas.' },
+      { q: 'El despliegue masivo va a saturar la red de la oficina?', a: 'Programamos la instalacion por grupos via Active Directory o GPO en horarios valle y aprovechamos el repositorio local de GravityZone para no descargar el agente desde internet en cada equipo. Empresas de 200 endpoints suelen quedar protegidas en una noche.' },
+      { q: 'Como me entero cuando aparece una amenaza critica?', a: 'Configuramos notificaciones por correo, SMS y conectores a Teams, Slack o el sistema de ticketing del cliente. Tambien recibe un reporte ejecutivo semanal util para auditorias ISO 27001.' },
+      { q: 'Bitdefender me deja bloquear memorias USB y celulares conectados?', a: 'Si. La politica de Device Control bloquea USB, CD/DVD, Bluetooth y dispositivos moviles conectados, con excepciones por usuario o area. Muy usado en sector financiero y salud bajo Habeas Data Ley 1581.' },
+      { q: 'Cuanto tarda Starsolution en dejarnos operando?', a: 'En una empresa de 50 equipos la implementacion toma menos de dos horas efectivas. Para parques de mas de 1.000 equipos planeamos cronogramas de 1 a 2 semanas con fases controladas y grupo piloto.' },
+      { q: 'Sirve si tenemos teletrabajo y sucursales en otras ciudades?', a: 'Si. La consola es cloud, asi que equipos en Medellin, Cali o cualquier sede remota reportan sin VPN ni servidores intermedios. Las mismas politicas aplican a home office y sede principal.' },
     ]),
   },
   kaspersky: {
