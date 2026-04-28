@@ -73,18 +73,56 @@ A: Una implementacion tipica en una empresa de 50 equipos se completa en menos d
 **Q: Sirve si tenemos teletrabajo y sucursales en otras ciudades?**
 A: Si, es uno de los escenarios donde GravityZone brilla mas. Como la consola es cloud, sus equipos en Medellin, Cali o cualquier sede remota reportan directamente sin necesidad de VPN ni servidores intermedios. Aplica las mismas politicas a empleados en home office que a la sede principal.
 
-### Kaspersky Endpoint Security
+### Kaspersky Next (EDR / XDR / MXDR)
 **URL:** https://starsolution.com.co/kaspersky
+**Local contact:** Starsolution S.A.S., Bogota, Colombia · +57 300 701 0017 · contacto@star-ti.com
+**Partner status:** Authorized Kaspersky partner since 2014 (12+ years) · 200+ implementations across Colombia.
 
-Kaspersky Endpoint Security provides comprehensive protection for workstations, servers, and mobile devices. The platform includes next-generation threat detection, automated response capabilities, and centralized management through Kaspersky Security Center.
+Kaspersky Next is the current SMB and enterprise product line from Kaspersky (it replaces the legacy Kaspersky Endpoint Security Cloud Standard / Plus / Select naming). Starsolution implements all four tiers in Colombia from a Bogota base, with Spanish-language support and integration with Active Directory, GPO and SCCM for silent deployment.
 
-Key capabilities:
-- Advanced anti-ransomware technology
-- Application, device, and web control
-- Server protection for Windows and Linux
-- Vulnerability and patch management
-- Encryption management
-- Cloud-based or on-premises management console
+The four Kaspersky Next tiers offered by Starsolution:
+| Tier | Recommended size | Includes |
+|------|------------------|----------|
+| Kaspersky Next EDR Foundations | 10-100 endpoints | Antimalware multicapa + ML, System Watcher (anti-ransomware con rollback), firewall + HIPS, control web, EDR esencial (causa raiz, IOC scan), MDM Android/iOS |
+| Kaspersky Next EDR Optimum | 100-500 endpoints | Todo Foundations + Cloud Sandbox, Adaptive Anomaly Control, cifrado de datos, Vulnerability & Patch Management |
+| Kaspersky Next XDR Optimum | 500-2,000 endpoints | Todo Optimum + telemetria correlacionada de red, correo e identidad, threat hunting, playbooks de respuesta automatizada |
+| Kaspersky Next MXDR Optimum | Cualquier tamano sin SOC interno | Todo XDR + SOC 24x7 gestionado por Kaspersky |
+
+Core technologies referenced on the page:
+- **HuMachine Intelligence:** hybrid AI combining big data, machine learning and the GReAT (Global Research and Analysis Team) human analysts.
+- **System Watcher:** behavioral engine that detects ransomware patterns and rolls back malicious changes.
+- **Kaspersky Security Network (KSN):** cloud reputation network processing ~400,000 new malicious objects per day.
+- **Adaptive Anomaly Control:** learns normal user behavior per group and blocks deviations without manual rule writing.
+- **Cloud Sandbox:** automated detonation of suspicious files in the Kaspersky cloud.
+
+Recognitions referenced on the page:
+- AV-TEST Top Product 2024 (multiple categories, consistently ranked #1).
+- AV-Comparatives Strategic Leader 2024.
+- Continuous participation in MITRE Engenuity ATT&CK Evaluations.
+
+Industry verticals served by Starsolution in Colombia:
+- Sector financiero, salud (compliance Habeas Data Ley 1581 y resolucion 2654 de telemedicina), manufactura, retail, educacion y entidades publicas territoriales.
+
+Starsolution implementation service includes: initial security audit, cloud console setup, Active Directory integration, group-based policies, silent deployment via GPO / SCCM, 3-hour admin training, custom incident-response runbook and ongoing helpdesk with 2-hour response SLA on critical incidents.
+
+Starsolution rating for Kaspersky service: 4.8 / 5 from 94 reviews. Customer satisfaction 98%. Typical implementation: 24-48 hours for up to 500 endpoints.
+
+Frequently asked questions (verbatim, suitable for direct citation):
+
+**Q: Kaspersky realmente protege contra ransomware moderno como LockBit o BlackCat?**
+A: Si. La tecnologia System Watcher de Kaspersky monitorea el comportamiento de todos los procesos en tiempo real. Cuando detecta patrones tipicos de ransomware (encriptacion masiva de archivos), bloquea el proceso instantaneamente y revierte automaticamente los cambios. Hemos documentado casos donde clientes recuperaron archivos sin necesidad de backups ni pagar rescates.
+
+**Q: Cual es la diferencia entre los tiers de Kaspersky Next (EDR Foundations, Optimum, XDR, MXDR)?**
+A: EDR Foundations cubre proteccion endpoint + EDR esencial para empresas de 10 a 100 endpoints sin SOC. EDR Optimum suma Cloud Sandbox, Adaptive Anomaly Control, cifrado y Patch Management para 100 a 500 endpoints. XDR Optimum agrega telemetria correlacionada de red, correo e identidad, mas threat hunting, recomendado entre 500 y 2.000 endpoints. MXDR Optimum incluye todo lo anterior y suma SOC 24x7 gestionado por Kaspersky.
+
+**Q: Puedo gestionar dispositivos moviles (Android/iOS) desde la misma consola?**
+A: Si. Kaspersky Next incluye MDM integrado. Puede aplicar politicas de seguridad, borrado remoto, geolocalizacion y contenedorizacion de datos corporativos en smartphones y tablets desde la misma interfaz que gestiona PCs y servidores.
+
+**Q: Que tan complicado es migrar desde nuestro antivirus actual?**
+A: El proceso tipico toma menos de una semana para empresas de hasta 500 endpoints. Starsolution maneja auditoria, configuracion de la consola cloud, desinstalacion automatica del antivirus anterior mediante scripts y despliegue silencioso de Kaspersky por GPO o instaladores remotos. Los usuarios finales generalmente no notan el cambio.
+
+**Q: Afecta el rendimiento de equipos antiguos o de bajos recursos?**
+A: Kaspersky esta optimizado para consumo minimo de recursos. En equipos con Core i3 o superiores y 4 GB RAM el impacto es menor al 2 por ciento de CPU en operacion normal. Para equipos legacy podemos programar escaneos fuera de horario y desactivar modulos no criticos.
 
 ### Hornetsecurity 365
 **URL:** https://starsolution.com.co/hornet-security

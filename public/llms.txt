@@ -19,7 +19,7 @@
 
 ### Star Protection - Endpoint & Email Security
 - [Bitdefender GravityZone EDR/XDR](https://starsolution.com.co/bitdefender): AI-powered enterprise endpoint protection with multi-layered defense
-- [Kaspersky Endpoint Security](https://starsolution.com.co/kaspersky): Endpoint and server protection for businesses
+- [Kaspersky Next (EDR/XDR/MXDR)](https://starsolution.com.co/kaspersky): Kaspersky Next line — EDR Foundations, EDR Optimum, XDR Optimum and MXDR Optimum (managed SOC). Authorized partner in Colombia since 2014.
 - [Hornetsecurity 365](https://starsolution.com.co/hornet-security): Email security and backup for Microsoft 365
 - [Proofpoint](https://starsolution.com.co/proofpoint): Advanced email security, anti-phishing, and threat intelligence
 
