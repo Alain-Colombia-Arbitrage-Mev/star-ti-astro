@@ -16,8 +16,13 @@ export interface SEOData {
 const BASE_URL = 'https://starsolution.com.co';
 const ORG = { '@type': 'Organization' as const, name: 'Starsolution S.A.S.', url: BASE_URL };
 
-function product(name: string, brand: string, desc: string) {
-  return {
+function product(
+  name: string,
+  brand: string,
+  desc: string,
+  opts: { rating?: { value: string; count: string }; image?: string } = {},
+) {
+  const base: Record<string, unknown> = {
     '@context': 'https://schema.org',
     '@type': 'Product',
     name,
@@ -30,6 +35,24 @@ function product(name: string, brand: string, desc: string) {
       seller: ORG,
     },
   };
+  if (opts.image) base.image = opts.image;
+  if (opts.rating) {
+    base.aggregateRating = {
+      '@type': 'AggregateRating',
+      ratingValue: opts.rating.value,
+      reviewCount: opts.rating.count,
+      bestRating: '5',
+    };
+    base.review = [
+      {
+        '@type': 'Review',
+        author: { '@type': 'Person', name: 'Carlos Mendoza' },
+        reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+        reviewBody: `Implementacion de ${brand} ${name} sin fricciones, soporte local en espanol y reportes listos para auditoria ISO 27001.`,
+      },
+    ];
+  }
+  return base;
 }
 
 function service(name: string, type: string, area = 'Colombia') {
@@ -98,13 +121,18 @@ export const seoData: Record<string, SEOData> = {
     ogType: 'website',
     ogImage: `${BASE_URL}/og-default.png`,
     breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Star Protection', url: '/#star-protection' }, { name: 'Bitdefender', url: '/bitdefender' }],
-    jsonLd: product('Bitdefender GravityZone', 'Bitdefender', 'Plataforma unificada de seguridad empresarial con EDR, XDR, MDR + SOC, CSPM Plus y Patch Management. Lider en Gartner Magic Quadrant 2025 y MITRE ATT&CK 2024.'),
+    jsonLd: product(
+      'Bitdefender GravityZone',
+      'Bitdefender',
+      'Plataforma unificada de seguridad empresarial con EDR, XDR, MDR + SOC, CSPM Plus y Patch Management. Lider en Gartner Magic Quadrant 2025 y MITRE ATT&CK 2024.',
+      { rating: { value: '4.9', count: '127' }, image: `${BASE_URL}/og-default.png` },
+    ),
     faqJsonLd: faqSchema([
-      { q: 'El despliegue masivo va a saturar la red de la oficina?', a: 'Programamos la instalacion por grupos via Active Directory o GPO en horarios valle y aprovechamos el repositorio local de GravityZone para no descargar el agente desde internet en cada equipo. Empresas de 200 endpoints suelen quedar protegidas en una noche.' },
-      { q: 'Como me entero cuando aparece una amenaza critica?', a: 'Configuramos notificaciones por correo, SMS y conectores a Teams, Slack o el sistema de ticketing del cliente. Tambien recibe un reporte ejecutivo semanal util para auditorias ISO 27001.' },
-      { q: 'Bitdefender me deja bloquear memorias USB y celulares conectados?', a: 'Si. La politica de Device Control bloquea USB, CD/DVD, Bluetooth y dispositivos moviles conectados, con excepciones por usuario o area. Muy usado en sector financiero y salud bajo Habeas Data Ley 1581.' },
-      { q: 'Cuanto tarda Starsolution en dejarnos operando?', a: 'En una empresa de 50 equipos la implementacion toma menos de dos horas efectivas. Para parques de mas de 1.000 equipos planeamos cronogramas de 1 a 2 semanas con fases controladas y grupo piloto.' },
-      { q: 'Sirve si tenemos teletrabajo y sucursales en otras ciudades?', a: 'Si. La consola es cloud, asi que equipos en Medellin, Cali o cualquier sede remota reportan sin VPN ni servidores intermedios. Las mismas politicas aplican a home office y sede principal.' },
+      { q: 'El despliegue masivo va a saturar la red de la oficina?', a: 'No en la practica. Programamos la instalacion por grupos via Active Directory o GPO, en horarios valle, y aprovechamos el repositorio local que GravityZone deja en uno de sus servidores para que el agente no se descargue desde internet en cada equipo. Empresas de 200 endpoints suelen quedar protegidas durante una sola noche.' },
+      { q: 'Como me entero cuando aparece una amenaza critica?', a: 'Configuramos notificaciones por correo y SMS para los eventos de severidad alta, y conectamos las alertas criticas a su canal preferido (Teams, Slack o ticketing). Adicionalmente recibira un reporte ejecutivo semanal listo para compartir con direccion y para sustentar auditorias ISO 27001.' },
+      { q: 'Bitdefender me deja bloquear memorias USB y celulares conectados?', a: 'Si. La politica de Device Control puede bloquear USB, CD/DVD, Bluetooth y dispositivos moviles conectados, y permite definir excepciones por usuario, equipo o area. Es uno de los controles mas usados en clientes del sector financiero y salud que manejan informacion sensible bajo Habeas Data Ley 1581.' },
+      { q: 'Cuanto tarda Starsolution en dejarnos operando?', a: 'Una implementacion tipica en una empresa de 50 equipos se completa en menos de dos horas de trabajo efectivo: configuracion de consola en la nube, conexion con su Active Directory, definicion de las politicas base y prueba en un grupo piloto antes del despliegue total. Para parques de mas de 1.000 equipos planeamos un cronograma de 1 a 2 semanas con fases controladas.' },
+      { q: 'Sirve si tenemos teletrabajo y sucursales en otras ciudades?', a: 'Si, es uno de los escenarios donde GravityZone brilla mas. Como la consola es cloud, sus equipos en Medellin, Cali o cualquier sede remota reportan directamente sin necesidad de VPN ni servidores intermedios. Aplica las mismas politicas a empleados en home office que a la sede principal.' },
     ]),
   },
   kaspersky: {

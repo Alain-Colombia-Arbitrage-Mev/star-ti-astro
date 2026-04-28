@@ -385,48 +385,49 @@ const serviceSchema = {
           </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div class="bg-white border-2 border-gray-200 rounded-2xl p-8">
-            <h3 class="text-xl font-bold mb-2 text-gray-900">GravityZone Small Business</h3>
-            <p class="text-gray-600 text-sm mb-6">Para empresas de 10 a 100 dispositivos</p>
-            <ul class="space-y-3 mb-8 text-sm text-gray-700">
-              <li>· Antimalware multicapa con IA</li>
-              <li>· Firewall y control web</li>
-              <li>· Anti-ransomware con remediacion</li>
-              <li>· Consola cloud GravityZone</li>
-            </ul>
-            <a href="/contacto" class="block text-center w-full bg-gray-900 text-white font-semibold py-3 rounded-lg hover:bg-gray-800 transition focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2">Cotizar Ahora</a>
-          </div>
-
-          <div class="bg-white border-2 border-[#ed1c24] rounded-2xl p-8 relative shadow-xl">
-            <div class="absolute -top-4 left-1/2 -translate-x-1/2">
-              <span class="bg-[#ed1c24] text-white text-xs font-bold px-4 py-1 rounded-full">MAS POPULAR</span>
-            </div>
-            <h3 class="text-xl font-bold mb-2 text-gray-900">GravityZone Business Security Premium</h3>
-            <p class="text-gray-600 text-sm mb-6">Para empresas de 100 a 1.000 dispositivos</p>
-            <ul class="space-y-3 mb-8 text-sm text-gray-700">
-              <li>· Todo lo de Small Business</li>
-              <li>· HyperDetect (IA tunable)</li>
-              <li>· Sandboxing en la nube</li>
-              <li>· Patch Management</li>
-              <li>· Full Disk Encryption</li>
-            </ul>
-            <a href="/contacto" class="block text-center w-full bg-[#ed1c24] text-white font-semibold py-3 rounded-lg hover:bg-red-700 transition focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2">Cotizar Ahora</a>
-          </div>
-
-          <div class="bg-white border-2 border-gray-200 rounded-2xl p-8">
-            <h3 class="text-xl font-bold mb-2 text-gray-900">GravityZone XDR + MDR</h3>
-            <p class="text-gray-600 text-sm mb-6">Para empresas de +1.000 dispositivos</p>
-            <ul class="space-y-3 mb-8 text-sm text-gray-700">
-              <li>· Todo lo de Premium</li>
-              <li>· EDR (Endpoint Detection &amp; Response)</li>
-              <li>· XDR (Extended Detection &amp; Response)</li>
-              <li>· MDR + SOC 24x7 de Bitdefender</li>
-              <li>· CSPM Plus para multi-cloud</li>
-            </ul>
-            <a href="/contacto" class="block text-center w-full bg-gray-900 text-white font-semibold py-3 rounded-lg hover:bg-gray-800 transition focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2">Cotizar Ahora</a>
-          </div>
+        <div class="overflow-x-auto rounded-2xl border border-gray-200 bg-white shadow-sm">
+          <table class="w-full text-sm text-left text-gray-700 min-w-[760px]">
+            <caption class="sr-only">Comparativa de planes Bitdefender GravityZone para empresas en Colombia: Small Business (10-100 dispositivos), Business Security Premium (100-1.000 dispositivos) y XDR + MDR (mas de 1.000 dispositivos).</caption>
+            <thead class="bg-gray-50 text-gray-900">
+              <tr>
+                <th scope="col" class="px-4 sm:px-6 py-4 font-semibold">Caracteristica</th>
+                <th scope="col" class="px-4 sm:px-6 py-4 font-semibold">
+                  <span class="block text-base">Small Business</span>
+                  <span class="block text-xs font-normal text-gray-500 mt-1">10 a 100 dispositivos</span>
+                </th>
+                <th scope="col" class="px-4 sm:px-6 py-4 font-semibold bg-red-50">
+                  <span class="block text-base text-[#ed1c24]">Business Security Premium</span>
+                  <span class="block text-xs font-normal text-gray-500 mt-1">100 a 1.000 dispositivos · Mas popular</span>
+                </th>
+                <th scope="col" class="px-4 sm:px-6 py-4 font-semibold">
+                  <span class="block text-base">XDR + MDR</span>
+                  <span class="block text-xs font-normal text-gray-500 mt-1">Mas de 1.000 dispositivos</span>
+                </th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-100">
+              <tr><th scope="row" class="px-4 sm:px-6 py-3 font-medium text-gray-900 text-left">Antimalware multicapa con IA</th><td class="px-4 sm:px-6 py-3 text-emerald-600">Si</td><td class="px-4 sm:px-6 py-3 text-emerald-600 bg-red-50/40">Si</td><td class="px-4 sm:px-6 py-3 text-emerald-600">Si</td></tr>
+              <tr><th scope="row" class="px-4 sm:px-6 py-3 font-medium text-gray-900 text-left">Firewall y control web</th><td class="px-4 sm:px-6 py-3 text-emerald-600">Si</td><td class="px-4 sm:px-6 py-3 text-emerald-600 bg-red-50/40">Si</td><td class="px-4 sm:px-6 py-3 text-emerald-600">Si</td></tr>
+              <tr><th scope="row" class="px-4 sm:px-6 py-3 font-medium text-gray-900 text-left">Anti-ransomware con remediacion</th><td class="px-4 sm:px-6 py-3 text-emerald-600">Si</td><td class="px-4 sm:px-6 py-3 text-emerald-600 bg-red-50/40">Si</td><td class="px-4 sm:px-6 py-3 text-emerald-600">Si</td></tr>
+              <tr><th scope="row" class="px-4 sm:px-6 py-3 font-medium text-gray-900 text-left">HyperDetect (IA tunable)</th><td class="px-4 sm:px-6 py-3 text-gray-300">No</td><td class="px-4 sm:px-6 py-3 text-emerald-600 bg-red-50/40">Si</td><td class="px-4 sm:px-6 py-3 text-emerald-600">Si</td></tr>
+              <tr><th scope="row" class="px-4 sm:px-6 py-3 font-medium text-gray-900 text-left">Sandbox Analyzer en la nube</th><td class="px-4 sm:px-6 py-3 text-gray-300">No</td><td class="px-4 sm:px-6 py-3 text-emerald-600 bg-red-50/40">Si</td><td class="px-4 sm:px-6 py-3 text-emerald-600">Si</td></tr>
+              <tr><th scope="row" class="px-4 sm:px-6 py-3 font-medium text-gray-900 text-left">Patch Management</th><td class="px-4 sm:px-6 py-3 text-gray-300">No</td><td class="px-4 sm:px-6 py-3 text-emerald-600 bg-red-50/40">Si</td><td class="px-4 sm:px-6 py-3 text-emerald-600">Si</td></tr>
+              <tr><th scope="row" class="px-4 sm:px-6 py-3 font-medium text-gray-900 text-left">Full Disk Encryption</th><td class="px-4 sm:px-6 py-3 text-gray-300">No</td><td class="px-4 sm:px-6 py-3 text-emerald-600 bg-red-50/40">Si</td><td class="px-4 sm:px-6 py-3 text-emerald-600">Si</td></tr>
+              <tr><th scope="row" class="px-4 sm:px-6 py-3 font-medium text-gray-900 text-left">EDR (Endpoint Detection &amp; Response)</th><td class="px-4 sm:px-6 py-3 text-gray-300">No</td><td class="px-4 sm:px-6 py-3 text-gray-300 bg-red-50/40">Add-on</td><td class="px-4 sm:px-6 py-3 text-emerald-600">Si</td></tr>
+              <tr><th scope="row" class="px-4 sm:px-6 py-3 font-medium text-gray-900 text-left">XDR (Extended Detection &amp; Response)</th><td class="px-4 sm:px-6 py-3 text-gray-300">No</td><td class="px-4 sm:px-6 py-3 text-gray-300 bg-red-50/40">No</td><td class="px-4 sm:px-6 py-3 text-emerald-600">Si</td></tr>
+              <tr><th scope="row" class="px-4 sm:px-6 py-3 font-medium text-gray-900 text-left">MDR + SOC 24x7 de Bitdefender</th><td class="px-4 sm:px-6 py-3 text-gray-300">No</td><td class="px-4 sm:px-6 py-3 text-gray-300 bg-red-50/40">No</td><td class="px-4 sm:px-6 py-3 text-emerald-600">Si</td></tr>
+              <tr><th scope="row" class="px-4 sm:px-6 py-3 font-medium text-gray-900 text-left">CSPM Plus para multi-cloud (AWS, Azure)</th><td class="px-4 sm:px-6 py-3 text-gray-300">No</td><td class="px-4 sm:px-6 py-3 text-gray-300 bg-red-50/40">No</td><td class="px-4 sm:px-6 py-3 text-emerald-600">Si</td></tr>
+              <tr><th scope="row" class="px-4 sm:px-6 py-3 font-medium text-gray-900 text-left">Soporte e implementacion local Starsolution (Bogota)</th><td class="px-4 sm:px-6 py-3 text-emerald-600">Si</td><td class="px-4 sm:px-6 py-3 text-emerald-600 bg-red-50/40">Si</td><td class="px-4 sm:px-6 py-3 text-emerald-600">Si</td></tr>
+              <tr class="bg-gray-50">
+                <th scope="row" class="px-4 sm:px-6 py-4 font-semibold text-gray-900 text-left">Cotizacion</th>
+                <td class="px-4 sm:px-6 py-4"><a href="/contacto" class="inline-flex items-center justify-center bg-gray-900 text-white font-semibold px-4 py-2 rounded-lg hover:bg-gray-800 transition focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2">Cotizar</a></td>
+                <td class="px-4 sm:px-6 py-4 bg-red-50/40"><a href="/contacto" class="inline-flex items-center justify-center bg-[#ed1c24] text-white font-semibold px-4 py-2 rounded-lg hover:bg-red-700 transition focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2">Cotizar</a></td>
+                <td class="px-4 sm:px-6 py-4"><a href="/contacto" class="inline-flex items-center justify-center bg-gray-900 text-white font-semibold px-4 py-2 rounded-lg hover:bg-gray-800 transition focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2">Cotizar</a></td>
+              </tr>
+            </tbody>
+          </table>
         </div>
+        <p class="text-xs text-gray-500 mt-4 text-center">Precios indicativos disponibles bajo cotizacion. Descuentos por volumen para parques de mas de 250 endpoints y contratos plurianuales.</p>
       </div>
     </section>
 
