@@ -9,12 +9,18 @@ Disallow: /gracias/
 Sitemap: https://starsolution.com.co/sitemap-index.xml
 Sitemap: https://starsolution.com.co/sitemap.xml
 
-# AI/LLM Context
-# https://llmstxt.org/
-LLMs.txt: https://starsolution.com.co/llms.txt
+# ──────────────────────────────────────────────
+# AI / LLM Agents
+# ──────────────────────────────────────────────
+# LLMs.txt spec (https://llmstxt.org/)
+# Available at: https://starsolution.com.co/llms.txt
+# Full version: https://starsolution.com.co/llms-full.txt
 
-# Google AI / Bard / Gemini
+# Google AI / Gemini / AI Overviews
 User-agent: Google-Extended
+Allow: /
+
+User-agent: GoogleOther
 Allow: /
 
 # OpenAI / ChatGPT Search
@@ -25,12 +31,7 @@ Disallow: /gracias/
 User-agent: ChatGPT-User
 Allow: /
 
-# Perplexity AI
-User-agent: PerplexityBot
-Allow: /
-
-# Microsoft Bing / Copilot
-User-agent: Bingbot
+User-agent: OAI-SearchBot
 Allow: /
 
 # Anthropic Claude
@@ -41,15 +42,65 @@ Disallow: /gracias/
 User-agent: Claude-Web
 Allow: /
 
-# Meta AI
+User-agent: ClaudeBot
+Allow: /
+
+# Perplexity AI
+User-agent: PerplexityBot
+Allow: /
+
+# Microsoft Bing / Copilot
+User-agent: Bingbot
+Allow: /
+
+User-agent: BingPreview
+Allow: /
+
+# Meta AI / Llama
 User-agent: FacebookBot
 Allow: /
 
-# Apple Siri / Spotlight
+User-agent: meta-externalagent
+Allow: /
+
+# Apple Siri / Spotlight / Apple Intelligence
 User-agent: Applebot
 Allow: /
 
-# Crawl-delay para bots agresivos de scraping
+User-agent: Applebot-Extended
+Allow: /
+
+# Cohere AI
+User-agent: cohere-ai
+Allow: /
+
+# You.com AI Search
+User-agent: YouBot
+Allow: /
+
+# AI2 (Allen Institute for AI)
+User-agent: AI2Bot
+Allow: /
+
+# Common Crawl (used by many LLMs for training data)
+User-agent: CCBot
+Allow: /
+
+# Brave Search AI
+User-agent: Brave
+Allow: /
+
+# Amazon / Alexa
+User-agent: Amazonbot
+Allow: /
+
+# Mojeek Search
+User-agent: MojeekBot
+Allow: /
+
+# ──────────────────────────────────────────────
+# SEO Crawlers (rate limited)
+# ──────────────────────────────────────────────
 User-agent: AhrefsBot
 Crawl-delay: 10
 
@@ -60,8 +111,5 @@ User-agent: MJ12bot
 Crawl-delay: 10
 
 # Bloquear scraping masivo no deseado
-User-agent: CCBot
-Disallow: /
-
 User-agent: bytespider
 Disallow: /
