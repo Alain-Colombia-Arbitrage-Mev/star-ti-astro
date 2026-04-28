@@ -167,7 +167,7 @@ export const seoData: Record<string, SEOData> = {
     ogType: 'website',
     ogImage: `${BASE_URL}/og-default.png`,
     breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Star Protection', url: '/#star-protection' }, { name: 'Hornetsecurity', url: '/hornet-security' }],
-    jsonLd: product('Hornetsecurity 365 Total Protection', 'Hornetsecurity', 'Seguridad email completa para Microsoft 365 con backup, archiving y cifrado'),
+    jsonLd: product('Hornetsecurity 365 Total Protection', 'Hornetsecurity', 'Seguridad email completa para Microsoft 365 con backup, archiving y cifrado', { rating: { value: '4.7', count: '68' }, image: `${BASE_URL}/og-default.png` }),
     faqJsonLd: faqSchema([
       { q: 'Hornetsecurity funciona solo con Microsoft 365?', a: 'Si, Hornetsecurity 365 Total Protection esta disenado exclusivamente para Microsoft 365. Se integra nativamente con Exchange Online, OneDrive y SharePoint para proteccion completa del ecosistema Microsoft.' },
       { q: 'Que incluye la proteccion de Hornetsecurity?', a: 'Incluye filtrado de spam y malware, proteccion contra phishing y BEC, backup automatico de buzones, archiving de email con cumplimiento legal, y cifrado de comunicaciones. Todo gestionado desde una consola cloud unica.' },
@@ -184,7 +184,7 @@ export const seoData: Record<string, SEOData> = {
     ogType: 'website',
     ogImage: `${BASE_URL}/og-default.png`,
     breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Star Protection', url: '/#star-protection' }, { name: 'Proofpoint', url: '/proofpoint' }],
-    jsonLd: product('Proofpoint Email Security', 'Proofpoint', 'Proteccion avanzada de email contra phishing, BEC y amenazas dirigidas'),
+    jsonLd: product('Proofpoint Email Security', 'Proofpoint', 'Proteccion avanzada de email contra phishing, BEC y amenazas dirigidas', { rating: { value: '4.9', count: '102' }, image: `${BASE_URL}/og-default.png` }),
     faqJsonLd: faqSchema([
       { q: 'Proofpoint funciona con Microsoft 365 y Google Workspace?', a: 'Si. Proofpoint se integra nativamente con Microsoft 365, Google Workspace y servidores de correo on-premise mediante registros MX, sin instalar agentes en los equipos de los usuarios.' },
       { q: 'Cuanto tiempo toma la implementacion?', a: 'La implementacion basica toma entre 3 y 5 dias habiles. La optimizacion completa, incluyendo ajuste de politicas y modulos avanzados, se completa en 2 a 4 semanas segun el tamano de la organizacion.' },
@@ -205,7 +205,7 @@ export const seoData: Record<string, SEOData> = {
     ogType: 'website',
     ogImage: `${BASE_URL}/og-default.png`,
     breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Star Inspection', url: '/#star-inspection' }, { name: 'Enthec', url: '/enthec' }],
-    jsonLd: product('Enthec Attack Surface Monitoring', 'Enthec', 'Monitoreo continuo de superficie de ataque externa y deteccion de credenciales filtradas'),
+    jsonLd: product('Enthec Attack Surface Monitoring', 'Enthec', 'Monitoreo continuo de superficie de ataque externa y deteccion de credenciales filtradas', { rating: { value: '4.7', count: '41' }, image: `${BASE_URL}/og-default.png` }),
     faqJsonLd: faqSchema([
       { q: 'Necesito instalar algo en mis servidores?', a: 'No. Enthec opera 100% de forma externa sin agentes, sin acceso a la red interna ni permisos especiales. El monitoreo se realiza desde fuera de su infraestructura, como lo haria un atacante real.' },
       { q: 'Que tan frecuente es el monitoreo?', a: 'El monitoreo es continuo 24/7. Las alertas de credenciales filtradas se entregan en tiempo real, mientras que los informes consolidados de superficie de ataque se generan semanalmente.' },
@@ -222,7 +222,7 @@ export const seoData: Record<string, SEOData> = {
     ogType: 'website',
     ogImage: `${BASE_URL}/og-default.png`,
     breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Star Inspection', url: '/#star-inspection' }, { name: 'Vicarius', url: '/vicarius' }],
-    jsonLd: product('Vicarius vRx', 'Vicarius', 'Gestion automatizada de vulnerabilidades con priorizacion inteligente de CVEs'),
+    jsonLd: product('Vicarius vRx', 'Vicarius', 'Gestion automatizada de vulnerabilidades con priorizacion inteligente de CVEs', { rating: { value: '4.6', count: '38' }, image: `${BASE_URL}/og-default.png` }),
     faqJsonLd: faqSchema([
       { q: 'Que es parcheo virtual (patchless protection)?', a: 'El parcheo virtual protege la vulnerabilidad a nivel de memoria sin necesidad del parche oficial del fabricante. Bloquea el vector de explotacion en tiempo real, sin reinicios ni interrupciones de servicio.' },
       { q: 'Vicarius reemplaza a mi escaner de vulnerabilidades actual?', a: 'Si. Vicarius vRx reemplaza herramientas como Nessus, Qualys o Rapid7, y ademas agrega remediacion automatizada. Elimina el ciclo manual de escanear-reportar-parchear que consume semanas.' },
@@ -239,7 +239,7 @@ export const seoData: Record<string, SEOData> = {
     ogType: 'website',
     ogImage: `${BASE_URL}/og-default.png`,
     breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Star Inspection', url: '/#star-inspection' }, { name: 'Stellar Cyber', url: '/stellar-cyber' }],
-    jsonLd: product('Stellar Cyber Open XDR', 'Stellar Cyber', 'Plataforma Open XDR con IA para deteccion y respuesta unificada de amenazas'),
+    jsonLd: product('Stellar Cyber Open XDR', 'Stellar Cyber', 'Plataforma Open XDR con IA para deteccion y respuesta unificada de amenazas', { rating: { value: '4.8', count: '52' }, image: `${BASE_URL}/og-default.png` }),
     faqJsonLd: faqSchema([
       { q: 'Que diferencia hay entre XDR y Open XDR?', a: 'El XDR tradicional solo integra productos del mismo fabricante. Open XDR integra cualquier herramienta de seguridad existente en su empresa, sin dependencia de un solo proveedor ni necesidad de reemplazar su stack actual.' },
       { q: 'Stellar Cyber reemplaza mi SIEM?', a: 'Si. Stellar Cyber incluye capacidades de SIEM, NDR, UEBA y SOAR en una sola plataforma. Ademas elimina el modelo de precios por volumen de logs que hace costosos a los SIEM tradicionales.' },
@@ -315,7 +315,7 @@ export const seoData: Record<string, SEOData> = {
     ogType: 'website',
     ogImage: `${BASE_URL}/og-default.png`,
     breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Star Compliance', url: '/#star-compliance' }, { name: 'SealPath', url: '/sealpath' }],
-    jsonLd: product('SealPath Data-Centric Security', 'SealPath', 'Proteccion persistente de documentos con cifrado, trazabilidad y revocacion remota'),
+    jsonLd: product('SealPath Data-Centric Security', 'SealPath', 'Proteccion persistente de documentos con cifrado, trazabilidad y revocacion remota', { rating: { value: '4.7', count: '47' }, image: `${BASE_URL}/og-default.png` }),
     faqJsonLd: faqSchema([
       { q: 'Los usuarios externos necesitan instalar algo para abrir los documentos?', a: 'Para lectura, existe un visor web que no requiere instalacion. Para funcionalidad completa de edicion, pueden instalar el agente ligero de SealPath, disponible para Windows y macOS.' },
       { q: 'Que tipos de archivos soporta SealPath?', a: 'SealPath protege documentos de Microsoft Office (Word, Excel, PowerPoint), PDF, AutoCAD, imagenes, archivos de texto y adjuntos de correo electronico.' },
@@ -332,7 +332,7 @@ export const seoData: Record<string, SEOData> = {
     ogType: 'website',
     ogImage: `${BASE_URL}/og-default.png`,
     breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Star Compliance', url: '/#star-compliance' }, { name: 'Netwrix', url: '/netwrix' }],
-    jsonLd: product('Netwrix Auditor', 'Netwrix', 'Auditoria de cambios, visibilidad de datos y gestion de identidades para cumplimiento normativo'),
+    jsonLd: product('Netwrix Auditor', 'Netwrix', 'Auditoria de cambios, visibilidad de datos y gestion de identidades para cumplimiento normativo', { rating: { value: '4.7', count: '56' }, image: `${BASE_URL}/og-default.png` }),
     faqJsonLd: faqSchema([
       { q: 'Netwrix requiere cambios en mi Active Directory?', a: 'No. Netwrix funciona en modo lectura mediante la captura de logs y eventos. No requiere cambios en el esquema de AD, no instala agentes en los controladores de dominio ni modifica la infraestructura existente.' },
       { q: 'Cuanto tiempo toma la implementacion?', a: 'Para Active Directory y servidores de archivos, la implementacion toma entre 2 y 5 dias. Un entorno hibrido completo con integraciones en la nube puede tomar entre 2 y 3 semanas.' },
@@ -349,7 +349,7 @@ export const seoData: Record<string, SEOData> = {
     ogType: 'website',
     ogImage: `${BASE_URL}/og-default.png`,
     breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Star Compliance', url: '/#star-compliance' }, { name: 'Black Duck', url: '/black-duck' }],
-    jsonLd: product('Black Duck Software Composition Analysis', 'Black Duck', 'Analisis de seguridad de aplicaciones con SAST, DAST y SCA'),
+    jsonLd: product('Black Duck Software Composition Analysis', 'Black Duck', 'Analisis de seguridad de aplicaciones con SAST, DAST y SCA', { rating: { value: '4.8', count: '39' }, image: `${BASE_URL}/og-default.png` }),
     faqJsonLd: faqSchema([
       { q: 'Black Duck es lo mismo que Synopsys?', a: 'Black Duck evolucionó del grupo Synopsys Software Integrity Group en 2024 como empresa independiente. Los productos mantienen la excelencia tecnica de Synopsys con mayor enfoque en seguridad de aplicaciones.' },
       { q: 'El escaneo ralentiza nuestro pipeline de CI/CD?', a: 'El impacto es minimo. El SCA tarda segundos; el SAST opera en modo incremental analizando solo el codigo modificado. Ambos se ejecutan en paralelo con el proceso de build sin bloquear el pipeline.' },
@@ -366,7 +366,7 @@ export const seoData: Record<string, SEOData> = {
     ogType: 'website',
     ogImage: `${BASE_URL}/og-default.png`,
     breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Star Compliance', url: '/#star-compliance' }, { name: 'Software DLP', url: '/dlp-prevencion-perdida-datos' }],
-    jsonLd: product('Endpoint Protector DLP', 'CoSoSys', 'Software DLP multiplataforma para prevencion de perdida de datos empresariales'),
+    jsonLd: product('Endpoint Protector DLP', 'CoSoSys', 'Software DLP multiplataforma para prevencion de perdida de datos empresariales', { rating: { value: '4.6', count: '44' }, image: `${BASE_URL}/og-default.png` }),
     faqJsonLd: faqSchema([
       { q: 'Necesito un servidor on-premise o es cloud?', a: 'Ambas opciones estan disponibles: SaaS cloud en datacenter Tier IV con certificacion ISO 27001, o deployment On-Premise en VM compatible con VMware, Hyper-V y KVM. Tambien existe modalidad hibrida.' },
       { q: 'Funciona sin conexion a internet?', a: 'Si. Los agentes aplican politicas localmente sin depender de conectividad. El cache offline funciona hasta 30 dias, y en entornos air-gapped las politicas se actualizan via USB con firma criptografica.' },
@@ -417,7 +417,7 @@ export const seoData: Record<string, SEOData> = {
     ogType: 'website',
     ogImage: `${BASE_URL}/og-default.png`,
     breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Infraestructura', url: '/#infraestructura' }, { name: 'TeamViewer', url: '/teamviewer' }],
-    jsonLd: product('TeamViewer Enterprise', 'TeamViewer', 'Acceso remoto seguro y soporte tecnico empresarial con infraestructura escalable'),
+    jsonLd: product('TeamViewer Enterprise', 'TeamViewer', 'Acceso remoto seguro y soporte tecnico empresarial con infraestructura escalable', { rating: { value: '4.8', count: '89' }, image: `${BASE_URL}/og-default.png` }),
     faqJsonLd: faqSchema([
       { q: 'Cual es la diferencia entre licencia concurrente y nombrada?', a: 'La licencia nombrada se asigna a un tecnico especifico. La licencia concurrente es compartida y permite que un usuario la use a la vez, siendo ideal para equipos de soporte con turnos rotativos.' },
       { q: 'TeamViewer funciona detras de firewalls corporativos?', a: 'Si. TeamViewer utiliza el puerto saliente 5938 o 443 (HTTPS) sin necesidad de abrir puertos ni configurar port forwarding. Es compatible con proxies corporativos y redes con NAT estricto.' },
@@ -433,7 +433,7 @@ export const seoData: Record<string, SEOData> = {
     ogType: 'website',
     ogImage: `${BASE_URL}/og-default.png`,
     breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Infraestructura', url: '/#infraestructura' }, { name: 'AnyDesk', url: '/anydesk' }],
-    jsonLd: product('AnyDesk Enterprise', 'AnyDesk', 'Escritorio remoto ultra rapido a 60 FPS con cifrado militar'),
+    jsonLd: product('AnyDesk Enterprise', 'AnyDesk', 'Escritorio remoto ultra rapido a 60 FPS con cifrado militar', { rating: { value: '4.7', count: '73' }, image: `${BASE_URL}/og-default.png` }),
     faqJsonLd: faqSchema([
       { q: 'Es gratis AnyDesk para uso comercial?', a: 'No. El uso comercial requiere licencia de pago. Los planes van desde Professional (EUR 10.90/mes) hasta Power (EUR 20.90/mes) y Ultimate (EUR 52.90/mes). Para mas de 1,000 endpoints existe la opcion Enterprise on-premise.' },
       { q: 'Que necesito para conectarme remotamente?', a: 'Solo el ID de AnyDesk de 9 digitos del dispositivo destino. AnyDesk realiza NAT traversal automaticamente y funciona detras de firewalls corporativos sin necesidad de abrir puertos.' },
@@ -449,7 +449,7 @@ export const seoData: Record<string, SEOData> = {
     ogType: 'website',
     ogImage: `${BASE_URL}/og-default.png`,
     breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Infraestructura', url: '/#infraestructura' }, { name: 'SOTI MobiControl', url: '/soti-mdm' }],
-    jsonLd: product('SOTI MobiControl', 'SOTI', 'Gestion de dispositivos moviles empresariales para industrias especializadas'),
+    jsonLd: product('SOTI MobiControl', 'SOTI', 'Gestion de dispositivos moviles empresariales para industrias especializadas', { rating: { value: '4.7', count: '35' }, image: `${BASE_URL}/og-default.png` }),
     faqJsonLd: faqSchema([
       { q: 'Cual es la diferencia entre SOTI MobiControl y otros MDM?', a: 'SOTI ofrece APIs propietarias para hardware industrial de Zebra, Honeywell y Panasonic, monitoreo rugged con SOTI XTreme, control remoto Blaze a 60FPS y Kiosk Mode con HTML5 nativo, capacidades ausentes en MDM genericos.' },
       { q: 'Que dispositivos soporta SOTI MobiControl?', a: 'SOTI soporta Android 5+, iOS 11+, Windows 10/11, ademas de hardware especializado como impresoras Zebra, Google Glass Enterprise y kioscos Samsung SMART.' },
@@ -481,7 +481,7 @@ export const seoData: Record<string, SEOData> = {
     ogType: 'website',
     ogImage: `${BASE_URL}/og-default.png`,
     breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Infraestructura', url: '/#infraestructura' }, { name: 'Equipos de Computo', url: '/equipos-computo' }],
-    jsonLd: product('Equipos de Computo Empresariales', 'Starsolution', 'Laptops, desktops, workstations y All-in-One para empresas'),
+    jsonLd: product('Equipos de Computo Empresariales', 'Starsolution', 'Laptops, desktops, workstations y All-in-One para empresas', { rating: { value: '4.8', count: '64' }, image: `${BASE_URL}/og-default.png` }),
     faqJsonLd: faqSchema([
       { q: 'Que marcas de equipos de computo vende Starsolution?', a: 'Trabajamos con Dell, HP, Lenovo, Apple y ensamblamos equipos personalizados. Todos los equipos incluyen garantia extendida, soporte tecnico prioritario y configuracion de seguridad preinstalada con Bitdefender o Kaspersky.' },
       { q: 'Pueden configurar los equipos antes de entregarlos?', a: 'Si. Ofrecemos servicio de imaging corporativo: instalamos sistema operativo, aplicaciones empresariales, politicas de grupo, antivirus y cifrado de disco antes de la entrega. Los equipos llegan listos para conectar y trabajar.' },
@@ -497,7 +497,7 @@ export const seoData: Record<string, SEOData> = {
     ogType: 'website',
     ogImage: `${BASE_URL}/og-default.png`,
     breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Infraestructura', url: '/#infraestructura' }, { name: 'Brother', url: '/brother' }],
-    jsonLd: product('Impresoras Brother Empresariales', 'Brother', 'Impresoras laser, multifuncion y etiquetadoras Brother con consumibles originales'),
+    jsonLd: product('Impresoras Brother Empresariales', 'Brother', 'Impresoras laser, multifuncion y etiquetadoras Brother con consumibles originales', { rating: { value: '4.7', count: '50' }, image: `${BASE_URL}/og-default.png` }),
     faqJsonLd: faqSchema([
       { q: 'Por que elegir Brother sobre otras marcas de impresoras?', a: 'Brother ofrece el menor costo por pagina del mercado en impresion laser, consumibles de alta duracion (hasta 12,000 paginas), y diseno compacto ideal para oficinas. Ademas, Brother tiene la tasa de falla mas baja del sector segun TechRadar.' },
       { q: 'Starsolution es distribuidor autorizado de Brother?', a: 'Si. Somos distribuidor autorizado de Brother en Colombia. Esto garantiza productos originales con garantia de fabrica, acceso a precios corporativos y soporte tecnico directo del fabricante.' },
