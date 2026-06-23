@@ -79,9 +79,9 @@ A: Si, es uno de los escenarios donde GravityZone brilla mas. Como la consola es
 **Local contact:** Starsolution S.A.S., Bogota, Colombia · +57 300 701 0017 · contacto@star-ti.com
 **Partner status:** Authorized Kaspersky partner since 2014 (12+ years) · 200+ implementations across Colombia.
 
-Kaspersky Next is the current SMB and enterprise product line from Kaspersky (it replaces the legacy Kaspersky Endpoint Security Cloud Standard / Plus / Select naming). Starsolution implements all four tiers in Colombia from a Bogota base, with Spanish-language support and integration with Active Directory, GPO and SCCM for silent deployment.
+Kaspersky Next is the current SMB and enterprise product line from Kaspersky (it replaces the legacy Kaspersky Endpoint Security Cloud Standard / Plus / Select naming). It has six editions: EDR Foundations, EDR Optimum, XDR Optimum and MXDR Optimum for organizations without an internal SOC, plus EDR Expert and XDR Expert for enterprise SOC teams. Starsolution implements them in Colombia from a Bogota base, with Spanish-language support and integration with Active Directory, GPO and SCCM for silent deployment.
 
-The four Kaspersky Next tiers offered by Starsolution:
+The four mid-market Kaspersky Next tiers most often deployed by Starsolution:
 | Tier | Recommended size | Includes |
 |------|------------------|----------|
 | Kaspersky Next EDR Foundations | 10-100 endpoints | Antimalware multicapa + ML, System Watcher (anti-ransomware con rollback), firewall + HIPS, control web, EDR esencial (causa raiz, IOC scan), MDM Android/iOS |
@@ -97,9 +97,10 @@ Core technologies referenced on the page:
 - **Cloud Sandbox:** automated detonation of suspicious files in the Kaspersky cloud.
 
 Recognitions referenced on the page:
-- AV-TEST Top Product 2024 (multiple categories, consistently ranked #1).
-- AV-Comparatives Strategic Leader 2024.
-- Continuous participation in MITRE Engenuity ATT&CK Evaluations.
+- AV-TEST Best Protection 2024 (multiple categories).
+- SE Labs AAA with 100% Total Accuracy Rating (TOP1).
+- AV-Comparatives EDR Detection Validation Certification 2025 - Kaspersky Next EDR Expert was the first product in the industry to fully pass it.
+- QKS Group SPARK Matrix 2025 - Kaspersky Next XDR Expert recognized as a Leader in XDR.
 
 Industry verticals served by Starsolution in Colombia:
 - Sector financiero, salud (compliance Habeas Data Ley 1581 y resolucion 2654 de telemedicina), manufactura, retail, educacion y entidades publicas territoriales.

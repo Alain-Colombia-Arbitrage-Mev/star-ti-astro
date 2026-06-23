@@ -138,7 +138,7 @@ export const seoData: Record<string, SEOData> = {
   },
   kaspersky: {
     title: 'Kaspersky Endpoint Security Empresas | Starsolution',
-    description: 'Kaspersky Endpoint Security con HuMachine Intelligence. Proteccion para PYMES y enterprise, gestion centralizada. Partner autorizado Colombia.',
+    description: 'Implementamos Kaspersky Next (EDR/XDR/MDR) en empresas colombianas: System Watcher anti-ransomware y gestion centralizada. Partner oficial Kaspersky.',
     keywords: 'Kaspersky empresas Colombia, Kaspersky endpoint, antivirus PYMES, proteccion servidores, partner Kaspersky',
     canonical: `${BASE_URL}/kaspersky`,
     ogTitle: 'Kaspersky Endpoint Security para Empresas',
@@ -148,7 +148,7 @@ export const seoData: Record<string, SEOData> = {
     jsonLd: product(
       'Kaspersky Next',
       'Kaspersky',
-      'Linea Kaspersky Next para empresas (EDR Foundations, EDR Optimum, XDR Optimum y MXDR Optimum) con HuMachine Intelligence, System Watcher anti-ransomware, EDR esencial y SOC gestionado opcional. Implementacion local en Colombia por Starsolution, partner certificado desde 2014.',
+      'Linea Kaspersky Next para empresas, con seis ediciones escalables: EDR Foundations, EDR Optimum, XDR Optimum y MXDR Optimum para empresas sin SOC interno, mas EDR Expert y XDR Expert para SOC enterprise. Incluye System Watcher anti-ransomware con rollback, EDR y deteccion gestionada (MDR). Implementacion local en Colombia por Starsolution, partner certificado desde 2014.',
       { rating: { value: '4.8', count: '94' }, image: `${BASE_URL}/og-default.png` },
     ),
     faqJsonLd: faqSchema([
