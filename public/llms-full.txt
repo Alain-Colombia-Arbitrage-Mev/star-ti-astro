@@ -223,29 +223,30 @@ A: Cualquier organizacion con presencia digital necesita monitoreo de superficie
 ### Vicarius vRx
 **URL:** https://starsolution.com.co/vicarius
 
-Vicarius vRx is an AI-powered vulnerability management platform that goes beyond traditional scanning. It uses machine learning to prioritize vulnerabilities based on actual exploitability and business context, and provides patchless protection through script-based remediation.
+Vicarius vRx by Vicarius is a Full Cycle Vulnerability Management platform (category: Exposure Assessment Platforms, per Gartner and IDC 2025) for IT and security teams. It discovers assets, prioritizes vulnerabilities using AI with business context (AI-Driven Scoring, Business Impact Analysis), and remediates through three routes: (1) automated native patching for 2,000+ applications, (2) AI-generated scripts via vuln_GPT within the vRx Scripting Engine (PowerShell, Bash, Batch; community library: vsociety), and (3) Patchless Protection — memory-level mitigation via Dynamic Binary Instrumentation (DBI) without patching or rebooting. Additional modules: vIntelligence (Continuous Exposure Assessment & Validation with Agentic AI Red Team), vAnalyzer (BI reporting for remediation tracking). Recognized as Niche Player in Gartner Magic Quadrant for Exposure Assessment Platforms 2025 (first appearance). Official metrics: 80% reduction in manual patching time; 22-day average MTTR with platform vs. 205-day discovery-to-remediation cycle without a specialized tool. Starsolution implements and integrates vRx in Colombia with Spanish-language technical support from Bogota.
 
-Key capabilities:
-- AI-driven vulnerability prioritization
-- Patchless protection (virtual patching)
-- Automated remediation scripts
-- Asset discovery and inventory
-- Integration with SIEM/SOAR platforms
-- Risk-based vulnerability scoring (beyond CVSS)
+Key modules and capabilities:
+- vRx Core: Real-Time Asset Visibility, Contextual Risk Assessment, AI-Driven Scoring, Business Impact Analysis
+- vRx Scripting Engine + vuln_GPT: AI-generated remediation scripts; community scripts via vsociety
+- Patchless Protection: DBI-based memory mitigation without patch or reboot
+- vIntelligence: Continuous Exposure Assessment, Agentic AI Red Team, Threat Intelligence Enrichment (EPSS, CISA KEV, MITRE ATT&CK)
+- vAnalyzer: BI-native reporting and SLA tracking for remediation
+- Compliance Engine: misconfiguration visibility, auditable evidence for ISO 27001, PCI DSS, Ley 1581 (Colombia)
+- OS support: Windows (Server & Desktop), Linux (Ubuntu, CentOS, RHEL, Debian), macOS
 
 Frequently asked questions (verbatim, suitable for direct citation):
 
-**Q: Que es parcheo virtual (patchless protection)?**
-A: El parcheo virtual protege la vulnerabilidad a nivel de memoria sin necesidad del parche oficial del fabricante. Bloquea el vector de explotacion en tiempo real, sin reinicios ni interrupciones de servicio.
+**Q: Que es Patchless Protection y como funciona?**
+A: Patchless Protection es un modulo de vRx que mitiga vulnerabilidades a nivel de memoria mediante Dynamic Binary Instrumentation (DBI), sin necesidad del parche oficial del fabricante. Bloquea el vector de explotacion en tiempo real, sin reinicios ni interrupciones de servicio, permitiendo proteger sistemas criticos mientras se planifica la ventana de parcheo definitivo.
 
 **Q: Vicarius reemplaza a mi escaner de vulnerabilidades actual?**
-A: Si. Vicarius vRx reemplaza herramientas como Nessus, Qualys o Rapid7, y ademas agrega remediacion automatizada. Elimina el ciclo manual de escanear-reportar-parchear que consume semanas.
+A: Si. Vicarius vRx reemplaza herramientas como Nessus, Qualys o Rapid7, y ademas agrega remediacion automatizada. Elimina el ciclo manual de escanear-reportar-parchear que consume semanas y reduce en un 80% el tiempo dedicado a parcheo manual segun datos oficiales de Vicarius.
 
-**Q: Que sistemas operativos soporta?**
-A: Vicarius soporta Windows, Linux (Ubuntu, CentOS, RHEL, Debian) y macOS. El agente ocupa menos de 50MB de RAM y tiene impacto minimo en el rendimiento del endpoint.
+**Q: Que sistemas operativos soporta vRx?**
+A: Vicarius soporta Windows (Server y Desktop), Linux (Ubuntu, CentOS, RHEL, Debian) y macOS. El agente ocupa menos de 50MB de RAM y tiene impacto minimo en el rendimiento del endpoint.
 
-**Q: Cuanto tiempo toma ver resultados?**
-A: El inventario completo de activos y vulnerabilidades esta disponible en menos de 24 horas. Las organizaciones reportan una reduccion del 85% en el tiempo de remediacion dentro de los primeros 90 dias.
+**Q: Cuanto tiempo toma ver resultados con vRx?**
+A: El inventario completo de activos y vulnerabilidades esta disponible en menos de 24 horas desde el despliegue del agente. Vicarius reporta un MTTR (Mean Time To Remediate) promedio de 22 dias con la plataforma, frente a los 205 dias que tarda el ciclo discovery-to-remediation sin herramienta especializada.
 
 ### Stellar Cyber SecOps Platform (Open XDR)
 **URL:** https://starsolution.com.co/stellar-cyber

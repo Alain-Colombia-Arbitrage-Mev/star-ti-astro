@@ -6,6 +6,29 @@ import WhatsAppButton from '@components/WhatsAppButton.astro';
 import { seoData } from '@data/seo';
 
 const seo = seoData.vicarius;
+
+const VC_SECTORS = [
+  {
+    sector: "Banca y Finanzas",
+    need: "Cumplir la Circular 007 de la Superfinanciera y gestionar CVEs en infraestructura crítica sin ventanas de mantenimiento amplias.",
+    how: "vRx prioriza las vulnerabilidades con mayor probabilidad de explotación real en activos financieros. Patchless Protection mitiga de inmediato sin detener servicios en producción; vAnalyzer genera evidencia auditable para la Superfinanciera.",
+  },
+  {
+    sector: "Salud (Ley 1581)",
+    need: "Proteger historias clínicas y datos personales sensibles bajo la Ley 1581 de Habeas Data y evitar ransomware en sistemas hospitalarios 24/7.",
+    how: "Patchless Protection protege equipos críticos de sala de urgencias sin reinicio. El Compliance Engine de vRx genera reportes de remediación con evidencia para demostrar controles técnicos ante la SIC en caso de incidente.",
+  },
+  {
+    sector: "Gobierno y Entidades Públicas (MSPI)",
+    need: "Implementar el Modelo de Seguridad y Privacidad de la Información (MSPI) del MinTIC con evidencia de gestión de vulnerabilidades.",
+    how: "vRx automatiza el ciclo discovery-to-remediation y genera reportes de reducción de superficie de ataque alineados con los dominios del MSPI. vIntelligence valida de forma continua si las exposiciones son explotables en el entorno real del organismo.",
+  },
+  {
+    sector: "Retail y Comercio",
+    need: "Proteger puntos de venta (POS), sistemas de pago y datos de tarjetahabientes bajo PCI DSS con equipos de TI reducidos.",
+    how: "El vRx Scripting Engine automatiza el parcheo de más de 2,000 aplicaciones en todos los nodos POS. vuln_GPT genera scripts para CVEs emergentes sin esperar al proveedor, y vAnalyzer produce el reporte de SLA de parcheo requerido por PCI DSS.",
+  },
+];
 ---
 
 <BaseLayout seo={seo}>
@@ -44,7 +67,7 @@ const seo = seoData.vicarius;
               <svg class="w-4 h-4 text-green-600" fill="none" viewBox="0 0 14 14">
                 <path d="M11.6667 3.5L5.25 9.91667L2.33333 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.16667" />
               </svg>
-              <span>Reducción promedio del 85% en tiempo de remediacion de CVEs críticos</span>
+              <span>Reducción del 80% en tiempo dedicado a parcheo manual (dato oficial Vicarius)</span>
             </div>
           </div>
           <div class="hidden lg:flex items-center justify-center">
@@ -58,6 +81,14 @@ const seo = seoData.vicarius;
             />
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- GEO: ¿Qué es Vicarius? -->
+    <section class="bg-white pt-14 sm:pt-16" aria-labelledby="que-es-vicarius">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 id="que-es-vicarius" class="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">¿Que es Vicarius?</h2>
+        <p class="text-lg text-gray-700 leading-relaxed">Vicarius es una empresa de ciberseguridad cuya plataforma principal, <strong>vRx by Vicarius</strong>, ofrece gestión de vulnerabilidades de ciclo completo ("Full Cycle Vulnerability Management") para equipos de TI y seguridad. vRx descubre activos, prioriza vulnerabilidades mediante inteligencia artificial con contexto de negocio, y remedia a través de tres rutas: parcheo nativo automatizado para más de 2,000 aplicaciones, generación de scripts con vuln_GPT (vRx Scripting Engine), y Patchless Protection — mitigación a nivel de memoria vía Dynamic Binary Instrumentation (DBI) sin parche oficial ni reinicio. Vicarius es reconocido como Niche Player en el Gartner Magic Quadrant for Exposure Assessment Platforms 2025. Starsolution implementa e integra vRx en Colombia, con soporte técnico en español y despliegue desde Bogotá para organizaciones que necesitan reducir su superficie de ataque de forma medible.</p>
       </div>
     </section>
 
@@ -84,8 +115,8 @@ const seo = seoData.vicarius;
             <p class="text-white text-xs uppercase tracking-wider opacity-75">De brechas usan vulnerabilidades conocidas</p>
           </div>
           <div>
-            <h3 class="text-white font-bold text-3xl mb-2">102 dias</h3>
-            <p class="text-white text-xs uppercase tracking-wider opacity-75">Promedio para aplicar un parche critico</p>
+            <h3 class="text-white font-bold text-3xl mb-2">205 dias</h3>
+            <p class="text-white text-xs uppercase tracking-wider opacity-75">Promedio discovery-to-remediation sin plataforma (Vicarius)</p>
           </div>
           <div>
             <h3 class="text-white font-bold text-3xl mb-2">15%</h3>
@@ -142,10 +173,10 @@ const seo = seoData.vicarius;
                 <path d="M10 2L3 6v5c0 4.5 3 8.5 7 9.5 4-1 7-5 7-9.5V6l-7-4z" stroke="#374151" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.66667" />
               </svg>
             </div>
-            <h3 class="text-lg font-semibold mb-2">Parcheo Virtual (Patchless Protection)</h3>
+            <h3 class="text-lg font-semibold mb-2">Patchless Protection</h3>
             <p class="text-sm text-gray-600">
-              Cuando no puede aplicar un parche inmediatamente, Vicarius protege la vulnerabilidad
-              en memoria, eliminando el riesgo sin reiniciar equipos ni detener servicios.
+              Cuando no puede aplicar un parche inmediatamente, Patchless Protection mitiga la vulnerabilidad
+              a nivel de memoria mediante Dynamic Binary Instrumentation (DBI), eliminando el riesgo sin reiniciar equipos ni detener servicios.
             </p>
           </div>
 
@@ -156,10 +187,9 @@ const seo = seoData.vicarius;
                 <path d="M7 8h6M7 12h4" stroke="#374151" stroke-linecap="round" stroke-width="1.66667" />
               </svg>
             </div>
-            <h3 class="text-lg font-semibold mb-2">Scripts de Remediación</h3>
+            <h3 class="text-lg font-semibold mb-2">vRx Scripting Engine + vuln_GPT</h3>
             <p class="text-sm text-gray-600">
-              Biblioteca de scripts pre-construidos y personalizables para automatizar el parcheo
-              y la remediación. Ejecute correcciones masivas con un solo clic.
+              Motor de scripts de remediación (PowerShell, Bash, Batch) con biblioteca pública de la comunidad vsociety. vuln_GPT genera scripts con IA para CVEs específicos cuando no existe uno preexistente.
             </p>
           </div>
 
@@ -268,8 +298,8 @@ const seo = seoData.vicarius;
             </p>
             <div class="grid grid-cols-2 gap-6">
               <div class="border-l-4 border-red-600 pl-4">
-                <div class="text-2xl font-bold text-gray-900 mb-1">85%</div>
-                <div class="text-sm text-gray-600">Reducción en tiempo de remediación</div>
+                <div class="text-2xl font-bold text-gray-900 mb-1">80%</div>
+                <div class="text-sm text-gray-600">Reducción en tiempo de parcheo manual</div>
               </div>
               <div class="border-l-4 border-red-600 pl-4">
                 <div class="text-2xl font-bold text-gray-900 mb-1">70%</div>
@@ -329,6 +359,35 @@ const seo = seoData.vicarius;
               </div>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Casos de uso por sector -->
+    <section class="py-16 sm:py-20 lg:py-24 bg-white" aria-labelledby="sectores-vicarius">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 id="sectores-vicarius" class="text-3xl sm:text-4xl font-bold mb-4 text-gray-900">
+            Casos de Uso por Sector en Colombia
+          </h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            vRx se adapta a los retos regulatorios y operativos de cada industria con soporte local en español desde Starsolution.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {VC_SECTORS.map((s) => (
+            <div class="bg-gray-50 border border-gray-200 rounded-2xl p-6 flex flex-col gap-3">
+              <h3 class="text-base font-bold text-gray-900">{s.sector}</h3>
+              <div>
+                <span class="text-xs font-semibold uppercase tracking-wide text-red-700">Reto</span>
+                <p class="text-sm text-gray-600 mt-1">{s.need}</p>
+              </div>
+              <div>
+                <span class="text-xs font-semibold uppercase tracking-wide text-green-700">Cómo lo integramos</span>
+                <p class="text-sm text-gray-600 mt-1">{s.how}</p>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
@@ -583,52 +642,41 @@ const seo = seoData.vicarius;
         <div class="space-y-4">
           <details class="bg-gray-50 border border-gray-200 rounded-xl group">
             <summary class="font-semibold text-lg p-6 cursor-pointer list-none flex items-center justify-between">
-              ¿Qué es parcheo virtual (patchless protection)?
+              ¿Que es Patchless Protection y como funciona?
               <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
             </summary>
             <div class="px-6 pb-6 text-gray-600">
-              El parcheo virtual protege la vulnerabilidad a nivel de memoria del proceso afectado,
-              sin necesidad de aplicar el parche oficial del fabricante. Esto permite proteger
-              sistemas críticos inmediatamente mientras se planifica una ventana de mantenimiento
-              para el parcheo definitivo. No requiere reinicio ni afecta la operacion.
+              Patchless Protection es un modulo de vRx que mitiga vulnerabilidades a nivel de memoria mediante Dynamic Binary Instrumentation (DBI), sin necesidad del parche oficial del fabricante. Bloquea el vector de explotacion en tiempo real, sin reinicios ni interrupciones de servicio, permitiendo proteger sistemas criticos mientras se planifica la ventana de parcheo definitivo.
             </div>
           </details>
 
           <details class="bg-gray-50 border border-gray-200 rounded-xl group">
             <summary class="font-semibold text-lg p-6 cursor-pointer list-none flex items-center justify-between">
-              ¿Vicarius reemplaza a mi escáner de vulnerabilidades actual?
+              ¿Vicarius reemplaza a mi escaner de vulnerabilidades actual?
               <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
             </summary>
             <div class="px-6 pb-6 text-gray-600">
-              Sí. Vicarius vRx es una solución completa que cubre escaneo, priorización, proteccion
-              y remediacion. Reemplaza herramientas como Nessus, Qualys o Rapid7 para la gestion
-              de vulnerabilidades en endpoints y servidores, añadiendo la capa de remediación
-              automatizada que las herramientas tradicionales no ofrecen.
+              Si. Vicarius vRx reemplaza herramientas como Nessus, Qualys o Rapid7, y ademas agrega remediacion automatizada. Elimina el ciclo manual de escanear-reportar-parchear que consume semanas y reduce en un 80% el tiempo dedicado a parcheo manual segun datos oficiales de Vicarius.
             </div>
           </details>
 
           <details class="bg-gray-50 border border-gray-200 rounded-xl group">
             <summary class="font-semibold text-lg p-6 cursor-pointer list-none flex items-center justify-between">
-              ¿Qué sistemas operativos soporta?
+              ¿Que sistemas operativos soporta vRx?
               <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
             </summary>
             <div class="px-6 pb-6 text-gray-600">
-              Vicarius soporta Windows (Server y Desktop), las principales distribuciones Linux
-              (Ubuntu, CentOS, RHEL, Debian) y macOS. El agente es liviano (menos de 50MB de RAM)
-              y no afecta el rendimiento de los equipos.
+              Vicarius soporta Windows (Server y Desktop), Linux (Ubuntu, CentOS, RHEL, Debian) y macOS. El agente ocupa menos de 50MB de RAM y tiene impacto minimo en el rendimiento del endpoint.
             </div>
           </details>
 
           <details class="bg-gray-50 border border-gray-200 rounded-xl group">
             <summary class="font-semibold text-lg p-6 cursor-pointer list-none flex items-center justify-between">
-              ¿Cuánto tiempo toma ver resultados?
+              ¿Cuanto tiempo toma ver resultados con vRx?
               <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
             </summary>
             <div class="px-6 pb-6 text-gray-600">
-              Desde el despliegue del agente, tendra un inventario completo de vulnerabilidades
-              en menos de 24 horas. La priorizacion y las primeras remediaciones automatizadas
-              pueden ejecutarse en la primera semana. Las empresas reportan una reducción del 85%
-              en el tiempo de remediación en los primeros 90 dias.
+              El inventario completo de activos y vulnerabilidades esta disponible en menos de 24 horas desde el despliegue del agente. Vicarius reporta un MTTR (Mean Time To Remediate) promedio de 22 dias con la plataforma, frente a los 205 dias que tarda el ciclo discovery-to-remediation sin herramienta especializada.
             </div>
           </details>
         </div>
