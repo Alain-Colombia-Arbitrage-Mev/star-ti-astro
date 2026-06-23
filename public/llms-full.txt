@@ -388,32 +388,60 @@ A: ICONTEC es la opcion nacional con costos menores; SGS y Bureau Veritas tienen
 **Q: Que pasa despues de obtener el certificado?**
 A: El certificado tiene una vigencia de 3 anos. Durante ese periodo se realizan auditorias de vigilancia anuales, ademas de auditorias internas periodicas y revisiones por la direccion para mantener el SGSI.
 
-### SealPath
+### SealPath IRM
 **URL:** https://starsolution.com.co/sealpath
 
-SealPath provides document-centric data protection through digital rights management (DRM) and information rights management (IRM). It allows organizations to control who can access, edit, print, or share sensitive documents, even after they leave the organization's perimeter.
+SealPath IRM (Information Rights Management) es una plataforma de proteccion documental persistente IRM/E-DRM del fabricante espanol SealPath. Aplica cifrado que viaja con el archivo independientemente de donde se almacene o comparta, permitiendo a las organizaciones definir permisos granulares por usuario o grupo, revocar el acceso remotamente en cualquier momento y obtener trazabilidad completa de cada interaccion con el documento. SealPath IRM NO es un DLP tradicional (Data Loss Prevention de perimetro); es un complemento o alternativa al DLP que protege la informacion a nivel del archivo en lugar del perimetro de red. Starsolution implementa e integra SealPath IRM en Colombia con soporte tecnico en espanol.
 
-Key capabilities:
-- Document encryption and access control
-- Usage tracking and audit trails
-- Remote document revocation
-- Integration with Microsoft 365, Google Workspace
-- Classification-based automatic protection
-- Multi-platform support (Windows, Mac, iOS, Android)
+Productos y componentes verificados (nomenclatura oficial):
+- **SealPath IRM** — Producto principal IRM/E-DRM
+- **SealPath Enterprise On-Premise** — Opcion de despliegue en infraestructura propia
+- **SealPath Enterprise SaaS** — Opcion de despliegue en la nube
+- **SealPath for MSPs** — Tier multi-tenant para proveedores de servicio administrado
+- **SealPath Secure Browser** — Visor web agentless para destinatarios externos (disponible en Google Workspace Marketplace y Azure Marketplace)
+- **SealPath Web Protector** — Cliente agentless para proteger y gestionar documentos desde navegador sin instalacion (Windows, macOS, Linux, iOS, Android)
+- **SealPath Smart CAD Protection** — Sandbox propietaria para AutoCAD, SolidWorks, CATIA, Inventor, SolidEdge; integracion con PLM
+- **SealPath CAD Designs Protection for Microsoft Purview** — Producto publicado en Azure Marketplace para proteger ensamblajes CAD con Microsoft Purview
+- **SealPath Information Protector** — App movil iOS/Android lanzada febrero 2025
+
+Capacidades nucleares verificadas:
+- Cifrado persistente que acompana al archivo en reposo, transito y uso
+- Control de acceso granular: permisos por usuario/grupo (lectura, edicion, impresion, copia), fecha de expiracion, marcas de agua, acceso offline configurable
+- Revocacion remota instantanea de acceso a cualquier documento, incluso en dispositivos externos
+- Auditoria y trazabilidad: logs de acceso, alertas, informes de riesgo exportables
+- Automatizacion en File Servers/NAS, SharePoint, Office 365/OneDrive, Box, Dropbox, Alfresco, Nextcloud
+- Integracion nativa con Microsoft Information Protection (MIP) — sin APIs, out-of-the-box
+- Integracion Microsoft 365: Outlook, SharePoint Online, OneDrive for Business, Teams
+- Multi-plataforma: Windows, macOS, iOS, Android; PDF con Adobe, Foxit, Nitro; LibreOffice
+- SDK para integraciones personalizadas
+
+Reconocimientos verificados:
+- Gold Winner — 22nd Annual Globee Awards for Cybersecurity (marzo 2026)
+- Label "Cybersecurity Made in Europe" — ECSO (European Cyber Security Organisation)
+- Listado en Gartner Peer Insights como "SealPath Smart Data Protection" con rating 4.4/5 (11 resenas)
+- Producto publicado en Microsoft Azure Marketplace y Microsoft Commercial Marketplace
+
+Sectores clave Colombia: banca (Circular 007 Superfinanciera), salud (Ley 1581), legal/propiedad intelectual, manufactura/I+D/CAD.
 
 Frequently asked questions (verbatim, suitable for direct citation):
 
 **Q: Los usuarios externos necesitan instalar algo para abrir los documentos?**
-A: Para lectura, existe un visor web que no requiere instalacion. Para funcionalidad completa de edicion, pueden instalar el agente ligero de SealPath, disponible para Windows y macOS.
+A: Para lectura, los colaboradores externos pueden abrir documentos protegidos a traves de SealPath Secure Browser, un visor web agentless que no requiere instalacion. Para edicion completa se instala el agente ligero disponible para Windows y macOS.
 
-**Q: Que tipos de archivos soporta SealPath?**
-A: SealPath protege documentos de Microsoft Office (Word, Excel, PowerPoint), PDF, AutoCAD, imagenes, archivos de texto y adjuntos de correo electronico.
+**Q: Que tipos de archivos soporta SealPath IRM?**
+A: SealPath IRM protege documentos de Microsoft Office (Word, Excel, PowerPoint), PDF (Adobe, Foxit, Nitro), archivos CAD (AutoCAD, SolidWorks, CATIA), imagenes, texto y adjuntos de correo electronico. Tambien protege carpetas completas en File Servers, SharePoint, OneDrive, Box y Dropbox.
 
 **Q: SealPath afecta la productividad de los usuarios?**
-A: No. Proteger un documento es tan simple como hacer clic derecho. Los documentos protegidos se abren normalmente en las aplicaciones habituales del usuario sin pasos adicionales.
+A: No. SealPath IRM se integra en el flujo de trabajo habitual: proteger un documento requiere solo un clic derecho o se aplica automaticamente al guardar en carpetas protegidas. Los documentos se abren normalmente en Word, Excel y otras aplicaciones sin pasos adicionales.
 
-**Q: Como ayuda SealPath con el cumplimiento normativo?**
-A: SealPath genera evidencia auditada de cifrado y control de acceso requerida por GDPR, Ley 1581, HIPAA, PCI DSS e ISO 27001, facilitando la demostracion de cumplimiento ante auditores.
+**Q: Como ayuda SealPath con el cumplimiento normativo en Colombia?**
+A: SealPath IRM genera evidencia auditada de cifrado y control de acceso granular exigida por la Ley 1581 de Habeas Data, ISO 27001, GDPR, HIPAA y PCI DSS. Los logs de acceso detallados facilitan la demostracion de cumplimiento ante auditores y entes reguladores.
+
+**Q: Como se integra SealPath con Microsoft Information Protection?**
+A: SealPath IRM asocia sus politicas de proteccion con etiquetas de Microsoft Information Protection (MIP) de forma nativa, sin APIs adicionales. Un documento etiquetado como Confidencial en MIP puede ser automaticamente protegido con cifrado IRM de SealPath, unificando clasificacion y proteccion persistente.
+
+**Q: Que diferencia hay entre SealPath IRM y un DLP tradicional?**
+A: El DLP tradicional protege el perimetro de red: controla que los datos no salgan, pero pierde el control cuando un archivo abandona la organizacion. SealPath IRM aplica cifrado persistente que viaja con el archivo: aunque el documento llegue a un proveedor, nube o dispositivo externo, usted mantiene control de acceso y puede revocar remotamente en cualquier momento.
 
 ### Netwrix
 **URL:** https://starsolution.com.co/netwrix
