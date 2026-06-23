@@ -157,29 +157,36 @@ A: Hornetsecurity complementa y refuerza la seguridad nativa de Microsoft 365. M
 ### Proofpoint
 **URL:** https://starsolution.com.co/proofpoint
 
-Proofpoint is the global leader in email security and human-centric cybersecurity. Their platform protects organizations against phishing, business email compromise, ransomware delivered via email, and social engineering attacks targeting employees.
+Proofpoint es una empresa global de ciberseguridad especializada en proteccion centrada en personas (people-centric security). Su plataforma defiende organizaciones frente a phishing, Business Email Compromise (BEC), ransomware por correo y ataques de ingenieria social. Es Leader en el Gartner Magic Quadrant for Email Security 2025 (mas alto en Ability to Execute) y Leader en el Forrester Wave Email, Messaging and Collaboration Security Q2 2025. Starsolution implementa, integra y despliega Proofpoint en Colombia con soporte local en espanol.
 
 Key capabilities:
-- Targeted Attack Protection (TAP)
-- Email Fraud Defense against BEC/CEO fraud
-- Security Awareness Training
-- Cloud App Security Broker
-- Information Protection and DLP
-- Threat Intelligence
+- Proofpoint Nexus — plataforma de IA transversal (Language Model, Relationship Graph, Threat Intelligence, Computer Vision, Machine Learning); procesa 2.3 billones de emails al ano
+- Targeted Attack Protection (TAP) — URL Defense, Attachment Defense, sandboxing, TAP Dashboard con Very Attacked People (VAPs)
+- Email Fraud Defense — DMARC/DKIM/SPF gestionado, monitoreo de 650M+ dominios, Supplier Risk Explorer
+- Collaboration Security Prime (Prime Threat Protection) — proteccion multicanal unificada: email, Teams, Slack, SharePoint, redes sociales; lanzado abril 2025
+- Core Email Protection — bloqueo de amenazas de email de base, integracion nativa con Microsoft 365 y Google Workspace
+- ZenGuide (Proofpoint Security Awareness) — simulaciones de phishing adaptativas vinculadas a datos VAP
+- CASB (Cloud App Security Broker) — seguridad para apps cloud
+- Insider Threat Management (ITM) — deteccion de amenazas internas en endpoints, email y cloud
+- Adaptive Email DLP / Enterprise DLP — prevencion de perdida de datos
+- Threat Response Auto-Pull (TRAP) — cuarentena post-entrega de emails maliciosos
 
 Frequently asked questions (verbatim, suitable for direct citation):
 
 **Q: Proofpoint funciona con Microsoft 365 y Google Workspace?**
 A: Si. Proofpoint se integra nativamente con Microsoft 365, Google Workspace y servidores de correo on-premise mediante registros MX, sin instalar agentes en los equipos de los usuarios.
 
-**Q: Cuanto tiempo toma la implementacion?**
+**Q: Cuanto tiempo toma la implementacion de Proofpoint?**
 A: La implementacion basica toma entre 3 y 5 dias habiles. La optimizacion completa, incluyendo ajuste de politicas y modulos avanzados, se completa en 2 a 4 semanas segun el tamano de la organizacion.
 
 **Q: Que es Business Email Compromise (BEC) y como lo previene Proofpoint?**
 A: BEC es fraude donde atacantes suplantan ejecutivos para solicitar transferencias o datos sensibles. Proofpoint detecta estos ataques analizando patrones de comunicacion, metadata del remitente y comportamiento historico para identificar anomalias, incluso sin malware.
 
-**Q: Proofpoint puede capacitar a mis empleados contra phishing?**
-A: Si. El modulo Security Awareness Training incluye simulaciones de phishing personalizadas y micro-capacitaciones interactivas. Las empresas que lo implementan reducen las tasas de clic en phishing hasta un 90%.
+**Q: Proofpoint puede capacitar a mis empleados contra phishing con ZenGuide?**
+A: Si. Proofpoint ZenGuide (Proofpoint Security Awareness) incluye simulaciones de phishing personalizadas y micro-capacitaciones interactivas basadas en riesgo. Las empresas que lo implementan reducen las tasas de clic en phishing hasta un 90%.
+
+**Q: Que es Collaboration Security Prime y para quien aplica?**
+A: Collaboration Security Prime (tambien llamado Prime Threat Protection) es el tier premium unificado de Proofpoint lanzado en abril 2025. Combina proteccion multicanal (email, Teams, Slack, SharePoint), defensa contra ataques multietapa, guia de riesgo humano e impersonation protection en una sola plataforma. Aplica a empresas que buscan consolidar herramientas de seguridad, reemplazando aproximadamente 45+ soluciones puntuales por una unica plataforma.
 
 ---
 
