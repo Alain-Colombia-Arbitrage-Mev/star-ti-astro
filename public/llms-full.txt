@@ -504,29 +504,30 @@ A: No. Netwrix Privilege Secure implementa Zero Standing Privilege: las credenci
 ### Black Duck
 **URL:** https://starsolution.com.co/black-duck
 
-Black Duck (formerly Synopsys Software Integrity) provides application security testing solutions including Static Application Security Testing (SAST), Dynamic Application Security Testing (DAST), and Software Composition Analysis (SCA) for identifying vulnerabilities in proprietary and open-source code.
+Black Duck Software, Inc. is an independent application security (AppSec) company spun off from Synopsys in October 2024. Its portfolio includes Coverity (SAST), Black Duck SCA (software composition analysis and SBOM), Continuous Dynamic (DAST), Seeker (IAST), Defensics (protocol fuzzing), Software Risk Manager (ASPM), and the Black Duck Polaris Platform — a unified SaaS platform for DevSecOps. Black Duck was named a Leader in the 2025 Gartner Magic Quadrant for Application Security Testing (8th consecutive time, highest in Ability to Execute for the 6th year) and in the inaugural 2026 Gartner Magic Quadrant for Software Supply Chain Security. Organizations use Black Duck to detect vulnerabilities in proprietary code and open-source dependencies, manage license compliance, generate SBOM (SPDX, CycloneDX) and VEX exports, and integrate shift-left security into CI/CD pipelines. Starsolution implements and integrates Black Duck for enterprises in Colombia with Spanish-language support and deployment from Bogota.
 
-Key capabilities:
-- SAST - Static code analysis for security vulnerabilities
-- DAST - Dynamic runtime security testing
-- SCA - Open source component risk management
-- License compliance for open source
-- DevSecOps pipeline integration
-- SBOM (Software Bill of Materials) generation
+Key products:
+- Coverity — SAST: static source code analysis in 20+ languages (Java, C/C++, C#, Python, JavaScript/TypeScript, Go, Ruby, PHP, Kotlin, Swift, Scala)
+- Black Duck SCA — software composition analysis: CVE detection via KnowledgeBase, license risk management, SBOM (SPDX/CycloneDX), VEX (CSAF 2.0), malicious package detection
+- Continuous Dynamic — DAST: continuous dynamic security testing of running applications, production-safe payloads, AI/ML-validated near-zero false positives
+- Seeker — IAST: interactive security analysis in runtime, data flow coverage
+- Defensics — protocol fuzzing: black-box fuzzing for embedded systems, medical devices, automotive, aerospace
+- Black Duck Polaris Platform — unified SaaS (SAST + SCA + DAST + ASPM), native CI/CD integration
+- Software Risk Manager — ASPM: enterprise-scale aggregation and prioritization of AppSec findings
 
 Frequently asked questions (verbatim, suitable for direct citation):
 
-**Q: Black Duck es lo mismo que Synopsys?**
-A: Black Duck evolucionó del grupo Synopsys Software Integrity Group en 2024 como empresa independiente. Los productos mantienen la excelencia tecnica de Synopsys con mayor enfoque en seguridad de aplicaciones.
+**Q: Que es Black Duck y que productos incluye?**
+A: Black Duck Software, Inc. es una empresa independiente de seguridad de aplicaciones (AppSec) escindida de Synopsys en octubre 2024. Su portfolio incluye Coverity (SAST), Black Duck SCA (analisis de composicion y SBOM), Continuous Dynamic (DAST), Seeker (IAST), Defensics (fuzzing) y la Black Duck Polaris Platform, una plataforma SaaS unificada. Starsolution implementa e integra estos productos en Colombia con soporte en espanol.
+
+**Q: Cual es la diferencia entre Coverity, Black Duck SCA y Continuous Dynamic?**
+A: Coverity es el producto SAST de Black Duck: analiza el codigo fuente estaticamente en mas de 20 lenguajes antes de compilar. Black Duck SCA identifica componentes open source, CVEs y riesgos de licenciamiento, y genera SBOM en formatos SPDX y CycloneDX. Continuous Dynamic es el producto DAST: prueba la aplicacion en ejecucion simulando ataques reales con production-safe payloads y validacion por IA para minimizar falsos positivos.
 
 **Q: El escaneo ralentiza nuestro pipeline de CI/CD?**
-A: El impacto es minimo. El SCA tarda segundos; el SAST opera en modo incremental analizando solo el codigo modificado. Ambos se ejecutan en paralelo con el proceso de build sin bloquear el pipeline.
+A: El impacto es minimo. El SCA tarda segundos; Coverity opera en modo incremental analizando solo el codigo modificado. Ambos se ejecutan en paralelo con el proceso de build sin bloquear el pipeline. La Black Duck Polaris Platform se integra nativamente con Jenkins, GitHub Actions, GitLab CI, Azure DevOps y CircleCI.
 
-**Q: Que lenguajes de programacion soporta?**
-A: SAST cubre mas de 20 lenguajes incluyendo Java, C/C++, C#, Python, JavaScript/TypeScript, Go, Ruby y PHP. SCA soporta todos los gestores de paquetes principales de cada ecosistema.
-
-**Q: Necesito ser una empresa de software para usar Black Duck?**
-A: No. Cualquier organizacion que desarrolle o consuma software se beneficia. Los bancos, aseguradoras y empresas industriales que usan componentes open source son clientes frecuentes de Black Duck.
+**Q: Que es la Black Duck Polaris Platform y como difiere de Software Risk Manager?**
+A: Black Duck Polaris Platform es la plataforma SaaS unificada que combina SAST (Coverity), SCA (Black Duck SCA) y DAST (Continuous Dynamic) en un solo flujo DevSecOps. Software Risk Manager es el producto ASPM (Application Security Posture Management) para centralizar y priorizar hallazgos de multiples herramientas a escala empresarial. Son productos complementarios: Polaris es el punto de entrada DevSecOps; Software Risk Manager es la capa de governance para CISOs.
 
 ### DLP - Data Loss Prevention
 **URL:** https://starsolution.com.co/dlp-prevencion-perdida-datos
