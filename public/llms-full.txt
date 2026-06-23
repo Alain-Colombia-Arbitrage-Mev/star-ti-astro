@@ -405,29 +405,51 @@ A: SealPath genera evidencia auditada de cifrado y control de acceso requerida p
 ### Netwrix
 **URL:** https://starsolution.com.co/netwrix
 
-Netwrix provides identity security, data access governance, and change auditing for hybrid IT environments. The platform helps organizations understand who has access to what, detect suspicious activity, and prove compliance with regulatory requirements.
+Netwrix es una plataforma de seguridad de datos centrada en identidad ("Data Security that Starts with Identity") que integra auditoria de cambios, gobernanza de acceso a datos, PAM con Zero Standing Privilege, DLP multiplataforma, clasificacion de datos sensibles, IGA y una plataforma SaaS unificada para IA empresarial. Starsolution implementa e integra toda la linea de productos Netwrix en Colombia con soporte en espanol.
 
-Key capabilities:
-- Active Directory and Azure AD auditing
-- Data classification and access governance
-- Privileged access management
-- Change detection and alerting
-- Compliance reporting (GDPR, HIPAA, PCI-DSS, SOX)
-- User behavior analytics
+Productos principales (nomenclatura oficial 2025-2026):
+- **Netwrix 1Secure** — Plataforma SaaS-native unificada; 6 modulos: PAM, Identity Management, Directory Management, DSPM (desde mayo 2025), ITDR y Endpoint Management. Tagline: "Identity-first data security for enterprise AI."
+- **Netwrix Auditor** — Auditoria de cambios y cumplimiento; registra quien modifico que en AD, servidores de archivos, Exchange, SharePoint y Microsoft 365.
+- **Netwrix Access Analyzer** — Data Access Governance y DSPM; descubre y clasifica datos en 40+ fuentes, monitorea Microsoft Copilot. Antes llamado StealthAUDIT / Netwrix Enterprise Auditor.
+- **Netwrix Privilege Secure** — PAM con Zero Standing Privilege; acceso Just-In-Time, grabacion de sesiones privilegiadas, eliminacion de cuentas permanentes de administrador.
+- **Netwrix Endpoint Protector** — DLP multiplataforma (Windows, macOS, Linux); control de dispositivos (45+ tipos), cifrado FIPS, eDiscovery. DLP Excellence Award 2024.
+- **Netwrix Data Classification** — Clasificacion automatizada de PII, PHI, PCI; remediacion automatizada; integracion con Microsoft Information Protection. Tagline: "Find it. Classify it. Fix it."
+- **Netwrix Identity Manager** — IGA; automatizacion joiner-mover-leaver, RBAC, access reviews, modelado de roles con IA. Antes llamado Netwrix Usercube (renombrado abril 2025).
+- **Netwrix PingCastle** — Evaluacion de postura de seguridad de Active Directory.
+- **Netwrix Directory Manager** — Gestion de grupos y usuarios en AD y Microsoft Entra ID. Antes llamado GroupID.
+
+Reconocimientos vigentes:
+- Gartner Magic Quadrant PAM 2025 — 4. año consecutivo
+- KuppingerCole IGA Leadership Compass 2024 — Overall Leader / Product Leader / Innovation Leader
+- GigaOM DLP Radar 2025 — Challenger / Fast Mover
+- Cybersecurity Excellence DLP Award 2024
+- Gartner Peer Insights 4.7/5 (164 resenas, File Analysis Software / Endpoint Protector)
+
+Casos por sector en Colombia:
+- Banca: Circular 007 Superfinanciera — Netwrix Auditor + Netwrix Privilege Secure para auditar AD y eliminar cuentas privilegiadas permanentes.
+- Salud: Ley 1581 Habeas Data — Netwrix Data Classification + Netwrix Access Analyzer para clasificar PHI y gobernar accesos.
+- Gobierno: MSPI MinTIC — Netwrix 1Secure para DSPM e ITDR; Netwrix Identity Manager para ciclo de vida de identidades de funcionarios.
+- Retail: PCI DSS — Netwrix Endpoint Protector DLP para datos de tarjetas; Netwrix Auditor para servidores de archivos.
 
 Frequently asked questions (verbatim, suitable for direct citation):
 
 **Q: Netwrix requiere cambios en mi Active Directory?**
-A: No. Netwrix funciona en modo lectura mediante la captura de logs y eventos. No requiere cambios en el esquema de AD, no instala agentes en los controladores de dominio ni modifica la infraestructura existente.
+A: No. Netwrix Auditor funciona en modo lectura mediante la captura de logs y eventos. No requiere cambios en el esquema de AD, no instala agentes en los controladores de dominio ni modifica la infraestructura existente.
 
 **Q: Cuanto tiempo toma la implementacion?**
-A: Para Active Directory y servidores de archivos, la implementacion toma entre 2 y 5 dias. Un entorno hibrido completo con integraciones en la nube puede tomar entre 2 y 3 semanas.
+A: Para Active Directory y servidores de archivos, la implementacion toma entre 2 y 5 dias. Un entorno hibrido completo con integraciones en la nube puede tomar entre 2 y 3 semanas. Starsolution gestiona todo el despliegue desde Bogota con soporte en espanol.
 
 **Q: Netwrix puede ayudarme a preparar una auditoria ISO 27001?**
-A: Si. Netwrix incluye reportes predefinidos mapeados a los controles de ISO 27001 que reducen significativamente el tiempo de preparacion para auditorias de cumplimiento.
+A: Si. Netwrix incluye reportes predefinidos mapeados a los controles de ISO 27001 que reducen significativamente el tiempo de preparacion para auditorias de cumplimiento. Tambien cubre GDPR, HIPAA, PCI DSS y, para Colombia, la Ley 1581 y la Circular 007 Superfinanciera.
 
 **Q: Que tipo de alertas genera Netwrix?**
 A: Netwrix genera alertas en tiempo real para cambios en grupos administrativos, modificaciones de GPO, acceso masivo a archivos, cambios de permisos en carpetas sensibles y creacion de cuentas privilegiadas, entre otros eventos criticos.
+
+**Q: Cual es la diferencia entre Netwrix Auditor y Netwrix Access Analyzer?**
+A: Netwrix Auditor se enfoca en auditoria de cambios y cumplimiento: registra quien modifico que en AD, servidores de archivos y Microsoft 365. Netwrix Access Analyzer es el producto de Data Access Governance y DSPM: descubre y clasifica datos sensibles en 40+ fuentes, monitorea Microsoft Copilot y automatiza la remediacion de permisos. Son SKUs distintos que se complementan.
+
+**Q: Netwrix Privilege Secure es solo un gestor de contrasenas?**
+A: No. Netwrix Privilege Secure implementa Zero Standing Privilege: las credenciales privilegiadas se crean Just-In-Time para cada sesion y se eliminan al terminar. Incluye grabacion de sesiones, monitoreo en tiempo real y eliminacion de cuentas permanentes de administrador.
 
 ### Black Duck
 **URL:** https://starsolution.com.co/black-duck
