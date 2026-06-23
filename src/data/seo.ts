@@ -172,7 +172,7 @@ export const seoData: Record<string, SEOData> = {
     faqJsonLd: faqSchema([
       { q: 'Hornetsecurity funciona solo con Microsoft 365?', a: 'Si, Hornetsecurity 365 Total Protection esta disenado exclusivamente para Microsoft 365. Se integra nativamente con Exchange Online, OneDrive y SharePoint para proteccion completa del ecosistema Microsoft.' },
       { q: 'Que incluye la proteccion de Hornetsecurity?', a: 'Incluye filtrado de spam y malware, proteccion contra phishing y BEC, backup automatico de buzones, archiving de email con cumplimiento legal, y cifrado de comunicaciones. Todo gestionado desde una consola cloud unica.' },
-      { q: 'Cuanto cuesta Hornetsecurity para empresas?', a: 'Los planes van desde USD 2 por usuario al mes (Plan 1 - seguridad basica) hasta USD 6 por usuario al mes (Plan 4 - proteccion completa con backup, archiving y awareness training). Descuentos por volumen disponibles.' },
+      { q: 'Cuanto cuesta Hornetsecurity para empresas?', a: 'Hornetsecurity no publica tarifas fijas; el precio depende del plan (Business, Enterprise, Enterprise Backup o Compliance and Awareness) y del numero de buzones de Microsoft 365. Starsolution arma una cotizacion ajustada a su caso, con descuentos por volumen para mas de 100 buzones y precios especiales para sector educativo y sin animo de lucro.' },
       { q: 'Hornetsecurity reemplaza a Microsoft Defender?', a: 'Hornetsecurity complementa y refuerza la seguridad nativa de Microsoft 365. Mientras Defender ofrece proteccion basica, Hornetsecurity agrega capas avanzadas de filtrado, backup independiente y archiving que Microsoft no incluye.' },
     ]),
   },

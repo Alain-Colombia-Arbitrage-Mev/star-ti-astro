@@ -131,12 +131,14 @@ A: Kaspersky esta optimizado para consumo minimo de recursos. En equipos con Cor
 
 Hornetsecurity 365 Total Protection provides comprehensive email security, backup, and compliance for Microsoft 365 environments. It protects against phishing, malware, spam, and business email compromise (BEC) attacks while providing email archiving and backup capabilities.
 
+Plans (cumulative, official names): Plan 1 Business (spam/malware filtering, email encryption, signature & disclaimer); Plan 2 Enterprise (adds Advanced Threat Protection with sandboxing/URL rewriting/anti-BEC, Email Continuity, Email Archiving); Plan 3 Enterprise Backup (adds 365 Total Backup for Exchange/OneDrive/SharePoint/Teams); Plan 4 Compliance & Awareness (adds Security Awareness Service, 365 Permission Manager, AI Recipient Validation). Hornetsecurity does not publish fixed prices; pricing is per mailbox and quoted by Starsolution.
+
 Key capabilities:
-- AI-powered threat detection for email
-- Microsoft 365 backup and recovery
+- AI-powered threat detection for email (Advanced Threat Protection)
+- Microsoft 365 backup and recovery (365 Total Backup)
 - Email encryption and secure communication
 - Email archiving for compliance
-- Security awareness training integration
+- Security Awareness Service (employee training)
 
 Frequently asked questions (verbatim, suitable for direct citation):
 
@@ -147,7 +149,7 @@ A: Si, Hornetsecurity 365 Total Protection esta disenado exclusivamente para Mic
 A: Incluye filtrado de spam y malware, proteccion contra phishing y BEC, backup automatico de buzones, archiving de email con cumplimiento legal, y cifrado de comunicaciones. Todo gestionado desde una consola cloud unica.
 
 **Q: Cuanto cuesta Hornetsecurity para empresas?**
-A: Los planes van desde USD 2 por usuario al mes (Plan 1 - seguridad basica) hasta USD 6 por usuario al mes (Plan 4 - proteccion completa con backup, archiving y awareness training). Descuentos por volumen disponibles.
+A: Hornetsecurity no publica tarifas fijas; el precio depende del plan (Business, Enterprise, Enterprise Backup o Compliance and Awareness) y del numero de buzones de Microsoft 365. Starsolution arma una cotizacion ajustada a su caso, con descuentos por volumen para mas de 100 buzones.
 
 **Q: Hornetsecurity reemplaza a Microsoft Defender?**
 A: Hornetsecurity complementa y refuerza la seguridad nativa de Microsoft 365. Mientras Defender ofrece proteccion basica, Hornetsecurity agrega capas avanzadas de filtrado, backup independiente y archiving que Microsoft no incluye.
