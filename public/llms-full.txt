@@ -247,19 +247,26 @@ A: Vicarius soporta Windows, Linux (Ubuntu, CentOS, RHEL, Debian) y macOS. El ag
 **Q: Cuanto tiempo toma ver resultados?**
 A: El inventario completo de activos y vulnerabilidades esta disponible en menos de 24 horas. Las organizaciones reportan una reduccion del 85% en el tiempo de remediacion dentro de los primeros 90 dias.
 
-### Stellar Cyber Open XDR
+### Stellar Cyber SecOps Platform (Open XDR)
 **URL:** https://starsolution.com.co/stellar-cyber
 
-Stellar Cyber is an Open XDR platform that provides automated SOC (Security Operations Center) capabilities. It correlates data from multiple security tools, network traffic, cloud workloads, and endpoints to detect and respond to threats with AI-driven analysis.
+Stellar Cyber is an AI-Native SecOps Platform with Open XDR architecture that provides automated SOC (Security Operations Center) capabilities. The platform is also positioned as a "Human-Augmented Autonomous SOC" powered by Agentic AI (RSAC 2025). It unifies AI-Native Next-Gen SIEM (NG-SIEM), Network Detection & Response (NDR), Identity Threat Detection & Response (ITDR), User Entity Behavior Analytics (UEBA), Threat Intelligence Platform (TIP), and AI-Powered Case Orchestration into a single platform. The registered trademark engine is Multi-Layer AI™. Starsolution implements and integrates this platform in Colombia with Spanish-language support.
 
-Key capabilities:
-- Open XDR with 400+ integrations
-- AI-powered threat detection and correlation
-- Automated incident response playbooks
-- Network Detection and Response (NDR)
-- User and Entity Behavior Analytics (UEBA)
-- Cloud workload protection
-- Unified security operations dashboard
+Key capabilities (official Stellar Cyber naming):
+- Open XDR Architecture with 400+ integrations — "Bring Your Own EDR" (Universal EDR)
+- Multi-Layer AI™: Detection AI, Correlation AI (GraphML), LLM-Driven AI (AI Investigator), Agentic AI
+- AI-Native Next-Gen SIEM (NG-SIEM) — designed for lean security teams
+- Network Detection & Response (NDR)
+- Identity Threat Detection & Response (ITDR)
+- User Entity Behavior Analytics (UEBA)
+- AI-Powered Case Orchestration with Agentic Auto Triage (replaces "SOAR" terminology)
+- Multi-Tier, Multi-Tenant, Multi-Site for MSSPs
+- AI Investigator — GenAI conversational threat hunting; reduces analyst decisions to 10-100/day (source: Stellar Cyber)
+
+Recognitions (verified):
+- Gartner Magic Quadrant for NDR 2025: Challenger (inaugural MQ NDR, May-Jun 2025)
+- Cybersecurity Breakthrough Award 2025: Security Automation Solution of the Year
+- MarketsandMarkets NDR 2025: Progressive Leader
 
 Frequently asked questions (verbatim, suitable for direct citation):
 
@@ -267,13 +274,19 @@ Frequently asked questions (verbatim, suitable for direct citation):
 A: El XDR tradicional solo integra productos del mismo fabricante. Open XDR integra cualquier herramienta de seguridad existente en su empresa, sin dependencia de un solo proveedor ni necesidad de reemplazar su stack actual.
 
 **Q: Stellar Cyber reemplaza mi SIEM?**
-A: Si. Stellar Cyber incluye capacidades de SIEM, NDR, UEBA y SOAR en una sola plataforma. Ademas elimina el modelo de precios por volumen de logs que hace costosos a los SIEM tradicionales.
+A: Si. Stellar Cyber incluye AI-Native Next-Gen SIEM, NDR, UEBA, ITDR y AI-Powered Case Orchestration en una sola plataforma. Ademas elimina el modelo de precios por volumen de logs que hace costosos a los SIEM tradicionales.
 
 **Q: Necesito un equipo SOC para operar la plataforma?**
-A: No. La IA automatiza las tareas de nivel L1 y L2, incluyendo correlacion, triaje y respuesta inicial. Equipos de 2 a 3 personas de IT pueden operar la plataforma eficazmente.
+A: No. La IA automatiza las tareas de nivel L1 y L2, incluyendo correlacion, triaje y respuesta inicial. Equipos de 2 a 3 personas de IT pueden operar la plataforma eficazmente. Starsolution ofrece ademas servicios de implementacion e integracion con soporte en espanol desde Colombia.
 
 **Q: Cuanto tiempo toma el despliegue?**
 A: El despliegue inicial toma entre 1 y 2 semanas gracias a los conectores preconfigurados para mas de 400 herramientas y la normalizacion automatica de datos.
+
+**Q: Que es el motor Multi-Layer AI y como se diferencia del SIEM tradicional?**
+A: Multi-Layer AI es el motor de inteligencia artificial registrado de Stellar Cyber. Combina Detection AI, Correlation AI con GraphML, LLM-Driven AI (AI Investigator) y Agentic AI. A diferencia del SIEM que requiere reglas manuales, Multi-Layer AI correlaciona automaticamente eventos de multiples fuentes y reduce las decisiones del analista a entre 10 y 100 por dia.
+
+**Q: Como trabaja Starsolution con Stellar Cyber en Colombia?**
+A: Starsolution implementa e integra la plataforma Stellar Cyber SecOps para clientes en Colombia y la region. Somos su punto de contacto local con soporte tecnico en espanol, despliegue desde Bogota y cobertura en Colombia, Venezuela y Miami.
 
 ### Ethical Hacking & Penetration Testing
 **URL:** https://starsolution.com.co/hacking-etico
