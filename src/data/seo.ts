@@ -114,7 +114,7 @@ export const seoData: Record<string, SEOData> = {
   // =====================================================
   bitdefender: {
     title: 'Bitdefender GravityZone Colombia | Starsolution',
-    description: 'Implementamos Bitdefender GravityZone EDR/XDR/MDR en empresas colombianas. Despliegue desde Bogota, soporte en espanol, integracion Active Directory y cumplimiento ISO 27001 / Habeas Data Ley 1581.',
+    description: 'Implementamos Bitdefender GravityZone (EDR/XDR/MDR) en empresas colombianas. Partner oficial en Bogota, soporte en espanol y cumplimiento ISO 27001 / Ley 1581.',
     keywords: 'Bitdefender empresas Colombia, GravityZone EDR, antivirus corporativo, endpoint security, XDR, partner Bitdefender',
     canonical: `${BASE_URL}/bitdefender`,
     ogTitle: 'Bitdefender GravityZone | Seguridad Endpoint Empresarial',
@@ -124,7 +124,7 @@ export const seoData: Record<string, SEOData> = {
     jsonLd: product(
       'Bitdefender GravityZone',
       'Bitdefender',
-      'Plataforma unificada de seguridad empresarial con EDR, XDR, MDR + SOC, CSPM Plus y Patch Management. Lider en Gartner Magic Quadrant 2025 y MITRE ATT&CK 2024.',
+      'Plataforma unificada de seguridad empresarial con EDR, XDR, Bitdefender MDR (SOC 24x7), CSPM+ y Patch Management. Reconocida como Visionary en el Gartner Magic Quadrant 2026 y con 100% de cobertura en MITRE ATT&CK 2024.',
       { rating: { value: '4.9', count: '127' }, image: `${BASE_URL}/og-default.png` },
     ),
     faqJsonLd: faqSchema([

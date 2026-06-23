@@ -30,8 +30,8 @@ Bitdefender GravityZone is an AI-powered enterprise security platform that unifi
 GravityZone modules covered by Starsolution:
 - **EDR (Endpoint Detection & Response):** rebuilds the attack chain on every compromised laptop or server and contains incidents from the console without on-site visits.
 - **XDR (Extended Detection & Response):** correlates endpoint, network, Microsoft 365 and identity telemetry so a single alert becomes a contextual incident.
-- **MDR + SOC 24x7:** Bitdefender's global SOC monitors after hours; Starsolution acts as the local Spanish-speaking escalation point for Colombian clients.
-- **CSPM Plus:** continuous posture management for AWS and Azure, detects public S3 buckets, IAM drift and misconfigurations against ISO 27001 and Habeas Data Ley 1581.
+- **Bitdefender MDR (SOC 24x7):** Bitdefender's global SOC monitors after hours with an "analysis, not alerts" approach; Starsolution acts as the local Spanish-speaking escalation point for Colombian clients.
+- **CSPM+:** continuous posture management (with CIEM and threat detection) for AWS, Azure and Google Cloud, detects public S3 buckets, IAM drift and misconfigurations against ISO 27001 and Habeas Data Ley 1581.
 - **Patch Management:** scheduled patching for Windows, macOS and 3rd-party apps without a second agent.
 - **HyperDetect AI:** tunable machine-learning detection trained on 15+ years of telemetry.
 - **Sandbox Analyzer:** automated detonation of suspicious files in cloud sandbox.
@@ -41,12 +41,13 @@ GravityZone modules covered by Starsolution:
 Plan tiers offered by Starsolution Colombia:
 | Plan | Range | Includes |
 |------|-------|----------|
-| GravityZone Small Business | 10-100 devices | Antimalware, firewall, anti-ransomware, cloud console |
+| GravityZone Small Business Security | 10-100 devices | Antimalware, firewall, anti-ransomware, cloud console |
 | GravityZone Business Security Premium | 100-1,000 devices | Adds HyperDetect, Sandbox, Patch Management, Full Disk Encryption |
-| GravityZone XDR + MDR | 1,000+ devices | Adds EDR, XDR, MDR + SOC 24x7, CSPM Plus multi-cloud |
+| GravityZone Business Security Enterprise + Defense XDR + Bitdefender MDR | 1,000+ devices | Adds native EDR, XDR, Bitdefender MDR (SOC 24x7), CSPM+ multi-cloud |
 
 Recognitions referenced on the page:
-- Forrester Wave Extended Detection and Response Q2 2024 - Leader
+- Gartner Magic Quadrant for Endpoint Protection Platforms 2026 - Visionary
+- Forrester Wave Extended Detection and Response Q2 2024 - Strong Performer
 - Gartner Peer Insights Customers' Choice 2026
 - AV-Comparatives Endpoint Prevention and Response (EPR) 2025
 - AV-TEST Best Performance and Protection Award 2023
