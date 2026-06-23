@@ -192,33 +192,41 @@ A: Collaboration Security Prime (tambien llamado Prime Threat Protection) es el 
 
 ## Star Inspection - Visibility & Threat Detection
 
-### Enthec - Attack Surface Monitoring
+### Enthec - Cibervigilancia TEM (Kartos y Qondar)
 **URL:** https://starsolution.com.co/enthec
 
-Enthec provides continuous attack surface monitoring and leaked credential detection. The platform scans the dark web, deep web, and public internet to identify exposed credentials, vulnerable assets, misconfigured services, and shadow IT associated with your organization.
+Enthec (ENTHEC Solutions S.L.) is an Advanced AI-driven Cyber-Surveillance Platform specialized in Threat Exposure Management (TEM). It offers two products: **Kartos** (Corporate Threat Watchbots) for External Attack Surface Management (EASM) of organizations, and **Qondar** (Personal Threat Watchbots) for surveillance of individuals' digital identity (executives, VIPs, C-level). Starsolution implements and integrates Kartos and Qondar in Colombia with Spanish-language support from Bogota.
 
-Key capabilities:
-- Continuous external attack surface discovery
-- Dark web monitoring for leaked credentials and data
-- Compromised identity detection
-- Shadow IT discovery (unauthorized SaaS usage)
-- Exposed infrastructure identification
-- Automated alerting with risk scoring
-- Free initial diagnostic available
+Kartos key capabilities:
+- Continuous monitoring of internet, deep web, dark web, and social networks
+- Real-time leaked credential detection
+- Brand protection: lookalike domains, phishing, impersonation
+- Third-party / supply chain risk assessment (non-intrusive)
+- Vulnerability detection in external assets (CVEs)
+- 100% AI Non-Intrusive — no agents, no internal network access
+- System classification across 11 threat vectors
+- Listed on Gartner Peer Insights: IT Vendor Risk Management Solutions and Threat Intelligence Products
+
+Qondar key capabilities:
+- Real-time alerts on personal data leaks
+- Monitoring of 6 asset categories: financial, personal documents, personal data, email, phone, social media accounts
+- Social conversation analysis: Telegram, X, LinkedIn, Facebook, Instagram, TikTok
+- 100% proprietary technology, no third-party dependencies
+- Award: Producto mas Innovador — XVII Trofeos de la Seguridad TIC 2024 (Red Seguridad)
 
 Frequently asked questions (verbatim, suitable for direct citation):
 
-**Q: Necesito instalar algo en mis servidores?**
-A: No. Enthec opera 100% de forma externa sin agentes, sin acceso a la red interna ni permisos especiales. El monitoreo se realiza desde fuera de su infraestructura, como lo haria un atacante real.
+**Q: Que es Enthec y cuales son sus productos?**
+A: Enthec es una plataforma avanzada de cibervigilancia impulsada por IA (Advanced AI-driven Cyber-Surveillance Platform). Sus dos productos son Kartos, para monitoreo de la superficie de ataque externa corporativa (EASM), y Qondar, para vigilancia de la identidad digital de personas como directivos y altos cargos. Starsolution implementa ambas soluciones en Colombia con soporte en espanol.
 
-**Q: Que tan frecuente es el monitoreo?**
-A: El monitoreo es continuo 24/7. Las alertas de credenciales filtradas se entregan en tiempo real, mientras que los informes consolidados de superficie de ataque se generan semanalmente.
+**Q: Necesito instalar algo en mis servidores para usar Kartos?**
+A: No. Kartos opera 100% de forma externa y no intrusiva, sin agentes, sin acceso a la red interna ni permisos especiales. Solo ingresa el dominio de su empresa y el monitoreo comienza de forma automatica, tal como lo haria un atacante externo.
 
-**Q: En que consiste el diagnostico gratuito?**
-A: El diagnostico inicial analiza su dominio corporativo para revelar credenciales filtradas, servicios expuestos y activos digitales vulnerables. Incluye un reporte ejecutivo sin compromiso ni instalacion requerida.
+**Q: En que consiste el diagnostico gratuito de exposicion?**
+A: El diagnostico inicial analiza su dominio corporativo para revelar credenciales filtradas, servicios expuestos y activos digitales vulnerables visibles desde internet. Incluye un reporte ejecutivo con hallazgos concretos y recomendaciones de remediacion, sin costo ni compromiso de compra.
 
-**Q: Que tipo de empresas necesitan este servicio?**
-A: Cualquier organizacion con presencia digital necesita monitoreo de superficie de ataque. Es especialmente critico para empresas de finanzas, salud, gobierno y cualquier sector que maneje datos sensibles de clientes.
+**Q: Que diferencia hay entre Kartos y Qondar?**
+A: Kartos (Corporate Threat Watchbots) protege la superficie de ataque externa de la empresa: dominios, credenciales, dark web, phishing y supply chain. Qondar (Personal Threat Watchbots) protege la identidad digital de personas individuales como directivos, VIPs o altos cargos, monitoreando filtraciones de datos personales, financieros y presencia en redes sociales y foros.
 
 ### Vicarius vRx
 **URL:** https://starsolution.com.co/vicarius

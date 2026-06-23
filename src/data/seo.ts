@@ -199,20 +199,20 @@ export const seoData: Record<string, SEOData> = {
   // STAR INSPECTION
   // =====================================================
   enthec: {
-    title: 'Enthec | Superficie de Ataque | Starsolution',
-    description: 'Enthec: monitoreo de superficie de ataque y credenciales filtradas. Diagnostico GRATUITO de exposicion. Descubra su riesgo real hoy.',
-    keywords: 'Enthec, superficie de ataque, credenciales filtradas, dark web monitoreo, OSINT, attack surface management Colombia',
+    title: 'Enthec Kartos y Qondar | Cibervigilancia | Starsolution',
+    description: 'Enthec: cibervigilancia TEM con Kartos (EASM corporativo) y Qondar (vigilancia de personas). Diagnostico gratuito de exposicion en Colombia.',
+    keywords: 'Enthec, Kartos, Qondar, cibervigilancia, EASM, Threat Exposure Management, superficie de ataque, credenciales filtradas, dark web Colombia',
     canonical: `${BASE_URL}/enthec`,
-    ogTitle: 'Enthec - Monitoreo de Superficie de Ataque',
+    ogTitle: 'Enthec Kartos y Qondar - Cibervigilancia en Colombia | Starsolution',
     ogType: 'website',
     ogImage: `${BASE_URL}/og-default.png`,
     breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Star Inspection', url: '/#star-inspection' }, { name: 'Enthec', url: '/enthec' }],
-    jsonLd: product('Enthec Attack Surface Monitoring', 'Enthec', 'Monitoreo continuo de superficie de ataque externa y deteccion de credenciales filtradas', { rating: { value: '4.7', count: '41' }, image: `${BASE_URL}/og-default.png` }),
+    jsonLd: product('Enthec Kartos - Corporate Threat Watchbots', 'Enthec', 'Kartos es la plataforma EASM de Enthec para monitoreo continuo de la superficie de ataque externa corporativa: credenciales filtradas, dark web, phishing y riesgo de terceros. Starsolution lo implementa en Colombia con soporte en espanol.', { rating: { value: '4.7', count: '41' }, image: `${BASE_URL}/og-default.png` }),
     faqJsonLd: faqSchema([
-      { q: 'Necesito instalar algo en mis servidores?', a: 'No. Enthec opera 100% de forma externa sin agentes, sin acceso a la red interna ni permisos especiales. El monitoreo se realiza desde fuera de su infraestructura, como lo haria un atacante real.' },
-      { q: 'Que tan frecuente es el monitoreo?', a: 'El monitoreo es continuo 24/7. Las alertas de credenciales filtradas se entregan en tiempo real, mientras que los informes consolidados de superficie de ataque se generan semanalmente.' },
-      { q: 'En que consiste el diagnostico gratuito?', a: 'El diagnostico inicial analiza su dominio corporativo para revelar credenciales filtradas, servicios expuestos y activos digitales vulnerables. Incluye un reporte ejecutivo sin compromiso ni instalacion requerida.' },
-      { q: 'Que tipo de empresas necesitan este servicio?', a: 'Cualquier organizacion con presencia digital necesita monitoreo de superficie de ataque. Es especialmente critico para empresas de finanzas, salud, gobierno y cualquier sector que maneje datos sensibles de clientes.' },
+      { q: 'Que es Enthec y cuales son sus productos?', a: 'Enthec es una plataforma avanzada de cibervigilancia impulsada por IA (Advanced AI-driven Cyber-Surveillance Platform). Sus dos productos son Kartos, para monitoreo de la superficie de ataque externa corporativa (EASM), y Qondar, para vigilancia de la identidad digital de personas como directivos y altos cargos. Starsolution implementa ambas soluciones en Colombia con soporte en espanol.' },
+      { q: 'Necesito instalar algo en mis servidores para usar Kartos?', a: 'No. Kartos opera 100% de forma externa y no intrusiva, sin agentes, sin acceso a la red interna ni permisos especiales. Solo ingresa el dominio de su empresa y el monitoreo comienza de forma automatica, tal como lo haria un atacante externo.' },
+      { q: 'En que consiste el diagnostico gratuito de exposicion?', a: 'El diagnostico inicial analiza su dominio corporativo para revelar credenciales filtradas, servicios expuestos y activos digitales vulnerables visibles desde internet. Incluye un reporte ejecutivo con hallazgos concretos y recomendaciones de remediacion, sin costo ni compromiso de compra.' },
+      { q: 'Que diferencia hay entre Kartos y Qondar?', a: 'Kartos (Corporate Threat Watchbots) protege la superficie de ataque externa de la empresa: dominios, credenciales, dark web, phishing y supply chain. Qondar (Personal Threat Watchbots) protege la identidad digital de personas individuales como directivos, VIPs o altos cargos, monitoreando filtraciones de datos personales, financieros y presencia en redes sociales y foros.' },
     ]),
   },
   vicarius: {
