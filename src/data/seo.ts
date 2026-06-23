@@ -43,12 +43,13 @@ function product(
       reviewCount: opts.rating.count,
       bestRating: '5',
     };
+    const productLabel = name.startsWith(brand) ? name : `${brand} ${name}`;
     base.review = [
       {
         '@type': 'Review',
         author: { '@type': 'Person', name: 'Carlos Mendoza' },
         reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
-        reviewBody: `Implementacion de ${brand} ${name} sin fricciones, soporte local en espanol y reportes listos para auditoria ISO 27001.`,
+        reviewBody: `Implementacion de ${productLabel} sin fricciones, soporte local en espanol y reportes listos para auditoria ISO 27001.`,
       },
     ];
   }
