@@ -12,8 +12,9 @@ Plan réplica: docs/superpowers/plans/2026-06-23-replica-f1-f3-sitio-completo.md
 - [x] Kaspersky (dossier + content 4078718) — eliminó claim falso MITRE, "Strategic Leader", 4→6 tiers
 - [x] Hornetsecurity (dossier + content 69f4117) — corrigió tabla de planes invertida, quitó precios USD no oficiales
 
-## PENDIENTE F2 marcas neutras (orden de prioridad)
-- [ ] proofpoint, netwrix, stellar-cyber, sealpath (lote B1-B4)
+## F2 marcas neutras
+- [x] proofpoint (b3992cb), netwrix (45b1bae), stellar-cyber (8c96cb7), sealpath (84f51dc) — lote B1-B4 COMPLETO
+- [x] fix central llms: partners oficiales vs resto (9d75782)
 - [ ] vicarius, enthec, black-duck, soti-mdm (lote B5-B8)
 - [ ] rthreat-bogota-colombia, teamviewer, anydesk, brother (lote C1-C4)
 
