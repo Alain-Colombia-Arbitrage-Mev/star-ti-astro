@@ -46,8 +46,8 @@ Cada página de marca debe contener, en este orden:
 Política **mixta**:
 - Por defecto, lenguaje neutro y siempre verdadero: "implementamos", "desplegamos", "integramos".
 - Se usa "partner/reseller oficial" **solo** en las marcas que el usuario confirme expresamente.
-- Lista de marcas con partnership confirmado: _(pendiente de confirmar con el usuario; hasta
-  entonces, todas en lenguaje neutro)_.
+- Marcas con partnership oficial confirmado: **Bitdefender, Kaspersky, Hornetsecurity**.
+- El resto de marcas: lenguaje neutro ("implementamos / desplegamos / integramos").
 
 ## Fases
 
