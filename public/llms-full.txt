@@ -1,6 +1,6 @@
 # Starsolution S.A.S. - Full Documentation
 
-> Starsolution is an enterprise cybersecurity company headquartered in Bogota, Colombia, with regional offices in Caracas, Venezuela and Miami, Florida. Founded in 2013, we protect over 3,000 businesses across Latin America and the United States. Our approach is organized into three pillars of digital resilience: Star Protection (endpoint and email defense), Star Inspection (visibility, threat detection, and offensive security), and Star Compliance (governance, standards, and data protection).
+> Starsolution is an enterprise cybersecurity company headquartered in Bogota, Colombia, with regional offices in Caracas, Venezuela and Orlando, Florida (serving Miami and South Florida). Founded in 2013, we protect over 3,000 businesses across Latin America and the United States. Our approach is organized into three pillars of digital resilience: Star Protection (endpoint and email defense), Star Inspection (visibility, threat detection, and offensive security), and Star Compliance (governance, standards, and data protection).
 
 ## Company Profile
 
@@ -647,15 +647,16 @@ Authorized Brother distributor for enterprise printers, multifunction devices, l
 - Hours: Monday to Friday, 8:00 AM - 6:00 PM (COT, UTC-5)
 
 ### Venezuela
-- Location: Caracas, Venezuela
-- Phone: +58 424 123 4567
+- Address: Ed. Centro Empresarial Torre Araujo, M. OF A-1, Caracas, Venezuela
+- Phone: +58 424 149 9856
 - Email: venezuela@star-ti.com
 - Website: https://starsolution.com.co/venezuela
 - Contact form: https://starsolution.com.co/venezuela/contacto
 
-### Miami, FL (United States)
-- Location: Miami, Florida, USA
-- Phone: +1 (305) 123-4567
+### United States (Florida)
+- Address: 8103 Gables Commons Dr, Orlando, FL 32821, USA
+- Serves Miami and South Florida (Miami-Dade, Broward, Palm Beach) with remote and on-site services
+- Phone: +1 321 438 6777
 - Email: miami@star-ti.com
 - Website: https://starsolution.com.co/miami
 - Contact form: https://starsolution.com.co/miami/contacto
