@@ -8,6 +8,10 @@ export interface SEOData {
   ogImage?: string;
   noindex?: boolean;
   lang?: string;
+  /** Alternates hreflang: solo para paginas con version regional equivalente (home, venezuela, miami). */
+  hreflang?: { lang: string; href: string }[];
+  /** Origenes externos que la pagina realmente consume (preconnect solo donde aplica). */
+  preconnect?: string[];
   breadcrumb?: { name: string; url: string }[];
   jsonLd?: Record<string, unknown>;
   faqJsonLd?: Record<string, unknown>;
@@ -15,6 +19,20 @@ export interface SEOData {
 
 const BASE_URL = 'https://starsolution.com.co';
 const ORG = { '@type': 'Organization' as const, name: 'Starsolution S.A.S.', url: BASE_URL };
+
+// Clusters hreflang: solo paginas con equivalente regional real
+const HREFLANG_HOME = [
+  { lang: 'es-CO', href: BASE_URL },
+  { lang: 'es-VE', href: `${BASE_URL}/venezuela` },
+  { lang: 'en-US', href: `${BASE_URL}/miami` },
+  { lang: 'x-default', href: BASE_URL },
+];
+const HREFLANG_CONTACTO = [
+  { lang: 'es-CO', href: `${BASE_URL}/contacto` },
+  { lang: 'es-VE', href: `${BASE_URL}/venezuela/contacto` },
+  { lang: 'en-US', href: `${BASE_URL}/miami/contacto` },
+  { lang: 'x-default', href: `${BASE_URL}/contacto` },
+];
 
 function product(
   name: string,
@@ -91,6 +109,7 @@ export const seoData: Record<string, SEOData> = {
     ogTitle: 'Starsolution - Ciberseguridad Empresarial Colombia',
     ogType: 'website',
     ogImage: `${BASE_URL}/og-default.png`,
+    hreflang: HREFLANG_HOME,
     breadcrumb: [{ name: 'Inicio', url: '/' }],
     jsonLd: {
       '@context': 'https://schema.org',
@@ -121,6 +140,7 @@ export const seoData: Record<string, SEOData> = {
     ogTitle: 'Bitdefender GravityZone | Seguridad Endpoint Empresarial',
     ogType: 'website',
     ogImage: `${BASE_URL}/og-default.png`,
+    preconnect: ['https://www.bitdefender.com'],
     breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Star Protection', url: '/#star-protection' }, { name: 'Bitdefender', url: '/bitdefender' }],
     jsonLd: product(
       'Bitdefender GravityZone',
@@ -271,20 +291,20 @@ export const seoData: Record<string, SEOData> = {
     ]),
   },
   'rthreat-bogota-colombia': {
-    title: 'Red Team y BAS con rThreat | Starsolution Colombia',
-    description: 'Simulacion de brechas y ataques (BAS) con rThreat. Red Team con malware real en entornos controlados. Valide sus controles de seguridad.',
-    keywords: 'red team Colombia, BAS breach attack simulation, rThreat, simulacion ataques, pentesting avanzado, zero-day',
+    title: 'Red Team y BAE con rThreat | Starsolution Colombia',
+    description: 'Breach and Attack Emulation (BAE) con rThreat en Colombia. Valide EDR, SIEM y controles con malware real en entornos controlados. Soporte en espanol.',
+    keywords: 'red team Colombia, breach attack emulation, BAE, rThreat, emulacion ataques, pentesting avanzado, zero-day, validacion controles seguridad',
     canonical: `${BASE_URL}/rthreat-bogota-colombia`,
-    ogTitle: 'Red Team & BAS - Simulacion de Ataques con rThreat',
+    ogTitle: 'Red Team & Breach and Attack Emulation con rThreat Colombia',
     ogType: 'website',
     ogImage: `${BASE_URL}/og-default.png`,
     breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Star Inspection', url: '/#star-inspection' }, { name: 'rThreat Red Team', url: '/rthreat-bogota-colombia' }],
-    jsonLd: service('Red Team & Breach and Attack Simulation', 'Advanced Penetration Testing with BAS'),
+    jsonLd: service('Red Team & Breach and Attack Emulation', 'Advanced Security Validation with BAE Platform rThreat'),
     faqJsonLd: faqSchema([
+      { q: 'Cual es la diferencia entre Breach and Attack Emulation (BAE) y Breach and Attack Simulation (BAS)?', a: 'BAE, como la que implementa rThreat, ejecuta artefactos de malware reales con variaciones de ofuscacion y tecnicas de evasion actuales. BAS tradicional usa firmas sinteticas que los EDR modernos ya conocen. Solo la emulacion con malware real valida si su stack detecta amenazas que los atacantes reales usan hoy.' },
+      { q: 'Es seguro ejecutar simulaciones de ataque en produccion?', a: 'Si. rThreat ejecuta malware real en entornos controlados: contenedores efimeros o sandbox aislados con kill switches automaticos. Las emulaciones no danan sistemas ni datos. Cada ejercicio incluye un plan de contingencia coordinado con su equipo de TI antes de comenzar.' },
+      { q: 'Cada cuanto se debe realizar un ejercicio de Red Team con rThreat?', a: 'Se recomienda al menos una vez al ano para empresas reguladas y cada 6 meses para organizaciones con alto perfil de riesgo. rThreat puede ejecutarse de forma continua como plataforma de validacion permanente, complementando los ejercicios de Red Team puntuales.' },
       { q: 'Cual es la diferencia entre Red Team y pentesting?', a: 'El pentesting busca vulnerabilidades tecnicas en un alcance definido. El Red Team simula un atacante real sin restricciones de alcance, incluyendo ingenieria social, acceso fisico y ataques multi-vector, evaluando la capacidad de deteccion y respuesta de toda la organizacion.' },
-      { q: 'Que es Breach and Attack Simulation (BAS)?', a: 'BAS es una plataforma automatizada que simula ataques reales contra su infraestructura de forma continua. A diferencia del pentesting manual que es puntual, BAS ejecuta escenarios de ataque 24/7 validando que sus controles de seguridad detecten y bloqueen amenazas conocidas.' },
-      { q: 'Cada cuanto se debe realizar un ejercicio de Red Team?', a: 'Se recomienda al menos una vez al ano para empresas reguladas y cada 6 meses para organizaciones con alto perfil de riesgo. BAS puede ejecutarse continuamente como complemento entre ejercicios de Red Team.' },
-      { q: 'Es seguro ejecutar simulaciones de ataque en produccion?', a: 'Si, rThreat utiliza malware real pero en entornos controlados con kill switches automaticos. Las simulaciones no danan sistemas ni datos. Cada ejercicio incluye un plan de contingencia y comunicacion con su equipo de TI.' },
     ]),
   },
 
@@ -541,6 +561,7 @@ export const seoData: Record<string, SEOData> = {
     ogTitle: 'Contacto - Starsolution',
     ogType: 'website',
     ogImage: `${BASE_URL}/og-default.png`,
+    hreflang: HREFLANG_CONTACTO,
     breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Contacto', url: '/contacto' }],
     jsonLd: {
       '@context': 'https://schema.org',
@@ -599,6 +620,7 @@ export const seoData: Record<string, SEOData> = {
     ogTitle: 'Starsolution Venezuela - Ciberseguridad Empresarial',
     ogType: 'website',
     ogImage: `${BASE_URL}/og-default.png`,
+    hreflang: HREFLANG_HOME,
     breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Venezuela', url: '/venezuela' }],
     jsonLd: {
       '@context': 'https://schema.org',
@@ -638,6 +660,7 @@ export const seoData: Record<string, SEOData> = {
     ogTitle: 'Contacto - Starsolution Venezuela',
     ogType: 'website',
     ogImage: `${BASE_URL}/og-default.png`,
+    hreflang: HREFLANG_CONTACTO,
     breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Venezuela', url: '/venezuela' }, { name: 'Contacto', url: '/venezuela/contacto' }],
     jsonLd: {
       '@context': 'https://schema.org',
@@ -655,6 +678,7 @@ export const seoData: Record<string, SEOData> = {
     ogType: 'website',
     ogImage: `${BASE_URL}/og-default.png`,
     lang: 'en',
+    hreflang: HREFLANG_HOME,
     breadcrumb: [{ name: 'Home', url: '/' }, { name: 'Miami', url: '/miami' }],
     jsonLd: {
       '@context': 'https://schema.org',
@@ -758,7 +782,7 @@ export const seoData: Record<string, SEOData> = {
   },
 
   'blog/ransomware-empresas-colombia': {
-    title: 'Ransomware en Empresas Colombianas: Guia de Prevencion y Respuesta 2026 | Starsolution',
+    title: 'Ransomware en Colombia: Prevencion y Respuesta 2026 | Starsolution',
     description: 'Como prevenir y responder al ransomware en Colombia. Estadisticas 2025-2026, fases del ataque, capas de defensa EDR/backup/email y plan de respuesta a incidentes.',
     keywords: 'ransomware empresas Colombia, proteccion ransomware, como prevenir ransomware empresa, ataque ransomware Colombia, respuesta incidentes ransomware, EDR anti-ransomware',
     canonical: `${BASE_URL}/blog/ransomware-empresas-colombia`,
@@ -814,7 +838,7 @@ export const seoData: Record<string, SEOData> = {
   },
 
   'blog/respuesta-incidentes-ciberseguridad': {
-    title: 'Respuesta a Incidentes de Ciberseguridad: Plan Paso a Paso | Starsolution',
+    title: 'Respuesta a Incidentes: Plan Paso a Paso | Starsolution',
     description: 'Guia completa de respuesta a incidentes de ciberseguridad para empresas colombianas. Las 6 fases NIST, equipo CSIRT, herramientas y normativa Ley 1581 y SFC.',
     keywords: 'respuesta a incidentes ciberseguridad, plan respuesta incidentes, CSIRT empresas Colombia, NIST SP 800-61, gestion incidentes seguridad, incidente ransomware Colombia',
     canonical: `${BASE_URL}/blog/respuesta-incidentes-ciberseguridad`,
@@ -889,6 +913,7 @@ export const seoData: Record<string, SEOData> = {
     ogType: 'website',
     ogImage: `${BASE_URL}/og-default.png`,
     lang: 'en',
+    hreflang: HREFLANG_CONTACTO,
     breadcrumb: [{ name: 'Home', url: '/' }, { name: 'Miami', url: '/miami' }, { name: 'Contact', url: '/miami/contacto' }],
     jsonLd: {
       '@context': 'https://schema.org',

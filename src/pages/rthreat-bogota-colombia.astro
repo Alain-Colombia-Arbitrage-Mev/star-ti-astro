@@ -31,7 +31,7 @@ const seo = seoData['rthreat-bogota-colombia'];
             <span class="block text-red-700">Amenazas Reales</span>
           </h1>
           <p class="text-xl text-[#64748b] leading-relaxed mb-8">
-            Starsolution implementa la tecnología BAS (Breach and Attack Simulation) de rThreat para exponer
+            Starsolution integra la plataforma de Breach and Attack Emulation (BAE) de rThreat para exponer
             brechas desconocidas antes de que los criminales las exploten.
           </p>
           <div class="flex flex-col sm:flex-row gap-4">
@@ -83,13 +83,21 @@ const seo = seoData['rthreat-bogota-colombia'];
     </div>
   </section>
 
+  <!-- GEO / AI Discoverability Block -->
+  <section class="bg-white pt-14 sm:pt-16" aria-labelledby="que-es-rthreat">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 id="que-es-rthreat" class="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">¿Que es RThreat?</h2>
+      <p class="text-lg text-gray-700 leading-relaxed">rThreat es una plataforma de Breach and Attack Emulation (BAE) que valida las defensas de la organización ejecutando artefactos de malware reales —incluyendo zero-days propios— en entornos controlados, a diferencia de las plataformas BAS tradicionales que usan simulaciones sintéticas. La plataforma emula ataques de adversarios avanzados, mapea los resultados a TTPs de MITRE ATT&CK, y valida la eficacia real de EDR, firewalls y SIEM mediante ejecuciones seguras que no afectan la producción. La utilizan equipos SOC, red teams y profesionales de seguridad que necesitan evidencia auditable de la postura defensiva de su organización. Starsolution implementa e integra rThreat en Colombia con soporte en español, acompañamiento en la interpretación de resultados y generación de evidencia para auditorías regulatorias.</p>
+    </div>
+  </section>
+
   <!-- BAS Section -->
   <section class="py-24 bg-white">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
         <div>
           <h2 class="text-4xl font-bold text-[#0f172a] mb-6 leading-tight">
-            Breach and Attack Simulation (BAS) de Próxima Generación
+            Breach and Attack Emulation (BAE) de Próxima Generación
           </h2>
           <div class="space-y-6 mb-8">
             <p class="text-[#475569] leading-relaxed">
@@ -183,8 +191,7 @@ const seo = seoData['rthreat-bogota-colombia'];
       <div class="text-center mb-16">
         <h2 class="text-4xl font-bold text-[#0f172a] mb-4">Capacidades Ofensivas</h2>
         <p class="text-lg text-[#64748b] max-w-3xl mx-auto">
-          Nuestro servicio con rThreat incluye la simulación de técnicas ofensivas avanzadas del
-          <strong> MITRE ATT&amp;CK Full Kill Chain</strong>
+          Nuestro servicio con rThreat emula técnicas ofensivas avanzadas de adversarios reales, mapeadas al framework MITRE ATT&amp;CK.
         </p>
       </div>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -297,8 +304,7 @@ const seo = seoData['rthreat-bogota-colombia'];
         <div>
           <h2 class="text-4xl font-bold mb-6">&iquest;Por qué rThreat?</h2>
           <p class="text-gray-300 leading-relaxed mb-8">
-            rThreat es la plataforma líder en BAS (Breach and Attack Simulation) utilizada por Fortune 500
-            y gobiernos para validar continuamente sus controles de seguridad contra amenazas del mundo real.
+            rThreat es una plataforma de Breach and Attack Emulation (BAE) que permite validar continuamente los controles de seguridad ejecutando artefactos de malware reales —incluyendo zero-days propios— en entornos controlados, sin riesgo para la producción.
           </p>
           <div class="space-y-4">
             <div class="flex items-start gap-4">
@@ -338,20 +344,20 @@ const seo = seoData['rthreat-bogota-colombia'];
         </div>
         <div class="grid grid-cols-2 gap-6">
           <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-            <div class="text-5xl font-bold text-red-700 mb-2">24/7</div>
-            <p class="text-gray-300 text-sm">Simulación Continua</p>
+            <div class="text-5xl font-bold text-red-700 mb-2">BAE</div>
+            <p class="text-gray-300 text-sm">Emulación con artefactos reales, no simulación sintética</p>
           </div>
           <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-            <div class="text-5xl font-bold text-red-700 mb-2">5,000+</div>
-            <p class="text-gray-300 text-sm">Amenazas Catalogadas</p>
+            <div class="text-5xl font-bold text-red-700 mb-2">Zero-Day</div>
+            <p class="text-gray-300 text-sm">Investigación propia: única plataforma BAE con zero-days desarrollados internamente</p>
           </div>
           <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-            <div class="text-5xl font-bold text-red-700 mb-2">98%</div>
-            <p class="text-gray-300 text-sm">Precisión de Detección</p>
+            <div class="text-5xl font-bold text-red-700 mb-2">SaaS</div>
+            <p class="text-gray-300 text-sm">Plataforma cloud, agnóstica al stack de seguridad del cliente</p>
           </div>
           <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-            <div class="text-5xl font-bold text-red-700 mb-2">Zero</div>
-            <p class="text-gray-300 text-sm">Falsos Positivos</p>
+            <div class="text-xl font-bold text-red-700 mb-2">Zero Trust</div>
+            <p class="text-gray-300 text-sm">Validación de arquitectura Zero Trust con TTPs adversariales reales</p>
           </div>
         </div>
       </div>
@@ -567,16 +573,16 @@ const seo = seoData['rthreat-bogota-colombia'];
     </div>
   </section>
 
-  <!-- Regulaciones que Exigen Pruebas BAS -->
+  <!-- Regulaciones que Exigen Pruebas de Emulación de Ataques -->
   <section class="py-16 sm:py-20 lg:py-24 bg-white">
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
       <div class="text-center mb-14">
         <span class="text-red-700 text-xs font-bold uppercase tracking-wide">Compliance y Regulación</span>
         <h2 class="text-3xl sm:text-4xl font-bold text-[#0f172a] mt-4 mb-4">
-          Regulaciones que Exigen Pruebas BAS y Red Team
+          Regulaciones que Exigen Pruebas de Emulación de Ataques y Red Team
         </h2>
         <p class="text-[#64748b] max-w-2xl mx-auto">
-          Estas normativas internacionales y colombianas exigen explícitamente pruebas de penetración o simulación de ataques como parte del cumplimiento regulatorio. Un servicio BAS con rThreat genera la evidencia requerida.
+          Estas normativas internacionales y colombianas exigen explícitamente pruebas de penetración o validación de controles como parte del cumplimiento regulatorio. Un servicio de Breach and Attack Emulation (BAE) con rThreat genera la evidencia requerida.
         </p>
       </div>
 
@@ -656,7 +662,7 @@ const seo = seoData['rthreat-bogota-colombia'];
           <div class="lg:col-span-2">
             <h3 class="text-xl font-bold text-[#0f172a] mb-2">¿Su organización debe cumplir alguna de estas normativas?</h3>
             <p class="text-sm text-[#64748b]">
-              Starsolution entrega reportes de pruebas BAS con rThreat en el formato requerido por PCI DSS, SWIFT CSP y la SFC Colombia. Nuestros informes incluyen la evidencia documental necesaria para auditorías externas y presentaciones ante reguladores. También apoyamos el cumplimiento de <a href="/iso27001" class="text-red-700 font-semibold hover:underline">ISO 27001</a> y <a href="/hacking-etico" class="text-red-700 font-semibold hover:underline">pruebas de hacking ético</a>.
+              Starsolution entrega reportes de pruebas de Breach and Attack Emulation con rThreat en el formato requerido por PCI DSS, SWIFT CSP y la SFC Colombia. Nuestros informes incluyen la evidencia documental necesaria para auditorías externas y presentaciones ante reguladores. También apoyamos el cumplimiento de <a href="/iso27001" class="text-red-700 font-semibold hover:underline">ISO 27001</a> y <a href="/hacking-etico" class="text-red-700 font-semibold hover:underline">pruebas de hacking ético</a>.
             </p>
           </div>
           <div class="text-center lg:text-right">
@@ -665,6 +671,100 @@ const seo = seoData['rthreat-bogota-colombia'];
               <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
             </a>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Casos por Sector -->
+  <section class="py-16 sm:py-20 lg:py-24 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <span class="text-red-700 text-xs font-bold uppercase tracking-wide">Por Sector</span>
+        <h2 class="text-3xl sm:text-4xl font-bold text-[#0f172a] mt-4 mb-4">Casos de Uso por Sector en Colombia</h2>
+        <p class="text-[#64748b] max-w-2xl mx-auto">rThreat permite adaptar los escenarios de emulación al perfil de amenaza y al marco regulatorio de cada industria.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Banca -->
+        <div class="bg-white border border-gray-200 rounded-2xl p-6 hover:shadow-lg transition-all duration-300">
+          <div class="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+            </svg>
+          </div>
+          <h3 class="font-bold text-[#0f172a] mb-2">Banca y Sector Financiero</h3>
+          <p class="text-xs text-[#64748b] mb-3 font-semibold uppercase tracking-wide">Reto</p>
+          <p class="text-sm text-[#475569] mb-3">Cumplir SFC Circular 007 y SWIFT CSP con evidencia documental de pruebas de ataque en infraestructura financiera crítica.</p>
+          <p class="text-xs text-[#64748b] mb-2 font-semibold uppercase tracking-wide">Cómo lo resolvemos</p>
+          <p class="text-sm text-[#475569]">rThreat emula ataques dirigidos a infraestructura SWIFT, valida controles PCI DSS 11.3 y genera reportes auditables para la Superfinanciera.</p>
+        </div>
+
+        <!-- Gobierno -->
+        <div class="bg-white border border-gray-200 rounded-2xl p-6 hover:shadow-lg transition-all duration-300">
+          <div class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 14v3m4-3v3m4-3v3M3 21h18M3 10h18M3 7l9-4 9 4M4 10h16v11H4V10z" />
+            </svg>
+          </div>
+          <h3 class="font-bold text-[#0f172a] mb-2">Gobierno y Sector Público</h3>
+          <p class="text-xs text-[#64748b] mb-3 font-semibold uppercase tracking-wide">Reto</p>
+          <p class="text-sm text-[#475569] mb-3">Campañas de ransomware y espionaje contra sistemas críticos; el MSPI MinTIC exige gestión de riesgos con evidencia de controles efectivos.</p>
+          <p class="text-xs text-[#64748b] mb-2 font-semibold uppercase tracking-wide">Cómo lo resolvemos</p>
+          <p class="text-sm text-[#475569]">Validamos la postura defensiva frente a TTPs de APTs documentados y generamos reportes alineados con el Marco de Seguridad Digital del MinTIC.</p>
+        </div>
+
+        <!-- Salud -->
+        <div class="bg-white border border-gray-200 rounded-2xl p-6 hover:shadow-lg transition-all duration-300">
+          <div class="w-12 h-12 bg-red-50 rounded-xl flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+            </svg>
+          </div>
+          <h3 class="font-bold text-[#0f172a] mb-2">Salud y Clínicas (Ley 1581)</h3>
+          <p class="text-xs text-[#64748b] mb-3 font-semibold uppercase tracking-wide">Reto</p>
+          <p class="text-sm text-[#475569] mb-3">Datos de historia clínica bajo Ley 1581 y Resolución 2654; una brecha implica sanciones SIC y pérdida de habilitación sanitaria.</p>
+          <p class="text-xs text-[#64748b] mb-2 font-semibold uppercase tracking-wide">Cómo lo resolvemos</p>
+          <p class="text-sm text-[#475569]">rThreat emula ataques contra sistemas de historia clínica, valida que el EDR detecte accesos no autorizados y genera evidencia para auditorías SIC.</p>
+        </div>
+
+        <!-- SOC / Red Team -->
+        <div class="bg-white border border-gray-200 rounded-2xl p-6 hover:shadow-lg transition-all duration-300">
+          <div class="w-12 h-12 bg-purple-50 rounded-xl flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+            </svg>
+          </div>
+          <h3 class="font-bold text-[#0f172a] mb-2">Empresas con SOC y Red Team</h3>
+          <p class="text-xs text-[#64748b] mb-3 font-semibold uppercase tracking-wide">Reto</p>
+          <p class="text-sm text-[#475569] mb-3">Validar que SIEM, EDR y SOAR detectan amenazas reales con ofuscación avanzada, más allá de las firmas estáticas que evaden los atacantes modernos.</p>
+          <p class="text-xs text-[#64748b] mb-2 font-semibold uppercase tracking-wide">Cómo lo resolvemos</p>
+          <p class="text-sm text-[#475569]">Automatizamos Purple Team exercises 24/7, medimos TTD/TTP en milisegundos y validamos que CrowdStrike, SentinelOne o Splunk disparan ante artefactos reales.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-16 sm:py-20 bg-white" aria-labelledby="faq-rthreat">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 id="faq-rthreat" class="text-3xl font-bold text-[#0f172a] mb-10 text-center">Preguntas Frecuentes sobre rThreat</h2>
+      <div class="space-y-6">
+        <div class="bg-gray-50 border border-gray-200 rounded-2xl p-6">
+          <h3 class="font-bold text-[#0f172a] mb-2">¿Cuál es la diferencia entre Breach and Attack Emulation (BAE) y Breach and Attack Simulation (BAS)?</h3>
+          <p class="text-sm text-[#475569] leading-relaxed">BAE, como la que implementa rThreat, ejecuta artefactos de malware reales con variaciones de ofuscación y técnicas de evasión actuales. BAS tradicional usa firmas sintéticas que los EDR modernos ya conocen. La diferencia es crítica: solo la emulación con malware real valida si su stack detecta amenazas que los atacantes reales usan hoy.</p>
+        </div>
+        <div class="bg-gray-50 border border-gray-200 rounded-2xl p-6">
+          <h3 class="font-bold text-[#0f172a] mb-2">¿Es seguro ejecutar simulaciones de ataque en producción?</h3>
+          <p class="text-sm text-[#475569] leading-relaxed">Sí. rThreat ejecuta malware real en entornos controlados: contenedores efímeros o sandbox aislados con kill switches automáticos. Las emulaciones no dañan sistemas ni datos. Cada ejercicio incluye un plan de contingencia coordinado con su equipo de TI antes de comenzar.</p>
+        </div>
+        <div class="bg-gray-50 border border-gray-200 rounded-2xl p-6">
+          <h3 class="font-bold text-[#0f172a] mb-2">¿Cada cuánto se debe realizar un ejercicio de Red Team con rThreat?</h3>
+          <p class="text-sm text-[#475569] leading-relaxed">Se recomienda al menos una vez al año para empresas reguladas y cada 6 meses para organizaciones con alto perfil de riesgo. rThreat puede ejecutarse de forma continua como plataforma de validación permanente, complementando los ejercicios de Red Team puntuales.</p>
+        </div>
+        <div class="bg-gray-50 border border-gray-200 rounded-2xl p-6">
+          <h3 class="font-bold text-[#0f172a] mb-2">¿Cuál es la diferencia entre Red Team y pentesting?</h3>
+          <p class="text-sm text-[#475569] leading-relaxed">El pentesting busca vulnerabilidades técnicas en un alcance definido. El Red Team simula un atacante real sin restricciones de alcance, incluyendo ingeniería social, acceso físico y ataques multi-vector, evaluando la capacidad de detección y respuesta de toda la organización.</p>
         </div>
       </div>
     </div>

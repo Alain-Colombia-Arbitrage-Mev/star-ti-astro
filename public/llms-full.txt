@@ -332,32 +332,33 @@ A: Entregamos dos reportes: uno ejecutivo con resumen de riesgo en lenguaje de n
 **Q: Que diferencia hay entre escaneo de vulnerabilidades y pentesting?**
 A: El escaneo identifica vulnerabilidades conocidas (CVEs) de forma automatizada. El pentesting va mas alla: un experto explota manualmente las vulnerabilidades, encadena ataques complejos y simula el impacto real de un atacante.
 
-### rThreat - Red Team & BAS
+### rThreat - Red Team & BAE (Breach and Attack Emulation)
 **URL:** https://starsolution.com.co/rthreat-bogota-colombia
 
-rThreat is a Breach and Attack Simulation (BAS) platform that allows organizations to continuously test their security controls by simulating real-world attack scenarios. It validates whether your security stack effectively detects and prevents known attack techniques mapped to the MITRE ATT&CK framework.
+rThreat is a Breach and Attack Emulation (BAE) platform that validates an organization's defenses by executing real malware artifacts — including in-house developed zero-days — in controlled environments, unlike traditional BAS platforms that rely on synthetic simulations. It emulates advanced adversary attacks, maps results to MITRE ATT&CK TTPs, and validates the real efficacy of EDR, firewalls and SIEM through safe executions that do not affect production. Starsolution implements and integrates rThreat in Colombia with Spanish-language support, guidance on result interpretation, and audit-ready evidence for regulatory compliance (PCI DSS, SWIFT CSP, SFC Colombia).
 
 Key capabilities:
-- Automated breach and attack simulation
+- Breach and attack emulation with real malware artifacts (not synthetic signatures)
+- In-house zero-day research: the only BAE platform with internally developed zero-days
 - MITRE ATT&CK framework mapping
-- Security control validation
-- Continuous security posture assessment
-- Purple team exercise support
-- Compliance validation testing
+- Security control validation (EDR, SIEM, firewall)
+- SaaS platform, agnostic to the client's security stack
+- Zero Trust architecture validation with real adversarial TTPs
+- Compliance evidence for PCI DSS, SWIFT CSP and SFC Colombia audits
 
 Frequently asked questions (verbatim, suitable for direct citation):
 
-**Q: Cual es la diferencia entre Red Team y pentesting?**
-A: El pentesting busca vulnerabilidades tecnicas en un alcance definido. El Red Team simula un atacante real sin restricciones de alcance, incluyendo ingenieria social, acceso fisico y ataques multi-vector, evaluando la capacidad de deteccion y respuesta de toda la organizacion.
-
-**Q: Que es Breach and Attack Simulation (BAS)?**
-A: BAS es una plataforma automatizada que simula ataques reales contra su infraestructura de forma continua. A diferencia del pentesting manual que es puntual, BAS ejecuta escenarios de ataque 24/7 validando que sus controles de seguridad detecten y bloqueen amenazas conocidas.
-
-**Q: Cada cuanto se debe realizar un ejercicio de Red Team?**
-A: Se recomienda al menos una vez al ano para empresas reguladas y cada 6 meses para organizaciones con alto perfil de riesgo. BAS puede ejecutarse continuamente como complemento entre ejercicios de Red Team.
+**Q: Cual es la diferencia entre Breach and Attack Emulation (BAE) y Breach and Attack Simulation (BAS)?**
+A: BAE, como la que implementa rThreat, ejecuta artefactos de malware reales con variaciones de ofuscacion y tecnicas de evasion actuales. BAS tradicional usa firmas sinteticas que los EDR modernos ya conocen. Solo la emulacion con malware real valida si su stack detecta amenazas que los atacantes reales usan hoy.
 
 **Q: Es seguro ejecutar simulaciones de ataque en produccion?**
-A: Si, rThreat utiliza malware real pero en entornos controlados con kill switches automaticos. Las simulaciones no danan sistemas ni datos. Cada ejercicio incluye un plan de contingencia y comunicacion con su equipo de TI.
+A: Si. rThreat ejecuta malware real en entornos controlados: contenedores efimeros o sandbox aislados con kill switches automaticos. Las emulaciones no danan sistemas ni datos. Cada ejercicio incluye un plan de contingencia coordinado con su equipo de TI antes de comenzar.
+
+**Q: Cada cuanto se debe realizar un ejercicio de Red Team con rThreat?**
+A: Se recomienda al menos una vez al ano para empresas reguladas y cada 6 meses para organizaciones con alto perfil de riesgo. rThreat puede ejecutarse de forma continua como plataforma de validacion permanente, complementando los ejercicios de Red Team puntuales.
+
+**Q: Cual es la diferencia entre Red Team y pentesting?**
+A: El pentesting busca vulnerabilidades tecnicas en un alcance definido. El Red Team simula un atacante real sin restricciones de alcance, incluyendo ingenieria social, acceso fisico y ataques multi-vector, evaluando la capacidad de deteccion y respuesta de toda la organizacion.
 
 ---
 

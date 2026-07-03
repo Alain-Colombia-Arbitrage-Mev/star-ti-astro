@@ -71,9 +71,13 @@ const breadcrumbJsonLd = seo.breadcrumb ? {
       }
     </style>
 
-    <!-- DNS prefetch / preconnect para CDN externo de Bitdefender (assets oficiales) -->
-    <link rel="preconnect" href="https://www.bitdefender.com" crossorigin />
-    <link rel="dns-prefetch" href="https://www.bitdefender.com" />
+    <!-- Preconnect solo a origenes externos que esta pagina realmente consume -->
+    {seo.preconnect?.map((origin) => (
+      <>
+        <link rel="preconnect" href={origin} crossorigin />
+        <link rel="dns-prefetch" href={origin} />
+      </>
+    ))}
 
     <!-- SEO Meta Tags -->
     <title>{seo.title}</title>
@@ -85,11 +89,10 @@ const breadcrumbJsonLd = seo.breadcrumb ? {
     <meta name="geo.region" content="CO" />
     <meta name="geo.placename" content="Bogota" />
 
-    <!-- Hreflang for multi-region -->
-    <link rel="alternate" hreflang="es-CO" href={seo.canonical} />
-    <link rel="alternate" hreflang="es-VE" href={`${BASE_URL}/venezuela`} />
-    <link rel="alternate" hreflang="en-US" href={`${BASE_URL}/miami`} />
-    <link rel="alternate" hreflang="x-default" href={seo.canonical} />
+    <!-- Hreflang solo en paginas con equivalente regional real (home, venezuela, miami, contacto) -->
+    {seo.hreflang?.map((alt) => (
+      <link rel="alternate" hreflang={alt.lang} href={alt.href} />
+    ))}
 
     <!-- Open Graph -->
     <meta property="og:title" content={ogTitle} />

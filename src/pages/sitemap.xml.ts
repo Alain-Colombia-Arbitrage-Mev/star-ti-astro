@@ -1,5 +1,4 @@
 const BASE = 'https://starsolution.com.co';
-const NOW = new Date().toISOString().split('T')[0];
 
 interface SitemapEntry {
   url: string;
@@ -74,8 +73,7 @@ export async function GET() {
 ${pages
   .map(
     (p) => `  <url>
-    <loc>${BASE}${p.url}</loc>
-    <lastmod>${p.lastmod || NOW}</lastmod>
+    <loc>${BASE}${p.url}</loc>${p.lastmod ? `\n    <lastmod>${p.lastmod}</lastmod>` : ''}
     <changefreq>${p.changefreq}</changefreq>
     <priority>${p.priority.toFixed(1)}</priority>
   </url>`
