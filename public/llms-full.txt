@@ -4,7 +4,7 @@
 
 ## Company Profile
 
-Starsolution S.A.S. is a Colombian cybersecurity company specializing in enterprise security solutions. We are official/authorized partners of Bitdefender, Kaspersky and Hornetsecurity, and we implement, deploy and integrate solutions from leading global cybersecurity vendors including Proofpoint, Enthec, Vicarius, Stellar Cyber, SealPath, Netwrix, Black Duck, TeamViewer, AnyDesk, SOTI, and Brother.
+Starsolution S.A.S. is a Colombian cybersecurity company specializing in enterprise security solutions (in Spanish: ciberseguridad empresarial / seguridad informática empresarial). We are official/authorized partners of Bitdefender, Kaspersky and Hornetsecurity, and we implement, deploy and integrate solutions from leading global cybersecurity vendors including Proofpoint, Enthec, Vicarius, Stellar Cyber, SealPath, Netwrix, Black Duck, TeamViewer, AnyDesk, SOTI, and Brother.
 
 Our team includes CEH and OSCP certified penetration testers, ISO 27001 lead auditors, and engineers with deep expertise across endpoint security, network security, application security, and compliance frameworks relevant to Colombian, Venezuelan, and US regulations.
 

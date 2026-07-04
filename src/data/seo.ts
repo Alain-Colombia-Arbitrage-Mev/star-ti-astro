@@ -103,7 +103,7 @@ export const seoData: Record<string, SEOData> = {
   // =====================================================
   home: {
     title: 'Ciberseguridad Empresarial Colombia | Starsolution',
-    description: 'Protección integral para empresas: antivirus EDR/XDR, hacking ético, ISO 27001 y monitoreo 24/7. Más de 3,000 empresas protegidas. Cotice gratis.',
+    description: 'Seguridad informática para empresas: antivirus EDR/XDR, hacking ético, ISO 27001 y monitoreo 24/7. Más de 3,000 empresas protegidas en Colombia. Cotice gratis.',
     keywords: 'ciberseguridad empresarial Colombia, antivirus empresas, ISO 27001, Bitdefender, Kaspersky, hacking ético, pentesting, SOC, seguridad informatica Bogotá',
     canonical: BASE_URL,
     ogTitle: 'Starsolution - Ciberseguridad Empresarial Colombia',
@@ -124,7 +124,7 @@ export const seoData: Record<string, SEOData> = {
       foundingDate: '2013',
       numberOfEmployees: { '@type': 'QuantitativeValue', minValue: 15 },
       sameAs: ['https://www.facebook.com/starsabordo', 'https://www.linkedin.com/company/starsolution-sas', 'https://x.com/stabordo'],
-      knowsAbout: ['Cybersecurity', 'ISO 27001', 'Penetration Testing', 'EDR/XDR', 'Data Loss Prevention'],
+      knowsAbout: ['Cybersecurity', 'Seguridad Informática', 'Seguridad de la Información', 'ISO 27001', 'Penetration Testing', 'EDR/XDR', 'Data Loss Prevention'],
       aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '127', bestRating: '5' },
     },
   },
@@ -312,18 +312,18 @@ export const seoData: Record<string, SEOData> = {
   // STAR COMPLIANCE
   // =====================================================
   iso27001: {
-    title: 'Consultoria ISO 27001 Colombia | Starsolution',
-    description: 'Consultoria ISO 27001: gap analysis, implementación SGSI y certificación. Más de 50 proyectos exitosos en sectores regulados. Diagnóstico gratis.',
-    keywords: 'ISO 27001 Colombia, consultoria ISO 27001, certificación SGSI, auditoría seguridad información, gap analysis Bogotá',
+    title: 'Consultoría ISO 27001 Colombia | Starsolution',
+    description: 'Consultoría ISO 27001: gap analysis, implementación SGSI y certificación. Más de 50 proyectos exitosos en sectores regulados. Diagnóstico gratis.',
+    keywords: 'ISO 27001 Colombia, consultoría ISO 27001, certificación SGSI, auditoría seguridad información, gap analysis Bogotá',
     canonical: `${BASE_URL}/iso27001`,
-    ogTitle: 'Consultoria y Certificación ISO 27001',
+    ogTitle: 'Consultoría y Certificación ISO 27001',
     ogType: 'website',
     ogImage: `${BASE_URL}/og-default.png`,
     breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Star Compliance', url: '/#star-compliance' }, { name: 'ISO 27001', url: '/iso27001' }],
-    jsonLd: service('Consultoria ISO 27001', 'ISO 27001 Certification Consulting'),
+    jsonLd: service('Consultoría ISO 27001', 'ISO 27001 Certification Consulting'),
     faqJsonLd: faqSchema([
       { q: 'Cuánto cuesta certificarse ISO 27001 en Colombia?', a: 'Para empresas pequeñas el costo total oscila entre 35 y 50 millones de COP; medianas entre 60 y 120 millones; grandes organizaciones superan los 150 millones. Esto incluye 8 a 12 meses de acompañamiento hasta la certificación.' },
-      { q: 'Necesitamos contratar consultoria externa?', a: 'El 85% de las empresas que intentan certificarse sin consultoria fracasan o tardan más de 2 años. Con acompañamiento especializado, el proceso se completa en 8 a 10 meses con alta probabilidad de exito en la primera auditoría.' },
+      { q: 'Necesitamos contratar consultoría externa?', a: 'El 85% de las empresas que intentan certificarse sin consultoría fracasan o tardan más de 2 años. Con acompañamiento especializado, el proceso se completa en 8 a 10 meses con alta probabilidad de exito en la primera auditoría.' },
       { q: 'Qué diferencia hay entre ISO 27001 e ISO 27002?', a: 'ISO 27001 es la norma certificable que establece requisitos obligatorios para el SGSI. ISO 27002 es una guia de buenas prácticas de referencia; no tiene requisitos obligatorios y no es certificable.' },
       { q: 'Necesitamos implementar los 93 controles?', a: 'No. Una organización tipica implementa entre 75 y 85 controles. Los controles excluidos deben justificarse documentalmente en la Declaracion de Aplicabilidad (SOA).' },
       { q: 'Cómo elegir el organismo certificador?', a: 'ICONTEC es la opcion nacional con costos menores; SGS y Bureau Veritas tienen reconocimiento global. Los tres estan acreditados por ONAC y el certificado tiene la misma validez internacional.' },
@@ -539,7 +539,7 @@ export const seoData: Record<string, SEOData> = {
   // =====================================================
   'sobre-nosotros': {
     title: 'Sobre Nosotros | Starsolution S.A.S.',
-    description: 'Starsolution S.A.S.: 12+ años en ciberseguridad empresarial. Oficinas en Colombia, Venezuela y Miami. Equipo certificado CEH, OSCP, CISSP.',
+    description: 'Starsolution S.A.S.: 13+ años en ciberseguridad y seguridad informática empresarial. Oficinas en Colombia, Venezuela y Miami. Equipo CEH, OSCP, CISSP.',
     keywords: 'Starsolution, empresa ciberseguridad Colombia, sobre nosotros, equipo expertos seguridad, historia',
     canonical: `${BASE_URL}/sobre-nosotros`,
     ogTitle: 'Sobre Nosotros - Starsolution S.A.S.',

@@ -134,7 +134,7 @@ export const regions: Record<string, RegionData> = {
 
 export const serviceLinks = [
   { href: '/hacking-etico', label: 'Hacking Etico y Pentesting', labelEn: 'Ethical Hacking & Pentesting' },
-  { href: '/iso27001', label: 'Consultoria ISO 27001', labelEn: 'ISO 27001 Consulting' },
+  { href: '/iso27001', label: 'Consultoría ISO 27001', labelEn: 'ISO 27001 Consulting' },
   { href: '/bitdefender', label: 'Bitdefender GravityZone', labelEn: 'Bitdefender GravityZone' },
   { href: '/kaspersky', label: 'Kaspersky Endpoint Security', labelEn: 'Kaspersky Endpoint Security' },
   { href: '/hornet-security', label: 'Hornet Security 365', labelEn: 'Hornet Security 365' },

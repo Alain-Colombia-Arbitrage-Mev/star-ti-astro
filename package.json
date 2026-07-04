@@ -1,7 +1,7 @@
 {
   "name": "starsolution-astro",
   "type": "module",
-  "version": "1.4.3",
+  "version": "1.4.4",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",

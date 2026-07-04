@@ -170,7 +170,7 @@ const pilarColors: Record<string, { bg: string; text: string; border: string }> 
       <!-- Contact Form -->
       <div class="bg-white rounded-2xl shadow-lg p-8 border border-gray-200">
         <h3 class="text-xl font-bold text-gray-900 mb-6">
-          {isEnglish ? 'Request a Free Consultation' : 'Solicite una Consultoria Gratuita'}
+          {isEnglish ? 'Request a Free Consultation' : 'Solicite una Consultoría Gratuita'}
         </h3>
         <form action={`/${region.slug ? region.slug + '/gracias' : 'gracias'}`} method="GET" class="space-y-4">
           <input type="hidden" name="region" value={region.slug || 'colombia'} />

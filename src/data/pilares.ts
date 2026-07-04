@@ -98,7 +98,7 @@ export const pilares: Pilar[] = [
     id: 'star-compliance',
     name: 'STAR COMPLIANCE',
     tagline: 'Normativa y Gobierno',
-    description: 'Consultoria especializada hacia certificacion ISO 27001 para sectores regulados (Superfinanciera, SIC). Genera el ticket mas alto y la relacion mas larga.',
+    description: 'Consultoría especializada hacia certificacion ISO 27001 para sectores regulados (Superfinanciera, SIC). Genera el ticket mas alto y la relacion mas larga.',
     color: 'emerald',
     colorLight: 'emerald-50',
     icon: 'document',
@@ -106,7 +106,7 @@ export const pilares: Pilar[] = [
       {
         slug: 'iso27001',
         brand: 'Starsolution',
-        name: 'Consultoria ISO 27001',
+        name: 'Consultoría ISO 27001',
         shortDescription: 'Gap Analysis, implementacion de SGSI y acompanamiento hacia la certificacion. Mas de 50 proyectos exitosos.',
       },
       {
