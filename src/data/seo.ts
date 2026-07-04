@@ -674,7 +674,7 @@ export const seoData: Record<string, SEOData> = {
     description: 'Enterprise cybersecurity in Miami and South Florida. Bilingual team, ethical hacking, ISO 27001, EDR/XDR. Free consultation.',
     keywords: 'cybersecurity Miami, enterprise antivirus South Florida, ethical hacking Miami, ISO 27001 Florida, IT security company',
     canonical: `${BASE_URL}/miami`,
-    ogTitle: 'Starsolution Miami - Enterprise Cybersecurity',
+    ogTitle: 'Starsolution Florida - Enterprise Cybersecurity in Miami & Orlando',
     ogType: 'website',
     ogImage: `${BASE_URL}/og-default.png`,
     lang: 'en',
@@ -683,8 +683,8 @@ export const seoData: Record<string, SEOData> = {
     jsonLd: {
       '@context': 'https://schema.org',
       '@type': 'LocalBusiness',
-      name: 'Starsolution Miami',
-      description: 'Enterprise cybersecurity and IT solutions in South Florida',
+      name: 'Starsolution Florida',
+      description: 'Enterprise cybersecurity and IT solutions across Florida, serving Miami and South Florida from our Orlando office',
       url: `${BASE_URL}/miami`,
       telephone: '+13214386777',
       email: 'miami@star-ti.com',
@@ -695,6 +695,7 @@ export const seoData: Record<string, SEOData> = {
       paymentAccepted: 'Cash, Credit Card, Wire Transfer',
       currenciesAccepted: 'USD',
       areaServed: [
+        { '@type': 'City', name: 'Orlando' },
         { '@type': 'City', name: 'Miami' },
         { '@type': 'City', name: 'Fort Lauderdale' },
         { '@type': 'City', name: 'Coral Gables' },
@@ -704,11 +705,11 @@ export const seoData: Record<string, SEOData> = {
       ],
     },
     faqJsonLd: faqSchema([
-      { q: 'Do you offer cybersecurity services in Spanish?', a: 'Yes. Our Miami team is fully bilingual English/Spanish, allowing us to serve both English-speaking and Latin American businesses in South Florida without language barriers. All deliverables, reports, and support are available in both languages.' },
+      { q: 'Do you offer cybersecurity services in Spanish?', a: 'Yes. Our US team is fully bilingual English/Spanish, allowing us to serve both English-speaking and Latin American businesses in Florida without language barriers. All deliverables, reports, and support are available in both languages.' },
       { q: 'What areas in South Florida do you serve?', a: 'We serve Miami-Dade, Broward, and Palm Beach counties including Miami, Fort Lauderdale, Coral Gables, Doral, and Boca Raton.' },
       { q: 'Do I need to be in Miami for your services?', a: 'No. We offer remote cybersecurity assessments, managed EDR/XDR, and virtual CISO services for businesses anywhere in Florida and Latin America.' },
       { q: 'What compliance frameworks do you help with?', a: 'We help with HIPAA, SOC 2, PCI DSS, CMMC, NIST CSF, and ISO 27001 compliance for South Florida businesses.' },
-      { q: 'How quickly can you respond to a security incident?', a: 'Our Miami SOC team provides under 1 hour incident response for managed clients, with 24/7 availability.' },
+      { q: 'How quickly can you respond to a security incident?', a: 'Our SOC provides under 1 hour incident response for managed clients, with 24/7 availability, plus on-site dispatch across South Florida when required.' },
     ]),
   },
   // =====================================================
@@ -906,10 +907,10 @@ export const seoData: Record<string, SEOData> = {
 
   'miami-contacto': {
     title: 'Contact Miami | Starsolution South Florida',
-    description: 'Contact Starsolution Miami for enterprise cybersecurity. Bilingual English/Spanish team. Free consultation, same-day response.',
-    keywords: 'contact Starsolution Miami, cybersecurity Miami, IT support South Florida',
+    description: 'Contact Starsolution in Florida for enterprise cybersecurity. Bilingual English/Spanish team. Free consultation, same-day response.',
+    keywords: 'contact Starsolution Florida, cybersecurity Miami, cybersecurity Orlando, IT support South Florida',
     canonical: `${BASE_URL}/miami/contacto`,
-    ogTitle: 'Contact - Starsolution Miami',
+    ogTitle: 'Contact - Starsolution Florida',
     ogType: 'website',
     ogImage: `${BASE_URL}/og-default.png`,
     lang: 'en',
@@ -918,7 +919,7 @@ export const seoData: Record<string, SEOData> = {
     jsonLd: {
       '@context': 'https://schema.org',
       '@type': 'ContactPage',
-      name: 'Contact Starsolution Miami',
+      name: 'Contact Starsolution Florida',
       url: `${BASE_URL}/miami/contacto`,
     },
   },

@@ -101,7 +101,7 @@ export const regions: Record<string, RegionData> = {
     countryCode: 'US',
     locale: 'en-US',
     hreflang: 'en-US',
-    city: 'Miami',
+    city: 'Orlando',
     address: '8103 Gables Commons Dr, Orlando, FL 32821, United States',
     phone: '+13214386777',
     phoneDisplay: '+1 (321) 438-6777',
@@ -111,7 +111,7 @@ export const regions: Record<string, RegionData> = {
     currency: 'USD',
     hours: 'Mon - Fri: 9am - 6pm EST',
     heroTitle: 'Enterprise Cybersecurity in Miami',
-    heroSubtitle: 'Comprehensive cybersecurity solutions for businesses in South Florida. Bilingual team (English/Spanish) serving the Miami-Dade, Broward, and Palm Beach markets.',
+    heroSubtitle: 'Comprehensive cybersecurity solutions for businesses in Florida. Bilingual team (English/Spanish) serving the Miami-Dade, Broward, and Palm Beach markets from our office in Orlando.',
     services: [
       'Ethical Hacking & Penetration Testing',
       'ISO 27001 Consulting',
