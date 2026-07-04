@@ -1,10 +1,10 @@
 # Starsolution S.A.S. - Full Documentation
 
-> Starsolution is an enterprise cybersecurity company headquartered in Bogota, Colombia, with regional offices in Caracas, Venezuela and Miami, Florida. Founded in 2013, we protect over 3,000 businesses across Latin America and the United States. Our approach is organized into three pillars of digital resilience: Star Protection (endpoint and email defense), Star Inspection (visibility, threat detection, and offensive security), and Star Compliance (governance, standards, and data protection).
+> Starsolution is an enterprise cybersecurity company headquartered in Bogota, Colombia, with regional offices in Caracas, Venezuela and Orlando, Florida (serving Miami and South Florida). Founded in 2013, we protect over 3,000 businesses across Latin America and the United States. Our approach is organized into three pillars of digital resilience: Star Protection (endpoint and email defense), Star Inspection (visibility, threat detection, and offensive security), and Star Compliance (governance, standards, and data protection).
 
 ## Company Profile
 
-Starsolution S.A.S. is a Colombian cybersecurity company specializing in enterprise security solutions. We serve as authorized partners and distributors for leading global cybersecurity vendors including Bitdefender, Kaspersky, Hornetsecurity, Proofpoint, Enthec, Vicarius, Stellar Cyber, SealPath, Netwrix, Black Duck, TeamViewer, AnyDesk, SOTI, and Brother.
+Starsolution S.A.S. is a Colombian cybersecurity company specializing in enterprise security solutions. We are official/authorized partners of Bitdefender, Kaspersky and Hornetsecurity, and we implement, deploy and integrate solutions from leading global cybersecurity vendors including Proofpoint, Enthec, Vicarius, Stellar Cyber, SealPath, Netwrix, Black Duck, TeamViewer, AnyDesk, SOTI, and Brother.
 
 Our team includes CEH and OSCP certified penetration testers, ISO 27001 lead auditors, and engineers with deep expertise across endpoint security, network security, application security, and compliance frameworks relevant to Colombian, Venezuelan, and US regulations.
 
@@ -30,8 +30,8 @@ Bitdefender GravityZone is an AI-powered enterprise security platform that unifi
 GravityZone modules covered by Starsolution:
 - **EDR (Endpoint Detection & Response):** rebuilds the attack chain on every compromised laptop or server and contains incidents from the console without on-site visits.
 - **XDR (Extended Detection & Response):** correlates endpoint, network, Microsoft 365 and identity telemetry so a single alert becomes a contextual incident.
-- **MDR + SOC 24x7:** Bitdefender's global SOC monitors after hours; Starsolution acts as the local Spanish-speaking escalation point for Colombian clients.
-- **CSPM Plus:** continuous posture management for AWS and Azure, detects public S3 buckets, IAM drift and misconfigurations against ISO 27001 and Habeas Data Ley 1581.
+- **Bitdefender MDR (SOC 24x7):** Bitdefender's global SOC monitors after hours with an "analysis, not alerts" approach; Starsolution acts as the local Spanish-speaking escalation point for Colombian clients.
+- **CSPM+:** continuous posture management (with CIEM and threat detection) for AWS, Azure and Google Cloud, detects public S3 buckets, IAM drift and misconfigurations against ISO 27001 and Habeas Data Ley 1581.
 - **Patch Management:** scheduled patching for Windows, macOS and 3rd-party apps without a second agent.
 - **HyperDetect AI:** tunable machine-learning detection trained on 15+ years of telemetry.
 - **Sandbox Analyzer:** automated detonation of suspicious files in cloud sandbox.
@@ -41,12 +41,13 @@ GravityZone modules covered by Starsolution:
 Plan tiers offered by Starsolution Colombia:
 | Plan | Range | Includes |
 |------|-------|----------|
-| GravityZone Small Business | 10-100 devices | Antimalware, firewall, anti-ransomware, cloud console |
+| GravityZone Small Business Security | 10-100 devices | Antimalware, firewall, anti-ransomware, cloud console |
 | GravityZone Business Security Premium | 100-1,000 devices | Adds HyperDetect, Sandbox, Patch Management, Full Disk Encryption |
-| GravityZone XDR + MDR | 1,000+ devices | Adds EDR, XDR, MDR + SOC 24x7, CSPM Plus multi-cloud |
+| GravityZone Business Security Enterprise + Defense XDR + Bitdefender MDR | 1,000+ devices | Adds native EDR, XDR, Bitdefender MDR (SOC 24x7), CSPM+ multi-cloud |
 
 Recognitions referenced on the page:
-- Forrester Wave Extended Detection and Response Q2 2024 - Leader
+- Gartner Magic Quadrant for Endpoint Protection Platforms 2026 - Visionary
+- Forrester Wave Extended Detection and Response Q2 2024 - Strong Performer
 - Gartner Peer Insights Customers' Choice 2026
 - AV-Comparatives Endpoint Prevention and Response (EPR) 2025
 - AV-TEST Best Performance and Protection Award 2023
@@ -78,9 +79,9 @@ A: Si, es uno de los escenarios donde GravityZone brilla mas. Como la consola es
 **Local contact:** Starsolution S.A.S., Bogota, Colombia · +57 300 701 0017 · contacto@star-ti.com
 **Partner status:** Authorized Kaspersky partner since 2014 (12+ years) · 200+ implementations across Colombia.
 
-Kaspersky Next is the current SMB and enterprise product line from Kaspersky (it replaces the legacy Kaspersky Endpoint Security Cloud Standard / Plus / Select naming). Starsolution implements all four tiers in Colombia from a Bogota base, with Spanish-language support and integration with Active Directory, GPO and SCCM for silent deployment.
+Kaspersky Next is the current SMB and enterprise product line from Kaspersky (it replaces the legacy Kaspersky Endpoint Security Cloud Standard / Plus / Select naming). It has six editions: EDR Foundations, EDR Optimum, XDR Optimum and MXDR Optimum for organizations without an internal SOC, plus EDR Expert and XDR Expert for enterprise SOC teams. Starsolution implements them in Colombia from a Bogota base, with Spanish-language support and integration with Active Directory, GPO and SCCM for silent deployment.
 
-The four Kaspersky Next tiers offered by Starsolution:
+The four mid-market Kaspersky Next tiers most often deployed by Starsolution:
 | Tier | Recommended size | Includes |
 |------|------------------|----------|
 | Kaspersky Next EDR Foundations | 10-100 endpoints | Antimalware multicapa + ML, System Watcher (anti-ransomware con rollback), firewall + HIPS, control web, EDR esencial (causa raiz, IOC scan), MDM Android/iOS |
@@ -96,9 +97,10 @@ Core technologies referenced on the page:
 - **Cloud Sandbox:** automated detonation of suspicious files in the Kaspersky cloud.
 
 Recognitions referenced on the page:
-- AV-TEST Top Product 2024 (multiple categories, consistently ranked #1).
-- AV-Comparatives Strategic Leader 2024.
-- Continuous participation in MITRE Engenuity ATT&CK Evaluations.
+- AV-TEST Best Protection 2024 (multiple categories).
+- SE Labs AAA with 100% Total Accuracy Rating (TOP1).
+- AV-Comparatives EDR Detection Validation Certification 2025 - Kaspersky Next EDR Expert was the first product in the industry to fully pass it.
+- QKS Group SPARK Matrix 2025 - Kaspersky Next XDR Expert recognized as a Leader in XDR.
 
 Industry verticals served by Starsolution in Colombia:
 - Sector financiero, salud (compliance Habeas Data Ley 1581 y resolucion 2654 de telemedicina), manufactura, retail, educacion y entidades publicas territoriales.
@@ -129,12 +131,14 @@ A: Kaspersky esta optimizado para consumo minimo de recursos. En equipos con Cor
 
 Hornetsecurity 365 Total Protection provides comprehensive email security, backup, and compliance for Microsoft 365 environments. It protects against phishing, malware, spam, and business email compromise (BEC) attacks while providing email archiving and backup capabilities.
 
+Plans (cumulative, official names): Plan 1 Business (spam/malware filtering, email encryption, signature & disclaimer); Plan 2 Enterprise (adds Advanced Threat Protection with sandboxing/URL rewriting/anti-BEC, Email Continuity, Email Archiving); Plan 3 Enterprise Backup (adds 365 Total Backup for Exchange/OneDrive/SharePoint/Teams); Plan 4 Compliance & Awareness (adds Security Awareness Service, 365 Permission Manager, AI Recipient Validation). Hornetsecurity does not publish fixed prices; pricing is per mailbox and quoted by Starsolution.
+
 Key capabilities:
-- AI-powered threat detection for email
-- Microsoft 365 backup and recovery
+- AI-powered threat detection for email (Advanced Threat Protection)
+- Microsoft 365 backup and recovery (365 Total Backup)
 - Email encryption and secure communication
 - Email archiving for compliance
-- Security awareness training integration
+- Security Awareness Service (employee training)
 
 Frequently asked questions (verbatim, suitable for direct citation):
 
@@ -145,7 +149,7 @@ A: Si, Hornetsecurity 365 Total Protection esta disenado exclusivamente para Mic
 A: Incluye filtrado de spam y malware, proteccion contra phishing y BEC, backup automatico de buzones, archiving de email con cumplimiento legal, y cifrado de comunicaciones. Todo gestionado desde una consola cloud unica.
 
 **Q: Cuanto cuesta Hornetsecurity para empresas?**
-A: Los planes van desde USD 2 por usuario al mes (Plan 1 - seguridad basica) hasta USD 6 por usuario al mes (Plan 4 - proteccion completa con backup, archiving y awareness training). Descuentos por volumen disponibles.
+A: Hornetsecurity no publica tarifas fijas; el precio depende del plan (Business, Enterprise, Enterprise Backup o Compliance and Awareness) y del numero de buzones de Microsoft 365. Starsolution arma una cotizacion ajustada a su caso, con descuentos por volumen para mas de 100 buzones.
 
 **Q: Hornetsecurity reemplaza a Microsoft Defender?**
 A: Hornetsecurity complementa y refuerza la seguridad nativa de Microsoft 365. Mientras Defender ofrece proteccion basica, Hornetsecurity agrega capas avanzadas de filtrado, backup independiente y archiving que Microsoft no incluye.
@@ -153,102 +157,125 @@ A: Hornetsecurity complementa y refuerza la seguridad nativa de Microsoft 365. M
 ### Proofpoint
 **URL:** https://starsolution.com.co/proofpoint
 
-Proofpoint is the global leader in email security and human-centric cybersecurity. Their platform protects organizations against phishing, business email compromise, ransomware delivered via email, and social engineering attacks targeting employees.
+Proofpoint es una empresa global de ciberseguridad especializada en proteccion centrada en personas (people-centric security). Su plataforma defiende organizaciones frente a phishing, Business Email Compromise (BEC), ransomware por correo y ataques de ingenieria social. Es Leader en el Gartner Magic Quadrant for Email Security 2025 (mas alto en Ability to Execute) y Leader en el Forrester Wave Email, Messaging and Collaboration Security Q2 2025. Starsolution implementa, integra y despliega Proofpoint en Colombia con soporte local en espanol.
 
 Key capabilities:
-- Targeted Attack Protection (TAP)
-- Email Fraud Defense against BEC/CEO fraud
-- Security Awareness Training
-- Cloud App Security Broker
-- Information Protection and DLP
-- Threat Intelligence
+- Proofpoint Nexus — plataforma de IA transversal (Language Model, Relationship Graph, Threat Intelligence, Computer Vision, Machine Learning); procesa 2.3 billones de emails al ano
+- Targeted Attack Protection (TAP) — URL Defense, Attachment Defense, sandboxing, TAP Dashboard con Very Attacked People (VAPs)
+- Email Fraud Defense — DMARC/DKIM/SPF gestionado, monitoreo de 650M+ dominios, Supplier Risk Explorer
+- Collaboration Security Prime (Prime Threat Protection) — proteccion multicanal unificada: email, Teams, Slack, SharePoint, redes sociales; lanzado abril 2025
+- Core Email Protection — bloqueo de amenazas de email de base, integracion nativa con Microsoft 365 y Google Workspace
+- ZenGuide (Proofpoint Security Awareness) — simulaciones de phishing adaptativas vinculadas a datos VAP
+- CASB (Cloud App Security Broker) — seguridad para apps cloud
+- Insider Threat Management (ITM) — deteccion de amenazas internas en endpoints, email y cloud
+- Adaptive Email DLP / Enterprise DLP — prevencion de perdida de datos
+- Threat Response Auto-Pull (TRAP) — cuarentena post-entrega de emails maliciosos
 
 Frequently asked questions (verbatim, suitable for direct citation):
 
 **Q: Proofpoint funciona con Microsoft 365 y Google Workspace?**
 A: Si. Proofpoint se integra nativamente con Microsoft 365, Google Workspace y servidores de correo on-premise mediante registros MX, sin instalar agentes en los equipos de los usuarios.
 
-**Q: Cuanto tiempo toma la implementacion?**
+**Q: Cuanto tiempo toma la implementacion de Proofpoint?**
 A: La implementacion basica toma entre 3 y 5 dias habiles. La optimizacion completa, incluyendo ajuste de politicas y modulos avanzados, se completa en 2 a 4 semanas segun el tamano de la organizacion.
 
 **Q: Que es Business Email Compromise (BEC) y como lo previene Proofpoint?**
 A: BEC es fraude donde atacantes suplantan ejecutivos para solicitar transferencias o datos sensibles. Proofpoint detecta estos ataques analizando patrones de comunicacion, metadata del remitente y comportamiento historico para identificar anomalias, incluso sin malware.
 
-**Q: Proofpoint puede capacitar a mis empleados contra phishing?**
-A: Si. El modulo Security Awareness Training incluye simulaciones de phishing personalizadas y micro-capacitaciones interactivas. Las empresas que lo implementan reducen las tasas de clic en phishing hasta un 90%.
+**Q: Proofpoint puede capacitar a mis empleados contra phishing con ZenGuide?**
+A: Si. Proofpoint ZenGuide (Proofpoint Security Awareness) incluye simulaciones de phishing personalizadas y micro-capacitaciones interactivas basadas en riesgo. Las empresas que lo implementan reducen las tasas de clic en phishing hasta un 90%.
+
+**Q: Que es Collaboration Security Prime y para quien aplica?**
+A: Collaboration Security Prime (tambien llamado Prime Threat Protection) es el tier premium unificado de Proofpoint lanzado en abril 2025. Combina proteccion multicanal (email, Teams, Slack, SharePoint), defensa contra ataques multietapa, guia de riesgo humano e impersonation protection en una sola plataforma. Aplica a empresas que buscan consolidar herramientas de seguridad, reemplazando aproximadamente 45+ soluciones puntuales por una unica plataforma.
 
 ---
 
 ## Star Inspection - Visibility & Threat Detection
 
-### Enthec - Attack Surface Monitoring
+### Enthec - Cibervigilancia TEM (Kartos y Qondar)
 **URL:** https://starsolution.com.co/enthec
 
-Enthec provides continuous attack surface monitoring and leaked credential detection. The platform scans the dark web, deep web, and public internet to identify exposed credentials, vulnerable assets, misconfigured services, and shadow IT associated with your organization.
+Enthec (ENTHEC Solutions S.L.) is an Advanced AI-driven Cyber-Surveillance Platform specialized in Threat Exposure Management (TEM). It offers two products: **Kartos** (Corporate Threat Watchbots) for External Attack Surface Management (EASM) of organizations, and **Qondar** (Personal Threat Watchbots) for surveillance of individuals' digital identity (executives, VIPs, C-level). Starsolution implements and integrates Kartos and Qondar in Colombia with Spanish-language support from Bogota.
 
-Key capabilities:
-- Continuous external attack surface discovery
-- Dark web monitoring for leaked credentials and data
-- Compromised identity detection
-- Shadow IT discovery (unauthorized SaaS usage)
-- Exposed infrastructure identification
-- Automated alerting with risk scoring
-- Free initial diagnostic available
+Kartos key capabilities:
+- Continuous monitoring of internet, deep web, dark web, and social networks
+- Real-time leaked credential detection
+- Brand protection: lookalike domains, phishing, impersonation
+- Third-party / supply chain risk assessment (non-intrusive)
+- Vulnerability detection in external assets (CVEs)
+- 100% AI Non-Intrusive — no agents, no internal network access
+- System classification across 11 threat vectors
+- Listed on Gartner Peer Insights: IT Vendor Risk Management Solutions and Threat Intelligence Products
+
+Qondar key capabilities:
+- Real-time alerts on personal data leaks
+- Monitoring of 6 asset categories: financial, personal documents, personal data, email, phone, social media accounts
+- Social conversation analysis: Telegram, X, LinkedIn, Facebook, Instagram, TikTok
+- 100% proprietary technology, no third-party dependencies
+- Award: Producto mas Innovador — XVII Trofeos de la Seguridad TIC 2024 (Red Seguridad)
 
 Frequently asked questions (verbatim, suitable for direct citation):
 
-**Q: Necesito instalar algo en mis servidores?**
-A: No. Enthec opera 100% de forma externa sin agentes, sin acceso a la red interna ni permisos especiales. El monitoreo se realiza desde fuera de su infraestructura, como lo haria un atacante real.
+**Q: Que es Enthec y cuales son sus productos?**
+A: Enthec es una plataforma avanzada de cibervigilancia impulsada por IA (Advanced AI-driven Cyber-Surveillance Platform). Sus dos productos son Kartos, para monitoreo de la superficie de ataque externa corporativa (EASM), y Qondar, para vigilancia de la identidad digital de personas como directivos y altos cargos. Starsolution implementa ambas soluciones en Colombia con soporte en espanol.
 
-**Q: Que tan frecuente es el monitoreo?**
-A: El monitoreo es continuo 24/7. Las alertas de credenciales filtradas se entregan en tiempo real, mientras que los informes consolidados de superficie de ataque se generan semanalmente.
+**Q: Necesito instalar algo en mis servidores para usar Kartos?**
+A: No. Kartos opera 100% de forma externa y no intrusiva, sin agentes, sin acceso a la red interna ni permisos especiales. Solo ingresa el dominio de su empresa y el monitoreo comienza de forma automatica, tal como lo haria un atacante externo.
 
-**Q: En que consiste el diagnostico gratuito?**
-A: El diagnostico inicial analiza su dominio corporativo para revelar credenciales filtradas, servicios expuestos y activos digitales vulnerables. Incluye un reporte ejecutivo sin compromiso ni instalacion requerida.
+**Q: En que consiste el diagnostico gratuito de exposicion?**
+A: El diagnostico inicial analiza su dominio corporativo para revelar credenciales filtradas, servicios expuestos y activos digitales vulnerables visibles desde internet. Incluye un reporte ejecutivo con hallazgos concretos y recomendaciones de remediacion, sin costo ni compromiso de compra.
 
-**Q: Que tipo de empresas necesitan este servicio?**
-A: Cualquier organizacion con presencia digital necesita monitoreo de superficie de ataque. Es especialmente critico para empresas de finanzas, salud, gobierno y cualquier sector que maneje datos sensibles de clientes.
+**Q: Que diferencia hay entre Kartos y Qondar?**
+A: Kartos (Corporate Threat Watchbots) protege la superficie de ataque externa de la empresa: dominios, credenciales, dark web, phishing y supply chain. Qondar (Personal Threat Watchbots) protege la identidad digital de personas individuales como directivos, VIPs o altos cargos, monitoreando filtraciones de datos personales, financieros y presencia en redes sociales y foros.
 
 ### Vicarius vRx
 **URL:** https://starsolution.com.co/vicarius
 
-Vicarius vRx is an AI-powered vulnerability management platform that goes beyond traditional scanning. It uses machine learning to prioritize vulnerabilities based on actual exploitability and business context, and provides patchless protection through script-based remediation.
+Vicarius vRx by Vicarius is a Full Cycle Vulnerability Management platform (category: Exposure Assessment Platforms, per Gartner and IDC 2025) for IT and security teams. It discovers assets, prioritizes vulnerabilities using AI with business context (AI-Driven Scoring, Business Impact Analysis), and remediates through three routes: (1) automated native patching for 2,000+ applications, (2) AI-generated scripts via vuln_GPT within the vRx Scripting Engine (PowerShell, Bash, Batch; community library: vsociety), and (3) Patchless Protection — memory-level mitigation via Dynamic Binary Instrumentation (DBI) without patching or rebooting. Additional modules: vIntelligence (Continuous Exposure Assessment & Validation with Agentic AI Red Team), vAnalyzer (BI reporting for remediation tracking). Recognized as Niche Player in Gartner Magic Quadrant for Exposure Assessment Platforms 2025 (first appearance). Official metrics: 80% reduction in manual patching time; 22-day average MTTR with platform vs. 205-day discovery-to-remediation cycle without a specialized tool. Starsolution implements and integrates vRx in Colombia with Spanish-language technical support from Bogota.
 
-Key capabilities:
-- AI-driven vulnerability prioritization
-- Patchless protection (virtual patching)
-- Automated remediation scripts
-- Asset discovery and inventory
-- Integration with SIEM/SOAR platforms
-- Risk-based vulnerability scoring (beyond CVSS)
+Key modules and capabilities:
+- vRx Core: Real-Time Asset Visibility, Contextual Risk Assessment, AI-Driven Scoring, Business Impact Analysis
+- vRx Scripting Engine + vuln_GPT: AI-generated remediation scripts; community scripts via vsociety
+- Patchless Protection: DBI-based memory mitigation without patch or reboot
+- vIntelligence: Continuous Exposure Assessment, Agentic AI Red Team, Threat Intelligence Enrichment (EPSS, CISA KEV, MITRE ATT&CK)
+- vAnalyzer: BI-native reporting and SLA tracking for remediation
+- Compliance Engine: misconfiguration visibility, auditable evidence for ISO 27001, PCI DSS, Ley 1581 (Colombia)
+- OS support: Windows (Server & Desktop), Linux (Ubuntu, CentOS, RHEL, Debian), macOS
 
 Frequently asked questions (verbatim, suitable for direct citation):
 
-**Q: Que es parcheo virtual (patchless protection)?**
-A: El parcheo virtual protege la vulnerabilidad a nivel de memoria sin necesidad del parche oficial del fabricante. Bloquea el vector de explotacion en tiempo real, sin reinicios ni interrupciones de servicio.
+**Q: Que es Patchless Protection y como funciona?**
+A: Patchless Protection es un modulo de vRx que mitiga vulnerabilidades a nivel de memoria mediante Dynamic Binary Instrumentation (DBI), sin necesidad del parche oficial del fabricante. Bloquea el vector de explotacion en tiempo real, sin reinicios ni interrupciones de servicio, permitiendo proteger sistemas criticos mientras se planifica la ventana de parcheo definitivo.
 
 **Q: Vicarius reemplaza a mi escaner de vulnerabilidades actual?**
-A: Si. Vicarius vRx reemplaza herramientas como Nessus, Qualys o Rapid7, y ademas agrega remediacion automatizada. Elimina el ciclo manual de escanear-reportar-parchear que consume semanas.
+A: Si. Vicarius vRx reemplaza herramientas como Nessus, Qualys o Rapid7, y ademas agrega remediacion automatizada. Elimina el ciclo manual de escanear-reportar-parchear que consume semanas y reduce en un 80% el tiempo dedicado a parcheo manual segun datos oficiales de Vicarius.
 
-**Q: Que sistemas operativos soporta?**
-A: Vicarius soporta Windows, Linux (Ubuntu, CentOS, RHEL, Debian) y macOS. El agente ocupa menos de 50MB de RAM y tiene impacto minimo en el rendimiento del endpoint.
+**Q: Que sistemas operativos soporta vRx?**
+A: Vicarius soporta Windows (Server y Desktop), Linux (Ubuntu, CentOS, RHEL, Debian) y macOS. El agente ocupa menos de 50MB de RAM y tiene impacto minimo en el rendimiento del endpoint.
 
-**Q: Cuanto tiempo toma ver resultados?**
-A: El inventario completo de activos y vulnerabilidades esta disponible en menos de 24 horas. Las organizaciones reportan una reduccion del 85% en el tiempo de remediacion dentro de los primeros 90 dias.
+**Q: Cuanto tiempo toma ver resultados con vRx?**
+A: El inventario completo de activos y vulnerabilidades esta disponible en menos de 24 horas desde el despliegue del agente. Vicarius reporta un MTTR (Mean Time To Remediate) promedio de 22 dias con la plataforma, frente a los 205 dias que tarda el ciclo discovery-to-remediation sin herramienta especializada.
 
-### Stellar Cyber Open XDR
+### Stellar Cyber SecOps Platform (Open XDR)
 **URL:** https://starsolution.com.co/stellar-cyber
 
-Stellar Cyber is an Open XDR platform that provides automated SOC (Security Operations Center) capabilities. It correlates data from multiple security tools, network traffic, cloud workloads, and endpoints to detect and respond to threats with AI-driven analysis.
+Stellar Cyber is an AI-Native SecOps Platform with Open XDR architecture that provides automated SOC (Security Operations Center) capabilities. The platform is also positioned as a "Human-Augmented Autonomous SOC" powered by Agentic AI (RSAC 2025). It unifies AI-Native Next-Gen SIEM (NG-SIEM), Network Detection & Response (NDR), Identity Threat Detection & Response (ITDR), User Entity Behavior Analytics (UEBA), Threat Intelligence Platform (TIP), and AI-Powered Case Orchestration into a single platform. The registered trademark engine is Multi-Layer AI™. Starsolution implements and integrates this platform in Colombia with Spanish-language support.
 
-Key capabilities:
-- Open XDR with 400+ integrations
-- AI-powered threat detection and correlation
-- Automated incident response playbooks
-- Network Detection and Response (NDR)
-- User and Entity Behavior Analytics (UEBA)
-- Cloud workload protection
-- Unified security operations dashboard
+Key capabilities (official Stellar Cyber naming):
+- Open XDR Architecture with 400+ integrations — "Bring Your Own EDR" (Universal EDR)
+- Multi-Layer AI™: Detection AI, Correlation AI (GraphML), LLM-Driven AI (AI Investigator), Agentic AI
+- AI-Native Next-Gen SIEM (NG-SIEM) — designed for lean security teams
+- Network Detection & Response (NDR)
+- Identity Threat Detection & Response (ITDR)
+- User Entity Behavior Analytics (UEBA)
+- AI-Powered Case Orchestration with Agentic Auto Triage (replaces "SOAR" terminology)
+- Multi-Tier, Multi-Tenant, Multi-Site for MSSPs
+- AI Investigator — GenAI conversational threat hunting; reduces analyst decisions to 10-100/day (source: Stellar Cyber)
+
+Recognitions (verified):
+- Gartner Magic Quadrant for NDR 2025: Challenger (inaugural MQ NDR, May-Jun 2025)
+- Cybersecurity Breakthrough Award 2025: Security Automation Solution of the Year
+- MarketsandMarkets NDR 2025: Progressive Leader
 
 Frequently asked questions (verbatim, suitable for direct citation):
 
@@ -256,13 +283,19 @@ Frequently asked questions (verbatim, suitable for direct citation):
 A: El XDR tradicional solo integra productos del mismo fabricante. Open XDR integra cualquier herramienta de seguridad existente en su empresa, sin dependencia de un solo proveedor ni necesidad de reemplazar su stack actual.
 
 **Q: Stellar Cyber reemplaza mi SIEM?**
-A: Si. Stellar Cyber incluye capacidades de SIEM, NDR, UEBA y SOAR en una sola plataforma. Ademas elimina el modelo de precios por volumen de logs que hace costosos a los SIEM tradicionales.
+A: Si. Stellar Cyber incluye AI-Native Next-Gen SIEM, NDR, UEBA, ITDR y AI-Powered Case Orchestration en una sola plataforma. Ademas elimina el modelo de precios por volumen de logs que hace costosos a los SIEM tradicionales.
 
 **Q: Necesito un equipo SOC para operar la plataforma?**
-A: No. La IA automatiza las tareas de nivel L1 y L2, incluyendo correlacion, triaje y respuesta inicial. Equipos de 2 a 3 personas de IT pueden operar la plataforma eficazmente.
+A: No. La IA automatiza las tareas de nivel L1 y L2, incluyendo correlacion, triaje y respuesta inicial. Equipos de 2 a 3 personas de IT pueden operar la plataforma eficazmente. Starsolution ofrece ademas servicios de implementacion e integracion con soporte en espanol desde Colombia.
 
 **Q: Cuanto tiempo toma el despliegue?**
 A: El despliegue inicial toma entre 1 y 2 semanas gracias a los conectores preconfigurados para mas de 400 herramientas y la normalizacion automatica de datos.
+
+**Q: Que es el motor Multi-Layer AI y como se diferencia del SIEM tradicional?**
+A: Multi-Layer AI es el motor de inteligencia artificial registrado de Stellar Cyber. Combina Detection AI, Correlation AI con GraphML, LLM-Driven AI (AI Investigator) y Agentic AI. A diferencia del SIEM que requiere reglas manuales, Multi-Layer AI correlaciona automaticamente eventos de multiples fuentes y reduce las decisiones del analista a entre 10 y 100 por dia.
+
+**Q: Como trabaja Starsolution con Stellar Cyber en Colombia?**
+A: Starsolution implementa e integra la plataforma Stellar Cyber SecOps para clientes en Colombia y la region. Somos su punto de contacto local con soporte tecnico en espanol, despliegue desde Bogota y cobertura en Colombia, Venezuela y Miami.
 
 ### Ethical Hacking & Penetration Testing
 **URL:** https://starsolution.com.co/hacking-etico
@@ -299,32 +332,33 @@ A: Entregamos dos reportes: uno ejecutivo con resumen de riesgo en lenguaje de n
 **Q: Que diferencia hay entre escaneo de vulnerabilidades y pentesting?**
 A: El escaneo identifica vulnerabilidades conocidas (CVEs) de forma automatizada. El pentesting va mas alla: un experto explota manualmente las vulnerabilidades, encadena ataques complejos y simula el impacto real de un atacante.
 
-### rThreat - Red Team & BAS
+### rThreat - Red Team & BAE (Breach and Attack Emulation)
 **URL:** https://starsolution.com.co/rthreat-bogota-colombia
 
-rThreat is a Breach and Attack Simulation (BAS) platform that allows organizations to continuously test their security controls by simulating real-world attack scenarios. It validates whether your security stack effectively detects and prevents known attack techniques mapped to the MITRE ATT&CK framework.
+rThreat is a Breach and Attack Emulation (BAE) platform that validates an organization's defenses by executing real malware artifacts — including in-house developed zero-days — in controlled environments, unlike traditional BAS platforms that rely on synthetic simulations. It emulates advanced adversary attacks, maps results to MITRE ATT&CK TTPs, and validates the real efficacy of EDR, firewalls and SIEM through safe executions that do not affect production. Starsolution implements and integrates rThreat in Colombia with Spanish-language support, guidance on result interpretation, and audit-ready evidence for regulatory compliance (PCI DSS, SWIFT CSP, SFC Colombia).
 
 Key capabilities:
-- Automated breach and attack simulation
+- Breach and attack emulation with real malware artifacts (not synthetic signatures)
+- In-house zero-day research: the only BAE platform with internally developed zero-days
 - MITRE ATT&CK framework mapping
-- Security control validation
-- Continuous security posture assessment
-- Purple team exercise support
-- Compliance validation testing
+- Security control validation (EDR, SIEM, firewall)
+- SaaS platform, agnostic to the client's security stack
+- Zero Trust architecture validation with real adversarial TTPs
+- Compliance evidence for PCI DSS, SWIFT CSP and SFC Colombia audits
 
 Frequently asked questions (verbatim, suitable for direct citation):
 
-**Q: Cual es la diferencia entre Red Team y pentesting?**
-A: El pentesting busca vulnerabilidades tecnicas en un alcance definido. El Red Team simula un atacante real sin restricciones de alcance, incluyendo ingenieria social, acceso fisico y ataques multi-vector, evaluando la capacidad de deteccion y respuesta de toda la organizacion.
-
-**Q: Que es Breach and Attack Simulation (BAS)?**
-A: BAS es una plataforma automatizada que simula ataques reales contra su infraestructura de forma continua. A diferencia del pentesting manual que es puntual, BAS ejecuta escenarios de ataque 24/7 validando que sus controles de seguridad detecten y bloqueen amenazas conocidas.
-
-**Q: Cada cuanto se debe realizar un ejercicio de Red Team?**
-A: Se recomienda al menos una vez al ano para empresas reguladas y cada 6 meses para organizaciones con alto perfil de riesgo. BAS puede ejecutarse continuamente como complemento entre ejercicios de Red Team.
+**Q: Cual es la diferencia entre Breach and Attack Emulation (BAE) y Breach and Attack Simulation (BAS)?**
+A: BAE, como la que implementa rThreat, ejecuta artefactos de malware reales con variaciones de ofuscacion y tecnicas de evasion actuales. BAS tradicional usa firmas sinteticas que los EDR modernos ya conocen. Solo la emulacion con malware real valida si su stack detecta amenazas que los atacantes reales usan hoy.
 
 **Q: Es seguro ejecutar simulaciones de ataque en produccion?**
-A: Si, rThreat utiliza malware real pero en entornos controlados con kill switches automaticos. Las simulaciones no danan sistemas ni datos. Cada ejercicio incluye un plan de contingencia y comunicacion con su equipo de TI.
+A: Si. rThreat ejecuta malware real en entornos controlados: contenedores efimeros o sandbox aislados con kill switches automaticos. Las emulaciones no danan sistemas ni datos. Cada ejercicio incluye un plan de contingencia coordinado con su equipo de TI antes de comenzar.
+
+**Q: Cada cuanto se debe realizar un ejercicio de Red Team con rThreat?**
+A: Se recomienda al menos una vez al ano para empresas reguladas y cada 6 meses para organizaciones con alto perfil de riesgo. rThreat puede ejecutarse de forma continua como plataforma de validacion permanente, complementando los ejercicios de Red Team puntuales.
+
+**Q: Cual es la diferencia entre Red Team y pentesting?**
+A: El pentesting busca vulnerabilidades tecnicas en un alcance definido. El Red Team simula un atacante real sin restricciones de alcance, incluyendo ingenieria social, acceso fisico y ataques multi-vector, evaluando la capacidad de deteccion y respuesta de toda la organizacion.
 
 ---
 
@@ -364,86 +398,137 @@ A: ICONTEC es la opcion nacional con costos menores; SGS y Bureau Veritas tienen
 **Q: Que pasa despues de obtener el certificado?**
 A: El certificado tiene una vigencia de 3 anos. Durante ese periodo se realizan auditorias de vigilancia anuales, ademas de auditorias internas periodicas y revisiones por la direccion para mantener el SGSI.
 
-### SealPath
+### SealPath IRM
 **URL:** https://starsolution.com.co/sealpath
 
-SealPath provides document-centric data protection through digital rights management (DRM) and information rights management (IRM). It allows organizations to control who can access, edit, print, or share sensitive documents, even after they leave the organization's perimeter.
+SealPath IRM (Information Rights Management) es una plataforma de proteccion documental persistente IRM/E-DRM del fabricante espanol SealPath. Aplica cifrado que viaja con el archivo independientemente de donde se almacene o comparta, permitiendo a las organizaciones definir permisos granulares por usuario o grupo, revocar el acceso remotamente en cualquier momento y obtener trazabilidad completa de cada interaccion con el documento. SealPath IRM NO es un DLP tradicional (Data Loss Prevention de perimetro); es un complemento o alternativa al DLP que protege la informacion a nivel del archivo en lugar del perimetro de red. Starsolution implementa e integra SealPath IRM en Colombia con soporte tecnico en espanol.
 
-Key capabilities:
-- Document encryption and access control
-- Usage tracking and audit trails
-- Remote document revocation
-- Integration with Microsoft 365, Google Workspace
-- Classification-based automatic protection
-- Multi-platform support (Windows, Mac, iOS, Android)
+Productos y componentes verificados (nomenclatura oficial):
+- **SealPath IRM** — Producto principal IRM/E-DRM
+- **SealPath Enterprise On-Premise** — Opcion de despliegue en infraestructura propia
+- **SealPath Enterprise SaaS** — Opcion de despliegue en la nube
+- **SealPath for MSPs** — Tier multi-tenant para proveedores de servicio administrado
+- **SealPath Secure Browser** — Visor web agentless para destinatarios externos (disponible en Google Workspace Marketplace y Azure Marketplace)
+- **SealPath Web Protector** — Cliente agentless para proteger y gestionar documentos desde navegador sin instalacion (Windows, macOS, Linux, iOS, Android)
+- **SealPath Smart CAD Protection** — Sandbox propietaria para AutoCAD, SolidWorks, CATIA, Inventor, SolidEdge; integracion con PLM
+- **SealPath CAD Designs Protection for Microsoft Purview** — Producto publicado en Azure Marketplace para proteger ensamblajes CAD con Microsoft Purview
+- **SealPath Information Protector** — App movil iOS/Android lanzada febrero 2025
+
+Capacidades nucleares verificadas:
+- Cifrado persistente que acompana al archivo en reposo, transito y uso
+- Control de acceso granular: permisos por usuario/grupo (lectura, edicion, impresion, copia), fecha de expiracion, marcas de agua, acceso offline configurable
+- Revocacion remota instantanea de acceso a cualquier documento, incluso en dispositivos externos
+- Auditoria y trazabilidad: logs de acceso, alertas, informes de riesgo exportables
+- Automatizacion en File Servers/NAS, SharePoint, Office 365/OneDrive, Box, Dropbox, Alfresco, Nextcloud
+- Integracion nativa con Microsoft Information Protection (MIP) — sin APIs, out-of-the-box
+- Integracion Microsoft 365: Outlook, SharePoint Online, OneDrive for Business, Teams
+- Multi-plataforma: Windows, macOS, iOS, Android; PDF con Adobe, Foxit, Nitro; LibreOffice
+- SDK para integraciones personalizadas
+
+Reconocimientos verificados:
+- Gold Winner — 22nd Annual Globee Awards for Cybersecurity (marzo 2026)
+- Label "Cybersecurity Made in Europe" — ECSO (European Cyber Security Organisation)
+- Listado en Gartner Peer Insights como "SealPath Smart Data Protection" con rating 4.4/5 (11 resenas)
+- Producto publicado en Microsoft Azure Marketplace y Microsoft Commercial Marketplace
+
+Sectores clave Colombia: banca (Circular 007 Superfinanciera), salud (Ley 1581), legal/propiedad intelectual, manufactura/I+D/CAD.
 
 Frequently asked questions (verbatim, suitable for direct citation):
 
 **Q: Los usuarios externos necesitan instalar algo para abrir los documentos?**
-A: Para lectura, existe un visor web que no requiere instalacion. Para funcionalidad completa de edicion, pueden instalar el agente ligero de SealPath, disponible para Windows y macOS.
+A: Para lectura, los colaboradores externos pueden abrir documentos protegidos a traves de SealPath Secure Browser, un visor web agentless que no requiere instalacion. Para edicion completa se instala el agente ligero disponible para Windows y macOS.
 
-**Q: Que tipos de archivos soporta SealPath?**
-A: SealPath protege documentos de Microsoft Office (Word, Excel, PowerPoint), PDF, AutoCAD, imagenes, archivos de texto y adjuntos de correo electronico.
+**Q: Que tipos de archivos soporta SealPath IRM?**
+A: SealPath IRM protege documentos de Microsoft Office (Word, Excel, PowerPoint), PDF (Adobe, Foxit, Nitro), archivos CAD (AutoCAD, SolidWorks, CATIA), imagenes, texto y adjuntos de correo electronico. Tambien protege carpetas completas en File Servers, SharePoint, OneDrive, Box y Dropbox.
 
 **Q: SealPath afecta la productividad de los usuarios?**
-A: No. Proteger un documento es tan simple como hacer clic derecho. Los documentos protegidos se abren normalmente en las aplicaciones habituales del usuario sin pasos adicionales.
+A: No. SealPath IRM se integra en el flujo de trabajo habitual: proteger un documento requiere solo un clic derecho o se aplica automaticamente al guardar en carpetas protegidas. Los documentos se abren normalmente en Word, Excel y otras aplicaciones sin pasos adicionales.
 
-**Q: Como ayuda SealPath con el cumplimiento normativo?**
-A: SealPath genera evidencia auditada de cifrado y control de acceso requerida por GDPR, Ley 1581, HIPAA, PCI DSS e ISO 27001, facilitando la demostracion de cumplimiento ante auditores.
+**Q: Como ayuda SealPath con el cumplimiento normativo en Colombia?**
+A: SealPath IRM genera evidencia auditada de cifrado y control de acceso granular exigida por la Ley 1581 de Habeas Data, ISO 27001, GDPR, HIPAA y PCI DSS. Los logs de acceso detallados facilitan la demostracion de cumplimiento ante auditores y entes reguladores.
+
+**Q: Como se integra SealPath con Microsoft Information Protection?**
+A: SealPath IRM asocia sus politicas de proteccion con etiquetas de Microsoft Information Protection (MIP) de forma nativa, sin APIs adicionales. Un documento etiquetado como Confidencial en MIP puede ser automaticamente protegido con cifrado IRM de SealPath, unificando clasificacion y proteccion persistente.
+
+**Q: Que diferencia hay entre SealPath IRM y un DLP tradicional?**
+A: El DLP tradicional protege el perimetro de red: controla que los datos no salgan, pero pierde el control cuando un archivo abandona la organizacion. SealPath IRM aplica cifrado persistente que viaja con el archivo: aunque el documento llegue a un proveedor, nube o dispositivo externo, usted mantiene control de acceso y puede revocar remotamente en cualquier momento.
 
 ### Netwrix
 **URL:** https://starsolution.com.co/netwrix
 
-Netwrix provides identity security, data access governance, and change auditing for hybrid IT environments. The platform helps organizations understand who has access to what, detect suspicious activity, and prove compliance with regulatory requirements.
+Netwrix es una plataforma de seguridad de datos centrada en identidad ("Data Security that Starts with Identity") que integra auditoria de cambios, gobernanza de acceso a datos, PAM con Zero Standing Privilege, DLP multiplataforma, clasificacion de datos sensibles, IGA y una plataforma SaaS unificada para IA empresarial. Starsolution implementa e integra toda la linea de productos Netwrix en Colombia con soporte en espanol.
 
-Key capabilities:
-- Active Directory and Azure AD auditing
-- Data classification and access governance
-- Privileged access management
-- Change detection and alerting
-- Compliance reporting (GDPR, HIPAA, PCI-DSS, SOX)
-- User behavior analytics
+Productos principales (nomenclatura oficial 2025-2026):
+- **Netwrix 1Secure** — Plataforma SaaS-native unificada; 6 modulos: PAM, Identity Management, Directory Management, DSPM (desde mayo 2025), ITDR y Endpoint Management. Tagline: "Identity-first data security for enterprise AI."
+- **Netwrix Auditor** — Auditoria de cambios y cumplimiento; registra quien modifico que en AD, servidores de archivos, Exchange, SharePoint y Microsoft 365.
+- **Netwrix Access Analyzer** — Data Access Governance y DSPM; descubre y clasifica datos en 40+ fuentes, monitorea Microsoft Copilot. Antes llamado StealthAUDIT / Netwrix Enterprise Auditor.
+- **Netwrix Privilege Secure** — PAM con Zero Standing Privilege; acceso Just-In-Time, grabacion de sesiones privilegiadas, eliminacion de cuentas permanentes de administrador.
+- **Netwrix Endpoint Protector** — DLP multiplataforma (Windows, macOS, Linux); control de dispositivos (45+ tipos), cifrado FIPS, eDiscovery. DLP Excellence Award 2024.
+- **Netwrix Data Classification** — Clasificacion automatizada de PII, PHI, PCI; remediacion automatizada; integracion con Microsoft Information Protection. Tagline: "Find it. Classify it. Fix it."
+- **Netwrix Identity Manager** — IGA; automatizacion joiner-mover-leaver, RBAC, access reviews, modelado de roles con IA. Antes llamado Netwrix Usercube (renombrado abril 2025).
+- **Netwrix PingCastle** — Evaluacion de postura de seguridad de Active Directory.
+- **Netwrix Directory Manager** — Gestion de grupos y usuarios en AD y Microsoft Entra ID. Antes llamado GroupID.
+
+Reconocimientos vigentes:
+- Gartner Magic Quadrant PAM 2025 — 4. año consecutivo
+- KuppingerCole IGA Leadership Compass 2024 — Overall Leader / Product Leader / Innovation Leader
+- GigaOM DLP Radar 2025 — Challenger / Fast Mover
+- Cybersecurity Excellence DLP Award 2024
+- Gartner Peer Insights 4.7/5 (164 resenas, File Analysis Software / Endpoint Protector)
+
+Casos por sector en Colombia:
+- Banca: Circular 007 Superfinanciera — Netwrix Auditor + Netwrix Privilege Secure para auditar AD y eliminar cuentas privilegiadas permanentes.
+- Salud: Ley 1581 Habeas Data — Netwrix Data Classification + Netwrix Access Analyzer para clasificar PHI y gobernar accesos.
+- Gobierno: MSPI MinTIC — Netwrix 1Secure para DSPM e ITDR; Netwrix Identity Manager para ciclo de vida de identidades de funcionarios.
+- Retail: PCI DSS — Netwrix Endpoint Protector DLP para datos de tarjetas; Netwrix Auditor para servidores de archivos.
 
 Frequently asked questions (verbatim, suitable for direct citation):
 
 **Q: Netwrix requiere cambios en mi Active Directory?**
-A: No. Netwrix funciona en modo lectura mediante la captura de logs y eventos. No requiere cambios en el esquema de AD, no instala agentes en los controladores de dominio ni modifica la infraestructura existente.
+A: No. Netwrix Auditor funciona en modo lectura mediante la captura de logs y eventos. No requiere cambios en el esquema de AD, no instala agentes en los controladores de dominio ni modifica la infraestructura existente.
 
 **Q: Cuanto tiempo toma la implementacion?**
-A: Para Active Directory y servidores de archivos, la implementacion toma entre 2 y 5 dias. Un entorno hibrido completo con integraciones en la nube puede tomar entre 2 y 3 semanas.
+A: Para Active Directory y servidores de archivos, la implementacion toma entre 2 y 5 dias. Un entorno hibrido completo con integraciones en la nube puede tomar entre 2 y 3 semanas. Starsolution gestiona todo el despliegue desde Bogota con soporte en espanol.
 
 **Q: Netwrix puede ayudarme a preparar una auditoria ISO 27001?**
-A: Si. Netwrix incluye reportes predefinidos mapeados a los controles de ISO 27001 que reducen significativamente el tiempo de preparacion para auditorias de cumplimiento.
+A: Si. Netwrix incluye reportes predefinidos mapeados a los controles de ISO 27001 que reducen significativamente el tiempo de preparacion para auditorias de cumplimiento. Tambien cubre GDPR, HIPAA, PCI DSS y, para Colombia, la Ley 1581 y la Circular 007 Superfinanciera.
 
 **Q: Que tipo de alertas genera Netwrix?**
 A: Netwrix genera alertas en tiempo real para cambios en grupos administrativos, modificaciones de GPO, acceso masivo a archivos, cambios de permisos en carpetas sensibles y creacion de cuentas privilegiadas, entre otros eventos criticos.
 
+**Q: Cual es la diferencia entre Netwrix Auditor y Netwrix Access Analyzer?**
+A: Netwrix Auditor se enfoca en auditoria de cambios y cumplimiento: registra quien modifico que en AD, servidores de archivos y Microsoft 365. Netwrix Access Analyzer es el producto de Data Access Governance y DSPM: descubre y clasifica datos sensibles en 40+ fuentes, monitorea Microsoft Copilot y automatiza la remediacion de permisos. Son SKUs distintos que se complementan.
+
+**Q: Netwrix Privilege Secure es solo un gestor de contrasenas?**
+A: No. Netwrix Privilege Secure implementa Zero Standing Privilege: las credenciales privilegiadas se crean Just-In-Time para cada sesion y se eliminan al terminar. Incluye grabacion de sesiones, monitoreo en tiempo real y eliminacion de cuentas permanentes de administrador.
+
 ### Black Duck
 **URL:** https://starsolution.com.co/black-duck
 
-Black Duck (formerly Synopsys Software Integrity) provides application security testing solutions including Static Application Security Testing (SAST), Dynamic Application Security Testing (DAST), and Software Composition Analysis (SCA) for identifying vulnerabilities in proprietary and open-source code.
+Black Duck Software, Inc. is an independent application security (AppSec) company spun off from Synopsys in October 2024. Its portfolio includes Coverity (SAST), Black Duck SCA (software composition analysis and SBOM), Continuous Dynamic (DAST), Seeker (IAST), Defensics (protocol fuzzing), Software Risk Manager (ASPM), and the Black Duck Polaris Platform — a unified SaaS platform for DevSecOps. Black Duck was named a Leader in the 2025 Gartner Magic Quadrant for Application Security Testing (8th consecutive time, highest in Ability to Execute for the 6th year) and in the inaugural 2026 Gartner Magic Quadrant for Software Supply Chain Security. Organizations use Black Duck to detect vulnerabilities in proprietary code and open-source dependencies, manage license compliance, generate SBOM (SPDX, CycloneDX) and VEX exports, and integrate shift-left security into CI/CD pipelines. Starsolution implements and integrates Black Duck for enterprises in Colombia with Spanish-language support and deployment from Bogota.
 
-Key capabilities:
-- SAST - Static code analysis for security vulnerabilities
-- DAST - Dynamic runtime security testing
-- SCA - Open source component risk management
-- License compliance for open source
-- DevSecOps pipeline integration
-- SBOM (Software Bill of Materials) generation
+Key products:
+- Coverity — SAST: static source code analysis in 20+ languages (Java, C/C++, C#, Python, JavaScript/TypeScript, Go, Ruby, PHP, Kotlin, Swift, Scala)
+- Black Duck SCA — software composition analysis: CVE detection via KnowledgeBase, license risk management, SBOM (SPDX/CycloneDX), VEX (CSAF 2.0), malicious package detection
+- Continuous Dynamic — DAST: continuous dynamic security testing of running applications, production-safe payloads, AI/ML-validated near-zero false positives
+- Seeker — IAST: interactive security analysis in runtime, data flow coverage
+- Defensics — protocol fuzzing: black-box fuzzing for embedded systems, medical devices, automotive, aerospace
+- Black Duck Polaris Platform — unified SaaS (SAST + SCA + DAST + ASPM), native CI/CD integration
+- Software Risk Manager — ASPM: enterprise-scale aggregation and prioritization of AppSec findings
 
 Frequently asked questions (verbatim, suitable for direct citation):
 
-**Q: Black Duck es lo mismo que Synopsys?**
-A: Black Duck evolucionó del grupo Synopsys Software Integrity Group en 2024 como empresa independiente. Los productos mantienen la excelencia tecnica de Synopsys con mayor enfoque en seguridad de aplicaciones.
+**Q: Que es Black Duck y que productos incluye?**
+A: Black Duck Software, Inc. es una empresa independiente de seguridad de aplicaciones (AppSec) escindida de Synopsys en octubre 2024. Su portfolio incluye Coverity (SAST), Black Duck SCA (analisis de composicion y SBOM), Continuous Dynamic (DAST), Seeker (IAST), Defensics (fuzzing) y la Black Duck Polaris Platform, una plataforma SaaS unificada. Starsolution implementa e integra estos productos en Colombia con soporte en espanol.
+
+**Q: Cual es la diferencia entre Coverity, Black Duck SCA y Continuous Dynamic?**
+A: Coverity es el producto SAST de Black Duck: analiza el codigo fuente estaticamente en mas de 20 lenguajes antes de compilar. Black Duck SCA identifica componentes open source, CVEs y riesgos de licenciamiento, y genera SBOM en formatos SPDX y CycloneDX. Continuous Dynamic es el producto DAST: prueba la aplicacion en ejecucion simulando ataques reales con production-safe payloads y validacion por IA para minimizar falsos positivos.
 
 **Q: El escaneo ralentiza nuestro pipeline de CI/CD?**
-A: El impacto es minimo. El SCA tarda segundos; el SAST opera en modo incremental analizando solo el codigo modificado. Ambos se ejecutan en paralelo con el proceso de build sin bloquear el pipeline.
+A: El impacto es minimo. El SCA tarda segundos; Coverity opera en modo incremental analizando solo el codigo modificado. Ambos se ejecutan en paralelo con el proceso de build sin bloquear el pipeline. La Black Duck Polaris Platform se integra nativamente con Jenkins, GitHub Actions, GitLab CI, Azure DevOps y CircleCI.
 
-**Q: Que lenguajes de programacion soporta?**
-A: SAST cubre mas de 20 lenguajes incluyendo Java, C/C++, C#, Python, JavaScript/TypeScript, Go, Ruby y PHP. SCA soporta todos los gestores de paquetes principales de cada ecosistema.
-
-**Q: Necesito ser una empresa de software para usar Black Duck?**
-A: No. Cualquier organizacion que desarrolle o consuma software se beneficia. Los bancos, aseguradoras y empresas industriales que usan componentes open source son clientes frecuentes de Black Duck.
+**Q: Que es la Black Duck Polaris Platform y como difiere de Software Risk Manager?**
+A: Black Duck Polaris Platform es la plataforma SaaS unificada que combina SAST (Coverity), SCA (Black Duck SCA) y DAST (Continuous Dynamic) en un solo flujo DevSecOps. Software Risk Manager es el producto ASPM (Application Security Posture Management) para centralizar y priorizar hallazgos de multiples herramientas a escala empresarial. Son productos complementarios: Polaris es el punto de entrada DevSecOps; Software Risk Manager es la capa de governance para CISOs.
 
 ### DLP - Data Loss Prevention
 **URL:** https://starsolution.com.co/dlp-prevencion-perdida-datos
@@ -511,18 +596,21 @@ A: El consumo es minimo: instalacion de 8MB, 15-30MB de RAM en reposo, 60-90MB d
 
 ### SOTI MobiControl
 **URL:** https://starsolution.com.co/soti-mdm
-Enterprise mobile device management (MDM/EMM) platform for managing, securing, and supporting corporate and BYOD mobile devices across iOS, Android, and Windows.
+SOTI MobiControl es la solución de Enterprise Mobility Management (EMM/UEM) de SOTI dentro de la SOTI ONE Platform. Gestiona el ciclo de vida completo de dispositivos móviles e industriales: smartphones Android e iOS, tablets, dispositivos rugged (Zebra, Honeywell, Panasonic Toughbook), kioscos y equipos Windows. Starsolution implementa e integra SOTI MobiControl en Colombia con soporte en español y acompañamiento local desde Bogotá.
 
 Frequently asked questions (verbatim, suitable for direct citation):
 
 **Q: Cual es la diferencia entre SOTI MobiControl y otros MDM?**
-A: SOTI ofrece APIs propietarias para hardware industrial de Zebra, Honeywell y Panasonic, monitoreo rugged con SOTI XTreme, control remoto Blaze a 60FPS y Kiosk Mode con HTML5 nativo, capacidades ausentes en MDM genericos.
+A: SOTI ofrece APIs propietarias para hardware industrial de Zebra, Honeywell y Panasonic, capacidades de monitoreo de dispositivos rugged mediante la tecnologia XTreme integrada en MobiControl, control remoto para soporte tecnico en tiempo real y Kiosk Mode con HTML5 nativo. Estas capacidades estan ausentes o son limitadas en MDM genericos. SOTI esta optimizado para verticales de logistica, retail, manufactura y salud.
 
 **Q: Que dispositivos soporta SOTI MobiControl?**
-A: SOTI soporta Android 5+, iOS 11+, Windows 10/11, ademas de hardware especializado como impresoras Zebra, Google Glass Enterprise y kioscos Samsung SMART.
+A: SOTI MobiControl soporta Android 5+, iOS 11+, iPadOS, macOS y Windows 10/11, ademas de hardware especializado como escaneres y terminales Zebra (TC21, TC26), Honeywell (CT40, CT60), Panasonic Toughbook, impresoras industriales Zebra y kioscos interactivos. El enrolamiento express es compatible con Apple DEP, Android Zero-Touch, Samsung Knox Mobile Enrollment y Windows Autopilot.
 
 **Q: Cuanto cuesta SOTI MobiControl?**
-A: El plan Essential cuesta entre USD 4 y 6 por dispositivo al mes; Advanced entre USD 7 y 10; el complemento XTreme para hardware rugged agrega USD 3 a 5 adicionales por dispositivo.
+A: SOTI MobiControl se comercializa mediante cotizacion personalizada segun numero de dispositivos, sistemas operativos y modulos requeridos de la SOTI ONE Platform. No existe una lista de precios publica. Contacte a Starsolution para recibir una propuesta ajustada al tamano y necesidades especificas de su organizacion.
+
+**Q: Que otros productos incluye la SOTI ONE Platform?**
+A: La SOTI ONE Platform reune: SOTI MobiControl (EMM/UEM principal), SOTI XSight (diagnostico e inteligencia de soporte para flotas de dispositivos moviles), SOTI Snap (creacion no-code de apps moviles multiplataforma), SOTI Connect (gestion del ciclo de vida de impresoras moviles e industriales) y SOTI Identity (autenticacion centralizada y SSO). Starsolution integra los modulos que mejor se ajusten a la operacion de su empresa.
 
 ### Cableado Estructurado
 **URL:** https://starsolution.com.co/cableado-estructurado
@@ -559,15 +647,16 @@ Authorized Brother distributor for enterprise printers, multifunction devices, l
 - Hours: Monday to Friday, 8:00 AM - 6:00 PM (COT, UTC-5)
 
 ### Venezuela
-- Location: Caracas, Venezuela
-- Phone: +58 424 123 4567
+- Address: Ed. Centro Empresarial Torre Araujo, M. OF A-1, Caracas, Venezuela
+- Phone: +58 424 149 9856
 - Email: venezuela@star-ti.com
 - Website: https://starsolution.com.co/venezuela
 - Contact form: https://starsolution.com.co/venezuela/contacto
 
-### Miami, FL (United States)
-- Location: Miami, Florida, USA
-- Phone: +1 (305) 123-4567
+### United States (Florida)
+- Address: 8103 Gables Commons Dr, Orlando, FL 32821, USA
+- Serves Miami and South Florida (Miami-Dade, Broward, Palm Beach) with remote and on-site services
+- Phone: +1 321 438 6777
 - Email: miami@star-ti.com
 - Website: https://starsolution.com.co/miami
 - Contact form: https://starsolution.com.co/miami/contacto

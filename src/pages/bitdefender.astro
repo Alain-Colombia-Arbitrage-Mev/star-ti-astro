@@ -35,8 +35,8 @@ const AWARD_BADGES = [
 const PRODUCT_MODULES = [
   { tag: 'EDR', title: 'GravityZone Endpoint Detection & Response', desc: 'Reconstruye la cadena de ataque sobre cada laptop o servidor comprometido y permite contener el incidente desde la consola sin tener que enviar a alguien presencial a la sede.' },
   { tag: 'XDR', title: 'GravityZone XDR', desc: 'Suma a la visibilidad del endpoint la telemetria de red, Microsoft 365 e identidades, asi una alerta deja de ser un evento aislado y pasa a ser un incidente con contexto completo.' },
-  { tag: 'MDR', title: 'GravityZone MDR + SOC', desc: 'Util para empresas medianas que no tienen turno nocturno: el SOC de Bitdefender vigila a las 3 a.m. y nosotros en Starsolution somos su punto de contacto local cuando se escala un incidente.' },
-  { tag: 'CSPM', title: 'GravityZone CSPM Plus', desc: 'Pensado para clientes que migraron a AWS o Azure y todavia no saben cuantos buckets quedaron publicos por error o que IAM roles tienen privilegios excesivos.' },
+  { tag: 'MDR', title: 'Bitdefender MDR', desc: 'Util para empresas medianas que no tienen turno nocturno: el SOC de Bitdefender vigila a las 3 a.m. con el enfoque "analisis, no alertas", y nosotros en Starsolution somos su punto de contacto local cuando se escala un incidente.' },
+  { tag: 'CSPM', title: 'GravityZone CSPM+', desc: 'Pensado para clientes que migraron a AWS, Azure o Google Cloud y todavia no saben cuantos buckets quedaron publicos por error o que IAM roles tienen privilegios excesivos. Suma CIEM y deteccion de amenazas sobre la postura de nube.' },
   { tag: 'PM', title: 'GravityZone Patch Management', desc: 'Cierra el ciclo: mientras EDR detecta lo que ya entro, Patch Management evita que entre. Despliegue programado de parches de Windows y aplicaciones de terceros sin segundo agente.' },
 ];
 
@@ -54,6 +54,13 @@ const FAQS = [
   { q: '¿Bitdefender me deja bloquear memorias USB y celulares conectados?', a: 'Si. La politica de Device Control puede bloquear USB, CD/DVD, Bluetooth y dispositivos moviles conectados, y permite definir excepciones por usuario, equipo o area. Es uno de los controles mas usados en clientes del sector financiero y salud que manejan informacion sensible bajo Habeas Data Ley 1581.' },
   { q: '¿Cuanto tarda Starsolution en dejarnos operando?', a: 'Una implementacion tipica en una empresa de 50 equipos se completa en menos de dos horas de trabajo efectivo: configuracion de consola en la nube, conexion con su Active Directory, definicion de las politicas base y prueba en un grupo piloto antes del despliegue total. Para parques de mas de 1.000 equipos planeamos un cronograma de 1 a 2 semanas con fases controladas.' },
   { q: '¿Sirve si tenemos teletrabajo y sucursales en otras ciudades?', a: 'Si, es uno de los escenarios donde GravityZone brilla mas. Como la consola es cloud, sus equipos en Medellin, Cali o cualquier sede remota reportan directamente sin necesidad de VPN ni servidores intermedios. Aplica las mismas politicas a empleados en home office que a la sede principal.' },
+];
+
+const SECTOR_CASES = [
+  { sector: 'Banca y servicios financieros', need: 'Cumplir la Circular Externa 007 de la Superintendencia Financiera y frenar fraude por ransomware.', how: 'EDR + Device Control para bloquear exfiltracion por USB, y reporteria lista para auditoria.' },
+  { sector: 'Salud y EPS', need: 'Proteger historias clinicas bajo la Ley 1581 de Habeas Data y mantener disponibilidad 24/7.', how: 'Anti-ransomware con remediacion automatica y Full Disk Encryption en estaciones clinicas.' },
+  { sector: 'Gobierno y sector publico', need: 'Alinear con el MSPI de MinTIC y resistir ataques dirigidos a entidades.', how: 'GravityZone XDR con correlacion de red e identidad y Bitdefender MDR para los turnos que la entidad no cubre.' },
+  { sector: 'Manufactura y retail', need: 'Proteger sedes distribuidas y puntos de venta sin equipo de TI en cada ciudad.', how: 'Consola cloud sin VPN: las mismas politicas en Bogota, Medellin y Cali desde un solo panel.' },
 ];
 
 const CHECK_PATH = 'M11.6667 3.5L5.25 9.91667L2.33333 7';
@@ -171,6 +178,18 @@ const serviceSchema = {
       </div>
     </section>
 
+    <!-- ¿Que es? · Bloque definicional para AI/GEO -->
+    <section class="bg-white pt-14 sm:pt-16" aria-labelledby="que-es-gravityzone">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 id="que-es-gravityzone" class="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
+          ¿Que es Bitdefender GravityZone?
+        </h2>
+        <p class="text-lg text-gray-700 leading-relaxed">
+          Bitdefender GravityZone es la plataforma unificada de ciberseguridad empresarial de Bitdefender. Reune en un solo agente y una consola en la nube la proteccion de endpoints con inteligencia artificial, EDR, XDR, gestion de parches y seguridad de cargas de trabajo en la nube (CSPM+). Las empresas la usan para prevenir, detectar e investigar ataques —ransomware, phishing avanzado y amenazas dirigidas— desde laptops y servidores hasta entornos AWS, Azure y Google Cloud. En Colombia, Starsolution la implementa como partner oficial de Bitdefender, con soporte local en espanol y politicas alineadas con la Ley 1581 de Habeas Data e ISO 27001.
+        </p>
+      </div>
+    </section>
+
     <!-- GravityZone Platform -->
     <section class="bg-gray-50 py-16 sm:py-20 lg:py-24">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -259,12 +278,12 @@ const serviceSchema = {
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div>
-            <span class="text-[#ed1c24] text-xs font-semibold uppercase tracking-wider">GravityZone CSPM Plus</span>
+            <span class="text-[#ed1c24] text-xs font-semibold uppercase tracking-wider">GravityZone CSPM+</span>
             <h2 class="text-3xl sm:text-4xl font-bold mt-3 mb-6 text-gray-900">
               La nube se rompe por configuracion, no por exploits
             </h2>
             <p class="text-gray-600 text-lg mb-6 leading-relaxed">
-              La mayoria de incidentes en AWS y Azure que vemos en clientes colombianos no son ataques sofisticados: son S3 buckets abiertos, llaves IAM con permisos de admin y grupos de seguridad heredados. CSPM Plus enumera estas brechas en horas, las prioriza por impacto y deja la evidencia lista para la auditoria de ISO 27001.
+              La mayoria de incidentes en AWS y Azure que vemos en clientes colombianos no son ataques sofisticados: son S3 buckets abiertos, llaves IAM con permisos de admin y grupos de seguridad heredados. CSPM+ enumera estas brechas en horas, las prioriza por impacto y deja la evidencia lista para la auditoria de ISO 27001.
             </p>
             <div class="grid grid-cols-2 gap-4">
               <div class="bg-white border border-gray-200 rounded-xl p-5">
@@ -279,7 +298,7 @@ const serviceSchema = {
           </div>
           <div class="relative">
             <div class="bg-white rounded-2xl border border-gray-200 shadow-xl p-3">
-              <img src={GZ_CSPM} alt="Vista general de Bitdefender GravityZone CSPM Plus con configuraciones cloud y cumplimiento" width="1200" height="760" class="w-full h-auto rounded-xl" loading="lazy" />
+              <img src={GZ_CSPM} alt="Vista general de Bitdefender GravityZone CSPM+ con configuraciones cloud y cumplimiento" width="1200" height="760" class="w-full h-auto rounded-xl" loading="lazy" />
             </div>
           </div>
         </div>
@@ -375,6 +394,23 @@ const serviceSchema = {
       </div>
     </section>
 
+    <!-- Casos de uso por sector -->
+    <section class="py-16 sm:py-20 bg-white border-t border-gray-100">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">GravityZone por sector en Colombia</h2>
+        <p class="text-gray-600 max-w-2xl mb-12">Como aplicamos la plataforma a los retos de cumplimiento y operacion mas comunes en cada industria.</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {SECTOR_CASES.map((c) => (
+            <article class="bg-gray-50 border border-gray-200 rounded-2xl p-6">
+              <h3 class="text-lg font-semibold text-gray-900 mb-3">{c.sector}</h3>
+              <p class="text-sm text-gray-600 mb-3"><span class="font-semibold text-gray-800">Reto:</span> {c.need}</p>
+              <p class="text-sm text-gray-600"><span class="font-semibold text-gray-800">Como lo resolvemos:</span> {c.how}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
     <!-- Plans -->
     <section id="planes" class="py-16 sm:py-20 lg:py-24 bg-gray-50 scroll-mt-20">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -387,12 +423,12 @@ const serviceSchema = {
 
         <div class="overflow-x-auto rounded-2xl border border-gray-200 bg-white shadow-sm">
           <table class="w-full text-sm text-left text-gray-700 min-w-[760px]">
-            <caption class="sr-only">Comparativa de planes Bitdefender GravityZone para empresas en Colombia: Small Business (10-100 dispositivos), Business Security Premium (100-1.000 dispositivos) y XDR + MDR (mas de 1.000 dispositivos).</caption>
+            <caption class="sr-only">Comparativa de ediciones Bitdefender GravityZone para empresas en Colombia: Small Business Security (10-100 dispositivos), Business Security Premium (100-1.000 dispositivos) y Business Security Enterprise con Defense XDR + Bitdefender MDR (mas de 1.000 dispositivos).</caption>
             <thead class="bg-gray-50 text-gray-900">
               <tr>
                 <th scope="col" class="px-4 sm:px-6 py-4 font-semibold">Caracteristica</th>
                 <th scope="col" class="px-4 sm:px-6 py-4 font-semibold">
-                  <span class="block text-base">Small Business</span>
+                  <span class="block text-base">Small Business Security</span>
                   <span class="block text-xs font-normal text-gray-500 mt-1">10 a 100 dispositivos</span>
                 </th>
                 <th scope="col" class="px-4 sm:px-6 py-4 font-semibold bg-red-50">
@@ -400,7 +436,7 @@ const serviceSchema = {
                   <span class="block text-xs font-normal text-gray-500 mt-1">100 a 1.000 dispositivos · Mas popular</span>
                 </th>
                 <th scope="col" class="px-4 sm:px-6 py-4 font-semibold">
-                  <span class="block text-base">XDR + MDR</span>
+                  <span class="block text-base">Enterprise · XDR + MDR</span>
                   <span class="block text-xs font-normal text-gray-500 mt-1">Mas de 1.000 dispositivos</span>
                 </th>
               </tr>
@@ -415,8 +451,8 @@ const serviceSchema = {
               <tr><th scope="row" class="px-4 sm:px-6 py-3 font-medium text-gray-900 text-left">Full Disk Encryption</th><td class="px-4 sm:px-6 py-3 text-gray-300">No</td><td class="px-4 sm:px-6 py-3 text-emerald-600 bg-red-50/40">Si</td><td class="px-4 sm:px-6 py-3 text-emerald-600">Si</td></tr>
               <tr><th scope="row" class="px-4 sm:px-6 py-3 font-medium text-gray-900 text-left">EDR (Endpoint Detection &amp; Response)</th><td class="px-4 sm:px-6 py-3 text-gray-300">No</td><td class="px-4 sm:px-6 py-3 text-gray-300 bg-red-50/40">Add-on</td><td class="px-4 sm:px-6 py-3 text-emerald-600">Si</td></tr>
               <tr><th scope="row" class="px-4 sm:px-6 py-3 font-medium text-gray-900 text-left">XDR (Extended Detection &amp; Response)</th><td class="px-4 sm:px-6 py-3 text-gray-300">No</td><td class="px-4 sm:px-6 py-3 text-gray-300 bg-red-50/40">No</td><td class="px-4 sm:px-6 py-3 text-emerald-600">Si</td></tr>
-              <tr><th scope="row" class="px-4 sm:px-6 py-3 font-medium text-gray-900 text-left">MDR + SOC 24x7 de Bitdefender</th><td class="px-4 sm:px-6 py-3 text-gray-300">No</td><td class="px-4 sm:px-6 py-3 text-gray-300 bg-red-50/40">No</td><td class="px-4 sm:px-6 py-3 text-emerald-600">Si</td></tr>
-              <tr><th scope="row" class="px-4 sm:px-6 py-3 font-medium text-gray-900 text-left">CSPM Plus para multi-cloud (AWS, Azure)</th><td class="px-4 sm:px-6 py-3 text-gray-300">No</td><td class="px-4 sm:px-6 py-3 text-gray-300 bg-red-50/40">No</td><td class="px-4 sm:px-6 py-3 text-emerald-600">Si</td></tr>
+              <tr><th scope="row" class="px-4 sm:px-6 py-3 font-medium text-gray-900 text-left">Bitdefender MDR (SOC 24x7)</th><td class="px-4 sm:px-6 py-3 text-gray-300">No</td><td class="px-4 sm:px-6 py-3 text-gray-300 bg-red-50/40">No</td><td class="px-4 sm:px-6 py-3 text-emerald-600">Si</td></tr>
+              <tr><th scope="row" class="px-4 sm:px-6 py-3 font-medium text-gray-900 text-left">CSPM+ para multi-cloud (AWS, Azure, GCP)</th><td class="px-4 sm:px-6 py-3 text-gray-300">No</td><td class="px-4 sm:px-6 py-3 text-gray-300 bg-red-50/40">No</td><td class="px-4 sm:px-6 py-3 text-emerald-600">Si</td></tr>
               <tr><th scope="row" class="px-4 sm:px-6 py-3 font-medium text-gray-900 text-left">Soporte e implementacion local Starsolution (Bogota)</th><td class="px-4 sm:px-6 py-3 text-emerald-600">Si</td><td class="px-4 sm:px-6 py-3 text-emerald-600 bg-red-50/40">Si</td><td class="px-4 sm:px-6 py-3 text-emerald-600">Si</td></tr>
               <tr class="bg-gray-50">
                 <th scope="row" class="px-4 sm:px-6 py-4 font-semibold text-gray-900 text-left">Cotizacion</th>

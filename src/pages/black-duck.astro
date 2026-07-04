@@ -54,6 +54,26 @@ const seo = seoData['black-duck'];
       </div>
     </section>
 
+    <!-- GEO: ¿Qué es Black Duck? -->
+    <section class="bg-white pt-14 sm:pt-16" aria-labelledby="que-es-blackduck">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 id="que-es-blackduck" class="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">¿Que es Black Duck?</h2>
+        <p class="text-lg text-gray-700 leading-relaxed">
+          Black Duck Software, Inc. es una empresa independiente de seguridad de aplicaciones (AppSec)
+          escindida de Synopsys en octubre 2024, reconocida como Leader en el Gartner Magic Quadrant for
+          Application Security Testing 2025 (8.a vez consecutiva) y en el inaugural Gartner Magic Quadrant
+          for Software Supply Chain Security 2026. Su portfolio incluye Coverity (SAST), Black Duck SCA
+          (analisis de composicion de software y SBOM), Continuous Dynamic (DAST), Seeker (IAST),
+          Defensics (fuzzing de protocolos), Software Risk Manager (ASPM) y la Black Duck Polaris Platform,
+          una plataforma SaaS unificada para DevSecOps. Las organizaciones usan Black Duck para detectar
+          vulnerabilidades en codigo propio y dependencias open source, gestionar licencias y cumplimiento
+          de cadena de suministro de software (SBOM, VEX), e integrar seguridad shift-left en sus pipelines
+          CI/CD. Starsolution implementa e integra Black Duck en empresas de Colombia con soporte en espanol
+          y despliegue desde Bogota.
+        </p>
+      </div>
+    </section>
+
     <!-- Why AppSec -->
     <section class="py-16 sm:py-20 lg:py-24 bg-white">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -69,9 +89,11 @@ const seo = seoData['black-duck'];
               propio y cada librería open source que utiliza es un potencial punto de entrada.
             </p>
             <p class="text-gray-600 mb-8">
-              Black Duck (antes Synopsys Software Integrity) ofrece la suite de seguridad de
-              aplicaciones más completa del mercado, cubriendo análisis estático, dinámico y de
-              composición de software en una sola plataforma integrada con su pipeline de desarrollo.
+              Black Duck Software, Inc. (anteriormente Synopsys Software Integrity Group, escindido
+              en octubre 2024) ofrece una suite integral de AppSec con Coverity (SAST), Black Duck
+              SCA, Continuous Dynamic (DAST), Seeker (IAST) y la Black Duck Polaris Platform —
+              todo integrado en su pipeline de desarrollo bajo el modelo "One Platform. Complete
+              Application Security."
             </p>
 
             <div class="grid grid-cols-2 gap-6">
@@ -158,11 +180,11 @@ const seo = seoData['black-duck'];
                 <path d="M7 8h6M7 12h4" stroke="#374151" stroke-linecap="round" stroke-width="1.66667" />
               </svg>
             </div>
-            <h3 class="text-lg font-semibold mb-2">Análisis Estático (SAST)</h3>
+            <h3 class="text-lg font-semibold mb-2">Coverity — SAST</h3>
             <p class="text-sm text-gray-600">
-              Escaneo de código fuente para identificar vulnerabilidades como SQL Injection, XSS,
-              buffer overflow y más. Soporta 20+ lenguajes de programación incluyendo Java,
-              Python, C/C++, JavaScript y Go.
+              Analisis estatico de codigo fuente que detecta SQL Injection, XSS, buffer overflow
+              y mas de 150 tipos de defectos de seguridad. Soporta 20+ lenguajes incluyendo Java,
+              Python, C/C++, JavaScript, TypeScript y Go.
             </p>
           </div>
 
@@ -173,11 +195,11 @@ const seo = seoData['black-duck'];
                 <path d="M10 7v3l2 2" stroke="#374151" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.66667" />
               </svg>
             </div>
-            <h3 class="text-lg font-semibold mb-2">Análisis Dinámico (DAST)</h3>
+            <h3 class="text-lg font-semibold mb-2">Continuous Dynamic — DAST</h3>
             <p class="text-sm text-gray-600">
-              Pruebas de seguridad en aplicaciones en ejecución. Simula ataques reales contra
-              sus APIs y aplicaciones web para descubrir vulnerabilidades que solo aparecen en
-              tiempo de ejecución.
+              Pruebas dinamicas de seguridad en aplicaciones en ejecucion. Escaneo continuo
+              con production-safe payloads, validacion por IA/ML y near-zero falsos positivos.
+              Sin almacenamiento de credenciales; escala a miles de sitios concurrentes.
             </p>
           </div>
 
@@ -187,10 +209,11 @@ const seo = seoData['black-duck'];
                 <path d="M3 3h14v4H3zM3 10h14v4H3z" stroke="#374151" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.66667" />
               </svg>
             </div>
-            <h3 class="text-lg font-semibold mb-2">Composición de Software (SCA)</h3>
+            <h3 class="text-lg font-semibold mb-2">Black Duck SCA</h3>
             <p class="text-sm text-gray-600">
-              Identifique todas las librerías open source en su aplicación, sus vulnerabilidades
-              conocidas (CVEs) y riesgos de licenciamiento. Base de datos de 6M+ componentes.
+              Inventario completo de componentes open source, deteccion de CVEs mediante la
+              KnowledgeBase propia, gestion de licenciamiento (GPL, LGPL, Apache, MIT) y
+              generacion de SBOM en formatos SPDX y CycloneDX con exportacion VEX.
             </p>
           </div>
 
@@ -200,10 +223,11 @@ const seo = seoData['black-duck'];
                 <path d="M10 2L3 6v5c0 4.5 3 8.5 7 9.5 4-1 7-5 7-9.5V6l-7-4z" stroke="#374151" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.66667" />
               </svg>
             </div>
-            <h3 class="text-lg font-semibold mb-2">Gestión de Riesgo Open Source</h3>
+            <h3 class="text-lg font-semibold mb-2">Seeker — IAST</h3>
             <p class="text-sm text-gray-600">
-              Control completo de riesgo open source: vulnerabilidades, calidad del componente,
-              actividad de la comunidad y riesgos legales de licenciamiento (GPL, LGPL, Apache, MIT).
+              Analisis interactivo de seguridad en tiempo de ejecucion. Seeker instrumenta la
+              aplicacion y provee visibilidad del posture de seguridad durante las pruebas
+              funcionales, cubriendo flujos de datos reales en ejecucion.
             </p>
           </div>
 
@@ -214,10 +238,11 @@ const seo = seoData['black-duck'];
                 <path d="M13 15l2 2 4-4" stroke="#374151" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.66667" />
               </svg>
             </div>
-            <h3 class="text-lg font-semibold mb-2">Cumplimiento de Licencias</h3>
+            <h3 class="text-lg font-semibold mb-2">Defensics — Fuzzing de Protocolos</h3>
             <p class="text-sm text-gray-600">
-              Identifique y gestione obligaciones de licenciamiento de componentes open source.
-              Evite riesgos legales y asegure cumplimiento con políticas corporativas de uso de OSS.
+              Fuzzing black-box de protocolos para detectar vulnerabilidades en sistemas
+              embebidos, dispositivos medicos, automocion y aeronautica. Orientado a productos
+              con firmware y comunicaciones criticas de red.
             </p>
           </div>
 
@@ -227,10 +252,11 @@ const seo = seoData['black-duck'];
                 <path d="M3 10l4 4 10-10" stroke="#374151" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.66667" />
               </svg>
             </div>
-            <h3 class="text-lg font-semibold mb-2">Integración CI/CD</h3>
+            <h3 class="text-lg font-semibold mb-2">Polaris Platform + Software Risk Manager</h3>
             <p class="text-sm text-gray-600">
-              Integración nativa con Jenkins, GitHub Actions, GitLab CI, Azure DevOps y otras
-              herramientas. Escaneo automático en cada commit o pull request sin frenar al equipo.
+              Black Duck Polaris Platform unifica SAST, SCA y DAST en SaaS con integracion
+              nativa CI/CD. Software Risk Manager centraliza y prioriza hallazgos de todas las
+              herramientas AppSec para una gestion ASPM a escala empresarial.
             </p>
           </div>
         </div>
@@ -242,11 +268,11 @@ const seo = seoData['black-duck'];
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12">
           <h2 class="text-3xl sm:text-4xl font-bold mb-4">
-            SAST vs DAST vs SCA: Tipos de Análisis
+            Coverity (SAST) vs Continuous Dynamic (DAST) vs Black Duck SCA
           </h2>
           <p class="text-gray-600 max-w-2xl mx-auto">
-            Cada tipo de análisis cubre una capa diferente de seguridad. La protección completa
-            requiere los tres.
+            Cada producto cubre una capa diferente de seguridad. La proteccion completa
+            requiere los tres junto con IAST (Seeker) en etapas de prueba.
           </p>
         </div>
 
@@ -255,7 +281,7 @@ const seo = seoData['black-duck'];
             <div class="bg-blue-100 text-blue-600 w-12 h-12 rounded-full flex items-center justify-center mb-4 font-bold text-lg">
               S
             </div>
-            <h3 class="text-xl font-bold mb-2">SAST</h3>
+            <h3 class="text-xl font-bold mb-2">Coverity (SAST)</h3>
             <p class="text-sm text-gray-500 mb-4">Static Application Security Testing</p>
             <ul class="space-y-2">
               <li class="flex items-start gap-2 text-sm">
@@ -292,7 +318,7 @@ const seo = seoData['black-duck'];
             <div class="bg-red-100 text-red-800 w-12 h-12 rounded-full flex items-center justify-center mb-4 font-bold text-lg">
               D
             </div>
-            <h3 class="text-xl font-bold mb-2">DAST</h3>
+            <h3 class="text-xl font-bold mb-2">Continuous Dynamic (DAST)</h3>
             <p class="text-sm text-gray-500 mb-4">Dynamic Application Security Testing</p>
             <ul class="space-y-2">
               <li class="flex items-start gap-2 text-sm">
@@ -326,7 +352,7 @@ const seo = seoData['black-duck'];
             <div class="bg-purple-100 text-purple-600 w-12 h-12 rounded-full flex items-center justify-center mb-4 font-bold text-lg">
               C
             </div>
-            <h3 class="text-xl font-bold mb-2">SCA</h3>
+            <h3 class="text-xl font-bold mb-2">Black Duck SCA</h3>
             <p class="text-sm text-gray-500 mb-4">Software Composition Analysis</p>
             <ul class="space-y-2">
               <li class="flex items-start gap-2 text-sm">
@@ -354,6 +380,95 @@ const seo = seoData['black-duck'];
                 <span>6M+ componentes en base de datos</span>
               </li>
             </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Casos por Sector -->
+    <section class="py-16 sm:py-20 lg:py-24 bg-white" aria-labelledby="sectores-blackduck">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="mb-12">
+          <h2 id="sectores-blackduck" class="text-3xl sm:text-4xl font-bold mb-4">
+            Black Duck por Sector
+          </h2>
+          <p class="text-gray-600 max-w-3xl">
+            DevSecOps y cumplimiento de cadena de suministro de software aplicados a los retos
+            reales de cada industria en Colombia.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="bg-gray-50 border border-gray-200 rounded-2xl p-6">
+            <div class="text-red-700 text-xs font-bold uppercase tracking-wide mb-3">Banca y Fintech</div>
+            <h3 class="font-semibold text-gray-900 mb-2">Codigo seguro bajo Circular 007 Superfinanciera</h3>
+            <p class="text-sm text-gray-600">
+              Los bancos y fintechs deben garantizar que su software no tenga vulnerabilidades
+              explotables antes de salir a produccion. Integramos Coverity y Black Duck SCA en
+              el pipeline SDLC para detectar defectos en codigo Java/.NET, gestionar licencias
+              open source y generar SBOM auditables exigidos por normas de gestion de riesgo
+              tecnologico de la SFC.
+            </p>
+          </div>
+          <div class="bg-gray-50 border border-gray-200 rounded-2xl p-6">
+            <div class="text-red-700 text-xs font-bold uppercase tracking-wide mb-3">Software y SaaS</div>
+            <h3 class="font-semibold text-gray-900 mb-2">AppSec nativa en el ciclo de desarrollo</h3>
+            <p class="text-sm text-gray-600">
+              Los ISVs y empresas SaaS integran Coverity en cada pull request y Continuous Dynamic
+              en staging para detectar vulnerabilidades antes de cada release. Black Duck Polaris
+              Platform unifica SAST + SCA + DAST en un solo dashboard sin friccion para el equipo
+              de ingenieria, reduciendo el costo de remediacion hasta 6x frente a corregir en
+              produccion.
+            </p>
+          </div>
+          <div class="bg-gray-50 border border-gray-200 rounded-2xl p-6">
+            <div class="text-red-700 text-xs font-bold uppercase tracking-wide mb-3">Gobierno</div>
+            <h3 class="font-semibold text-gray-900 mb-2">SBOM y cumplimiento MSPI MinTIC</h3>
+            <p class="text-sm text-gray-600">
+              Las entidades publicas que desarrollan o contratan software necesitan visibilidad
+              de su cadena de suministro digital. Implementamos Black Duck SCA para generar
+              SBOM obligatorios, detectar paquetes maliciosos en dependencias y cumplir con el
+              Modelo de Seguridad y Privacidad para la Estrategia de Gobierno Digital (MSPI)
+              del MinTIC.
+            </p>
+          </div>
+          <div class="bg-gray-50 border border-gray-200 rounded-2xl p-6">
+            <div class="text-red-700 text-xs font-bold uppercase tracking-wide mb-3">Salud</div>
+            <h3 class="font-semibold text-gray-900 mb-2">Seguridad de aplicaciones clinicas y dispositivos</h3>
+            <p class="text-sm text-gray-600">
+              Los sistemas de historia clinica electronica, telemedicina y dispositivos medicos
+              conectados son objetivos criticos. Defensics valida la seguridad de protocolos
+              de comunicacion en dispositivos medicos; Seeker provee IAST en aplicaciones
+              clinicas; Black Duck SCA detecta CVEs en dependencias de software medico para
+              cumplir con normas de seguridad informatica en salud.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reconocimientos -->
+    <section class="py-12 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-8">
+          <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">Reconocimientos de Analistas</h2>
+          <p class="text-gray-600 text-sm">Black Duck Software — posiciones verificadas en informes publicos</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+          <div class="bg-white border border-gray-200 rounded-xl p-6">
+            <div class="text-xs font-bold text-red-700 uppercase tracking-wide mb-2">Gartner Magic Quadrant 2025</div>
+            <p class="font-semibold text-gray-900 mb-1">Application Security Testing</p>
+            <p class="text-sm text-gray-600">
+              Leader — 8.a vez consecutiva. Mas alto en "Ability to Execute" por 6.o ano
+              consecutivo entre todos los vendors evaluados.
+            </p>
+          </div>
+          <div class="bg-white border border-gray-200 rounded-xl p-6">
+            <div class="text-xs font-bold text-red-700 uppercase tracking-wide mb-2">Gartner Magic Quadrant 2026</div>
+            <p class="font-semibold text-gray-900 mb-1">Software Supply Chain Security (inaugural)</p>
+            <p class="text-sm text-gray-600">
+              Leader en el primer MQ de esta categoria. 18 vendors evaluados en el informe
+              inaugural publicado en junio 2026.
+            </p>
           </div>
         </div>
       </div>
@@ -448,54 +563,57 @@ const seo = seoData['black-duck'];
         <div class="space-y-4">
           <details class="bg-gray-50 border border-gray-200 rounded-xl group">
             <summary class="font-semibold text-lg p-6 cursor-pointer list-none flex items-center justify-between">
-              Black Duck es lo mismo que Synopsys?
+              Que es Black Duck y que productos incluye?
               <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
             </summary>
             <div class="px-6 pb-6 text-gray-600">
-              Black Duck es la evolución de Synopsys Software Integrity Group. En 2024, la división
-              de seguridad de aplicaciones de Synopsys se convirtió en Black Duck, una empresa
-              independiente enfocada exclusivamente en application security. Los productos
-              (Coverity, Black Duck SCA, Polaris) mantienen su excelencia técnica.
+              Black Duck Software, Inc. es una empresa independiente de seguridad de aplicaciones (AppSec)
+              escindida de Synopsys en octubre 2024. Su portfolio incluye Coverity (SAST), Black Duck SCA
+              (analisis de composicion y SBOM), Continuous Dynamic (DAST), Seeker (IAST), Defensics
+              (fuzzing) y la Black Duck Polaris Platform, una plataforma SaaS unificada. Starsolution
+              implementa e integra estos productos en Colombia con soporte en espanol.
             </div>
           </details>
 
           <details class="bg-gray-50 border border-gray-200 rounded-xl group">
             <summary class="font-semibold text-lg p-6 cursor-pointer list-none flex items-center justify-between">
-              ¿El escaneo ralentiza nuestro pipeline de CI/CD?
+              Cual es la diferencia entre Coverity, Black Duck SCA y Continuous Dynamic?
               <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
             </summary>
             <div class="px-6 pb-6 text-gray-600">
-              El impacto es mínimo. Los escaneos SCA toman segundos. Los escaneos SAST
-              se ejecutan de forma incremental (solo código modificado) para minimizar el tiempo.
-              Además, se pueden configurar en paralelo al build para no bloquear el pipeline.
-              En pull requests, el escaneo se ejecuta como un check más sin bloquear el merge.
+              Coverity es el producto SAST de Black Duck: analiza el codigo fuente estaticamente en
+              mas de 20 lenguajes antes de compilar. Black Duck SCA identifica componentes open source,
+              CVEs y riesgos de licenciamiento, y genera SBOM en formatos SPDX y CycloneDX. Continuous
+              Dynamic es el producto DAST: prueba la aplicacion en ejecucion simulando ataques reales
+              con production-safe payloads y validacion por IA para minimizar falsos positivos.
             </div>
           </details>
 
           <details class="bg-gray-50 border border-gray-200 rounded-xl group">
             <summary class="font-semibold text-lg p-6 cursor-pointer list-none flex items-center justify-between">
-              ¿Qué lenguajes de programación soporta?
+              El escaneo ralentiza nuestro pipeline de CI/CD?
               <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
             </summary>
             <div class="px-6 pb-6 text-gray-600">
-              Black Duck soporta más de 20 lenguajes de programación para SAST, incluyendo
-              Java, C/C++, C#, Python, JavaScript/TypeScript, Go, Ruby, PHP, Kotlin, Swift y Scala.
-              Para SCA, soporta los principales gestores de paquetes: npm, Maven, pip, NuGet,
-              Go modules, Cargo, CocoaPods y más.
+              El impacto es minimo. El SCA tarda segundos; Coverity opera en modo incremental analizando
+              solo el codigo modificado. Ambos se ejecutan en paralelo con el proceso de build sin
+              bloquear el pipeline. La Black Duck Polaris Platform se integra nativamente con Jenkins,
+              GitHub Actions, GitLab CI, Azure DevOps y CircleCI.
             </div>
           </details>
 
           <details class="bg-gray-50 border border-gray-200 rounded-xl group">
             <summary class="font-semibold text-lg p-6 cursor-pointer list-none flex items-center justify-between">
-              ¿Necesito ser una empresa de software para usar Black Duck?
+              Que es la Black Duck Polaris Platform y como difiere de Software Risk Manager?
               <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
             </summary>
             <div class="px-6 pb-6 text-gray-600">
-              No. Cualquier organización que desarrolle o consuma software se beneficia. Empresas
-              financieras, de salud, gobierno y cualquier sector que tenga aplicaciones internas
-              o portales web necesitan asegurar que su código no tenga vulnerabilidades. También
-              es fundamental para empresas que adquieren software de terceros y necesitan evaluar
-              su seguridad antes de desplegarlo.
+              Black Duck Polaris Platform es la plataforma SaaS unificada que combina SAST (Coverity),
+              SCA (Black Duck SCA) y DAST (Continuous Dynamic) en un solo flujo DevSecOps. Software Risk
+              Manager es el producto ASPM (Application Security Posture Management) para centralizar y
+              priorizar hallazgos de multiples herramientas a escala empresarial. Son productos
+              complementarios: Polaris es el punto de entrada DevSecOps; Software Risk Manager es la
+              capa de governance para CISOs.
             </div>
           </details>
         </div>

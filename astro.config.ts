@@ -20,7 +20,6 @@ export default defineConfig({
       },
       filter: (page) => !page.includes('/gracias/') && !page.includes('/404'),
       serialize: (item) => {
-        item.lastmod = new Date('2026-03-19');
         if (item.url === 'https://starsolution.com.co/') {
           item.changefreq = 'weekly' as const;
           item.priority = 1.0;

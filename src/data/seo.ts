@@ -8,6 +8,10 @@ export interface SEOData {
   ogImage?: string;
   noindex?: boolean;
   lang?: string;
+  /** Alternates hreflang: solo para paginas con version regional equivalente (home, venezuela, miami). */
+  hreflang?: { lang: string; href: string }[];
+  /** Origenes externos que la pagina realmente consume (preconnect solo donde aplica). */
+  preconnect?: string[];
   breadcrumb?: { name: string; url: string }[];
   jsonLd?: Record<string, unknown>;
   faqJsonLd?: Record<string, unknown>;
@@ -15,6 +19,20 @@ export interface SEOData {
 
 const BASE_URL = 'https://starsolution.com.co';
 const ORG = { '@type': 'Organization' as const, name: 'Starsolution S.A.S.', url: BASE_URL };
+
+// Clusters hreflang: solo paginas con equivalente regional real
+const HREFLANG_HOME = [
+  { lang: 'es-CO', href: BASE_URL },
+  { lang: 'es-VE', href: `${BASE_URL}/venezuela` },
+  { lang: 'en-US', href: `${BASE_URL}/miami` },
+  { lang: 'x-default', href: BASE_URL },
+];
+const HREFLANG_CONTACTO = [
+  { lang: 'es-CO', href: `${BASE_URL}/contacto` },
+  { lang: 'es-VE', href: `${BASE_URL}/venezuela/contacto` },
+  { lang: 'en-US', href: `${BASE_URL}/miami/contacto` },
+  { lang: 'x-default', href: `${BASE_URL}/contacto` },
+];
 
 function product(
   name: string,
@@ -43,12 +61,13 @@ function product(
       reviewCount: opts.rating.count,
       bestRating: '5',
     };
+    const productLabel = name.startsWith(brand) ? name : `${brand} ${name}`;
     base.review = [
       {
         '@type': 'Review',
         author: { '@type': 'Person', name: 'Carlos Mendoza' },
         reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
-        reviewBody: `Implementacion de ${brand} ${name} sin fricciones, soporte local en espanol y reportes listos para auditoria ISO 27001.`,
+        reviewBody: `Implementacion de ${productLabel} sin fricciones, soporte local en espanol y reportes listos para auditoria ISO 27001.`,
       },
     ];
   }
@@ -90,6 +109,7 @@ export const seoData: Record<string, SEOData> = {
     ogTitle: 'Starsolution - Ciberseguridad Empresarial Colombia',
     ogType: 'website',
     ogImage: `${BASE_URL}/og-default.png`,
+    hreflang: HREFLANG_HOME,
     breadcrumb: [{ name: 'Inicio', url: '/' }],
     jsonLd: {
       '@context': 'https://schema.org',
@@ -114,17 +134,18 @@ export const seoData: Record<string, SEOData> = {
   // =====================================================
   bitdefender: {
     title: 'Bitdefender GravityZone Colombia | Starsolution',
-    description: 'Implementamos Bitdefender GravityZone EDR/XDR/MDR en empresas colombianas. Despliegue desde Bogota, soporte en espanol, integracion Active Directory y cumplimiento ISO 27001 / Habeas Data Ley 1581.',
+    description: 'Implementamos Bitdefender GravityZone (EDR/XDR/MDR) en empresas colombianas. Partner oficial en Bogota, soporte en espanol y cumplimiento ISO 27001 / Ley 1581.',
     keywords: 'Bitdefender empresas Colombia, GravityZone EDR, antivirus corporativo, endpoint security, XDR, partner Bitdefender',
     canonical: `${BASE_URL}/bitdefender`,
     ogTitle: 'Bitdefender GravityZone | Seguridad Endpoint Empresarial',
     ogType: 'website',
     ogImage: `${BASE_URL}/og-default.png`,
+    preconnect: ['https://www.bitdefender.com'],
     breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Star Protection', url: '/#star-protection' }, { name: 'Bitdefender', url: '/bitdefender' }],
     jsonLd: product(
       'Bitdefender GravityZone',
       'Bitdefender',
-      'Plataforma unificada de seguridad empresarial con EDR, XDR, MDR + SOC, CSPM Plus y Patch Management. Lider en Gartner Magic Quadrant 2025 y MITRE ATT&CK 2024.',
+      'Plataforma unificada de seguridad empresarial con EDR, XDR, Bitdefender MDR (SOC 24x7), CSPM+ y Patch Management. Reconocida como Visionary en el Gartner Magic Quadrant 2026 y con 100% de cobertura en MITRE ATT&CK 2024.',
       { rating: { value: '4.9', count: '127' }, image: `${BASE_URL}/og-default.png` },
     ),
     faqJsonLd: faqSchema([
@@ -137,7 +158,7 @@ export const seoData: Record<string, SEOData> = {
   },
   kaspersky: {
     title: 'Kaspersky Endpoint Security Empresas | Starsolution',
-    description: 'Kaspersky Endpoint Security con HuMachine Intelligence. Proteccion para PYMES y enterprise, gestion centralizada. Partner autorizado Colombia.',
+    description: 'Implementamos Kaspersky Next (EDR/XDR/MDR) en empresas colombianas: System Watcher anti-ransomware y gestion centralizada. Partner oficial Kaspersky.',
     keywords: 'Kaspersky empresas Colombia, Kaspersky endpoint, antivirus PYMES, proteccion servidores, partner Kaspersky',
     canonical: `${BASE_URL}/kaspersky`,
     ogTitle: 'Kaspersky Endpoint Security para Empresas',
@@ -147,7 +168,7 @@ export const seoData: Record<string, SEOData> = {
     jsonLd: product(
       'Kaspersky Next',
       'Kaspersky',
-      'Linea Kaspersky Next para empresas (EDR Foundations, EDR Optimum, XDR Optimum y MXDR Optimum) con HuMachine Intelligence, System Watcher anti-ransomware, EDR esencial y SOC gestionado opcional. Implementacion local en Colombia por Starsolution, partner certificado desde 2014.',
+      'Linea Kaspersky Next para empresas, con seis ediciones escalables: EDR Foundations, EDR Optimum, XDR Optimum y MXDR Optimum para empresas sin SOC interno, mas EDR Expert y XDR Expert para SOC enterprise. Incluye System Watcher anti-ransomware con rollback, EDR y deteccion gestionada (MDR). Implementacion local en Colombia por Starsolution, partner certificado desde 2014.',
       { rating: { value: '4.8', count: '94' }, image: `${BASE_URL}/og-default.png` },
     ),
     faqJsonLd: faqSchema([
@@ -171,25 +192,26 @@ export const seoData: Record<string, SEOData> = {
     faqJsonLd: faqSchema([
       { q: 'Hornetsecurity funciona solo con Microsoft 365?', a: 'Si, Hornetsecurity 365 Total Protection esta disenado exclusivamente para Microsoft 365. Se integra nativamente con Exchange Online, OneDrive y SharePoint para proteccion completa del ecosistema Microsoft.' },
       { q: 'Que incluye la proteccion de Hornetsecurity?', a: 'Incluye filtrado de spam y malware, proteccion contra phishing y BEC, backup automatico de buzones, archiving de email con cumplimiento legal, y cifrado de comunicaciones. Todo gestionado desde una consola cloud unica.' },
-      { q: 'Cuanto cuesta Hornetsecurity para empresas?', a: 'Los planes van desde USD 2 por usuario al mes (Plan 1 - seguridad basica) hasta USD 6 por usuario al mes (Plan 4 - proteccion completa con backup, archiving y awareness training). Descuentos por volumen disponibles.' },
+      { q: 'Cuanto cuesta Hornetsecurity para empresas?', a: 'Hornetsecurity no publica tarifas fijas; el precio depende del plan (Business, Enterprise, Enterprise Backup o Compliance and Awareness) y del numero de buzones de Microsoft 365. Starsolution arma una cotizacion ajustada a su caso, con descuentos por volumen para mas de 100 buzones y precios especiales para sector educativo y sin animo de lucro.' },
       { q: 'Hornetsecurity reemplaza a Microsoft Defender?', a: 'Hornetsecurity complementa y refuerza la seguridad nativa de Microsoft 365. Mientras Defender ofrece proteccion basica, Hornetsecurity agrega capas avanzadas de filtrado, backup independiente y archiving que Microsoft no incluye.' },
     ]),
   },
   proofpoint: {
-    title: 'Proofpoint Email Security | Anti-Phishing | Starsolution',
-    description: 'Proofpoint: lider Gartner en seguridad email. Proteccion contra phishing, BEC y amenazas dirigidas. DMARC, awareness training. Cotice hoy.',
-    keywords: 'Proofpoint Colombia, email security, anti-phishing empresas, BEC, DMARC, security awareness training',
+    title: 'Proofpoint Email Security Colombia | Starsolution',
+    description: 'Proofpoint Leader Gartner MQ Email Security 2025. Proteccion contra phishing, BEC y amenazas dirigidas. ZenGuide, DMARC, DLP. Integramos en Colombia.',
+    keywords: 'Proofpoint Colombia, email security, anti-phishing empresas, BEC, DMARC, ZenGuide, security awareness, Collaboration Security Prime',
     canonical: `${BASE_URL}/proofpoint`,
-    ogTitle: 'Proofpoint - Seguridad de Email Avanzada',
+    ogTitle: 'Proofpoint - Seguridad de Email Avanzada para Empresas en Colombia',
     ogType: 'website',
     ogImage: `${BASE_URL}/og-default.png`,
     breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Star Protection', url: '/#star-protection' }, { name: 'Proofpoint', url: '/proofpoint' }],
-    jsonLd: product('Proofpoint Email Security', 'Proofpoint', 'Proteccion avanzada de email contra phishing, BEC y amenazas dirigidas', { rating: { value: '4.9', count: '102' }, image: `${BASE_URL}/og-default.png` }),
+    jsonLd: product('Proofpoint Email Security', 'Proofpoint', 'Proteccion avanzada de email contra phishing, BEC y amenazas dirigidas con plataforma Nexus e IA people-centric', { rating: { value: '4.9', count: '102' }, image: `${BASE_URL}/og-default.png` }),
     faqJsonLd: faqSchema([
       { q: 'Proofpoint funciona con Microsoft 365 y Google Workspace?', a: 'Si. Proofpoint se integra nativamente con Microsoft 365, Google Workspace y servidores de correo on-premise mediante registros MX, sin instalar agentes en los equipos de los usuarios.' },
-      { q: 'Cuanto tiempo toma la implementacion?', a: 'La implementacion basica toma entre 3 y 5 dias habiles. La optimizacion completa, incluyendo ajuste de politicas y modulos avanzados, se completa en 2 a 4 semanas segun el tamano de la organizacion.' },
+      { q: 'Cuanto tiempo toma la implementacion de Proofpoint?', a: 'La implementacion basica toma entre 3 y 5 dias habiles. La optimizacion completa, incluyendo ajuste de politicas y modulos avanzados, se completa en 2 a 4 semanas segun el tamano de la organizacion.' },
       { q: 'Que es Business Email Compromise (BEC) y como lo previene Proofpoint?', a: 'BEC es fraude donde atacantes suplantan ejecutivos para solicitar transferencias o datos sensibles. Proofpoint detecta estos ataques analizando patrones de comunicacion, metadata del remitente y comportamiento historico para identificar anomalias, incluso sin malware.' },
-      { q: 'Proofpoint puede capacitar a mis empleados contra phishing?', a: 'Si. El modulo Security Awareness Training incluye simulaciones de phishing personalizadas y micro-capacitaciones interactivas. Las empresas que lo implementan reducen las tasas de clic en phishing hasta un 90%.' },
+      { q: 'Proofpoint puede capacitar a mis empleados contra phishing con ZenGuide?', a: 'Si. Proofpoint ZenGuide (Proofpoint Security Awareness) incluye simulaciones de phishing personalizadas y micro-capacitaciones interactivas basadas en riesgo. Las empresas que lo implementan reducen las tasas de clic en phishing hasta un 90%.' },
+      { q: 'Que es Collaboration Security Prime y para quien aplica?', a: 'Collaboration Security Prime (tambien llamado Prime Threat Protection) es el tier premium unificado de Proofpoint lanzado en abril 2025. Combina proteccion multicanal (email, Teams, Slack, SharePoint), defensa contra ataques multietapa, guia de riesgo humano e impersonation protection en una sola plataforma. Aplica a empresas que buscan consolidar herramientas de seguridad, reemplazando aproximadamente 45+ soluciones puntuales por una unica plataforma.' },
     ]),
   },
 
@@ -197,54 +219,56 @@ export const seoData: Record<string, SEOData> = {
   // STAR INSPECTION
   // =====================================================
   enthec: {
-    title: 'Enthec | Superficie de Ataque | Starsolution',
-    description: 'Enthec: monitoreo de superficie de ataque y credenciales filtradas. Diagnostico GRATUITO de exposicion. Descubra su riesgo real hoy.',
-    keywords: 'Enthec, superficie de ataque, credenciales filtradas, dark web monitoreo, OSINT, attack surface management Colombia',
+    title: 'Enthec Kartos y Qondar | Cibervigilancia | Starsolution',
+    description: 'Enthec: cibervigilancia TEM con Kartos (EASM corporativo) y Qondar (vigilancia de personas). Diagnostico gratuito de exposicion en Colombia.',
+    keywords: 'Enthec, Kartos, Qondar, cibervigilancia, EASM, Threat Exposure Management, superficie de ataque, credenciales filtradas, dark web Colombia',
     canonical: `${BASE_URL}/enthec`,
-    ogTitle: 'Enthec - Monitoreo de Superficie de Ataque',
+    ogTitle: 'Enthec Kartos y Qondar - Cibervigilancia en Colombia | Starsolution',
     ogType: 'website',
     ogImage: `${BASE_URL}/og-default.png`,
     breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Star Inspection', url: '/#star-inspection' }, { name: 'Enthec', url: '/enthec' }],
-    jsonLd: product('Enthec Attack Surface Monitoring', 'Enthec', 'Monitoreo continuo de superficie de ataque externa y deteccion de credenciales filtradas', { rating: { value: '4.7', count: '41' }, image: `${BASE_URL}/og-default.png` }),
+    jsonLd: product('Enthec Kartos - Corporate Threat Watchbots', 'Enthec', 'Kartos es la plataforma EASM de Enthec para monitoreo continuo de la superficie de ataque externa corporativa: credenciales filtradas, dark web, phishing y riesgo de terceros. Starsolution lo implementa en Colombia con soporte en espanol.', { rating: { value: '4.7', count: '41' }, image: `${BASE_URL}/og-default.png` }),
     faqJsonLd: faqSchema([
-      { q: 'Necesito instalar algo en mis servidores?', a: 'No. Enthec opera 100% de forma externa sin agentes, sin acceso a la red interna ni permisos especiales. El monitoreo se realiza desde fuera de su infraestructura, como lo haria un atacante real.' },
-      { q: 'Que tan frecuente es el monitoreo?', a: 'El monitoreo es continuo 24/7. Las alertas de credenciales filtradas se entregan en tiempo real, mientras que los informes consolidados de superficie de ataque se generan semanalmente.' },
-      { q: 'En que consiste el diagnostico gratuito?', a: 'El diagnostico inicial analiza su dominio corporativo para revelar credenciales filtradas, servicios expuestos y activos digitales vulnerables. Incluye un reporte ejecutivo sin compromiso ni instalacion requerida.' },
-      { q: 'Que tipo de empresas necesitan este servicio?', a: 'Cualquier organizacion con presencia digital necesita monitoreo de superficie de ataque. Es especialmente critico para empresas de finanzas, salud, gobierno y cualquier sector que maneje datos sensibles de clientes.' },
+      { q: 'Que es Enthec y cuales son sus productos?', a: 'Enthec es una plataforma avanzada de cibervigilancia impulsada por IA (Advanced AI-driven Cyber-Surveillance Platform). Sus dos productos son Kartos, para monitoreo de la superficie de ataque externa corporativa (EASM), y Qondar, para vigilancia de la identidad digital de personas como directivos y altos cargos. Starsolution implementa ambas soluciones en Colombia con soporte en espanol.' },
+      { q: 'Necesito instalar algo en mis servidores para usar Kartos?', a: 'No. Kartos opera 100% de forma externa y no intrusiva, sin agentes, sin acceso a la red interna ni permisos especiales. Solo ingresa el dominio de su empresa y el monitoreo comienza de forma automatica, tal como lo haria un atacante externo.' },
+      { q: 'En que consiste el diagnostico gratuito de exposicion?', a: 'El diagnostico inicial analiza su dominio corporativo para revelar credenciales filtradas, servicios expuestos y activos digitales vulnerables visibles desde internet. Incluye un reporte ejecutivo con hallazgos concretos y recomendaciones de remediacion, sin costo ni compromiso de compra.' },
+      { q: 'Que diferencia hay entre Kartos y Qondar?', a: 'Kartos (Corporate Threat Watchbots) protege la superficie de ataque externa de la empresa: dominios, credenciales, dark web, phishing y supply chain. Qondar (Personal Threat Watchbots) protege la identidad digital de personas individuales como directivos, VIPs o altos cargos, monitoreando filtraciones de datos personales, financieros y presencia en redes sociales y foros.' },
     ]),
   },
   vicarius: {
-    title: 'Vicarius vRx | Vulnerabilidades con IA | Starsolution',
-    description: 'Vicarius vRx: gestion de vulnerabilidades y parches con IA. Priorizacion de CVEs, virtual patching y remediacion automatizada. Demo gratis.',
-    keywords: 'Vicarius vRx, gestion vulnerabilidades, patch management, CVE priorizacion, virtual patching Colombia',
+    title: 'Vicarius vRx | Gestion de Vulnerabilidades | Starsolution',
+    description: 'Vicarius vRx: plataforma Full Cycle Vulnerability Management con Patchless Protection, vRx Scripting Engine y vIntelligence. Implementamos en Colombia.',
+    keywords: 'Vicarius vRx, gestion vulnerabilidades, exposure assessment platforms, patch management, Patchless Protection, vRx Scripting Engine, exposure management Colombia',
     canonical: `${BASE_URL}/vicarius`,
-    ogTitle: 'Vicarius vRx - Gestion de Vulnerabilidades con IA',
+    ogTitle: 'Vicarius vRx - Full Cycle Vulnerability Management en Colombia',
     ogType: 'website',
     ogImage: `${BASE_URL}/og-default.png`,
     breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Star Inspection', url: '/#star-inspection' }, { name: 'Vicarius', url: '/vicarius' }],
-    jsonLd: product('Vicarius vRx', 'Vicarius', 'Gestion automatizada de vulnerabilidades con priorizacion inteligente de CVEs', { rating: { value: '4.6', count: '38' }, image: `${BASE_URL}/og-default.png` }),
+    jsonLd: product('Vicarius vRx', 'Vicarius', 'Plataforma Full Cycle Vulnerability Management con Patchless Protection (DBI), vRx Scripting Engine, vIntelligence y vAnalyzer. Niche Player en Gartner MQ for Exposure Assessment Platforms 2025.', { rating: { value: '4.6', count: '38' }, image: `${BASE_URL}/og-default.png` }),
     faqJsonLd: faqSchema([
-      { q: 'Que es parcheo virtual (patchless protection)?', a: 'El parcheo virtual protege la vulnerabilidad a nivel de memoria sin necesidad del parche oficial del fabricante. Bloquea el vector de explotacion en tiempo real, sin reinicios ni interrupciones de servicio.' },
-      { q: 'Vicarius reemplaza a mi escaner de vulnerabilidades actual?', a: 'Si. Vicarius vRx reemplaza herramientas como Nessus, Qualys o Rapid7, y ademas agrega remediacion automatizada. Elimina el ciclo manual de escanear-reportar-parchear que consume semanas.' },
-      { q: 'Que sistemas operativos soporta?', a: 'Vicarius soporta Windows, Linux (Ubuntu, CentOS, RHEL, Debian) y macOS. El agente ocupa menos de 50MB de RAM y tiene impacto minimo en el rendimiento del endpoint.' },
-      { q: 'Cuanto tiempo toma ver resultados?', a: 'El inventario completo de activos y vulnerabilidades esta disponible en menos de 24 horas. Las organizaciones reportan una reduccion del 85% en el tiempo de remediacion dentro de los primeros 90 dias.' },
+      { q: 'Que es Patchless Protection y como funciona?', a: 'Patchless Protection es un modulo de vRx que mitiga vulnerabilidades a nivel de memoria mediante Dynamic Binary Instrumentation (DBI), sin necesidad del parche oficial del fabricante. Bloquea el vector de explotacion en tiempo real, sin reinicios ni interrupciones de servicio, permitiendo proteger sistemas criticos mientras se planifica la ventana de parcheo definitivo.' },
+      { q: 'Vicarius reemplaza a mi escaner de vulnerabilidades actual?', a: 'Si. Vicarius vRx reemplaza herramientas como Nessus, Qualys o Rapid7, y ademas agrega remediacion automatizada. Elimina el ciclo manual de escanear-reportar-parchear que consume semanas y reduce en un 80% el tiempo dedicado a parcheo manual segun datos oficiales de Vicarius.' },
+      { q: 'Que sistemas operativos soporta vRx?', a: 'Vicarius soporta Windows (Server y Desktop), Linux (Ubuntu, CentOS, RHEL, Debian) y macOS. El agente ocupa menos de 50MB de RAM y tiene impacto minimo en el rendimiento del endpoint.' },
+      { q: 'Cuanto tiempo toma ver resultados con vRx?', a: 'El inventario completo de activos y vulnerabilidades esta disponible en menos de 24 horas desde el despliegue del agente. Vicarius reporta un MTTR (Mean Time To Remediate) promedio de 22 dias con la plataforma, frente a los 205 dias que tarda el ciclo discovery-to-remediation sin herramienta especializada.' },
     ]),
   },
   'stellar-cyber': {
-    title: 'Stellar Cyber Open XDR | SOC con IA | Starsolution',
-    description: 'Stellar Cyber: plataforma Open XDR para SOC automatizado. Deteccion con IA, NDR, UEBA y SOAR integrado. Reemplace su SIEM. Cotice ahora.',
-    keywords: 'Stellar Cyber, Open XDR, SOC automatizado, deteccion amenazas IA, NDR, UEBA, SOAR, alternativa SIEM Colombia',
+    title: 'Stellar Cyber SecOps | Open XDR con IA | Starsolution',
+    description: 'Stellar Cyber SecOps Platform con Open XDR para Colombia: Multi-Layer AI, NDR, ITDR, UEBA y Case Orchestration. Implemente su SOC con Starsolution.',
+    keywords: 'Stellar Cyber, Open XDR, SecOps Platform, SOC automatizado, Multi-Layer AI, NDR, UEBA, ITDR, AI Investigator, alternativa SIEM Colombia',
     canonical: `${BASE_URL}/stellar-cyber`,
-    ogTitle: 'Stellar Cyber - Open XDR para SOC Automatizado',
+    ogTitle: 'Stellar Cyber SecOps Platform | Open XDR para SOC Automatizado',
     ogType: 'website',
     ogImage: `${BASE_URL}/og-default.png`,
     breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Star Inspection', url: '/#star-inspection' }, { name: 'Stellar Cyber', url: '/stellar-cyber' }],
-    jsonLd: product('Stellar Cyber Open XDR', 'Stellar Cyber', 'Plataforma Open XDR con IA para deteccion y respuesta unificada de amenazas', { rating: { value: '4.8', count: '52' }, image: `${BASE_URL}/og-default.png` }),
+    jsonLd: product('Stellar Cyber SecOps Platform', 'Stellar Cyber', 'Plataforma SecOps AI-Native con arquitectura Open XDR para deteccion y respuesta unificada de amenazas', { rating: { value: '4.8', count: '52' }, image: `${BASE_URL}/og-default.png` }),
     faqJsonLd: faqSchema([
       { q: 'Que diferencia hay entre XDR y Open XDR?', a: 'El XDR tradicional solo integra productos del mismo fabricante. Open XDR integra cualquier herramienta de seguridad existente en su empresa, sin dependencia de un solo proveedor ni necesidad de reemplazar su stack actual.' },
-      { q: 'Stellar Cyber reemplaza mi SIEM?', a: 'Si. Stellar Cyber incluye capacidades de SIEM, NDR, UEBA y SOAR en una sola plataforma. Ademas elimina el modelo de precios por volumen de logs que hace costosos a los SIEM tradicionales.' },
-      { q: 'Necesito un equipo SOC para operar la plataforma?', a: 'No. La IA automatiza las tareas de nivel L1 y L2, incluyendo correlacion, triaje y respuesta inicial. Equipos de 2 a 3 personas de IT pueden operar la plataforma eficazmente.' },
+      { q: 'Stellar Cyber reemplaza mi SIEM?', a: 'Si. Stellar Cyber incluye AI-Native Next-Gen SIEM, NDR, UEBA, ITDR y AI-Powered Case Orchestration en una sola plataforma. Ademas elimina el modelo de precios por volumen de logs que hace costosos a los SIEM tradicionales.' },
+      { q: 'Necesito un equipo SOC para operar la plataforma?', a: 'No. La IA automatiza las tareas de nivel L1 y L2, incluyendo correlacion, triaje y respuesta inicial. Equipos de 2 a 3 personas de IT pueden operar la plataforma eficazmente. Starsolution ofrece ademas servicios de implementacion e integracion con soporte en espanol desde Colombia.' },
       { q: 'Cuanto tiempo toma el despliegue?', a: 'El despliegue inicial toma entre 1 y 2 semanas gracias a los conectores preconfigurados para mas de 400 herramientas y la normalizacion automatica de datos.' },
+      { q: 'Que es el motor Multi-Layer AI y como se diferencia del SIEM tradicional?', a: 'Multi-Layer AI es el motor de inteligencia artificial registrado de Stellar Cyber. Combina Detection AI, Correlation AI con GraphML, LLM-Driven AI (AI Investigator) y Agentic AI. A diferencia del SIEM que requiere reglas manuales, Multi-Layer AI correlaciona automaticamente eventos de multiples fuentes y reduce las decisiones del analista a entre 10 y 100 por dia.' },
+      { q: 'Como trabaja Starsolution con Stellar Cyber en Colombia?', a: 'Starsolution implementa e integra la plataforma Stellar Cyber SecOps para clientes en Colombia y la region. Somos su punto de contacto local con soporte tecnico en espanol, despliegue desde Bogota y cobertura en Colombia, Venezuela y Miami.' },
     ]),
   },
   'hacking-etico': {
@@ -267,20 +291,20 @@ export const seoData: Record<string, SEOData> = {
     ]),
   },
   'rthreat-bogota-colombia': {
-    title: 'Red Team y BAS con rThreat | Starsolution Colombia',
-    description: 'Simulacion de brechas y ataques (BAS) con rThreat. Red Team con malware real en entornos controlados. Valide sus controles de seguridad.',
-    keywords: 'red team Colombia, BAS breach attack simulation, rThreat, simulacion ataques, pentesting avanzado, zero-day',
+    title: 'Red Team y BAE con rThreat | Starsolution Colombia',
+    description: 'Breach and Attack Emulation (BAE) con rThreat en Colombia. Valide EDR, SIEM y controles con malware real en entornos controlados. Soporte en espanol.',
+    keywords: 'red team Colombia, breach attack emulation, BAE, rThreat, emulacion ataques, pentesting avanzado, zero-day, validacion controles seguridad',
     canonical: `${BASE_URL}/rthreat-bogota-colombia`,
-    ogTitle: 'Red Team & BAS - Simulacion de Ataques con rThreat',
+    ogTitle: 'Red Team & Breach and Attack Emulation con rThreat Colombia',
     ogType: 'website',
     ogImage: `${BASE_URL}/og-default.png`,
     breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Star Inspection', url: '/#star-inspection' }, { name: 'rThreat Red Team', url: '/rthreat-bogota-colombia' }],
-    jsonLd: service('Red Team & Breach and Attack Simulation', 'Advanced Penetration Testing with BAS'),
+    jsonLd: service('Red Team & Breach and Attack Emulation', 'Advanced Security Validation with BAE Platform rThreat'),
     faqJsonLd: faqSchema([
+      { q: 'Cual es la diferencia entre Breach and Attack Emulation (BAE) y Breach and Attack Simulation (BAS)?', a: 'BAE, como la que implementa rThreat, ejecuta artefactos de malware reales con variaciones de ofuscacion y tecnicas de evasion actuales. BAS tradicional usa firmas sinteticas que los EDR modernos ya conocen. Solo la emulacion con malware real valida si su stack detecta amenazas que los atacantes reales usan hoy.' },
+      { q: 'Es seguro ejecutar simulaciones de ataque en produccion?', a: 'Si. rThreat ejecuta malware real en entornos controlados: contenedores efimeros o sandbox aislados con kill switches automaticos. Las emulaciones no danan sistemas ni datos. Cada ejercicio incluye un plan de contingencia coordinado con su equipo de TI antes de comenzar.' },
+      { q: 'Cada cuanto se debe realizar un ejercicio de Red Team con rThreat?', a: 'Se recomienda al menos una vez al ano para empresas reguladas y cada 6 meses para organizaciones con alto perfil de riesgo. rThreat puede ejecutarse de forma continua como plataforma de validacion permanente, complementando los ejercicios de Red Team puntuales.' },
       { q: 'Cual es la diferencia entre Red Team y pentesting?', a: 'El pentesting busca vulnerabilidades tecnicas en un alcance definido. El Red Team simula un atacante real sin restricciones de alcance, incluyendo ingenieria social, acceso fisico y ataques multi-vector, evaluando la capacidad de deteccion y respuesta de toda la organizacion.' },
-      { q: 'Que es Breach and Attack Simulation (BAS)?', a: 'BAS es una plataforma automatizada que simula ataques reales contra su infraestructura de forma continua. A diferencia del pentesting manual que es puntual, BAS ejecuta escenarios de ataque 24/7 validando que sus controles de seguridad detecten y bloqueen amenazas conocidas.' },
-      { q: 'Cada cuanto se debe realizar un ejercicio de Red Team?', a: 'Se recomienda al menos una vez al ano para empresas reguladas y cada 6 meses para organizaciones con alto perfil de riesgo. BAS puede ejecutarse continuamente como complemento entre ejercicios de Red Team.' },
-      { q: 'Es seguro ejecutar simulaciones de ataque en produccion?', a: 'Si, rThreat utiliza malware real pero en entornos controlados con kill switches automaticos. Las simulaciones no danan sistemas ni datos. Cada ejercicio incluye un plan de contingencia y comunicacion con su equipo de TI.' },
     ]),
   },
 
@@ -307,54 +331,58 @@ export const seoData: Record<string, SEOData> = {
     ]),
   },
   sealpath: {
-    title: 'SealPath DLP | Seguridad de Datos | Starsolution',
-    description: 'SealPath: proteccion centrada en el documento. Cifrado persistente, control de acceso, trazabilidad y revocacion remota. Integra con M365.',
-    keywords: 'SealPath Colombia, DLP data loss prevention, seguridad documentos, cifrado datos, proteccion informacion sensible',
+    title: 'SealPath IRM | Proteccion de Documentos | Starsolution',
+    description: 'SealPath IRM en Colombia: cifrado persistente, control de acceso granular, revocacion remota y trazabilidad. IRM/E-DRM con integracion Microsoft 365 y MIP.',
+    keywords: 'SealPath IRM Colombia, IRM E-DRM proteccion documentos, cifrado persistente datos, control acceso documentos, Microsoft Information Protection, Ley 1581 proteccion datos',
     canonical: `${BASE_URL}/sealpath`,
-    ogTitle: 'SealPath - Seguridad Centrada en el Dato',
+    ogTitle: 'SealPath IRM - Proteccion Persistente de Documentos en Colombia',
     ogType: 'website',
     ogImage: `${BASE_URL}/og-default.png`,
-    breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Star Compliance', url: '/#star-compliance' }, { name: 'SealPath', url: '/sealpath' }],
-    jsonLd: product('SealPath Data-Centric Security', 'SealPath', 'Proteccion persistente de documentos con cifrado, trazabilidad y revocacion remota', { rating: { value: '4.7', count: '47' }, image: `${BASE_URL}/og-default.png` }),
+    breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Star Compliance', url: '/#star-compliance' }, { name: 'SealPath IRM', url: '/sealpath' }],
+    jsonLd: product('SealPath IRM — Information Rights Management', 'SealPath', 'Proteccion persistente de documentos con cifrado IRM/E-DRM, control de acceso granular, revocacion remota y trazabilidad completa. Integracion con Microsoft Information Protection (MIP) y Microsoft 365.', { rating: { value: '4.7', count: '47' }, image: `${BASE_URL}/og-default.png` }),
     faqJsonLd: faqSchema([
-      { q: 'Los usuarios externos necesitan instalar algo para abrir los documentos?', a: 'Para lectura, existe un visor web que no requiere instalacion. Para funcionalidad completa de edicion, pueden instalar el agente ligero de SealPath, disponible para Windows y macOS.' },
-      { q: 'Que tipos de archivos soporta SealPath?', a: 'SealPath protege documentos de Microsoft Office (Word, Excel, PowerPoint), PDF, AutoCAD, imagenes, archivos de texto y adjuntos de correo electronico.' },
-      { q: 'SealPath afecta la productividad de los usuarios?', a: 'No. Proteger un documento es tan simple como hacer clic derecho. Los documentos protegidos se abren normalmente en las aplicaciones habituales del usuario sin pasos adicionales.' },
-      { q: 'Como ayuda SealPath con el cumplimiento normativo?', a: 'SealPath genera evidencia auditada de cifrado y control de acceso requerida por GDPR, Ley 1581, HIPAA, PCI DSS e ISO 27001, facilitando la demostracion de cumplimiento ante auditores.' },
+      { q: 'Los usuarios externos necesitan instalar algo para abrir los documentos?', a: 'Para lectura, los colaboradores externos pueden abrir documentos protegidos a traves de SealPath Secure Browser, un visor web agentless que no requiere instalacion. Para edicion completa se instala el agente ligero disponible para Windows y macOS.' },
+      { q: 'Que tipos de archivos soporta SealPath IRM?', a: 'SealPath IRM protege documentos de Microsoft Office (Word, Excel, PowerPoint), PDF (Adobe, Foxit, Nitro), archivos CAD (AutoCAD, SolidWorks, CATIA), imagenes, texto y adjuntos de correo electronico. Tambien protege carpetas completas en File Servers, SharePoint, OneDrive, Box y Dropbox.' },
+      { q: 'SealPath afecta la productividad de los usuarios?', a: 'No. SealPath IRM se integra en el flujo de trabajo habitual: proteger un documento requiere solo un clic derecho o se aplica automaticamente al guardar en carpetas protegidas. Los documentos se abren normalmente en Word, Excel y otras aplicaciones sin pasos adicionales.' },
+      { q: 'Como ayuda SealPath con el cumplimiento normativo en Colombia?', a: 'SealPath IRM genera evidencia auditada de cifrado y control de acceso granular exigida por la Ley 1581 de Habeas Data, ISO 27001, GDPR, HIPAA y PCI DSS. Los logs de acceso detallados facilitan la demostracion de cumplimiento ante auditores y entes reguladores.' },
+      { q: 'Como se integra SealPath con Microsoft Information Protection?', a: 'SealPath IRM asocia sus politicas de proteccion con etiquetas de Microsoft Information Protection (MIP) de forma nativa, sin APIs adicionales. Un documento etiquetado como Confidencial en MIP puede ser automaticamente protegido con cifrado IRM de SealPath, unificando clasificacion y proteccion persistente.' },
+      { q: 'Que diferencia hay entre SealPath IRM y un DLP tradicional?', a: 'El DLP tradicional protege el perimetro de red: controla que los datos no salgan, pero pierde el control cuando un archivo abandona la organizacion. SealPath IRM aplica cifrado persistente que viaja con el archivo: aunque el documento llegue a un proveedor, nube o dispositivo externo, usted mantiene control de acceso y puede revocar remotamente en cualquier momento.' },
     ]),
   },
   netwrix: {
-    title: 'Netwrix Auditoria e Identidad | Starsolution',
-    description: 'Netwrix: auditoria de cambios, clasificacion de datos y gobernanza de identidad. Cumplimiento GDPR, HIPAA, PCI DSS. Solicite demo.',
-    keywords: 'Netwrix Colombia, auditoria Active Directory, gobernanza identidad, GDPR HIPAA PCI DSS, privileged access management',
+    title: 'Netwrix Seguridad de Datos e Identidades | Starsolution',
+    description: 'Netwrix Colombia: auditoria AD, PAM, DLP y clasificacion de datos. Cumpla Ley 1581, ISO 27001 y Circular 007. Starsolution implementa con soporte en espanol.',
+    keywords: 'Netwrix Colombia, Netwrix Auditor, Netwrix Access Analyzer, Netwrix Privilege Secure, Netwrix Endpoint Protector, auditoria Active Directory, PAM Zero Standing Privilege, DLP, clasificacion datos, gobernanza identidad, Ley 1581, Circular 007',
     canonical: `${BASE_URL}/netwrix`,
-    ogTitle: 'Netwrix - Auditoria y Gobernanza de Identidad',
+    ogTitle: 'Netwrix - Seguridad de Datos e Identidades en Colombia',
     ogType: 'website',
     ogImage: `${BASE_URL}/og-default.png`,
     breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Star Compliance', url: '/#star-compliance' }, { name: 'Netwrix', url: '/netwrix' }],
-    jsonLd: product('Netwrix Auditor', 'Netwrix', 'Auditoria de cambios, visibilidad de datos y gestion de identidades para cumplimiento normativo', { rating: { value: '4.7', count: '56' }, image: `${BASE_URL}/og-default.png` }),
+    jsonLd: product('Netwrix — Plataforma de Seguridad de Datos e Identidades', 'Netwrix', 'Plataforma de seguridad de datos centrada en identidad: auditoria AD, PAM, DLP, clasificacion de datos, IGA y DSPM para cumplimiento normativo', { rating: { value: '4.7', count: '56' }, image: `${BASE_URL}/og-default.png` }),
     faqJsonLd: faqSchema([
-      { q: 'Netwrix requiere cambios en mi Active Directory?', a: 'No. Netwrix funciona en modo lectura mediante la captura de logs y eventos. No requiere cambios en el esquema de AD, no instala agentes en los controladores de dominio ni modifica la infraestructura existente.' },
-      { q: 'Cuanto tiempo toma la implementacion?', a: 'Para Active Directory y servidores de archivos, la implementacion toma entre 2 y 5 dias. Un entorno hibrido completo con integraciones en la nube puede tomar entre 2 y 3 semanas.' },
-      { q: 'Netwrix puede ayudarme a preparar una auditoria ISO 27001?', a: 'Si. Netwrix incluye reportes predefinidos mapeados a los controles de ISO 27001 que reducen significativamente el tiempo de preparacion para auditorias de cumplimiento.' },
+      { q: 'Netwrix requiere cambios en mi Active Directory?', a: 'No. Netwrix Auditor funciona en modo lectura mediante la captura de logs y eventos. No requiere cambios en el esquema de AD, no instala agentes en los controladores de dominio ni modifica la infraestructura existente.' },
+      { q: 'Cuanto tiempo toma la implementacion?', a: 'Para Active Directory y servidores de archivos, la implementacion toma entre 2 y 5 dias. Un entorno hibrido completo con integraciones en la nube puede tomar entre 2 y 3 semanas. Starsolution gestiona todo el despliegue desde Bogota con soporte en espanol.' },
+      { q: 'Netwrix puede ayudarme a preparar una auditoria ISO 27001?', a: 'Si. Netwrix incluye reportes predefinidos mapeados a los controles de ISO 27001 que reducen significativamente el tiempo de preparacion para auditorias de cumplimiento. Tambien cubre GDPR, HIPAA, PCI DSS y, para Colombia, la Ley 1581 y la Circular 007 Superfinanciera.' },
       { q: 'Que tipo de alertas genera Netwrix?', a: 'Netwrix genera alertas en tiempo real para cambios en grupos administrativos, modificaciones de GPO, acceso masivo a archivos, cambios de permisos en carpetas sensibles y creacion de cuentas privilegiadas, entre otros eventos criticos.' },
+      { q: 'Cual es la diferencia entre Netwrix Auditor y Netwrix Access Analyzer?', a: 'Netwrix Auditor se enfoca en auditoria de cambios y cumplimiento: registra quien modifico que en AD, servidores de archivos y Microsoft 365. Netwrix Access Analyzer es el producto de Data Access Governance y DSPM: descubre y clasifica datos sensibles en 40+ fuentes, monitorea Microsoft Copilot y automatiza la remediacion de permisos. Son SKUs distintos que se complementan.' },
+      { q: 'Netwrix Privilege Secure es solo un gestor de contrasenas?', a: 'No. Netwrix Privilege Secure implementa Zero Standing Privilege: las credenciales privilegiadas se crean Just-In-Time para cada sesion y se eliminan al terminar. Incluye grabacion de sesiones, monitoreo en tiempo real y eliminacion de cuentas permanentes de administrador.' },
     ]),
   },
   'black-duck': {
-    title: 'Black Duck AppSec SAST/DAST/SCA | Starsolution',
-    description: 'Black Duck: seguridad de aplicaciones con SAST, DAST y SCA. Detecte vulnerabilidades en codigo y open source. Integre DevSecOps hoy.',
-    keywords: 'Black Duck Colombia, SAST DAST SCA, application security testing, seguridad aplicaciones, DevSecOps, open source security',
+    title: 'Black Duck AppSec: Coverity, SCA, Polaris | Starsolution',
+    description: 'Black Duck en Colombia: Coverity SAST, Black Duck SCA, Continuous Dynamic DAST, Seeker IAST y Polaris Platform. Implementamos DevSecOps con soporte local.',
+    keywords: 'Black Duck Colombia, Coverity SAST, Black Duck SCA, Continuous Dynamic DAST, Seeker IAST, Polaris Platform, application security testing, DevSecOps, SBOM, open source security',
     canonical: `${BASE_URL}/black-duck`,
-    ogTitle: 'Black Duck - Application Security Testing',
+    ogTitle: 'Black Duck — Application Security Testing Platform | Starsolution',
     ogType: 'website',
     ogImage: `${BASE_URL}/og-default.png`,
     breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Star Compliance', url: '/#star-compliance' }, { name: 'Black Duck', url: '/black-duck' }],
-    jsonLd: product('Black Duck Software Composition Analysis', 'Black Duck', 'Analisis de seguridad de aplicaciones con SAST, DAST y SCA', { rating: { value: '4.8', count: '39' }, image: `${BASE_URL}/og-default.png` }),
+    jsonLd: product('Black Duck — Application Security Testing Platform', 'Black Duck Software', 'Suite de seguridad de aplicaciones con Coverity SAST, Black Duck SCA, Continuous Dynamic DAST, Seeker IAST y Polaris Platform SaaS', { rating: { value: '4.8', count: '39' }, image: `${BASE_URL}/og-default.png` }),
     faqJsonLd: faqSchema([
-      { q: 'Black Duck es lo mismo que Synopsys?', a: 'Black Duck evolucionó del grupo Synopsys Software Integrity Group en 2024 como empresa independiente. Los productos mantienen la excelencia tecnica de Synopsys con mayor enfoque en seguridad de aplicaciones.' },
-      { q: 'El escaneo ralentiza nuestro pipeline de CI/CD?', a: 'El impacto es minimo. El SCA tarda segundos; el SAST opera en modo incremental analizando solo el codigo modificado. Ambos se ejecutan en paralelo con el proceso de build sin bloquear el pipeline.' },
-      { q: 'Que lenguajes de programacion soporta?', a: 'SAST cubre mas de 20 lenguajes incluyendo Java, C/C++, C#, Python, JavaScript/TypeScript, Go, Ruby y PHP. SCA soporta todos los gestores de paquetes principales de cada ecosistema.' },
-      { q: 'Necesito ser una empresa de software para usar Black Duck?', a: 'No. Cualquier organizacion que desarrolle o consuma software se beneficia. Los bancos, aseguradoras y empresas industriales que usan componentes open source son clientes frecuentes de Black Duck.' },
+      { q: 'Que es Black Duck y que productos incluye?', a: 'Black Duck Software, Inc. es una empresa independiente de seguridad de aplicaciones (AppSec) escindida de Synopsys en octubre 2024. Su portfolio incluye Coverity (SAST), Black Duck SCA (analisis de composicion y SBOM), Continuous Dynamic (DAST), Seeker (IAST), Defensics (fuzzing) y la Black Duck Polaris Platform, una plataforma SaaS unificada. Starsolution implementa e integra estos productos en Colombia con soporte en espanol.' },
+      { q: 'Cual es la diferencia entre Coverity, Black Duck SCA y Continuous Dynamic?', a: 'Coverity es el producto SAST de Black Duck: analiza el codigo fuente estaticamente en mas de 20 lenguajes antes de compilar. Black Duck SCA identifica componentes open source, CVEs y riesgos de licenciamiento, y genera SBOM en formatos SPDX y CycloneDX. Continuous Dynamic es el producto DAST: prueba la aplicacion en ejecucion simulando ataques reales con production-safe payloads y validacion por IA para minimizar falsos positivos.' },
+      { q: 'El escaneo ralentiza nuestro pipeline de CI/CD?', a: 'El impacto es minimo. El SCA tarda segundos; Coverity opera en modo incremental analizando solo el codigo modificado. Ambos se ejecutan en paralelo con el proceso de build sin bloquear el pipeline. La Black Duck Polaris Platform se integra nativamente con Jenkins, GitHub Actions, GitLab CI, Azure DevOps y CircleCI.' },
+      { q: 'Que es la Black Duck Polaris Platform y como difiere de Software Risk Manager?', a: 'Black Duck Polaris Platform es la plataforma SaaS unificada que combina SAST (Coverity), SCA (Black Duck SCA) y DAST (Continuous Dynamic) en un solo flujo DevSecOps. Software Risk Manager es el producto ASPM (Application Security Posture Management) para centralizar y priorizar hallazgos de multiples herramientas a escala empresarial. Son productos complementarios: Polaris es el punto de entrada DevSecOps; Software Risk Manager es la capa de governance para CISOs.' },
     ]),
   },
   'dlp-prevencion-perdida-datos': {
@@ -441,19 +469,20 @@ export const seoData: Record<string, SEOData> = {
     ]),
   },
   'soti-mdm': {
-    title: 'SOTI MobiControl MDM Empresarial | Starsolution',
-    description: 'SOTI MobiControl: gestion de dispositivos moviles (MDM) para logistica, retail y manufactura. Control remoto, seguridad y kiosk mode.',
-    keywords: 'SOTI MobiControl Colombia, MDM, gestion dispositivos moviles, mobile device management, iOS Android empresarial',
+    title: 'SOTI MobiControl EMM Colombia | Starsolution',
+    description: 'SOTI MobiControl: gestion de dispositivos moviles para logistica, retail, salud y campo en Colombia. Control remoto, kiosk mode y soporte local.',
+    keywords: 'SOTI MobiControl Colombia, MDM EMM, gestion dispositivos moviles, mobile device management, iOS Android empresarial, SOTI ONE Platform',
     canonical: `${BASE_URL}/soti-mdm`,
-    ogTitle: 'SOTI MobiControl - MDM Empresarial',
+    ogTitle: 'SOTI MobiControl - EMM Empresarial Colombia',
     ogType: 'website',
     ogImage: `${BASE_URL}/og-default.png`,
     breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Infraestructura', url: '/#infraestructura' }, { name: 'SOTI MobiControl', url: '/soti-mdm' }],
-    jsonLd: product('SOTI MobiControl', 'SOTI', 'Gestion de dispositivos moviles empresariales para industrias especializadas', { rating: { value: '4.7', count: '35' }, image: `${BASE_URL}/og-default.png` }),
+    jsonLd: product('SOTI MobiControl', 'SOTI', 'Gestion de dispositivos moviles empresariales para industrias especializadas en Colombia', { rating: { value: '4.7', count: '35' }, image: `${BASE_URL}/og-default.png` }),
     faqJsonLd: faqSchema([
-      { q: 'Cual es la diferencia entre SOTI MobiControl y otros MDM?', a: 'SOTI ofrece APIs propietarias para hardware industrial de Zebra, Honeywell y Panasonic, monitoreo rugged con SOTI XTreme, control remoto Blaze a 60FPS y Kiosk Mode con HTML5 nativo, capacidades ausentes en MDM genericos.' },
-      { q: 'Que dispositivos soporta SOTI MobiControl?', a: 'SOTI soporta Android 5+, iOS 11+, Windows 10/11, ademas de hardware especializado como impresoras Zebra, Google Glass Enterprise y kioscos Samsung SMART.' },
-      { q: 'Cuanto cuesta SOTI MobiControl?', a: 'El plan Essential cuesta entre USD 4 y 6 por dispositivo al mes; Advanced entre USD 7 y 10; el complemento XTreme para hardware rugged agrega USD 3 a 5 adicionales por dispositivo.' },
+      { q: 'Cual es la diferencia entre SOTI MobiControl y otros MDM?', a: 'SOTI ofrece APIs propietarias para hardware industrial de Zebra, Honeywell y Panasonic, capacidades de monitoreo de dispositivos rugged mediante la tecnologia XTreme integrada en MobiControl, control remoto para soporte tecnico en tiempo real y Kiosk Mode con HTML5 nativo. Estas capacidades estan ausentes o son limitadas en MDM genericos. SOTI esta optimizado para verticales de logistica, retail, manufactura y salud.' },
+      { q: 'Que dispositivos soporta SOTI MobiControl?', a: 'SOTI MobiControl soporta Android 5+, iOS 11+, iPadOS, macOS y Windows 10/11, ademas de hardware especializado como escaneres y terminales Zebra (TC21, TC26), Honeywell (CT40, CT60), Panasonic Toughbook, impresoras industriales Zebra y kioscos interactivos. El enrolamiento express es compatible con Apple DEP, Android Zero-Touch, Samsung Knox Mobile Enrollment y Windows Autopilot.' },
+      { q: 'Cuanto cuesta SOTI MobiControl?', a: 'SOTI MobiControl se comercializa mediante cotizacion personalizada segun numero de dispositivos, sistemas operativos y modulos requeridos de la SOTI ONE Platform. No existe una lista de precios publica. Contacte a Starsolution para recibir una propuesta ajustada al tamano y necesidades especificas de su organizacion.' },
+      { q: 'Que otros productos incluye la SOTI ONE Platform?', a: 'La SOTI ONE Platform reune: SOTI MobiControl (EMM/UEM principal), SOTI XSight (diagnostico e inteligencia de soporte para flotas de dispositivos moviles), SOTI Snap (creacion no-code de apps moviles multiplataforma), SOTI Connect (gestion del ciclo de vida de impresoras moviles e industriales) y SOTI Identity (autenticacion centralizada y SSO). Starsolution integra los modulos que mejor se ajusten a la operacion de su empresa.' },
     ]),
   },
   'cableado-estructurado': {
@@ -532,6 +561,7 @@ export const seoData: Record<string, SEOData> = {
     ogTitle: 'Contacto - Starsolution',
     ogType: 'website',
     ogImage: `${BASE_URL}/og-default.png`,
+    hreflang: HREFLANG_CONTACTO,
     breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Contacto', url: '/contacto' }],
     jsonLd: {
       '@context': 'https://schema.org',
@@ -590,6 +620,7 @@ export const seoData: Record<string, SEOData> = {
     ogTitle: 'Starsolution Venezuela - Ciberseguridad Empresarial',
     ogType: 'website',
     ogImage: `${BASE_URL}/og-default.png`,
+    hreflang: HREFLANG_HOME,
     breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Venezuela', url: '/venezuela' }],
     jsonLd: {
       '@context': 'https://schema.org',
@@ -597,9 +628,9 @@ export const seoData: Record<string, SEOData> = {
       name: 'Starsolution Venezuela',
       description: 'Ciberseguridad empresarial y soluciones tecnológicas en Venezuela',
       url: `${BASE_URL}/venezuela`,
-      telephone: '+584241234567',
+      telephone: '+584241499856',
       email: 'venezuela@star-ti.com',
-      address: { '@type': 'PostalAddress', addressLocality: 'Caracas', addressCountry: 'VE' },
+      address: { '@type': 'PostalAddress', streetAddress: 'Ed. Centro Empresarial Torre Araujo, M. OF A-1', addressLocality: 'Caracas', addressCountry: 'VE' },
       parentOrganization: ORG,
       openingHours: 'Mo-Fr 08:00-17:00',
       priceRange: '$$',
@@ -629,6 +660,7 @@ export const seoData: Record<string, SEOData> = {
     ogTitle: 'Contacto - Starsolution Venezuela',
     ogType: 'website',
     ogImage: `${BASE_URL}/og-default.png`,
+    hreflang: HREFLANG_CONTACTO,
     breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Venezuela', url: '/venezuela' }, { name: 'Contacto', url: '/venezuela/contacto' }],
     jsonLd: {
       '@context': 'https://schema.org',
@@ -642,26 +674,28 @@ export const seoData: Record<string, SEOData> = {
     description: 'Enterprise cybersecurity in Miami and South Florida. Bilingual team, ethical hacking, ISO 27001, EDR/XDR. Free consultation.',
     keywords: 'cybersecurity Miami, enterprise antivirus South Florida, ethical hacking Miami, ISO 27001 Florida, IT security company',
     canonical: `${BASE_URL}/miami`,
-    ogTitle: 'Starsolution Miami - Enterprise Cybersecurity',
+    ogTitle: 'Starsolution Florida - Enterprise Cybersecurity in Miami & Orlando',
     ogType: 'website',
     ogImage: `${BASE_URL}/og-default.png`,
     lang: 'en',
+    hreflang: HREFLANG_HOME,
     breadcrumb: [{ name: 'Home', url: '/' }, { name: 'Miami', url: '/miami' }],
     jsonLd: {
       '@context': 'https://schema.org',
       '@type': 'LocalBusiness',
-      name: 'Starsolution Miami',
-      description: 'Enterprise cybersecurity and IT solutions in South Florida',
+      name: 'Starsolution Florida',
+      description: 'Enterprise cybersecurity and IT solutions across Florida, serving Miami and South Florida from our Orlando office',
       url: `${BASE_URL}/miami`,
-      telephone: '+13051234567',
+      telephone: '+13214386777',
       email: 'miami@star-ti.com',
-      address: { '@type': 'PostalAddress', addressLocality: 'Miami', addressRegion: 'FL', addressCountry: 'US' },
+      address: { '@type': 'PostalAddress', streetAddress: '8103 Gables Commons Dr', addressLocality: 'Orlando', addressRegion: 'FL', postalCode: '32821', addressCountry: 'US' },
       parentOrganization: ORG,
       openingHours: 'Mo-Fr 09:00-18:00',
       priceRange: '$$',
       paymentAccepted: 'Cash, Credit Card, Wire Transfer',
       currenciesAccepted: 'USD',
       areaServed: [
+        { '@type': 'City', name: 'Orlando' },
         { '@type': 'City', name: 'Miami' },
         { '@type': 'City', name: 'Fort Lauderdale' },
         { '@type': 'City', name: 'Coral Gables' },
@@ -671,11 +705,11 @@ export const seoData: Record<string, SEOData> = {
       ],
     },
     faqJsonLd: faqSchema([
-      { q: 'Do you offer cybersecurity services in Spanish?', a: 'Yes. Our Miami team is fully bilingual English/Spanish, allowing us to serve both English-speaking and Latin American businesses in South Florida without language barriers. All deliverables, reports, and support are available in both languages.' },
+      { q: 'Do you offer cybersecurity services in Spanish?', a: 'Yes. Our US team is fully bilingual English/Spanish, allowing us to serve both English-speaking and Latin American businesses in Florida without language barriers. All deliverables, reports, and support are available in both languages.' },
       { q: 'What areas in South Florida do you serve?', a: 'We serve Miami-Dade, Broward, and Palm Beach counties including Miami, Fort Lauderdale, Coral Gables, Doral, and Boca Raton.' },
       { q: 'Do I need to be in Miami for your services?', a: 'No. We offer remote cybersecurity assessments, managed EDR/XDR, and virtual CISO services for businesses anywhere in Florida and Latin America.' },
       { q: 'What compliance frameworks do you help with?', a: 'We help with HIPAA, SOC 2, PCI DSS, CMMC, NIST CSF, and ISO 27001 compliance for South Florida businesses.' },
-      { q: 'How quickly can you respond to a security incident?', a: 'Our Miami SOC team provides under 1 hour incident response for managed clients, with 24/7 availability.' },
+      { q: 'How quickly can you respond to a security incident?', a: 'Our SOC provides under 1 hour incident response for managed clients, with 24/7 availability, plus on-site dispatch across South Florida when required.' },
     ]),
   },
   // =====================================================
@@ -749,7 +783,7 @@ export const seoData: Record<string, SEOData> = {
   },
 
   'blog/ransomware-empresas-colombia': {
-    title: 'Ransomware en Empresas Colombianas: Guia de Prevencion y Respuesta 2026 | Starsolution',
+    title: 'Ransomware en Colombia: Prevencion y Respuesta 2026 | Starsolution',
     description: 'Como prevenir y responder al ransomware en Colombia. Estadisticas 2025-2026, fases del ataque, capas de defensa EDR/backup/email y plan de respuesta a incidentes.',
     keywords: 'ransomware empresas Colombia, proteccion ransomware, como prevenir ransomware empresa, ataque ransomware Colombia, respuesta incidentes ransomware, EDR anti-ransomware',
     canonical: `${BASE_URL}/blog/ransomware-empresas-colombia`,
@@ -805,7 +839,7 @@ export const seoData: Record<string, SEOData> = {
   },
 
   'blog/respuesta-incidentes-ciberseguridad': {
-    title: 'Respuesta a Incidentes de Ciberseguridad: Plan Paso a Paso | Starsolution',
+    title: 'Respuesta a Incidentes: Plan Paso a Paso | Starsolution',
     description: 'Guia completa de respuesta a incidentes de ciberseguridad para empresas colombianas. Las 6 fases NIST, equipo CSIRT, herramientas y normativa Ley 1581 y SFC.',
     keywords: 'respuesta a incidentes ciberseguridad, plan respuesta incidentes, CSIRT empresas Colombia, NIST SP 800-61, gestion incidentes seguridad, incidente ransomware Colombia',
     canonical: `${BASE_URL}/blog/respuesta-incidentes-ciberseguridad`,
@@ -873,18 +907,19 @@ export const seoData: Record<string, SEOData> = {
 
   'miami-contacto': {
     title: 'Contact Miami | Starsolution South Florida',
-    description: 'Contact Starsolution Miami for enterprise cybersecurity. Bilingual English/Spanish team. Free consultation, same-day response.',
-    keywords: 'contact Starsolution Miami, cybersecurity Miami, IT support South Florida',
+    description: 'Contact Starsolution in Florida for enterprise cybersecurity. Bilingual English/Spanish team. Free consultation, same-day response.',
+    keywords: 'contact Starsolution Florida, cybersecurity Miami, cybersecurity Orlando, IT support South Florida',
     canonical: `${BASE_URL}/miami/contacto`,
-    ogTitle: 'Contact - Starsolution Miami',
+    ogTitle: 'Contact - Starsolution Florida',
     ogType: 'website',
     ogImage: `${BASE_URL}/og-default.png`,
     lang: 'en',
+    hreflang: HREFLANG_CONTACTO,
     breadcrumb: [{ name: 'Home', url: '/' }, { name: 'Miami', url: '/miami' }, { name: 'Contact', url: '/miami/contacto' }],
     jsonLd: {
       '@context': 'https://schema.org',
       '@type': 'ContactPage',
-      name: 'Contact Starsolution Miami',
+      name: 'Contact Starsolution Florida',
       url: `${BASE_URL}/miami/contacto`,
     },
   },

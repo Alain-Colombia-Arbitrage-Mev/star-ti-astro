@@ -6,6 +6,29 @@ import WhatsAppButton from '@components/WhatsAppButton.astro';
 import { seoData } from '@data/seo';
 
 const seo = seoData.netwrix;
+
+const NW_SECTORS = [
+  {
+    sector: 'Banca y Finanzas',
+    need: 'Circular 007 Superfinanciera exige controles de acceso a sistemas core y registros de auditoría inmutables. Permisos excesivos en cuentas de administración representan riesgo regulatorio.',
+    how: 'Desplegamos Netwrix Auditor y Netwrix Privilege Secure para auditar AD, restringir cuentas privilegiadas con Zero Standing Privilege y generar evidencia lista para la Superfinanciera.',
+  },
+  {
+    sector: 'Salud',
+    need: 'La Ley 1581 y el Habeas Data protegen datos de pacientes (PHI). Hospitales y clínicas requieren clasificar datos sensibles y controlar quién accede a expedientes clínicos digitales.',
+    how: 'Implementamos Netwrix Data Classification para descubrir y clasificar PHI, y Netwrix Access Analyzer para gobernar accesos a más de 40 fuentes de datos con reportes de cumplimiento.',
+  },
+  {
+    sector: 'Gobierno y Sector Público',
+    need: 'El MSPI de MinTIC exige visibilidad sobre activos de información, gestión de identidades y auditoría de cambios en sistemas del Estado. La falta de trazabilidad expone a sanciones.',
+    how: 'Integramos Netwrix 1Secure para unificar auditoría de identidad y DSPM en entornos híbridos, y Netwrix Identity Manager para automatizar el ciclo de vida de identidades de funcionarios.',
+  },
+  {
+    sector: 'Retail y Comercio',
+    need: 'PCI DSS requiere proteger datos de tarjetas de pago y limitar accesos a sistemas de punto de venta. La rotación de personal temporal genera permisos huérfanos y vectores de ataque.',
+    how: 'Desplegamos Netwrix Endpoint Protector DLP para evitar fuga de datos de tarjetas, y Netwrix Auditor para auditar servidores de archivos y detectar accesos anómalos en tiempo real.',
+  },
+];
 ---
 
 <BaseLayout seo={seo}>
@@ -20,17 +43,17 @@ const seo = seoData.netwrix;
           <div>
             <div class="mb-6">
               <span class="inline-block bg-red-100 text-red-700 text-xs font-medium px-3 py-1 rounded">
-                AUDITORÍA Y GOBERNANZA DE IDENTIDAD
+                SEGURIDAD DE DATOS E IDENTIDADES
               </span>
             </div>
             <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-              Netwrix: Auditoría, Gobernanza{" "}
-              <span class="text-red-700">y Cumplimiento Normativo.</span>
+              Netwrix: Seguridad de Datos{" "}
+              <span class="text-red-700">centrada en Identidad.</span>
             </h1>
             <p class="text-lg sm:text-xl text-gray-600 mb-8 max-w-3xl">
-              Sepa exactamente quién accede a qué, cuándo y cómo en toda su infraestructura.
-              Auditoría de cambios, clasificación de datos, gobernanza de identidad y gestión de
-              acceso privilegiado para cumplir con GDPR, HIPAA, PCI DSS e ISO 27001.
+              Auditoría de cambios, clasificación de datos, gobernanza de identidad, PAM y DLP
+              para cumplir con Ley 1581, ISO 27001, Circular 007, PCI DSS y GDPR.
+              Starsolution implementa e integra Netwrix en Colombia con soporte en español.
             </p>
             <div class="flex flex-col sm:flex-row gap-4">
               <a href="/contacto" class="bg-gradient-to-r from-red-600 to-red-700 text-white font-semibold px-8 py-4 rounded-full hover:from-red-700 hover:to-red-800 transition shadow-lg inline-flex items-center justify-center gap-2">
@@ -48,59 +71,82 @@ const seo = seoData.netwrix;
             </div>
           </div>
           <div class="hidden lg:flex items-center justify-center">
-            <img src="/assets/icono-firewall-bloques-seguridad.webp" alt="Auditoría y gobernanza de identidad con Netwrix" class="w-full max-w-sm rounded-2xl shadow-xl" width="384" height="384" loading="lazy" />
+            <img src="/assets/icono-firewall-bloques-seguridad.webp" alt="Seguridad de datos e identidad con Netwrix en Colombia" class="w-full max-w-sm rounded-2xl shadow-xl" width="384" height="384" loading="lazy" />
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Compliance Challenges -->
+    <!-- ¿Que es? · Bloque definicional para AI/GEO -->
+    <section class="bg-white pt-14 sm:pt-16" aria-labelledby="que-es-netwrix">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 id="que-es-netwrix" class="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">¿Que es Netwrix?</h2>
+        <p class="text-lg text-gray-700 leading-relaxed">Netwrix es una plataforma de seguridad de datos centrada en identidad que integra auditoría de Active Directory (Netwrix Auditor), gobernanza de acceso a datos (Netwrix Access Analyzer), gestión de acceso privilegiado con Zero Standing Privilege (Netwrix Privilege Secure), prevención de pérdida de datos multiplataforma (Netwrix Endpoint Protector), clasificación de datos sensibles (Netwrix Data Classification), gestión del ciclo de vida de identidades (Netwrix Identity Manager) y una plataforma SaaS unificada para entornos empresariales de IA (Netwrix 1Secure). Las organizaciones despliegan Netwrix para auditar cambios de infraestructura, controlar accesos privilegiados, cumplir con marcos regulatorios como Ley 1581, ISO 27001 y Circular 007 Superfinanciera, y reducir el riesgo de brechas por identidades comprometidas. Starsolution implementa e integra toda la línea de productos Netwrix en Colombia con soporte en español y cobertura en Venezuela y Miami.</p>
+      </div>
+    </section>
+
+    <!-- Reconocimientos Netwrix -->
+    <section class="bg-white pb-14 pt-10 sm:pb-16">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <p class="text-xs text-gray-500 uppercase tracking-wider mb-4 font-medium">Reconocimientos vigentes</p>
+        <div class="flex flex-wrap gap-3">
+          <span class="bg-gray-50 border border-gray-200 text-gray-700 text-xs font-medium px-3 py-2 rounded-lg">Gartner MQ PAM 2025 — 4.° año consecutivo</span>
+          <span class="bg-gray-50 border border-gray-200 text-gray-700 text-xs font-medium px-3 py-2 rounded-lg">KuppingerCole IGA Leadership Compass 2024 — Overall Leader</span>
+          <span class="bg-gray-50 border border-gray-200 text-gray-700 text-xs font-medium px-3 py-2 rounded-lg">GigaOM DLP Radar 2025 — Challenger / Fast Mover</span>
+          <span class="bg-gray-50 border border-gray-200 text-gray-700 text-xs font-medium px-3 py-2 rounded-lg">Cybersecurity Excellence DLP Award 2024</span>
+          <span class="bg-gray-50 border border-gray-200 text-gray-700 text-xs font-medium px-3 py-2 rounded-lg">Gartner Peer Insights 4.7/5 — 164 reseñas</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cifras verificadas -->
     <section class="bg-[#111827] py-16">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12">
           <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">
-            Desafíos de Cumplimiento que Netwrix Resuelve
+            Por qué las Empresas Eligen Netwrix
           </h2>
           <p class="text-gray-400 max-w-3xl mx-auto">
-            Las organizaciones luchan con la falta de visibilidad, la complejidad regulatoria
-            y la incapacidad de demostrar controles ante auditores.
+            Más de 13,000 organizaciones en el mundo confían en Netwrix para auditar
+            su infraestructura, gobernar identidades y demostrar cumplimiento normativo.
           </p>
         </div>
         <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
           <div>
-            <h3 class="text-white font-bold text-3xl mb-2">74%</h3>
-            <p class="text-white text-xs uppercase tracking-wider opacity-75">De empresas no saben dónde están sus datos sensibles</p>
+            <h3 class="text-white font-bold text-3xl mb-2">13,000+</h3>
+            <p class="text-white text-xs uppercase tracking-wider opacity-75">Clientes a nivel mundial</p>
           </div>
           <div>
-            <h3 class="text-white font-bold text-3xl mb-2">85%</h3>
-            <p class="text-white text-xs uppercase tracking-wider opacity-75">Tienen usuarios con permisos excesivos</p>
+            <h3 class="text-white font-bold text-3xl mb-2">40+</h3>
+            <p class="text-white text-xs uppercase tracking-wider opacity-75">Fuentes de datos auditadas por Access Analyzer</p>
           </div>
           <div>
-            <h3 class="text-white font-bold text-3xl mb-2">$14.8M</h3>
-            <p class="text-white text-xs uppercase tracking-wider opacity-75">Costo promedio de no cumplimiento</p>
+            <h3 class="text-white font-bold text-3xl mb-2">4.°</h3>
+            <p class="text-white text-xs uppercase tracking-wider opacity-75">Año consecutivo en Gartner MQ PAM 2025</p>
           </div>
           <div>
-            <h3 class="text-white font-bold text-3xl mb-2">53%</h3>
-            <p class="text-white text-xs uppercase tracking-wider opacity-75">De brechas por abuso de privilegios</p>
+            <h3 class="text-white font-bold text-3xl mb-2">4.7/5</h3>
+            <p class="text-white text-xs uppercase tracking-wider opacity-75">Rating Gartner Peer Insights (164 reseñas)</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Key Features (6 Cards) -->
+    <!-- Línea de Producto Netwrix (Featured) -->
     <section class="bg-gray-50 py-16 sm:py-20 lg:py-24">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="mb-16">
           <h2 class="text-3xl sm:text-4xl lg:text-5xl font-semibold mb-4">
-            Capacidades{" "}<span class="text-red-700">de Netwrix</span>
+            Productos{" "}<span class="text-red-700">Netwrix</span>
           </h2>
           <p class="text-gray-600 max-w-3xl">
-            Visibilidad, control y cumplimiento en toda su infraestructura híbrida desde
-            una plataforma unificada.
+            Netwrix organiza su portafolio en Data Security e Identity Security.
+            Starsolution integra los productos vigentes con nomenclatura oficial 2025-2026.
           </p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Netwrix 1Secure -->
           <div class="bg-white border border-gray-200 rounded-2xl p-6">
             <div class="bg-gray-50 rounded-lg w-10 h-10 flex items-center justify-center mb-4">
               <svg class="w-5 h-5" fill="none" viewBox="0 0 20 20">
@@ -108,14 +154,33 @@ const seo = seoData.netwrix;
                 <path d="M10 7v3l2 2" stroke="#374151" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.66667" />
               </svg>
             </div>
-            <h3 class="text-lg font-semibold mb-2">Auditoría de Cambios</h3>
+            <h3 class="text-lg font-semibold mb-1">Netwrix 1Secure</h3>
+            <p class="text-xs text-red-700 font-medium mb-2 uppercase tracking-wide">Plataforma SaaS Unificada</p>
             <p class="text-sm text-gray-600">
-              Registro detallado de quién cambió qué, cuándo y dónde en Active Directory,
-              servidores de archivos, Exchange, SharePoint, Azure AD y más. Alertas en
-              tiempo real ante cambios críticos.
+              Plataforma SaaS-native con 6 módulos integrados: PAM, Identity Management, Directory Management,
+              DSPM (desde mayo 2025), ITDR y Endpoint Management. Posicionada como
+              "Identity-first data security for enterprise AI" e incluye gobernanza de Microsoft Copilot.
             </p>
           </div>
 
+          <!-- Netwrix Auditor -->
+          <div class="bg-white border border-gray-200 rounded-2xl p-6">
+            <div class="bg-gray-50 rounded-lg w-10 h-10 flex items-center justify-center mb-4">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 20 20">
+                <circle cx="10" cy="10" r="7" stroke="#374151" stroke-width="1.66667" fill="none" />
+                <path d="M10 7v3l2 2" stroke="#374151" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.66667" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold mb-1">Netwrix Auditor</h3>
+            <p class="text-xs text-red-700 font-medium mb-2 uppercase tracking-wide">Auditoría de Cambios y Cumplimiento</p>
+            <p class="text-sm text-gray-600">
+              Registro detallado de quién cambió qué, cuándo y dónde en Active Directory,
+              servidores de archivos, Exchange, SharePoint, Azure AD y más.
+              Alertas en tiempo real ante cambios críticos y reportes pre-construidos para auditores.
+            </p>
+          </div>
+
+          <!-- Netwrix Access Analyzer -->
           <div class="bg-white border border-gray-200 rounded-2xl p-6">
             <div class="bg-gray-50 rounded-lg w-10 h-10 flex items-center justify-center mb-4">
               <svg class="w-5 h-5" fill="none" viewBox="0 0 20 20">
@@ -123,52 +188,81 @@ const seo = seoData.netwrix;
                 <path d="M7 8h6M7 12h4" stroke="#374151" stroke-linecap="round" stroke-width="1.66667" />
               </svg>
             </div>
-            <h3 class="text-lg font-semibold mb-2">Clasificación de Datos</h3>
+            <h3 class="text-lg font-semibold mb-1">Netwrix Access Analyzer</h3>
+            <p class="text-xs text-red-700 font-medium mb-2 uppercase tracking-wide">Data Access Governance / DSPM</p>
             <p class="text-sm text-gray-600">
-              Descubra y clasifique automáticamente datos sensibles (PII, PHI, PCI) en
-              servidores de archivos, SharePoint, bases de datos y almacenamiento en la nube.
+              Descubrimiento y clasificación en 40+ fuentes de datos (AD, SharePoint, SQL Server, AWS RDS, Oracle).
+              Monitoreo de Microsoft Copilot en tiempo real. Automatización de deprovisioning y remediación.
+              Reporting de GDPR, HIPAA, SOX y PCI DSS. Antes llamado StealthAUDIT.
             </p>
           </div>
 
+          <!-- Netwrix Data Classification -->
+          <div class="bg-white border border-gray-200 rounded-2xl p-6">
+            <div class="bg-gray-50 rounded-lg w-10 h-10 flex items-center justify-center mb-4">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 20 20">
+                <rect x="3" y="3" width="14" height="14" rx="2" stroke="#374151" stroke-width="1.66667" fill="none" />
+                <path d="M7 8h6M7 12h4" stroke="#374151" stroke-linecap="round" stroke-width="1.66667" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold mb-1">Netwrix Data Classification</h3>
+            <p class="text-xs text-red-700 font-medium mb-2 uppercase tracking-wide">Clasificación de Datos Sensibles</p>
+            <p class="text-sm text-gray-600">
+              "Find it. Classify it. Fix it." Descubrimiento automatizado de datos sensibles (PII, PHI, PCI)
+              en servidores de archivos, bases de datos, email y repositorios cloud. Remediación automatizada,
+              integración con Microsoft Information Protection (MIP) y reporting de cumplimiento.
+            </p>
+          </div>
+
+          <!-- Netwrix Identity Manager -->
           <div class="bg-white border border-gray-200 rounded-2xl p-6">
             <div class="bg-gray-50 rounded-lg w-10 h-10 flex items-center justify-center mb-4">
               <svg class="w-5 h-5" fill="none" viewBox="0 0 20 20">
                 <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0zM3 12a3 3 0 116 0 3 3 0 01-6 0z" stroke="#374151" stroke-width="1.66667" fill="none" />
               </svg>
             </div>
-            <h3 class="text-lg font-semibold mb-2">Gobernanza de Identidad</h3>
+            <h3 class="text-lg font-semibold mb-1">Netwrix Identity Manager</h3>
+            <p class="text-xs text-red-700 font-medium mb-2 uppercase tracking-wide">IGA — Identity Governance & Administration</p>
             <p class="text-sm text-gray-600">
-              Gestione el ciclo de vida de identidades: provisioning, deprovisioning, revisión
-              de accesos y certificación de permisos. Principio de mínimo privilegio automatizado.
+              Automatización del ciclo de vida de identidades (joiner-mover-leaver) con modelado de roles asistido por IA.
+              Access reviews, certificaciones de acceso, RBAC y conectores prebuilt para HR, IT y apps de negocio.
+              Antes llamado Netwrix Usercube (renombrado abril 2025).
             </p>
           </div>
 
+          <!-- Netwrix Privilege Secure -->
           <div class="bg-white border border-gray-200 rounded-2xl p-6">
             <div class="bg-gray-50 rounded-lg w-10 h-10 flex items-center justify-center mb-4">
               <svg class="w-5 h-5" fill="none" viewBox="0 0 20 20">
                 <path d="M10 2L3 6v5c0 4.5 3 8.5 7 9.5 4-1 7-5 7-9.5V6l-7-4z" stroke="#374151" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.66667" />
               </svg>
             </div>
-            <h3 class="text-lg font-semibold mb-2">Gestión de Acceso Privilegiado</h3>
+            <h3 class="text-lg font-semibold mb-1">Netwrix Privilege Secure</h3>
+            <p class="text-xs text-red-700 font-medium mb-2 uppercase tracking-wide">PAM — Zero Standing Privilege</p>
             <p class="text-sm text-gray-600">
-              Controle y audite cuentas de administrador y accesos privilegiados. Sesiones
-              grabadas, acceso Just-In-Time y elevación temporal de privilegios con aprobación.
+              "Stop attackers with Zero Standing Privilege." Acceso Just-In-Time (JIT) con credenciales
+              temporales eliminadas al finalizar la sesión. Grabación y monitoreo de sesiones privilegiadas.
+              Elimina cuentas permanentes de administrador sin depender solo de bóvedas de contraseñas.
             </p>
           </div>
 
+          <!-- Netwrix Endpoint Protector -->
           <div class="bg-white border border-gray-200 rounded-2xl p-6">
             <div class="bg-gray-50 rounded-lg w-10 h-10 flex items-center justify-center mb-4">
               <svg class="w-5 h-5" fill="none" viewBox="0 0 20 20">
                 <path d="M10 2a8 8 0 100 16 8 8 0 000-16zM10 6v4m0 4h.01" stroke="#374151" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.66667" />
               </svg>
             </div>
-            <h3 class="text-lg font-semibold mb-2">Auditoría Active Directory</h3>
+            <h3 class="text-lg font-semibold mb-1">Netwrix Endpoint Protector</h3>
+            <p class="text-xs text-red-700 font-medium mb-2 uppercase tracking-wide">DLP — Data Loss Prevention</p>
             <p class="text-sm text-gray-600">
-              Monitoreo profundo de Active Directory: cambios en GPOs, grupos de seguridad,
-              cuentas de usuario, permisos y delegaciones. Detección de amenazas internas.
+              Control de dispositivos (USB, Bluetooth, impresoras, 45+ tipos) y DLP content-aware
+              con paridad completa de funcionalidades en Windows, macOS y Linux. Cifrado forzado FIPS,
+              eDiscovery para datos en reposo. Ganador del DLP Excellence Award 2024.
             </p>
           </div>
 
+          <!-- Netwrix PingCastle -->
           <div class="bg-white border border-gray-200 rounded-2xl p-6">
             <div class="bg-gray-50 rounded-lg w-10 h-10 flex items-center justify-center mb-4">
               <svg class="w-5 h-5" fill="none" viewBox="0 0 20 20">
@@ -176,10 +270,28 @@ const seo = seoData.netwrix;
                 <path d="M13 15l2 2 4-4" stroke="#374151" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.66667" />
               </svg>
             </div>
-            <h3 class="text-lg font-semibold mb-2">Auditoría de File Servers</h3>
+            <h3 class="text-lg font-semibold mb-1">Netwrix PingCastle</h3>
+            <p class="text-xs text-red-700 font-medium mb-2 uppercase tracking-wide">Active Directory Security Posture</p>
             <p class="text-sm text-gray-600">
-              Sepa quién accede, modifica o elimina archivos en sus servidores. Identifique
-              permisos excesivos y datos huérfanos. Optimice el almacenamiento y reduzca riesgos.
+              Evaluación de la postura de seguridad de Active Directory. Identifica configuraciones
+              riesgosas, cuentas expuestas y rutas de escalada de privilegios. Se integra con
+              Netwrix 1Secure para AD risk assessments continuos.
+            </p>
+          </div>
+
+          <!-- Netwrix Directory Manager -->
+          <div class="bg-white border border-gray-200 rounded-2xl p-6">
+            <div class="bg-gray-50 rounded-lg w-10 h-10 flex items-center justify-center mb-4">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 20 20">
+                <path d="M4 4h12v12H4z" stroke="#374151" stroke-width="1.66667" fill="none" rx="2" />
+                <path d="M8 8h4M8 12h4" stroke="#374151" stroke-linecap="round" stroke-width="1.66667" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold mb-1">Netwrix Directory Manager</h3>
+            <p class="text-xs text-red-700 font-medium mb-2 uppercase tracking-wide">Gestión de Grupos y Usuarios AD</p>
+            <p class="text-sm text-gray-600">
+              "Simplify group and user management." Gestión de grupos y usuarios en Active Directory
+              y Microsoft Entra ID con self-service de contraseñas. Antes llamado GroupID.
             </p>
           </div>
         </div>
@@ -196,19 +308,20 @@ const seo = seoData.netwrix;
               Una Sola Plataforma para Toda su Infraestructura
             </h2>
             <p class="text-gray-600 mb-6">
-              Netwrix cubre entornos híbridos completos: Active Directory, Azure AD, Windows Server,
+              Netwrix cubre entornos híbridos completos: Active Directory, Microsoft Entra ID, Windows Server,
               Exchange, SharePoint, OneDrive, SQL Server, VMware, y almacenamiento en la nube.
               Todo visible desde una única consola con reportes unificados.
             </p>
             <p class="text-gray-600 mb-8">
               Cada cambio, cada acceso y cada anomalía queda registrada con el detalle necesario
               para satisfacer a auditores y demostrar cumplimiento continuo ante marcos regulatorios.
+              Netwrix 1Secure añade DSPM e ITDR en formato SaaS-native para entornos de IA empresarial.
             </p>
 
             <div class="grid grid-cols-2 gap-6">
               <div class="border-l-4 border-red-600 pl-4">
-                <div class="text-2xl font-bold text-gray-900 mb-1">160+</div>
-                <div class="text-sm text-gray-600">Reportes de cumplimiento pre-construidos</div>
+                <div class="text-2xl font-bold text-gray-900 mb-1">40+</div>
+                <div class="text-sm text-gray-600">Fuentes de datos auditadas por Access Analyzer</div>
               </div>
               <div class="border-l-4 border-red-600 pl-4">
                 <div class="text-2xl font-bold text-gray-900 mb-1">13,000+</div>
@@ -228,7 +341,7 @@ const seo = seoData.netwrix;
                     </svg>
                   </div>
                   <div>
-                    <h3 class="font-semibold text-gray-900">Active Directory & Azure AD</h3>
+                    <h3 class="font-semibold text-gray-900">Active Directory & Microsoft Entra ID</h3>
                     <p class="text-sm text-gray-600">Cambios en usuarios, grupos, GPOs y permisos</p>
                   </div>
                 </div>
@@ -251,7 +364,7 @@ const seo = seoData.netwrix;
                   </div>
                   <div>
                     <h3 class="font-semibold text-gray-900">Microsoft 365 & SharePoint</h3>
-                    <p class="text-sm text-gray-600">Exchange Online, OneDrive, Teams y SharePoint Online</p>
+                    <p class="text-sm text-gray-600">Exchange Online, OneDrive, Teams, SharePoint y Microsoft Copilot</p>
                   </div>
                 </div>
                 <div class="flex items-start gap-3">
@@ -261,7 +374,7 @@ const seo = seoData.netwrix;
                     </svg>
                   </div>
                   <div>
-                    <h3 class="font-semibold text-gray-900">SQL Server & VMware</h3>
+                    <h3 class="font-semibold text-gray-900">SQL Server, AWS RDS & VMware</h3>
                     <p class="text-sm text-gray-600">Bases de datos, máquinas virtuales y entornos híbridos</p>
                   </div>
                 </div>
@@ -303,107 +416,40 @@ const seo = seoData.netwrix;
             <p class="text-xs text-gray-500">Seguridad de información</p>
           </div>
           <div class="bg-white border border-gray-200 rounded-2xl p-6 text-center">
-            <h3 class="font-bold text-lg text-gray-900 mb-1">SOX</h3>
-            <p class="text-xs text-gray-500">Controles financieros</p>
+            <h3 class="font-bold text-lg text-gray-900 mb-1">Ley 1581</h3>
+            <p class="text-xs text-gray-500">Habeas Data Colombia</p>
           </div>
           <div class="bg-white border border-gray-200 rounded-2xl p-6 text-center">
-            <h3 class="font-bold text-lg text-gray-900 mb-1">Ley 1581</h3>
-            <p class="text-xs text-gray-500">Datos personales Colombia</p>
+            <h3 class="font-bold text-lg text-gray-900 mb-1">Circular 007</h3>
+            <p class="text-xs text-gray-500">Superfinanciera Colombia</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Casos de Uso Empresarial -->
+    <!-- Casos por Sector -->
     <section class="py-16 sm:py-20 lg:py-24 bg-white">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12">
           <h2 class="text-3xl sm:text-4xl font-bold mb-4 text-gray-900">
-            Casos de Uso Empresarial
+            Netwrix por Sector en Colombia
           </h2>
           <p class="text-gray-600 max-w-2xl mx-auto">
-            Netwrix resuelve los cuatro desafíos de gobernanza más críticos en entornos
-            corporativos modernos con entornos híbridos y trabajo remoto.
+            Starsolution integra Netwrix adaptado al marco regulatorio de cada industria
+            colombiana. Reto específico + cómo lo resolvemos.
           </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div class="bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-lg transition-all duration-300 cursor-pointer">
-            <div class="w-12 h-12 bg-red-50 rounded-xl flex items-center justify-center mb-5">
-              <svg class="w-6 h-6 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
-              </svg>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {NW_SECTORS.map((item) => (
+            <div class="bg-gray-50 border border-gray-200 rounded-2xl p-6 flex flex-col">
+              <h3 class="font-bold text-gray-900 text-lg mb-3">{item.sector}</h3>
+              <p class="text-xs text-gray-500 uppercase tracking-wider font-semibold mb-1">Reto:</p>
+              <p class="text-sm text-gray-600 mb-4 flex-1">{item.need}</p>
+              <p class="text-xs text-red-700 uppercase tracking-wider font-semibold mb-1">Como lo resolvemos:</p>
+              <p class="text-sm text-gray-700">{item.how}</p>
             </div>
-            <h3 class="font-bold text-gray-900 text-xl mb-3">Auditoría de Active Directory</h3>
-            <p class="text-sm text-gray-600 leading-relaxed mb-4">
-              Detecte cambios no autorizados en grupos de seguridad, GPOs y cuentas de usuario en tiempo real.
-              Netwrix registra quién modificó qué, cuándo y desde dónde, generando alertas inmediatas
-              ante escaladas de privilegios o creación de cuentas administrativas no planificadas.
-            </p>
-            <div class="flex flex-wrap gap-2">
-              <span class="bg-red-50 text-red-700 text-xs font-medium px-3 py-1 rounded-full">Cambios en GPOs</span>
-              <span class="bg-red-50 text-red-700 text-xs font-medium px-3 py-1 rounded-full">Grupos privilegiados</span>
-              <span class="bg-red-50 text-red-700 text-xs font-medium px-3 py-1 rounded-full">Cuentas deshabilitadas</span>
-            </div>
-          </div>
-
-          <div class="bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-lg transition-all duration-300 cursor-pointer">
-            <div class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-5">
-              <svg class="w-6 h-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" />
-              </svg>
-            </div>
-            <h3 class="font-bold text-gray-900 text-xl mb-3">Monitoreo de File Servers</h3>
-            <p class="text-sm text-gray-600 leading-relaxed mb-4">
-              Sepa exactamente quién accede, modifica o elimina archivos en sus servidores de archivos,
-              SharePoint y NAS. Identifique carpetas con permisos excesivos y datos sensibles sin clasificar.
-              Responda a ransomware en segundos detectando comportamientos anómalos de escritura masiva.
-            </p>
-            <div class="flex flex-wrap gap-2">
-              <span class="bg-blue-50 text-blue-700 text-xs font-medium px-3 py-1 rounded-full">Detección ransomware</span>
-              <span class="bg-blue-50 text-blue-700 text-xs font-medium px-3 py-1 rounded-full">Permisos excesivos</span>
-              <span class="bg-blue-50 text-blue-700 text-xs font-medium px-3 py-1 rounded-full">Datos huérfanos</span>
-            </div>
-          </div>
-
-          <div class="bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-lg transition-all duration-300 cursor-pointer">
-            <div class="w-12 h-12 bg-purple-50 rounded-xl flex items-center justify-center mb-5">
-              <svg class="w-6 h-6 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
-              </svg>
-            </div>
-            <h3 class="font-bold text-gray-900 text-xl mb-3">Gobernanza Azure AD</h3>
-            <p class="text-sm text-gray-600 leading-relaxed mb-4">
-              Extienda la visibilidad a su entorno de Azure Active Directory y Microsoft 365.
-              Audite accesos a aplicaciones en la nube, revise permisos de consentimiento OAuth,
-              y detecte usuarios con licencias asignadas sin uso o con permisos heredados de roles anteriores.
-            </p>
-            <div class="flex flex-wrap gap-2">
-              <span class="bg-purple-50 text-purple-700 text-xs font-medium px-3 py-1 rounded-full">Microsoft 365</span>
-              <span class="bg-purple-50 text-purple-700 text-xs font-medium px-3 py-1 rounded-full">OAuth consent</span>
-              <span class="bg-purple-50 text-purple-700 text-xs font-medium px-3 py-1 rounded-full">Hybrid identity</span>
-            </div>
-          </div>
-
-          <div class="bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-lg transition-all duration-300 cursor-pointer">
-            <div class="w-12 h-12 bg-orange-50 rounded-xl flex items-center justify-center mb-5">
-              <svg class="w-6 h-6 text-orange-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-              </svg>
-            </div>
-            <h3 class="font-bold text-gray-900 text-xl mb-3">Detección de Escalada de Privilegios</h3>
-            <p class="text-sm text-gray-600 leading-relaxed mb-4">
-              Identifique intentos de escalada de privilegios antes de que se conviertan en incidentes.
-              Netwrix correlaciona eventos sospechosos: múltiples intentos de inicio de sesión fallidos,
-              acceso fuera de horario, elevaciones de privilegio no aprobadas y uso de cuentas de servicio
-              de forma interactiva.
-            </p>
-            <div class="flex flex-wrap gap-2">
-              <span class="bg-orange-50 text-orange-700 text-xs font-medium px-3 py-1 rounded-full">Amenazas internas</span>
-              <span class="bg-orange-50 text-orange-700 text-xs font-medium px-3 py-1 rounded-full">Cuentas de servicio</span>
-              <span class="bg-orange-50 text-orange-700 text-xs font-medium px-3 py-1 rounded-full">Comportamiento anómalo</span>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>
@@ -491,7 +537,7 @@ const seo = seoData.netwrix;
             <div class="grid grid-cols-4 bg-gray-50 hover:bg-gray-100 transition-colors">
               <div class="p-5">
                 <div class="text-sm font-medium text-gray-900">Reportes de cumplimiento automáticos</div>
-                <div class="text-xs text-gray-500 mt-1">160+ reportes pre-construidos para auditores</div>
+                <div class="text-xs text-gray-500 mt-1">Reportes pre-construidos para auditores</div>
               </div>
               <div class="p-5 text-center border-l border-gray-100">
                 <svg class="w-5 h-5 text-green-500 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg>
@@ -524,7 +570,7 @@ const seo = seoData.netwrix;
           Preguntas Frecuentes sobre Netwrix
         </h2>
         <p class="text-gray-600 text-center mb-12">
-          Lo que necesita saber sobre auditoría y gobernanza de identidad.
+          Lo que necesita saber sobre seguridad de datos e identidades con Netwrix.
         </p>
 
         <div class="space-y-4">
@@ -534,9 +580,9 @@ const seo = seoData.netwrix;
               <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
             </summary>
             <div class="px-6 pb-6 text-gray-600">
-              No. Netwrix se instala como una solución de monitoreo que lee logs y eventos sin
-              realizar modificaciones en su Active Directory ni en sus servidores. No requiere
-              cambios de esquema, GPOs adicionales ni agentes en los controladores de dominio.
+              No. Netwrix Auditor funciona en modo lectura mediante la captura de logs y eventos.
+              No requiere cambios en el esquema de AD, no instala agentes en los controladores
+              de dominio ni modifica la infraestructura existente.
             </div>
           </details>
 
@@ -546,9 +592,9 @@ const seo = seoData.netwrix;
               <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
             </summary>
             <div class="px-6 pb-6 text-gray-600">
-              La implementación básica para Active Directory y servidores de archivos toma entre
-              2 y 5 días. Para entornos híbridos completos (incluyendo Azure AD, SharePoint,
-              SQL Server), la implementación completa se realiza en 2 a 3 semanas.
+              Para Active Directory y servidores de archivos, la implementación toma entre 2 y 5 días.
+              Un entorno híbrido completo con integraciones en la nube puede tomar entre 2 y 3 semanas.
+              Starsolution gestiona todo el despliegue desde Bogotá con soporte en español.
             </div>
           </details>
 
@@ -558,10 +604,9 @@ const seo = seoData.netwrix;
               <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
             </summary>
             <div class="px-6 pb-6 text-gray-600">
-              Sí. Netwrix incluye reportes pre-construidos mapeados a los controles de ISO 27001
-              (y otros marcos). Genera evidencia automática de controles de acceso, cambios auditados,
-              revisión de permisos y clasificación de datos sensibles. Esto reduce significativamente
-              el esfuerzo de preparación para auditorías y certificaciones.
+              Sí. Netwrix incluye reportes predefinidos mapeados a los controles de ISO 27001
+              que reducen significativamente el tiempo de preparación para auditorías de cumplimiento.
+              También cubre GDPR, HIPAA, PCI DSS y, para Colombia, la Ley 1581 y la Circular 007 Superfinanciera.
             </div>
           </details>
 
@@ -571,18 +616,82 @@ const seo = seoData.netwrix;
               <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
             </summary>
             <div class="px-6 pb-6 text-gray-600">
-              Netwrix genera alertas en tiempo real para eventos críticos como: cambios en grupos
-              de administradores, modificaciones de GPOs, accesos masivos a archivos, cambios
-              de permisos en carpetas sensibles, creación de cuentas privilegiadas y cualquier
-              actividad que viole las políticas definidas por su organización.
+              Netwrix genera alertas en tiempo real para cambios en grupos administrativos,
+              modificaciones de GPO, acceso masivo a archivos, cambios de permisos en carpetas
+              sensibles y creación de cuentas privilegiadas, entre otros eventos críticos.
+            </div>
+          </details>
+
+          <details class="bg-gray-50 border border-gray-200 rounded-xl group">
+            <summary class="font-semibold text-lg p-6 cursor-pointer list-none flex items-center justify-between">
+              ¿Cuál es la diferencia entre Netwrix Auditor y Netwrix Access Analyzer?
+              <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+            </summary>
+            <div class="px-6 pb-6 text-gray-600">
+              Netwrix Auditor se enfoca en auditoría de cambios y cumplimiento: registra quién modificó qué
+              en AD, servidores de archivos y entornos Microsoft 365. Netwrix Access Analyzer (antes StealthAUDIT)
+              es el producto de Data Access Governance y DSPM: descubre y clasifica datos sensibles en 40+ fuentes,
+              monitorea la actividad de Microsoft Copilot y automatiza la remediación de permisos. Son SKUs distintos
+              que se complementan.
+            </div>
+          </details>
+
+          <details class="bg-gray-50 border border-gray-200 rounded-xl group">
+            <summary class="font-semibold text-lg p-6 cursor-pointer list-none flex items-center justify-between">
+              ¿Netwrix Privilege Secure es solo un gestor de contraseñas?
+              <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+            </summary>
+            <div class="px-6 pb-6 text-gray-600">
+              No. Netwrix Privilege Secure implementa el principio de Zero Standing Privilege: las credenciales
+              privilegiadas se crean Just-In-Time para cada sesión y se eliminan al terminar. Esto es distinto
+              de las soluciones de vaulting clásico que solo guardan contraseñas. Incluye grabación de sesiones,
+              monitoreo en tiempo real y eliminación de cuentas permanentes de administrador.
             </div>
           </details>
         </div>
       </div>
     </section>
 
-    <!-- CTA Section -->
+    <!-- Por qué Starsolution -->
     <section class="py-16 sm:py-20 lg:py-24 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl sm:text-4xl font-bold mb-4 text-gray-900">
+            Por qué Starsolution para Netwrix en Colombia
+          </h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            Implementamos e integramos toda la línea de productos Netwrix con soporte en español
+            y conocimiento del marco regulatorio colombiano.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="bg-white border border-gray-200 rounded-2xl p-6">
+            <h3 class="font-bold text-gray-900 text-lg mb-3">Despliegue local en Bogotá</h3>
+            <p class="text-sm text-gray-600">
+              Nuestro equipo en Colombia gestiona implementaciones on-premises, híbridas y SaaS (Netwrix 1Secure)
+              con tiempos de respuesta locales y sin dependencia de soporte en inglés.
+            </p>
+          </div>
+          <div class="bg-white border border-gray-200 rounded-2xl p-6">
+            <h3 class="font-bold text-gray-900 text-lg mb-3">Cobertura CO / VE / Miami</h3>
+            <p class="text-sm text-gray-600">
+              Atendemos empresas colombianas, venezolanas y latinoamericanas con sede en Miami
+              que requieren cumplimiento multi-jurisdiccional (Ley 1581, GDPR, HIPAA, PCI DSS).
+            </p>
+          </div>
+          <div class="bg-white border border-gray-200 rounded-2xl p-6">
+            <h3 class="font-bold text-gray-900 text-lg mb-3">Ingenieros certificados</h3>
+            <p class="text-sm text-gray-600">
+              Nuestro equipo incluye pentesters CEH y OSCP, auditores líderes ISO 27001 y
+              especialistas en AD, identidad y cumplimiento normativo sectorial colombiano.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 sm:py-20 lg:py-24 bg-white">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="bg-gradient-to-r from-[#111827] to-[#1f2937] rounded-2xl overflow-hidden">
           <div class="p-8 lg:p-12 text-center">
@@ -591,7 +700,7 @@ const seo = seoData.netwrix;
             </h2>
             <p class="text-gray-300 mb-8 max-w-2xl mx-auto">
               Solicite una demo personalizada y descubra cómo Netwrix puede darle visibilidad
-              total sobre su infraestructura y simplificar el cumplimiento normativo.
+              total sobre su infraestructura y simplificar el cumplimiento normativo en Colombia.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
               <a href="/contacto" class="bg-gradient-to-r from-red-600 to-red-700 text-white font-semibold px-8 py-4 rounded-full hover:from-red-700 hover:to-red-800 transition shadow-lg inline-flex items-center justify-center gap-2">

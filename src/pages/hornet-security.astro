@@ -6,6 +6,13 @@ import WhatsAppButton from '@components/WhatsAppButton.astro';
 import { seoData } from '@data/seo';
 
 const seo = seoData['hornet-security'];
+
+const HS_SECTORS = [
+  { sector: 'Banca y finanzas', need: 'Frenar el fraude del CEO (BEC) y el phishing dirigido a tesoreria.', how: 'Advanced Threat Protection con sandbox y reescritura de URLs, mas AI Recipient Validation para evitar envios a destinatarios erroneos.' },
+  { sector: 'Servicios legales y profesionales', need: 'Conservar correo con valor probatorio y cumplir retencion legal.', how: 'Email Archiving a prueba de manipulacion y 365 Permission Manager para controlar accesos.' },
+  { sector: 'Salud y EPS', need: 'Proteger datos de pacientes bajo la Ley 1581 de Habeas Data.', how: 'Cifrado de correo, backup 365 y formacion del personal con Security Awareness Service.' },
+  { sector: 'Educacion y gobierno', need: 'Proteger miles de buzones con presupuesto ajustado.', how: 'Despliegue por consola unica, precios especiales para el sector y respaldo completo de Microsoft 365.' },
+];
 ---
 
 <BaseLayout seo={seo}>
@@ -151,6 +158,18 @@ const seo = seoData['hornet-security'];
             </div>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- ¿Que es? · Bloque definicional para AI/GEO -->
+    <section class="bg-white pt-14 sm:pt-16" aria-labelledby="que-es-hornet">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 id="que-es-hornet" class="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
+          ¿Que es Hornetsecurity 365 Total Protection?
+        </h2>
+        <p class="text-lg text-gray-700 leading-relaxed">
+          Hornetsecurity 365 Total Protection es la suite de seguridad y backup para Microsoft 365 de Hornetsecurity. Reune en una sola consola cloud el filtrado de spam y malware, la proteccion avanzada contra phishing y fraude del CEO (BEC), el cifrado y archivado de correo, el backup de Exchange, OneDrive, SharePoint y Teams, y la formacion de concienciacion (Security Awareness Service). Las empresas la usan para cerrar las brechas que Microsoft 365 no cubre por defecto. En Colombia, Starsolution la implementa como partner oficial de Hornetsecurity, con soporte local en espanol.
+        </p>
       </div>
     </section>
 
@@ -627,50 +646,68 @@ const seo = seoData['hornet-security'];
       </div>
     </section>
 
+    <!-- Casos de uso por sector -->
+    <section class="py-16 sm:py-20 bg-white border-t border-gray-100">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Seguridad de Microsoft 365 por sector en Colombia</h2>
+        <p class="text-gray-600 max-w-2xl mb-12">Como aplicamos 365 Total Protection a los retos de cada industria.</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {HS_SECTORS.map((c) => (
+            <article class="bg-gray-50 border border-gray-200 rounded-2xl p-6">
+              <h3 class="text-lg font-semibold text-gray-900 mb-3">{c.sector}</h3>
+              <p class="text-sm text-gray-600 mb-3"><span class="font-semibold text-gray-800">Reto:</span> {c.need}</p>
+              <p class="text-sm text-gray-600"><span class="font-semibold text-gray-800">Como lo resolvemos:</span> {c.how}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
     <!-- Comparativa de Planes Hornetsecurity 365 -->
     <section id="planes" class="py-16 sm:py-20 lg:py-24 bg-gray-50 scroll-mt-20">
       <div class="max-w-7xl mx-auto px-6 lg:px-8">
         <div class="text-center mb-12">
           <h2 class="text-3xl sm:text-4xl font-bold mb-4 text-gray-900">Como elegir entre los 4 planes de Hornetsecurity 365</h2>
           <p class="text-gray-600 max-w-2xl mx-auto">
-            Hornetsecurity vende su suite Microsoft 365 organizada en cuatro planes acumulativos. Esta es la guia rapida con precios indicativos por usuario al mes.
+            Hornetsecurity vende su suite Microsoft 365 organizada en cuatro planes acumulativos. Esta es la guia rapida de que incluye cada uno; el precio se ajusta por numero de buzones y se cotiza con Starsolution.
           </p>
         </div>
 
         <div class="overflow-x-auto rounded-2xl border border-gray-200 bg-white shadow-sm">
           <table class="w-full text-sm text-left text-gray-700 min-w-[820px]">
-            <caption class="sr-only">Comparativa de los cuatro planes de Hornetsecurity 365 Total Protection: Plan 1 Compliance, Plan 2 Business, Plan 3 Enterprise y Plan 4 Enterprise Backup, con precios y caracteristicas incluidas.</caption>
+            <caption class="sr-only">Comparativa de los cuatro planes de Hornetsecurity 365 Total Protection: Plan 1 Business, Plan 2 Enterprise, Plan 3 Enterprise Backup y Plan 4 Compliance and Awareness, con las caracteristicas incluidas en cada uno.</caption>
             <thead class="bg-gray-50 text-gray-900">
               <tr>
                 <th scope="col" class="px-4 sm:px-6 py-4 font-semibold">Caracteristica</th>
                 <th scope="col" class="px-4 sm:px-6 py-4 font-semibold">
-                  <span class="block text-base">Plan 1 Compliance</span>
-                  <span class="block text-xs font-normal text-gray-500 mt-1">desde USD 2 / usuario / mes</span>
+                  <span class="block text-base">Plan 1 Business</span>
+                  <span class="block text-xs font-normal text-gray-500 mt-1">Base de seguridad email</span>
                 </th>
                 <th scope="col" class="px-4 sm:px-6 py-4 font-semibold bg-orange-50">
-                  <span class="block text-base text-[#e44d26]">Plan 2 Business</span>
-                  <span class="block text-xs font-normal text-gray-500 mt-1">desde USD 3.5 / usuario / mes · Mas popular</span>
+                  <span class="block text-base text-[#e44d26]">Plan 2 Enterprise</span>
+                  <span class="block text-xs font-normal text-gray-500 mt-1">Seguridad avanzada · Mas popular</span>
                 </th>
                 <th scope="col" class="px-4 sm:px-6 py-4 font-semibold">
-                  <span class="block text-base">Plan 3 Enterprise</span>
-                  <span class="block text-xs font-normal text-gray-500 mt-1">desde USD 5 / usuario / mes</span>
+                  <span class="block text-base">Plan 3 Enterprise Backup</span>
+                  <span class="block text-xs font-normal text-gray-500 mt-1">Seguridad + backup 365</span>
                 </th>
                 <th scope="col" class="px-4 sm:px-6 py-4 font-semibold">
-                  <span class="block text-base">Plan 4 Enterprise Backup</span>
-                  <span class="block text-xs font-normal text-gray-500 mt-1">desde USD 6 / usuario / mes</span>
+                  <span class="block text-base">Plan 4 Compliance &amp; Awareness</span>
+                  <span class="block text-xs font-normal text-gray-500 mt-1">Cumplimiento + formacion</span>
                 </th>
               </tr>
             </thead>
             <tbody class="divide-y divide-gray-100">
               <tr><th scope="row" class="px-4 sm:px-6 py-3 font-medium text-gray-900 text-left">Filtrado de spam y malware (99.9%)</th><td class="px-4 sm:px-6 py-3 text-emerald-600">Si</td><td class="px-4 sm:px-6 py-3 text-emerald-600 bg-orange-50/40">Si</td><td class="px-4 sm:px-6 py-3 text-emerald-600">Si</td><td class="px-4 sm:px-6 py-3 text-emerald-600">Si</td></tr>
-              <tr><th scope="row" class="px-4 sm:px-6 py-3 font-medium text-gray-900 text-left">Anti-phishing y proteccion BEC</th><td class="px-4 sm:px-6 py-3 text-emerald-600">Si</td><td class="px-4 sm:px-6 py-3 text-emerald-600 bg-orange-50/40">Si</td><td class="px-4 sm:px-6 py-3 text-emerald-600">Si</td><td class="px-4 sm:px-6 py-3 text-emerald-600">Si</td></tr>
-              <tr><th scope="row" class="px-4 sm:px-6 py-3 font-medium text-gray-900 text-left">Email Continuity Service</th><td class="px-4 sm:px-6 py-3 text-emerald-600">Si</td><td class="px-4 sm:px-6 py-3 text-emerald-600 bg-orange-50/40">Si</td><td class="px-4 sm:px-6 py-3 text-emerald-600">Si</td><td class="px-4 sm:px-6 py-3 text-emerald-600">Si</td></tr>
+              <tr><th scope="row" class="px-4 sm:px-6 py-3 font-medium text-gray-900 text-left">Anti-phishing (filtrado base)</th><td class="px-4 sm:px-6 py-3 text-emerald-600">Si</td><td class="px-4 sm:px-6 py-3 text-emerald-600 bg-orange-50/40">Si</td><td class="px-4 sm:px-6 py-3 text-emerald-600">Si</td><td class="px-4 sm:px-6 py-3 text-emerald-600">Si</td></tr>
               <tr><th scope="row" class="px-4 sm:px-6 py-3 font-medium text-gray-900 text-left">Email Encryption (S/MIME, TLS)</th><td class="px-4 sm:px-6 py-3 text-emerald-600">Si</td><td class="px-4 sm:px-6 py-3 text-emerald-600 bg-orange-50/40">Si</td><td class="px-4 sm:px-6 py-3 text-emerald-600">Si</td><td class="px-4 sm:px-6 py-3 text-emerald-600">Si</td></tr>
-              <tr><th scope="row" class="px-4 sm:px-6 py-3 font-medium text-gray-900 text-left">Advanced Threat Protection (sandbox + URL rewriting)</th><td class="px-4 sm:px-6 py-3 text-gray-300">No</td><td class="px-4 sm:px-6 py-3 text-emerald-600 bg-orange-50/40">Si</td><td class="px-4 sm:px-6 py-3 text-emerald-600">Si</td><td class="px-4 sm:px-6 py-3 text-emerald-600">Si</td></tr>
-              <tr><th scope="row" class="px-4 sm:px-6 py-3 font-medium text-gray-900 text-left">Email Archiving (10 anos, cumplimiento legal)</th><td class="px-4 sm:px-6 py-3 text-gray-300">No</td><td class="px-4 sm:px-6 py-3 text-gray-300 bg-orange-50/40">No</td><td class="px-4 sm:px-6 py-3 text-emerald-600">Si</td><td class="px-4 sm:px-6 py-3 text-emerald-600">Si</td></tr>
-              <tr><th scope="row" class="px-4 sm:px-6 py-3 font-medium text-gray-900 text-left">Security Awareness Service (training automatico)</th><td class="px-4 sm:px-6 py-3 text-gray-300">No</td><td class="px-4 sm:px-6 py-3 text-gray-300 bg-orange-50/40">No</td><td class="px-4 sm:px-6 py-3 text-emerald-600">Si</td><td class="px-4 sm:px-6 py-3 text-emerald-600">Si</td></tr>
-              <tr><th scope="row" class="px-4 sm:px-6 py-3 font-medium text-gray-900 text-left">365 Total Backup (Exchange, OneDrive, SharePoint, Teams)</th><td class="px-4 sm:px-6 py-3 text-gray-300">No</td><td class="px-4 sm:px-6 py-3 text-gray-300 bg-orange-50/40">No</td><td class="px-4 sm:px-6 py-3 text-gray-300">No</td><td class="px-4 sm:px-6 py-3 text-emerald-600">Si</td></tr>
-              <tr><th scope="row" class="px-4 sm:px-6 py-3 font-medium text-gray-900 text-left">365 Permission Manager + AI Recipient Validation</th><td class="px-4 sm:px-6 py-3 text-gray-300">No</td><td class="px-4 sm:px-6 py-3 text-gray-300 bg-orange-50/40">No</td><td class="px-4 sm:px-6 py-3 text-emerald-600">Si</td><td class="px-4 sm:px-6 py-3 text-emerald-600">Si</td></tr>
+              <tr><th scope="row" class="px-4 sm:px-6 py-3 font-medium text-gray-900 text-left">Email Signature and Disclaimer</th><td class="px-4 sm:px-6 py-3 text-emerald-600">Si</td><td class="px-4 sm:px-6 py-3 text-emerald-600 bg-orange-50/40">Si</td><td class="px-4 sm:px-6 py-3 text-emerald-600">Si</td><td class="px-4 sm:px-6 py-3 text-emerald-600">Si</td></tr>
+              <tr><th scope="row" class="px-4 sm:px-6 py-3 font-medium text-gray-900 text-left">Advanced Threat Protection (sandbox, URL rewriting, anti-BEC)</th><td class="px-4 sm:px-6 py-3 text-gray-300">No</td><td class="px-4 sm:px-6 py-3 text-emerald-600 bg-orange-50/40">Si</td><td class="px-4 sm:px-6 py-3 text-emerald-600">Si</td><td class="px-4 sm:px-6 py-3 text-emerald-600">Si</td></tr>
+              <tr><th scope="row" class="px-4 sm:px-6 py-3 font-medium text-gray-900 text-left">Email Continuity Service</th><td class="px-4 sm:px-6 py-3 text-gray-300">No</td><td class="px-4 sm:px-6 py-3 text-emerald-600 bg-orange-50/40">Si</td><td class="px-4 sm:px-6 py-3 text-emerald-600">Si</td><td class="px-4 sm:px-6 py-3 text-emerald-600">Si</td></tr>
+              <tr><th scope="row" class="px-4 sm:px-6 py-3 font-medium text-gray-900 text-left">Email Archiving (cumplimiento legal)</th><td class="px-4 sm:px-6 py-3 text-gray-300">No</td><td class="px-4 sm:px-6 py-3 text-emerald-600 bg-orange-50/40">Si</td><td class="px-4 sm:px-6 py-3 text-emerald-600">Si</td><td class="px-4 sm:px-6 py-3 text-emerald-600">Si</td></tr>
+              <tr><th scope="row" class="px-4 sm:px-6 py-3 font-medium text-gray-900 text-left">365 Total Backup (Exchange, OneDrive, SharePoint, Teams)</th><td class="px-4 sm:px-6 py-3 text-gray-300">No</td><td class="px-4 sm:px-6 py-3 text-gray-300 bg-orange-50/40">No</td><td class="px-4 sm:px-6 py-3 text-emerald-600">Si</td><td class="px-4 sm:px-6 py-3 text-emerald-600">Si</td></tr>
+              <tr><th scope="row" class="px-4 sm:px-6 py-3 font-medium text-gray-900 text-left">Security Awareness Service (formacion automatica)</th><td class="px-4 sm:px-6 py-3 text-gray-300">No</td><td class="px-4 sm:px-6 py-3 text-gray-300 bg-orange-50/40">No</td><td class="px-4 sm:px-6 py-3 text-gray-300">No</td><td class="px-4 sm:px-6 py-3 text-emerald-600">Si</td></tr>
+              <tr><th scope="row" class="px-4 sm:px-6 py-3 font-medium text-gray-900 text-left">365 Permission Manager + AI Recipient Validation</th><td class="px-4 sm:px-6 py-3 text-gray-300">No</td><td class="px-4 sm:px-6 py-3 text-gray-300 bg-orange-50/40">No</td><td class="px-4 sm:px-6 py-3 text-gray-300">No</td><td class="px-4 sm:px-6 py-3 text-emerald-600">Si</td></tr>
               <tr><th scope="row" class="px-4 sm:px-6 py-3 font-medium text-gray-900 text-left">Soporte e implementacion local Starsolution (Bogota)</th><td class="px-4 sm:px-6 py-3 text-emerald-600">Si</td><td class="px-4 sm:px-6 py-3 text-emerald-600 bg-orange-50/40">Si</td><td class="px-4 sm:px-6 py-3 text-emerald-600">Si</td><td class="px-4 sm:px-6 py-3 text-emerald-600">Si</td></tr>
               <tr class="bg-gray-50">
                 <th scope="row" class="px-4 sm:px-6 py-4 font-semibold text-gray-900 text-left">Cotizacion</th>
@@ -682,7 +719,7 @@ const seo = seoData['hornet-security'];
             </tbody>
           </table>
         </div>
-        <p class="text-xs text-gray-500 mt-4 text-center">Precios indicativos USD por usuario al mes con compromiso anual. Descuentos por volumen para mas de 100 buzones y precios especiales para entidades educativas y sin animo de lucro.</p>
+        <p class="text-xs text-gray-500 mt-4 text-center">El precio se cotiza por numero de buzones; Hornetsecurity no publica tarifas fijas. Descuentos por volumen para mas de 100 buzones y precios especiales para entidades educativas y sin animo de lucro. Solicite su cotizacion con Starsolution.</p>
       </div>
     </section>
 

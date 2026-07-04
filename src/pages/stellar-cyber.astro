@@ -6,6 +6,29 @@ import WhatsAppButton from '@components/WhatsAppButton.astro';
 import { seoData } from '@data/seo';
 
 const seo = seoData['stellar-cyber'];
+
+const SC_SECTORS = [
+  {
+    sector: 'Banca y Fintech',
+    need: 'Cumplir Circular 007 Superfinanciera y detectar fraude en tiempo real sin un equipo SOC de 10+ analistas.',
+    how: 'Correlacion Multi-Layer AI de transacciones, accesos y red en un panel unificado; orquestacion automatizada de respuesta ante alertas criticas. ITDR protege cuentas privilegiadas y accesos fuera de horario.',
+  },
+  {
+    sector: 'Salud / Ley 1581',
+    need: 'Proteger historias clinicas digitales y cumplir la Ley 1581 de Habeas Data sin interrumpir la operacion hospitalaria.',
+    how: 'NDR detecta exfiltracion de datos de pacientes; UEBA identifica accesos anomalos a sistemas HIS/EMR; AI-Powered Case Orchestration contiene ransomware antes de que cifre archivos criticos.',
+  },
+  {
+    sector: 'Gobierno / MSPI MinTIC',
+    need: 'Implementar el Modelo de Seguridad y Privacidad de la Informacion (MSPI) con visibilidad total de activos y cumplimiento documentado.',
+    how: 'AI-Native Next-Gen SIEM centraliza logs de todas las entidades; reportes de compliance listos para auditoria de la SIC; Multi-tenant para entidades con sedes multiples.',
+  },
+  {
+    sector: 'MSSPs y SOC-as-a-Service',
+    need: 'Operar multiples clientes desde una sola plataforma, con aislamiento de datos y escalado sin incremento proporcional de analistas.',
+    how: 'Arquitectura Multi-Tier, Multi-Tenant, Multi-Site nativa de Stellar Cyber; AI Investigator reduce las decisiones de cada analista a 10-100 por dia; Starsolution implementa y da soporte en espanol.',
+  },
+];
 ---
 
 <BaseLayout seo={seo}>
@@ -20,17 +43,17 @@ const seo = seoData['stellar-cyber'];
           <div>
             <div class="mb-6">
               <span class="inline-block bg-red-100 text-red-700 text-xs font-medium px-3 py-1 rounded">
-                OPEN XDR - SOC AUTOMATIZADO
+                SECOPS PLATFORM · SOC AUTONOMO
               </span>
             </div>
             <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-              Stellar Cyber: Plataforma Open XDR{" "}
-              <span class="text-red-700">para SOC Automatizado.</span>
+              Stellar Cyber: Plataforma SecOps{" "}
+              <span class="text-red-700">con Open XDR para Colombia.</span>
             </h1>
             <p class="text-lg sm:text-xl text-gray-600 mb-8 max-w-3xl">
               Unifique la deteccion y respuesta a amenazas en una sola plataforma. Correlacion
-              de alertas con IA, respuesta automatizada y visibilidad total de toda su infraestructura
-              desde un único panel, sin reemplazar sus herramientas existentes.
+              de alertas con Multi-Layer AI™, orquestacion automatizada y visibilidad total de
+              toda su infraestructura desde un unico panel, sin reemplazar sus herramientas existentes.
             </p>
             <div class="flex flex-col sm:flex-row gap-4">
               <a href="/contacto" class="bg-gradient-to-r from-red-600 to-red-700 text-white font-semibold px-8 py-4 rounded-full hover:from-red-700 hover:to-red-800 transition shadow-lg inline-flex items-center justify-center gap-2">
@@ -44,13 +67,13 @@ const seo = seoData['stellar-cyber'];
               <svg class="w-4 h-4 text-green-600" fill="none" viewBox="0 0 14 14">
                 <path d="M11.6667 3.5L5.25 9.91667L2.33333 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.16667" />
               </svg>
-              <span>Reducción del 80% en fatiga de alertas para equipos SOC</span>
+              <span>Disenada para equipos de seguridad lean — "See. Know. Act."</span>
             </div>
           </div>
           <div class="hidden lg:flex items-center justify-center">
             <img
               src="/assets/robot-ia-laboratorio-monitores.webp"
-              alt="Robot de inteligencia artificial en laboratorio con monitores para plataforma Open XDR Stellar Cyber"
+              alt="Robot de inteligencia artificial en laboratorio con monitores para plataforma SecOps Stellar Cyber Open XDR"
               class="w-full max-w-md mx-auto rounded-2xl shadow-xl"
               width="400"
               height="400"
@@ -61,6 +84,14 @@ const seo = seoData['stellar-cyber'];
       </div>
     </section>
 
+    <!-- ¿Que es? · Bloque definicional para AI/GEO -->
+    <section class="bg-white pt-14 sm:pt-16" aria-labelledby="que-es-stellar">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 id="que-es-stellar" class="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">¿Que es Stellar Cyber?</h2>
+        <p class="text-lg text-gray-700 leading-relaxed">Stellar Cyber es una plataforma SecOps AI-Native con arquitectura Open XDR que reune en un solo producto las capacidades de AI-Native Next-Gen SIEM, Network Detection & Response (NDR), Identity Threat Detection & Response (ITDR), User Entity Behavior Analytics (UEBA), Threat Intelligence Platform (TIP), AI-Powered Case Orchestration y el motor Multi-Layer AI™. Las organizaciones — desde empresas medianas hasta MSSPs y SOC corporativos — la usan para unificar la visibilidad de sus entornos, reducir el tiempo de deteccion y respuesta, y operar un SOC autonomo con equipos lean. Starsolution la implementa e integra en Colombia con soporte tecnico en espanol y despliegue desde Bogota.</p>
+      </div>
+    </section>
+
     <!-- Why Open XDR -->
     <section class="py-16 sm:py-20 lg:py-24 bg-white">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -68,7 +99,7 @@ const seo = seoData['stellar-cyber'];
           <div>
             <span class="text-red-700 text-xs font-medium uppercase tracking-wide">Open XDR</span>
             <h2 class="text-3xl sm:text-4xl font-bold mt-4 mb-6">
-              ¿Por qué Open XDR es el Futuro de las Operaciones de Seguridad?
+              ¿Por que Open XDR es el Futuro de las Operaciones de Seguridad?
             </h2>
             <p class="text-gray-600 mb-6">
               Los equipos de seguridad manejan docenas de herramientas desconectadas que generan
@@ -76,26 +107,27 @@ const seo = seoData['stellar-cyber'];
               de manera efectiva. El resultado: amenazas reales se pierden entre el ruido.
             </p>
             <p class="text-gray-600 mb-8">
-              Stellar Cyber unifica SIEM, NDR, UEBA y SOAR en una plataforma Open XDR que se integra
-              con sus herramientas existentes. La IA correlaciona eventos de múltiples fuentes para
-              detectar ataques reales y responder automaticamente.
+              Stellar Cyber unifica AI-Native Next-Gen SIEM, NDR, UEBA, ITDR y AI-Powered Case Orchestration
+              en una plataforma Open XDR que se integra con sus herramientas existentes. El motor
+              Multi-Layer AI™ correlaciona eventos de multiples fuentes para detectar ataques reales
+              y responder de forma automatizada.
             </p>
 
             <div class="grid grid-cols-2 gap-6">
               <div class="border-l-4 border-red-600 pl-4">
-                <div class="text-2xl font-bold text-gray-900 mb-1">8x</div>
-                <div class="text-sm text-gray-600">Más rápido que SIEM tradicional</div>
+                <div class="text-lg font-bold text-gray-900 mb-1">Hasta 400%</div>
+                <div class="text-sm text-gray-600">Reduccion de tiempos de respuesta (AI Investigator, fuente: Stellar Cyber)</div>
               </div>
               <div class="border-l-4 border-red-600 pl-4">
-                <div class="text-2xl font-bold text-gray-900 mb-1">80%</div>
-                <div class="text-sm text-gray-600">Reducción de alertas de ruido</div>
+                <div class="text-lg font-bold text-gray-900 mb-1">10-100/dia</div>
+                <div class="text-sm text-gray-600">Decisiones por analista con Multi-Layer AI™ (fuente: Stellar Cyber)</div>
               </div>
             </div>
           </div>
 
           <div class="flex items-center">
             <div class="bg-[#111827] rounded-2xl p-8 w-full">
-              <h3 class="text-xl font-semibold text-white mb-6">SIEM tradicional vs Open XDR:</h3>
+              <h3 class="text-xl font-semibold text-white mb-6">SIEM tradicional vs SecOps Platform:</h3>
               <div class="space-y-4">
                 <div class="flex items-center gap-3">
                   <div class="bg-red-600 rounded-full p-1.5">
@@ -103,7 +135,7 @@ const seo = seoData['stellar-cyber'];
                       <path d="M11.6667 3.5L5.25 9.91667L2.33333 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.16667" />
                     </svg>
                   </div>
-                  <span class="text-gray-300">Sin reglas manuales: correlación automática con IA</span>
+                  <span class="text-gray-300">Sin reglas manuales: correlacion automatica con Multi-Layer AI™</span>
                 </div>
                 <div class="flex items-center gap-3">
                   <div class="bg-red-600 rounded-full p-1.5">
@@ -127,7 +159,7 @@ const seo = seoData['stellar-cyber'];
                       <path d="M11.6667 3.5L5.25 9.91667L2.33333 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.16667" />
                     </svg>
                   </div>
-                  <span class="text-gray-300">Respuesta automatizada integrada (SOAR)</span>
+                  <span class="text-gray-300">AI-Powered Case Orchestration integrada en la plataforma</span>
                 </div>
                 <div class="flex items-center gap-3">
                   <div class="bg-red-600 rounded-full p-1.5">
@@ -135,7 +167,7 @@ const seo = seoData['stellar-cyber'];
                       <path d="M11.6667 3.5L5.25 9.91667L2.33333 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.16667" />
                     </svg>
                   </div>
-                  <span class="text-gray-300">Multi-tenant para MSPs y MSSPs</span>
+                  <span class="text-gray-300">Multi-Tier, Multi-Tenant, Multi-Site para MSSPs</span>
                 </div>
               </div>
             </div>
@@ -144,7 +176,7 @@ const seo = seoData['stellar-cyber'];
       </div>
     </section>
 
-    <!-- Platform Capabilities (6+ Cards) -->
+    <!-- Platform Capabilities -->
     <section class="bg-gray-50 py-16 sm:py-20 lg:py-24">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="mb-16">
@@ -164,11 +196,11 @@ const seo = seoData['stellar-cyber'];
                 <path d="M10 7v3l2 2" stroke="#374151" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.66667" />
               </svg>
             </div>
-            <h3 class="text-lg font-semibold mb-2">Deteccion con IA (AI Engine)</h3>
+            <h3 class="text-lg font-semibold mb-2">Deteccion con IA (Multi-Layer AI™)</h3>
             <p class="text-sm text-gray-600">
-              Motor de correlacion basado en inteligencia artificial que analiza eventos de multiples
-              fuentes para identificar ataques reales, eliminando falsos positivos y reduciendo
-              la fatiga de alertas.
+              Motor registrado Multi-Layer AI™ con cuatro capas: Detection AI (ML supervisado y no supervisado),
+              Correlation AI (GraphML entre fuentes), LLM-Driven AI para investigacion conversacional
+              (AI Investigator) y Agentic AI con playbooks adaptativos.
             </p>
           </div>
 
@@ -178,9 +210,9 @@ const seo = seoData['stellar-cyber'];
                 <path d="M10 2L3 6v5c0 4.5 3 8.5 7 9.5 4-1 7-5 7-9.5V6l-7-4z" stroke="#374151" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.66667" />
               </svg>
             </div>
-            <h3 class="text-lg font-semibold mb-2">Network Detection (NDR)</h3>
+            <h3 class="text-lg font-semibold mb-2">Network Detection & Response (NDR)</h3>
             <p class="text-sm text-gray-600">
-              Análisis profundo del tráfico de red con DPI (Deep Packet Inspection) para detectar
+              Analisis profundo del trafico de red con DPI (Deep Packet Inspection) para detectar
               movimiento lateral, exfiltracion de datos y comunicaciones C2 en tiempo real.
             </p>
           </div>
@@ -191,10 +223,23 @@ const seo = seoData['stellar-cyber'];
                 <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0zM3 12a3 3 0 116 0 3 3 0 01-6 0z" stroke="#374151" stroke-width="1.66667" fill="none" />
               </svg>
             </div>
-            <h3 class="text-lg font-semibold mb-2">User Behavior Analytics (UEBA)</h3>
+            <h3 class="text-lg font-semibold mb-2">User Entity Behavior Analytics (UEBA)</h3>
             <p class="text-sm text-gray-600">
-              Detección de comportamientos anómalos de usuarios y entidades: accesos inusuales,
+              Deteccion de comportamientos anomalos de usuarios y entidades: accesos inusuales,
               movimientos de datos atipicos e indicadores de compromiso de cuentas.
+            </p>
+          </div>
+
+          <div class="bg-white border border-gray-200 rounded-2xl p-6">
+            <div class="bg-gray-50 rounded-lg w-10 h-10 flex items-center justify-center mb-4">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 20 20">
+                <path d="M10 3a4 4 0 100 8 4 4 0 000-8zm-7 9a7 7 0 1114 0H3z" stroke="#374151" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.66667" fill="none" />
+              </svg>
+            </div>
+            <h3 class="text-lg font-semibold mb-2">Identity Threat Detection & Response (ITDR)</h3>
+            <p class="text-sm text-gray-600">
+              Proteccion de identidades y cuentas privilegiadas: detecta accesos anomalos, escalaciones
+              de privilegios, compromiso de credenciales y ataques de pass-the-hash en tiempo real.
             </p>
           </div>
 
@@ -204,10 +249,11 @@ const seo = seoData['stellar-cyber'];
                 <path d="M3 10l4 4 10-10" stroke="#374151" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.66667" />
               </svg>
             </div>
-            <h3 class="text-lg font-semibold mb-2">Respuesta Automatizada (SOAR)</h3>
+            <h3 class="text-lg font-semibold mb-2">AI-Powered Case Orchestration</h3>
             <p class="text-sm text-gray-600">
-              Playbooks de respuesta automatizada que ejecutan acciones de contencion, aislamiento
-              y remediacion sin intervencion humana para amenazas conocidas.
+              Orquestacion de casos con Agentic Auto Triage: playbooks adaptativos que ejecutan
+              acciones de contencion, aislamiento y remediacion de forma autonoma para amenazas
+              conocidas y nuevas.
             </p>
           </div>
 
@@ -218,10 +264,11 @@ const seo = seoData['stellar-cyber'];
                 <path d="M7 8h6M7 12h4" stroke="#374151" stroke-linecap="round" stroke-width="1.66667" />
               </svg>
             </div>
-            <h3 class="text-lg font-semibold mb-2">SIEM de Nueva Generacion</h3>
+            <h3 class="text-lg font-semibold mb-2">AI-Native Next-Gen SIEM</h3>
             <p class="text-sm text-gray-600">
-              Recopilación y normalización de logs de cualquier fuente con busqueda de alta velocidad.
-              Sin las limitaciones de costo por volumen de los SIEM tradicionales.
+              Recopilacion y normalizacion de logs de cualquier fuente con busqueda de alta velocidad.
+              Sin las limitaciones de costo por volumen de los SIEM tradicionales. Disenado para
+              equipos lean segun Stellar Cyber.
             </p>
           </div>
 
@@ -233,38 +280,44 @@ const seo = seoData['stellar-cyber'];
             </div>
             <h3 class="text-lg font-semibold mb-2">Multi-Tenant para MSSPs</h3>
             <p class="text-sm text-gray-600">
-              Arquitectura multi-tenant nativa que permite a proveedores de servicios gestionados
-              operar múltiples clientes desde una sola instancia de forma aislada y segura.
+              Arquitectura Multi-Tier, Multi-Tenant, Multi-Site nativa que permite a proveedores
+              de servicios gestionados operar multiples clientes desde una sola instancia de forma
+              aislada y segura.
             </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- AI Engine Details -->
+    <!-- AI Engine Details (Multi-Layer AI) -->
     <section class="py-16 sm:py-20 lg:py-24 bg-white">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
           <div>
-            <span class="text-red-700 text-xs font-medium uppercase tracking-wide">Inteligencia Artificial</span>
+            <span class="text-red-700 text-xs font-medium uppercase tracking-wide">Multi-Layer AI™</span>
             <h2 class="text-3xl sm:text-4xl font-bold mt-4 mb-6">
-              Motor de IA: De Miles de Alertas a Incidentes Reales
+              Motor Multi-Layer AI™: De Miles de Alertas a Incidentes Reales
             </h2>
             <p class="text-gray-600 mb-6">
-              El AI Engine de Stellar Cyber utiliza aprendizaje supervisado y no supervisado para
-              correlacionar eventos aparentemente inconexos de múltiples fuentes. Lo que antes eran
-              10,000 alertas diarias se convierten en 5-10 incidentes priorizados y accionables.
+              El motor registrado Multi-Layer AI™ de Stellar Cyber utiliza cuatro capas de inteligencia
+              artificial — Detection AI, Correlation AI con GraphML, LLM-Driven AI (AI Investigator)
+              y Agentic AI — para correlacionar eventos aparentemente inconexos de multiples fuentes.
+              El resultado: los analistas pasan de manejar miles de alertas a tomar entre 10 y 100
+              decisiones por dia (fuente: Stellar Cyber).
             </p>
             <p class="text-gray-600 mb-8">
               El motor aprende el comportamiento normal de su red, usuarios y aplicaciones para
               detectar desviaciones que indican amenazas reales, incluyendo ataques de dia cero
               y amenazas internas que las reglas estaticas no pueden identificar.
             </p>
+            <div class="bg-blue-50 border border-blue-100 rounded-xl p-4 text-sm text-blue-800">
+              <span class="font-semibold">AI Investigator:</span> Interfaz GenAI conversacional integrada en la plataforma que permite investigar amenazas en lenguaje natural. Stellar Cyber reporta hasta un 400% de reduccion en tiempos de respuesta a amenazas.
+            </div>
           </div>
 
           <div>
             <div class="bg-gradient-to-br from-red-50 to-white border border-red-100 rounded-2xl p-8">
-              <h3 class="text-xl font-semibold mb-6">Resultados del AI Engine:</h3>
+              <h3 class="text-xl font-semibold mb-6">Capas del Motor Multi-Layer AI™:</h3>
               <div class="space-y-6">
                 <div class="flex items-start gap-3">
                   <div class="bg-green-100 border border-green-200 rounded-full p-1 mt-0.5">
@@ -273,8 +326,8 @@ const seo = seoData['stellar-cyber'];
                     </svg>
                   </div>
                   <div>
-                    <h3 class="font-semibold text-gray-900">Correlación Automática</h3>
-                    <p class="text-sm text-gray-600">Agrupa alertas relacionadas en incidentes unificados con kill-chain mapping</p>
+                    <h3 class="font-semibold text-gray-900">Detection AI</h3>
+                    <p class="text-sm text-gray-600">ML supervisado y no supervisado para deteccion de amenazas conocidas y desconocidas</p>
                   </div>
                 </div>
                 <div class="flex items-start gap-3">
@@ -284,8 +337,8 @@ const seo = seoData['stellar-cyber'];
                     </svg>
                   </div>
                   <div>
-                    <h3 class="font-semibold text-gray-900">Detección de Anomalías</h3>
-                    <p class="text-sm text-gray-600">Machine learning no supervisado que detecta amenazas desconocidas</p>
+                    <h3 class="font-semibold text-gray-900">Correlation AI</h3>
+                    <p class="text-sm text-gray-600">Tecnologia GraphML que conecta alertas entre fuentes heterogeneas para construir incidentes unificados</p>
                   </div>
                 </div>
                 <div class="flex items-start gap-3">
@@ -295,8 +348,19 @@ const seo = seoData['stellar-cyber'];
                     </svg>
                   </div>
                   <div>
-                    <h3 class="font-semibold text-gray-900">Scoring de Riesgo</h3>
-                    <p class="text-sm text-gray-600">Puntuacion continua de riesgo para cada activo, usuario y sesion</p>
+                    <h3 class="font-semibold text-gray-900">LLM-Driven AI (AI Investigator)</h3>
+                    <p class="text-sm text-gray-600">GenAI conversacional para investigacion de amenazas en lenguaje natural</p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3">
+                  <div class="bg-green-100 border border-green-200 rounded-full p-1 mt-0.5">
+                    <svg class="w-3.5 h-3.5 text-green-600" fill="none" viewBox="0 0 14 14">
+                      <path d="M11.6667 3.5L5.25 9.91667L2.33333 7" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.16667" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 class="font-semibold text-gray-900">Agentic AI</h3>
+                    <p class="text-sm text-gray-600">Playbooks adaptativos con agentes autonomos: Triage, Discovery, Correlation, Scoring y Response Agents</p>
                   </div>
                 </div>
               </div>
@@ -306,12 +370,36 @@ const seo = seoData['stellar-cyber'];
       </div>
     </section>
 
-    <!-- Use Cases -->
+    <!-- Casos por sector -->
     <section class="py-16 sm:py-20 lg:py-24 bg-gray-50">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12">
           <h2 class="text-3xl sm:text-4xl font-bold mb-4">
-            Casos de Uso
+            Stellar Cyber por Sector
+          </h2>
+          <p class="text-gray-600 max-w-2xl mx-auto">
+            Casos de uso anclados al contexto regulatorio colombiano.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {SC_SECTORS.map((s) => (
+            <div class="bg-white border border-gray-200 rounded-2xl p-6">
+              <div class="text-red-700 text-xs font-bold uppercase tracking-wide mb-3">{s.sector}</div>
+              <p class="text-sm text-gray-700 mb-4"><span class="font-semibold">Reto:</span> {s.need}</p>
+              <p class="text-sm text-gray-600"><span class="font-semibold">Como lo integramos:</span> {s.how}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Casos de Uso clasicos -->
+    <section class="py-16 sm:py-20 lg:py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl sm:text-4xl font-bold mb-4">
+            Perfiles de Organizacion
           </h2>
           <p class="text-gray-600 max-w-2xl mx-auto">
             Stellar Cyber se adapta a diferentes necesidades organizacionales.
@@ -328,7 +416,8 @@ const seo = seoData['stellar-cyber'];
             <h3 class="font-semibold text-lg mb-2">Empresas Medianas</h3>
             <p class="text-sm text-gray-600">
               Equipo IT limitado que necesita visibilidad SOC sin contratar analistas dedicados.
-              Stellar Cyber automatiza la deteccion y respuesta, multiplicando la capacidad del equipo.
+              Stellar Cyber automatiza la deteccion y respuesta con Multi-Layer AI™, multiplicando
+              la capacidad del equipo existente.
             </p>
           </div>
           <div class="bg-white border border-gray-200 rounded-2xl p-8">
@@ -339,8 +428,9 @@ const seo = seoData['stellar-cyber'];
             </div>
             <h3 class="font-semibold text-lg mb-2">MSSPs / SOC-as-a-Service</h3>
             <p class="text-sm text-gray-600">
-              Proveedores de servicios gestionados que necesitan una plataforma multi-tenant
-              para operar múltiples clientes de forma eficiente desde un solo panel.
+              Proveedores de servicios gestionados que necesitan una plataforma Multi-Tier,
+              Multi-Tenant, Multi-Site para operar multiples clientes de forma eficiente desde
+              un solo panel.
             </p>
           </div>
           <div class="bg-white border border-gray-200 rounded-2xl p-8">
@@ -352,7 +442,8 @@ const seo = seoData['stellar-cyber'];
             <h3 class="font-semibold text-lg mb-2">Reemplazo de SIEM</h3>
             <p class="text-sm text-gray-600">
               Organizaciones con SIEM costoso y complejo que buscan una solucion moderna con
-              mejor relacion costo-beneficio, sin perder capacidades de compliance.
+              mejor relacion costo-beneficio, con AI-Native Next-Gen SIEM integrado y sin perder
+              capacidades de compliance.
             </p>
           </div>
         </div>
@@ -368,7 +459,7 @@ const seo = seoData['stellar-cyber'];
             Stellar Cyber vs SIEM Tradicional
           </h2>
           <p class="text-gray-600 max-w-2xl mx-auto">
-            Una comparación directa de los factores que más impactan a los equipos de seguridad: costo total, complejidad operativa y tiempo de despliegue.
+            Una comparacion directa de los factores que mas impactan a los equipos de seguridad: costo total, complejidad operativa y tiempo de despliegue.
           </p>
         </div>
 
@@ -383,11 +474,11 @@ const seo = seoData['stellar-cyber'];
             <div class="space-y-3">
               <div class="bg-red-50 rounded-lg p-3 border-l-4 border-red-300">
                 <p class="text-xs font-bold text-red-700 mb-1">SIEM Tradicional</p>
-                <p class="text-sm text-red-600">Licencias por volumen de datos (GB/día), hardware dedicado, equipo de ingeniería para reglas. Costos impredecibles que escalan con el negocio.</p>
+                <p class="text-sm text-red-600">Licencias por volumen de datos (GB/dia), hardware dedicado, equipo de ingenieria para reglas. Costos impredecibles que escalan con el negocio.</p>
               </div>
               <div class="bg-green-50 rounded-lg p-3 border-l-4 border-green-500">
-                <p class="text-xs font-bold text-green-700 mb-1">Stellar Cyber Open XDR</p>
-                <p class="text-sm text-green-600">Precio fijo por usuario o endpoint. Sin cobro adicional por volumen de datos ingestados. ROI positivo en el primer año en el 90% de los casos.</p>
+                <p class="text-xs font-bold text-green-700 mb-1">Stellar Cyber SecOps Platform</p>
+                <p class="text-sm text-green-600">Precio fijo por usuario o endpoint. Sin cobro adicional por volumen de datos ingestados. Arquitectura Open XDR sin vendor lock-in.</p>
               </div>
             </div>
           </div>
@@ -403,11 +494,11 @@ const seo = seoData['stellar-cyber'];
             <div class="space-y-3">
               <div class="bg-red-50 rounded-lg p-3 border-l-4 border-red-300">
                 <p class="text-xs font-bold text-red-700 mb-1">SIEM Tradicional</p>
-                <p class="text-sm text-red-600">Requiere ingenieros SIEM dedicados para crear y mantener miles de reglas de correlación. Alta curva de aprendizaje y fatiga de alertas severa.</p>
+                <p class="text-sm text-red-600">Requiere ingenieros SIEM dedicados para crear y mantener miles de reglas de correlacion. Alta curva de aprendizaje y fatiga de alertas severa.</p>
               </div>
               <div class="bg-green-50 rounded-lg p-3 border-l-4 border-green-500">
-                <p class="text-xs font-bold text-green-700 mb-1">Stellar Cyber Open XDR</p>
-                <p class="text-sm text-green-600">IA correlaciona automáticamente sin reglas manuales. Un equipo de 2-3 personas puede operar el SOC. Reducción del 80% en alertas de ruido.</p>
+                <p class="text-xs font-bold text-green-700 mb-1">Stellar Cyber SecOps Platform</p>
+                <p class="text-sm text-green-600">Multi-Layer AI™ correlaciona automaticamente sin reglas manuales. Disenada para equipos lean; analistas pasan de miles de alertas a 10-100 decisiones/dia (fuente: Stellar Cyber).</p>
               </div>
             </div>
           </div>
@@ -422,11 +513,11 @@ const seo = seoData['stellar-cyber'];
             <div class="space-y-3">
               <div class="bg-red-50 rounded-lg p-3 border-l-4 border-red-300">
                 <p class="text-xs font-bold text-red-700 mb-1">SIEM Tradicional</p>
-                <p class="text-sm text-red-600">Implementaciones de 3 a 12 meses. Requiere consultoría externa, parsers personalizados, tuning de reglas y meses de ajustes antes de ser funcional.</p>
+                <p class="text-sm text-red-600">Implementaciones de 3 a 12 meses. Requiere consultoria externa, parsers personalizados, tuning de reglas y meses de ajustes antes de ser funcional.</p>
               </div>
               <div class="bg-green-50 rounded-lg p-3 border-l-4 border-green-500">
-                <p class="text-xs font-bold text-green-700 mb-1">Stellar Cyber Open XDR</p>
-                <p class="text-sm text-green-600">Despliegue completo en 1 a 2 semanas. Conectores pre-construidos para 400+ fuentes de datos. Valor desde el primer día de operación.</p>
+                <p class="text-xs font-bold text-green-700 mb-1">Stellar Cyber SecOps Platform</p>
+                <p class="text-sm text-green-600">Despliegue completo en 1 a 2 semanas. Conectores pre-construidos para 400+ fuentes de datos. Valor desde el primer dia de operacion.</p>
               </div>
             </div>
           </div>
@@ -434,7 +525,7 @@ const seo = seoData['stellar-cyber'];
 
         <div class="bg-gray-50 border border-gray-200 rounded-2xl p-8">
           <h3 class="text-lg font-bold text-gray-900 mb-6 text-center">Resumen de Diferencias Clave</h3>
-          <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div class="bg-white rounded-xl p-5 text-center border border-gray-200">
               <div class="text-xs font-bold text-gray-500 uppercase tracking-wide mb-2">Criterio</div>
               <div class="space-y-3 text-sm font-semibold text-gray-700">
@@ -447,7 +538,7 @@ const seo = seoData['stellar-cyber'];
             <div class="bg-red-50 rounded-xl p-5 text-center border border-red-200">
               <div class="text-xs font-bold text-red-700 uppercase tracking-wide mb-2">SIEM Legacy</div>
               <div class="space-y-3 text-sm text-red-700">
-                <div class="py-1 border-b border-red-100">Por GB/día</div>
+                <div class="py-1 border-b border-red-100">Por GB/dia</div>
                 <div class="py-1 border-b border-red-100">3-5 dedicados</div>
                 <div class="py-1 border-b border-red-100">6-12 meses</div>
                 <div class="py-1">Muy alto</div>
@@ -457,18 +548,9 @@ const seo = seoData['stellar-cyber'];
               <div class="text-xs font-bold text-green-700 uppercase tracking-wide mb-2">Stellar Cyber</div>
               <div class="space-y-3 text-sm text-green-700">
                 <div class="py-1 border-b border-green-100">Por asset/usuario</div>
-                <div class="py-1 border-b border-green-100">1-2 generalistas</div>
+                <div class="py-1 border-b border-green-100">Equipos lean</div>
                 <div class="py-1 border-b border-green-100">1-2 semanas</div>
                 <div class="py-1">Nulo (Open XDR)</div>
-              </div>
-            </div>
-            <div class="bg-blue-50 rounded-xl p-5 text-center border border-blue-200">
-              <div class="text-xs font-bold text-blue-700 uppercase tracking-wide mb-2">Ahorro Estimado</div>
-              <div class="space-y-3 text-sm text-blue-700">
-                <div class="py-1 border-b border-blue-100">60-70% menos</div>
-                <div class="py-1 border-b border-blue-100">Reducción 60%</div>
-                <div class="py-1 border-b border-blue-100">8x más rápido</div>
-                <div class="py-1">Libertad total</div>
               </div>
             </div>
           </div>
@@ -476,130 +558,29 @@ const seo = seoData['stellar-cyber'];
       </div>
     </section>
 
-    <!-- Casos de Éxito: SOC Automatizado -->
-    <section class="py-16 sm:py-20 lg:py-24 bg-gray-50">
+    <!-- Reconocimientos -->
+    <section class="py-14 sm:py-16 bg-gray-50">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-14">
-          <span class="text-red-700 text-xs font-medium uppercase tracking-wide">Casos de Éxito</span>
-          <h2 class="text-3xl sm:text-4xl font-bold mt-4 mb-4 text-gray-900">
-            Casos de Éxito: SOC Automatizado con Stellar Cyber
-          </h2>
-          <p class="text-gray-600 max-w-2xl mx-auto">
-            Resultados reales obtenidos por organizaciones similares a la suya después de implementar Stellar Cyber Open XDR como plataforma de SOC.
-          </p>
+        <div class="text-center mb-10">
+          <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-2">Reconocimientos de la Industria</h2>
+          <p class="text-gray-600 text-sm">Fuente: stellarcyber.ai / Gartner / prensa oficial</p>
         </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div class="bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-lg transition-all duration-300 cursor-pointer">
-            <div class="flex items-center gap-3 mb-6">
-              <div class="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center flex-shrink-0">
-                <svg class="w-6 h-6 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3" />
-                </svg>
-              </div>
-              <div>
-                <span class="text-xs font-bold text-emerald-700 uppercase tracking-wide">Sector Financiero</span>
-                <p class="text-sm font-semibold text-gray-900">Banco Mediano — Colombia</p>
-              </div>
-            </div>
-            <p class="text-sm text-gray-600 mb-6 leading-relaxed">
-              Una institución bancaria con 800 empleados y 12 sucursales manejaba 15,000 alertas diarias con un SIEM legacy. Su equipo de 5 analistas pasaba el 70% del tiempo en falsos positivos, sin capacidad para investigar amenazas reales.
-            </p>
-            <div class="space-y-3 mb-6">
-              <div class="flex items-center justify-between text-sm">
-                <span class="text-gray-500">Alertas diarias</span>
-                <span class="font-bold text-gray-900">15,000 <span class="text-green-600">→ 47</span></span>
-              </div>
-              <div class="flex items-center justify-between text-sm">
-                <span class="text-gray-500">Tiempo de detección</span>
-                <span class="font-bold text-gray-900">72h <span class="text-green-600">→ 4 min</span></span>
-              </div>
-              <div class="flex items-center justify-between text-sm">
-                <span class="text-gray-500">Reducción de costo</span>
-                <span class="font-bold text-green-600">62% anual</span>
-              </div>
-            </div>
-            <div class="bg-emerald-50 rounded-lg p-4 text-sm text-emerald-700 italic border-l-4 border-emerald-400">
-              "Pasamos de apagar incendios a tener un SOC proactivo. Stellar Cyber correlaciona lo que nuestro SIEM nunca pudo."
-            </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="bg-white border border-gray-200 rounded-xl p-6 text-center">
+            <div class="text-red-700 font-bold text-sm mb-1">Gartner Magic Quadrant NDR 2025</div>
+            <div class="text-gray-900 font-semibold">Challenger</div>
+            <div class="text-gray-500 text-xs mt-1">Unico vendor en Challengers — inaugural MQ NDR (may-jun 2025)</div>
           </div>
-
-          <div class="bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-lg transition-all duration-300 cursor-pointer">
-            <div class="flex items-center gap-3 mb-6">
-              <div class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center flex-shrink-0">
-                <svg class="w-6 h-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                </svg>
-              </div>
-              <div>
-                <span class="text-xs font-bold text-blue-600 uppercase tracking-wide">Sector Salud</span>
-                <p class="text-sm font-semibold text-gray-900">Red Hospitalaria — Latinoamérica</p>
-              </div>
-            </div>
-            <p class="text-sm text-gray-600 mb-6 leading-relaxed">
-              Una red de 6 clínicas privadas sin equipo SOC formal sufría ataques de ransomware recurrentes que afectaban sistemas de historia clínica. La dirección necesitaba visibilidad sin contratar analistas dedicados.
-            </p>
-            <div class="space-y-3 mb-6">
-              <div class="flex items-center justify-between text-sm">
-                <span class="text-gray-500">Incidentes de ransomware</span>
-                <span class="font-bold text-gray-900">3/año <span class="text-green-600">→ 0</span></span>
-              </div>
-              <div class="flex items-center justify-between text-sm">
-                <span class="text-gray-500">Tiempo de respuesta</span>
-                <span class="font-bold text-gray-900">Días <span class="text-green-600">→ 8 min</span></span>
-              </div>
-              <div class="flex items-center justify-between text-sm">
-                <span class="text-gray-500">Analistas requeridos</span>
-                <span class="font-bold text-green-600">0 dedicados (IA)</span>
-              </div>
-            </div>
-            <div class="bg-blue-50 rounded-lg p-4 text-sm text-blue-700 italic border-l-4 border-blue-400">
-              "Con 2 personas de TI y Stellar Cyber, tenemos el nivel de visibilidad que antes requería un equipo SOC de 8."
-            </div>
+          <div class="bg-white border border-gray-200 rounded-xl p-6 text-center">
+            <div class="text-red-700 font-bold text-sm mb-1">Cybersecurity Breakthrough Award 2025</div>
+            <div class="text-gray-900 font-semibold">Security Automation Solution of the Year</div>
+            <div class="text-gray-500 text-xs mt-1">Oct 2025</div>
           </div>
-
-          <div class="bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-lg transition-all duration-300 cursor-pointer">
-            <div class="flex items-center gap-3 mb-6">
-              <div class="w-12 h-12 bg-orange-50 rounded-xl flex items-center justify-center flex-shrink-0">
-                <svg class="w-6 h-6 text-orange-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
-                </svg>
-              </div>
-              <div>
-                <span class="text-xs font-bold text-orange-800 uppercase tracking-wide">Retail</span>
-                <p class="text-sm font-semibold text-gray-900">Cadena Retail — 80 tiendas</p>
-              </div>
-            </div>
-            <p class="text-sm text-gray-600 mb-6 leading-relaxed">
-              Una cadena minorista con 80 puntos de venta en 5 países necesitaba visibilidad unificada de su infraestructura distribuida y cumplimiento PCI DSS. Su SIEM local no escalaba ni ofrecía correlación multi-site.
-            </p>
-            <div class="space-y-3 mb-6">
-              <div class="flex items-center justify-between text-sm">
-                <span class="text-gray-500">Visibilidad multi-site</span>
-                <span class="font-bold text-green-600">100% centralizada</span>
-              </div>
-              <div class="flex items-center justify-between text-sm">
-                <span class="text-gray-500">Cumplimiento PCI DSS</span>
-                <span class="font-bold text-green-600">Logrado en 6 sem.</span>
-              </div>
-              <div class="flex items-center justify-between text-sm">
-                <span class="text-gray-500">Ahorro vs SIEM anterior</span>
-                <span class="font-bold text-green-600">-58% anual</span>
-              </div>
-            </div>
-            <div class="bg-orange-50 rounded-lg p-4 text-sm text-orange-700 italic border-l-4 border-orange-400">
-              "Por primera vez tenemos visibilidad real de todas las tiendas desde un solo panel. El cumplimiento PCI fue mucho más rápido."
-            </div>
+          <div class="bg-white border border-gray-200 rounded-xl p-6 text-center">
+            <div class="text-red-700 font-bold text-sm mb-1">MarketsandMarkets NDR 2025</div>
+            <div class="text-gray-900 font-semibold">Progressive Leader</div>
+            <div class="text-gray-500 text-xs mt-1">Dic 2025</div>
           </div>
-        </div>
-
-        <div class="mt-10 text-center">
-          <a href="/contacto" class="inline-flex items-center gap-2 bg-gradient-to-r from-red-600 to-red-700 text-white font-semibold px-8 py-4 rounded-full hover:from-red-700 hover:to-red-800 transition shadow-lg">
-            Solicitar Demo para su Sector
-            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-            </svg>
-          </a>
         </div>
       </div>
     </section>
@@ -611,58 +592,67 @@ const seo = seoData['stellar-cyber'];
           Preguntas Frecuentes sobre Stellar Cyber
         </h2>
         <p class="text-gray-600 text-center mb-12">
-          Lo que necesita saber sobre la plataforma Open XDR.
+          Lo que necesita saber sobre la plataforma SecOps con Open XDR.
         </p>
 
         <div class="space-y-4">
           <details class="bg-gray-50 border border-gray-200 rounded-xl group">
             <summary class="font-semibold text-lg p-6 cursor-pointer list-none flex items-center justify-between">
-              ¿Qué diferencia hay entre XDR y Open XDR?
+              ¿Que diferencia hay entre XDR y Open XDR?
               <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
             </summary>
             <div class="px-6 pb-6 text-gray-600">
-              XDR tradicional (como el de CrowdStrike o Microsoft) solo integra datos de sus propios
-              productos. Open XDR se integra con cualquier herramienta de seguridad existente
-              (cualquier EDR, firewall, cloud), dandole la libertad de elegir las mejores
-              soluciones para cada capa sin vendor lock-in.
+              El XDR tradicional solo integra productos del mismo fabricante. Open XDR integra cualquier herramienta de seguridad existente en su empresa, sin dependencia de un solo proveedor ni necesidad de reemplazar su stack actual.
             </div>
           </details>
 
           <details class="bg-gray-50 border border-gray-200 rounded-xl group">
             <summary class="font-semibold text-lg p-6 cursor-pointer list-none flex items-center justify-between">
-              Stellar Cyber reemplaza mi SIEM?
+              ¿Stellar Cyber reemplaza mi SIEM?
               <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
             </summary>
             <div class="px-6 pb-6 text-gray-600">
-              Sí. Stellar Cyber incluye funcionalidades SIEM completas (recopilación, normalización,
-              busqueda, retención y reportes de compliance) añadiendo NDR, UEBA y SOAR. La mayoría
-              de clientes reemplaza su SIEM tradicional, reduciendo costos significativamente al
-              eliminar el cobro por volumen de datos ingestados.
+              Si. Stellar Cyber incluye AI-Native Next-Gen SIEM, NDR, UEBA, ITDR y AI-Powered Case Orchestration en una sola plataforma. Ademas elimina el modelo de precios por volumen de logs que hace costosos a los SIEM tradicionales.
             </div>
           </details>
 
           <details class="bg-gray-50 border border-gray-200 rounded-xl group">
             <summary class="font-semibold text-lg p-6 cursor-pointer list-none flex items-center justify-between">
-              Necesito un equipo SOC para operar la plataforma?
+              ¿Necesito un equipo SOC para operar la plataforma?
               <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
             </summary>
             <div class="px-6 pb-6 text-gray-600">
-              No necesariamente. La IA de Stellar Cyber automatiza la mayoría de tareas que
-              tradicionalmente requieren analistas L1 y L2. Equipos IT de 2-3 personas pueden
-              operar la plataforma de manera efectiva. Además, Starsolution ofrece servicios
-              SOC gestionados sobre Stellar Cyber para organizaciones que prefieren tercerizar.
+              No. La IA automatiza las tareas de nivel L1 y L2, incluyendo correlacion, triaje y respuesta inicial. Equipos de 2 a 3 personas de IT pueden operar la plataforma eficazmente. Starsolution ofrece ademas servicios de implementacion e integracion con soporte en espanol desde Colombia.
             </div>
           </details>
 
           <details class="bg-gray-50 border border-gray-200 rounded-xl group">
             <summary class="font-semibold text-lg p-6 cursor-pointer list-none flex items-center justify-between">
-              ¿Cuánto tiempo toma el despliegue?
+              ¿Cuanto tiempo toma el despliegue?
               <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
             </summary>
             <div class="px-6 pb-6 text-gray-600">
-              El despliegue inicial se completa en 1-2 semanas, incluyendo integracion con fuentes
-              de datos existentes. A diferencia de un SIEM tradicional que puede tomar meses,
-              Stellar Cyber usa conectores pre-construidos y normalización automática de datos.
+              El despliegue inicial toma entre 1 y 2 semanas gracias a los conectores preconfigurados para mas de 400 herramientas y la normalizacion automatica de datos.
+            </div>
+          </details>
+
+          <details class="bg-gray-50 border border-gray-200 rounded-xl group">
+            <summary class="font-semibold text-lg p-6 cursor-pointer list-none flex items-center justify-between">
+              ¿Que es el motor Multi-Layer AI™ y como se diferencia del SIEM tradicional?
+              <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+            </summary>
+            <div class="px-6 pb-6 text-gray-600">
+              Multi-Layer AI™ es el motor de inteligencia artificial registrado de Stellar Cyber. Combina Detection AI, Correlation AI con GraphML, LLM-Driven AI (AI Investigator) y Agentic AI. A diferencia del SIEM que requiere reglas manuales, Multi-Layer AI™ correlaciona automaticamente eventos de multiples fuentes y reduce las decisiones del analista a entre 10 y 100 por dia.
+            </div>
+          </details>
+
+          <details class="bg-gray-50 border border-gray-200 rounded-xl group">
+            <summary class="font-semibold text-lg p-6 cursor-pointer list-none flex items-center justify-between">
+              ¿Como trabaja Starsolution con Stellar Cyber en Colombia?
+              <svg class="w-5 h-5 text-gray-500 group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+            </summary>
+            <div class="px-6 pb-6 text-gray-600">
+              Starsolution implementa e integra la plataforma Stellar Cyber SecOps para clientes en Colombia y la region. Somos su punto de contacto local con soporte tecnico en espanol, despliegue desde Bogota y cobertura en Colombia, Venezuela y Miami.
             </div>
           </details>
         </div>
@@ -678,8 +668,9 @@ const seo = seoData['stellar-cyber'];
               Unifique su seguridad. Automatice su SOC.
             </h2>
             <p class="text-gray-300 mb-8 max-w-2xl mx-auto">
-              Solicite una demo personalizada y descubra como Stellar Cyber puede transformar
-              sus operaciones de seguridad con Open XDR e inteligencia artificial.
+              Solicite una demo personalizada y descubra como Starsolution implementa
+              Stellar Cyber SecOps Platform con Open XDR para transformar sus operaciones
+              de seguridad con inteligencia artificial.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
               <a href="/contacto" class="bg-gradient-to-r from-red-600 to-red-700 text-white font-semibold px-8 py-4 rounded-full hover:from-red-700 hover:to-red-800 transition shadow-lg inline-flex items-center justify-center gap-2">
@@ -711,10 +702,10 @@ const seo = seoData['stellar-cyber'];
         </a>
         <a href="/bitdefender" class="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-all duration-300 text-center">
           <p class="font-semibold text-sm text-gray-900">Bitdefender GravityZone</p>
-          <p class="text-xs text-gray-500 mt-1">Protección endpoint</p>
+          <p class="text-xs text-gray-500 mt-1">Proteccion endpoint</p>
         </a>
         <a href="/hacking-etico" class="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-all duration-300 text-center">
-          <p class="font-semibold text-sm text-gray-900">Hacking Ético</p>
+          <p class="font-semibold text-sm text-gray-900">Hacking Etico</p>
           <p class="text-xs text-gray-500 mt-1">Pentesting</p>
         </a>
       </div>
