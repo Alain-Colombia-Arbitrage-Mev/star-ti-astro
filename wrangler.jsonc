@@ -1,0 +1,12 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "star-ti-astro",
+  "compatibility_date": "2026-07-01",
+  // Sitio Astro 100% estatico: Worker de solo assets, sin script (sin "main").
+  // El build de Cloudflare ejecuta el build de Astro y wrangler sube dist/.
+  "assets": {
+    "directory": "./dist",
+    // Sirve dist/404.html (generada por src/pages/404.astro) en rutas inexistentes
+    "not_found_handling": "404-page"
+  }
+}
