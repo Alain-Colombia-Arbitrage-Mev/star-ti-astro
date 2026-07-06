@@ -32,6 +32,7 @@ const pages: SitemapEntry[] = [
   { url: '/dlp-prevencion-perdida-datos/', priority: 0.7, changefreq: 'monthly' },
 
   // Comparison / landing pages + Reports
+  { url: '/seguridad-informatica-empresas/', priority: 0.9, changefreq: 'monthly', lastmod: '2026-07-05' },
   { url: '/antivirus-empresas/', priority: 0.8, changefreq: 'monthly' },
   { url: '/informe-ciberseguridad-colombia-2026/', priority: 0.9, changefreq: 'quarterly', lastmod: '2026-01-15' },
 

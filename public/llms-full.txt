@@ -22,7 +22,7 @@ Our team includes CEH and OSCP certified penetration testers, ISO 27001 lead aud
 ## Star Protection - Endpoint & Email Security
 
 ### Bitdefender GravityZone EDR/XDR/MDR/CSPM
-**URL:** https://starsolution.com.co/bitdefender
+**URL:** https://starsolution.com.co/bitdefender/
 **Local contact:** Starsolution S.A.S., Bogota, Colombia · +57 300 701 0017 · contacto@star-ti.com
 
 Bitdefender GravityZone is an AI-powered enterprise security platform that unifies endpoint, cloud, identity and managed detection on a single console. It is deployed by Starsolution across Colombia (Bogota, Medellin, Cali, Barranquilla and remote sites) for organizations between 10 and 5,000+ endpoints.
@@ -75,7 +75,7 @@ A: Una implementacion tipica en una empresa de 50 equipos se completa en menos d
 A: Si, es uno de los escenarios donde GravityZone brilla mas. Como la consola es cloud, sus equipos en Medellin, Cali o cualquier sede remota reportan directamente sin necesidad de VPN ni servidores intermedios. Aplica las mismas politicas a empleados en home office que a la sede principal.
 
 ### Kaspersky Next (EDR / XDR / MXDR)
-**URL:** https://starsolution.com.co/kaspersky
+**URL:** https://starsolution.com.co/kaspersky/
 **Local contact:** Starsolution S.A.S., Bogota, Colombia · +57 300 701 0017 · contacto@star-ti.com
 **Partner status:** Authorized Kaspersky partner since 2014 (12+ years) · 200+ implementations across Colombia.
 
@@ -127,7 +127,7 @@ A: El proceso tipico toma menos de una semana para empresas de hasta 500 endpoin
 A: Kaspersky esta optimizado para consumo minimo de recursos. En equipos con Core i3 o superiores y 4 GB RAM el impacto es menor al 2 por ciento de CPU en operacion normal. Para equipos legacy podemos programar escaneos fuera de horario y desactivar modulos no criticos.
 
 ### Hornetsecurity 365
-**URL:** https://starsolution.com.co/hornet-security
+**URL:** https://starsolution.com.co/hornet-security/
 
 Hornetsecurity 365 Total Protection provides comprehensive email security, backup, and compliance for Microsoft 365 environments. It protects against phishing, malware, spam, and business email compromise (BEC) attacks while providing email archiving and backup capabilities.
 
@@ -155,7 +155,7 @@ A: Hornetsecurity no publica tarifas fijas; el precio depende del plan (Business
 A: Hornetsecurity complementa y refuerza la seguridad nativa de Microsoft 365. Mientras Defender ofrece proteccion basica, Hornetsecurity agrega capas avanzadas de filtrado, backup independiente y archiving que Microsoft no incluye.
 
 ### Proofpoint
-**URL:** https://starsolution.com.co/proofpoint
+**URL:** https://starsolution.com.co/proofpoint/
 
 Proofpoint es una empresa global de ciberseguridad especializada en proteccion centrada en personas (people-centric security). Su plataforma defiende organizaciones frente a phishing, Business Email Compromise (BEC), ransomware por correo y ataques de ingenieria social. Es Leader en el Gartner Magic Quadrant for Email Security 2025 (mas alto en Ability to Execute) y Leader en el Forrester Wave Email, Messaging and Collaboration Security Q2 2025. Starsolution implementa, integra y despliega Proofpoint en Colombia con soporte local en espanol.
 
@@ -193,7 +193,7 @@ A: Collaboration Security Prime (tambien llamado Prime Threat Protection) es el 
 ## Star Inspection - Visibility & Threat Detection
 
 ### Enthec - Cibervigilancia TEM (Kartos y Qondar)
-**URL:** https://starsolution.com.co/enthec
+**URL:** https://starsolution.com.co/enthec/
 
 Enthec (ENTHEC Solutions S.L.) is an Advanced AI-driven Cyber-Surveillance Platform specialized in Threat Exposure Management (TEM). It offers two products: **Kartos** (Corporate Threat Watchbots) for External Attack Surface Management (EASM) of organizations, and **Qondar** (Personal Threat Watchbots) for surveillance of individuals' digital identity (executives, VIPs, C-level). Starsolution implements and integrates Kartos and Qondar in Colombia with Spanish-language support from Bogota.
 
@@ -229,7 +229,7 @@ A: El diagnostico inicial analiza su dominio corporativo para revelar credencial
 A: Kartos (Corporate Threat Watchbots) protege la superficie de ataque externa de la empresa: dominios, credenciales, dark web, phishing y supply chain. Qondar (Personal Threat Watchbots) protege la identidad digital de personas individuales como directivos, VIPs o altos cargos, monitoreando filtraciones de datos personales, financieros y presencia en redes sociales y foros.
 
 ### Vicarius vRx
-**URL:** https://starsolution.com.co/vicarius
+**URL:** https://starsolution.com.co/vicarius/
 
 Vicarius vRx by Vicarius is a Full Cycle Vulnerability Management platform (category: Exposure Assessment Platforms, per Gartner and IDC 2025) for IT and security teams. It discovers assets, prioritizes vulnerabilities using AI with business context (AI-Driven Scoring, Business Impact Analysis), and remediates through three routes: (1) automated native patching for 2,000+ applications, (2) AI-generated scripts via vuln_GPT within the vRx Scripting Engine (PowerShell, Bash, Batch; community library: vsociety), and (3) Patchless Protection — memory-level mitigation via Dynamic Binary Instrumentation (DBI) without patching or rebooting. Additional modules: vIntelligence (Continuous Exposure Assessment & Validation with Agentic AI Red Team), vAnalyzer (BI reporting for remediation tracking). Recognized as Niche Player in Gartner Magic Quadrant for Exposure Assessment Platforms 2025 (first appearance). Official metrics: 80% reduction in manual patching time; 22-day average MTTR with platform vs. 205-day discovery-to-remediation cycle without a specialized tool. Starsolution implements and integrates vRx in Colombia with Spanish-language technical support from Bogota.
 
@@ -257,7 +257,7 @@ A: Vicarius soporta Windows (Server y Desktop), Linux (Ubuntu, CentOS, RHEL, Deb
 A: El inventario completo de activos y vulnerabilidades esta disponible en menos de 24 horas desde el despliegue del agente. Vicarius reporta un MTTR (Mean Time To Remediate) promedio de 22 dias con la plataforma, frente a los 205 dias que tarda el ciclo discovery-to-remediation sin herramienta especializada.
 
 ### Stellar Cyber SecOps Platform (Open XDR)
-**URL:** https://starsolution.com.co/stellar-cyber
+**URL:** https://starsolution.com.co/stellar-cyber/
 
 Stellar Cyber is an AI-Native SecOps Platform with Open XDR architecture that provides automated SOC (Security Operations Center) capabilities. The platform is also positioned as a "Human-Augmented Autonomous SOC" powered by Agentic AI (RSAC 2025). It unifies AI-Native Next-Gen SIEM (NG-SIEM), Network Detection & Response (NDR), Identity Threat Detection & Response (ITDR), User Entity Behavior Analytics (UEBA), Threat Intelligence Platform (TIP), and AI-Powered Case Orchestration into a single platform. The registered trademark engine is Multi-Layer AI™. Starsolution implements and integrates this platform in Colombia with Spanish-language support.
 
@@ -298,7 +298,7 @@ A: Multi-Layer AI es el motor de inteligencia artificial registrado de Stellar C
 A: Starsolution implementa e integra la plataforma Stellar Cyber SecOps para clientes en Colombia y la region. Somos su punto de contacto local con soporte tecnico en espanol, despliegue desde Bogota y cobertura en Colombia, Venezuela y Miami.
 
 ### Ethical Hacking & Penetration Testing
-**URL:** https://starsolution.com.co/hacking-etico
+**URL:** https://starsolution.com.co/hacking-etico/
 
 Starsolution's ethical hacking team conducts professional penetration testing services including web application testing, network penetration testing, wireless security assessments, social engineering campaigns, and red team exercises.
 
@@ -333,7 +333,7 @@ A: Entregamos dos reportes: uno ejecutivo con resumen de riesgo en lenguaje de n
 A: El escaneo identifica vulnerabilidades conocidas (CVEs) de forma automatizada. El pentesting va mas alla: un experto explota manualmente las vulnerabilidades, encadena ataques complejos y simula el impacto real de un atacante.
 
 ### rThreat - Red Team & BAE (Breach and Attack Emulation)
-**URL:** https://starsolution.com.co/rthreat-bogota-colombia
+**URL:** https://starsolution.com.co/rthreat-bogota-colombia/
 
 rThreat is a Breach and Attack Emulation (BAE) platform that validates an organization's defenses by executing real malware artifacts — including in-house developed zero-days — in controlled environments, unlike traditional BAS platforms that rely on synthetic simulations. It emulates advanced adversary attacks, maps results to MITRE ATT&CK TTPs, and validates the real efficacy of EDR, firewalls and SIEM through safe executions that do not affect production. Starsolution implements and integrates rThreat in Colombia with Spanish-language support, guidance on result interpretation, and audit-ready evidence for regulatory compliance (PCI DSS, SWIFT CSP, SFC Colombia).
 
@@ -365,7 +365,7 @@ A: El pentesting busca vulnerabilidades tecnicas en un alcance definido. El Red 
 ## Star Compliance - Governance & Standards
 
 ### ISO 27001 Consulting
-**URL:** https://starsolution.com.co/iso27001
+**URL:** https://starsolution.com.co/iso27001/
 
 Starsolution provides end-to-end ISO 27001 consulting services including gap analysis, SGSI (Information Security Management System) implementation, internal audit preparation, and certification support. We help organizations comply with ISO 27001:2022, aligned with Colombian regulations (SFC, SIC, MinTIC).
 
@@ -399,7 +399,7 @@ A: ICONTEC es la opcion nacional con costos menores; SGS y Bureau Veritas tienen
 A: El certificado tiene una vigencia de 3 anos. Durante ese periodo se realizan auditorias de vigilancia anuales, ademas de auditorias internas periodicas y revisiones por la direccion para mantener el SGSI.
 
 ### SealPath IRM
-**URL:** https://starsolution.com.co/sealpath
+**URL:** https://starsolution.com.co/sealpath/
 
 SealPath IRM (Information Rights Management) es una plataforma de proteccion documental persistente IRM/E-DRM del fabricante espanol SealPath. Aplica cifrado que viaja con el archivo independientemente de donde se almacene o comparta, permitiendo a las organizaciones definir permisos granulares por usuario o grupo, revocar el acceso remotamente en cualquier momento y obtener trazabilidad completa de cada interaccion con el documento. SealPath IRM NO es un DLP tradicional (Data Loss Prevention de perimetro); es un complemento o alternativa al DLP que protege la informacion a nivel del archivo en lugar del perimetro de red. Starsolution implementa e integra SealPath IRM en Colombia con soporte tecnico en espanol.
 
@@ -454,7 +454,7 @@ A: SealPath IRM asocia sus politicas de proteccion con etiquetas de Microsoft In
 A: El DLP tradicional protege el perimetro de red: controla que los datos no salgan, pero pierde el control cuando un archivo abandona la organizacion. SealPath IRM aplica cifrado persistente que viaja con el archivo: aunque el documento llegue a un proveedor, nube o dispositivo externo, usted mantiene control de acceso y puede revocar remotamente en cualquier momento.
 
 ### Netwrix
-**URL:** https://starsolution.com.co/netwrix
+**URL:** https://starsolution.com.co/netwrix/
 
 Netwrix es una plataforma de seguridad de datos centrada en identidad ("Data Security that Starts with Identity") que integra auditoria de cambios, gobernanza de acceso a datos, PAM con Zero Standing Privilege, DLP multiplataforma, clasificacion de datos sensibles, IGA y una plataforma SaaS unificada para IA empresarial. Starsolution implementa e integra toda la linea de productos Netwrix en Colombia con soporte en espanol.
 
@@ -503,7 +503,7 @@ A: Netwrix Auditor se enfoca en auditoria de cambios y cumplimiento: registra qu
 A: No. Netwrix Privilege Secure implementa Zero Standing Privilege: las credenciales privilegiadas se crean Just-In-Time para cada sesion y se eliminan al terminar. Incluye grabacion de sesiones, monitoreo en tiempo real y eliminacion de cuentas permanentes de administrador.
 
 ### Black Duck
-**URL:** https://starsolution.com.co/black-duck
+**URL:** https://starsolution.com.co/black-duck/
 
 Black Duck Software, Inc. is an independent application security (AppSec) company spun off from Synopsys in October 2024. Its portfolio includes Coverity (SAST), Black Duck SCA (software composition analysis and SBOM), Continuous Dynamic (DAST), Seeker (IAST), Defensics (protocol fuzzing), Software Risk Manager (ASPM), and the Black Duck Polaris Platform — a unified SaaS platform for DevSecOps. Black Duck was named a Leader in the 2025 Gartner Magic Quadrant for Application Security Testing (8th consecutive time, highest in Ability to Execute for the 6th year) and in the inaugural 2026 Gartner Magic Quadrant for Software Supply Chain Security. Organizations use Black Duck to detect vulnerabilities in proprietary code and open-source dependencies, manage license compliance, generate SBOM (SPDX, CycloneDX) and VEX exports, and integrate shift-left security into CI/CD pipelines. Starsolution implements and integrates Black Duck for enterprises in Colombia with Spanish-language support and deployment from Bogota.
 
@@ -531,7 +531,7 @@ A: El impacto es minimo. El SCA tarda segundos; Coverity opera en modo increment
 A: Black Duck Polaris Platform es la plataforma SaaS unificada que combina SAST (Coverity), SCA (Black Duck SCA) y DAST (Continuous Dynamic) en un solo flujo DevSecOps. Software Risk Manager es el producto ASPM (Application Security Posture Management) para centralizar y priorizar hallazgos de multiples herramientas a escala empresarial. Son productos complementarios: Polaris es el punto de entrada DevSecOps; Software Risk Manager es la capa de governance para CISOs.
 
 ### DLP - Data Loss Prevention
-**URL:** https://starsolution.com.co/dlp-prevencion-perdida-datos
+**URL:** https://starsolution.com.co/dlp-prevencion-perdida-datos/
 
 Endpoint Protector by CoSoSys provides data loss prevention (DLP) for protecting sensitive data on endpoints. It monitors and controls data transfers through USB devices, email, cloud storage, instant messaging, and other channels.
 
@@ -565,10 +565,16 @@ A: El despliegue se realiza en 3 fases: dias 1-2 configuracion del servidor, dia
 ## Infrastructure & Productivity
 
 ### TeamViewer
-**URL:** https://starsolution.com.co/teamviewer
-Enterprise remote access, support, and device management platform with end-to-end encryption, session recording, and centralized administration.
+**URL:** https://starsolution.com.co/teamviewer/
+TeamViewer is a remote connectivity platform with RSA-4096 + AES-256 end-to-end encryption. Its 2026 enterprise catalog has five products: TeamViewer Remote (access and support; plans Business, Premium and Corporate), TeamViewer Tensor (enterprise platform for IT, OT, mobile and POS with SSO, Zero Trust conditional access, and ITSM integrations with ServiceNow, Intune and Salesforce), TeamViewer DEX (digital employee experience; Leader in the Gartner Magic Quadrant for DEX Management Tools 2026, third consecutive year), TeamViewer Frontline (industrial augmented reality for connected workers) and TeamViewer ONE (unified digital workplace platform). TeamViewer holds ISO 27001, SOC 2 Type II and GDPR certifications. Starsolution implements and licenses TeamViewer in Colombia with plan sizing, GPO mass deployment and Spanish-language support.
 
 Frequently asked questions (verbatim, suitable for direct citation):
+
+**Q: ¿Qué es TeamViewer y qué productos ofrece para empresas?**
+A: TeamViewer es una plataforma de conectividad remota con cinco productos vigentes: TeamViewer Remote (acceso y soporte remoto con planes Business, Premium y Corporate), TeamViewer Tensor (plataforma enterprise para IT, OT, móvil y POS), TeamViewer DEX (experiencia digital del empleado, Leader en el Gartner Magic Quadrant de DEX Management Tools 2026), TeamViewer Frontline (realidad aumentada industrial) y TeamViewer ONE (plataforma unificadora). Starsolution implementa y licencia estos productos en Colombia con soporte en español.
+
+**Q: ¿Cuál plan de TeamViewer necesita mi empresa?**
+A: TeamViewer Business (1 puesto, hasta 200 dispositivos) sirve para un técnico individual. Premium (hasta 15 usuarios, 300 dispositivos) y Corporate (hasta 30 usuarios, 3 sesiones concurrentes, 500 dispositivos) cubren equipos de soporte. Para cientos o miles de dispositivos, SSO, Zero Trust e integraciones ITSM, el producto indicado es TeamViewer Tensor.
 
 **Q: Cual es la diferencia entre licencia concurrente y nombrada?**
 A: La licencia nombrada se asigna a un tecnico especifico. La licencia concurrente es compartida y permite que un usuario la use a la vez, siendo ideal para equipos de soporte con turnos rotativos.
@@ -580,22 +586,25 @@ A: Si. TeamViewer utiliza el puerto saliente 5938 o 443 (HTTPS) sin necesidad de
 A: TeamViewer ofrece dos modelos para MSPs: por canal (dispositivos ilimitados, un tecnico activo a la vez) o por dispositivo gestionado. Ambos con facturacion mensual o anual y descuentos progresivos desde 50 endpoints.
 
 ### AnyDesk
-**URL:** https://starsolution.com.co/anydesk
-Ultra-fast remote desktop solution with proprietary DeskRT codec, multi-platform support, and enterprise security features including TLS 1.2 encryption.
+**URL:** https://starsolution.com.co/anydesk/
+AnyDesk is a high-performance remote desktop software built on the proprietary DeskRT codec: 60 FPS, sub-16 ms latency, and functional sessions from 100 KB/s of bandwidth. Current plans (2024-2026 naming): Solo (1 user, up to 100 unattended devices), Standard (up to 20 users, 500 devices, Custom Client branding), Advanced (up to 100 users, 1,000 devices, SAML 2.0 SSO) and Ultimate — the only edition with AnyDesk On-Premises for self-hosted deployment (up to 10,000 devices, Erlang/OTP server architecture). Security: TLS 1.2, Perfect Forward Secrecy, 2FA, per-device access control lists, automatic NAT traversal over port 443. Starsolution licenses and implements AnyDesk in Colombia with MSI/GPO mass deployment and Spanish-language support.
 
 Frequently asked questions (verbatim, suitable for direct citation):
 
+**Q: ¿Qué es AnyDesk y qué planes ofrece?**
+A: AnyDesk es un software de escritorio remoto que usa el codec propietario DeskRT para transmitir a 60 FPS con latencia menor a 16 ms y funcionar desde 100 KB/s de ancho de banda. Ofrece cuatro planes vigentes: Solo (1 usuario), Standard (hasta 20 usuarios), Advanced (hasta 100 usuarios, SSO SAML 2.0) y Ultimate, la única edición con AnyDesk On-Premises para desplegar en infraestructura propia. Starsolution licencia e implementa AnyDesk en Colombia con soporte en español.
+
 **Q: Es gratis AnyDesk para uso comercial?**
-A: No. El uso comercial requiere licencia de pago. Los planes van desde Professional (EUR 10.90/mes) hasta Power (EUR 20.90/mes) y Ultimate (EUR 52.90/mes). Para mas de 1,000 endpoints existe la opcion Enterprise on-premise.
+A: No. El uso comercial requiere licencia de pago. AnyDesk ofrece cuatro planes: Solo, Standard, Advanced y Ultimate (este último con opción On-Premises). Los precios cambian por región y volumen; Starsolution cotiza el plan adecuado para su operación en Colombia.
 
 **Q: Que necesito para conectarme remotamente?**
 A: Solo el ID de AnyDesk de 9 digitos del dispositivo destino. AnyDesk realiza NAT traversal automaticamente y funciona detras de firewalls corporativos sin necesidad de abrir puertos.
 
 **Q: AnyDesk consume muchos recursos?**
-A: El consumo es minimo: instalacion de 8MB, 15-30MB de RAM en reposo, 60-90MB durante sesion activa, 2-5% de CPU y aproximadamente 100KB/s de ancho de banda por sesion.
+A: El consumo es mínimo: cliente ligero de pocos MB (3.7 MB en la versión On-Premises), bajo uso de RAM y CPU, y desde 100 KB/s de ancho de banda por sesión gracias al codec DeskRT.
 
 ### SOTI MobiControl
-**URL:** https://starsolution.com.co/soti-mdm
+**URL:** https://starsolution.com.co/soti-mdm/
 SOTI MobiControl es la solución de Enterprise Mobility Management (EMM/UEM) de SOTI dentro de la SOTI ONE Platform. Gestiona el ciclo de vida completo de dispositivos móviles e industriales: smartphones Android e iOS, tablets, dispositivos rugged (Zebra, Honeywell, Panasonic Toughbook), kioscos y equipos Windows. Starsolution implementa e integra SOTI MobiControl en Colombia con soporte en español y acompañamiento local desde Bogotá.
 
 Frequently asked questions (verbatim, suitable for direct citation):
@@ -613,26 +622,27 @@ A: SOTI MobiControl se comercializa mediante cotizacion personalizada segun nume
 A: La SOTI ONE Platform reune: SOTI MobiControl (EMM/UEM principal), SOTI XSight (diagnostico e inteligencia de soporte para flotas de dispositivos moviles), SOTI Snap (creacion no-code de apps moviles multiplataforma), SOTI Connect (gestion del ciclo de vida de impresoras moviles e industriales) y SOTI Identity (autenticacion centralizada y SSO). Starsolution integra los modulos que mejor se ajusten a la operacion de su empresa.
 
 ### Cableado Estructurado
-**URL:** https://starsolution.com.co/cableado-estructurado
+**URL:** https://starsolution.com.co/cableado-estructurado/
 Structured cabling services including Cat6/Cat6A installation, fiber optic deployment, rack and patch panel configuration, and network infrastructure design following TIA/EIA standards.
 
 ### Equipos de Computo
-**URL:** https://starsolution.com.co/equipos-computo
+**URL:** https://starsolution.com.co/equipos-computo/
 Enterprise hardware procurement including workstations, servers, networking equipment, and peripherals from leading manufacturers.
 
-### Brother (Authorized Distributor)
-**URL:** https://starsolution.com.co/brother
-Authorized Brother distributor for enterprise printers, multifunction devices, label printers, and document scanners.
+### Brother (Enterprise Printing)
+**URL:** https://starsolution.com.co/brother/
+Brother Workhorse Series is Brother's enterprise printing line, organized in three segments: Enterprise (10-40 users, up to 16,000 pages/month, models like HL-L9470CDN and MFC-L9670CDN at up to 52 ppm mono / 42 ppm color), Small-Medium Business (1-10 users, e.g. HL-L6415DW, MFC-L6915DW) and Small Office (up to 4,000 pages/month, e.g. MFC-L2980DW). The EX sub-series offers high-capacity toner (up to 25,000 pages mono). ADS document scanners reach 60 ppm duplex (ADS-4900W; BLI Pick Award 2023). Security: Brother's Triple Layer Security (network / device / documents) with Secure Print, NFC badge authentication, Active Directory Print Release and no internal hard drive on enterprise devices, validated by the BLI Security Validation Testing seal. The full Workhorse A4 line received the Keypoint Intelligence A4 Line of the Year 2025 award. Starsolution supplies and integrates Brother equipment for businesses in Colombia with original consumables, factory warranty (1 year base, extendable to 3 years with Brother on-site programs) and secure-print configuration for ISO 27001 environments.
 
 ---
 
 ## Resources & Blog
 
-- [Enterprise Antivirus Comparison 2026](https://starsolution.com.co/antivirus-empresas): Detailed comparison of Bitdefender, Kaspersky, Hornetsecurity, and other enterprise antivirus solutions for businesses in Colombia
-- [Cybersecurity Report Colombia 2026](https://starsolution.com.co/informe-ciberseguridad-colombia-2026): Annual analysis of the cybersecurity landscape in Colombia with statistics, trends, sector-specific findings, and recommendations
-- [Perfect Forward Secrecy (PFS) Explained](https://starsolution.com.co/blog/perfect-forward-secrecy): Technical deep-dive on PFS, ephemeral key exchange, and why it matters for enterprise communications
-- [Zero Trust Architecture 2025](https://starsolution.com.co/blog/zero-trust-2025): Comprehensive guide to implementing Zero Trust security architecture
-- [ISO 27001:2022 Regulatory Changes](https://starsolution.com.co/blog/iso-27001-regulaciones): Analysis of ISO 27001:2022 changes and their impact on Colombian businesses
+- [Seguridad Informática para Empresas](https://starsolution.com.co/seguridad-informatica-empresas/): Spanish-language hub for enterprise information security in Colombia. Explains the difference between seguridad informática, ciberseguridad and seguridad de la información, and maps Starsolution services (EDR/XDR endpoint protection, pentesting, DLP, ISO 27001 consulting) to sectors (banking under SFC Circular 007, healthcare under Ley 1581, government under MinTIC MSPI, SMBs)
+- [Enterprise Antivirus Comparison 2026](https://starsolution.com.co/antivirus-empresas/): Detailed comparison of Bitdefender, Kaspersky, Hornetsecurity, and other enterprise antivirus solutions for businesses in Colombia
+- [Cybersecurity Report Colombia 2026](https://starsolution.com.co/informe-ciberseguridad-colombia-2026/): Annual analysis of the cybersecurity landscape in Colombia with statistics, trends, sector-specific findings, and recommendations
+- [Perfect Forward Secrecy (PFS) Explained](https://starsolution.com.co/blog/perfect-forward-secrecy/): Technical deep-dive on PFS, ephemeral key exchange, and why it matters for enterprise communications
+- [Zero Trust Architecture 2025](https://starsolution.com.co/blog/zero-trust-2025/): Comprehensive guide to implementing Zero Trust security architecture
+- [ISO 27001:2022 Regulatory Changes](https://starsolution.com.co/blog/iso-27001-regulaciones/): Analysis of ISO 27001:2022 changes and their impact on Colombian businesses
 
 ---
 
@@ -643,21 +653,21 @@ Authorized Brother distributor for enterprise printers, multifunction devices, l
 - Phone: +57 300 701 0017
 - Email: contacto@star-ti.com
 - Website: https://starsolution.com.co
-- Contact form: https://starsolution.com.co/contacto
+- Contact form: https://starsolution.com.co/contacto/
 - Hours: Monday to Friday, 8:00 AM - 6:00 PM (COT, UTC-5)
 
 ### Venezuela
 - Address: Ed. Centro Empresarial Torre Araujo, M. OF A-1, Caracas, Venezuela
 - Phone: +58 424 149 9856
 - Email: venezuela@star-ti.com
-- Website: https://starsolution.com.co/venezuela
-- Contact form: https://starsolution.com.co/venezuela/contacto
+- Website: https://starsolution.com.co/venezuela/
+- Contact form: https://starsolution.com.co/venezuela/contacto/
 
 ### United States (Florida)
 - Address: 8103 Gables Commons Dr, Orlando, FL 32821, USA
 - Serves Miami and South Florida (Miami-Dade, Broward, Palm Beach) with remote and on-site services
 - Phone: +1 321 438 6777
 - Email: miami@star-ti.com
-- Website: https://starsolution.com.co/miami
-- Contact form: https://starsolution.com.co/miami/contacto
+- Website: https://starsolution.com.co/miami/
+- Contact form: https://starsolution.com.co/miami/contacto/
 - Bilingual team (English/Spanish)
