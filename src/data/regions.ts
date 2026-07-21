@@ -2,6 +2,9 @@ export interface RegionData {
   slug: string;
   name: string;
   country: string;
+  // Nombre del pais para la landing en ingles (/miami/). Solo lo lee
+  // RegionLanding cuando isEnglish; opcional en las regiones en espanol.
+  countryEn?: string;
   countryCode: string;
   locale: string;
   hreflang: string;
@@ -98,6 +101,7 @@ export const regions: Record<string, RegionData> = {
     slug: 'miami',
     name: 'Miami',
     country: 'Estados Unidos',
+    countryEn: 'the United States',
     countryCode: 'US',
     locale: 'en-US',
     hreflang: 'en-US',

@@ -72,7 +72,7 @@ const pilarColors: Record<string, { bg: string; text: string; border: string }> 
       </h2>
       <p class="text-lg text-gray-600 max-w-2xl mx-auto">
         {isEnglish
-          ? `Three converging pillars providing complete cybersecurity coverage for businesses in ${region.country}.`
+          ? `Three converging pillars providing complete cybersecurity coverage for businesses in ${region.countryEn ?? region.country}.`
           : `Tres pilares convergentes que brindan cobertura completa de ciberseguridad para empresas en ${region.country}. Cada pilar incluye consultoría especializada, implementación y soporte continuo.`}
       </p>
     </div>
@@ -84,12 +84,15 @@ const pilarColors: Record<string, { bg: string; text: string; border: string }> 
           <div class={`bg-white border-2 ${colors.border} rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300`}>
             <div class={`${colors.bg} px-6 py-4`}>
               <div class={`font-bold text-sm uppercase tracking-wider ${colors.text}`}>{pilar.name}</div>
-              <div class={`text-sm ${colors.text} mt-1`}>{pilar.tagline}</div>
+              <div class={`text-sm ${colors.text} mt-1`}>{isEnglish ? (pilar.taglineEn ?? pilar.tagline) : pilar.tagline}</div>
             </div>
             <div class="p-6">
-              <p class="text-sm text-gray-600 mb-6">{pilar.description}</p>
+              <p class="text-sm text-gray-600 mb-6">{isEnglish ? (pilar.descriptionEn ?? pilar.description) : pilar.description}</p>
               <div class="space-y-3">
-                {pilar.products.map((product) => (
+                {pilar.products.map((product) => {
+                  const productName = isEnglish ? (product.nameEn ?? product.name) : product.name;
+                  const productDesc = isEnglish ? (product.shortDescriptionEn ?? product.shortDescription) : product.shortDescription;
+                  return (
                   <a href={`/${product.slug}`} class="flex items-center gap-3 group/item p-2 -mx-2 rounded-lg hover:bg-gray-50 transition">
                     <div class={`w-8 h-8 ${colors.bg} rounded-lg flex items-center justify-center flex-shrink-0`}>
                       <svg class={`w-4 h-4 ${colors.text}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -97,11 +100,12 @@ const pilarColors: Record<string, { bg: string; text: string; border: string }> 
                       </svg>
                     </div>
                     <div>
-                      <div class={`text-sm font-semibold text-gray-900 group-hover/item:${colors.text} transition`}>{product.brand} - {product.name}</div>
-                      <div class="text-xs text-gray-500">{product.shortDescription.substring(0, 60)}...</div>
+                      <div class={`text-sm font-semibold text-gray-900 group-hover/item:${colors.text} transition`}>{product.brand} - {productName}</div>
+                      <div class="text-xs text-gray-500">{productDesc.substring(0, 60)}...</div>
                     </div>
                   </a>
-                ))}
+                  );
+                })}
               </div>
             </div>
           </div>
