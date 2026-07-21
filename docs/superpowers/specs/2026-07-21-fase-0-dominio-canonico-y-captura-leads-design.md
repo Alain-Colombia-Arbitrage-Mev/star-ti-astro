@@ -90,14 +90,57 @@ Tres decisiones de diseño más allá del reemplazo literal:
    `informe-...astro:938`) pide a universidades, medios y consultoras que citen
    `starsolution.com.co`. Se corrigen como texto.
 
-### B. Deduplicación de dominios
+### B. Migración de dominio
 
-En `worker/index.js`, redirección 301 de `starsolutionsti.com.co` → `star-ti.com`, preservando
-path y query, junto a la lógica `www.` existente.
+**Corrección respecto a la versión inicial de este documento.** Se planteó como una simple
+deduplicación. La persona propietaria confirmó después que **la autoridad acumulada está en
+`starsolutionsti.com.co`**, no en `star-ti.com`. Eso convierte el trabajo en una migración de
+dominio, que tiene procedimiento propio y consecuencias distintas.
+
+**Coste asumido.** Una migración nunca transfiere el 100% de la autoridad y produce una caída
+temporal de posiciones, habitualmente de semanas. La alternativa más barata habría sido declarar
+canónico a `starsolutionsti.com.co` y no migrar. Se opta por `star-ti.com` porque coincide con el
+correo corporativo y es el apex principal en Cloudflare. Atenuante: el canonical llevaba tiempo
+apuntando a un dominio inexistente, por lo que la autoridad consolidada probablemente ya esté
+degradada y el coste de migrar ahora sea menor que con un sitio sano.
+
+Lo que transfiere autoridad son dos mecanismos, y solo dos:
+
+1. **301 con mapeo 1:1.** Cada URL antigua redirige a su equivalente exacta, preservando path y
+   query: `starsolutionsti.com.co/bitdefender/` → `star-ti.com/bitdefender/`. Redirigir todo a la
+   portada es el error habitual y descarta la mayor parte del valor. Va en `worker/index.js`,
+   junto a la lógica `www.` existente. Es la única parte que es código.
+2. **Cambio de dirección en Google Search Console**, y su equivalente *Site Move* en Bing
+   Webmaster Tools. Requiere ambas propiedades verificadas. Es el paso más omitido y el de mayor
+   rendimiento.
+
+Condiciones que deben respetarse:
+
+- El dominio antiguo **no se deja caducar** y sus 301 permanecen activos un año como mínimo;
+  indefinidamente es lo prudente. Si expira, la autoridad se pierde entera.
+- Se actualizan los enlaces externos controlables: Google Business Profile, LinkedIn, Facebook,
+  directorios sectoriales y firmas de correo. Un enlace directo vale más que uno redirigido, y la
+  coherencia nombre-dirección-teléfono pesa en el SEO local de Bogotá.
+- Ambas propiedades se monitorizan durante meses: la antigua para verla vaciarse, la nueva para
+  verla llenarse.
+
+**Orden de ejecución acordado:** primero se verifican ambas propiedades en Search Console y Bing;
+el 301 se implementa y despliega después. Disparar el redirect antes complica la verificación del
+dominio antiguo, que dejaría de servir contenido propio.
 
 **`starsolutionsti.com.ve` queda excluido.** Su zona está fuera de Cloudflare
 (`wrangler.jsonc:22`) y redirigir el dominio venezolano al colombiano es una decisión comercial,
 no técnica. Se trata aparte.
+
+### B-bis. Consolidación de sitemaps
+
+El proyecto publicaba dos sitemaps en paralelo: `/sitemap-index.xml`, generado por
+`@astrojs/sitemap` en cada build, y `/sitemap.xml`, un array de 38 entradas mantenido a mano en
+`src/pages/sitemap.xml.ts`. El manual exigía recordar registrar cada página nueva y ya iba
+desincronizado respecto a las 40 páginas reales.
+
+Se elimina `src/pages/sitemap.xml.ts` y se deja únicamente el generado, con una sola línea
+`Sitemap:` en `robots.txt`.
 
 ### C. Endpoint de leads
 
@@ -196,10 +239,13 @@ listo, el endpoint queda implementado e inerte hasta que se configuren los secre
 
 ## Riesgos
 
-- **Elección del canónico.** Si el historial de indexación y los backlinks apuntasen mayormente a
-  `starsolutionsti.com.co`, redirigir hacia `star-ti.com` traslada autoridad en la dirección
-  contraria a la acumulada. Conviene contrastarlo en Google Search Console. Dado que el canonical
-  lleva tiempo apuntando a un dominio muerto, es probable que haya poca autoridad consolidada en
-  cualquiera de los dos.
+- **Elección del canónico: riesgo confirmado, no hipotético.** Este documento planteaba como
+  hipótesis que la autoridad pudiera estar en `starsolutionsti.com.co`. La persona propietaria lo
+  confirmó. El trabajo pasa por tanto de deduplicación a migración (sección B), con caída temporal
+  de posiciones asumida y transferencia incompleta de autoridad. La decisión de migrar de todos
+  modos hacia `star-ti.com` es deliberada y está razonada en esa sección.
+- **Pérdida total si el dominio antiguo caduca.** Una vez migrado, dejar expirar
+  `starsolutionsti.com.co` elimina de golpe toda la autoridad transferida por los 301. Es el
+  riesgo más grave a medio plazo y depende de un pago de renovación, no de código.
 - **Recuperación no inmediata.** Corregir el canonical no reindexa el sitio al día siguiente. Hay
   que reenviar los sitemaps en Search Console y esperar el recrawl.

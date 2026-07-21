@@ -2,8 +2,12 @@ import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 import sitemap from '@astrojs/sitemap';
 
+// Debe coincidir con BASE_URL en src/data/seo.ts. No se importa de alli porque
+// este fichero de configuracion se evalua antes que los alias de tsconfig.
+const SITE = 'https://star-ti.com';
+
 export default defineConfig({
-  site: 'https://starsolution.com.co',
+  site: SITE,
   output: 'static',
   vite: {
     plugins: [tailwindcss()],
@@ -20,7 +24,7 @@ export default defineConfig({
       },
       filter: (page) => !page.includes('/gracias/') && !page.includes('/404'),
       serialize: (item) => {
-        if (item.url === 'https://starsolution.com.co/') {
+        if (item.url === `${SITE}/`) {
           item.changefreq = 'weekly' as const;
           item.priority = 1.0;
         } else if (item.url.includes('/blog/')) {

@@ -1,0 +1,49 @@
+---
+interface Props {
+  id: string;
+  buttonLabel: string;
+  includeMessage?: boolean;
+}
+
+const { id, buttonLabel, includeMessage = false } = Astro.props;
+---
+
+<form id={id} class:list={['iso-lead-form', { 'iso-lead-form--with-message': includeMessage }]} data-lead-form action="mailto:contacto@star-ti.com" method="post" enctype="text/plain">
+  <label>
+    Nombre completo *
+    <input name="nombre" required placeholder="Juan Pérez" autocomplete="name" />
+  </label>
+  <label>
+    Empresa *
+    <input name="empresa" required placeholder="Mi Empresa S.A.S." autocomplete="organization" />
+  </label>
+  <label>
+    Email corporativo *
+    <input name="email" type="email" required placeholder="juan@empresa.com" autocomplete="email" />
+  </label>
+  <label>
+    Teléfono *
+    <input name="telefono" required placeholder="+57 300 123 4567" autocomplete="tel" />
+  </label>
+  <label>
+    Cargo
+    <input name="cargo" placeholder="Gerente de TI" autocomplete="organization-title" />
+  </label>
+  <label>
+    Número de empleados
+    <select name="empleados">
+      <option value="">Selecciona una opción</option>
+      <option value="1-50">1 a 50</option>
+      <option value="51-200">51 a 200</option>
+      <option value="201-1000">201 a 1.000</option>
+      <option value="1000+">Más de 1.000</option>
+    </select>
+  </label>
+  {includeMessage && (
+    <label class="iso-lead-form__message">
+      Mensaje opcional
+      <textarea name="mensaje" rows="3" placeholder="Cuéntanos sobre tus necesidades de seguridad..." autocomplete="off"></textarea>
+    </label>
+  )}
+  <button type="submit">{buttonLabel}</button>
+</form>

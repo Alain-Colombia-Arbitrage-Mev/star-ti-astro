@@ -1,20 +1,16 @@
 # Starsolution S.A.S. - Ciberseguridad Empresarial
-# https://starsolution.com.co
+# https://star-ti.com
 
 User-agent: *
 Allow: /
 Disallow: /gracias/
 
-# Sitemaps
-Sitemap: https://starsolution.com.co/sitemap-index.xml
-Sitemap: https://starsolution.com.co/sitemap.xml
+# Sitemap (generado por @astrojs/sitemap en cada build)
+Sitemap: https://star-ti.com/sitemap-index.xml
 
 # ──────────────────────────────────────────────
 # AI / LLM Agents
 # ──────────────────────────────────────────────
-# LLMs.txt spec (https://llmstxt.org/)
-# Available at: https://starsolution.com.co/llms.txt
-# Full version: https://starsolution.com.co/llms-full.txt
 
 # Google AI / Gemini / AI Overviews
 User-agent: Google-Extended

@@ -1,5 +1,6 @@
 ---
 import type { SEOData } from '@data/seo';
+import { BASE_URL } from '@data/seo';
 import '@/styles/global.css';
 
 interface Props {
@@ -9,9 +10,8 @@ interface Props {
 const { seo } = Astro.props;
 const ogTitle = seo.ogTitle || seo.title;
 const ogType = seo.ogType || 'website';
-const ogImage = seo.ogImage || 'https://starsolution.com.co/og-default.png';
+const ogImage = seo.ogImage || `${BASE_URL}/og-default.png`;
 const htmlLang = seo.lang || 'es';
-const BASE_URL = 'https://starsolution.com.co';
 
 // Build breadcrumb JSON-LD
 const breadcrumbJsonLd = seo.breadcrumb ? {
@@ -117,10 +117,6 @@ const breadcrumbJsonLd = seo.breadcrumb ? {
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="sitemap" href="/sitemap-index.xml" />
-
-    <!-- AI/LLM Context (llmstxt.org) -->
-    <link rel="llms" type="text/plain" href="/llms.txt" />
-    <link rel="llms-full" type="text/plain" href="/llms-full.txt" />
 
     <!-- JSON-LD Structured Data -->
     {seo.jsonLd && (

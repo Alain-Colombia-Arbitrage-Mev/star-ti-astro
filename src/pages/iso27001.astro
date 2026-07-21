@@ -3,304 +3,511 @@ import BaseLayout from '@layouts/BaseLayout.astro';
 import Navbar from '@components/Navbar.astro';
 import Footer from '@components/Footer.astro';
 import WhatsAppButton from '@components/WhatsAppButton.astro';
+import Iso27001LeadForm from '@components/Iso27001LeadForm.astro';
 import { seoData } from '@data/seo';
+import {
+  isoFaqs,
+  painPoints,
+  phases,
+  metrics,
+  testimonials,
+  sectors,
+  steps,
+  caseSteps,
+  isoLeadEmail,
+  isoWhatsAppNumber,
+} from '@data/iso27001Landing';
 
 const seo = seoData['iso27001'];
+const defaultWhatsappMessage = 'Hola, quiero agendar un diagnóstico gratuito de ISO 27001 con Starsolution.';
 ---
 
 <BaseLayout seo={seo}>
   <Navbar />
 
-  <!-- Hero Section -->
-  <section class="bg-gradient-to-br from-[#0f172a] via-[#1a2744] to-[#1e293b] relative overflow-hidden">
-    <!-- Background decorations -->
-    <div class="absolute inset-0">
-      <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-blue-500/8 rounded-full blur-3xl"></div>
-      <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-cyan-500/8 rounded-full blur-3xl"></div>
-      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-indigo-500/5 rounded-full blur-3xl"></div>
-    </div>
-    <!-- Grid pattern -->
-    <div class="absolute inset-0 opacity-[0.03]" style="background-image: linear-gradient(to right, #94a3b8 1px, transparent 1px), linear-gradient(to bottom, #94a3b8 1px, transparent 1px); background-size: 60px 60px;"></div>
+  <main class="iso-landing">
+    <a class="iso-landing__skip" href="#problema">Saltar al contenido</a>
 
-    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28 lg:py-36">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-        <!-- Left column: Content -->
-        <div>
-          <div class="flex items-center gap-3 mb-8">
-            <div class="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/20 rounded-full px-4 py-2">
-              <div class="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
-              <span class="text-blue-400 text-sm font-semibold">Certificacion Internacional</span>
-            </div>
-            <div class="hidden sm:flex items-center gap-2 bg-emerald-500/10 border border-emerald-500/20 rounded-full px-3 py-2">
-              <svg class="w-4 h-4 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-              <span class="text-emerald-400 text-xs font-semibold">ISO 27001:2022</span>
-            </div>
-          </div>
-
-          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-[1.1]">
-            Consultoría ISO 27001
-            <span class="block text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-400">en Colombia</span>
-          </h1>
-
-          <p class="text-lg sm:text-xl text-gray-300 mb-8 leading-relaxed max-w-xl">
-            Implementamos, documentamos y certificamos su SGSI con metodologia probada en
-            <strong class="text-white">+50 empresas colombianas</strong>. De la brecha inicial a la certificacion
-            internacional en 6-12 meses.
+    <section class="iso-hero" id="top" aria-labelledby="iso-hero-title">
+      <div class="iso-hero__inner">
+        <div class="iso-hero__content">
+          <span class="iso-badge iso-badge--accent">Consultoría ISO 27001</span>
+          <h1 id="iso-hero-title">Consultoría ISO 27001 en Colombia: certificación sin paralizar tu operación</h1>
+          <p class="iso-hero__lede">
+            Implementamos tu Sistema de Gestión de Seguridad de la Información (SGSI) con una
+            metodología probada en más de 50 empresas colombianas. Diagnóstico inicial, plan de
+            implementación y acompañamiento en auditoría externa con consultores Lead Implementer y
+            Lead Auditor.
           </p>
+          <ul class="iso-hero__benefits">
+            <li><span aria-hidden="true">✓</span> Protege tu información crítica con controles del Anexo A</li>
+            <li><span aria-hidden="true">✓</span> Cumple exigencias contractuales de clientes corporativos y licitaciones</li>
+            <li><span aria-hidden="true">✓</span> Certifícate con un cronograma realista y sin plantillas genéricas</li>
+          </ul>
+          <Iso27001LeadForm id="iso-hero-form" buttonLabel="Solicitar diagnóstico gratuito" />
+          <p class="iso-hero__disclaimer">Sin compromiso. Sin presión comercial. Respuesta en menos de 4 horas hábiles.</p>
+        </div>
 
-          <div class="flex flex-col sm:flex-row gap-4 mb-10">
-            <a href="/contacto" class="bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold px-8 py-4 rounded-xl hover:from-blue-700 hover:to-blue-800 transition shadow-xl shadow-blue-600/20 inline-flex items-center justify-center gap-2 focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2">
-              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-              Solicitar Diagnostico Gratuito
+        <aside class="iso-hero__terminal" aria-label="Resumen visual del SGSI">
+          <div class="iso-terminal">
+            <div class="iso-terminal__bar">
+              <span class="iso-terminal__dot iso-terminal__dot--red"></span>
+              <span class="iso-terminal__dot iso-terminal__dot--amber"></span>
+              <span class="iso-terminal__dot iso-terminal__dot--green"></span>
+              <span class="iso-terminal__file">sgsi-audit.log</span>
+            </div>
+            <ol class="iso-terminal__log">
+              <li><span class="iso-terminal__tag iso-terminal__tag--green">[FASE 1]</span> Diagnóstico de brechas completado</li>
+              <li><span class="iso-terminal__tag iso-terminal__tag--blue">[SCAN]</span> Evaluando 93 controles del Anexo A</li>
+              <li><span class="iso-terminal__tag iso-terminal__tag--amber">[RIESGO]</span> Brecha crítica identificada y priorizada</li>
+              <li><span class="iso-terminal__tag iso-terminal__tag--red">[FASE 2]</span> Implementación alineada a la operación</li>
+              <li><span class="iso-terminal__tag iso-terminal__tag--green">[OK]</span> Sistema listo para auditoría externa</li>
+              <li><span class="iso-terminal__tag iso-terminal__tag--purple">[FASE 3]</span> Acompañamiento en auditoría<span class="iso-terminal__cursor"></span></li>
+            </ol>
+          </div>
+          <div class="iso-hero__card">
+            <p class="iso-hero__card-eyebrow">Certificación ISO 27001</p>
+            <p class="iso-hero__card-title">Audit-ready</p>
+            <p class="iso-hero__card-meta">desde el primer día</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="iso-section" id="que-es" aria-labelledby="iso-que-es-title">
+      <header class="iso-section__header">
+        <span class="iso-badge iso-badge--blue">Estándar internacional</span>
+        <h2 id="iso-que-es-title">¿Qué es ISO/IEC 27001:2022?</h2>
+      </header>
+      <div class="iso-definition">
+        <p class="iso-definition__lead">ISO 27001 es el estándar internacional que define los requisitos para implementar un Sistema de Gestión de Seguridad de la Información (SGSI): políticas, procesos y controles que protegen la confidencialidad, integridad y disponibilidad de la información de una organización.</p>
+        <p>La versión vigente, ISO/IEC 27001:2022, organiza los 93 controles del Anexo A en cuatro categorías (organizacionales, de personas, físicos y tecnológicos) y se alinea con la Ley 1581 de Protección de Datos en Colombia. A diferencia de marcos como NIST o CIS Controls, ISO 27001 es una norma certificable: organismos acreditados ante ONAC, como ICONTEC, SGS o Bureau Veritas, auditan el sistema y emiten un certificado válido por tres años, reconocido en más de 170 países.</p>
+        <p><a href="/blog/iso-27001-regulaciones">Conozca los cambios clave de ISO 27001:2022 y su impacto regulatorio →</a></p>
+      </div>
+    </section>
+
+    <section class="iso-section" id="problema" aria-labelledby="iso-problema-title">
+      <header class="iso-section__header">
+        <span class="iso-badge iso-badge--accent">El problema</span>
+        <h2 id="iso-problema-title">¿Por qué cada vez más empresas colombianas necesitan ISO 27001?</h2>
+        <p>Hace algunos años era un diferencial. Hoy es un requisito para competir y vender a clientes corporativos.</p>
+      </header>
+      <div class="iso-grid iso-grid--3">
+        {painPoints.map((item) => (
+          <article class="iso-card iso-card--plain">
+            <span class="iso-card__number">{item.number}</span>
+            <h3>{item.title}</h3>
+            <p>{item.body}</p>
+          </article>
+        ))}
+      </div>
+      <p class="iso-section__punchline">
+        La pregunta ya no es <em>si</em> deberías implementarla. La pregunta es <em>cuándo</em> vas a hacerlo antes de que sea urgente.
+      </p>
+    </section>
+
+    <section class="iso-section iso-section--alt" id="solucion" aria-labelledby="iso-solucion-title">
+      <header class="iso-section__header">
+        <span class="iso-badge iso-badge--blue">Cómo lo resolvemos</span>
+        <h2 id="iso-solucion-title">ISO 27001 no tiene que ser complicado</h2>
+        <p>No vendemos "papeles". Implementamos un sistema funcional, estratégico y audit-ready desde el primer día.</p>
+      </header>
+      <div class="iso-grid iso-grid--3">
+        {phases.map((phase) => (
+          <article class="iso-card iso-card--muted">
+            <div class="iso-phase">
+              <span class="iso-phase__bubble" aria-hidden="true">{phase.number}</span>
+              <span class="iso-phase__label">Fase {phase.number}</span>
+            </div>
+            <h3>{phase.title}</h3>
+            <p>{phase.body}</p>
+          </article>
+        ))}
+      </div>
+      <p class="iso-pill">
+        <span aria-hidden="true">✓</span> Resultado: un proceso ordenado, predecible y sin sorpresas
+      </p>
+    </section>
+
+    <section class="iso-section" id="confianza" aria-labelledby="iso-confianza-title">
+      <header class="iso-section__header">
+        <span class="iso-badge iso-badge--green">Confianza</span>
+        <h2 id="iso-confianza-title">Expertos en seguridad de la información, no improvisados</h2>
+        <p>Consultores certificados Lead Implementer y Lead Auditor ISO 27001 con metodología probada en más de 50 empresas.</p>
+      </header>
+      <div class="iso-section__chips" aria-label="Acreditados por">
+        <span class="iso-section__chip-eyebrow">Acreditados por</span>
+        <ul>
+          <li>ICONTEC</li>
+          <li>SGS</li>
+          <li>BUREAU VERITAS</li>
+          <li>ONAC</li>
+        </ul>
+      </div>
+      <div class="iso-grid iso-grid--3 iso-grid--metrics">
+        {metrics.map((metric) => (
+          <div class="iso-metric">
+            <strong>{metric.value}</strong>
+            <span>{metric.label}</span>
+          </div>
+        ))}
+      </div>
+      <div class="iso-grid iso-grid--3">
+        {testimonials.map((testimonial) => (
+          <figure class="iso-testimonial">
+            <blockquote>“{testimonial.quote}”</blockquote>
+            <figcaption>— {testimonial.author}</figcaption>
+          </figure>
+        ))}
+      </div>
+      <div class="iso-section__chips" aria-label="Sectores atendidos">
+        <span class="iso-section__chip-eyebrow">Sectores que atendemos</span>
+        <ul>
+          {sectors.map((sector) => <li>{sector}</li>)}
+        </ul>
+      </div>
+    </section>
+
+    <section class="iso-section iso-section--alt" id="como-funciona" aria-labelledby="iso-como-funciona-title">
+      <header class="iso-section__header">
+        <span class="iso-badge iso-badge--accent">Cómo funciona</span>
+        <h2 id="iso-como-funciona-title">Tres pasos hacia tu certificación</h2>
+      </header>
+      <ol class="iso-steps">
+        {steps.map((step) => (
+          <li class="iso-step">
+            <span class="iso-step__number" aria-hidden="true">{step.number}</span>
+            <h3>{step.title}</h3>
+            <p>{step.body}</p>
+          </li>
+        ))}
+      </ol>
+    </section>
+
+    <section class="iso-section iso-section--dark" aria-labelledby="iso-caso-title">
+      <header class="iso-section__header">
+        <span class="iso-badge iso-badge--dark">Caso real</span>
+        <h2 id="iso-caso-title">De obstáculo a ventaja competitiva</h2>
+      </header>
+      <div class="iso-case">
+        <div class="iso-case__intro">
+          <ul>
+            <li><span aria-hidden="true">✓</span> Metodología en tres fases, sin burocracia innecesaria</li>
+            <li><span aria-hidden="true">✓</span> Consultores especializados en seguridad de la información</li>
+            <li><span aria-hidden="true">✓</span> Adaptación real a distintos sectores e industrias</li>
+            <li><span aria-hidden="true">✓</span> Acompañamiento directo durante toda la auditoría</li>
+          </ul>
+        </div>
+        <div class="iso-case__timeline">
+          {caseSteps.map((step) => (
+            <div class="iso-case__row" style={`--accent:${step.color}`}>
+              <span class="iso-case__tag">{step.tag}</span>
+              <p>{step.body}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="iso-section" id="faq" aria-labelledby="iso-faq-title">
+      <header class="iso-section__header">
+        <span class="iso-badge iso-badge--blue">Preguntas frecuentes</span>
+        <h2 id="iso-faq-title">¿Aún tienes dudas sobre la certificación?</h2>
+        <p>Estas son las preguntas más comunes que recibimos de empresas que están evaluando iniciar un proyecto ISO 27001.</p>
+      </header>
+      <div class="iso-faq" data-faq>
+        {isoFaqs.map((item, index) => (
+          <details class="iso-faq__item" data-faq-item open={index === 0}>
+            <summary>
+              <span>{item.question}</span>
+              <span class="iso-faq__icon" aria-hidden="true"></span>
+            </summary>
+            <p>{item.answer}</p>
+          </details>
+        ))}
+      </div>
+    </section>
+
+    <section class="iso-section iso-section--cta" id="contacto" aria-labelledby="iso-cta-title">
+      <div class="iso-cta">
+        <span class="iso-badge iso-badge--on-dark">Empieza hoy</span>
+        <h2 id="iso-cta-title">¿Listo para comenzar tu certificación ISO 27001?</h2>
+        <p>
+          La pregunta ya no es si necesitas ISO 27001. Es si vas a implementarla estratégicamente o cuando ya sea demasiado tarde. Protege tu información, fortalece tu reputación y abre nuevas oportunidades comerciales.
+        </p>
+        <div class="iso-cta__panel">
+          <h3>El diagnóstico gratuito incluye</h3>
+          <ul>
+            <li><span aria-hidden="true">✓</span> Informe de brechas: estado actual frente a ISO 27001:2022</li>
+            <li><span aria-hidden="true">✓</span> Cotización detallada de consultoría y certificación</li>
+            <li><span aria-hidden="true">✓</span> Roadmap con hitos, entregables y cronograma</li>
+            <li><span aria-hidden="true">✓</span> Casos de éxito y referencias de tu industria</li>
+          </ul>
+          <Iso27001LeadForm id="iso-cta-form" buttonLabel="Agendar diagnóstico gratuito →" includeMessage />
+          <div class="iso-cta__alt">
+            <a
+              class="iso-cta__whatsapp"
+              href={`https://wa.me/${isoWhatsAppNumber}?text=${encodeURIComponent(defaultWhatsappMessage)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span aria-hidden="true">💬</span> ¿Prefieres WhatsApp? Escríbenos al +57 300 701 0017
             </a>
-            <a href="#proceso" class="bg-white/5 backdrop-blur-sm border border-white/10 text-white font-semibold px-8 py-4 rounded-xl hover:bg-white/10 transition inline-flex items-center justify-center gap-2 focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2">
-              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
-              Ver Metodologia
-            </a>
-          </div>
-
-          <!-- Stats row -->
-          <div class="grid grid-cols-3 gap-6">
-            <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 text-center">
-              <div class="text-2xl sm:text-3xl font-bold text-white mb-1">50+</div>
-              <div class="text-xs text-gray-400 uppercase tracking-wide">Certificadas</div>
-            </div>
-            <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 text-center">
-              <div class="text-2xl sm:text-3xl font-bold text-emerald-400 mb-1">100%</div>
-              <div class="text-xs text-gray-400 uppercase tracking-wide">Aprobacion</div>
-            </div>
-            <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 text-center">
-              <div class="text-2xl sm:text-3xl font-bold text-cyan-400 mb-1">8 mes</div>
-              <div class="text-xs text-gray-400 uppercase tracking-wide">Promedio</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Right column: Visual -->
-        <div class="hidden lg:block relative">
-          <!-- Main image -->
-          <div class="relative z-10">
-            <img
-              src="/assets/robot-guardian-seguridad-frontal.webp"
-              alt="Robot guardian de seguridad para consultoría ISO 27001 en Colombia"
-              class="w-full max-w-sm mx-auto rounded-2xl shadow-2xl shadow-blue-900/30"
-              width="400"
-              height="400"
-              loading="eager"
-              fetchpriority="high"
-            />
-          </div>
-
-          <!-- Floating cards -->
-          <div class="absolute top-8 -left-4 bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-4 shadow-xl z-20">
-            <div class="flex items-center gap-3">
-              <div class="w-10 h-10 bg-emerald-500 rounded-lg flex items-center justify-center">
-                <svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
-              </div>
-              <div>
-                <div class="text-white text-sm font-bold">ICONTEC</div>
-                <div class="text-gray-400 text-xs">Organismo acreditado</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="absolute bottom-12 -right-4 bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-4 shadow-xl z-20">
-            <div class="flex items-center gap-3">
-              <div class="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center">
-                <svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
-              </div>
-              <div>
-                <div class="text-white text-sm font-bold">93 Controles</div>
-                <div class="text-gray-400 text-xs">Anexo A - 2022</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="absolute top-1/2 -right-8 bg-white/10 backdrop-blur-md border border-white/20 rounded-xl px-4 py-3 shadow-xl z-20">
-            <div class="flex items-center gap-2">
-              <div class="flex -space-x-1">
-                <div class="w-6 h-6 bg-blue-500 rounded-full border-2 border-[#1a2744]"></div>
-                <div class="w-6 h-6 bg-emerald-500 rounded-full border-2 border-[#1a2744]"></div>
-                <div class="w-6 h-6 bg-cyan-500 rounded-full border-2 border-[#1a2744]"></div>
-              </div>
-              <span class="text-gray-300 text-xs font-medium">+50 empresas</span>
-            </div>
+            <p>
+              Tu solicitud llega directamente a <a href={`mailto:${isoLeadEmail}`}>{isoLeadEmail}</a>. Sesión virtual de 45 minutos con un consultor certificado.
+            </p>
           </div>
         </div>
       </div>
+    </section>
 
-      <!-- Trust bar -->
-      <div class="mt-16 pt-8 border-t border-white/10">
-        <div class="flex flex-wrap items-center justify-center gap-x-8 gap-y-4 text-gray-500 text-xs uppercase tracking-wider">
-          <span>Acreditados por:</span>
-          <span class="text-gray-300 font-semibold">ICONTEC</span>
-          <span class="text-gray-500">|</span>
-          <span class="text-gray-300 font-semibold">SGS</span>
-          <span class="text-gray-500">|</span>
-          <span class="text-gray-300 font-semibold">Bureau Veritas</span>
-          <span class="text-gray-500">|</span>
-          <span class="text-gray-300 font-semibold">ONAC</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Que es ISO 27001 -->
-  <section class="py-16 sm:py-20 lg:py-24 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        <div>
-          <span class="text-blue-600 text-sm font-bold uppercase tracking-wider">Estándar Internacional</span>
-          <h2 class="text-4xl sm:text-5xl font-bold mt-4 mb-6">&iquest;Qué es ISO/IEC 27001:2022?</h2>
-          <p class="text-lg text-gray-600 mb-6">ISO 27001 es el estándar internacional más reconocido para Sistemas de Gestión de Seguridad de la Información (SGSI). Establece requisitos específicos para implementar, mantener y mejorar continuamente la seguridad de la información en cualquier tipo de organización.</p>
-          <p class="text-lg text-gray-600 mb-6">La versión vigente ISO 27001:2022 incluye actualizaciones clave en controles de seguridad cloud, gestión de amenazas emergentes y protección de datos personales, alineándose con la Ley 1581 de Protección de Datos en Colombia y GDPR europeo.</p>
-          <p class="text-lg text-gray-600">A diferencia de frameworks como NIST o CIS Controls, ISO 27001 es una norma <strong>certificable</strong>. Organismos acreditados auditan su implementación y emiten un certificado válido por 3 años.</p>
-        </div>
-        <div class="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl p-8 border border-blue-100">
-          <h3 class="text-2xl font-bold mb-6 text-gray-900">Componentes del SGSI ISO 27001</h3>
-          <div class="space-y-4">
-            <div class="flex items-start gap-4"><div class="bg-blue-600 rounded-lg p-3 mt-1"><svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg></div><div><h4 class="font-semibold text-lg mb-1">Políticas y Procedimientos</h4><p class="text-gray-600 text-sm">Documentación formal de +30 políticas de seguridad alineadas con su contexto organizacional</p></div></div>
-            <div class="flex items-start gap-4"><div class="bg-blue-600 rounded-lg p-3 mt-1"><svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" /></svg></div><div><h4 class="font-semibold text-lg mb-1">Análisis de Riesgos</h4><p class="text-gray-600 text-sm">Metodología estructurada para identificar, evaluar y tratar riesgos de seguridad de la información</p></div></div>
-            <div class="flex items-start gap-4"><div class="bg-blue-600 rounded-lg p-3 mt-1"><svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg></div><div><h4 class="font-semibold text-lg mb-1">Controles de Seguridad (Anexo A)</h4><p class="text-gray-600 text-sm">Implementación de 93 controles organizacionales, técnicos y físicos según aplicabilidad</p></div></div>
-            <div class="flex items-start gap-4"><div class="bg-blue-600 rounded-lg p-3 mt-1"><svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg></div><div><h4 class="font-semibold text-lg mb-1">Monitoreo y Mejora Continua</h4><p class="text-gray-600 text-sm">Auditorías internas, métricas de seguridad y revisiones gerenciales periódicas</p></div></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Beneficios -->
-  <section class="py-16 sm:py-20 lg:py-24 bg-gray-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16"><h2 class="text-4xl font-bold mb-4">&iquest;Por qué certificar ISO 27001 en Colombia?</h2><p class="text-xl text-gray-600 max-w-3xl mx-auto">Más allá del cumplimiento normativo, la certificación genera ventajas competitivas medibles y retorno de inversión comprobado.</p></div>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="bg-white rounded-xl p-8 shadow-sm border border-gray-200 hover:shadow-md transition-all duration-300 cursor-pointer"><div class="bg-blue-100 rounded-lg w-12 h-12 flex items-center justify-center mb-4"><svg class="w-6 h-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg></div><h3 class="text-xl font-semibold mb-3">Acceso a Licitaciones Públicas</h3><p class="text-gray-600">Entidades gubernamentales como MinTIC, DIAN y alcaldías exigen ISO 27001 en procesos de contratación para manejo de datos sensibles.</p></div>
-        <div class="bg-white rounded-xl p-8 shadow-sm border border-gray-200 hover:shadow-md transition-all duration-300 cursor-pointer"><div class="bg-green-100 rounded-lg w-12 h-12 flex items-center justify-center mb-4"><svg class="w-6 h-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg></div><h3 class="text-xl font-semibold mb-3">Confianza de Clientes B2B</h3><p class="text-gray-600">Empresas multinacionales y sector financiero requieren evidencia documentada de seguridad de sus proveedores. ISO 27001 elimina cuestionarios y acelera onboarding.</p></div>
-        <div class="bg-white rounded-xl p-8 shadow-sm border border-gray-200 hover:shadow-md transition-all duration-300 cursor-pointer"><div class="bg-purple-100 rounded-lg w-12 h-12 flex items-center justify-center mb-4"><svg class="w-6 h-6 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg></div><h3 class="text-xl font-semibold mb-3">Cumplimiento Ley 1581</h3><p class="text-gray-600">La SIC reconoce ISO 27001 como evidencia de implementación de medidas de seguridad exigidas para responsables de datos personales.</p></div>
-        <div class="bg-white rounded-xl p-8 shadow-sm border border-gray-200 hover:shadow-md transition-all duration-300 cursor-pointer"><div class="bg-red-100 rounded-lg w-12 h-12 flex items-center justify-center mb-4"><svg class="w-6 h-6 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg></div><h3 class="text-xl font-semibold mb-3">Reducción de Primas de Seguros</h3><p class="text-gray-600">Aseguradoras ofrecen descuentos de 10-25% en pólizas de Cyber Risk para empresas certificadas ISO 27001 por menor exposición al riesgo.</p></div>
-        <div class="bg-white rounded-xl p-8 shadow-sm border border-gray-200 hover:shadow-md transition-all duration-300 cursor-pointer"><div class="bg-yellow-100 rounded-lg w-12 h-12 flex items-center justify-center mb-4"><svg class="w-6 h-6 text-yellow-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" /></svg></div><h3 class="text-xl font-semibold mb-3">Valoración para Inversionistas</h3><p class="text-gray-600">Fondos de capital privado consideran certificaciones como factor de valoración. Empresas certificadas tienen +15% valuación.</p></div>
-        <div class="bg-white rounded-xl p-8 shadow-sm border border-gray-200 hover:shadow-md transition-all duration-300 cursor-pointer"><div class="bg-indigo-100 rounded-lg w-12 h-12 flex items-center justify-center mb-4"><svg class="w-6 h-6 text-indigo-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg></div><h3 class="text-xl font-semibold mb-3">Expansión Internacional</h3><p class="text-gray-600">ISO 27001 reconocido en +170 países. Empresas colombianas pueden exportar servicios BPO y software a mercados exigentes.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Proceso de Implementacion -->
-  <section id="proceso" class="py-16 sm:py-20 lg:py-24 bg-white scroll-mt-20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16"><span class="text-blue-600 text-sm font-bold uppercase tracking-wider">Metodología Comprobada</span><h2 class="text-4xl font-bold mt-4 mb-4">Nuestro Proceso de Implementación ISO 27001</h2><p class="text-xl text-gray-600 max-w-3xl mx-auto">Ruta estructurada en 6 fases con entregables definidos y acompañamiento constante hasta la certificación.</p></div>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="bg-white border-2 border-blue-600 rounded-xl p-8 shadow-lg"><span class="bg-blue-600 text-white font-bold px-4 py-2 rounded-full text-sm">Fase 1</span><h3 class="text-2xl font-bold mt-4 mb-3">Gap Analysis &amp; Scoping</h3><p class="text-gray-600 mb-4">Auditoría inicial de brechas comparando estado actual vs. requisitos ISO 27001:2022.</p><div class="text-sm text-gray-500"><strong>Duración:</strong> 2-3 semanas</div></div>
-        <div class="bg-white border-2 border-blue-600 rounded-xl p-8 shadow-lg"><span class="bg-blue-600 text-white font-bold px-4 py-2 rounded-full text-sm">Fase 2</span><h3 class="text-2xl font-bold mt-4 mb-3">Análisis de Riesgos</h3><p class="text-gray-600 mb-4">Identificamos activos, amenazas, vulnerabilidades y calculamos riesgo inherente.</p><div class="text-sm text-gray-500"><strong>Duración:</strong> 3-4 semanas</div></div>
-        <div class="bg-white border-2 border-blue-600 rounded-xl p-8 shadow-lg"><span class="bg-blue-600 text-white font-bold px-4 py-2 rounded-full text-sm">Fase 3</span><h3 class="text-2xl font-bold mt-4 mb-3">Documentación del SGSI</h3><p class="text-gray-600 mb-4">+35 documentos: políticas, procedimientos, formatos y Declaración de Aplicabilidad (SOA).</p><div class="text-sm text-gray-500"><strong>Duración:</strong> 4-6 semanas</div></div>
-        <div class="bg-white border-2 border-blue-600 rounded-xl p-8 shadow-lg"><span class="bg-blue-600 text-white font-bold px-4 py-2 rounded-full text-sm">Fase 4</span><h3 class="text-2xl font-bold mt-4 mb-3">Implementación de Controles</h3><p class="text-gray-600 mb-4">Controles técnicos, organizacionales y físicos. Incluye capacitación a colaboradores.</p><div class="text-sm text-gray-500"><strong>Duración:</strong> 6-10 semanas</div></div>
-        <div class="bg-white border-2 border-blue-600 rounded-xl p-8 shadow-lg"><span class="bg-blue-600 text-white font-bold px-4 py-2 rounded-full text-sm">Fase 5</span><h3 class="text-2xl font-bold mt-4 mb-3">Auditoría Interna</h3><p class="text-gray-600 mb-4">Auditoría completa, no conformidades, acciones correctivas y revisión por la dirección.</p><div class="text-sm text-gray-500"><strong>Duración:</strong> 2-3 semanas</div></div>
-        <div class="bg-white border-2 border-green-600 rounded-xl p-8 shadow-lg"><span class="bg-green-600 text-white font-bold px-4 py-2 rounded-full text-sm">Fase 6</span><h3 class="text-2xl font-bold mt-4 mb-3">Certificación</h3><p class="text-gray-600 mb-4">Auditoría externa (ICONTEC, SGS, Bureau Veritas) hasta emisión del certificado internacional.</p><div class="text-sm text-gray-500"><strong>Duración:</strong> 3-4 semanas</div></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Controles Anexo A -->
-  <section class="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-gray-50 to-blue-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-12"><h2 class="text-4xl font-bold mb-4">Controles Anexo A - ISO 27001:2022</h2><p class="text-xl text-gray-600 max-w-3xl mx-auto">93 controles organizados en 4 categorías temáticas</p></div>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div class="bg-white rounded-xl p-8 shadow-sm border border-gray-200"><h3 class="text-xl font-bold mb-4 flex items-center gap-2"><span class="bg-blue-600 text-white w-8 h-8 rounded-full flex items-center justify-center text-sm">37</span>Controles Organizacionales</h3><p class="text-gray-600">Políticas, gestión de riesgos, roles, recursos humanos, gestión de activos, control de acceso, proveedores e incidentes de seguridad.</p></div>
-        <div class="bg-white rounded-xl p-8 shadow-sm border border-gray-200"><h3 class="text-xl font-bold mb-4 flex items-center gap-2"><span class="bg-purple-600 text-white w-8 h-8 rounded-full flex items-center justify-center text-sm">8</span>Controles de Personas</h3><p class="text-gray-600">Selección de personal, términos de empleo, concienciación, capacitación en seguridad, proceso disciplinario y terminación.</p></div>
-        <div class="bg-white rounded-xl p-8 shadow-sm border border-gray-200"><h3 class="text-xl font-bold mb-4 flex items-center gap-2"><span class="bg-green-600 text-white w-8 h-8 rounded-full flex items-center justify-center text-sm">14</span>Controles Físicos</h3><p class="text-gray-600">Perímetros de seguridad, controles de acceso físico, protección de equipos, escritorio y pantalla limpios.</p></div>
-        <div class="bg-white rounded-xl p-8 shadow-sm border border-gray-200"><h3 class="text-xl font-bold mb-4 flex items-center gap-2"><span class="bg-red-600 text-white w-8 h-8 rounded-full flex items-center justify-center text-sm">34</span>Controles Tecnológicos</h3><p class="text-gray-600">Gestión de acceso, criptografía, seguridad de redes, desarrollo seguro, gestión de logs, backups y DRP.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Preguntas Frecuentes -->
-  <section class="py-16 sm:py-20 lg:py-24 bg-white">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-3xl sm:text-4xl font-bold mb-4 text-center">Preguntas Frecuentes sobre Certificación ISO 27001</h2>
-      <p class="text-gray-600 text-center mb-12">Respondemos las dudas más comunes antes de iniciar el proyecto</p>
-      <div class="space-y-6">
-        <div class="bg-gray-50 border border-gray-200 rounded-xl p-6"><h3 class="font-semibold text-lg mb-2">&iquest;Cuánto cuesta certificarse ISO 27001 en Colombia?</h3><p class="text-gray-600">Empresas pequeñas (10-50 empleados): $35-50 millones COP. Medianas (50-250): $60-120 millones COP. Grandes (+250): desde $150 millones COP. Incluye acompañamiento completo durante 8-12 meses.</p></div>
-        <div class="bg-gray-50 border border-gray-200 rounded-xl p-6"><h3 class="font-semibold text-lg mb-2">&iquest;Necesitamos contratar consultoría externa?</h3><p class="text-gray-600">El 85% de empresas que intentan certificarse sin consultoría fracasan o tardan +18 meses. La consultoría acelera el proceso a 8-10 meses y aumenta la probabilidad de aprobación.</p></div>
-        <div class="bg-gray-50 border border-gray-200 rounded-xl p-6"><h3 class="font-semibold text-lg mb-2">&iquest;Qué diferencia hay entre ISO 27001 e ISO 27002?</h3><p class="text-gray-600">ISO 27001 es la norma <strong>certificable</strong> con requisitos obligatorios. ISO 27002 es una guía de <strong>mejores prácticas</strong>. Solo 27001 es auditable por organismos de certificación.</p></div>
-        <div class="bg-gray-50 border border-gray-200 rounded-xl p-6"><h3 class="font-semibold text-lg mb-2">&iquest;Necesitamos implementar los 93 controles?</h3><p class="text-gray-600">No. Debe documentar qué controles aplican en la Declaración de Aplicabilidad (SOA). Lo común es implementar 75-85 controles con justificación documentada.</p></div>
-        <div class="bg-gray-50 border border-gray-200 rounded-xl p-6"><h3 class="font-semibold text-lg mb-2">&iquest;Cómo elegir el organismo certificador?</h3><p class="text-gray-600">ICONTEC (nacional, más económico), SGS y Bureau Veritas (globales). Todos los acreditados por ONAC emiten certificados con la misma validez internacional.</p></div>
-        <div class="bg-gray-50 border border-gray-200 rounded-xl p-6"><h3 class="font-semibold text-lg mb-2">&iquest;Qué pasa después de obtener el certificado?</h3><p class="text-gray-600">Vigencia de 3 años con auditorías de seguimiento anuales. Debe realizar auditorías internas, revisiones gerenciales y mantener registros de incidentes y capacitaciones.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA Final -->
-  <section class="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-blue-600 to-cyan-600">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="bg-white rounded-2xl shadow-2xl overflow-hidden">
-        <div class="grid grid-cols-1 lg:grid-cols-5">
-          <div class="lg:col-span-3 p-8 lg:p-12">
-            <h2 class="text-3xl font-bold mb-4 text-gray-900">Diagnóstico Gratuito ISO 27001</h2>
-            <p class="text-gray-600 mb-8">Obtenga un análisis personalizado de brechas, estimación de inversión y roadmap de certificación sin costo ni compromiso.</p>
-            <form action="/gracias" method="GET" class="space-y-4">
-              <input type="text" placeholder="Nombre completo" class="w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600" />
-              <input type="email" placeholder="Correo corporativo" class="w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600" />
-              <input type="tel" placeholder="Teléfono" class="w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600" />
-              <select class="w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"><option>Tamaño de la empresa</option><option>1-50 empleados</option><option>51-250 empleados</option><option>251-1000 empleados</option><option>+1000 empleados</option></select>
-              <select class="w-full px-4 py-3 bg-gray-50 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600"><option>Industria</option><option>Tecnología / Software</option><option>Servicios Financieros</option><option>Salud</option><option>Manufactura</option><option>Retail / E-commerce</option><option>Educación</option><option>Otro</option></select>
-              <button type="submit" class="w-full bg-blue-600 text-white font-semibold px-6 py-4 rounded-lg hover:bg-blue-700 transition shadow-lg focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2">Solicitar Diagnóstico Gratuito</button>
-            </form>
-            <p class="text-xs text-gray-500 mt-4">Respuesta en menos de 4 horas hábiles. Sesión virtual de 45 minutos con consultor certificado.</p>
-          </div>
-          <div class="lg:col-span-2 bg-gradient-to-br from-gray-900 to-gray-800 p-8 lg:p-12 flex flex-col justify-center">
-            <h3 class="text-lg font-semibold text-white mb-6">Recibira:</h3>
-            <div class="space-y-4">
-              <div class="flex items-start gap-3"><div class="bg-blue-600 rounded-full p-1 mt-1"><svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 16 16"><path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/></svg></div><div><h4 class="text-white font-semibold text-sm mb-1">Informe de Brechas</h4><p class="text-gray-400 text-xs">Estado actual vs. requisitos ISO 27001:2022</p></div></div>
-              <div class="flex items-start gap-3"><div class="bg-blue-600 rounded-full p-1 mt-1"><svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 16 16"><path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/></svg></div><div><h4 class="text-white font-semibold text-sm mb-1">Cotización Detallada</h4><p class="text-gray-400 text-xs">Inversión completa consultoría + certificación</p></div></div>
-              <div class="flex items-start gap-3"><div class="bg-blue-600 rounded-full p-1 mt-1"><svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 16 16"><path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/></svg></div><div><h4 class="text-white font-semibold text-sm mb-1">Roadmap de Certificación</h4><p class="text-gray-400 text-xs">Cronograma realista con hitos y entregables</p></div></div>
-              <div class="flex items-start gap-3"><div class="bg-blue-600 rounded-full p-1 mt-1"><svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 16 16"><path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/></svg></div><div><h4 class="text-white font-semibold text-sm mb-1">Casos de Éxito</h4><p class="text-gray-400 text-xs">Referencias de su industria en Colombia</p></div></div>
-            </div>
-            <div class="mt-8 pt-6 border-t border-gray-700"><p class="text-gray-400 text-xs">Consultores certificados Lead Implementer ISO 27001 y Lead Auditor con +50 certificaciones exitosas</p></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Soluciones Relacionadas -->
-  <section class="py-12 bg-gray-50 border-t border-gray-200">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-lg font-bold text-gray-900 mb-6">Soluciones Relacionadas</h2>
-      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
-        <a href="/sealpath" class="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-all duration-300 text-center">
-          <p class="font-semibold text-sm text-gray-900">SealPath</p>
-          <p class="text-xs text-gray-500 mt-1">Seguridad de datos</p>
-        </a>
-        <a href="/netwrix" class="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-all duration-300 text-center">
-          <p class="font-semibold text-sm text-gray-900">Netwrix</p>
-          <p class="text-xs text-gray-500 mt-1">Auditoria identidad</p>
-        </a>
-        <a href="/hacking-etico" class="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-all duration-300 text-center">
-          <p class="font-semibold text-sm text-gray-900">Hacking Ético</p>
-          <p class="text-xs text-gray-500 mt-1">Pentesting</p>
-        </a>
-        <a href="/black-duck" class="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-all duration-300 text-center">
-          <p class="font-semibold text-sm text-gray-900">Black Duck</p>
-          <p class="text-xs text-gray-500 mt-1">AppSec SAST/DAST</p>
-        </a>
-      </div>
-      <h3 class="text-lg font-bold text-gray-900 mt-8 mb-4">Recursos del Blog</h3>
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-        <a href="/blog/iso-27001-regulaciones" class="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-all duration-300">
-          <p class="text-xs font-bold text-emerald-700 uppercase tracking-wide mb-1">Cumplimiento</p>
-          <p class="font-semibold text-sm text-gray-900">Cambios ISO 27001:2022 y su impacto</p>
-        </a>
-        <a href="/blog/zero-trust-2025" class="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-all duration-300">
-          <p class="text-xs font-bold text-blue-600 uppercase tracking-wide mb-1">Guia</p>
-          <p class="font-semibold text-sm text-gray-900">Zero Trust como complemento de ISO 27001</p>
-        </a>
-        <a href="/informe-ciberseguridad-colombia-2026" class="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition-all duration-300">
-          <p class="text-xs font-bold text-red-700 uppercase tracking-wide mb-1">Informe</p>
-          <p class="font-semibold text-sm text-gray-900">Ciberseguridad Colombia 2026</p>
-        </a>
-      </div>
-    </div>
-  </section>
+    <section class="iso-related" aria-label="Soluciones y recursos relacionados">
+      <h2>Soluciones relacionadas</h2>
+      <ul>
+        <li><a href="/hacking-etico">Hacking ético</a><span>Pentesting profesional</span></li>
+        <li><a href="/sealpath">SealPath IRM</a><span>Protección de documentos</span></li>
+        <li><a href="/stellar-cyber">Stellar Cyber</a><span>SOC con Open XDR</span></li>
+        <li><a href="/bitdefender">Bitdefender GravityZone</a><span>EDR/XDR empresarial</span></li>
+      </ul>
+      <h2>Recursos del blog</h2>
+      <ul>
+        <li>
+          <a href="/blog/iso-27001-regulaciones">Cambios de ISO 27001:2022 y su impacto</a>
+          <span>Cumplimiento</span>
+        </li>
+        <li>
+          <a href="/blog/zero-trust-2025">Zero Trust como complemento de ISO 27001</a>
+          <span>Guía</span>
+        </li>
+        <li>
+          <a href="/informe-ciberseguridad-colombia-2026">Ciberseguridad Colombia 2026</a>
+          <span>Informe</span>
+        </li>
+      </ul>
+    </section>
+  </main>
 
   <Footer />
   <WhatsAppButton />
 </BaseLayout>
+
+<script>
+  const faqContainer = document.querySelector<HTMLElement>('[data-faq]');
+  if (faqContainer) {
+    const items = faqContainer.querySelectorAll<HTMLDetailsElement>('details[data-faq-item]');
+    items.forEach((item) => {
+      item.addEventListener('toggle', () => {
+        if (!item.open) return;
+        items.forEach((other) => {
+          if (other !== item) other.open = false;
+        });
+      });
+    });
+  }
+
+  const forms = document.querySelectorAll<HTMLFormElement>('form[data-lead-form]');
+  forms.forEach((form) => {
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const data = new FormData(form);
+      const lines = [
+        'Solicitud de diagnóstico gratuito ISO 27001',
+        '',
+        `Nombre: ${data.get('nombre') ?? ''}`,
+        `Empresa: ${data.get('empresa') ?? ''}`,
+        `Email: ${data.get('email') ?? ''}`,
+        `Teléfono: ${data.get('telefono') ?? ''}`,
+      ];
+      const cargo = data.get('cargo');
+      if (cargo) lines.push(`Cargo: ${cargo}`);
+      const empleados = data.get('empleados');
+      if (empleados) lines.push(`Número de empleados: ${empleados}`);
+      const mensaje = data.get('mensaje');
+      if (mensaje) lines.push('', 'Mensaje:', String(mensaje));
+
+      const subject = `Solicitud ISO 27001 — ${data.get('empresa') ?? data.get('nombre') ?? 'sin empresa'}`;
+      const mailto = `mailto:${'contacto@star-ti.com'}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(lines.join('\n'))}`;
+      window.location.href = mailto;
+
+      const notice = document.createElement('p');
+      notice.className = 'iso-lead-form__notice';
+      notice.textContent = '✓ Se abrió tu cliente de correo. Si no se abre, escríbenos a contacto@star-ti.com.';
+      form.replaceWith(notice);
+    });
+  });
+</script>
+
+<style is:global>
+  .iso-landing { color: #131A2A; }
+  .iso-landing *:focus-visible { outline: 2px solid #E8232B; outline-offset: 2px; border-radius: 4px; }
+  .iso-landing__skip {
+    position: absolute; top: -40px; left: 16px; background: #0C1120; color: #FFFFFF; padding: 10px 16px; border-radius: 8px; z-index: 60;
+  }
+  .iso-landing__skip:focus { top: 16px; }
+
+  .iso-section { max-width: 1200px; margin: 0 auto; padding: 80px 24px; scroll-margin-top: 80px; }
+  .iso-section--alt { background: #F5F7FA; max-width: none; }
+  .iso-section--alt > * { max-width: 1200px; margin: 0 auto; }
+  .iso-section--dark { background: #0C1120; color: #FFFFFF; max-width: none; }
+  .iso-section--dark > * { max-width: 1200px; margin: 0 auto; }
+  .iso-section--cta { background: radial-gradient(800px 480px at 50% 0%, rgba(190,30,45,0.3), transparent 65%), #0C1120; color: #FFFFFF; max-width: none; padding: 96px 24px; }
+  .iso-section--cta > * { max-width: 720px; margin: 0 auto; }
+  .iso-section__header { max-width: 720px; margin: 0 auto 48px; text-align: center; }
+  .iso-section__header h2 { font-size: clamp(28px, 3.2vw, 44px); line-height: 1.12; letter-spacing: -0.02em; font-weight: 800; margin: 16px 0 0; }
+  .iso-section__header p { margin: 16px auto 0; color: #5B6474; font-size: 17px; line-height: 1.6; max-width: 640px; }
+  .iso-section--dark .iso-section__header p, .iso-section--cta .iso-section__header p { color: #B7C0D2; }
+  .iso-section__punchline { max-width: 720px; margin: 48px auto 0; text-align: center; font-size: clamp(19px, 2vw, 24px); font-weight: 700; letter-spacing: -0.01em; line-height: 1.4; }
+  .iso-section__punchline em { color: #E8232B; font-style: normal; }
+
+  .iso-badge { display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; border-radius: 999px; font-size: 12.5px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+  .iso-badge--accent { background: rgba(232,35,43,0.08); border: 1px solid rgba(232,35,43,0.22); color: #B81620; }
+  .iso-badge--blue { background: rgba(76,154,255,0.1); border: 1px solid rgba(76,154,255,0.25); color: #2568C8; }
+  .iso-badge--green { background: rgba(31,163,92,0.08); border: 1px solid rgba(31,163,92,0.25); color: #187A47; }
+  .iso-badge--dark { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); color: #C9D2E3; }
+  .iso-badge--on-dark { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.14); color: #FFFFFF; }
+
+  .iso-definition { max-width: 840px; margin: 0 auto; display: flex; flex-direction: column; gap: 18px; font-size: 17px; line-height: 1.7; color: #3B4456; }
+  .iso-definition p { margin: 0; }
+  .iso-definition__lead { font-size: 19px; font-weight: 600; color: #131A2A; background: #F8FAFC; border-left: 4px solid #E8232B; padding: 18px 22px; border-radius: 0 12px 12px 0; }
+  .iso-definition a { color: #E8232B; font-weight: 600; }
+  .iso-definition a:hover { color: #B81620; }
+
+  .iso-grid { display: grid; gap: 24px; }
+  .iso-grid--3 { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+  .iso-grid--metrics { max-width: 880px; margin: 32px auto 0; }
+
+  .iso-card { background: #FFFFFF; border: 1px solid #E8ECF2; border-radius: 18px; padding: 30px 28px; display: flex; flex-direction: column; gap: 12px; }
+  .iso-card--plain { background: #FFFFFF; }
+  .iso-card--muted { background: #F8FAFC; }
+  .iso-card h3 { font-size: 19px; font-weight: 700; margin: 0; }
+  .iso-card p { color: #5B6474; font-size: 15.5px; line-height: 1.65; margin: 0; }
+  .iso-card__number { font-family: 'JetBrains Mono', 'Space Grotesk', ui-monospace, monospace; font-size: 13px; font-weight: 700; letter-spacing: 0.18em; color: #E8232B; }
+
+  .iso-phase { display: flex; align-items: center; gap: 12px; }
+  .iso-phase__bubble { width: 38px; height: 38px; border-radius: 999px; background: #E8232B; color: #FFFFFF; font-weight: 800; display: inline-grid; place-items: center; font-size: 16px; }
+  .iso-phase__label { font-family: 'JetBrains Mono', 'Space Grotesk', ui-monospace, monospace; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #8A93A6; }
+
+  .iso-pill { display: inline-flex; align-items: center; gap: 10px; padding: 12px 22px; border-radius: 999px; background: rgba(31,163,92,0.08); border: 1px solid rgba(31,163,92,0.25); color: #187A47; font-weight: 700; font-size: 15px; margin: 32px auto 0; }
+  .iso-pill span { color: #187A47; }
+
+  .iso-section__chips { display: flex; flex-direction: column; align-items: center; gap: 14px; margin: 32px 0; }
+  .iso-section__chip-eyebrow { font-family: 'JetBrains Mono', 'Space Grotesk', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #8A93A6; }
+  .iso-section__chips ul { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; padding: 0; margin: 0; list-style: none; }
+  .iso-section__chips li { padding: 8px 18px; border-radius: 999px; background: #FFFFFF; border: 1px solid #E8ECF2; font-size: 14px; font-weight: 600; color: #131A2A; }
+
+  .iso-metric { background: #FFFFFF; border: 1px solid #E8ECF2; border-radius: 18px; padding: 28px 24px; text-align: center; display: flex; flex-direction: column; gap: 6px; }
+  .iso-metric strong { font-size: 34px; font-weight: 800; letter-spacing: -0.02em; color: #E8232B; }
+  .iso-metric span { font-size: 14px; color: #3B4456; font-weight: 600; }
+
+  .iso-testimonial { background: #FFFFFF; border: 1px solid #E8ECF2; border-radius: 18px; padding: 28px; display: flex; flex-direction: column; gap: 16px; margin: 0; }
+  .iso-testimonial blockquote { font-size: 16px; line-height: 1.65; color: #2A3242; margin: 0; }
+  .iso-testimonial figcaption { font-size: 14px; font-weight: 600; color: #8A93A6; }
+
+  .iso-steps { list-style: none; padding: 0; margin: 0; display: grid; gap: 28px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); counter-reset: step; }
+  .iso-step { text-align: center; display: flex; flex-direction: column; gap: 12px; padding: 0 16px; }
+  .iso-step__number { width: 60px; height: 60px; border-radius: 999px; background: #0C1120; color: #FFFFFF; display: inline-grid; place-items: center; font-weight: 800; font-size: 20px; border: 3px solid #E8232B; margin: 0 auto; }
+  .iso-step h3 { font-size: 19px; font-weight: 700; margin: 0; }
+  .iso-step p { color: #5B6474; font-size: 15.5px; line-height: 1.6; margin: 0; }
+
+  .iso-case { display: grid; gap: 32px; grid-template-columns: minmax(280px, 1fr) minmax(320px, 1.2fr); align-items: start; }
+  .iso-case__intro ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 14px; }
+  .iso-case__intro li { display: flex; gap: 10px; align-items: baseline; font-size: 16px; line-height: 1.55; color: #C9D2E3; }
+  .iso-case__intro li span { color: #35C476; font-weight: 700; }
+  .iso-case__timeline { display: flex; flex-direction: column; gap: 14px; }
+  .iso-case__row { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 14px; padding: 18px 22px; display: flex; gap: 18px; align-items: baseline; border-left: 4px solid var(--accent, #4C9AFF); }
+  .iso-case__tag { font-family: 'JetBrains Mono', 'Space Grotesk', ui-monospace, monospace; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent, #4C9AFF); width: 110px; flex-shrink: 0; }
+  .iso-case__row p { margin: 0; font-size: 15px; line-height: 1.6; color: #E3E8F0; }
+
+  .iso-faq { display: flex; flex-direction: column; gap: 12px; max-width: 820px; margin: 0 auto; }
+  .iso-faq__item { background: #FFFFFF; border: 1px solid #E8ECF2; border-radius: 14px; overflow: hidden; transition: border-color 160ms ease; }
+  .iso-faq__item[open] { border-color: #E8232B; }
+  .iso-faq__item summary { list-style: none; cursor: pointer; padding: 20px 24px; display: flex; justify-content: space-between; gap: 16px; align-items: center; font-weight: 700; font-size: 16.5px; color: #131A2A; }
+  .iso-faq__item summary::-webkit-details-marker { display: none; }
+  .iso-faq__item summary:focus-visible { outline: 2px solid #E8232B; outline-offset: -2px; }
+  .iso-faq__icon { position: relative; width: 16px; height: 16px; flex-shrink: 0; }
+  .iso-faq__icon::before, .iso-faq__icon::after { content: ''; position: absolute; left: 50%; top: 50%; width: 14px; height: 2px; background: #E8232B; transform: translate(-50%, -50%); transition: transform 160ms ease; }
+  .iso-faq__icon::after { transform: translate(-50%, -50%) rotate(90deg); }
+  .iso-faq__item[open] .iso-faq__icon::after { transform: translate(-50%, -50%) rotate(0); }
+  .iso-faq__item p { padding: 0 24px 22px; margin: 0; font-size: 15.5px; line-height: 1.65; color: #5B6474; }
+
+  .iso-hero { background: radial-gradient(900px 520px at 18% 30%, rgba(190,30,45,0.35), transparent 65%), radial-gradient(700px 500px at 85% 80%, rgba(30,60,120,0.25), transparent 60%), #0C1120; color: #FFFFFF; padding: 80px 24px 96px; }
+  .iso-hero__inner { max-width: 1200px; margin: 0 auto; display: grid; gap: 56px; grid-template-columns: minmax(300px, 1.1fr) minmax(300px, 1fr); align-items: center; }
+  .iso-hero__content { display: flex; flex-direction: column; gap: 24px; }
+  .iso-hero h1 { font-size: clamp(34px, 4.2vw, 56px); line-height: 1.08; letter-spacing: -0.025em; font-weight: 800; margin: 0; }
+  .iso-hero__lede { font-size: clamp(16px, 1.4vw, 19px); line-height: 1.6; color: #B7C0D2; margin: 0; }
+  .iso-hero__benefits { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; }
+  .iso-hero__benefits li { display: flex; gap: 10px; font-size: 16px; color: #E3E8F0; }
+  .iso-hero__benefits li span { color: #35C476; font-weight: 700; }
+  .iso-hero__disclaimer { font-size: 13px; color: #7E8AA0; margin: 0; }
+  .iso-hero__terminal { position: relative; min-width: 0; }
+  .iso-terminal { background: #151B2B; border: 1px solid rgba(255,255,255,0.08); border-radius: 18px; box-shadow: 0 30px 60px rgba(0,0,0,0.45); overflow: hidden; }
+  .iso-terminal__bar { display: flex; align-items: center; gap: 8px; padding: 12px 18px; background: #1B2236; border-bottom: 1px solid rgba(255,255,255,0.06); }
+  .iso-terminal__dot { width: 11px; height: 11px; border-radius: 999px; }
+  .iso-terminal__dot--red { background: #FF5F57; }
+  .iso-terminal__dot--amber { background: #FEBC2E; }
+  .iso-terminal__dot--green { background: #28C840; }
+  .iso-terminal__file { margin-left: 8px; font-family: 'JetBrains Mono', 'Space Grotesk', ui-monospace, monospace; font-size: 12px; color: #8A93A6; }
+  .iso-terminal__log { list-style: none; padding: 24px 22px 28px; margin: 0; font-family: 'JetBrains Mono', 'Space Grotesk', ui-monospace, monospace; font-size: 13.5px; line-height: 2.05; color: #C9D2E3; display: flex; flex-direction: column; gap: 2px; }
+  .iso-terminal__tag { font-weight: 700; margin-right: 6px; }
+  .iso-terminal__tag--green { color: #35C476; }
+  .iso-terminal__tag--blue { color: #4C9AFF; }
+  .iso-terminal__tag--amber { color: #FEBC2E; }
+  .iso-terminal__tag--red { color: #FF6B72; }
+  .iso-terminal__tag--purple { color: #B48CFF; }
+  .iso-terminal__cursor { display: inline-block; width: 8px; height: 16px; background: #C9D2E3; margin-left: 6px; vertical-align: text-bottom; animation: iso-blink 1.1s infinite; }
+  @keyframes iso-blink { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
+  .iso-hero__card { position: absolute; right: -16px; bottom: -28px; background: #FFFFFF; color: #131A2A; border-radius: 16px; padding: 18px 22px; box-shadow: 0 20px 45px rgba(0,0,0,0.35); min-width: 200px; }
+  .iso-hero__card-eyebrow { font-size: 14px; font-weight: 600; color: #3B4456; margin: 0; }
+  .iso-hero__card-title { font-size: 30px; font-weight: 800; color: #E8232B; letter-spacing: -0.02em; margin: 4px 0 0; }
+  .iso-hero__card-meta { font-size: 13px; color: #187A47; font-weight: 600; margin: 4px 0 0; }
+
+  .iso-lead-form { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; padding: 22px; border-radius: 20px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); }
+  .iso-lead-form--with-message { grid-template-columns: 1fr 1fr; }
+  .iso-lead-form label { display: flex; flex-direction: column; gap: 6px; font-size: 12.5px; font-weight: 600; color: #B7C0D2; }
+  .iso-lead-form input, .iso-lead-form select, .iso-lead-form textarea { padding: 12px 14px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.18); background: rgba(255,255,255,0.06); color: #FFFFFF; font-size: 14.5px; font-family: inherit; outline: none; transition: border-color 160ms ease, background 160ms ease; }
+  .iso-lead-form input::placeholder, .iso-lead-form textarea::placeholder { color: #8A93A6; }
+  .iso-lead-form input:focus, .iso-lead-form select:focus, .iso-lead-form textarea:focus { border-color: #E8232B; background: rgba(255,255,255,0.1); }
+  .iso-lead-form select option { color: #131A2A; }
+  .iso-lead-form textarea { resize: vertical; min-height: 90px; }
+  .iso-lead-form__message { grid-column: 1 / -1; }
+  .iso-lead-form button { grid-column: 1 / -1; padding: 14px 22px; border: none; border-radius: 999px; background: #E8232B; color: #FFFFFF; font-size: 15px; font-weight: 700; cursor: pointer; transition: background 160ms ease; font-family: inherit; }
+  .iso-lead-form button:hover { background: #B81620; }
+  .iso-lead-form__notice { padding: 14px 18px; border-radius: 14px; background: rgba(53,196,118,0.12); border: 1px solid rgba(53,196,118,0.4); color: #1FA35C; font-size: 14px; font-weight: 600; }
+
+  .iso-cta { text-align: center; }
+  .iso-cta h2 { font-size: clamp(30px, 3.6vw, 50px); line-height: 1.1; letter-spacing: -0.025em; font-weight: 800; margin: 18px 0 0; }
+  .iso-cta p { font-size: 18px; line-height: 1.65; color: #B7C0D2; max-width: 620px; margin: 18px auto 0; }
+  .iso-cta__panel { margin: 32px auto 0; padding: 30px; border-radius: 20px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); text-align: left; }
+  .iso-cta__panel h3 { font-size: 16px; font-weight: 700; margin: 0 0 16px; color: #FFFFFF; }
+  .iso-cta__panel ul { list-style: none; padding: 0; margin: 0 0 24px; display: flex; flex-direction: column; gap: 10px; }
+  .iso-cta__panel li { display: flex; gap: 10px; align-items: baseline; font-size: 15px; color: #C9D2E3; }
+  .iso-cta__panel li span { color: #35C476; font-weight: 700; }
+  .iso-cta__panel .iso-lead-form { background: transparent; border: none; padding: 0; }
+  .iso-cta__alt { margin-top: 24px; display: flex; flex-direction: column; gap: 10px; align-items: center; }
+  .iso-cta__whatsapp { display: inline-flex; align-items: center; gap: 8px; padding: 10px 18px; border-radius: 999px; background: #1FA35C; color: #FFFFFF; font-weight: 700; font-size: 14.5px; text-decoration: none; transition: background 160ms ease; }
+  .iso-cta__whatsapp:hover { background: #17864B; color: #FFFFFF; }
+  .iso-cta__alt p { font-size: 13px; color: #7E8AA0; margin: 0; }
+  .iso-cta__alt a { color: #B7C0D2; }
+
+  .iso-related { background: #F5F7FA; padding: 60px 24px; }
+  .iso-related h2 { font-size: 20px; font-weight: 700; margin: 0 0 16px; }
+  .iso-related h2 + ul { margin-bottom: 32px; }
+  .iso-related ul { list-style: none; padding: 0; margin: 0 0 16px; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+  .iso-related li { background: #FFFFFF; border: 1px solid #E8ECF2; border-radius: 12px; padding: 14px 16px; display: flex; flex-direction: column; gap: 4px; }
+  .iso-related a { font-weight: 600; color: #131A2A; }
+  .iso-related span { font-size: 12px; color: #8A93A6; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700; }
+
+  @media (max-width: 960px) {
+    .iso-hero__inner { grid-template-columns: 1fr; }
+    .iso-hero__terminal { margin-top: 24px; }
+    .iso-hero__card { position: static; margin: 16px auto 0; width: fit-content; }
+    .iso-lead-form { grid-template-columns: 1fr; }
+    .iso-case { grid-template-columns: 1fr; }
+    .iso-case__row { flex-direction: column; align-items: flex-start; gap: 8px; }
+    .iso-case__tag { width: auto; }
+  }
+  @media (max-width: 600px) {
+    .iso-section { padding: 60px 18px; }
+    .iso-hero { padding: 56px 18px 72px; }
+  }
+</style>

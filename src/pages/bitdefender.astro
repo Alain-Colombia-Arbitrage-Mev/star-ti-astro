@@ -3,7 +3,7 @@ import BaseLayout from '@layouts/BaseLayout.astro';
 import Navbar from '@components/Navbar.astro';
 import Footer from '@components/Footer.astro';
 import WhatsAppButton from '@components/WhatsAppButton.astro';
-import { seoData } from '@data/seo';
+import { seoData, BASE_URL } from '@data/seo';
 
 const seo = seoData.bitdefender;
 
@@ -74,7 +74,7 @@ const serviceSchema = {
   provider: {
     '@type': 'Organization',
     name: 'Starsolution S.A.S.',
-    url: 'https://starsolution.com.co',
+    url: BASE_URL,
     telephone: '+573007010017',
     address: {
       '@type': 'PostalAddress',
@@ -84,7 +84,7 @@ const serviceSchema = {
     },
   },
   areaServed: { '@type': 'Country', name: 'Colombia' },
-  url: 'https://starsolution.com.co/bitdefender',
+  url: `${BASE_URL}/bitdefender/`,
   audience: { '@type': 'BusinessAudience', audienceType: 'Empresas medianas y grandes' },
   offers: {
     '@type': 'Offer',

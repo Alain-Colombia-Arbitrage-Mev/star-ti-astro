@@ -1,3 +1,5 @@
+import { isoFaqs } from './iso27001Landing';
+
 export interface SEOData {
   title: string;
   description: string;
@@ -17,7 +19,11 @@ export interface SEOData {
   faqJsonLd?: Record<string, unknown>;
 }
 
-const BASE_URL = 'https://starsolution.com.co';
+// Dominio canonico del sitio. Fuente unica de verdad: BaseLayout.astro y
+// sitemap.xml.ts lo importan desde aqui. El unico otro literal vive en
+// astro.config.ts (`site`), que por ser fichero de configuracion no importa
+// codigo de src/. Si cambia el dominio, hay que tocar ambos.
+export const BASE_URL = 'https://star-ti.com';
 const ORG = { '@type': 'Organization' as const, name: 'Starsolution S.A.S.', url: BASE_URL };
 
 // Clusters hreflang: solo páginas con equivalente regional real
@@ -312,23 +318,56 @@ export const seoData: Record<string, SEOData> = {
   // STAR COMPLIANCE
   // =====================================================
   iso27001: {
-    title: 'Consultoría ISO 27001 Colombia | Starsolution',
-    description: 'Consultoría ISO 27001: gap analysis, implementación SGSI y certificación. Más de 50 proyectos exitosos en sectores regulados. Diagnóstico gratis.',
-    keywords: 'ISO 27001 Colombia, consultoría ISO 27001, certificación SGSI, auditoría seguridad información, gap analysis Bogotá',
+    title: 'Consultoría ISO 27001 en Colombia | Starsolution',
+    description: 'Implementamos y certificamos su SGSI ISO 27001 en 6-12 meses: gap analysis, controles del Anexo A y acompañamiento en auditoría externa. Diagnóstico gratuito.',
+    keywords: 'ISO 27001 Colombia, consultoría ISO 27001, certificación ISO 27001, certificación SGSI, auditoría ISO 27001, gap analysis seguridad información, implementación ISO 27001, Anexo A, declaración de aplicabilidad, ISO 27001 Bogotá, ISO 27001 precio',
     canonical: `${BASE_URL}/iso27001/`,
-    ogTitle: 'Consultoría y Certificación ISO 27001',
+    ogTitle: 'Consultoría ISO 27001 en Colombia | Starsolution',
     ogType: 'website',
     ogImage: `${BASE_URL}/og-default.png`,
     breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Star Compliance', url: '/#star-compliance' }, { name: 'ISO 27001', url: '/iso27001/' }],
-    jsonLd: service('Consultoría ISO 27001', 'ISO 27001 Certification Consulting'),
-    faqJsonLd: faqSchema([
-      { q: 'Cuánto cuesta certificarse ISO 27001 en Colombia?', a: 'Para empresas pequeñas el costo total oscila entre 35 y 50 millones de COP; medianas entre 60 y 120 millones; grandes organizaciones superan los 150 millones. Esto incluye 8 a 12 meses de acompañamiento hasta la certificación.' },
-      { q: 'Necesitamos contratar consultoría externa?', a: 'El 85% de las empresas que intentan certificarse sin consultoría fracasan o tardan más de 2 años. Con acompañamiento especializado, el proceso se completa en 8 a 10 meses con alta probabilidad de exito en la primera auditoría.' },
-      { q: 'Qué diferencia hay entre ISO 27001 e ISO 27002?', a: 'ISO 27001 es la norma certificable que establece requisitos obligatorios para el SGSI. ISO 27002 es una guia de buenas prácticas de referencia; no tiene requisitos obligatorios y no es certificable.' },
-      { q: 'Necesitamos implementar los 93 controles?', a: 'No. Una organización tipica implementa entre 75 y 85 controles. Los controles excluidos deben justificarse documentalmente en la Declaracion de Aplicabilidad (SOA).' },
-      { q: 'Cómo elegir el organismo certificador?', a: 'ICONTEC es la opcion nacional con costos menores; SGS y Bureau Veritas tienen reconocimiento global. Los tres estan acreditados por ONAC y el certificado tiene la misma validez internacional.' },
-      { q: 'Qué pasa despues de obtener el certificado?', a: 'El certificado tiene una vigencia de 3 años. Durante ese período se realizan auditorías de vigilancia anuales, además de auditorías internas periodicas y revisiones por la direccion para mantener el SGSI.' },
-    ]),
+    jsonLd: {
+      '@context': 'https://schema.org',
+      '@graph': [
+        {
+          '@type': 'Service',
+          '@id': `${BASE_URL}/iso27001/#service`,
+          name: 'Consultoría ISO 27001 en Colombia',
+          serviceType: 'ISO 27001 Certification Consulting',
+          url: `${BASE_URL}/iso27001/`,
+          image: `${BASE_URL}/og-default.png`,
+          description: 'Consultoría ISO 27001: diagnóstico de brechas, implementación del SGSI, acompañamiento en auditoría externa y soporte post-certificación. Más de 50 empresas certificadas con consultores Lead Implementer y Lead Auditor.',
+          provider: { '@type': 'Organization', '@id': `${BASE_URL}/#organization`, name: 'Starsolution S.A.S.', url: BASE_URL },
+          areaServed: [
+            { '@type': 'Country', name: 'Colombia' },
+            { '@type': 'City', name: 'Bogotá' },
+            { '@type': 'City', name: 'Medellín' },
+            { '@type': 'City', name: 'Cali' },
+          ],
+          offers: {
+            '@type': 'Offer',
+            availability: 'https://schema.org/InStock',
+            url: `${BASE_URL}/iso27001/`,
+            priceSpecification: { '@type': 'PriceSpecification', priceCurrency: 'COP', minPrice: 35000000, maxPrice: 150000000 },
+          },
+          aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '53', bestRating: '5' },
+          serviceOutput: { '@type': 'Thing', name: 'Certificado ISO/IEC 27001:2022' },
+        },
+        {
+          '@type': 'WebPage',
+          '@id': `${BASE_URL}/iso27001/#webpage`,
+          url: `${BASE_URL}/iso27001/`,
+          name: 'Consultoría ISO 27001 en Colombia | Starsolution',
+          description: 'Implementamos y certificamos su SGSI ISO 27001 en 6-12 meses: gap analysis, controles del Anexo A y acompañamiento en auditoría externa. Diagnóstico gratuito.',
+          inLanguage: 'es-CO',
+          isPartOf: { '@type': 'WebSite', '@id': `${BASE_URL}/#website`, url: BASE_URL, name: 'Starsolution' },
+          about: { '@id': `${BASE_URL}/iso27001/#service` },
+          datePublished: '2026-07-18',
+          dateModified: '2026-07-18',
+        },
+      ],
+    },
+    faqJsonLd: faqSchema(isoFaqs.map((f) => ({ q: f.question, a: f.answer }))),
   },
   sealpath: {
     title: 'SealPath IRM | Protección de Documentos | Starsolution',
@@ -920,7 +959,7 @@ export const seoData: Record<string, SEOData> = {
     },
     faqJsonLd: faqSchema([
       { q: '¿De dónde provienen los datos del informe?', a: 'Los datos provienen de tres fuentes: (1) análisis anonimizado de incidentes en nuestra base de más de 3,000 clientes empresariales en Colombia, (2) bases de datos públicas de brechas como COLCERT, Policía Nacional y Have I Been Pwned, y (3) el Verizon Data Breach Investigations Report (DBIR) con contexto latinoamericano.' },
-      { q: '¿Puedo citar este informe en presentaciones académicas o corporativas?', a: 'Sí. Este informe es de libre difusión para uso académico, periodístico y corporativo, siempre que se cite la fuente como: "Starsolution S.A.S. – Informe de Ciberseguridad Empresarial Colombia 2026, starsolution.com.co". Para uso comercial o redistribución masiva, contáctenos.' },
+      { q: '¿Puedo citar este informe en presentaciones académicas o corporativas?', a: 'Sí. Este informe es de libre difusión para uso académico, periodístico y corporativo, siempre que se cite la fuente como: "Starsolution S.A.S. – Informe de Ciberseguridad Empresarial Colombia 2026, star-ti.com". Para uso comercial o redistribución masiva, contáctenos.' },
       { q: '¿Cada cuánto se actualiza el informe?', a: 'El informe se publica anualmente cada enero con los datos del año anterior. Sin embargo, actualizamos las estadísticas clave trimestralmente cuando ocurren incidentes significativos en el ecosistema colombiano. Suscríbase a nuestra lista para recibir actualizaciones automáticas.' },
       { q: '¿Mi empresa podría estar en riesgo según los datos del informe?', a: 'Estadísticamente, el 73% de empresas colombianas sufrió al menos un incidente de seguridad en 2025. Si su empresa opera en los sectores financiero, salud, gobierno o manufactura, el riesgo es aún mayor. Ofrecemos un diagnóstico gratuito de exposición que analiza su superficie de ataque en menos de 48 horas.' },
       { q: '¿Cómo solicito un diagnóstico personalizado de ciberseguridad?', a: 'Puede solicitar su diagnóstico gratuito en nuestra página de contacto o escribiéndonos a contacto@star-ti.com. El diagnóstico incluye análisis de superficie de ataque externa, revisión de credenciales filtradas y un reporte ejecutivo con prioridades de remediación, sin costo ni compromiso.' },
