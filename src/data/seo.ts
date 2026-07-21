@@ -768,6 +768,24 @@ export const seoData: Record<string, SEOData> = {
   // =====================================================
   // BLOG
   // =====================================================
+  blog: {
+    title: 'Blog de Ciberseguridad Empresarial | Starsolution',
+    description: 'Artículos sobre ciberseguridad empresarial en Colombia: ransomware, respuesta a incidentes, ISO 27001, Zero Trust y cifrado. Guías prácticas del equipo de Starsolution.',
+    keywords: 'blog ciberseguridad Colombia, artículos seguridad informática, ransomware, ISO 27001, Zero Trust, respuesta a incidentes',
+    canonical: `${BASE_URL}/blog/`,
+    ogTitle: 'Blog de Ciberseguridad Empresarial',
+    ogType: 'website',
+    ogImage: `${BASE_URL}/og-default.png`,
+    breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Blog', url: '/blog/' }],
+    jsonLd: {
+      '@context': 'https://schema.org',
+      '@type': 'Blog',
+      name: 'Blog de Ciberseguridad Empresarial de Starsolution',
+      description: 'Guías y análisis sobre ciberseguridad empresarial en Colombia.',
+      url: `${BASE_URL}/blog/`,
+      publisher: { '@type': 'Organization', name: 'Starsolution S.A.S.', url: BASE_URL, logo: { '@type': 'ImageObject', url: `${BASE_URL}/logo.png` } },
+    },
+  },
   'blog/perfect-forward-secrecy': {
     title: 'Perfect Forward Secrecy: Guia para Empresas | Starsolution',
     description: 'Que es Perfect Forward Secrecy (PFS) y por que su empresa lo necesita hoy. Proteja comunicaciones cifradas aunque las claves maestras sean comprometidas.',

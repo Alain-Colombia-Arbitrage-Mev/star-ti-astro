@@ -1,0 +1,112 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Navbar from '@components/Navbar.astro';
+import Footer from '@components/Footer.astro';
+import WhatsAppButton from '@components/WhatsAppButton.astro';
+import { seoData } from '@data/seo';
+
+const seo = seoData.blog;
+
+// Metadatos editoriales del listado (categoria y acento de color). No son
+// datos del post: son la etiqueta con la que se muestra cada uno en el indice.
+const meta: Record<string, { category: string; accent: string }> = {
+  'blog/ransomware-empresas-colombia': { category: 'Seguridad', accent: 'from-red-500 to-orange-500' },
+  'blog/respuesta-incidentes-ciberseguridad': { category: 'Respuesta', accent: 'from-purple-500 to-fuchsia-500' },
+  'blog/perfect-forward-secrecy': { category: 'Cifrado', accent: 'from-red-500 to-orange-500' },
+  'blog/zero-trust-2025': { category: 'Tecnología', accent: 'from-blue-500 to-cyan-500' },
+  'blog/iso-27001-regulaciones': { category: 'Cumplimiento', accent: 'from-green-500 to-emerald-500' },
+};
+
+// Fuente unica: los posts se derivan de seoData, no de una lista aparte que
+// pueda desincronizarse. Cada entrada blog/* aporta titulo, descripcion,
+// imagen y fecha de publicacion (del jsonLd Article).
+const posts = Object.entries(seoData)
+  .filter(([key]) => key.startsWith('blog/'))
+  .map(([key, data]) => {
+    const jsonLd = data.jsonLd as { datePublished?: string } | undefined;
+    const date = jsonLd?.datePublished ?? '';
+    return {
+      slug: key.replace('blog/', ''),
+      title: data.ogTitle ?? data.title,
+      description: data.description,
+      image: data.ogImage ?? '/og-default.png',
+      date,
+      dateDisplay: date ? date.split('-').reverse().join('-') : '',
+      category: meta[key]?.category ?? 'Blog',
+      accent: meta[key]?.accent ?? 'from-gray-500 to-gray-600',
+    };
+  })
+  .sort((a, b) => b.date.localeCompare(a.date));
+---
+
+<BaseLayout seo={seo}>
+  <Navbar />
+
+  <!-- Hero -->
+  <section class="relative bg-gradient-to-br from-[#0f172a] to-[#1a2744] overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute top-0 right-0 w-96 h-96 bg-red-500 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-0 left-0 w-96 h-96 bg-blue-500 rounded-full blur-3xl"></div>
+    </div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-16 lg:pb-20">
+      <nav class="mb-8 flex items-center gap-2 text-sm text-gray-400" aria-label="Ruta de navegación">
+        <a href="/" class="hover:text-white transition-colors">Inicio</a>
+        <span>/</span>
+        <span class="text-gray-200">Blog</span>
+      </nav>
+      <h1 class="text-4xl sm:text-5xl font-bold text-white mb-4">Blog de Ciberseguridad Empresarial</h1>
+      <p class="text-lg text-gray-300 max-w-2xl">
+        Guías prácticas y análisis sobre ciberseguridad para empresas en Colombia: ransomware,
+        respuesta a incidentes, ISO 27001, Zero Trust y cifrado.
+      </p>
+    </div>
+  </section>
+
+  <!-- Listado -->
+  <section class="py-16 sm:py-24 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        {posts.map((post) => (
+          <a href={`/blog/${post.slug}/`} class="block">
+            <article class="group bg-white border border-gray-200/70 rounded-3xl overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 h-full flex flex-col">
+              <div class="relative h-56 overflow-hidden">
+                <img
+                  src={post.image}
+                  alt={post.title}
+                  class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  width="400"
+                  height="224"
+                  loading="lazy"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+                <div class="absolute top-4 left-4">
+                  <span class="backdrop-blur-xl bg-white/95 border border-white/30 rounded-full px-3 py-1.5 text-xs font-bold shadow-lg">
+                    <span class={`bg-gradient-to-r ${post.accent} bg-clip-text text-transparent`}>{post.category}</span>
+                  </span>
+                </div>
+                {post.dateDisplay && (
+                  <div class="absolute bottom-4 left-4 backdrop-blur-md bg-black/40 border border-white/20 rounded-full px-3 py-1.5">
+                    <time datetime={post.date} class="text-xs text-white font-medium">{post.dateDisplay}</time>
+                  </div>
+                )}
+              </div>
+              <div class="p-6 flex flex-col flex-grow">
+                <h2 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-red-600 transition-colors line-clamp-2">{post.title}</h2>
+                <p class="text-sm text-gray-600 mb-4 line-clamp-3 flex-grow">{post.description}</p>
+                <div class="flex items-center gap-2 text-red-600 font-semibold text-sm">
+                  <span>Leer más</span>
+                  <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </div>
+              </div>
+            </article>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+  <WhatsAppButton />
+</BaseLayout>
