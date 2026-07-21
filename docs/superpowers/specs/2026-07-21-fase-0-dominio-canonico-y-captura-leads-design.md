@@ -52,8 +52,10 @@ Los leads se están perdiendo hoy, en producción.
 
 ## Alcance
 
-Dentro: dominio canónico, deduplicación de dominios, endpoint de leads contra Airtable.
-Fuera: contenido, landings, rutas nuevas, `llms.txt` reescrito con nuevas secciones (Fase 1 y 2).
+Dentro: dominio canónico, deduplicación de dominios, endpoint de leads contra Airtable, alta y
+notificación en buscadores.
+Fuera: contenido, landings, rutas nuevas, `llms.txt` reescrito con nuevas secciones, `HowTo`
+schema y reestructuración de contenido para extracción (Fase 1 y 2).
 
 ## Diseño
 
@@ -123,6 +125,38 @@ comporta como hoy: no se empeora ningún caso.
 El mapeo de nombres de campo vive en una constante al principio del worker, para ajustarlo a las
 columnas reales de Airtable sin tocar la lógica.
 
+### D. Alta y notificación en buscadores
+
+Estas tareas son de configuración en paneles externos, no de código, pero pertenecen a Fase 0:
+corregir el canonical sin reenviar los sitemaps deja la recuperación a merced del recrawl
+espontáneo, que puede tardar semanas.
+
+**Razonamiento.** El objetivo declarado del encargo es aparecer en motores de IA. Estos no
+mantienen un índice propio al que uno se dé de alta: operan sobre índices de búsqueda
+convencionales. Google AI Overviews y AI Mode leen el índice de Google; ChatGPT Search se apoya
+en Bing y en su propio crawler (`OAI-SearchBot`); Copilot usa Bing; Perplexity mantiene índice
+propio. Estar indexado en Google y Bing es por tanto condición previa, no un paso paralelo.
+
+Tareas:
+
+1. **Google Search Console.** Verificar propiedad de `star-ti.com`, reenviar `/sitemap-index.xml`
+   y `/sitemap.xml`, y comprobar en el informe de cobertura cuántas URLs estaban excluidas por
+   canonical hacia otro dominio.
+2. **Bing Webmaster Tools.** Dar de alta `star-ti.com` y enviar sitemaps. Es el paso que se
+   omite con más frecuencia y el que alimenta a ChatGPT Search y Copilot.
+3. **IndexNow.** Activar desde el panel de Cloudflare para notificar los cambios sin esperar al
+   recrawl.
+
+Antes de ejecutar el punto 1 conviene resolver el riesgo de elección de canónico descrito más
+abajo: Search Console es precisamente donde se comprueba qué dominio acumula historial.
+
+**Nota sobre `llms.txt`.** El proyecto ya publica `llms.txt` y `llms-full.txt`, y en Fase 0 se
+corrigen sus enlaces rotos. Conviene registrar la expectativa con precisión: ninguna empresa
+grande de IA ha confirmado públicamente consumir ese archivo. Es una convención propuesta, de
+coste de mantenimiento bajo y beneficio no demostrado. No debe tratarse como palanca principal
+de visibilidad en IA. El `robots.txt` existente, que permite explícitamente más de 20 agentes de
+IA, sí es relevante y ya está correctamente resuelto.
+
 ## Verificación
 
 - `grep -r "starsolution\.com\.co" dist/` tras el build no devuelve nada.
@@ -132,15 +166,33 @@ columnas reales de Airtable sin tocar la lógica.
 - `POST /api/lead` con payload válido crea un registro en Airtable; con honeypot lleno devuelve
   200 sin crear registro; sin campos requeridos devuelve 400.
 - Un formulario enviado con JS deshabilitado sigue llegando a `/gracias/`.
+- Los sitemaps aparecen como enviados y procesados sin errores en Google Search Console y Bing
+  Webmaster Tools.
+
+### Señales de éxito posteriores
+
+No son verificables el día del despliegue; se comprueban en las semanas siguientes.
+
+- **Cobertura en Search Console:** las URLs excluidas por canonical hacia otro dominio bajan a
+  cero y las páginas pasan a indexadas.
+- **Crawlers de IA en analíticas de Cloudflare:** filtrando por user-agent `GPTBot`,
+  `PerplexityBot`, `ClaudeBot` y `OAI-SearchBot` debe verse actividad. Su ausencia indica que no
+  están leyendo el sitio.
+- **Tráfico de referencia** desde `chatgpt.com` y `perplexity.ai`.
 
 ## Dependencias externas
 
-De la persona usuaria, para la parte C: **Base ID** (`app...`), **nombre de la tabla**,
-**nombres exactos de las columnas** y un **token de acceso personal** con permiso
-`data.records:write` limitado a esa base.
+De la persona usuaria:
 
-La parte A no depende de esto y puede desplegarse por separado. Si Airtable no está listo, el
-endpoint queda implementado e inerte hasta que se configuren los secrets.
+- **Parte C:** **Base ID** (`app...`), **nombre de la tabla**, **nombres exactos de las
+  columnas** y un **token de acceso personal** con permiso `data.records:write` limitado a esa
+  base.
+- **Parte D:** acceso a Google Search Console, Bing Webmaster Tools y al panel de Cloudflare.
+  Son tareas de panel; se pueden ejecutar de forma acompañada pero no automatizar desde el
+  repositorio.
+
+La parte A no depende de ninguna de las dos y puede desplegarse por separado. Si Airtable no está
+listo, el endpoint queda implementado e inerte hasta que se configuren los secrets.
 
 ## Riesgos
 
