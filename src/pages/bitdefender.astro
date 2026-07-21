@@ -147,14 +147,19 @@ const serviceSchema = {
           <div class="relative lg:pl-8">
             <div class="absolute -inset-4 bg-gradient-to-tr from-red-500/20 to-blue-500/10 rounded-3xl blur-2xl"></div>
             <div class="relative bg-white/5 border border-white/10 rounded-2xl p-3 backdrop-blur shadow-2xl">
+              <!-- 4,5 MB: sin autoplay y con preload="none" no se descarga hasta
+                   que el visitante lo pide. width/height reservan el espacio y
+                   evitan el desplazamiento de layout al cargar los metadatos. -->
               <video
                 src="/assets/videobitdefender.mp4"
                 poster={GZ_DASHBOARD}
-                autoplay
+                controls
                 muted
                 loop
                 playsinline
-                preload="metadata"
+                preload="none"
+                width="1920"
+                height="1080"
                 aria-label="Video institucional de Bitdefender GravityZone mostrando la plataforma de ciberseguridad empresarial"
                 class="w-full h-auto rounded-xl block"
               ></video>

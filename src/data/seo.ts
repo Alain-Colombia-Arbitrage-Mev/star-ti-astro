@@ -555,11 +555,9 @@ export const seoData: Record<string, SEOData> = {
     ogImage: `${BASE_URL}/og-default.png`,
     breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Infraestructura', url: '/#infraestructura' }, { name: 'Cableado Estructurado', url: '/cableado-estructurado/' }],
     jsonLd: service('Cableado Estructurado', 'Structured Cabling Installation'),
-    faqJsonLd: faqSchema([
-      { q: 'Qué normas cumple el cableado estructurado de Starsolution?', a: 'Todas nuestras instalaciones cumplen las normas TIA/EIA 568, TIA/EIA 569 y TIA/EIA 606. Certificamos cada punto con equipos Fluke DSX y entregamos informe de certificación digital por cada enlace instalado.' },
-      { q: 'Cuál es la diferencia entre Cat6 y Cat6A?', a: 'Cat6 soporta hasta 10 Gbps en distancias cortas (hasta 55 metros). Cat6A soporta 10 Gbps en los 100 metros completos con mejor blindaje contra interferencia. Para proyectos nuevos, recomendamos Cat6A por su preparacion para el futuro.' },
-      { q: 'Cuánto tiempo toma una instalacion de cableado estructurado?', a: 'Un proyecto tipico de oficina (50-100 puntos de red) toma entre 1 y 3 semanas. Incluye survey inicial, instalacion de cableado, patch panels, racks, certificación y documentacion completa de la red.' },
-    ]),
+    // faqJsonLd retirado: declaraba 3 preguntas que no existen en la pagina.
+    // Google exige que la FAQ marcada este visible. Contenido recuperable en git
+    // (commit anterior a este); conviene renderizarlo en la pagina y reponerlo.
   },
   'equipos-computo': {
     title: 'Equipos de Computo Empresariales | Starsolution',
@@ -571,11 +569,8 @@ export const seoData: Record<string, SEOData> = {
     ogImage: `${BASE_URL}/og-default.png`,
     breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Infraestructura', url: '/#infraestructura' }, { name: 'Equipos de Computo', url: '/equipos-computo/' }],
     jsonLd: product('Equipos de Computo Empresariales', 'Starsolution', 'Laptops, desktops, workstations y All-in-One para empresas', { rating: { value: '4.8', count: '64' }, image: `${BASE_URL}/og-default.png` }),
-    faqJsonLd: faqSchema([
-      { q: 'Qué marcas de equipos de computo vende Starsolution?', a: 'Trabajamos con Dell, HP, Lenovo, Apple y ensamblamos equipos personalizados. Todos los equipos incluyen garantía extendida, soporte tecnico prioritario y configuración de seguridad preinstalada con Bitdefender o Kaspersky.' },
-      { q: 'Pueden configurar los equipos antes de entregarlos?', a: 'Sí. Ofrecemos servicio de imaging corporativo: instalamos sistema operativo, aplicaciones empresariales, políticas de grupo, antivirus y cifrado de disco antes de la entrega. Los equipos llegan listos para conectar y trabajar.' },
-      { q: 'Ofrecen leasing o financiacion de equipos?', a: 'Sí. Ofrecemos modalidades de compra directa, leasing operativo (12-36 meses) y renting tecnologico con renovacion automática. Incluimos seguro contra robo y daño accidental en todas las modalidades.' },
-    ]),
+    // faqJsonLd retirado: declaraba 3 preguntas que no existen en la pagina.
+    // Contenido recuperable en git; conviene renderizarlo y reponer el marcado.
   },
   brother: {
     title: 'Impresoras Brother para Empresas Colombia | Starsolution',
@@ -587,12 +582,9 @@ export const seoData: Record<string, SEOData> = {
     ogImage: `${BASE_URL}/og-default.png`,
     breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Infraestructura', url: '/#infraestructura' }, { name: 'Brother', url: '/brother/' }],
     jsonLd: product('Impresoras Brother Empresariales', 'Brother', 'Impresoras láser, multifuncionales y escáneres de la línea Brother Workhorse con seguridad Triple Layer Security y consumibles originales', { rating: { value: '4.7', count: '50' }, image: `${BASE_URL}/og-default.png` }),
-    faqJsonLd: faqSchema([
-      { q: '¿Qué es la línea Brother Workhorse?', a: 'Brother Workhorse Series es la marca paraguas que agrupa la oferta empresarial de Brother en tres segmentos: Enterprise (10-40 usuarios, hasta 16.000 páginas/mes, modelos como HL-L9470CDN y MFC-L9670CDN), Small-Medium Business (1-10 usuarios, modelos como HL-L6415DW y MFC-L6915DW) y Small Office (hasta 4.000 páginas/mes, como la MFC-L2980DW). La línea completa recibió el premio A4 Line of the Year 2025 de Keypoint Intelligence.' },
-      { q: 'Por que elegir Brother sobre otras marcas de impresoras?', a: 'Brother se diferencia por su bajo costo total de propiedad (TCO), consumibles de alta duración (hasta 25.000 páginas mono en la sub-serie EX) y confiabilidad reconocida: Keypoint Intelligence le otorgó el premio A4 Line of the Year 2025 y varios BLI 2025 Pick Awards citando su "flawless reliability". Los equipos enterprise no tienen disco duro interno, lo que elimina el riesgo de retención de datos.' },
-      { q: 'Starsolution vende equipos Brother en Colombia?', a: 'Sí. Suministramos e integramos equipos Brother nuevos para empresas en Colombia, con consumibles originales, garantía de fábrica (desde 1 año, extensible hasta 3 años con programas on-site de Brother) y soporte técnico local en español, incluyendo configuración de impresión segura para entornos ISO 27001.' },
-      { q: 'Qué modelos de Brother recomiendan para empresas?', a: 'Para oficinas pequeñas: MFC-L2980DW (multifunción Small Office, hasta 4.000 páginas/mes). Para equipos de trabajo: HL-L6415DW o MFC-L6915DW (Workhorse SMB, hasta 52 ppm). Para alto volumen: HL-L9470CDN o MFC-L9670CDN (Workhorse Enterprise, 42 ppm a color, hasta 2.700 hojas de capacidad). Para digitalización: escáneres ADS-4700W o ADS-4900W (BLI Pick Award 2023).' },
-    ]),
+    // faqJsonLd retirado: declaraba 4 preguntas que no existen en la pagina.
+    // Es el contenido FAQ mas solido del sitio (modelos, premios con anio,
+    // capacidades). Recuperable en git: merece renderizarse y reponerse.
   },
 
   // =====================================================
