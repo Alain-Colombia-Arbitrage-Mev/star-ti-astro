@@ -128,7 +128,7 @@ export const regions: Record<string, RegionData> = {
     ],
     stats: [
       { label: 'Businesses Protected in South Florida', value: '200+' },
-      { label: 'Years of Experience', value: '12+' },
+      { label: 'Years of Experience', value: '13+' },
       { label: 'Bilingual Team Members', value: '15+' },
       { label: 'Support Availability', value: '24/7' },
     ],
