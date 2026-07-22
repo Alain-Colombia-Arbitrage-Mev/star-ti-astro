@@ -1,12 +1,20 @@
 ---
+// lang por defecto 'es': las 39 paginas en espanol no pasan prop y no cambian.
+// Solo /miami/ e /miami/contacto/ pasan lang="en". Los nombres de marca y de
+// producto (Bitdefender, ISO 27001...) son iguales en ambos idiomas.
+interface Props {
+  lang?: string;
+}
+const { lang = 'es' } = Astro.props;
+const en = lang === 'en';
 ---
 <footer>
   <!-- CTA Bar -->
   <div class="bg-gradient-to-r from-red-600 to-red-700 py-6">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-      <p class="text-white font-semibold text-lg">¿Listo para fortalecer su seguridad?</p>
-      <a href="/contacto" class="bg-white text-red-700 font-semibold px-8 py-3 rounded-full hover:bg-gray-100 transition shadow-lg">
-        Solicitar Consultoría
+      <p class="text-white font-semibold text-lg">{en ? 'Ready to strengthen your security?' : '¿Listo para fortalecer su seguridad?'}</p>
+      <a href={en ? '/miami/contacto' : '/contacto'} class="bg-white text-red-700 font-semibold px-8 py-3 rounded-full hover:bg-gray-100 transition shadow-lg">
+        {en ? 'Request a Consultation' : 'Solicitar Consultoría'}
       </a>
     </div>
   </div>
@@ -20,11 +28,13 @@
           <img src="/logo.png" alt="Starsolution" class="h-10 w-10" width="40" height="40" loading="lazy" />
           <div>
             <span class="font-bold text-lg">Starsolution</span>
-            <p class="text-xs text-gray-400">Ciberseguridad</p>
+            <p class="text-xs text-gray-400">{en ? 'Cybersecurity' : 'Ciberseguridad'}</p>
           </div>
         </a>
         <p class="text-base text-gray-400 leading-relaxed mb-6">
-          Especialistas en ciberseguridad empresarial. Tres pilares de resiliencia digital protegiendo empresas desde 2013.
+          {en
+            ? 'Enterprise cybersecurity specialists. Three pillars of digital resilience protecting businesses since 2013.'
+            : 'Especialistas en ciberseguridad empresarial. Tres pilares de resiliencia digital protegiendo empresas desde 2013.'}
         </p>
         <div class="flex gap-3">
           <a href="https://www.facebook.com/starsabordo" target="_blank" rel="noopener noreferrer" class="bg-gray-800 hover:bg-blue-600 w-10 h-10 rounded-lg flex items-center justify-center transition" aria-label="Facebook de Starsolution">
@@ -58,7 +68,7 @@
           <li><a href="/enthec" class="text-sm text-gray-400 hover:text-white transition">Enthec</a></li>
           <li><a href="/vicarius" class="text-sm text-gray-400 hover:text-white transition">Vicarius</a></li>
           <li><a href="/stellar-cyber" class="text-sm text-gray-400 hover:text-white transition">Stellar Cyber</a></li>
-          <li><a href="/hacking-etico" class="text-sm text-gray-400 hover:text-white transition">Hacking Ético</a></li>
+          <li><a href="/hacking-etico" class="text-sm text-gray-400 hover:text-white transition">{en ? 'Ethical Hacking' : 'Hacking Ético'}</a></li>
           <li><a href="/rthreat-bogota-colombia" class="text-sm text-gray-400 hover:text-white transition">Red Team & BAS</a></li>
         </ul>
       </div>
@@ -71,36 +81,36 @@
         <ul class="space-y-2.5">
           <li><a href="/iso27001" class="text-sm text-gray-400 hover:text-white transition">ISO 27001</a></li>
           <li><a href="/sealpath" class="text-sm text-gray-400 hover:text-white transition">SealPath DLP</a></li>
-          <li><a href="/netwrix" class="text-sm text-gray-400 hover:text-white transition">Netwrix Auditoría</a></li>
+          <li><a href="/netwrix" class="text-sm text-gray-400 hover:text-white transition">{en ? 'Netwrix Auditing' : 'Netwrix Auditoría'}</a></li>
           <li><a href="/black-duck" class="text-sm text-gray-400 hover:text-white transition">Black Duck AppSec</a></li>
-          <li><a href="/dlp-prevencion-perdida-datos" class="text-sm text-gray-400 hover:text-white transition">Software DLP</a></li>
+          <li><a href="/dlp-prevencion-perdida-datos" class="text-sm text-gray-400 hover:text-white transition">{en ? 'DLP Software' : 'Software DLP'}</a></li>
         </ul>
 
-        <p class="font-bold text-sm uppercase tracking-wider mb-4 mt-8">Infraestructura</p>
+        <p class="font-bold text-sm uppercase tracking-wider mb-4 mt-8">{en ? 'Infrastructure' : 'Infraestructura'}</p>
         <ul class="space-y-2.5">
           <li><a href="/teamviewer" class="text-sm text-gray-400 hover:text-white transition">TeamViewer</a></li>
           <li><a href="/anydesk" class="text-sm text-gray-400 hover:text-white transition">AnyDesk</a></li>
           <li><a href="/soti-mdm" class="text-sm text-gray-400 hover:text-white transition">SOTI MobiControl</a></li>
-          <li><a href="/cableado-estructurado" class="text-sm text-gray-400 hover:text-white transition">Cableado Estructurado</a></li>
-          <li><a href="/equipos-computo" class="text-sm text-gray-400 hover:text-white transition">Equipos de Computo</a></li>
+          <li><a href="/cableado-estructurado" class="text-sm text-gray-400 hover:text-white transition">{en ? 'Structured Cabling' : 'Cableado Estructurado'}</a></li>
+          <li><a href="/equipos-computo" class="text-sm text-gray-400 hover:text-white transition">{en ? 'IT Equipment' : 'Equipos de Computo'}</a></li>
           <li><a href="/brother" class="text-sm text-gray-400 hover:text-white transition">Brother</a></li>
         </ul>
       </div>
 
       <!-- Recursos -->
       <div>
-        <p class="font-bold text-sm uppercase tracking-wider mb-4">Empresa</p>
+        <p class="font-bold text-sm uppercase tracking-wider mb-4">{en ? 'Company' : 'Empresa'}</p>
         <ul class="space-y-2.5">
-          <li><a href="/sobre-nosotros" class="text-sm text-gray-400 hover:text-white transition">Sobre Nosotros</a></li>
-          <li><a href="/contacto" class="text-sm text-gray-400 hover:text-white transition">Contacto</a></li>
-          <li><a href="/antivirus-empresas" class="text-sm text-gray-400 hover:text-white transition">Comparar Antivirus</a></li>
-          <li><a href="/informe-ciberseguridad-colombia-2026" class="text-sm text-gray-400 hover:text-white transition">Informe 2026</a></li>
+          <li><a href="/sobre-nosotros" class="text-sm text-gray-400 hover:text-white transition">{en ? 'About Us' : 'Sobre Nosotros'}</a></li>
+          <li><a href={en ? '/miami/contacto' : '/contacto'} class="text-sm text-gray-400 hover:text-white transition">{en ? 'Contact' : 'Contacto'}</a></li>
+          <li><a href="/antivirus-empresas" class="text-sm text-gray-400 hover:text-white transition">{en ? 'Compare Antivirus' : 'Comparar Antivirus'}</a></li>
+          <li><a href="/informe-ciberseguridad-colombia-2026" class="text-sm text-gray-400 hover:text-white transition">{en ? '2026 Report' : 'Informe 2026'}</a></li>
           <li><a href="/blog" class="text-sm text-gray-400 hover:text-white transition">Blog</a></li>
         </ul>
 
-        <p class="font-bold text-sm uppercase tracking-wider mb-4 mt-8">Regiones</p>
+        <p class="font-bold text-sm uppercase tracking-wider mb-4 mt-8">{en ? 'Regions' : 'Regiones'}</p>
         <ul class="space-y-2.5">
-          <li><a href="/" class="text-sm text-gray-400 hover:text-white transition">Colombia (Sede Principal)</a></li>
+          <li><a href="/" class="text-sm text-gray-400 hover:text-white transition">{en ? 'Colombia (Headquarters)' : 'Colombia (Sede Principal)'}</a></li>
           <li><a href="/venezuela" class="text-sm text-gray-400 hover:text-white transition">Venezuela</a></li>
           <li><a href="/miami" class="text-sm text-gray-400 hover:text-white transition">Miami, FL</a></li>
         </ul>
@@ -108,7 +118,7 @@
 
       <!-- Contacto -->
       <div>
-        <p class="font-bold text-sm uppercase tracking-wider mb-4">Contacto</p>
+        <p class="font-bold text-sm uppercase tracking-wider mb-4">{en ? 'Contact' : 'Contacto'}</p>
         <ul class="space-y-3">
           <li class="flex items-start gap-2">
             <svg class="w-4 h-4 text-blue-400 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
@@ -121,7 +131,7 @@
             <svg class="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
             <div>
               <a href="tel:+573007010017" class="text-sm text-white hover:text-blue-400 transition font-medium">+57 300 701 0017</a>
-              <p class="text-xs text-gray-400 mt-0.5">Lun - Vie: 8am - 6pm</p>
+              <p class="text-xs text-gray-400 mt-0.5">{en ? 'Mon - Fri: 8am - 6pm' : 'Lun - Vie: 8am - 6pm'}</p>
             </div>
           </li>
           <li class="flex items-start gap-2">
@@ -139,14 +149,14 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
       <div class="flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
         <div class="text-sm text-gray-400">
-          <p>&copy; 2026 Starsolution S.A.S. Todos los derechos reservados.</p>
+          <p>&copy; 2026 Starsolution S.A.S. {en ? 'All rights reserved.' : 'Todos los derechos reservados.'}</p>
         </div>
         <div class="flex flex-wrap items-center justify-center gap-4 text-xs text-gray-400">
-          <a href="/privacidad" class="hover:text-white transition">Privacidad</a>
+          <a href="/privacidad" class="hover:text-white transition">{en ? 'Privacy' : 'Privacidad'}</a>
           <span>&bull;</span>
-          <a href="/terminos" class="hover:text-white transition">Términos</a>
+          <a href="/terminos" class="hover:text-white transition">{en ? 'Terms' : 'Términos'}</a>
           <span>&bull;</span>
-          <a href="/politica-de-proteccion-de-datos-personales" class="hover:text-white transition">Tratamiento de Datos</a>
+          <a href="/politica-de-proteccion-de-datos-personales" class="hover:text-white transition">{en ? 'Data Processing' : 'Tratamiento de Datos'}</a>
         </div>
       </div>
     </div>
