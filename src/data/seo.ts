@@ -770,7 +770,7 @@ export const seoData: Record<string, SEOData> = {
   // =====================================================
   blog: {
     title: 'Blog de Ciberseguridad Empresarial | Starsolution',
-    description: 'Artículos sobre ciberseguridad empresarial en Colombia: ransomware, respuesta a incidentes, ISO 27001, Zero Trust y cifrado. Guías prácticas del equipo de Starsolution.',
+    description: 'Artículos sobre ciberseguridad empresarial en Colombia: ransomware, respuesta a incidentes, ISO 27001, Zero Trust y cifrado. Guías prácticas de Starsolution.',
     keywords: 'blog ciberseguridad Colombia, artículos seguridad informática, ransomware, ISO 27001, Zero Trust, respuesta a incidentes',
     canonical: `${BASE_URL}/blog/`,
     ogTitle: 'Blog de Ciberseguridad Empresarial',

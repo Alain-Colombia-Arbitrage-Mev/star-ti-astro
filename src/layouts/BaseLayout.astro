@@ -12,6 +12,8 @@ const ogTitle = seo.ogTitle || seo.title;
 const ogType = seo.ogType || 'website';
 const ogImage = seo.ogImage || `${BASE_URL}/og-default.png`;
 const htmlLang = seo.lang || 'es';
+// og:locale debe seguir el idioma real de la pagina (Miami esta en ingles).
+const ogLocale = htmlLang.startsWith('en') ? 'en_US' : 'es_CO';
 
 // Build breadcrumb JSON-LD
 const breadcrumbJsonLd = seo.breadcrumb ? {
@@ -104,7 +106,7 @@ const breadcrumbJsonLd = seo.breadcrumb ? {
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content={ogTitle} />
     <meta property="og:site_name" content="Starsolution" />
-    <meta property="og:locale" content="es_CO" />
+    <meta property="og:locale" content={ogLocale} />
     <meta property="og:locale:alternate" content="es_VE" />
     <meta property="og:locale:alternate" content="en_US" />
 
