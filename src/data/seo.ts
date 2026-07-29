@@ -854,7 +854,7 @@ export const seoData: Record<string, SEOData> = {
   },
 
   'blog/ransomware-empresas-colombia': {
-    title: 'Ransomware en Colombia: Prevención y Respuesta 2026 | Starsolution',
+    title: 'Ransomware en Colombia: Prevención y Respuesta 2026',
     description: 'Como prevenir y responder al ransomware en Colombia. Estadisticas 2025-2026, fases del ataque, capas de defensa EDR/backup/email y plan de respuesta a incidentes.',
     keywords: 'ransomware empresas Colombia, protección ransomware, como prevenir ransomware empresa, ataque ransomware Colombia, respuesta incidentes ransomware, EDR anti-ransomware',
     canonical: `${BASE_URL}/blog/ransomware-empresas-colombia/`,
@@ -945,7 +945,7 @@ export const seoData: Record<string, SEOData> = {
   // REPORTS
   // =====================================================
   'informe-ciberseguridad-colombia-2026': {
-    title: 'Informe de Ciberseguridad Colombia 2026 | Datos de +3,000 Empresas',
+    title: 'Informe de Ciberseguridad Colombia 2026 | +3,000 Empresas',
     description: 'El análisis más completo sobre ciberamenazas en Colombia: ransomware, BEC, phishing y brechas de datos. Datos de +3,000 empresas colombianas. Descargue gratis.',
     keywords: 'informe ciberseguridad Colombia 2026, estadisticas ciberataques Colombia, costo brecha datos Colombia, amenazas ciberneticas empresas, ransomware Colombia, phishing Colombia',
     canonical: `${BASE_URL}/informe-ciberseguridad-colombia-2026/`,

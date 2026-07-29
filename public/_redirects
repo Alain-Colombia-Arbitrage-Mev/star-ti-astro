@@ -30,3 +30,15 @@
 /informe-ciberseguridad-colombia-2026 /informe-ciberseguridad-colombia-2026/ 301
 /venezuela /venezuela/ 301
 /miami /miami/ 301
+
+# Subrutas anidadas (faltaban: Cloudflare las resolvia con 302 por defecto)
+/venezuela/contacto /venezuela/contacto/ 301
+/miami/contacto /miami/contacto/ 301
+
+# Blog: indice y posts
+/blog /blog/ 301
+/blog/iso-27001-regulaciones /blog/iso-27001-regulaciones/ 301
+/blog/perfect-forward-secrecy /blog/perfect-forward-secrecy/ 301
+/blog/ransomware-empresas-colombia /blog/ransomware-empresas-colombia/ 301
+/blog/respuesta-incidentes-ciberseguridad /blog/respuesta-incidentes-ciberseguridad/ 301
+/blog/zero-trust-2025 /blog/zero-trust-2025/ 301
