@@ -77,7 +77,7 @@ export const regions: Record<string, RegionData> = {
     timezone: 'America/Caracas',
     currency: 'USD',
     hours: 'Lun - Vie: 8am - 5pm VET',
-    heroTitle: 'Ciberseguridad Empresarial en Venezuela',
+    heroTitle: 'Empresa de Ciberseguridad en Venezuela',
     heroSubtitle: 'Protección digital integral para empresas venezolanas. Oficina en Caracas con soporte remoto a nivel nacional. Más de 10 años atendiendo el mercado venezolano.',
     services: [
       'Hacking Ético y Pentesting',
