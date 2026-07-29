@@ -25,6 +25,15 @@ export interface SEOData {
 // codigo de src/. Si cambia el dominio, hay que tocar ambos.
 export const BASE_URL = 'https://star-ti.com';
 const ORG = { '@type': 'Organization' as const, name: 'Starsolution S.A.S.', url: BASE_URL };
+// Autor de los articulos y del informe (E-E-A-T): persona real, no la organizacion.
+const AUTHOR = {
+  '@type': 'Person' as const,
+  name: 'Jorge Molano',
+  jobTitle: 'CEO',
+  worksFor: ORG,
+  url: `${BASE_URL}/sobre-nosotros/`,
+  knowsAbout: ['Ciberseguridad empresarial', 'ISO 27001', 'Zero Trust', 'Respuesta a incidentes', 'Cifrado y protección de datos'],
+};
 
 // Clusters hreflang: solo páginas con equivalente regional real
 const HREFLANG_HOME = [
@@ -802,7 +811,7 @@ export const seoData: Record<string, SEOData> = {
       description: 'Que es PFS y como protege las comunicaciones cifradas de su empresa incluso si las claves son comprometidas',
       datePublished: '2025-01-24',
       dateModified: '2026-07-29',
-      author: { '@type': 'Organization', name: 'Starsolution S.A.S.', url: BASE_URL },
+      author: AUTHOR,
       publisher: { '@type': 'Organization', name: 'Starsolution S.A.S.', url: BASE_URL, logo: { '@type': 'ImageObject', url: `${BASE_URL}/logo.png` } },
       image: `${BASE_URL}/assets/blog-ciberseguridad-realidad-virtual.webp`,
       url: `${BASE_URL}/blog/perfect-forward-secrecy/`,
@@ -829,7 +838,7 @@ export const seoData: Record<string, SEOData> = {
       description: 'Guia completa para implementar Zero Trust Architecture en organizaciones colombianas',
       datePublished: '2025-01-22',
       dateModified: '2026-07-29',
-      author: { '@type': 'Organization', name: 'Starsolution S.A.S.', url: BASE_URL },
+      author: AUTHOR,
       publisher: { '@type': 'Organization', name: 'Starsolution S.A.S.', url: BASE_URL, logo: { '@type': 'ImageObject', url: `${BASE_URL}/logo.png` } },
       image: `${BASE_URL}/assets/blog-inteligencia-artificial-seguridad.webp`,
       url: `${BASE_URL}/blog/zero-trust-2025/`,
@@ -858,7 +867,7 @@ export const seoData: Record<string, SEOData> = {
       description: 'Análisis de los cambios de ISO 27001:2022 y su impacto en las organizaciones colombianas',
       datePublished: '2025-01-20',
       dateModified: '2025-01-20',
-      author: { '@type': 'Organization', name: 'Starsolution S.A.S.', url: BASE_URL },
+      author: AUTHOR,
       publisher: { '@type': 'Organization', name: 'Starsolution S.A.S.', url: BASE_URL, logo: { '@type': 'ImageObject', url: `${BASE_URL}/logo.png` } },
       image: `${BASE_URL}/assets/blog-zero-trust-arquitectura.webp`,
       url: `${BASE_URL}/blog/iso-27001-regulaciones/`,
@@ -885,7 +894,7 @@ export const seoData: Record<string, SEOData> = {
       description: 'Guia completa sobre como prevenir y responder a ataques de ransomware en empresas colombianas, con estadisticas 2025-2026, fases del ataque y plan de respuesta a incidentes',
       datePublished: '2026-03-22',
       dateModified: '2026-03-22',
-      author: { '@type': 'Organization', name: 'Starsolution S.A.S.', url: BASE_URL },
+      author: AUTHOR,
       publisher: {
         '@type': 'Organization',
         name: 'Starsolution S.A.S.',
@@ -937,7 +946,7 @@ export const seoData: Record<string, SEOData> = {
       description: 'Guia completa con las 6 fases del marco NIST para respuesta a incidentes de ciberseguridad en empresas colombianas, incluyendo equipo CSIRT, herramientas y obligaciones regulatorias.',
       datePublished: '2026-03-22',
       dateModified: '2026-03-22',
-      author: { '@type': 'Organization', name: 'Starsolution S.A.S.', url: BASE_URL },
+      author: AUTHOR,
       publisher: { '@type': 'Organization', name: 'Starsolution S.A.S.', url: BASE_URL, logo: { '@type': 'ImageObject', url: `${BASE_URL}/logo.png` } },
       image: `${BASE_URL}/assets/robot-ia-laboratorio-monitores.webp`,
       url: `${BASE_URL}/blog/respuesta-incidentes-ciberseguridad/`,
@@ -972,7 +981,7 @@ export const seoData: Record<string, SEOData> = {
       description: 'El análisis más completo sobre ciberamenazas en Colombia con datos de más de 3,000 empresas colombianas. Ransomware, BEC, phishing, costos de brechas y recomendaciones.',
       datePublished: '2026-01-15',
       dateModified: '2026-03-01',
-      author: { '@type': 'Organization', name: 'Starsolution S.A.S.', url: BASE_URL },
+      author: AUTHOR,
       publisher: { '@type': 'Organization', name: 'Starsolution S.A.S.', url: BASE_URL, logo: { '@type': 'ImageObject', url: `${BASE_URL}/logo.png` } },
       image: `${BASE_URL}/og-default.png`,
       url: `${BASE_URL}/informe-ciberseguridad-colombia-2026/`,
