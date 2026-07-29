@@ -1,10 +1,28 @@
 import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 import sitemap from '@astrojs/sitemap';
+import { seoData } from './src/data/seo';
 
-// Debe coincidir con BASE_URL en src/data/seo.ts. No se importa de alli porque
-// este fichero de configuracion se evalua antes que los alias de tsconfig.
+// Debe coincidir con BASE_URL en src/data/seo.ts. Se importa seoData por ruta
+// relativa (seo.ts e iso27001Landing.ts son datos puros sin alias), pero SITE
+// se mantiene como literal porque `site` se resuelve antes de cargar el modulo.
 const SITE = 'https://star-ti.com';
+
+// lastmod del sitemap derivado del dateModified/datePublished del JSON-LD de
+// cada pagina: fuente unica de verdad en seo.ts. Solo las paginas con fecha
+// real (posts del blog, informe) lo reciben; el resto se omite a proposito.
+const LASTMOD = new Map<string, string>();
+for (const entry of Object.values(seoData)) {
+  const jsonLd = entry.jsonLd as { dateModified?: string; datePublished?: string } | undefined;
+  const date = jsonLd?.dateModified ?? jsonLd?.datePublished;
+  if (date && entry.canonical) LASTMOD.set(entry.canonical, date);
+}
+// El indice /blog/ no tiene fecha propia: hereda la mas reciente de sus posts.
+const blogDates = [...LASTMOD.entries()]
+  .filter(([url]) => url.includes('/blog/'))
+  .map(([, date]) => date)
+  .sort();
+if (blogDates.length) LASTMOD.set(`${SITE}/blog/`, blogDates[blogDates.length - 1]);
 
 // Clusters hreflang: deben coincidir con HREFLANG_HOME/HREFLANG_CONTACTO en
 // src/data/seo.ts (que los emite en el <head>). Aqui se inyectan tambien en el
@@ -55,6 +73,9 @@ export default defineConfig({
         } else if (CONTACTO_CLUSTER.has(item.url)) {
           item.links = HREFLANG_CONTACTO;
         }
+        // lastmod solo en paginas con fecha real (blog, informe).
+        const lastmod = LASTMOD.get(item.url);
+        if (lastmod) item.lastmod = lastmod;
         return item;
       },
     }),
