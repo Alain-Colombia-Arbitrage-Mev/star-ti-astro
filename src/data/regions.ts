@@ -114,7 +114,7 @@ export const regions: Record<string, RegionData> = {
     timezone: 'America/New_York',
     currency: 'USD',
     hours: 'Mon - Fri: 9am - 6pm EST',
-    heroTitle: 'Enterprise Cybersecurity in Miami',
+    heroTitle: 'Cybersecurity Company in Miami & South Florida',
     heroSubtitle: 'Comprehensive cybersecurity solutions for businesses in Florida. Bilingual team (English/Spanish) serving the Miami-Dade, Broward, and Palm Beach markets from our office in Orlando.',
     services: [
       'Ethical Hacking & Penetration Testing',
