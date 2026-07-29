@@ -28,6 +28,7 @@ const ORG = { '@type': 'Organization' as const, name: 'Starsolution S.A.S.', url
 // Autor de los articulos y del informe (E-E-A-T): persona real, no la organizacion.
 const AUTHOR = {
   '@type': 'Person' as const,
+  '@id': `${BASE_URL}/sobre-nosotros/#jorge-molano`,
   name: 'Jorge Molano',
   jobTitle: 'CEO',
   worksFor: ORG,
