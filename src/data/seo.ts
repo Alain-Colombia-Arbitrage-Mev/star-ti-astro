@@ -195,15 +195,15 @@ export const seoData: Record<string, SEOData> = {
       { q: 'Afecta el rendimiento de equipos antiguos o de bajos recursos?', a: 'Kaspersky esta optimizado para consumo minimo de recursos. En equipos con Core i3 o superiores y 4 GB RAM el impacto es menor al 2 por ciento de CPU en operación normal. Para equipos legacy podemos programar escaneos fuera de horario y desactivar modulos no críticos.' },
     ]),
   },
-  'hornet-security': {
+  'hornetsecurity': {
     title: 'Hornetsecurity 365 | Seguridad Email | Starsolution',
     description: 'Hornetsecurity 365 Total Protection: seguridad email, backup, archiving y cifrado para Microsoft 365. Implementación profesional en Colombia.',
     keywords: 'Hornetsecurity, seguridad email Microsoft 365, backup email, email encryption, protección correo empresarial Colombia',
-    canonical: `${BASE_URL}/hornet-security/`,
+    canonical: `${BASE_URL}/hornetsecurity/`,
     ogTitle: 'Hornetsecurity 365 Total Protection',
     ogType: 'website',
     ogImage: `${BASE_URL}/og-default.png`,
-    breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Star Protection', url: '/#star-protection' }, { name: 'Hornetsecurity', url: '/hornet-security/' }],
+    breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Star Protection', url: '/#star-protection' }, { name: 'Hornetsecurity', url: '/hornetsecurity/' }],
     jsonLd: product('Hornetsecurity 365 Total Protection', 'Hornetsecurity', 'Seguridad email completa para Microsoft 365 con backup, archiving y cifrado', { rating: { value: '4.7', count: '68' }, image: `${BASE_URL}/og-default.png` }),
     faqJsonLd: faqSchema([
       { q: '¿Hornetsecurity funciona solo con Microsoft 365?', a: 'Sí, Hornetsecurity 365 Total Protection está diseñado exclusivamente para Microsoft 365. Se integra nativamente con Exchange Online, OneDrive y SharePoint para protección completa del ecosistema Microsoft.' },
@@ -327,24 +327,24 @@ export const seoData: Record<string, SEOData> = {
   // =====================================================
   // STAR COMPLIANCE
   // =====================================================
-  iso27001: {
+  'iso-27001': {
     title: 'Consultoría ISO 27001 en Colombia | Starsolution',
     description: 'Implementamos y certificamos su SGSI ISO 27001 en 6-12 meses: gap analysis, controles del Anexo A y acompañamiento en auditoría externa. Diagnóstico gratuito.',
     keywords: 'ISO 27001 Colombia, consultoría ISO 27001, certificación ISO 27001, certificación SGSI, auditoría ISO 27001, gap analysis seguridad información, implementación ISO 27001, Anexo A, declaración de aplicabilidad, ISO 27001 Bogotá, ISO 27001 precio',
-    canonical: `${BASE_URL}/iso27001/`,
+    canonical: `${BASE_URL}/iso-27001/`,
     ogTitle: 'Consultoría ISO 27001 en Colombia | Starsolution',
     ogType: 'website',
     ogImage: `${BASE_URL}/og-default.png`,
-    breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Star Compliance', url: '/#star-compliance' }, { name: 'ISO 27001', url: '/iso27001/' }],
+    breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Star Compliance', url: '/#star-compliance' }, { name: 'ISO 27001', url: '/iso-27001/' }],
     jsonLd: {
       '@context': 'https://schema.org',
       '@graph': [
         {
           '@type': 'Service',
-          '@id': `${BASE_URL}/iso27001/#service`,
+          '@id': `${BASE_URL}/iso-27001/#service`,
           name: 'Consultoría ISO 27001 en Colombia',
           serviceType: 'ISO 27001 Certification Consulting',
-          url: `${BASE_URL}/iso27001/`,
+          url: `${BASE_URL}/iso-27001/`,
           image: `${BASE_URL}/og-default.png`,
           description: 'Consultoría ISO 27001: diagnóstico de brechas, implementación del SGSI, acompañamiento en auditoría externa y soporte post-certificación. Más de 50 empresas certificadas con consultores Lead Implementer y Lead Auditor.',
           provider: { '@type': 'Organization', '@id': `${BASE_URL}/#organization`, name: 'Starsolution S.A.S.', url: BASE_URL },
@@ -357,7 +357,7 @@ export const seoData: Record<string, SEOData> = {
           offers: {
             '@type': 'Offer',
             availability: 'https://schema.org/InStock',
-            url: `${BASE_URL}/iso27001/`,
+            url: `${BASE_URL}/iso-27001/`,
             priceSpecification: { '@type': 'PriceSpecification', priceCurrency: 'COP', minPrice: 35000000, maxPrice: 150000000 },
           },
           aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '53', bestRating: '5' },
@@ -365,13 +365,13 @@ export const seoData: Record<string, SEOData> = {
         },
         {
           '@type': 'WebPage',
-          '@id': `${BASE_URL}/iso27001/#webpage`,
-          url: `${BASE_URL}/iso27001/`,
+          '@id': `${BASE_URL}/iso-27001/#webpage`,
+          url: `${BASE_URL}/iso-27001/`,
           name: 'Consultoría ISO 27001 en Colombia | Starsolution',
           description: 'Implementamos y certificamos su SGSI ISO 27001 en 6-12 meses: gap analysis, controles del Anexo A y acompañamiento en auditoría externa. Diagnóstico gratuito.',
           inLanguage: 'es-CO',
           isPartOf: { '@type': 'WebSite', '@id': `${BASE_URL}/#website`, url: BASE_URL, name: 'Starsolution' },
-          about: { '@id': `${BASE_URL}/iso27001/#service` },
+          about: { '@id': `${BASE_URL}/iso-27001/#service` },
           datePublished: '2026-07-18',
           dateModified: '2026-07-18',
         },

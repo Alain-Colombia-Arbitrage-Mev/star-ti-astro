@@ -5,12 +5,10 @@
 /vicarius /vicarius/ 301
 /stellar-cyber /stellar-cyber/ 301
 /hacking-etico /hacking-etico/ 301
-/iso27001 /iso27001/ 301
 /sealpath /sealpath/ 301
 /netwrix /netwrix/ 301
 /proofpoint /proofpoint/ 301
 /black-duck /black-duck/ 301
-/hornet-security /hornet-security/ 301
 /teamviewer /teamviewer/ 301
 /anydesk /anydesk/ 301
 /soti-mdm /soti-mdm/ 301
@@ -42,3 +40,11 @@
 /blog/ransomware-empresas-colombia /blog/ransomware-empresas-colombia/ 301
 /blog/respuesta-incidentes-ciberseguridad /blog/respuesta-incidentes-ciberseguridad/ 301
 /blog/zero-trust-2025 /blog/zero-trust-2025/ 301
+
+# Renombrado de URLs (SEO): vieja indexada -> nueva, preservando equity
+/iso27001/ /iso-27001/ 301
+/iso27001 /iso-27001/ 301
+/iso-27001 /iso-27001/ 301
+/hornet-security/ /hornetsecurity/ 301
+/hornet-security /hornetsecurity/ 301
+/hornetsecurity /hornetsecurity/ 301

@@ -46,7 +46,7 @@ export const pilares: Pilar[] = [
         shortDescriptionEn: 'Multi-layered AI-powered endpoint protection, 99.9% detection, centralized cloud management and anti-ransomware.',
       },
       {
-        slug: 'hornet-security',
+        slug: 'hornetsecurity',
         brand: 'Hornetsecurity',
         name: 'Seguridad Email 365',
         shortDescription: 'Proteccion email empresarial completa para Microsoft 365. Backup, archiving, encryption y continuity.',
@@ -136,7 +136,7 @@ export const pilares: Pilar[] = [
     icon: 'document',
     products: [
       {
-        slug: 'iso27001',
+        slug: 'iso-27001',
         brand: 'Starsolution',
         name: 'Consultoría ISO 27001',
         shortDescription: 'Gap Analysis, implementacion de SGSI y acompanamiento hacia la certificacion. Mas de 50 proyectos exitosos.',

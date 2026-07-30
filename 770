@@ -1,0 +1,1 @@
+"(ninguno)"; echo "---conteo---"; awk 'NR 
