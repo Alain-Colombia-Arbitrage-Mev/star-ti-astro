@@ -10,3 +10,15 @@ Thumbs.db
 # Claude Code local state
 .claude/
 .tmp-*
+
+# Archivos sueltos en la raiz que no pertenecen al repo
+/770
+/*.exe
+/*.db
+/*.rvf
+/*.rvf.lock
+/*.winmd
+/*.xlsx
+/*.pdf
+/Landing*.html
+/*.docx.md
