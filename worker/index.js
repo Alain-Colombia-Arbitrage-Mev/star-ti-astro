@@ -12,6 +12,12 @@ const APEX = "star-ti.com";
 const LEADS_PATH = "/api/leads";
 const DEFAULT_AIRTABLE_TABLE = "Leads Web";
 const MIGRATED_HOSTS = new Set(["starsolutionsti.com.co", "www.starsolutionsti.com.co"]);
+const ASSET_CASE_FIXES = new Map([
+  ["/_astro/Footer.DwbKMbZa.css", "/_astro/Footer.1jOcFuDb.css"],
+  ["/_astro/footer.dwbkmbza.css", "/_astro/Footer.1jOcFuDb.css"],
+  ["/_astro/footer.1jocfudb.css", "/_astro/Footer.1jOcFuDb.css"],
+  ["/_astro/iso-27001@_@astro.b6wserpz.css", "/_astro/iso-27001@_@astro.B6WseRpz.css"],
+]);
 
 const LEGACY_REDIRECTS = new Map([
   ["/dlp-bogota-colombia", "/dlp-prevencion-perdida-datos/"],
@@ -112,7 +118,19 @@ export default {
       return Response.redirect(canonicalUrl.href, 301);
     }
 
-    return env.ASSETS.fetch(request);
+    const assetResponse = await env.ASSETS.fetch(request);
+    if (assetResponse.status !== 404 || !url.pathname.startsWith("/_astro/")) {
+      return assetResponse;
+    }
+
+    const caseFixedPath = ASSET_CASE_FIXES.get(url.pathname);
+    if (!caseFixedPath) {
+      return assetResponse;
+    }
+
+    const caseFixedUrl = new URL(url.href);
+    caseFixedUrl.pathname = caseFixedPath;
+    return env.ASSETS.fetch(new Request(caseFixedUrl, request));
   },
 };
 

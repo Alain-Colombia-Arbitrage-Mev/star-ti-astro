@@ -4,6 +4,7 @@
 @import 'tw-animate-css';
 
 :root {
+  --star-ti-style-revision: 20260812;
   --font-size: 16px;
   --background: #ffffff;
   --foreground: oklch(0.145 0 0);

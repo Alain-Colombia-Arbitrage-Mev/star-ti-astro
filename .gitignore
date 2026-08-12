@@ -11,6 +11,7 @@ Thumbs.db
 # Claude Code local state
 .claude/
 .tmp-*
+.wrangler/
 
 # Archivos sueltos en la raiz que no pertenecen al repo
 /770
@@ -23,3 +24,6 @@ Thumbs.db
 /*.pdf
 /Landing*.html
 /*.docx.md
+
+# Capturas temporales de QA local
+/screenshots/tailwind-home-*.png
