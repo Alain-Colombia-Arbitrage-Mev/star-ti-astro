@@ -632,7 +632,10 @@ const seo = seoData['cableado-estructurado'];
               personalizada sin costo ni compromiso.
             </p>
 
-            <form action="/gracias" method="GET" class="space-y-4">
+            <form action="/api/leads" method="post" data-lead-form class="space-y-4">
+              <input type="hidden" name="_redirect" value="/gracias" />
+              <input type="hidden" name="_source_form" value="Cableado estructurado - Auditoria" />
+              <input type="hidden" name="servicio" value="Cableado estructurado" />
               <div>
                 <input type="text" name="nombre" placeholder="Nombre completo" required class="w-full px-4 py-3 bg-[#f9fafb] border border-[#e5e7eb] rounded focus:outline-none focus:ring-2 focus:ring-[#dc2626]"/>
               </div>

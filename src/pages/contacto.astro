@@ -251,7 +251,9 @@ const seo = seoData['contacto'];
             <p class="text-[#64748b]">Complete el formulario y un especialista se comunicará con usted en menos de 2 horas con una solución a medida.</p>
           </div>
 
-          <form action="/gracias" method="GET" class="space-y-5">
+          <form action="/api/leads" method="post" data-lead-form class="space-y-5">
+            <input type="hidden" name="_redirect" value="/gracias" />
+            <input type="hidden" name="_source_form" value="Contacto - Cotizacion personalizada" />
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
               <div>
                 <label class="block text-sm font-semibold text-[#0f172a] mb-2">Nombre Completo *</label>

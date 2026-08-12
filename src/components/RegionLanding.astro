@@ -176,7 +176,9 @@ const pilarColors: Record<string, { bg: string; text: string; border: string }> 
         <h3 class="text-xl font-bold text-gray-900 mb-6">
           {isEnglish ? 'Request a Free Consultation' : 'Solicite una Consultoría Gratuita'}
         </h3>
-        <form action={`/${region.slug ? region.slug + '/gracias' : 'gracias'}`} method="GET" class="space-y-4">
+        <form action="/api/leads" method="post" data-lead-form class="space-y-4">
+          <input type="hidden" name="_redirect" value="/gracias" />
+          <input type="hidden" name="_source_form" value={`Landing regional - ${region.city}`} />
           <input type="hidden" name="region" value={region.slug || 'colombia'} />
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>

@@ -304,37 +304,6 @@ const defaultWhatsappMessage = 'Hola, quiero agendar un diagnóstico gratuito de
       });
     });
   }
-
-  const forms = document.querySelectorAll<HTMLFormElement>('form[data-lead-form]');
-  forms.forEach((form) => {
-    form.addEventListener('submit', (event) => {
-      event.preventDefault();
-      const data = new FormData(form);
-      const lines = [
-        'Solicitud de diagnóstico gratuito ISO 27001',
-        '',
-        `Nombre: ${data.get('nombre') ?? ''}`,
-        `Empresa: ${data.get('empresa') ?? ''}`,
-        `Email: ${data.get('email') ?? ''}`,
-        `Teléfono: ${data.get('telefono') ?? ''}`,
-      ];
-      const cargo = data.get('cargo');
-      if (cargo) lines.push(`Cargo: ${cargo}`);
-      const empleados = data.get('empleados');
-      if (empleados) lines.push(`Número de empleados: ${empleados}`);
-      const mensaje = data.get('mensaje');
-      if (mensaje) lines.push('', 'Mensaje:', String(mensaje));
-
-      const subject = `Solicitud ISO 27001 — ${data.get('empresa') ?? data.get('nombre') ?? 'sin empresa'}`;
-      const mailto = `mailto:${'contacto@star-ti.com'}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(lines.join('\n'))}`;
-      window.location.href = mailto;
-
-      const notice = document.createElement('p');
-      notice.className = 'iso-lead-form__notice';
-      notice.textContent = '✓ Se abrió tu cliente de correo. Si no se abre, escríbenos a contacto@star-ti.com.';
-      form.replaceWith(notice);
-    });
-  });
 </script>
 
 <style is:global>

@@ -3,6 +3,7 @@ dist/
 .astro/
 .env
 .env.*
+.dev.vars
 *.log
 .DS_Store
 Thumbs.db

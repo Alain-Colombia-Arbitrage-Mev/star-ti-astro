@@ -280,7 +280,10 @@ const seo = seoData['equipos-computo'];
       <h2 class="text-4xl font-bold text-[#0f172a] mb-4">Hablemos de su Proyecto</h2>
       <p class="text-lg text-[#64748b] mb-8 max-w-2xl mx-auto">Comparta los detalles de su aplicación y reciba una propuesta personalizada para presupuestos y requerimientos.</p>
 
-      <form action="/gracias" method="GET" class="max-w-md mx-auto space-y-4">
+      <form action="/api/leads" method="post" data-lead-form class="max-w-md mx-auto space-y-4">
+        <input type="hidden" name="_redirect" value="/gracias" />
+        <input type="hidden" name="_source_form" value="Equipos de computo - Asesoria" />
+        <input type="hidden" name="servicio" value="Equipos de computo" />
         <input type="email" name="email" placeholder="Email corporativo" required class="w-full px-4 py-3 border border-[#e2e8f0] rounded text-[#0f172a] placeholder-[#94a3b8] focus:outline-none focus:ring-2 focus:ring-[#dc2626] focus:border-transparent"/>
         <input type="text" name="empresa" placeholder="Empresa" required class="w-full px-4 py-3 border border-[#e2e8f0] rounded text-[#0f172a] placeholder-[#94a3b8] focus:outline-none focus:ring-2 focus:ring-[#dc2626] focus:border-transparent"/>
         <select name="caso" class="w-full px-4 py-3 border border-[#e2e8f0] rounded text-[#0f172a] focus:outline-none focus:ring-2 focus:ring-[#dc2626] focus:border-transparent">

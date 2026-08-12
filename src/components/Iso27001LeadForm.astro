@@ -8,7 +8,10 @@ interface Props {
 const { id, buttonLabel, includeMessage = false } = Astro.props;
 ---
 
-<form id={id} class:list={['iso-lead-form', { 'iso-lead-form--with-message': includeMessage }]} data-lead-form action="mailto:contacto@star-ti.com" method="post" enctype="text/plain">
+<form id={id} class:list={['iso-lead-form', { 'iso-lead-form--with-message': includeMessage }]} data-lead-form action="/api/leads" method="post">
+  <input type="hidden" name="_redirect" value="/gracias" />
+  <input type="hidden" name="_source_form" value={id} />
+  <input type="hidden" name="servicio" value="ISO 27001" />
   <label>
     Nombre completo *
     <input name="nombre" required placeholder="Juan Pérez" autocomplete="name" />

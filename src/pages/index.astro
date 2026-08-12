@@ -854,7 +854,9 @@ const seo = seoData.home;
 
       <!-- Formulario de Contacto -->
       <div class="backdrop-blur-2xl bg-white/10 border border-white/20 rounded-3xl p-8 sm:p-12 shadow-2xl mb-8">
-        <form action="/gracias" method="GET" class="space-y-6">
+        <form action="/api/leads" method="post" data-lead-form class="space-y-6">
+          <input type="hidden" name="_redirect" value="/gracias" />
+          <input type="hidden" name="_source_form" value="Inicio - Consultoria gratuita" />
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <div>
               <label for="name" class="block text-sm font-medium text-gray-300 mb-2">

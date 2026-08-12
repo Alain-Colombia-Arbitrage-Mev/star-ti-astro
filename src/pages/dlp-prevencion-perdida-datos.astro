@@ -414,13 +414,16 @@ const checkSvg = `<svg class="w-6 h-6 text-green-600" fill="currentColor" viewBo
       <h2 class="text-4xl lg:text-5xl font-bold mb-6">Proteja sus datos hoy mismo</h2>
       <p class="text-xl text-gray-300 mb-10 leading-relaxed">Agende una demo en vivo con un experto técnico de Starsolution y descubra cómo Endpoint Protector puede blindar su información en menos de 2 semanas.</p>
       <div class="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8 lg:p-12 max-w-2xl mx-auto">
-        <form action="/gracias" method="GET" class="space-y-6">
+        <form action="/api/leads" method="post" data-lead-form class="space-y-6">
+          <input type="hidden" name="_redirect" value="/gracias" />
+          <input type="hidden" name="_source_form" value="DLP - Demo tecnica" />
+          <input type="hidden" name="servicio" value="DLP - Endpoint Protector" />
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <input type="text" placeholder="Nombre" class="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-[#ed1c24] focus:border-transparent" />
-            <input type="text" placeholder="Empresa" class="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-[#ed1c24] focus:border-transparent" />
+            <input type="text" name="nombre" placeholder="Nombre" class="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-[#ed1c24] focus:border-transparent" />
+            <input type="text" name="empresa" placeholder="Empresa" class="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-[#ed1c24] focus:border-transparent" />
           </div>
-          <input type="email" placeholder="Email Corporativo" class="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-[#ed1c24] focus:border-transparent" />
-          <input type="tel" placeholder="Teléfono" class="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-[#ed1c24] focus:border-transparent" />
+          <input type="email" name="email" placeholder="Email Corporativo" class="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-[#ed1c24] focus:border-transparent" />
+          <input type="tel" name="telefono" placeholder="Teléfono" class="w-full px-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-[#ed1c24] focus:border-transparent" />
           <button type="submit" class="w-full bg-gradient-to-r from-red-600 to-red-700 text-white font-semibold px-8 py-4 rounded-full hover:from-red-700 hover:to-red-800 transition shadow-lg">Solicitar Demo Técnica de Endpoint Protector</button>
           <p class="text-xs text-gray-400 text-center">Al enviar, acepta nuestros <a href="/terminos" class="underline hover:text-white">Términos y Condiciones</a> y <a href="/politica-de-proteccion-de-datos-personales" class="underline hover:text-white">Política de Datos</a></p>
         </form>

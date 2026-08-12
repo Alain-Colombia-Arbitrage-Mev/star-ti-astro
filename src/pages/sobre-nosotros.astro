@@ -277,7 +277,9 @@ const personJsonLd = {
             <h3 class="text-2xl font-bold text-[#0f172a] mb-2">Envíenos un Mensaje</h3>
             <p class="text-sm text-[#64748b] mb-6">Complete el formulario y nos pondremos en contacto con usted en menos de 24 horas.</p>
 
-            <form action="/gracias" method="GET" class="space-y-5">
+            <form action="/api/leads" method="post" data-lead-form class="space-y-5">
+              <input type="hidden" name="_redirect" value="/gracias" />
+              <input type="hidden" name="_source_form" value="Sobre nosotros - Mensaje" />
               <div>
                 <label for="nombre" class="block text-sm font-semibold text-[#0f172a] mb-2">Nombre Completo *</label>
                 <input type="text" id="nombre" name="nombre" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#dc2626] focus:border-transparent transition" placeholder="Ej: Juan Pérez"/>
