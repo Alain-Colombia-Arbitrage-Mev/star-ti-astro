@@ -3,7 +3,6 @@
 
 User-agent: *
 Allow: /
-Disallow: /gracias/
 
 # Sitemap (generado por @astrojs/sitemap en cada build)
 Sitemap: https://star-ti.com/sitemap-index.xml
@@ -22,7 +21,6 @@ Allow: /
 # OpenAI / ChatGPT Search
 User-agent: GPTBot
 Allow: /
-Disallow: /gracias/
 
 User-agent: ChatGPT-User
 Allow: /
@@ -33,7 +31,6 @@ Allow: /
 # Anthropic Claude
 User-agent: anthropic-ai
 Allow: /
-Disallow: /gracias/
 
 User-agent: Claude-Web
 Allow: /

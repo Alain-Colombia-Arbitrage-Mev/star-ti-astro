@@ -42,7 +42,7 @@ const pilarColors: Record<string, { bg: string; text: string; border: string }> 
       </p>
 
       <div class="flex flex-col sm:flex-row gap-4 mb-12">
-        <a href={`/${region.slug ? region.slug + '/contacto' : 'contacto'}`} class="bg-gradient-to-r from-red-500 to-red-600 text-white font-semibold px-8 py-4 rounded-full hover:from-red-600 hover:to-red-700 transition shadow-lg text-center">
+        <a href={`/${region.slug ? region.slug + '/contacto/' : 'contacto/'}`} class="bg-gradient-to-r from-red-500 to-red-600 text-white font-semibold px-8 py-4 rounded-full hover:from-red-600 hover:to-red-700 transition shadow-lg text-center">
           {isEnglish ? 'Request a Consultation' : 'Solicitar Consultoría'}
         </a>
         <a href={`tel:${region.phone}`} class="backdrop-blur-xl bg-white/10 border border-white/20 text-white font-semibold px-8 py-4 rounded-full hover:bg-white/20 transition text-center">
@@ -93,7 +93,7 @@ const pilarColors: Record<string, { bg: string; text: string; border: string }> 
                   const productName = isEnglish ? (product.nameEn ?? product.name) : product.name;
                   const productDesc = isEnglish ? (product.shortDescriptionEn ?? product.shortDescription) : product.shortDescription;
                   return (
-                  <a href={`/${product.slug}`} class="flex items-center gap-3 group/item p-2 -mx-2 rounded-lg hover:bg-gray-50 transition">
+                  <a href={`/${product.slug}/`} class="flex items-center gap-3 group/item p-2 -mx-2 rounded-lg hover:bg-gray-50 transition">
                     <div class={`w-8 h-8 ${colors.bg} rounded-lg flex items-center justify-center flex-shrink-0`}>
                       <svg class={`w-4 h-4 ${colors.text}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />

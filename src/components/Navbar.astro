@@ -8,20 +8,20 @@ interface Props {
 const { lang = 'es' } = Astro.props;
 const en = lang === 'en';
 const t = (es: string, enStr: string) => (en ? enStr : es);
-const contacto = en ? '/miami/contacto' : '/contacto';
+const contacto = en ? '/miami/contacto/' : '/contacto/';
 ---
 <nav class="sticky top-0 z-50 bg-white border-b border-gray-200">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-16 lg:h-20">
       <!-- Logo -->
-      <a href={en ? '/miami' : '/'} class="flex-shrink-0 flex items-center">
+      <a href={en ? '/miami/' : '/'} class="flex-shrink-0 flex items-center">
         <img src="/logo.png" alt="Starsolution" class="h-10 w-10 lg:h-14 lg:w-14" width="48" height="48" loading="eager" fetchpriority="high" />
         <span class="hidden lg:inline font-bold text-lg text-gray-900 ml-2">Starsolution</span>
       </a>
 
       <!-- Desktop Navigation -->
       <div class="hidden lg:flex items-center gap-1">
-        <a href={en ? '/miami' : '/'} class="px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-50 rounded-3xl transition">Home</a>
+        <a href={en ? '/miami/' : '/'} class="px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-50 rounded-3xl transition">Home</a>
 
         <!-- STAR PROTECTION Dropdown -->
         <div class="relative group/protection">
@@ -36,19 +36,19 @@ const contacto = en ? '/miami/contacto' : '/contacto';
               <div class="text-xs text-red-500 mt-0.5">{t('Defensa proactiva de endpoints y email', 'Proactive endpoint and email defense')}</div>
             </div>
             <div class="py-2">
-              <a href="/bitdefender" class="block px-4 py-3 text-sm text-gray-700 hover:bg-red-50 transition">
+              <a href="/bitdefender/" class="block px-4 py-3 text-sm text-gray-700 hover:bg-red-50 transition">
                 <div class="font-semibold">Bitdefender GravityZone EDR/XDR</div>
                 <div class="text-xs text-gray-500">{t('Protección endpoint multicapa', 'Multi-layered endpoint protection')}</div>
               </a>
-              <a href="/hornetsecurity" class="block px-4 py-3 text-sm text-gray-700 hover:bg-red-50 transition">
+              <a href="/hornetsecurity/" class="block px-4 py-3 text-sm text-gray-700 hover:bg-red-50 transition">
                 <div class="font-semibold">Hornetsecurity 365</div>
                 <div class="text-xs text-gray-500">{t('Seguridad email empresarial', 'Enterprise email security')}</div>
               </a>
-              <a href="/proofpoint" class="block px-4 py-3 text-sm text-gray-700 hover:bg-red-50 transition">
+              <a href="/proofpoint/" class="block px-4 py-3 text-sm text-gray-700 hover:bg-red-50 transition">
                 <div class="font-semibold">Proofpoint</div>
                 <div class="text-xs text-gray-500">{t('Email security avanzado', 'Advanced email security')}</div>
               </a>
-              <a href="/kaspersky" class="block px-4 py-3 text-sm text-gray-700 hover:bg-red-50 transition">
+              <a href="/kaspersky/" class="block px-4 py-3 text-sm text-gray-700 hover:bg-red-50 transition">
                 <div class="font-semibold">Kaspersky Endpoint</div>
                 <div class="text-xs text-gray-500">{t('Protección endpoint + servidores', 'Endpoint + server protection')}</div>
               </a>
@@ -69,23 +69,23 @@ const contacto = en ? '/miami/contacto' : '/contacto';
               <div class="text-xs text-blue-500 mt-0.5">{t('Visibilidad y detección de amenazas', 'Visibility and threat detection')}</div>
             </div>
             <div class="py-2">
-              <a href="/enthec" class="block px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 transition">
+              <a href="/enthec/" class="block px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 transition">
                 <div class="font-semibold">Enthec</div>
                 <div class="text-xs text-gray-500">{t('Superficie de ataque', 'Attack surface')}</div>
               </a>
-              <a href="/vicarius" class="block px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 transition">
+              <a href="/vicarius/" class="block px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 transition">
                 <div class="font-semibold">Vicarius</div>
                 <div class="text-xs text-gray-500">{t('Vulnerabilidades y CVEs', 'Vulnerabilities and CVEs')}</div>
               </a>
-              <a href="/stellar-cyber" class="block px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 transition">
+              <a href="/stellar-cyber/" class="block px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 transition">
                 <div class="font-semibold">Stellar Cyber</div>
                 <div class="text-xs text-gray-500">{t('Monitoreo centralizado Open XDR', 'Centralized Open XDR monitoring')}</div>
               </a>
-              <a href="/hacking-etico" class="block px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 transition">
+              <a href="/hacking-etico/" class="block px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 transition">
                 <div class="font-semibold">{t('Hacking Ético', 'Ethical Hacking')}</div>
                 <div class="text-xs text-gray-500">{t('Pentesting certificado', 'Certified pentesting')}</div>
               </a>
-              <a href="/rthreat-bogota-colombia" class="block px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 transition">
+              <a href="/rthreat-bogota-colombia/" class="block px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 transition">
                 <div class="font-semibold">Red Team & BAS</div>
                 <div class="text-xs text-gray-500">{t('Simulación de ataques', 'Attack simulation')}</div>
               </a>
@@ -106,19 +106,19 @@ const contacto = en ? '/miami/contacto' : '/contacto';
               <div class="text-xs text-emerald-500 mt-0.5">{t('Cumplimiento normativo y gobernanza', 'Regulatory compliance and governance')}</div>
             </div>
             <div class="py-2">
-              <a href="/iso-27001" class="block px-4 py-3 text-sm text-gray-700 hover:bg-emerald-50 transition">
+              <a href="/iso-27001/" class="block px-4 py-3 text-sm text-gray-700 hover:bg-emerald-50 transition">
                 <div class="font-semibold">ISO 27001</div>
                 <div class="text-xs text-gray-500">{t('Consultoría y certificación', 'Consulting and certification')}</div>
               </a>
-              <a href="/sealpath" class="block px-4 py-3 text-sm text-gray-700 hover:bg-emerald-50 transition">
+              <a href="/sealpath/" class="block px-4 py-3 text-sm text-gray-700 hover:bg-emerald-50 transition">
                 <div class="font-semibold">SealPath</div>
                 <div class="text-xs text-gray-500">{t('Seguridad de datos DLP', 'DLP data security')}</div>
               </a>
-              <a href="/netwrix" class="block px-4 py-3 text-sm text-gray-700 hover:bg-emerald-50 transition">
+              <a href="/netwrix/" class="block px-4 py-3 text-sm text-gray-700 hover:bg-emerald-50 transition">
                 <div class="font-semibold">Netwrix</div>
                 <div class="text-xs text-gray-500">{t('Auditoría e identidad', 'Auditing and identity')}</div>
               </a>
-              <a href="/black-duck" class="block px-4 py-3 text-sm text-gray-700 hover:bg-emerald-50 transition">
+              <a href="/black-duck/" class="block px-4 py-3 text-sm text-gray-700 hover:bg-emerald-50 transition">
                 <div class="font-semibold">Black Duck</div>
                 <div class="text-xs text-gray-500">App Security Testing</div>
               </a>
@@ -138,27 +138,27 @@ const contacto = en ? '/miami/contacto' : '/contacto';
               <div class="text-xs text-gray-500 mt-0.5">{t('Infraestructura y productividad', 'Infrastructure and productivity')}</div>
             </div>
             <div class="py-2">
-              <a href="/teamviewer" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 transition">
+              <a href="/teamviewer/" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 transition">
                 <div class="font-semibold">TeamViewer</div>
                 <div class="text-xs text-gray-500">{t('Control remoto empresarial', 'Enterprise remote control')}</div>
               </a>
-              <a href="/anydesk" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 transition">
+              <a href="/anydesk/" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 transition">
                 <div class="font-semibold">AnyDesk</div>
                 <div class="text-xs text-gray-500">{t('Escritorio remoto ultra rápido', 'Ultra-fast remote desktop')}</div>
               </a>
-              <a href="/soti-mdm" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 transition">
+              <a href="/soti-mdm/" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 transition">
                 <div class="font-semibold">SOTI MobiControl</div>
                 <div class="text-xs text-gray-500">{t('Gestión dispositivos móviles', 'Mobile device management')}</div>
               </a>
-              <a href="/cableado-estructurado" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 transition">
+              <a href="/cableado-estructurado/" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 transition">
                 <div class="font-semibold">{t('Cableado Estructurado', 'Structured Cabling')}</div>
                 <div class="text-xs text-gray-500">{t('Instalación de redes', 'Network installation')}</div>
               </a>
-              <a href="/equipos-computo" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 transition">
+              <a href="/equipos-computo/" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 transition">
                 <div class="font-semibold">{t('Equipos de Computo', 'IT Equipment')}</div>
                 <div class="text-xs text-gray-500">{t('Hardware empresarial', 'Enterprise hardware')}</div>
               </a>
-              <a href="/brother" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 transition">
+              <a href="/brother/" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 transition">
                 <div class="font-semibold">{t('Distribuidor Brother', 'Brother Distributor')}</div>
                 <div class="text-xs text-gray-500">{t('Impresoras y multifuncionales', 'Printers and multifunction')}</div>
               </a>
@@ -166,7 +166,7 @@ const contacto = en ? '/miami/contacto' : '/contacto';
           </div>
         </div>
 
-        <a href="/blog" class="px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-50 rounded-3xl transition">Blog</a>
+        <a href="/blog/" class="px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-50 rounded-3xl transition">Blog</a>
         <a href={contacto} class="px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-50 rounded-3xl transition">{t('Contacto', 'Contact')}</a>
       </div>
 
@@ -193,7 +193,7 @@ const contacto = en ? '/miami/contacto' : '/contacto';
 
     <!-- Mobile menu -->
     <div id="mobile-menu" class="lg:hidden hidden py-4 space-y-1 border-t border-gray-200">
-      <a href={en ? '/miami' : '/'} class="block px-4 py-3 text-sm font-medium text-gray-900 hover:bg-gray-50 rounded-lg transition">Home</a>
+      <a href={en ? '/miami/' : '/'} class="block px-4 py-3 text-sm font-medium text-gray-900 hover:bg-gray-50 rounded-lg transition">Home</a>
 
       <!-- Mobile STAR PROTECTION -->
       <div class="space-y-1">
@@ -212,19 +212,19 @@ const contacto = en ? '/miami/contacto' : '/contacto';
               <div class="font-bold text-red-600 text-xs uppercase tracking-wider">Star Protection</div>
               <div class="text-xs text-red-500">{t('Defensa proactiva de endpoints y email', 'Proactive endpoint and email defense')}</div>
             </div>
-            <a href="/bitdefender" class="block px-4 py-3 text-sm text-gray-700 hover:bg-white rounded-lg transition">
+            <a href="/bitdefender/" class="block px-4 py-3 text-sm text-gray-700 hover:bg-white rounded-lg transition">
               <div class="font-semibold text-gray-900">Bitdefender GravityZone EDR/XDR</div>
               <div class="text-xs text-gray-500 mt-0.5">{t('Protección endpoint multicapa', 'Multi-layered endpoint protection')}</div>
             </a>
-            <a href="/hornetsecurity" class="block px-4 py-3 text-sm text-gray-700 hover:bg-white rounded-lg transition">
+            <a href="/hornetsecurity/" class="block px-4 py-3 text-sm text-gray-700 hover:bg-white rounded-lg transition">
               <div class="font-semibold text-gray-900">Hornetsecurity 365</div>
               <div class="text-xs text-gray-500 mt-0.5">{t('Seguridad email empresarial', 'Enterprise email security')}</div>
             </a>
-            <a href="/proofpoint" class="block px-4 py-3 text-sm text-gray-700 hover:bg-white rounded-lg transition">
+            <a href="/proofpoint/" class="block px-4 py-3 text-sm text-gray-700 hover:bg-white rounded-lg transition">
               <div class="font-semibold text-gray-900">Proofpoint</div>
               <div class="text-xs text-gray-500 mt-0.5">{t('Email security avanzado', 'Advanced email security')}</div>
             </a>
-            <a href="/kaspersky" class="block px-4 py-3 text-sm text-gray-700 hover:bg-white rounded-lg transition">
+            <a href="/kaspersky/" class="block px-4 py-3 text-sm text-gray-700 hover:bg-white rounded-lg transition">
               <div class="font-semibold text-gray-900">Kaspersky Endpoint</div>
               <div class="text-xs text-gray-500 mt-0.5">{t('Protección endpoint + servidores', 'Endpoint + server protection')}</div>
             </a>
@@ -249,23 +249,23 @@ const contacto = en ? '/miami/contacto' : '/contacto';
               <div class="font-bold text-blue-600 text-xs uppercase tracking-wider">Star Inspection</div>
               <div class="text-xs text-blue-500">{t('Visibilidad y detección de amenazas', 'Visibility and threat detection')}</div>
             </div>
-            <a href="/enthec" class="block px-4 py-3 text-sm text-gray-700 hover:bg-white rounded-lg transition">
+            <a href="/enthec/" class="block px-4 py-3 text-sm text-gray-700 hover:bg-white rounded-lg transition">
               <div class="font-semibold text-gray-900">Enthec</div>
               <div class="text-xs text-gray-500 mt-0.5">{t('Superficie de ataque', 'Attack surface')}</div>
             </a>
-            <a href="/vicarius" class="block px-4 py-3 text-sm text-gray-700 hover:bg-white rounded-lg transition">
+            <a href="/vicarius/" class="block px-4 py-3 text-sm text-gray-700 hover:bg-white rounded-lg transition">
               <div class="font-semibold text-gray-900">Vicarius</div>
               <div class="text-xs text-gray-500 mt-0.5">{t('Vulnerabilidades y CVEs', 'Vulnerabilities and CVEs')}</div>
             </a>
-            <a href="/stellar-cyber" class="block px-4 py-3 text-sm text-gray-700 hover:bg-white rounded-lg transition">
+            <a href="/stellar-cyber/" class="block px-4 py-3 text-sm text-gray-700 hover:bg-white rounded-lg transition">
               <div class="font-semibold text-gray-900">Stellar Cyber</div>
               <div class="text-xs text-gray-500 mt-0.5">{t('Monitoreo centralizado Open XDR', 'Centralized Open XDR monitoring')}</div>
             </a>
-            <a href="/hacking-etico" class="block px-4 py-3 text-sm text-gray-700 hover:bg-white rounded-lg transition">
+            <a href="/hacking-etico/" class="block px-4 py-3 text-sm text-gray-700 hover:bg-white rounded-lg transition">
               <div class="font-semibold text-gray-900">{t('Hacking Ético', 'Ethical Hacking')}</div>
               <div class="text-xs text-gray-500 mt-0.5">{t('Pentesting certificado', 'Certified pentesting')}</div>
             </a>
-            <a href="/rthreat-bogota-colombia" class="block px-4 py-3 text-sm text-gray-700 hover:bg-white rounded-lg transition">
+            <a href="/rthreat-bogota-colombia/" class="block px-4 py-3 text-sm text-gray-700 hover:bg-white rounded-lg transition">
               <div class="font-semibold text-gray-900">Red Team & BAS</div>
               <div class="text-xs text-gray-500 mt-0.5">{t('Simulación de ataques', 'Attack simulation')}</div>
             </a>
@@ -290,19 +290,19 @@ const contacto = en ? '/miami/contacto' : '/contacto';
               <div class="font-bold text-emerald-600 text-xs uppercase tracking-wider">Star Compliance</div>
               <div class="text-xs text-emerald-500">{t('Cumplimiento normativo y gobernanza', 'Regulatory compliance and governance')}</div>
             </div>
-            <a href="/iso-27001" class="block px-4 py-3 text-sm text-gray-700 hover:bg-white rounded-lg transition">
+            <a href="/iso-27001/" class="block px-4 py-3 text-sm text-gray-700 hover:bg-white rounded-lg transition">
               <div class="font-semibold text-gray-900">ISO 27001</div>
               <div class="text-xs text-gray-500 mt-0.5">{t('Consultoría y certificación', 'Consulting and certification')}</div>
             </a>
-            <a href="/sealpath" class="block px-4 py-3 text-sm text-gray-700 hover:bg-white rounded-lg transition">
+            <a href="/sealpath/" class="block px-4 py-3 text-sm text-gray-700 hover:bg-white rounded-lg transition">
               <div class="font-semibold text-gray-900">SealPath</div>
               <div class="text-xs text-gray-500 mt-0.5">{t('Seguridad de datos DLP', 'DLP data security')}</div>
             </a>
-            <a href="/netwrix" class="block px-4 py-3 text-sm text-gray-700 hover:bg-white rounded-lg transition">
+            <a href="/netwrix/" class="block px-4 py-3 text-sm text-gray-700 hover:bg-white rounded-lg transition">
               <div class="font-semibold text-gray-900">Netwrix</div>
               <div class="text-xs text-gray-500 mt-0.5">{t('Auditoría e identidad', 'Auditing and identity')}</div>
             </a>
-            <a href="/black-duck" class="block px-4 py-3 text-sm text-gray-700 hover:bg-white rounded-lg transition">
+            <a href="/black-duck/" class="block px-4 py-3 text-sm text-gray-700 hover:bg-white rounded-lg transition">
               <div class="font-semibold text-gray-900">Black Duck</div>
               <div class="text-xs text-gray-500 mt-0.5">App Security Testing</div>
             </a>
@@ -324,27 +324,27 @@ const contacto = en ? '/miami/contacto' : '/contacto';
               <div class="font-bold text-gray-600 text-xs uppercase tracking-wider">{t('Más Soluciones', 'More Solutions')}</div>
               <div class="text-xs text-gray-500">{t('Infraestructura y productividad', 'Infrastructure and productivity')}</div>
             </div>
-            <a href="/teamviewer" class="block px-4 py-3 text-sm text-gray-700 hover:bg-white rounded-lg transition">
+            <a href="/teamviewer/" class="block px-4 py-3 text-sm text-gray-700 hover:bg-white rounded-lg transition">
               <div class="font-semibold text-gray-900">TeamViewer</div>
               <div class="text-xs text-gray-500 mt-0.5">{t('Control remoto empresarial', 'Enterprise remote control')}</div>
             </a>
-            <a href="/anydesk" class="block px-4 py-3 text-sm text-gray-700 hover:bg-white rounded-lg transition">
+            <a href="/anydesk/" class="block px-4 py-3 text-sm text-gray-700 hover:bg-white rounded-lg transition">
               <div class="font-semibold text-gray-900">AnyDesk</div>
               <div class="text-xs text-gray-500 mt-0.5">{t('Escritorio remoto ultra rápido', 'Ultra-fast remote desktop')}</div>
             </a>
-            <a href="/soti-mdm" class="block px-4 py-3 text-sm text-gray-700 hover:bg-white rounded-lg transition">
+            <a href="/soti-mdm/" class="block px-4 py-3 text-sm text-gray-700 hover:bg-white rounded-lg transition">
               <div class="font-semibold text-gray-900">SOTI MobiControl</div>
               <div class="text-xs text-gray-500 mt-0.5">{t('Gestión dispositivos móviles', 'Mobile device management')}</div>
             </a>
-            <a href="/cableado-estructurado" class="block px-4 py-3 text-sm text-gray-700 hover:bg-white rounded-lg transition">
+            <a href="/cableado-estructurado/" class="block px-4 py-3 text-sm text-gray-700 hover:bg-white rounded-lg transition">
               <div class="font-semibold text-gray-900">{t('Cableado Estructurado', 'Structured Cabling')}</div>
               <div class="text-xs text-gray-500 mt-0.5">{t('Instalación de redes', 'Network installation')}</div>
             </a>
-            <a href="/equipos-computo" class="block px-4 py-3 text-sm text-gray-700 hover:bg-white rounded-lg transition">
+            <a href="/equipos-computo/" class="block px-4 py-3 text-sm text-gray-700 hover:bg-white rounded-lg transition">
               <div class="font-semibold text-gray-900">{t('Equipos de Computo', 'IT Equipment')}</div>
               <div class="text-xs text-gray-500 mt-0.5">{t('Hardware empresarial', 'Enterprise hardware')}</div>
             </a>
-            <a href="/brother" class="block px-4 py-3 text-sm text-gray-700 hover:bg-white rounded-lg transition">
+            <a href="/brother/" class="block px-4 py-3 text-sm text-gray-700 hover:bg-white rounded-lg transition">
               <div class="font-semibold text-gray-900">{t('Distribuidor Brother', 'Brother Distributor')}</div>
               <div class="text-xs text-gray-500 mt-0.5">{t('Impresoras y multifuncionales', 'Printers and multifunction')}</div>
             </a>
@@ -352,7 +352,7 @@ const contacto = en ? '/miami/contacto' : '/contacto';
         </div>
       </div>
 
-      <a href="/blog" class="block px-4 py-3 text-sm font-medium text-gray-900 hover:bg-gray-50 rounded-lg transition">Blog</a>
+      <a href="/blog/" class="block px-4 py-3 text-sm font-medium text-gray-900 hover:bg-gray-50 rounded-lg transition">Blog</a>
       <a href={contacto} class="block px-4 py-3 text-sm font-medium text-gray-900 hover:bg-gray-50 rounded-lg transition">{t('Contacto', 'Contact')}</a>
 
       <div class="pt-4 px-4">

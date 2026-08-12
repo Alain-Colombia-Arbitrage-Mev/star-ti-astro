@@ -11,6 +11,63 @@
 const APEX = "star-ti.com";
 const LEADS_PATH = "/api/leads";
 const DEFAULT_AIRTABLE_TABLE = "Leads Web";
+const MIGRATED_HOSTS = new Set(["starsolutionsti.com.co", "www.starsolutionsti.com.co"]);
+
+const LEGACY_REDIRECTS = new Map([
+  ["/dlp-bogota-colombia", "/dlp-prevencion-perdida-datos/"],
+  ["/safetica-dlp-bogota-colombia", "/dlp-prevencion-perdida-datos/"],
+  ["/antivirus-para-empresas-colombia", "/antivirus-empresas/"],
+  ["/antivirus-kaspersky-bogota-colombia", "/kaspersky/"],
+  ["/nosotros-star-solutions-t-i", "/sobre-nosotros/"],
+  ["/soti-mdm-colombia", "/soti-mdm/"],
+  ["/mdmsoti", "/soti-mdm/"],
+  ["/ve", "/venezuela/"],
+  ["/bitdefender-antivirus", "/bitdefender/"],
+  ["/home-copy", "/"],
+  ["/ridge-security-colombia", "/hacking-etico/"],
+]);
+
+const TRAILING_SLASH_PATHS = new Set([
+  "/bitdefender",
+  "/kaspersky",
+  "/enthec",
+  "/vicarius",
+  "/stellar-cyber",
+  "/hacking-etico",
+  "/sealpath",
+  "/netwrix",
+  "/proofpoint",
+  "/black-duck",
+  "/teamviewer",
+  "/anydesk",
+  "/soti-mdm",
+  "/cableado-estructurado",
+  "/equipos-computo",
+  "/brother",
+  "/dlp-prevencion-perdida-datos",
+  "/rthreat-bogota-colombia",
+  "/antivirus-empresas",
+  "/seguridad-informatica-empresas",
+  "/sobre-nosotros",
+  "/contacto",
+  "/gracias",
+  "/terminos",
+  "/privacidad",
+  "/politica-de-proteccion-de-datos-personales",
+  "/informe-ciberseguridad-colombia-2026",
+  "/venezuela",
+  "/venezuela/contacto",
+  "/miami",
+  "/miami/contacto",
+  "/blog",
+  "/blog/iso-27001-regulaciones",
+  "/blog/perfect-forward-secrecy",
+  "/blog/ransomware-empresas-colombia",
+  "/blog/respuesta-incidentes-ciberseguridad",
+  "/blog/zero-trust-2025",
+  "/iso-27001",
+  "/hornetsecurity",
+]);
 
 const FIELD_NAMES = {
   lead: "Lead",
@@ -45,27 +102,60 @@ const FIELD_NAMES = {
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
-    const host = url.hostname;
-
-    // Dominio migrado (apex y www) -> canonico, conservando ruta y query.
-    if (host === "starsolutionsti.com.co" || host === "www.starsolutionsti.com.co") {
-      url.hostname = APEX;
-      return Response.redirect(url.href, 301);
-    }
-
-    // www.* -> apex del mismo dominio.
-    if (host.startsWith("www.")) {
-      url.hostname = host.slice(4);
-      return Response.redirect(url.href, 301);
-    }
 
     if (url.pathname === LEADS_PATH) {
       return handleLeadSubmission(request, env);
     }
 
+    const canonicalUrl = getCanonicalRedirectUrl(url);
+    if (canonicalUrl) {
+      return Response.redirect(canonicalUrl.href, 301);
+    }
+
     return env.ASSETS.fetch(request);
   },
 };
+
+function getCanonicalRedirectUrl(url) {
+  const target = new URL(url.href);
+  const normalizedPath = normalizePathname(url.pathname);
+  const legacyTarget = LEGACY_REDIRECTS.get(normalizedPath);
+  let hasChanged = false;
+
+  if (MIGRATED_HOSTS.has(url.hostname)) {
+    target.hostname = APEX;
+    hasChanged = true;
+  } else if (url.hostname.startsWith("www.")) {
+    target.hostname = url.hostname.slice(4);
+    hasChanged = true;
+  }
+
+  if (legacyTarget) {
+    target.pathname = legacyTarget;
+    hasChanged = true;
+  } else if (TRAILING_SLASH_PATHS.has(normalizedPath)) {
+    target.pathname = `${normalizedPath}/`;
+    hasChanged = true;
+  } else if (normalizedPath !== safeDecodePathname(url.pathname)) {
+    target.pathname = normalizedPath;
+    hasChanged = true;
+  }
+
+  return hasChanged ? target : null;
+}
+
+function normalizePathname(pathname) {
+  const decoded = safeDecodePathname(pathname).toLowerCase().replace(/[.,]+$/u, "");
+  return decoded || "/";
+}
+
+function safeDecodePathname(pathname) {
+  try {
+    return decodeURIComponent(pathname);
+  } catch {
+    return pathname;
+  }
+}
 
 async function handleLeadSubmission(request, env) {
   if (request.method !== "POST") {

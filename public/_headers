@@ -21,6 +21,13 @@
   Cache-Control: public, max-age=2592000, must-revalidate
 
 # HTML pages - short cache with revalidation
+/gracias/*
+  X-Robots-Tag: noindex, nofollow
+  Cache-Control: public, max-age=3600, must-revalidate
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  Referrer-Policy: strict-origin-when-cross-origin
+
 /*
   Cache-Control: public, max-age=3600, must-revalidate
   X-Content-Type-Options: nosniff
