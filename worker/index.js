@@ -118,8 +118,10 @@ export default {
 
 function getCanonicalRedirectUrl(url) {
   const target = new URL(url.href);
-  const normalizedPath = normalizePathname(url.pathname);
-  const legacyTarget = LEGACY_REDIRECTS.get(normalizedPath);
+  const decodedPath = safeDecodePathname(url.pathname);
+  const pathWithoutPunctuation = stripTrailingPunctuation(decodedPath);
+  const lookupPath = pathWithoutPunctuation.toLowerCase() || "/";
+  const legacyTarget = LEGACY_REDIRECTS.get(lookupPath);
   let hasChanged = false;
 
   if (MIGRATED_HOSTS.has(url.hostname)) {
@@ -133,20 +135,19 @@ function getCanonicalRedirectUrl(url) {
   if (legacyTarget) {
     target.pathname = legacyTarget;
     hasChanged = true;
-  } else if (TRAILING_SLASH_PATHS.has(normalizedPath)) {
-    target.pathname = `${normalizedPath}/`;
+  } else if (TRAILING_SLASH_PATHS.has(lookupPath)) {
+    target.pathname = `${lookupPath}/`;
     hasChanged = true;
-  } else if (normalizedPath !== safeDecodePathname(url.pathname)) {
-    target.pathname = normalizedPath;
+  } else if (decodedPath !== pathWithoutPunctuation && pathWithoutPunctuation === "/") {
+    target.pathname = "/";
     hasChanged = true;
   }
 
   return hasChanged ? target : null;
 }
 
-function normalizePathname(pathname) {
-  const decoded = safeDecodePathname(pathname).toLowerCase().replace(/[.,]+$/u, "");
-  return decoded || "/";
+function stripTrailingPunctuation(pathname) {
+  return pathname.replace(/[.,]+$/u, "") || "/";
 }
 
 function safeDecodePathname(pathname) {
