@@ -149,19 +149,19 @@ export const seoData: Record<string, SEOData> = {
   // STAR PROTECTION
   // =====================================================
   bitdefender: {
-    title: 'Bitdefender GravityZone Colombia | Starsolution',
-    description: 'Implementamos Bitdefender GravityZone (EDR/XDR/MDR) en empresas colombianas. Partner oficial en Bogotá, soporte en español y cumplimiento ISO 27001 / Ley 1581.',
-    keywords: 'Bitdefender GravityZone Colombia, gravity zone, gravityzone precio, comprar gravityzone, GravityZone EDR XDR, antivirus corporativo empresas, endpoint security, partner Bitdefender Colombia',
+    title: 'Distribuidor Bitdefender Colombia | GravityZone Starsolution',
+    description: 'Distribuidor Bitdefender en Colombia para empresas. Cotizamos licencias GravityZone, EDR/XDR/MDR, implementacion en Bogota y soporte en espanol.',
+    keywords: 'distribuidor Bitdefender, distribuidor Bitdefender Colombia, licencias Bitdefender Colombia, comprar Bitdefender empresas, Bitdefender GravityZone Colombia, gravity zone, gravityzone precio, GravityZone EDR XDR, antivirus corporativo empresas, endpoint security, partner Bitdefender Colombia',
     canonical: `${BASE_URL}/bitdefender/`,
-    ogTitle: 'Bitdefender GravityZone | Seguridad Endpoint Empresarial',
+    ogTitle: 'Distribuidor Bitdefender Colombia | GravityZone Empresas',
     ogType: 'website',
     ogImage: `${BASE_URL}/og-default.png`,
     preconnect: ['https://www.bitdefender.com'],
     breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Star Protection', url: '/#star-protection' }, { name: 'Bitdefender', url: '/bitdefender/' }],
     jsonLd: product(
-      'Bitdefender GravityZone',
+      'Bitdefender GravityZone para empresas',
       'Bitdefender',
-      'Plataforma unificada de seguridad empresarial con EDR, XDR, Bitdefender MDR (SOC 24x7), CSPM+ y Patch Management. Reconocida como Visionary en el Gartner Magic Quadrant 2026 y con 100% de cobertura en MITRE ATT&CK 2024.',
+      'Licenciamiento e implementacion de Bitdefender GravityZone para empresas en Colombia, con EDR, XDR, Bitdefender MDR (SOC 24x7), CSPM+ y Patch Management. Starsolution opera como partner oficial y distribuidor Bitdefender para empresas.',
       { rating: { value: '4.9', count: '127' }, image: `${BASE_URL}/og-default.png` },
     ),
     faqJsonLd: faqSchema([
@@ -170,8 +170,9 @@ export const seoData: Record<string, SEOData> = {
       { q: 'Bitdefender me deja bloquear memorias USB y celulares conectados?', a: 'Sí. La política de Device Control puede bloquear USB, CD/DVD, Bluetooth y dispositivos moviles conectados, y permite definir excepciones por usuario, equipo o area. Es uno de los controles mas usados en clientes del sector financiero y salud que manejan información sensible bajo Habeas Data Ley 1581.' },
       { q: 'Cuánto tarda Starsolution en dejarnos operando?', a: 'Una implementación tipica en una empresa de 50 equipos se completa en menos de dos horas de trabajo efectivo: configuración de consola en la nube, conexion con su Active Directory, definicion de las políticas base y prueba en un grupo piloto antes del despliegue total. Para parques de más de 1.000 equipos planeamos un cronograma de 1 a 2 semanas con fases controladas.' },
       { q: 'Sirve si tenemos teletrabajo y sucursales en otras ciudades?', a: 'Sí, es uno de los escenarios donde GravityZone brilla mas. Como la consola es cloud, sus equipos en Medellín, Cali o cualquier sede remota reportan directamente sin necesidad de VPN ni servidores intermedios. Aplica las mismas políticas a empleados en home office que a la sede principal.' },
+      { q: '¿Starsolution es distribuidor Bitdefender en Colombia?', a: 'Si. Starsolution opera como partner oficial y distribuidor Bitdefender para empresas en Colombia: cotizamos licencias GravityZone, gestionamos renovaciones, implementamos politicas, damos soporte en espanol y escalamos con el fabricante cuando el caso lo requiere.' },
       { q: '¿Cuánto cuesta Bitdefender GravityZone en Colombia?', a: 'El precio de GravityZone se calcula por número de endpoints y por la edición elegida (Business Security, Business Security Premium o la capa de MDR con SOC 24/7). Como partner oficial en Colombia, Starsolution entrega una cotización sin costo, con descuentos por volumen y por licenciamiento multianual.' },
-      { q: '¿Cómo comprar o implementar GravityZone en Colombia?', a: 'Bitdefender GravityZone (también buscado como "Gravity Zone") se adquiere a través de un partner oficial como Starsolution, no directamente al fabricante. Gestionamos el licenciamiento, activamos la consola en la nube, conectamos su Active Directory y desplegamos los agentes con las políticas base, con opción de prueba gratuita antes de pasar a producción.' },
+      { q: '¿Cómo comprar o implementar GravityZone en Colombia?', a: 'Bitdefender GravityZone (también buscado como "Gravity Zone") se adquiere a través de un distribuidor Bitdefender y partner oficial como Starsolution, no directamente al fabricante. Gestionamos el licenciamiento, activamos la consola en la nube, conectamos su Active Directory y desplegamos los agentes con las políticas base, con opción de prueba gratuita antes de pasar a producción.' },
     ]),
   },
   kaspersky: {
