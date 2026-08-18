@@ -14,7 +14,7 @@ Last updated: 2026-08-18
 
 ## Core Cybersecurity Services
 
-- Cybersecurity for companies in Colombia: https://star-ti.com/seguridad-informatica-empresas/
+- Enterprise cybersecurity and ransomware defense in Colombia: https://star-ti.com/seguridad-informatica-empresas/
 - Ethical hacking and penetration testing: https://star-ti.com/hacking-etico/
 - ISO 27001 consulting: https://star-ti.com/iso-27001/
 - Data loss prevention: https://star-ti.com/dlp-prevencion-perdida-datos/

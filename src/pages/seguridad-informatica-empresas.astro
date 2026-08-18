@@ -7,26 +7,83 @@ import { seoData } from '@data/seo';
 
 const seo = seoData['seguridad-informatica-empresas'];
 
+const heroStats = [
+  { value: '24/7', label: 'monitoreo y respuesta' },
+  { value: '3-2-1-1', label: 'backup resiliente' },
+  { value: 'EDR/XDR', label: 'deteccion en endpoint' },
+  { value: '2013', label: 'experiencia regional' },
+];
+
+const defenseLayers = [
+  {
+    eyebrow: 'Capa 01',
+    title: 'Endpoints con EDR/XDR administrado',
+    text: 'Bloqueamos actividad de cifrado masivo, ejecucion sospechosa de PowerShell, abuso de credenciales y movimiento lateral antes de que el ransomware llegue a servidores criticos.',
+    items: ['Bitdefender GravityZone y Kaspersky Next', 'Politicas por rol, sede y criticidad', 'Aislamiento remoto de equipos comprometidos'],
+    link: '/antivirus-empresas/',
+    linkText: 'Comparar antivirus empresarial',
+  },
+  {
+    eyebrow: 'Capa 02',
+    title: 'Correo protegido contra phishing y BEC',
+    text: 'Reducimos el principal vector de entrada con analisis de adjuntos, proteccion frente a suplantacion, sandboxing y entrenamiento medible para usuarios de alto riesgo.',
+    items: ['Proofpoint y Hornetsecurity', 'DMARC, SPF y DKIM revisados', 'Simulaciones de phishing por area'],
+    link: '/proofpoint/',
+    linkText: 'Ver seguridad de correo',
+  },
+  {
+    eyebrow: 'Capa 03',
+    title: 'Backups verificables e inmutables',
+    text: 'Disenamos una estrategia 3-2-1-1 con pruebas de restauracion, copias fuera de linea y objetivos RTO/RPO realistas para volver a operar sin negociar con atacantes.',
+    items: ['Copias fuera de la red principal', 'Restauracion probada por sistema', 'Orden de recuperacion por criticidad'],
+    link: '/blog/ransomware-empresas-colombia/',
+    linkText: 'Leer guia de ransomware',
+  },
+  {
+    eyebrow: 'Capa 04',
+    title: 'Vulnerabilidades y superficie expuesta',
+    text: 'Priorizamos parches segun explotacion real, exposicion publica y riesgo para el negocio. El objetivo es cerrar VPN, RDP, credenciales filtradas y servicios inseguros.',
+    items: ['Gestion de vulnerabilidades con Vicarius', 'Monitoreo externo con Enthec', 'Pentesting y Red Team controlado'],
+    link: '/hacking-etico/',
+    linkText: 'Solicitar prueba de seguridad',
+  },
+];
+
+const serviceCards = [
+  { title: 'Diagnostico de riesgo ransomware', text: 'Mapa de activos, exposiciones, controles faltantes y brechas que permiten cifrado o exfiltracion.', href: '/contacto/' },
+  { title: 'Proteccion endpoint y servidor', text: 'EDR/XDR administrado para estaciones, servidores, workloads cloud y usuarios remotos.', href: '/bitdefender/' },
+  { title: 'Respuesta a incidentes', text: 'Contencion, analisis forense, erradicacion y recuperacion con evidencia para comites y aseguradoras.', href: '/blog/respuesta-incidentes-ciberseguridad/' },
+  { title: 'Cumplimiento y gobierno', text: 'Controles alineados con ISO 27001, Ley 1581, contratos corporativos y auditorias sectoriales.', href: '/iso-27001/' },
+];
+
+const playbook = [
+  ['0-15 min', 'Aislar equipos afectados de la red sin apagarlos.', 'TI / Mesa de ayuda'],
+  ['15-60 min', 'Activar equipo de crisis, preservar evidencia y bloquear cuentas sospechosas.', 'CISO / Direccion TI'],
+  ['1-4 horas', 'Identificar alcance: endpoints, servidores, backups, credenciales y datos expuestos.', 'Forense / SOC'],
+  ['4-12 horas', 'Cerrar vector de entrada y validar punto de restauracion limpio.', 'Infraestructura'],
+  ['12-48 horas', 'Recuperar sistemas por criticidad y comunicar segun obligaciones legales.', 'Direccion / Legal'],
+];
+
 const faqItems = [
   {
-    q: '¿Qué es la seguridad informática empresarial?',
-    a: 'La seguridad informática empresarial es el conjunto de tecnologías, procesos y controles que protegen los sistemas, redes y datos de una organización contra accesos no autorizados, ransomware, fugas de información y fraude. En la práctica combina protección de endpoints (antivirus EDR/XDR), seguridad del correo, pruebas de penetración, control de fugas de datos (DLP) y cumplimiento de normas como ISO 27001 y la Ley 1581 de Habeas Data. Starsolution presta estos servicios a empresas en Colombia desde 2013.',
+    q: 'Que incluye una estrategia de seguridad informatica empresarial contra ransomware?',
+    a: 'Incluye proteccion EDR/XDR en endpoints y servidores, seguridad de correo, MFA, gestion de vulnerabilidades, backup 3-2-1-1, monitoreo continuo, plan de respuesta a incidentes y pruebas periodicas de restauracion.',
   },
   {
-    q: '¿Cuál es la diferencia entre seguridad informática, ciberseguridad y seguridad de la información?',
-    a: 'La seguridad informática protege los sistemas y equipos de cómputo (computadores, servidores, redes). La ciberseguridad es más amplia: cubre todo el entorno digital, incluyendo la nube, la identidad y las amenazas externas como el phishing. La seguridad de la información es el marco superior: protege la información en cualquier formato — digital o físico — y es el objeto de normas como ISO 27001. En el uso empresarial cotidiano los tres términos se solapan y las tres disciplinas se implementan juntas.',
+    q: 'Por donde debe empezar una empresa si hoy no tiene defensa anti-ransomware?',
+    a: 'El primer paso es un diagnostico de activos, backups, accesos remotos, correo y privilegios. Luego se priorizan controles de alto impacto: MFA, EDR administrado, cierre de RDP/VPN expuestos, backups probados y proteccion de email.',
   },
   {
-    q: '¿Cuánto cuesta la seguridad informática para una empresa en Colombia?',
-    a: 'Depende del número de equipos, del sector y del nivel de riesgo. Una PYME típicamente inicia con protección de endpoints administrada, cuyo licenciamiento se cotiza por dispositivo al año, mientras que empresas reguladas suman pentesting anual, DLP y consultoría ISO 27001. Como referencia de decisión: el costo anual de un programa de seguridad suele ser una fracción del costo promedio de un solo incidente de ransomware. Starsolution entrega cotizaciones por alcance sin costo.',
+    q: 'Un antivirus tradicional es suficiente para detener ransomware?',
+    a: 'No. El ransomware moderno usa credenciales validas, herramientas administrativas y tecnicas de evasion. Una empresa necesita EDR/XDR con monitoreo de comportamiento, capacidad de aislamiento y respuesta operada por especialistas.',
   },
   {
-    q: '¿Por dónde empieza una PYME con la seguridad informática?',
-    a: 'El orden recomendado para una PYME en Colombia es: primero un antivirus empresarial EDR administrado desde consola central; segundo, protección del correo (el principal vector de ataque); tercero, copias de seguridad verificadas; y cuarto, un diagnóstico de vulnerabilidades para priorizar lo que sigue. Starsolution ofrece un diagnóstico gratuito inicial para definir esa hoja de ruta.',
+    q: 'Cada cuanto se deben probar los backups?',
+    a: 'Para sistemas criticos, la prueba debe hacerse como minimo cada trimestre y despues de cambios relevantes de infraestructura. La prueba debe medir tiempo real de restauracion, integridad de datos y orden de recuperacion.',
   },
   {
-    q: '¿Qué exige la ley colombiana en seguridad informática?',
-    a: 'La Ley 1581 de 2012 (Habeas Data) obliga a proteger los datos personales que la empresa trata, con sanciones de la Superintendencia de Industria y Comercio. El sector financiero debe cumplir la Circular 007 de la Superintendencia Financiera sobre riesgo de ciberseguridad, y las entidades públicas el MSPI de MinTIC. Además, ISO 27001, aunque voluntaria, es exigida cada vez más como requisito contractual por clientes corporativos.',
+    q: 'Starsolution puede ayudar si la empresa ya fue atacada?',
+    a: 'Si. El trabajo inicial es contener la propagacion, preservar evidencia, evaluar alcance, cerrar el vector de entrada y definir si la recuperacion desde backups es viable antes de restaurar sistemas.',
   },
 ];
 ---
@@ -34,190 +91,337 @@ const faqItems = [
 <BaseLayout seo={seo}>
   <Navbar />
 
-  <div class="bg-white min-h-screen w-full font-['Instrument_Sans',sans-serif]">
+  <div class="bg-white min-h-screen w-full font-['Instrument_Sans',sans-serif] text-[#0f172a]">
 
-    <!-- Hero Section -->
-    <section class="relative py-20 sm:py-28 bg-gradient-to-br from-[#0f172a] to-[#1e293b] overflow-hidden">
-      <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-br from-red-900/30 to-transparent rounded-full blur-3xl"></div>
-      <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
-        <div class="max-w-3xl">
-          <div class="inline-flex items-center gap-2 bg-white/10 border border-white/20 px-4 py-2 rounded-full mb-8">
-            <div class="w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
-            <span class="text-white text-xs font-semibold tracking-wider uppercase">Servicio Integral</span>
+    <section class="relative min-h-[88vh] overflow-hidden bg-[#07111f]" aria-labelledby="hero-title">
+      <img
+        src="/assets/seguridad-empresarial-soc.webp"
+        alt="Centro de operaciones monitoreando sistemas empresariales contra ransomware"
+        class="absolute inset-0 h-full w-full object-cover opacity-60"
+        width="1800"
+        height="1200"
+        loading="eager"
+        fetchpriority="high"
+      />
+      <div class="absolute inset-0 bg-[linear-gradient(90deg,rgba(7,17,31,0.96)_0%,rgba(7,17,31,0.82)_42%,rgba(7,17,31,0.38)_100%)]"></div>
+      <div class="relative mx-auto flex min-h-[88vh] max-w-7xl flex-col justify-end px-4 pb-28 pt-32 sm:px-6 sm:pb-12 lg:px-8 lg:pb-14">
+        <div class="max-w-4xl -translate-y-28 sm:translate-y-0">
+          <div class="mb-6 inline-flex items-center gap-2 border border-red-300/30 bg-red-500/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-red-100">
+            Defensa anti-ransomware para empresas
           </div>
-          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-white">
-            Seguridad Informática para Empresas en Colombia
+          <h1 id="hero-title" class="font-['Space_Grotesk',sans-serif] text-4xl font-bold leading-[1.05] text-white sm:text-5xl lg:text-7xl">
+            Seguridad informatica empresarial contra ransomware
           </h1>
-          <p class="text-lg sm:text-xl text-gray-300 mb-10 leading-relaxed">
-            Protegemos los sistemas, redes y datos de su organización con un programa completo:
-            endpoints, correo, pruebas de penetración, prevención de fugas y cumplimiento normativo.
-            Más de 3,000 empresas protegidas desde 2013.
+          <p class="mt-6 max-w-3xl text-lg leading-relaxed text-slate-200 sm:text-xl">
+            Protegemos endpoints, servidores, correo, identidades y backups con un programa de defensa por capas. Starsolution ayuda a empresas en Colombia a prevenir, detectar, contener y recuperarse de ataques de ransomware sin improvisar durante la crisis.
           </p>
-          <div class="flex flex-col sm:flex-row gap-4">
-            <a href="/contacto/" class="bg-gradient-to-r from-red-600 to-red-700 text-white font-semibold px-8 py-4 rounded-full hover:from-red-700 hover:to-red-800 transition shadow-lg inline-flex items-center justify-center gap-2">
-              Diagnóstico Gratuito
-              <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
+          <div class="mt-8 flex flex-col gap-3 pb-32 sm:flex-row sm:pb-0">
+            <a href="/contacto/" class="inline-flex items-center justify-center bg-red-600 px-6 py-4 text-sm font-bold text-white transition hover:bg-red-700">
+              Solicitar diagnostico
             </a>
-            <a href="#servicios-seguridad-informatica" class="bg-white/10 border border-white/20 text-white font-semibold px-8 py-4 rounded-full hover:bg-white/20 transition inline-flex items-center justify-center">
-              Ver Servicios
+            <a href="#programa-ransomware" class="inline-flex items-center justify-center border border-white/30 bg-white/10 px-6 py-4 text-sm font-bold text-white transition hover:bg-white/20">
+              Ver plan de defensa
             </a>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- GEO / AI Discoverability Block -->
-    <section class="bg-white pt-14 sm:pt-16" aria-labelledby="que-es-seguridad-informatica">
-      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 id="que-es-seguridad-informatica" class="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">¿Qué es la seguridad informática empresarial?</h2>
-        <p class="text-lg text-gray-700 leading-relaxed">La seguridad informática empresarial es el conjunto de tecnologías, procesos y controles que protegen los sistemas, redes y datos de una organización contra accesos no autorizados, ransomware, fugas de información y fraude. Un programa completo combina protección de endpoints con EDR/XDR, seguridad del correo electrónico, pruebas de penetración periódicas, prevención de pérdida de datos (DLP) y el cumplimiento de marcos como ISO 27001, la Ley 1581 de Habeas Data y las circulares sectoriales de la Superintendencia Financiera. Las empresas lo implementan para reducir el riesgo de interrupción del negocio, proteger la información de sus clientes y responder a exigencias regulatorias y contractuales. Starsolution diseña e implementa programas de seguridad informática para empresas en Colombia, Venezuela y Estados Unidos desde 2013, con soporte en español y monitoreo 24/7.</p>
-      </div>
-    </section>
-
-    <!-- Diferencia de términos -->
-    <section class="py-16 sm:py-20 bg-white" aria-labelledby="diferencia-terminos">
-      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 id="diferencia-terminos" class="text-2xl sm:text-3xl font-bold text-gray-900 mb-6">Seguridad informática, ciberseguridad y seguridad de la información: ¿en qué se diferencian?</h2>
-        <div class="space-y-4 text-gray-700 leading-relaxed">
-          <p><strong>Seguridad informática</strong> protege los sistemas y equipos de cómputo: computadores, servidores y redes. Es el término con el que la mayoría de empresas en Colombia busca este servicio.</p>
-          <p><strong>Ciberseguridad</strong> es más amplia: cubre todo el entorno digital, incluyendo la nube, la identidad de los usuarios y amenazas externas como el phishing o el fraude por correo.</p>
-          <p><strong>Seguridad de la información</strong> es el marco superior: protege la información en cualquier formato, digital o físico, y es el objeto de normas como <a href="/iso-27001/" class="text-red-700 font-semibold hover:underline">ISO 27001</a>.</p>
-          <p>En la práctica las tres disciplinas se implementan juntas: el mismo proyecto que instala un antivirus empresarial define políticas de acceso y documenta los controles para auditoría.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Servicios -->
-    <section id="servicios-seguridad-informatica" class="py-16 sm:py-24 bg-gray-50" aria-labelledby="servicios-titulo">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-14">
-          <span class="text-red-700 text-xs font-bold uppercase tracking-wide">Programa Completo</span>
-          <h2 id="servicios-titulo" class="text-3xl sm:text-4xl font-bold text-[#0f172a] mt-4 mb-4">Servicios de Seguridad Informática</h2>
-          <p class="text-[#64748b] max-w-2xl mx-auto">Tres pilares que cubren prevención, detección y cumplimiento, adaptados al tamaño y sector de su empresa.</p>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div class="bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-lg transition">
-            <div class="w-12 h-12 bg-red-50 rounded-xl flex items-center justify-center mb-5">
-              <svg class="w-6 h-6 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
+        <div class="mt-12 hidden grid-cols-2 gap-3 border-t border-white/15 pt-6 sm:grid sm:grid-cols-4">
+          {heroStats.map((stat) => (
+            <div>
+              <div class="font-['Space_Grotesk',sans-serif] text-2xl font-bold text-white">{stat.value}</div>
+              <div class="mt-1 text-xs uppercase tracking-wide text-slate-300">{stat.label}</div>
             </div>
-            <h3 class="text-xl font-bold text-[#0f172a] mb-3">Protección</h3>
-            <p class="text-sm text-[#475569] mb-4">Antivirus empresarial EDR/XDR administrado, seguridad del correo y control de dispositivos, desplegado sin interrumpir la operación.</p>
-            <ul class="space-y-2 text-sm">
-              <li><a href="/bitdefender/" class="text-red-700 hover:underline">Bitdefender GravityZone</a></li>
-              <li><a href="/kaspersky/" class="text-red-700 hover:underline">Kaspersky Next</a></li>
-              <li><a href="/antivirus-empresas/" class="text-red-700 hover:underline">Comparativa de antivirus empresarial</a></li>
-            </ul>
-          </div>
-          <div class="bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-lg transition">
-            <div class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-5">
-              <svg class="w-6 h-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" /></svg>
-            </div>
-            <h3 class="text-xl font-bold text-[#0f172a] mb-3">Detección y Pruebas</h3>
-            <p class="text-sm text-[#475569] mb-4">Pruebas de penetración con equipo certificado, emulación de ataques reales y monitoreo de su superficie expuesta en internet.</p>
-            <ul class="space-y-2 text-sm">
-              <li><a href="/hacking-etico/" class="text-red-700 hover:underline">Hacking ético y pentesting</a></li>
-              <li><a href="/rthreat-bogota-colombia/" class="text-red-700 hover:underline">Red Team y BAE con rThreat</a></li>
-              <li><a href="/enthec/" class="text-red-700 hover:underline">Monitoreo de superficie de ataque</a></li>
-            </ul>
-          </div>
-          <div class="bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-lg transition">
-            <div class="w-12 h-12 bg-green-50 rounded-xl flex items-center justify-center mb-5">
-              <svg class="w-6 h-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
-            </div>
-            <h3 class="text-xl font-bold text-[#0f172a] mb-3">Cumplimiento</h3>
-            <p class="text-sm text-[#475569] mb-4">Consultoría ISO 27001, prevención de fugas de datos y controles alineados con la Ley 1581 y las exigencias de su sector.</p>
-            <ul class="space-y-2 text-sm">
-              <li><a href="/iso-27001/" class="text-red-700 hover:underline">Consultoría ISO 27001</a></li>
-              <li><a href="/dlp-prevencion-perdida-datos/" class="text-red-700 hover:underline">DLP - Prevención de pérdida de datos</a></li>
-              <li><a href="/sealpath/" class="text-red-700 hover:underline">Protección de documentos SealPath</a></li>
-            </ul>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-white py-14 sm:py-20" aria-labelledby="respuesta-directa">
+      <div class="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-4 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-[0.18em] text-red-700">Respuesta directa</span>
+          <h2 id="respuesta-directa" class="mt-3 font-['Space_Grotesk',sans-serif] text-3xl font-bold leading-tight text-slate-950 sm:text-4xl">
+            Que debe tener una empresa para defenderse de ransomware
+          </h2>
+        </div>
+        <div class="space-y-5 text-lg leading-relaxed text-slate-700">
+          <p>
+            Una defensa empresarial contra ransomware no depende de una sola herramienta. Requiere controles coordinados: MFA, EDR/XDR, seguridad de correo, gestion de vulnerabilidades, backups inmutables, monitoreo 24/7 y un plan de respuesta probado.
+          </p>
+          <p>
+            El objetivo no es solo evitar infecciones. El objetivo es detectar comportamiento anomalo temprano, impedir movimiento lateral, proteger los datos criticos, restaurar operaciones en orden y documentar evidencia para direccion, clientes, aseguradoras y reguladores.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="programa-ransomware" class="bg-slate-50 py-16 sm:py-24" aria-labelledby="programa-title">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mb-12 max-w-3xl">
+          <span class="text-xs font-bold uppercase tracking-[0.18em] text-red-700">Programa por capas</span>
+          <h2 id="programa-title" class="mt-3 font-['Space_Grotesk',sans-serif] text-3xl font-bold leading-tight text-slate-950 sm:text-5xl">
+            Defensa de ransomware disenada para operar, no para decorar reportes
+          </h2>
+          <p class="mt-5 text-lg leading-relaxed text-slate-600">
+            Cada capa cierra una ventana real de ataque: entrada por phishing, credenciales filtradas, servicios expuestos, cifrado en endpoints, exfiltracion de datos y destruccion de backups.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 gap-5 lg:grid-cols-2">
+          {defenseLayers.map((layer) => (
+            <a href={layer.link} class="group block border border-slate-200 bg-white p-6 transition hover:-translate-y-1 hover:border-red-200 hover:shadow-xl">
+              <div class="text-xs font-bold uppercase tracking-[0.18em] text-red-700">{layer.eyebrow}</div>
+              <h3 class="mt-3 font-['Space_Grotesk',sans-serif] text-2xl font-bold leading-tight text-slate-950 group-hover:text-red-700">
+                {layer.title}
+              </h3>
+              <p class="mt-4 text-sm leading-relaxed text-slate-600">{layer.text}</p>
+              <ul class="mt-5 space-y-2">
+                {layer.items.map((item) => (
+                  <li class="flex items-start gap-2 text-sm text-slate-700">
+                    <span class="mt-1 h-2 w-2 shrink-0 bg-red-600"></span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <div class="mt-6 text-sm font-bold text-red-700">{layer.linkText} &rarr;</div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-white py-16 sm:py-24" aria-labelledby="arquitectura-title">
+      <div class="mx-auto grid max-w-7xl grid-cols-1 gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:px-8 lg:items-center">
+        <div>
+          <img
+            src="/assets/seguridad-empresarial-data-center.webp"
+            alt="Especialista revisando infraestructura critica en sala de servidores"
+            class="h-[520px] w-full object-cover shadow-2xl"
+            width="1600"
+            height="1067"
+            loading="lazy"
+          />
+        </div>
+        <div>
+          <span class="text-xs font-bold uppercase tracking-[0.18em] text-red-700">Infraestructura critica</span>
+          <h2 id="arquitectura-title" class="mt-3 font-['Space_Grotesk',sans-serif] text-3xl font-bold leading-tight text-slate-950 sm:text-5xl">
+            Proteccion para endpoints, servidores, nube y usuarios remotos
+          </h2>
+          <p class="mt-5 text-lg leading-relaxed text-slate-600">
+            El ransomware rara vez se queda en el primer equipo comprometido. Por eso la arquitectura debe cubrir estaciones, servidores, Active Directory, correo, VPN, aplicaciones expuestas, almacenamiento y copias de seguridad.
+          </p>
+          <div class="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2">
+            {[
+              ['Identidades', 'MFA, privilegios minimos, cuentas admin separadas y revision de accesos.'],
+              ['Endpoints', 'EDR/XDR, control de dispositivos, bloqueo de scripts y respuesta remota.'],
+              ['Backups', 'Copias inmutables, restauracion probada y repositorios fuera de linea.'],
+              ['Exposicion', 'Vulnerabilidades, puertos abiertos, credenciales filtradas y shadow IT.'],
+            ].map(([title, text]) => (
+              <div class="border border-slate-200 p-5">
+                <h3 class="font-['Space_Grotesk',sans-serif] text-lg font-bold text-slate-950">{title}</h3>
+                <p class="mt-2 text-sm leading-relaxed text-slate-600">{text}</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Por Sector -->
-    <section class="py-16 sm:py-24 bg-white" aria-labelledby="por-sector">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-12">
-          <span class="text-red-700 text-xs font-bold uppercase tracking-wide">Por Sector</span>
-          <h2 id="por-sector" class="text-3xl sm:text-4xl font-bold text-[#0f172a] mt-4 mb-4">Seguridad Informática por Industria</h2>
-          <p class="text-[#64748b] max-w-2xl mx-auto">Cada sector en Colombia tiene un perfil de amenaza y un marco regulatorio distinto.</p>
+    <section class="bg-slate-950 py-16 text-white sm:py-24" aria-labelledby="deteccion-title">
+      <div class="mx-auto grid max-w-7xl grid-cols-1 gap-12 px-4 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8 lg:items-center">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-[0.18em] text-red-300">Deteccion temprana</span>
+          <h2 id="deteccion-title" class="mt-3 font-['Space_Grotesk',sans-serif] text-3xl font-bold leading-tight sm:text-5xl">
+            Senales que deben activar respuesta antes del cifrado
+          </h2>
+          <p class="mt-5 text-lg leading-relaxed text-slate-300">
+            Un ataque de ransomware suele mostrar senales horas o dias antes del cifrado: autenticaciones inusuales, enumeracion de dominios, uso anomalo de herramientas administrativas y pruebas de exfiltracion.
+          </p>
+          <div class="mt-8 space-y-3">
+            {[
+              'Inicio de sesion exitoso desde paises, horarios o dispositivos no habituales.',
+              'Uso de PowerShell, WMI, PsExec o herramientas remotas fuera de ventanas aprobadas.',
+              'Acceso masivo a carpetas compartidas o cambios acelerados de extension de archivos.',
+              'Intentos de deshabilitar EDR, logs, copias shadow o servicios de backup.',
+              'Transferencias grandes hacia servicios cloud no autorizados o dominios recien creados.',
+            ].map((item) => (
+              <div class="flex items-start gap-3 border border-white/12 bg-white/5 p-4">
+                <span class="mt-1 h-2 w-2 shrink-0 bg-red-400"></span>
+                <p class="text-sm leading-relaxed text-slate-200">{item}</p>
+              </div>
+            ))}
+          </div>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div class="bg-gray-50 border border-gray-200 rounded-2xl p-6">
-            <h3 class="font-bold text-[#0f172a] mb-2">Banca y Finanzas</h3>
-            <p class="text-xs text-[#64748b] mb-2 font-semibold uppercase tracking-wide">Reto</p>
-            <p class="text-sm text-[#475569] mb-3">Cumplir la Circular 007 de la SFC con evidencia de pruebas de seguridad y gestión de incidentes.</p>
-            <p class="text-xs text-[#64748b] mb-2 font-semibold uppercase tracking-wide">Cómo lo resolvemos</p>
-            <p class="text-sm text-[#475569]">Pentesting anual, emulación de ataques y reportes en el formato que exige la Superfinanciera.</p>
+        <div>
+          <img
+            src="/assets/seguridad-empresarial-analista.webp"
+            alt="Analista de ciberseguridad revisando actividad sospechosa en monitores"
+            class="h-[560px] w-full object-cover shadow-2xl"
+            width="1400"
+            height="933"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-white py-16 sm:py-24" aria-labelledby="playbook-title">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-[0.18em] text-red-700">Respuesta a incidentes</span>
+            <h2 id="playbook-title" class="mt-3 font-['Space_Grotesk',sans-serif] text-3xl font-bold leading-tight text-slate-950 sm:text-5xl">
+              Que hacer durante las primeras 48 horas
+            </h2>
+            <p class="mt-5 text-lg leading-relaxed text-slate-600">
+              La diferencia entre una interrupcion controlada y una crisis completa suele estar en las primeras horas. Este playbook evita decisiones que destruyen evidencia o propagan el cifrado.
+            </p>
           </div>
-          <div class="bg-gray-50 border border-gray-200 rounded-2xl p-6">
-            <h3 class="font-bold text-[#0f172a] mb-2">Salud</h3>
-            <p class="text-xs text-[#64748b] mb-2 font-semibold uppercase tracking-wide">Reto</p>
-            <p class="text-sm text-[#475569] mb-3">Historias clínicas son datos sensibles bajo Ley 1581; el ransomware paraliza la atención.</p>
-            <p class="text-xs text-[#64748b] mb-2 font-semibold uppercase tracking-wide">Cómo lo resolvemos</p>
-            <p class="text-sm text-[#475569]">EDR anti-ransomware con rollback, DLP para datos de pacientes y control de dispositivos USB.</p>
-          </div>
-          <div class="bg-gray-50 border border-gray-200 rounded-2xl p-6">
-            <h3 class="font-bold text-[#0f172a] mb-2">Gobierno</h3>
-            <p class="text-xs text-[#64748b] mb-2 font-semibold uppercase tracking-wide">Reto</p>
-            <p class="text-sm text-[#475569] mb-3">Implementar el MSPI de MinTIC con presupuestos y personal técnico limitados.</p>
-            <p class="text-xs text-[#64748b] mb-2 font-semibold uppercase tracking-wide">Cómo lo resolvemos</p>
-            <p class="text-sm text-[#475569]">Programas por fases alineados con el MSPI, priorizando los controles de mayor impacto.</p>
-          </div>
-          <div class="bg-gray-50 border border-gray-200 rounded-2xl p-6">
-            <h3 class="font-bold text-[#0f172a] mb-2">PYMES y Retail</h3>
-            <p class="text-xs text-[#64748b] mb-2 font-semibold uppercase tracking-wide">Reto</p>
-            <p class="text-sm text-[#475569] mb-3">Sin equipo de seguridad interno; el correo y los endpoints quedan sin vigilancia.</p>
-            <p class="text-xs text-[#64748b] mb-2 font-semibold uppercase tracking-wide">Cómo lo resolvemos</p>
-            <p class="text-sm text-[#475569]">Seguridad administrada: nosotros operamos la consola, la empresa recibe reportes ejecutivos.</p>
+          <div class="overflow-x-auto border border-slate-200">
+            <table class="w-full min-w-[720px] text-left text-sm">
+              <thead class="bg-slate-100 text-slate-950">
+                <tr>
+                  <th class="px-5 py-4 font-bold">Tiempo</th>
+                  <th class="px-5 py-4 font-bold">Accion prioritaria</th>
+                  <th class="px-5 py-4 font-bold">Responsable</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-slate-200">
+                {playbook.map(([time, action, owner]) => (
+                  <tr class="bg-white">
+                    <td class="whitespace-nowrap px-5 py-4 font-bold text-red-700">{time}</td>
+                    <td class="px-5 py-4 text-slate-700">{action}</td>
+                    <td class="whitespace-nowrap px-5 py-4 text-slate-500">{owner}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- FAQ -->
-    <section class="py-16 sm:py-24 bg-gray-50" aria-labelledby="faq-titulo">
-      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-12">
-          <h2 id="faq-titulo" class="text-3xl sm:text-4xl font-bold text-[#0f172a] mb-4">Preguntas Frecuentes sobre Seguridad Informática</h2>
+    <section class="bg-slate-50 py-16 sm:py-24" aria-labelledby="servicios-title">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 gap-12 lg:grid-cols-[1fr_0.85fr] lg:items-center">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-[0.18em] text-red-700">Servicios incluidos</span>
+            <h2 id="servicios-title" class="mt-3 font-['Space_Grotesk',sans-serif] text-3xl font-bold leading-tight text-slate-950 sm:text-5xl">
+              Seguridad informatica empresarial lista para comite directivo
+            </h2>
+            <div class="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2">
+              {serviceCards.map((card) => (
+                <a href={card.href} class="group border border-slate-200 bg-white p-5 transition hover:border-red-200 hover:shadow-lg">
+                  <h3 class="font-['Space_Grotesk',sans-serif] text-xl font-bold leading-tight text-slate-950 group-hover:text-red-700">{card.title}</h3>
+                  <p class="mt-3 text-sm leading-relaxed text-slate-600">{card.text}</p>
+                </a>
+              ))}
+            </div>
+          </div>
+          <div>
+            <img
+              src="/assets/seguridad-empresarial-servidores.webp"
+              alt="Racks de servidores protegidos con controles de seguridad informatica empresarial"
+              class="h-[620px] w-full object-cover shadow-2xl"
+              width="1600"
+              height="1067"
+              loading="lazy"
+            />
+          </div>
         </div>
-        <div class="space-y-4">
+      </div>
+    </section>
+
+    <section class="bg-white py-16 sm:py-24" aria-labelledby="soluciones-title">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mb-10 max-w-3xl">
+          <span class="text-xs font-bold uppercase tracking-[0.18em] text-red-700">Stack recomendado</span>
+          <h2 id="soluciones-title" class="mt-3 font-['Space_Grotesk',sans-serif] text-3xl font-bold leading-tight text-slate-950 sm:text-5xl">
+            Soluciones que conectamos dentro del programa
+          </h2>
+          <p class="mt-5 text-lg leading-relaxed text-slate-600">
+            El stack se selecciona segun tamano, sector, presupuesto, madurez y obligaciones de cumplimiento. Estas son las piezas que mas usamos en proyectos de defensa contra ransomware.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {[
+            ['Bitdefender', 'EDR, XDR y proteccion endpoint', '/bitdefender/'],
+            ['Kaspersky', 'Kaspersky Next y respuesta endpoint', '/kaspersky/'],
+            ['Proofpoint', 'Proteccion contra phishing y BEC', '/proofpoint/'],
+            ['Hornetsecurity', 'Seguridad y backup para Microsoft 365', '/hornetsecurity/'],
+            ['Vicarius', 'Vulnerability management y remediacion', '/vicarius/'],
+            ['Enthec', 'Superficie externa y credenciales filtradas', '/enthec/'],
+            ['DLP', 'Prevencion de perdida de datos', '/dlp-prevencion-perdida-datos/'],
+            ['ISO 27001', 'Gobierno, politicas y controles auditables', '/iso-27001/'],
+          ].map(([title, text, href]) => (
+            <a href={href} class="group border border-slate-200 p-5 transition hover:border-red-200 hover:shadow-lg">
+              <div class="font-['Space_Grotesk',sans-serif] text-lg font-bold text-slate-950 group-hover:text-red-700">{title}</div>
+              <p class="mt-2 text-sm leading-relaxed text-slate-600">{text}</p>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-slate-50 py-16 sm:py-24" aria-labelledby="faq-title">
+      <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+        <div class="mb-10 text-center">
+          <span class="text-xs font-bold uppercase tracking-[0.18em] text-red-700">FAQ</span>
+          <h2 id="faq-title" class="mt-3 font-['Space_Grotesk',sans-serif] text-3xl font-bold leading-tight text-slate-950 sm:text-5xl">
+            Preguntas frecuentes
+          </h2>
+        </div>
+        <div class="space-y-3">
           {faqItems.map((item) => (
-            <details class="group bg-white border border-gray-200 rounded-xl">
-              <summary class="flex items-center justify-between cursor-pointer px-6 py-5 font-semibold text-[#0f172a]">
-                {item.q}
-                <svg class="w-5 h-5 text-gray-400 group-open:rotate-180 transition-transform shrink-0 ml-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+            <details class="group border border-slate-200 bg-white">
+              <summary class="flex cursor-pointer items-center justify-between gap-4 px-5 py-5 font-bold text-slate-950">
+                <span>{item.q}</span>
+                <span class="text-red-700 transition group-open:rotate-45">+</span>
               </summary>
-              <div class="px-6 pb-5 text-[#475569] leading-relaxed">{item.a}</div>
+              <div class="px-5 pb-5 text-sm leading-relaxed text-slate-600">{item.a}</div>
             </details>
           ))}
         </div>
       </div>
     </section>
 
-    <!-- CTA -->
-    <section class="py-20 bg-[#0f172a]">
-      <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
-        <h2 class="text-3xl sm:text-4xl font-bold text-white mb-6">Empiece con un Diagnóstico Gratuito</h2>
-        <p class="text-lg text-gray-300 mb-10">Evaluamos el estado actual de la seguridad informática de su empresa y entregamos una hoja de ruta priorizada, sin compromiso.</p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="/contacto/" class="bg-gradient-to-r from-red-600 to-red-700 text-white font-semibold px-8 py-4 rounded-full hover:from-red-700 hover:to-red-800 transition shadow-lg">Solicitar Diagnóstico</a>
-          <a href="tel:+573007010017" class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-[#0f172a] transition">Llamar Ahora</a>
+    <section class="relative overflow-hidden bg-[#07111f] py-20 sm:py-24">
+      <img
+        src="/assets/seguridad-empresarial-soc.webp"
+        alt="Equipo de monitoreo de seguridad coordinando respuesta empresarial"
+        class="absolute inset-0 h-full w-full object-cover opacity-25"
+        width="1800"
+        height="1200"
+        loading="lazy"
+      />
+      <div class="absolute inset-0 bg-slate-950/80"></div>
+      <div class="relative mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
+        <h2 class="font-['Space_Grotesk',sans-serif] text-3xl font-bold leading-tight text-white sm:text-5xl">
+          Evalúe hoy que tan resistente es su empresa frente al ransomware
+        </h2>
+        <p class="mt-5 text-lg leading-relaxed text-slate-300">
+          Revisamos endpoints, correo, backups, accesos remotos, vulnerabilidades y plan de respuesta. El resultado es una hoja de ruta priorizada por riesgo operativo.
+        </p>
+        <div class="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
+          <a href="/contacto/" class="inline-flex items-center justify-center bg-red-600 px-7 py-4 text-sm font-bold text-white transition hover:bg-red-700">
+            Agendar diagnostico
+          </a>
+          <a href="tel:+573007010017" class="inline-flex items-center justify-center border border-white/30 bg-white/10 px-7 py-4 text-sm font-bold text-white transition hover:bg-white/20">
+            Llamar a Starsolution
+          </a>
         </div>
       </div>
     </section>
 
-    <!-- Soluciones Relacionadas -->
-    <section class="py-14 bg-white">
-      <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
-        <p class="text-sm text-[#64748b]">
-          Recursos relacionados:
-          <a href="/informe-ciberseguridad-colombia-2026/" class="text-red-700 font-semibold hover:underline">Informe de Ciberseguridad Colombia 2026</a> ·
-          <a href="/blog/ransomware-empresas-colombia/" class="text-red-700 font-semibold hover:underline">Guía de ransomware para empresas</a> ·
-          <a href="/blog/respuesta-incidentes-ciberseguridad/" class="text-red-700 font-semibold hover:underline">Plan de respuesta a incidentes</a>
-        </p>
+    <section class="bg-white py-10">
+      <div class="mx-auto max-w-5xl px-4 text-center text-sm leading-relaxed text-slate-600 sm:px-6 lg:px-8">
+        Recursos relacionados:
+        <a href="/blog/ransomware-empresas-colombia/" class="font-bold text-red-700 hover:underline">guia de ransomware</a>,
+        <a href="/blog/respuesta-incidentes-ciberseguridad/" class="font-bold text-red-700 hover:underline">respuesta a incidentes</a>,
+        <a href="/informe-ciberseguridad-colombia-2026/" class="font-bold text-red-700 hover:underline">informe Colombia 2026</a>,
+        <a href="https://www.cisa.gov/stopransomware/ransomware-guide" class="font-bold text-red-700 hover:underline" target="_blank" rel="noopener">guia StopRansomware de CISA</a>
+        y
+        <a href="https://csrc.nist.gov/projects/ransomware-protection-and-response" class="font-bold text-red-700 hover:underline" target="_blank" rel="noopener">recursos NIST para ransomware</a>.
       </div>
     </section>
 
