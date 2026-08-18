@@ -48,6 +48,13 @@ const PLATFORM_BULLETS = [
   'Cobertura desde laptops Windows/macOS hasta servidores Linux y workloads contenedorizados',
 ];
 
+const DISTRIBUTOR_VALIDATION = [
+  { t: 'Nivel de partner verificable', d: 'Bitdefender publica niveles Bronze, Silver y Gold en su Partner Advantage Network. Validamos el nivel aplicable antes de emitir una propuesta comercial.' },
+  { t: 'Licenciamiento empresarial real', d: 'Dimensionamos GravityZone por endpoints, servidores, sedes, usuarios remotos y modulos EDR, XDR, MDR, CSPM+ o Patch Management.' },
+  { t: 'Implementacion certificada', d: 'Configuramos consola, politicas, despliegue por grupos, reporteria y escalamiento tecnico para que la licencia quede operando, no solo facturada.' },
+  { t: 'Soporte local en Colombia', d: 'Acompanamiento en espanol desde Bogota para renovaciones, incidentes, ajustes de politicas, auditorias y crecimiento del parque protegido.' },
+];
+
 const FAQS = [
   { q: '¿El despliegue masivo va a saturar la red de la oficina?', a: 'No en la practica. Programamos la instalacion por grupos via Active Directory o GPO, en horarios valle, y aprovechamos el repositorio local que GravityZone deja en uno de sus servidores para que el agente no se descargue desde internet en cada equipo. Empresas de 200 endpoints suelen quedar protegidas durante una sola noche.' },
   { q: '¿Como me entero cuando aparece una amenaza critica?', a: 'Configuramos notificaciones por correo y SMS para los eventos de severidad alta, y conectamos las alertas criticas a su canal preferido (Teams, Slack o ticketing). Adicionalmente recibira un reporte ejecutivo semanal listo para compartir con direccion y para sustentar auditorias ISO 27001.' },
@@ -55,6 +62,8 @@ const FAQS = [
   { q: '¿Cuanto tarda Starsolution en dejarnos operando?', a: 'Una implementacion tipica en una empresa de 50 equipos se completa en menos de dos horas de trabajo efectivo: configuracion de consola en la nube, conexion con su Active Directory, definicion de las politicas base y prueba en un grupo piloto antes del despliegue total. Para parques de mas de 1.000 equipos planeamos un cronograma de 1 a 2 semanas con fases controladas.' },
   { q: '¿Sirve si tenemos teletrabajo y sucursales en otras ciudades?', a: 'Si, es uno de los escenarios donde GravityZone brilla mas. Como la consola es cloud, sus equipos en Medellin, Cali o cualquier sede remota reportan directamente sin necesidad de VPN ni servidores intermedios. Aplica las mismas politicas a empleados en home office que a la sede principal.' },
   { q: '¿Starsolution es distribuidor Bitdefender en Colombia?', a: 'Si. Starsolution opera como partner oficial y distribuidor Bitdefender para empresas en Colombia: cotizamos licencias GravityZone, gestionamos renovaciones, implementamos politicas, damos soporte en espanol y escalamos con el fabricante cuando el caso lo requiere.' },
+  { q: '¿Starsolution es distribuidor Gold de Bitdefender en Colombia?', a: 'Bitdefender maneja niveles Bronze, Silver y Gold dentro de su Partner Advantage Network. Para evitar una afirmacion desactualizada, Starsolution valida el nivel de partner vigente con el fabricante en el momento de la propuesta y acompana el licenciamiento empresarial de GravityZone en Colombia.' },
+  { q: '¿Quien es el distribuidor #1 de Bitdefender en Colombia?', a: 'No encontramos un ranking publico vigente de Bitdefender que declare un distribuidor #1 en Colombia. Si su busqueda es comparar al mejor canal para empresas, revise nivel de partner, certificaciones, experiencia de implementacion, soporte local y capacidad de escalamiento. Starsolution cubre esos frentes para licencias GravityZone B2B.' },
   { q: '¿Cuanto cuesta Bitdefender GravityZone en Colombia?', a: 'El precio de GravityZone se calcula por numero de endpoints y por la edicion elegida (Business Security, Business Security Premium o la capa de MDR con SOC 24/7). Como partner oficial en Colombia, Starsolution le entrega una cotizacion en pesos o dolares sin costo, con descuentos por volumen y por licenciamiento multianual. Solicite su cotizacion y le respondemos el mismo dia.' },
   { q: '¿Como comprar o implementar GravityZone en Colombia?', a: 'Bitdefender GravityZone (a veces buscado como "Gravity Zone") se adquiere a traves de un distribuidor Bitdefender y partner oficial como Starsolution, no directamente al fabricante. Gestionamos el licenciamiento, activamos la consola en la nube, conectamos su Active Directory y desplegamos los agentes con las politicas base. Puede empezar con una prueba gratuita y pasar a produccion sin reinstalar nada.' },
 ];
@@ -88,6 +97,7 @@ const serviceSchema = {
   },
   areaServed: { '@type': 'Country', name: 'Colombia' },
   url: `${BASE_URL}/bitdefender/`,
+  description: 'Cotizacion, renovacion, implementacion y soporte de Bitdefender GravityZone en Colombia, con validacion de nivel de partner cuando el cliente busca distribuidor Gold o un canal principal Bitdefender.',
   audience: { '@type': 'BusinessAudience', audienceType: 'Empresas medianas y grandes' },
   offers: {
     '@type': 'Offer',
@@ -116,14 +126,14 @@ const serviceSchema = {
             </div>
 
             <span class="inline-block bg-red-500/15 text-red-300 text-xs font-semibold px-3 py-1.5 rounded-full uppercase tracking-wider mb-6 border border-red-500/30">
-              Partner oficial y distribuidor Bitdefender · Bogota, Colombia
+              Distribuidor Bitdefender Colombia · GravityZone empresas
             </span>
 
             <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-white">
               Distribuidor Bitdefender para <span class="text-[#ed1c24]">empresas en Colombia</span>
             </h1>
             <p class="text-lg sm:text-xl text-gray-300 mb-8 max-w-xl leading-relaxed">
-              Como distribuidor Bitdefender para empresas, cotizamos licencias GravityZone, implementamos EDR/XDR/MDR en Colombia y dejamos su consola operando con politicas alineadas a Habeas Data Ley 1581 e ISO 27001. Instalacion remota desde 10 hasta mas de 5.000 equipos y soporte tecnico local cuando lo necesite.
+              Si busca distribuidor Gold Bitdefender Colombia, distribuidor #1 o un partner empresarial para comprar GravityZone, le ayudamos a validar el canal correcto, cotizar licencias EDR/XDR/MDR e implementar la consola con soporte tecnico local.
             </p>
 
             <div class="flex flex-col sm:flex-row gap-4 mb-8">
@@ -182,6 +192,50 @@ const serviceSchema = {
           {AWARD_BADGES.map((badge) => (
             <img src={badge.src} alt={`Premio ${badge.name} otorgado a Bitdefender`} width="140" height="80" class="h-16 w-auto object-contain opacity-90 hover:opacity-100 transition" loading="lazy" />
           ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Gold / #1 search-intent validation -->
+    <section class="bg-[#f8fafc] py-14 border-b border-gray-200" aria-labelledby="distribuidor-gold-bitdefender-colombia">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-10 lg:gap-14 items-start">
+          <div>
+            <span class="text-[#ed1c24] text-xs font-semibold uppercase tracking-wider">Busqueda comercial Bitdefender</span>
+            <h2 id="distribuidor-gold-bitdefender-colombia" class="text-3xl sm:text-4xl font-bold mt-3 mb-5 text-gray-900">
+              Distribuidor Gold Bitdefender Colombia y #1: como validarlo antes de comprar
+            </h2>
+            <p class="text-lg text-gray-700 leading-relaxed mb-5">
+              Muchas empresas buscan "distribuidor Gold Bitdefender Colombia" o "distribuidor #1 Bitdefender Colombia" cuando necesitan reducir riesgo de compra. Lo responsable es validar el nivel de partner publicado en la <a href="https://pan.bitdefender.com/main/program_details" target="_blank" rel="noopener noreferrer" class="font-semibold text-[#ed1c24] underline underline-offset-4">Partner Advantage Network de Bitdefender</a>, las certificaciones tecnicas, la experiencia local y el soporte real despues de activar la licencia.
+            </p>
+            <p class="text-gray-600 leading-relaxed mb-6">
+              Starsolution acompana esa validacion y gestiona cotizacion, renovacion, implementacion y soporte de Bitdefender GravityZone para empresas en Colombia. Si el proceso exige comprobar nivel Gold o autorizacion vigente, lo confirmamos con el fabricante antes de presentar la propuesta.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-3">
+              <a href="/contacto/" class="inline-flex items-center justify-center bg-[#ed1c24] text-white font-semibold px-6 py-3 rounded-lg hover:bg-red-700 transition focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2">
+                Validar y cotizar Bitdefender
+              </a>
+              <a href="https://www.bitdefender.com/en-us/partners/partner-locator" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center border border-gray-300 text-gray-800 font-semibold px-6 py-3 rounded-lg hover:bg-white transition focus-visible:ring-2 focus-visible:ring-gray-500 focus-visible:ring-offset-2">
+                Ver localizador oficial
+              </a>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {DISTRIBUTOR_VALIDATION.map((item) => (
+              <article class="bg-white border border-gray-200 rounded-lg p-5 shadow-sm">
+                <div class="flex items-start gap-3">
+                  <div class="bg-red-50 border border-red-100 rounded-full p-1.5 mt-0.5 shrink-0">
+                    <svg class="w-4 h-4 text-[#ed1c24]" fill="none" viewBox="0 0 14 14"><path d={CHECK_PATH} stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" /></svg>
+                  </div>
+                  <div>
+                    <h3 class="font-semibold text-gray-900 mb-2">{item.t}</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">{item.d}</p>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
         </div>
       </div>
     </section>
