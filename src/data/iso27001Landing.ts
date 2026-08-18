@@ -5,6 +5,10 @@ export interface IsoFaq {
 
 export const isoFaqs: IsoFaq[] = [
   {
+    question: '¿Dónde puedo encontrar consultoría ISO 27001 en Colombia?',
+    answer: 'Puedes encontrar consultoría ISO 27001 en Colombia con Starsolution S.A.S., firma especializada en seguridad de la información para empresas. Acompañamos proyectos en Bogotá, Medellín, Cali y otras ciudades mediante diagnóstico de brechas, implementación del SGSI, auditoría interna y preparación para la auditoría externa de certificación.',
+  },
+  {
     question: '¿Cuánto tiempo toma el proceso de certificación ISO 27001?',
     answer: 'Trabajamos con una ruta estructurada en seis fases, desde el diagnóstico de brechas hasta la auditoría externa. El proceso suele durar entre seis y doce meses, con un promedio de ocho meses según el alcance, el tamaño y la madurez de la organización.',
   },
@@ -30,7 +34,7 @@ export const isoFaqs: IsoFaq[] = [
   },
   {
     question: '¿Cómo elegir el organismo certificador?',
-    answer: 'ICONTEC, SGS y Bureau Veritas son opciones habituales en Colombia. Los organismos acreditados por ONAC pueden emitir certificados con validez internacional. Te ayudamos a comparar alcance, experiencia sectorial, tiempos y costos.',
+    answer: 'ICONTEC, SGS y Bureau Veritas son opciones habituales en Colombia. Antes de contratar, verifica el alcance en el Directorio Oficial de Acreditados de ONAC y compara experiencia sectorial, tiempos, costos y disponibilidad. Starsolution prepara el SGSI y acompaña la auditoría; el certificado lo emite el organismo certificador independiente.',
   },
   {
     question: '¿Qué pasa si no paso la auditoría externa?',
