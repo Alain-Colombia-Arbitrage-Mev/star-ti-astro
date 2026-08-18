@@ -9,6 +9,7 @@ export interface RegionData {
   locale: string;
   hreflang: string;
   city: string;
+  serviceMarket?: string;
   address: string;
   phone: string;
   phoneDisplay: string;
@@ -114,20 +115,22 @@ export const regions: Record<string, RegionData> = {
     timezone: 'America/New_York',
     currency: 'USD',
     hours: 'Mon - Fri: 9am - 6pm EST',
-    heroTitle: 'Cybersecurity Company in Miami & South Florida',
-    heroSubtitle: 'Comprehensive cybersecurity solutions for businesses in Florida. Bilingual team (English/Spanish) serving the Miami-Dade, Broward, and Palm Beach markets from our office in Orlando.',
+    serviceMarket: 'Miami & Fort Lauderdale',
+    heroTitle: 'Cybersecurity Services in Miami & Fort Lauderdale',
+    heroSubtitle: 'Managed EDR/XDR, enterprise antivirus, SealPath data protection, pentesting and vCISO support for companies with 100 to 1,000 endpoints across Miami-Dade, Broward and South Florida.',
     services: [
       'Ethical Hacking & Penetration Testing',
+      'Managed EDR/XDR',
       'ISO 27001 Consulting',
       'Enterprise Antivirus (Bitdefender, Kaspersky)',
+      'SealPath IRM Data Protection',
       'Data Loss Prevention (DLP)',
+      'Virtual CISO',
       'Red Team & BAS (Breach and Attack Simulation)',
-      'Structured Cabling',
-      'IT Equipment & Hardware',
       'Mobile Device Management (SOTI)',
     ],
     stats: [
-      { label: 'Businesses Protected in South Florida', value: '200+' },
+      { label: 'Endpoint Environments', value: '100-1k' },
       { label: 'Years of Experience', value: '13+' },
       { label: 'Bilingual Team Members', value: '15+' },
       { label: 'Support Availability', value: '24/7' },

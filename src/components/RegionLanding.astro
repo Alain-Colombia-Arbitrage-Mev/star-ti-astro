@@ -9,6 +9,7 @@ interface Props {
 
 const { region } = Astro.props;
 const isEnglish = region.countryCode === 'US';
+const marketLabel = region.serviceMarket ?? region.city;
 
 const pilarColors: Record<string, { bg: string; text: string; border: string }> = {
   red: { bg: 'bg-red-50', text: 'text-red-800', border: 'border-red-200' },
@@ -30,7 +31,7 @@ const pilarColors: Record<string, { bg: string; text: string; border: string }> 
       <div class="inline-flex items-center gap-2 backdrop-blur-md bg-white/10 border border-white/20 rounded-full px-4 py-2 mb-6">
         <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
         <span class="text-sm font-medium text-white uppercase tracking-wide">
-          {isEnglish ? 'Active Protection' : 'Protección Activa'} - {region.city}
+          {isEnglish ? 'Active Protection' : 'Protección Activa'} - {marketLabel}
         </span>
       </div>
 
@@ -62,6 +63,8 @@ const pilarColors: Record<string, { bg: string; text: string; border: string }> 
     </div>
   </div>
 </section>
+
+<slot name="after-hero" />
 
 <!-- 3 Pillars Section -->
 <section class="py-16 sm:py-24 bg-white">
@@ -122,11 +125,11 @@ const pilarColors: Record<string, { bg: string; text: string; border: string }> 
       <!-- Info -->
       <div>
         <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
-          {isEnglish ? `Contact Us in ${region.city}` : `Contáctenos en ${region.city}`}
+          {isEnglish ? `Contact Us in ${marketLabel}` : `Contáctenos en ${region.city}`}
         </h2>
         <p class="text-lg text-gray-600 mb-8">
           {isEnglish
-            ? `Our team in ${region.city} is ready to help you protect your business. Contact us for a free consultation.`
+            ? `Our Florida team serving ${marketLabel} is ready to help you protect your business. Contact us for a free consultation.`
             : `Nuestro equipo en ${region.city} está listo para ayudarle a proteger su empresa. Contáctenos para una consultoría gratuita.`}
         </p>
 
@@ -178,7 +181,7 @@ const pilarColors: Record<string, { bg: string; text: string; border: string }> 
         </h3>
         <form action="/api/leads" method="post" data-lead-form class="space-y-4">
           <input type="hidden" name="_redirect" value="/gracias" />
-          <input type="hidden" name="_source_form" value={`Landing regional - ${region.city}`} />
+          <input type="hidden" name="_source_form" value={`Landing regional - ${marketLabel}`} />
           <input type="hidden" name="region" value={region.slug || 'colombia'} />
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
@@ -226,7 +229,7 @@ const pilarColors: Record<string, { bg: string; text: string; border: string }> 
 <section class="py-16 sm:py-24 bg-white">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
     <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-      {isEnglish ? `Why Choose Starsolution in ${region.city}?` : `¿Por qué Elegir Starsolution en ${region.city}?`}
+      {isEnglish ? `Why Choose Starsolution in ${marketLabel}?` : `¿Por qué Elegir Starsolution en ${region.city}?`}
     </h2>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
       <div class="text-center">
@@ -245,7 +248,7 @@ const pilarColors: Record<string, { bg: string; text: string; border: string }> 
           </svg>
         </div>
         <h3 class="font-bold text-gray-900 mb-2">{isEnglish ? 'Local Presence' : 'Presencia Local'}</h3>
-        <p class="text-sm text-gray-600">{isEnglish ? `Office in ${region.city} with local support` : `Oficina en ${region.city} con soporte local`}</p>
+        <p class="text-sm text-gray-600">{isEnglish ? `Florida office with local support across ${marketLabel}` : `Oficina en ${region.city} con soporte local`}</p>
       </div>
       <div class="text-center">
         <div class="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
@@ -276,9 +279,9 @@ const pilarColors: Record<string, { bg: string; text: string; border: string }> 
       {isEnglish ? 'Ready to Protect Your Business?' : '¿Listo para Proteger su Empresa?'}
     </h2>
     <p class="text-lg text-gray-300 mb-8">
-      {isEnglish
-        ? `Contact our ${region.city} office today for a free security assessment.`
-        : `Contacte nuestra oficina en ${region.city} hoy para una evaluación de seguridad gratuita.`}
+        {isEnglish
+          ? `Contact our Florida team serving ${marketLabel} today for a free security assessment.`
+          : `Contacte nuestra oficina en ${region.city} hoy para una evaluación de seguridad gratuita.`}
     </p>
     <div class="flex flex-col sm:flex-row gap-4 justify-center">
       <a href={`https://api.whatsapp.com/send/?phone=${region.whatsapp}&text&type=phone_number&app_absent=0`} target="_blank" rel="noopener noreferrer" class="bg-[#0d6e5b] text-white font-semibold px-8 py-4 rounded-full hover:bg-[#0e7a6e] transition shadow-lg flex items-center justify-center gap-2">
