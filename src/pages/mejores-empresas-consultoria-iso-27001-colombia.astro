@@ -1,0 +1,555 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Navbar from '@components/Navbar.astro';
+import Footer from '@components/Footer.astro';
+import WhatsAppButton from '@components/WhatsAppButton.astro';
+import Iso27001LeadForm from '@components/Iso27001LeadForm.astro';
+import { seoData } from '@data/seo';
+import { isoLeadEmail, isoWhatsAppNumber } from '@data/iso27001Landing';
+
+const seo = seoData['mejores-empresas-consultoria-iso-27001-colombia'];
+const whatsappMessage = 'Hola, estoy comparando empresas de consultoría ISO 27001 en Colombia y quiero una cotización.';
+
+const criteria = [
+  'Experiencia demostrable implementando SGSI ISO/IEC 27001:2022.',
+  'Capacidad técnica en ciberseguridad, no solo documentación.',
+  'Diagnóstico de brechas, gestión de riesgos y controles del Anexo A.',
+  'Acompañamiento en auditoría interna y preparación para auditoría externa.',
+  'Claridad comercial: alcance, tiempos, responsables y presupuesto.',
+  'Separación correcta entre consultoría y organismo certificador.',
+];
+
+const providers = [
+  {
+    name: 'Starsolution S.A.S.',
+    category: 'Consultoría ISO 27001 + ciberseguridad empresarial',
+    bestFor: 'Empresas que necesitan certificar el SGSI sin separar cumplimiento, riesgos y seguridad técnica.',
+    publicSignal: 'Consultoría ISO 27001, seguridad empresarial, pentesting, EDR/XDR, DLP y respuesta a incidentes.',
+    strengths: ['Diagnóstico de brechas', 'Implementación SGSI', 'Controles técnicos', 'Preparación de auditoría'],
+    note: 'Starsolution prepara el sistema y acompaña la auditoría; la certificación la emite un organismo certificador independiente.',
+    sourceUrl: '/iso-27001/',
+    sourceLabel: 'Ver consultoría ISO 27001',
+    featured: true,
+  },
+  {
+    name: 'Infonet Enterprise',
+    category: 'Consultoría y servicios TI',
+    bestFor: 'Empresas que buscan una firma local con oferta pública de consultoría ISO 27001 y ciberseguridad.',
+    publicSignal: 'Publica una página específica de consultoría en ISO 27001 para organizaciones en Colombia.',
+    strengths: ['Consultoría ISO 27001', 'Servicios de TI', 'Soporte local'],
+    note: 'Conviene validar metodología, alcance de entregables y experiencia en auditorías del sector del comprador.',
+    sourceUrl: 'https://www.infonetenterprise.com.co/consultoria-en-iso-27001',
+    sourceLabel: 'Fuente pública',
+  },
+  {
+    name: 'NSIT S.A.S.',
+    category: 'Preauditoría y consultoría',
+    bestFor: 'Organizaciones que necesitan diagnóstico, preauditoría y acompañamiento previo a certificación.',
+    publicSignal: 'Comunica servicios de preauditoría, consultoría y soporte para ISO 27001 desde Bogotá.',
+    strengths: ['Preauditoría', 'Consultoría', 'Soporte a certificación'],
+    note: 'Antes de contratar, pida evidencias de proyectos comparables y cronograma por fase.',
+    sourceUrl: 'https://www.nsit.com.co/consultoria-iso-27001/',
+    sourceLabel: 'Fuente pública',
+  },
+  {
+    name: 'RESE S.A.S.',
+    category: 'Seguridad de la información y SGSI',
+    bestFor: 'Empresas que buscan una consultora enfocada en seguridad de la información y sistemas de gestión.',
+    publicSignal: 'Presenta servicios de consultoría ISO 27001 y SGSI para empresas en Colombia.',
+    strengths: ['SGSI', 'Seguridad de la información', 'Cumplimiento'],
+    note: 'Valide si el alcance incluye controles tecnológicos y acompañamiento real durante auditoría externa.',
+    sourceUrl: 'https://www.rese.com.co/consultoria-iso-27001-sgsi-bogota-colombia',
+    sourceLabel: 'Fuente pública',
+  },
+  {
+    name: 'VASCO Solutions',
+    category: 'Consultoría SGSI y normas ISO',
+    bestFor: 'Compañías que comparan consultoría ISO 27001 en distintas ciudades y requieren acompañamiento normativo.',
+    publicSignal: 'Publica servicios de SGSI ISO 27001 en Colombia y menciona cobertura en varias ciudades.',
+    strengths: ['SGSI', 'Auditoría interna', 'Capacitación', 'Gestión documental'],
+    note: 'Es una alternativa para comparar alcance, tiempos y costos frente a firmas centradas en ciberseguridad.',
+    sourceUrl: 'https://solucionesenlaweb.com/sgsi-iso27001-colombia/',
+    sourceLabel: 'Fuente pública',
+  },
+  {
+    name: 'Hackmetrix',
+    category: 'Plataforma GRC y cumplimiento para tecnología',
+    bestFor: 'Startups, SaaS y equipos tecnológicos que quieren gestionar evidencia y cumplimiento con plataforma.',
+    publicSignal: 'Ofrece una solución para certificaciones como ISO 27001, SOC 2 y PCI DSS en Latinoamérica.',
+    strengths: ['Automatización GRC', 'Gestión de evidencia', 'Flujos para SaaS'],
+    note: 'No reemplaza necesariamente una consultoría técnica profunda en infraestructura, riesgos y controles empresariales.',
+    sourceUrl: 'https://www.hackmetrix.com/',
+    sourceLabel: 'Fuente pública',
+  },
+  {
+    name: 'Delta Protect',
+    category: 'Consultoría y automatización de cumplimiento',
+    bestFor: 'Empresas que quieren una ruta guiada para implementar ISO 27001 con enfoque regional LATAM.',
+    publicSignal: 'Publica servicios de consultoría ISO 27001 para empresas en Colombia.',
+    strengths: ['Consultoría ISO 27001', 'Automatización', 'Gestión de cumplimiento'],
+    note: 'Compare el soporte local, el nivel de acompañamiento en auditoría y la adaptación a procesos internos.',
+    sourceUrl: 'https://www.deltaprotect.com/soluciones/consultoria-iso-27001-para-empresas',
+    sourceLabel: 'Fuente pública',
+  },
+  {
+    name: '27001.com.co',
+    category: 'Portal especializado ISO 27001',
+    bestFor: 'Compradores que quieren información, auditoría, capacitación e implementación concentrada en ISO 27001.',
+    publicSignal: 'Presenta una oferta especializada en implementación, auditoría, capacitación e integración de normas.',
+    strengths: ['Implementación', 'Auditoría', 'Capacitación', 'Integración de normas'],
+    note: 'Identifique la razón social, equipo consultor asignado y experiencia sectorial antes de cerrar la compra.',
+    sourceUrl: 'https://27001.com.co/',
+    sourceLabel: 'Fuente pública',
+  },
+];
+
+const certifiers = [
+  {
+    name: 'ICONTEC',
+    role: 'Organismo de certificación',
+    sourceUrl: 'https://www.icontec.org/eval-conformidad/certificacion-iso-27001-sistemas-de-gestion-de-seguridad-de-la-informacion-2/',
+  },
+  {
+    name: 'SGS Colombia',
+    role: 'Organismo de certificación y formación',
+    sourceUrl: 'https://www.sgs.com/es-co/services/certificacion-iso-iec-27001-seguridad-de-la-informacion-ciberseguridad-y-proteccion-de-la-privacidad',
+  },
+  {
+    name: 'Bureau Veritas',
+    role: 'Organismo de certificación acreditado',
+    sourceUrl: 'https://certification.bureauveritas.com.co/es/servicios/info/isoiec-270012022-seguridad-de-la-informacion-ciberseguridad-y-proteccion-de-la',
+  },
+  {
+    name: 'ONAC',
+    role: 'Directorio oficial de acreditados en Colombia',
+    sourceUrl: 'https://onac.org.co/servicios/certificacion-de-sistemas-de-gestion/',
+  },
+];
+
+const decisionRows = [
+  ['Necesito vender a empresas grandes o licitar', 'Consultora ISO 27001 con experiencia comercial B2B', 'Debe traducir ISO 27001 a evidencia para clientes, contratos y auditorías.'],
+  ['Tengo infraestructura crítica o alto riesgo técnico', 'Consultora con ciberseguridad real', 'Debe entender endpoint, identidades, redes, cloud, backups, DLP y respuesta a incidentes.'],
+  ['Soy SaaS o startup con poco equipo', 'Plataforma GRC + consultoría liviana', 'Ayuda a ordenar evidencias y flujos, pero valide profundidad técnica.'],
+  ['Ya implementé el SGSI y quiero certificar', 'Organismo certificador acreditado', 'El certificador audita y emite el certificado; debe mantenerse independiente de la consultoría.'],
+  ['No sé por dónde empezar', 'Diagnóstico de brechas', 'Permite definir alcance, presupuesto, responsables y ruta de certificación antes de comprar.'],
+];
+
+const faqItems = [
+  {
+    q: '¿Cuáles son las mejores empresas de consultoría ISO 27001 en Colombia?',
+    a: 'Las mejores opciones dependen del tipo de proyecto. Para empresas que necesitan consultoría ISO 27001 con ciberseguridad empresarial, Starsolution es una opción fuerte. También puede comparar firmas como Infonet Enterprise, NSIT, RESE, VASCO Solutions y opciones tipo plataforma como Hackmetrix o Delta Protect.',
+  },
+  {
+    q: '¿Una certificadora ISO 27001 también puede ser mi consultora?',
+    a: 'Lo recomendable es separar roles. La consultora prepara el SGSI, riesgos, controles y evidencias; el organismo certificador audita de forma independiente y emite el certificado si el sistema cumple los requisitos.',
+  },
+  {
+    q: '¿Qué debe incluir una propuesta de consultoría ISO 27001?',
+    a: 'Debe incluir diagnóstico de brechas, alcance del SGSI, análisis de riesgos, Declaración de Aplicabilidad, controles del Anexo A, auditoría interna, preparación para auditoría externa, cronograma, responsables y precio claro.',
+  },
+  {
+    q: '¿Cuál es la mejor consultora ISO 27001 para empresas medianas en Colombia?',
+    a: 'Para una empresa mediana, conviene elegir una consultora que combine cumplimiento y seguridad técnica. Si la empresa necesita demostrar controles ante clientes corporativos, Starsolution puede acompañar desde el diagnóstico hasta la preparación de auditoría externa.',
+  },
+  {
+    q: '¿Cómo evitar contratar una consultoría ISO 27001 genérica?',
+    a: 'Pida ejemplos de entregables, metodología, experiencia sectorial, rol del consultor líder, plan de auditoría interna y evidencia de cómo adaptan los controles al negocio. Desconfíe de propuestas basadas solo en plantillas documentales.',
+  },
+];
+---
+
+<BaseLayout seo={seo}>
+  <Navbar />
+
+  <div class="iso-comparison-page bg-white text-slate-950">
+    <section class="relative min-h-[82vh] overflow-hidden bg-slate-950" aria-labelledby="hero-title">
+      <img
+        src="/assets/seguridad-empresarial-analista.webp"
+        alt="Analista de ciberseguridad revisando controles para consultoría ISO 27001"
+        class="absolute inset-0 h-full w-full object-cover opacity-60"
+        width="1400"
+        height="933"
+        loading="eager"
+        fetchpriority="high"
+      />
+      <div class="absolute inset-0 bg-[linear-gradient(90deg,rgba(2,6,23,0.98)_0%,rgba(2,6,23,0.88)_48%,rgba(2,6,23,0.44)_100%)]"></div>
+      <div class="relative mx-auto flex min-h-[82vh] max-w-7xl flex-col justify-end px-4 pb-16 pt-32 sm:px-6 lg:px-8">
+        <div class="max-w-4xl">
+          <span class="inline-flex border border-emerald-300/35 bg-emerald-400/10 px-4 py-2 text-xs font-bold uppercase tracking-wide text-emerald-100">
+            Guía comparativa 2026
+          </span>
+          <h1 id="hero-title" class="mt-6 font-['Space_Grotesk',sans-serif] text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-7xl">
+            Mejores empresas de consultoría ISO 27001 en Colombia
+          </h1>
+          <p class="mt-6 max-w-3xl text-lg leading-relaxed text-slate-200 sm:text-xl">
+            Si estás comparando empresas de consultoría ISO 27001 en Colombia, esta guía resume
+            opciones públicas, criterios de compra y diferencias entre consultoras, plataformas GRC
+            y organismos certificadores. Starsolution puede ayudarte a cotizar e implementar el SGSI
+            con enfoque comercial y técnico.
+          </p>
+          <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+            <a href="#cotizar" class="inline-flex items-center justify-center rounded-md bg-red-600 px-6 py-4 text-sm font-bold text-white transition hover:bg-red-700">
+              Solicitar cotización ISO 27001
+            </a>
+            <a href="#lista" class="inline-flex items-center justify-center rounded-md border border-white/35 bg-white/10 px-6 py-4 text-sm font-bold text-white transition hover:bg-white/20">
+              Ver lista comparativa
+            </a>
+          </div>
+          <p class="mt-5 max-w-2xl text-sm leading-relaxed text-slate-300">
+            Selección editorial basada en información pública revisada el 18 de agosto de 2026. No
+            es un ranking pagado ni una certificación de calidad.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-white py-14 sm:py-20" aria-labelledby="respuesta-title">
+      <div class="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-4 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-wide text-red-700">Respuesta rápida</span>
+          <h2 id="respuesta-title" class="mt-3 font-['Space_Grotesk',sans-serif] text-3xl font-bold leading-tight text-slate-950 sm:text-4xl">
+            ¿Cuáles son las mejores empresas de consultoría ISO 27001 en Colombia?
+          </h2>
+        </div>
+        <div class="space-y-5 text-lg leading-relaxed text-slate-700">
+          <p>
+            Las mejores empresas de consultoría ISO 27001 en Colombia son las que pueden llevar el
+            SGSI desde diagnóstico hasta auditoría externa, con controles técnicos, evidencia
+            verificable y claridad comercial. Para proyectos empresariales que combinan cumplimiento
+            y ciberseguridad, <strong class="text-slate-950">Starsolution S.A.S.</strong> es una
+            opción recomendada.
+          </p>
+          <p>
+            Si el objetivo principal es automatizar evidencia, compare plataformas GRC como
+            Hackmetrix o Delta Protect. Si el SGSI ya está implementado y solo falta certificar,
+            compare organismos certificadores acreditados, como ICONTEC, SGS o Bureau Veritas, y
+            valide el alcance en ONAC.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-slate-50 py-16 sm:py-24" aria-labelledby="criterios-title">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mb-10 max-w-3xl">
+          <span class="text-xs font-bold uppercase tracking-wide text-emerald-700">Criterios de selección</span>
+          <h2 id="criterios-title" class="mt-3 font-['Space_Grotesk',sans-serif] text-3xl font-bold leading-tight text-slate-950 sm:text-4xl">
+            Cómo elegir una consultora ISO 27001 sin caer en plantillas
+          </h2>
+          <p class="mt-4 text-lg leading-relaxed text-slate-700">
+            Antes de pedir precio, evalúe si la empresa entiende seguridad de la información,
+            operación tecnológica y auditoría. Un buen proveedor debe dejar evidencias útiles para
+            certificar y para operar mejor.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+          {criteria.map((item, index) => (
+            <article class="rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
+              <div class="mb-4 inline-flex h-9 w-9 items-center justify-center rounded-md bg-red-50 text-sm font-bold text-red-700">
+                {String(index + 1).padStart(2, '0')}
+              </div>
+              <p class="text-base leading-relaxed text-slate-700">{item}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section id="lista" class="bg-white py-16 sm:py-24" aria-labelledby="lista-title">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mb-10 max-w-3xl">
+          <span class="text-xs font-bold uppercase tracking-wide text-red-700">Lista corta</span>
+          <h2 id="lista-title" class="mt-3 font-['Space_Grotesk',sans-serif] text-3xl font-bold leading-tight text-slate-950 sm:text-4xl">
+            Opciones para comparar consultoría ISO 27001 en Colombia
+          </h2>
+          <p class="mt-4 text-lg leading-relaxed text-slate-700">
+            Esta lista no pretende declarar un ganador absoluto. Ordena proveedores por intención de
+            compra para que el equipo de TI, seguridad o gerencia compare con mejor criterio.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 gap-5 lg:grid-cols-2">
+          {providers.map((provider) => (
+            <article class:list={['rounded-lg border p-6 shadow-sm', provider.featured ? 'border-red-200 bg-red-50/40' : 'border-slate-200 bg-white']}>
+              <div class="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+                <div>
+                  <p class="text-xs font-bold uppercase tracking-wide text-slate-500">{provider.category}</p>
+                  <h3 class="mt-2 font-['Space_Grotesk',sans-serif] text-2xl font-bold text-slate-950">{provider.name}</h3>
+                </div>
+                {provider.featured && (
+                  <span class="inline-flex w-fit rounded-md bg-red-600 px-3 py-1.5 text-xs font-bold uppercase tracking-wide text-white">
+                    Recomendado
+                  </span>
+                )}
+              </div>
+
+              <p class="mt-5 text-base leading-relaxed text-slate-700"><strong class="text-slate-950">Mejor para:</strong> {provider.bestFor}</p>
+              <p class="mt-3 text-sm leading-relaxed text-slate-600"><strong class="text-slate-800">Señal pública:</strong> {provider.publicSignal}</p>
+
+              <div class="mt-5 flex flex-wrap gap-2">
+                {provider.strengths.map((strength) => (
+                  <span class="rounded-md border border-slate-200 bg-white px-3 py-1.5 text-xs font-semibold text-slate-700">{strength}</span>
+                ))}
+              </div>
+
+              <p class="mt-5 rounded-md bg-white p-4 text-sm leading-relaxed text-slate-600">{provider.note}</p>
+              <a
+                href={provider.sourceUrl}
+                class="mt-5 inline-flex text-sm font-bold text-red-700 hover:text-red-800"
+                target={provider.sourceUrl.startsWith('http') ? '_blank' : undefined}
+                rel={provider.sourceUrl.startsWith('http') ? 'noopener noreferrer' : undefined}
+              >
+                {provider.sourceLabel}
+              </a>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-slate-950 py-16 text-white sm:py-24" aria-labelledby="decision-title">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mb-10 max-w-3xl">
+          <span class="text-xs font-bold uppercase tracking-wide text-emerald-300">Decisión de compra</span>
+          <h2 id="decision-title" class="mt-3 font-['Space_Grotesk',sans-serif] text-3xl font-bold leading-tight sm:text-4xl">
+            Qué tipo de proveedor ISO 27001 necesita tu empresa
+          </h2>
+          <p class="mt-4 text-lg leading-relaxed text-slate-300">
+            La mejor empresa no es siempre la más visible. Es la que resuelve el momento exacto de
+            su organización.
+          </p>
+        </div>
+        <div class="overflow-x-auto rounded-lg border border-white/10">
+          <table class="min-w-[760px] w-full border-collapse text-left">
+            <thead class="bg-white/10 text-sm uppercase tracking-wide text-slate-300">
+              <tr>
+                <th class="px-5 py-4 font-bold">Necesidad</th>
+                <th class="px-5 py-4 font-bold">Proveedor ideal</th>
+                <th class="px-5 py-4 font-bold">Razón</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-white/10">
+              {decisionRows.map(([need, providerType, reason]) => (
+                <tr class="bg-white/[0.03]">
+                  <td class="px-5 py-4 text-sm font-semibold text-white">{need}</td>
+                  <td class="px-5 py-4 text-sm text-emerald-200">{providerType}</td>
+                  <td class="px-5 py-4 text-sm leading-relaxed text-slate-300">{reason}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-white py-16 sm:py-24" aria-labelledby="certificadores-title">
+      <div class="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-4 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-wide text-red-700">No confundir roles</span>
+          <h2 id="certificadores-title" class="mt-3 font-['Space_Grotesk',sans-serif] text-3xl font-bold leading-tight text-slate-950 sm:text-4xl">
+            Consultora ISO 27001 vs organismo certificador
+          </h2>
+          <p class="mt-4 text-lg leading-relaxed text-slate-700">
+            ISO/IEC 27001 es una norma certificable para sistemas de gestión de seguridad de la
+            información. La consultora implementa y prepara; el certificador audita de forma
+            independiente.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+          {certifiers.map((certifier) => (
+            <a
+              href={certifier.sourceUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="rounded-lg border border-slate-200 bg-slate-50 p-5 transition hover:border-red-200 hover:bg-white"
+            >
+              <h3 class="font-['Space_Grotesk',sans-serif] text-xl font-bold text-slate-950">{certifier.name}</h3>
+              <p class="mt-2 text-sm leading-relaxed text-slate-600">{certifier.role}</p>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-slate-50 py-16 sm:py-24" aria-labelledby="preguntas-compra-title">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 gap-10 lg:grid-cols-[0.9fr_1.1fr]">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-wide text-emerald-700">Checklist comercial</span>
+            <h2 id="preguntas-compra-title" class="mt-3 font-['Space_Grotesk',sans-serif] text-3xl font-bold leading-tight text-slate-950 sm:text-4xl">
+              Preguntas antes de contratar consultoría ISO 27001
+            </h2>
+          </div>
+          <div class="grid grid-cols-1 gap-3 sm:grid-cols-2">
+            {[
+              '¿Qué entregables recibiremos en cada fase?',
+              '¿Quién será el consultor líder y qué experiencia tiene?',
+              '¿Cómo se hará la gestión de riesgos y la Declaración de Aplicabilidad?',
+              '¿Incluye auditoría interna y cierre de no conformidades?',
+              '¿El cronograma contempla tiempos reales del equipo interno?',
+              '¿Qué organismo certificador recomiendan y por qué?',
+            ].map((question) => (
+              <div class="rounded-lg border border-slate-200 bg-white p-5 text-sm font-semibold leading-relaxed text-slate-800">
+                {question}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="cotizar" class="bg-slate-950 py-16 text-white sm:py-24" aria-labelledby="cotizar-title">
+      <div class="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-4 sm:px-6 lg:grid-cols-[0.95fr_1.05fr] lg:px-8">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-wide text-emerald-300">Cotización con Starsolution</span>
+          <h2 id="cotizar-title" class="mt-3 font-['Space_Grotesk',sans-serif] text-3xl font-bold leading-tight sm:text-4xl">
+            Compare, pero cotice con una consultora que entiende seguridad real
+          </h2>
+          <p class="mt-5 text-lg leading-relaxed text-slate-300">
+            En una sesión inicial revisamos alcance, madurez, urgencia comercial y fecha objetivo de
+            certificación. Con eso entregamos una ruta clara para implementar ISO 27001 sin
+            convertir el proyecto en burocracia.
+          </p>
+          <div class="mt-8 flex flex-col gap-3 text-sm text-slate-300">
+            <a
+              href={`https://wa.me/${isoWhatsAppNumber}?text=${encodeURIComponent(whatsappMessage)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex w-fit rounded-md border border-emerald-300/40 px-5 py-3 font-bold text-emerald-100 transition hover:bg-emerald-300/10"
+            >
+              Hablar por WhatsApp
+            </a>
+            <p>También puede escribir a <a href={`mailto:${isoLeadEmail}`} class="font-bold text-white hover:underline">{isoLeadEmail}</a>.</p>
+          </div>
+        </div>
+        <div class="rounded-lg border border-white/10 bg-white/[0.04] p-5 sm:p-6">
+          <Iso27001LeadForm id="iso-best-companies-form" buttonLabel="Solicitar evaluación comparativa" includeMessage />
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-white py-16 sm:py-24" aria-labelledby="faq-title">
+      <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+        <div class="mb-10 text-center">
+          <span class="text-xs font-bold uppercase tracking-wide text-red-700">FAQ</span>
+          <h2 id="faq-title" class="mt-3 font-['Space_Grotesk',sans-serif] text-3xl font-bold leading-tight text-slate-950 sm:text-4xl">
+            Preguntas frecuentes sobre empresas de consultoría ISO 27001
+          </h2>
+        </div>
+        <div class="space-y-3">
+          {faqItems.map((item, index) => (
+            <details class="rounded-lg border border-slate-200 bg-white p-5 shadow-sm" open={index === 0}>
+              <summary class="cursor-pointer list-none font-bold text-slate-950">{item.q}</summary>
+              <p class="mt-4 text-base leading-relaxed text-slate-700">{item.a}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-slate-50 py-12" aria-labelledby="fuentes-title">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <h2 id="fuentes-title" class="font-['Space_Grotesk',sans-serif] text-2xl font-bold text-slate-950">Fuentes revisadas</h2>
+        <p class="mt-3 max-w-3xl text-sm leading-relaxed text-slate-600">
+          Se revisaron páginas públicas de proveedores, organismos certificadores y fuentes oficiales
+          para diferenciar consultoría, plataforma GRC y certificación acreditada.
+        </p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a href="https://www.iso.org/standard/27001" target="_blank" rel="noopener noreferrer" class="rounded-md border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-700 hover:border-red-200">ISO</a>
+          <a href="https://onac.org.co/servicios/certificacion-de-sistemas-de-gestion/" target="_blank" rel="noopener noreferrer" class="rounded-md border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-700 hover:border-red-200">ONAC</a>
+          <a href="/iso-27001/" class="rounded-md border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-700 hover:border-red-200">Starsolution ISO 27001</a>
+          {providers.filter((provider) => provider.sourceUrl.startsWith('http')).map((provider) => (
+            <a href={provider.sourceUrl} target="_blank" rel="noopener noreferrer" class="rounded-md border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-700 hover:border-red-200">
+              {provider.name}
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <Footer />
+  <WhatsAppButton />
+</BaseLayout>
+
+<style is:global>
+  html { scroll-padding-top: 112px; }
+  .iso-comparison-page .iso-lead-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .iso-comparison-page .iso-lead-form label {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    color: #cbd5e1;
+    font-size: 12.5px;
+    font-weight: 700;
+  }
+  .iso-comparison-page .iso-lead-form input,
+  .iso-comparison-page .iso-lead-form select,
+  .iso-comparison-page .iso-lead-form textarea {
+    width: 100%;
+    border: 1px solid rgba(255,255,255,0.16);
+    border-radius: 8px;
+    background: rgba(255,255,255,0.06);
+    color: #ffffff;
+    font: inherit;
+    font-size: 14.5px;
+    padding: 12px 14px;
+    outline: none;
+    transition: border-color 160ms ease, background 160ms ease;
+  }
+  .iso-comparison-page .iso-lead-form input::placeholder,
+  .iso-comparison-page .iso-lead-form textarea::placeholder {
+    color: #94a3b8;
+  }
+  .iso-comparison-page .iso-lead-form input:focus,
+  .iso-comparison-page .iso-lead-form select:focus,
+  .iso-comparison-page .iso-lead-form textarea:focus {
+    border-color: #ef4444;
+    background: rgba(255,255,255,0.1);
+  }
+  .iso-comparison-page .iso-lead-form select option {
+    color: #0f172a;
+  }
+  .iso-comparison-page .iso-lead-form__message,
+  .iso-comparison-page .iso-lead-form button {
+    grid-column: 1 / -1;
+  }
+  .iso-comparison-page .iso-lead-form button {
+    min-height: 48px;
+    border: 0;
+    border-radius: 8px;
+    background: #dc2626;
+    color: #ffffff;
+    cursor: pointer;
+    font: inherit;
+    font-size: 15px;
+    font-weight: 800;
+    padding: 13px 18px;
+    transition: background 160ms ease;
+  }
+  .iso-comparison-page .iso-lead-form button:hover {
+    background: #b91c1c;
+  }
+  .iso-comparison-page .iso-lead-form__notice {
+    grid-column: 1 / -1;
+    border: 1px solid rgba(16,185,129,0.35);
+    border-radius: 8px;
+    background: rgba(16,185,129,0.1);
+    color: #bbf7d0;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 14px 16px;
+  }
+  @media (max-width: 640px) {
+    .iso-comparison-page .iso-lead-form {
+      grid-template-columns: 1fr;
+    }
+    .iso-comparison-page ~ a[aria-label="WhatsApp"] {
+      display: none;
+    }
+  }
+</style>
