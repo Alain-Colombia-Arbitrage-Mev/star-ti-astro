@@ -1,0 +1,206 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Navbar from '@components/Navbar.astro';
+import Footer from '@components/Footer.astro';
+import WhatsAppButton from '@components/WhatsAppButton.astro';
+import { seoData } from '@data/seo';
+
+const seo = seoData['blog/kaspersky-next-precio-colombia'];
+---
+
+<BaseLayout seo={seo}>
+  <Navbar />
+
+  <section class="relative bg-gradient-to-br from-[#1a0f0f] to-[#111827] overflow-hidden">
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-16 lg:pb-20">
+      <nav class="mb-8 flex items-center gap-2 text-sm text-gray-400" aria-label="Ruta de navegación">
+        <a href="/" class="hover:text-white transition-colors">Inicio</a>
+        <span>/</span>
+        <a href="/blog/" class="hover:text-white transition-colors">Blog</a>
+        <span>/</span>
+        <span class="text-gray-200">Precio Kaspersky Next</span>
+      </nav>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <div class="flex flex-wrap items-center gap-3 mb-6">
+            <span class="bg-red-500/20 border border-red-500/30 text-red-300 text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wide">Cotizacion</span>
+            <span class="text-gray-400 text-sm">18 ago 2026</span>
+          </div>
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+            Precio de Kaspersky Next en Colombia para empresas
+          </h1>
+          <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+            Factores reales que afectan la cotizacion: numero de endpoints, edicion EDR/XDR/MXDR, renovacion, soporte, implementacion y plazo de licencia.
+          </p>
+          <div class="flex items-center gap-4 text-sm text-gray-400">
+            <span>Por Jorge Molano &middot; CEO de Starsolution</span>
+            <span>&bull;</span>
+            <span>Tiempo de lectura: 6 min</span>
+          </div>
+        </div>
+        <div class="hidden lg:block">
+          <img
+            src="/assets/icono-escudo-tecnologico.webp"
+            alt="Escudo tecnologico para cotizacion de Kaspersky Next en Colombia"
+            class="w-full max-w-md mx-auto rounded-2xl shadow-2xl bg-white/5 p-8"
+            width="480"
+            height="480"
+            loading="eager"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <article class="bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+      <section class="mb-12">
+        <p class="text-xl text-gray-700 leading-relaxed mb-6">
+          <strong>El precio de Kaspersky Next en Colombia</strong> no se calcula con una tarifa unica publica para todos los casos. En empresas, la cotizacion depende de la edicion, numero de endpoints, servidores, plazo del contrato, si es renovacion o compra nueva, nivel de soporte e implementacion requerida.
+        </p>
+        <div class="bg-red-50 border border-red-200 rounded-2xl p-6">
+          <h2 class="text-xl font-bold text-red-900 mb-2">Respuesta rapida</h2>
+          <p class="text-red-800 leading-relaxed">
+            Para saber cuanto cuesta Kaspersky Next, una empresa debe cotizar con inventario y alcance tecnico. Dos empresas con 100 equipos pueden tener precios distintos si una solo necesita EDR Foundations y la otra requiere XDR, servidores, cifrado, migracion y soporte avanzado.
+          </p>
+        </div>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Variables que cambian el precio de Kaspersky Next</h2>
+        <div class="overflow-x-auto rounded-2xl border border-gray-200">
+          <table class="w-full text-sm min-w-[720px]">
+            <thead class="bg-gray-50">
+              <tr>
+                <th class="text-left px-4 py-3 font-bold text-gray-900">Variable</th>
+                <th class="text-left px-4 py-3 font-bold text-gray-900">Impacto en cotizacion</th>
+                <th class="text-left px-4 py-3 font-bold text-gray-900">Dato que debe entregar</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-100">
+              {[
+                ['Cantidad de endpoints', 'Define el volumen base y descuentos por escala.', 'Numero de PCs, laptops, servidores y usuarios moviles.'],
+                ['Edicion', 'EDR, XDR, MXDR y Expert tienen alcances y costos diferentes.', 'Nivel de visibilidad y respuesta requerido.'],
+                ['Plazo', 'Contratos multianuales pueden cambiar el valor total y la renovacion.', 'Duracion deseada: 1, 2 o 3 anos.'],
+                ['Renovacion o compra nueva', 'Una renovacion puede tener condiciones distintas a una compra inicial.', 'Fecha de vencimiento y producto actual.'],
+                ['Implementacion', 'Piloto, politicas, migracion y capacitacion pueden incluirse o separarse.', 'Sedes, dominio, consola actual y restricciones operativas.'],
+                ['Soporte', 'Mayor criticidad exige tiempos de respuesta y escalamiento mas estrictos.', 'Horario de operacion, SLA esperado y responsables internos.'],
+              ].map(([variable, impact, data]) => (
+                <tr class="hover:bg-gray-50">
+                  <td class="px-4 py-3 font-semibold text-gray-900">{variable}</td>
+                  <td class="px-4 py-3 text-gray-600">{impact}</td>
+                  <td class="px-4 py-3 text-gray-600">{data}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Por que no conviene comprar solo por precio unitario</h2>
+        <p class="text-lg text-gray-600 leading-relaxed mb-6">
+          El precio por endpoint es solo una parte del costo. El costo real aparece cuando la consola queda mal configurada, las politicas bloquean operaciones, el despliegue falla en sedes remotas o las alertas no llegan a nadie responsable.
+        </p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div class="bg-gray-50 border border-gray-200 rounded-xl p-5">
+            <h3 class="font-bold text-gray-900 mb-3">Costo visible</h3>
+            <ul class="space-y-2 text-sm text-gray-600">
+              <li>&bull; Licencia por endpoint</li>
+              <li>&bull; Plazo de contrato</li>
+              <li>&bull; Edicion contratada</li>
+              <li>&bull; Impuestos y moneda</li>
+            </ul>
+          </div>
+          <div class="bg-red-50 border border-red-200 rounded-xl p-5">
+            <h3 class="font-bold text-red-900 mb-3">Costo operativo oculto</h3>
+            <ul class="space-y-2 text-sm text-red-800">
+              <li>&bull; Horas de configuracion</li>
+              <li>&bull; Incidentes por politicas mal calibradas</li>
+              <li>&bull; Reinstalaciones y migracion fallida</li>
+              <li>&bull; Alertas criticas sin seguimiento</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Como reducir el costo total sin bajar la proteccion</h2>
+        <ol class="space-y-5">
+          {[
+            ['Eliminar endpoints duplicados', 'Depure equipos retirados, virtuales temporales y usuarios que ya no requieren licencia.'],
+            ['Elegir edicion por riesgo', 'No todas las areas necesitan el mismo nivel. Servidores criticos y usuarios privilegiados pueden requerir controles mas fuertes.'],
+            ['Planear renovacion con tiempo', 'Cotizar tarde reduce margen de negociacion y aumenta el riesgo de quedar sin cobertura.'],
+            ['Hacer piloto antes del despliegue masivo', 'Un piloto bien elegido evita retrabajo y bloqueos en aplicaciones criticas.'],
+            ['Incluir transferencia operativa', 'Capacitar al equipo interno reduce dependencia y mejora respuesta ante alertas.'],
+          ].map(([title, text], index) => (
+            <li class="flex gap-4">
+              <span class="flex-shrink-0 w-9 h-9 bg-red-700 text-white rounded-full flex items-center justify-center font-bold">{index + 1}</span>
+              <div>
+                <h3 class="font-bold text-gray-900 mb-1">{title}</h3>
+                <p class="text-gray-600 leading-relaxed">{text}</p>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Que debe incluir una cotizacion corporativa</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          {[
+            ['Resumen de alcance', 'Cantidad de licencias, edicion, plazo, moneda y fecha de vencimiento.'],
+            ['Justificacion tecnica', 'Por que se recomienda EDR, XDR o MXDR segun riesgo y madurez.'],
+            ['Plan de implementacion', 'Fases, responsables, piloto, despliegue masivo y validacion final.'],
+            ['Soporte', 'Canales, horarios, SLA, escalamiento y transferencia de conocimiento.'],
+          ].map(([title, text]) => (
+            <div class="border border-gray-200 rounded-xl p-5 bg-gray-50">
+              <h3 class="font-bold text-gray-900 mb-2">{title}</h3>
+              <p class="text-sm text-gray-600 leading-relaxed">{text}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section class="mb-12 bg-gray-50 border border-gray-200 rounded-2xl p-6">
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">Fuentes y referencias</h2>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          La estructura por niveles de Kaspersky Next permite ajustar la compra al nivel de madurez de cada empresa, desde endpoint y EDR hasta XDR y respuesta gestionada.
+        </p>
+        <ul class="space-y-2 text-sm">
+          <li><a href="https://www.kaspersky.com/next" class="text-red-700 hover:underline">Kaspersky Next, linea oficial de productos</a></li>
+          <li><a href="https://latam.kaspersky.com/next-edr-foundations" class="text-red-700 hover:underline">Kaspersky Next EDR Foundations LATAM</a></li>
+          <li><a href="https://latam.kaspersky.com/next-edr-optimum" class="text-red-700 hover:underline">Kaspersky Next EDR Optimum LATAM</a></li>
+        </ul>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Preguntas frecuentes</h2>
+        <div class="space-y-5">
+          <div class="border border-gray-200 rounded-xl p-5">
+            <h3 class="font-bold text-gray-900 mb-2">Cuanto cuesta Kaspersky Next en Colombia?</h3>
+            <p class="text-gray-600">Depende de edicion, endpoints, servidores, plazo, renovacion o compra nueva, soporte e implementacion. Por eso la cotizacion corporativa se calcula caso por caso.</p>
+          </div>
+          <div class="border border-gray-200 rounded-xl p-5">
+            <h3 class="font-bold text-gray-900 mb-2">Que edicion suele costar mas?</h3>
+            <p class="text-gray-600">Las ediciones con XDR, MXDR o capacidades Expert suelen costar mas porque agregan correlacion entre capas, respuesta gestionada o capacidades avanzadas de SOC.</p>
+          </div>
+          <div class="border border-gray-200 rounded-xl p-5">
+            <h3 class="font-bold text-gray-900 mb-2">La implementacion esta incluida en la licencia?</h3>
+            <p class="text-gray-600">La licencia cubre el derecho de uso del software. La implementacion depende del distribuidor y puede incluir consola, politicas, despliegue, capacitacion y soporte.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-[#111827] rounded-2xl p-8 text-white">
+        <h2 class="text-2xl font-bold mb-3">Solicite precio de Kaspersky Next para su empresa</h2>
+        <p class="text-gray-300 mb-6">Cotizamos licencias, renovaciones e implementacion con base en su inventario real y nivel de riesgo.</p>
+        <a href="/kaspersky/" class="inline-flex items-center justify-center bg-red-700 text-white font-semibold px-6 py-3 rounded hover:bg-[#dc2626] transition">Cotizar Kaspersky en Colombia</a>
+      </section>
+    </div>
+  </article>
+
+  <Footer />
+  <WhatsAppButton />
+</BaseLayout>

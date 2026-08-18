@@ -1,0 +1,190 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Navbar from '@components/Navbar.astro';
+import Footer from '@components/Footer.astro';
+import WhatsAppButton from '@components/WhatsAppButton.astro';
+import { seoData } from '@data/seo';
+
+const seo = seoData['blog/kaspersky-edr-xdr-mxdr-colombia'];
+---
+
+<BaseLayout seo={seo}>
+  <Navbar />
+
+  <section class="relative bg-gradient-to-br from-[#0f172a] to-[#111827] overflow-hidden">
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-16 lg:pb-20">
+      <nav class="mb-8 flex items-center gap-2 text-sm text-gray-400" aria-label="Ruta de navegación">
+        <a href="/" class="hover:text-white transition-colors">Inicio</a>
+        <span>/</span>
+        <a href="/blog/" class="hover:text-white transition-colors">Blog</a>
+        <span>/</span>
+        <span class="text-gray-200">Kaspersky EDR vs XDR vs MXDR</span>
+      </nav>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <div class="flex flex-wrap items-center gap-3 mb-6">
+            <span class="bg-red-500/20 border border-red-500/30 text-red-300 text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wide">Comparativa</span>
+            <span class="text-gray-400 text-sm">18 ago 2026</span>
+          </div>
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+            Kaspersky EDR vs XDR vs MXDR para empresas en Colombia
+          </h1>
+          <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+            Compare los niveles de deteccion y respuesta de Kaspersky Next para decidir si su empresa necesita EDR, XDR, MXDR o una edicion Expert.
+          </p>
+          <div class="flex items-center gap-4 text-sm text-gray-400">
+            <span>Por Jorge Molano &middot; CEO de Starsolution</span>
+            <span>&bull;</span>
+            <span>Tiempo de lectura: 8 min</span>
+          </div>
+        </div>
+        <div class="hidden lg:block">
+          <img
+            src="/assets/robot-ia-laboratorio-monitores.webp"
+            alt="Analisis de alertas para comparar Kaspersky EDR XDR y MXDR"
+            class="w-full rounded-2xl shadow-2xl"
+            width="600"
+            height="400"
+            loading="eager"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <article class="bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+      <section class="mb-12">
+        <p class="text-xl text-gray-700 leading-relaxed mb-6">
+          <strong>Kaspersky EDR, XDR y MXDR</strong> resuelven niveles distintos de deteccion y respuesta. EDR se concentra en endpoints, XDR correlaciona varias capas de seguridad y MXDR suma operacion gestionada para empresas que no tienen SOC interno 24/7.
+        </p>
+        <div class="bg-red-50 border border-red-200 rounded-2xl p-6">
+          <h2 class="text-xl font-bold text-red-900 mb-2">Respuesta rapida</h2>
+          <p class="text-red-800 leading-relaxed">
+            Si su empresa solo necesita investigar equipos comprometidos, empiece por EDR. Si necesita ver ataques que cruzan endpoint, identidad, correo, nube y red, evalúe XDR. Si no tiene equipo para operar alertas todo el dia, MXDR puede ser el camino correcto.
+          </p>
+        </div>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Definiciones claras</h2>
+        <div class="space-y-5">
+          <div class="border border-gray-200 rounded-xl p-5">
+            <h3 class="font-bold text-gray-900 mb-2">Que es Kaspersky EDR?</h3>
+            <p class="text-gray-600 leading-relaxed">Kaspersky EDR agrega telemetria, investigacion de causa raiz, busqueda de indicadores de compromiso y respuesta sobre endpoints. Es el nivel natural para pasar de antivirus administrado a deteccion y respuesta.</p>
+          </div>
+          <div class="border border-gray-200 rounded-xl p-5">
+            <h3 class="font-bold text-gray-900 mb-2">Que es Kaspersky XDR?</h3>
+            <p class="text-gray-600 leading-relaxed">Kaspersky XDR amplía la deteccion a varias capas y fuentes de datos para correlacionar senales. Ayuda a entender incidentes que no se explican mirando solo el equipo afectado.</p>
+          </div>
+          <div class="border border-gray-200 rounded-xl p-5">
+            <h3 class="font-bold text-gray-900 mb-2">Que es Kaspersky MXDR?</h3>
+            <p class="text-gray-600 leading-relaxed">Kaspersky MXDR suma deteccion y respuesta gestionada. Es util cuando la empresa requiere monitoreo continuo, pero no tiene analistas dedicados para triage, investigacion y respuesta 24/7.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Comparativa Kaspersky EDR vs XDR vs MXDR</h2>
+        <div class="overflow-x-auto rounded-2xl border border-gray-200">
+          <table class="w-full text-sm min-w-[820px]">
+            <thead class="bg-gray-50">
+              <tr>
+                <th class="text-left px-4 py-3 font-bold text-gray-900">Criterio</th>
+                <th class="text-left px-4 py-3 font-bold text-gray-900">EDR</th>
+                <th class="text-left px-4 py-3 font-bold text-gray-900">XDR</th>
+                <th class="text-left px-4 py-3 font-bold text-gray-900">MXDR</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-100">
+              {[
+                ['Visibilidad', 'Endpoint y eventos del equipo.', 'Endpoint mas capas como identidad, correo, nube y red.', 'Visibilidad XDR operada por especialistas.'],
+                ['Equipo requerido', 'TI con capacidad de revisar alertas.', 'Equipo de seguridad con analisis intermedio.', 'Empresa sin SOC interno o con SOC parcial.'],
+                ['Respuesta', 'Aislar host, buscar IoC, contener procesos y archivos.', 'Correlacionar incidentes y coordinar acciones entre fuentes.', 'Triage, investigacion y acompanamiento gestionado.'],
+                ['Mejor para', 'Empresas medianas que quieren subir de antivirus a EDR.', 'Empresas con multiples fuentes de datos y riesgo alto.', 'Operaciones 24/7, sectores regulados o equipos pequenos.'],
+                ['Riesgo de compra incorrecta', 'Comprar EDR y no revisarlo.', 'Comprar XDR sin integraciones ni procesos.', 'Contratar servicio gestionado sin definir responsables internos.'],
+              ].map(([criteria, edr, xdr, mxdr]) => (
+                <tr class="hover:bg-gray-50">
+                  <td class="px-4 py-3 font-semibold text-gray-900">{criteria}</td>
+                  <td class="px-4 py-3 text-gray-600">{edr}</td>
+                  <td class="px-4 py-3 text-gray-600">{xdr}</td>
+                  <td class="px-4 py-3 text-gray-600">{mxdr}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Cuando elegir cada nivel</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-5">
+          <div class="bg-gray-50 border border-gray-200 rounded-xl p-5">
+            <h3 class="font-bold text-gray-900 mb-2">Elija EDR si...</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">Tiene equipo de TI que puede operar alertas y necesita investigar endpoints, contener ransomware y buscar indicadores de compromiso.</p>
+          </div>
+          <div class="bg-gray-50 border border-gray-200 rounded-xl p-5">
+            <h3 class="font-bold text-gray-900 mb-2">Elija XDR si...</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">Los incidentes cruzan varias capas y necesita correlacionar identidad, correo, nube, red y endpoint en una misma investigacion.</p>
+          </div>
+          <div class="bg-gray-50 border border-gray-200 rounded-xl p-5">
+            <h3 class="font-bold text-gray-900 mb-2">Elija MXDR si...</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">No tiene SOC 24/7 o necesita apoyo gestionado para monitoreo, triage y respuesta frente a amenazas avanzadas.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Errores comunes al comprar EDR o XDR</h2>
+        <ul class="space-y-3 text-gray-700">
+          <li>&bull; Comprar XDR sin definir que fuentes de datos se van a integrar.</li>
+          <li>&bull; Comprar EDR sin responsables para revisar alertas y ejecutar respuesta.</li>
+          <li>&bull; Medir solo precio por endpoint y no costo operativo.</li>
+          <li>&bull; No hacer piloto con usuarios, servidores y aplicaciones criticas.</li>
+          <li>&bull; No documentar playbooks de aislamiento, escalamiento y recuperacion.</li>
+        </ul>
+      </section>
+
+      <section class="mb-12 bg-gray-50 border border-gray-200 rounded-2xl p-6">
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">Fuentes y referencias</h2>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          Kaspersky describe Next como una linea que escala desde endpoint y EDR hasta XDR avanzado. Sus paginas oficiales de EDR Optimum y XDR Expert detallan capacidades de investigacion, respuesta, integraciones y automatizacion.
+        </p>
+        <ul class="space-y-2 text-sm">
+          <li><a href="https://www.kaspersky.com/next" class="text-red-700 hover:underline">Kaspersky Next, linea oficial de productos</a></li>
+          <li><a href="https://latam.kaspersky.com/next-edr-optimum" class="text-red-700 hover:underline">Kaspersky Next EDR Optimum LATAM</a></li>
+          <li><a href="https://www.kaspersky.com/enterprise-security/endpoint-detection-response-edr" class="text-red-700 hover:underline">Kaspersky Next EDR Expert</a></li>
+          <li><a href="https://www.kaspersky.com/enterprise-security/xdr" class="text-red-700 hover:underline">Kaspersky Next XDR Expert</a></li>
+        </ul>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Preguntas frecuentes</h2>
+        <div class="space-y-5">
+          <div class="border border-gray-200 rounded-xl p-5">
+            <h3 class="font-bold text-gray-900 mb-2">Cual es la diferencia entre Kaspersky EDR y XDR?</h3>
+            <p class="text-gray-600">EDR se enfoca en endpoint. XDR amplía la visibilidad a multiples capas, como identidad, correo, nube e integraciones, para correlacionar senales y acelerar la respuesta.</p>
+          </div>
+          <div class="border border-gray-200 rounded-xl p-5">
+            <h3 class="font-bold text-gray-900 mb-2">Cuando conviene Kaspersky MXDR?</h3>
+            <p class="text-gray-600">Conviene cuando la empresa necesita monitoreo y respuesta gestionada, pero no tiene un SOC interno 24/7 o su equipo no alcanza a cubrir alertas criticas.</p>
+          </div>
+          <div class="border border-gray-200 rounded-xl p-5">
+            <h3 class="font-bold text-gray-900 mb-2">Puedo empezar con EDR y luego pasar a XDR?</h3>
+            <p class="text-gray-600">Si. La linea Kaspersky Next esta organizada por niveles, por lo que una empresa puede iniciar con EDR y escalar cuando aumenten su madurez, riesgo o necesidad de visibilidad.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-[#111827] rounded-2xl p-8 text-white">
+        <h2 class="text-2xl font-bold mb-3">Compare Kaspersky EDR, XDR y MXDR con Starsolution</h2>
+        <p class="text-gray-300 mb-6">Evaluamos su parque de equipos, riesgo, madurez operativa y presupuesto para recomendar la edicion adecuada.</p>
+        <a href="/kaspersky/" class="inline-flex items-center justify-center bg-red-700 text-white font-semibold px-6 py-3 rounded hover:bg-[#dc2626] transition">Ver Kaspersky para empresas</a>
+      </section>
+    </div>
+  </article>
+
+  <Footer />
+  <WhatsAppButton />
+</BaseLayout>

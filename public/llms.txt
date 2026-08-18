@@ -1,0 +1,50 @@
+# Starsolution S.A.S.
+
+> Starsolution S.A.S. is a cybersecurity company serving businesses in Colombia, Venezuela and the United States. The site contains service pages, product implementation pages and practical cybersecurity guides for enterprise buyers.
+
+Last updated: 2026-08-18
+
+## Primary Site
+
+- Home: https://star-ti.com/
+- Contact: https://star-ti.com/contacto/
+- Blog: https://star-ti.com/blog/
+- Sitemap: https://star-ti.com/sitemap-index.xml
+- Robots: https://star-ti.com/robots.txt
+
+## Core Cybersecurity Services
+
+- Cybersecurity for companies in Colombia: https://star-ti.com/seguridad-informatica-empresas/
+- Ethical hacking and penetration testing: https://star-ti.com/hacking-etico/
+- ISO 27001 consulting: https://star-ti.com/iso-27001/
+- Data loss prevention: https://star-ti.com/dlp-prevencion-perdida-datos/
+- Incident response guide: https://star-ti.com/blog/respuesta-incidentes-ciberseguridad/
+- Colombia cybersecurity report 2026: https://star-ti.com/informe-ciberseguridad-colombia-2026/
+
+## Kaspersky Topic Cluster
+
+- Main page: https://star-ti.com/kaspersky/
+- Primary intent: distribuidor corporativo Kaspersky Colombia
+- Related intents: distribuidor Kaspersky Colombia, licencias Kaspersky empresas Colombia, Kaspersky Next Colombia, Kaspersky EDR Colombia, Kaspersky XDR Colombia, Kaspersky MXDR Colombia
+- Buying guide: https://star-ti.com/blog/comprar-kaspersky-empresas-colombia/
+- Price guide: https://star-ti.com/blog/kaspersky-next-precio-colombia/
+- EDR vs XDR vs MXDR comparison: https://star-ti.com/blog/kaspersky-edr-xdr-mxdr-colombia/
+
+## Bitdefender Topic Cluster
+
+- Main page: https://star-ti.com/bitdefender/
+- Primary intent: distribuidor Bitdefender Colombia
+- Related intents: Bitdefender GravityZone Colombia, licencias Bitdefender Colombia, comprar Bitdefender empresas, Bitdefender EDR Colombia, Bitdefender XDR Colombia
+- Antivirus comparison: https://star-ti.com/antivirus-empresas/
+
+## AI And Search Access
+
+The robots.txt file allows search and AI crawlers including Googlebot, Bingbot, OAI-SearchBot, GPTBot, ChatGPT-User, ClaudeBot, PerplexityBot, GoogleOther and Applebot. Pages are published as static HTML with canonical URLs and XML sitemap entries.
+
+## Organization Facts
+
+- Legal name: Starsolution S.A.S.
+- Website: https://star-ti.com/
+- Headquarters: Bogota, Colombia
+- Main services: enterprise cybersecurity, endpoint protection, EDR/XDR implementation, data loss prevention, ethical hacking, ISO 27001 consulting, incident response
+- Contact phone: +57 300 701 0017

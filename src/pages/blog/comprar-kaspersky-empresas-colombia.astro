@@ -1,0 +1,197 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Navbar from '@components/Navbar.astro';
+import Footer from '@components/Footer.astro';
+import WhatsAppButton from '@components/WhatsAppButton.astro';
+import { seoData } from '@data/seo';
+
+const seo = seoData['blog/comprar-kaspersky-empresas-colombia'];
+---
+
+<BaseLayout seo={seo}>
+  <Navbar />
+
+  <section class="relative bg-gradient-to-br from-[#111827] to-[#1f2937] overflow-hidden">
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-16 lg:pb-20">
+      <nav class="mb-8 flex items-center gap-2 text-sm text-gray-400" aria-label="Ruta de navegación">
+        <a href="/" class="hover:text-white transition-colors">Inicio</a>
+        <span>/</span>
+        <a href="/blog/" class="hover:text-white transition-colors">Blog</a>
+        <span>/</span>
+        <span class="text-gray-200">Comprar Kaspersky Empresas</span>
+      </nav>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <div class="flex flex-wrap items-center gap-3 mb-6">
+            <span class="bg-red-500/20 border border-red-500/30 text-red-300 text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wide">Kaspersky</span>
+            <span class="text-gray-400 text-sm">18 ago 2026</span>
+          </div>
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+            Como comprar Kaspersky para empresas en Colombia
+          </h1>
+          <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+            Guia para comprar licencias Kaspersky Next por medio de un distribuidor corporativo en Colombia, con criterios para elegir edicion, validar soporte y preparar la implementacion.
+          </p>
+          <div class="flex items-center gap-4 text-sm text-gray-400">
+            <span>Por Jorge Molano &middot; CEO de Starsolution</span>
+            <span>&bull;</span>
+            <span>Tiempo de lectura: 7 min</span>
+          </div>
+        </div>
+        <div class="hidden lg:block">
+          <img
+            src="/assets/hero-ciberseguridad-infraestructura.webp"
+            alt="Infraestructura de ciberseguridad empresarial para comprar Kaspersky en Colombia"
+            class="w-full rounded-2xl shadow-2xl"
+            width="600"
+            height="400"
+            loading="eager"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <article class="bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+      <section class="mb-12">
+        <p class="text-xl text-gray-700 leading-relaxed mb-6">
+          <strong>Comprar Kaspersky para empresas en Colombia</strong> implica definir la edicion correcta de Kaspersky Next, el numero real de endpoints, el alcance de soporte y el plan de implementacion. Para una compra B2B, lo recomendable es trabajar con un distribuidor corporativo Kaspersky que pueda unir licenciamiento, renovacion, despliegue y acompanamiento tecnico.
+        </p>
+        <div class="bg-red-50 border border-red-200 rounded-2xl p-6">
+          <h2 class="text-xl font-bold text-red-900 mb-2">Respuesta rapida</h2>
+          <p class="text-red-800 leading-relaxed">
+            Una empresa debe comprar Kaspersky a traves de un canal corporativo cuando necesita factura, renovacion controlada, soporte local, configuracion de politicas, despliegue por grupos y escalamiento tecnico. Starsolution atiende ese proceso en Colombia para licencias Kaspersky Next, EDR, XDR y MXDR.
+          </p>
+        </div>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Que debe definir antes de pedir una cotizacion</h2>
+        <p class="text-lg text-gray-600 leading-relaxed mb-6">
+          La cotizacion mejora cuando el distribuidor no recibe solo una cantidad de equipos, sino contexto operativo. Estos datos evitan comprar una edicion insuficiente o pagar por modulos que el equipo de TI no va a operar.
+        </p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          {[
+            ['Endpoints y servidores', 'Cantidad de Windows, macOS, Linux, servidores y equipos remotos que deben quedar protegidos.'],
+            ['Sedes y conectividad', 'Numero de oficinas, usuarios remotos, ancho de banda y necesidad de repositorios locales.'],
+            ['Madurez de seguridad', 'Si existe analista SOC, mesa de ayuda, procedimientos de respuesta e integracion con SIEM.'],
+            ['Nivel de deteccion requerido', 'Endpoint basico, EDR, XDR, MXDR o capacidades Expert segun riesgo y sector.'],
+            ['Licencia actual', 'Producto instalado, fecha de vencimiento, consola usada y restricciones de migracion.'],
+            ['Cumplimiento', 'Requisitos de Ley 1581, ISO 27001, sector financiero, salud, educacion o gobierno.'],
+          ].map(([title, text]) => (
+            <div class="border border-gray-200 rounded-xl p-5 bg-gray-50">
+              <h3 class="font-bold text-gray-900 mb-2">{title}</h3>
+              <p class="text-sm text-gray-600 leading-relaxed">{text}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Como comprar Kaspersky para empresas paso a paso</h2>
+        <ol class="space-y-5">
+          {[
+            ['Inventario inicial', 'Liste endpoints, servidores, usuarios moviles, sistemas criticos y sedes. Incluya equipos en teletrabajo y servidores que no estan unidos al dominio.'],
+            ['Seleccion de edicion', 'Compare Kaspersky Next EDR Foundations, EDR Optimum, XDR Optimum, MXDR Optimum, EDR Expert y XDR Expert segun visibilidad, respuesta y capacidad operativa.'],
+            ['Validacion comercial', 'Defina si es compra nueva, renovacion, ampliacion o migracion desde otra marca. Esto cambia la cotizacion y el calendario.'],
+            ['Plan tecnico', 'Acorde configuracion de consola, politicas por grupos, piloto, despliegue masivo y responsables internos.'],
+            ['Implementacion y transferencia', 'Ejecute despliegue por fases, valide alertas, documente politicas y capacite al equipo que administrara la consola.'],
+          ].map(([title, text], index) => (
+            <li class="flex gap-4">
+              <span class="flex-shrink-0 w-9 h-9 bg-red-700 text-white rounded-full flex items-center justify-center font-bold">{index + 1}</span>
+              <div>
+                <h3 class="font-bold text-gray-900 mb-1">{title}</h3>
+                <p class="text-gray-600 leading-relaxed">{text}</p>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Que edicion de Kaspersky Next conviene comprar</h2>
+        <div class="overflow-x-auto rounded-2xl border border-gray-200">
+          <table class="w-full text-sm min-w-[720px]">
+            <thead class="bg-gray-50">
+              <tr>
+                <th class="text-left px-4 py-3 font-bold text-gray-900">Edicion</th>
+                <th class="text-left px-4 py-3 font-bold text-gray-900">Cuando aplica</th>
+                <th class="text-left px-4 py-3 font-bold text-gray-900">Riesgo que cubre mejor</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-100">
+              {[
+                ['EDR Foundations', 'Empresas que necesitan endpoint empresarial administrable y EDR esencial.', 'Ransomware, malware sin archivos y visibilidad basica de causa raiz.'],
+                ['EDR Optimum', 'Equipos de TI que requieren EDR, sandbox, parches, cifrado y automatizacion.', 'Amenazas evasivas y reduccion de carga operativa.'],
+                ['XDR Optimum', 'Organizaciones que necesitan correlacionar senales mas alla del endpoint.', 'Ataques que combinan endpoint, identidad, red y correo.'],
+                ['MXDR Optimum', 'Empresas sin SOC 24/7 que requieren deteccion y respuesta gestionada.', 'Monitoreo continuo y escalamiento especializado.'],
+                ['EDR/XDR Expert', 'SOC internos o empresas reguladas con necesidades avanzadas.', 'Threat hunting, forensica, playbooks y operaciones de seguridad maduras.'],
+              ].map(([tier, useCase, risk]) => (
+                <tr class="hover:bg-gray-50">
+                  <td class="px-4 py-3 font-semibold text-gray-900">{tier}</td>
+                  <td class="px-4 py-3 text-gray-600">{useCase}</td>
+                  <td class="px-4 py-3 text-gray-600">{risk}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Como elegir un distribuidor corporativo Kaspersky</h2>
+        <p class="text-lg text-gray-600 leading-relaxed mb-6">
+          El distribuidor correcto no solo entrega una licencia. Debe entender la arquitectura actual, documentar la implementacion, reducir friccion con usuarios finales y responder cuando aparezca una alerta critica.
+        </p>
+        <ul class="space-y-3 text-gray-700">
+          <li>&bull; Debe poder explicar la diferencia entre EDR, XDR, MXDR y Expert sin vender siempre el plan mas alto.</li>
+          <li>&bull; Debe validar compatibilidad con Active Directory, GPO, SCCM, equipos remotos y servidores.</li>
+          <li>&bull; Debe entregar un plan de migracion desde el antivirus anterior.</li>
+          <li>&bull; Debe incluir soporte en espanol, tiempos de respuesta y escalamiento con fabricante.</li>
+          <li>&bull; Debe dejar documentadas las politicas iniciales y el procedimiento de operacion.</li>
+        </ul>
+      </section>
+
+      <section class="mb-12 bg-gray-50 border border-gray-200 rounded-2xl p-6">
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">Fuentes y referencias</h2>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          Kaspersky presenta Next como una linea por niveles que escala desde proteccion endpoint y EDR hasta XDR y MXDR. Tambien mantiene un programa global de partners para canales comerciales, MSP y proveedores de servicios.
+        </p>
+        <ul class="space-y-2 text-sm">
+          <li><a href="https://www.kaspersky.com/next" class="text-red-700 hover:underline">Kaspersky Next, linea oficial de productos</a></li>
+          <li><a href="https://latam.kaspersky.com/next-edr-optimum" class="text-red-700 hover:underline">Kaspersky Next EDR Optimum LATAM</a></li>
+          <li><a href="https://www.kaspersky.com/partners" class="text-red-700 hover:underline">Kaspersky United Partner Program</a></li>
+        </ul>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Preguntas frecuentes</h2>
+        <div class="space-y-5">
+          <div class="border border-gray-200 rounded-xl p-5">
+            <h3 class="font-bold text-gray-900 mb-2">Donde comprar Kaspersky para empresas en Colombia?</h3>
+            <p class="text-gray-600">Una empresa en Colombia debe comprar Kaspersky a traves de un partner o distribuidor corporativo que pueda cotizar licencias, renovar contratos, recomendar la edicion adecuada e implementar la consola.</p>
+          </div>
+          <div class="border border-gray-200 rounded-xl p-5">
+            <h3 class="font-bold text-gray-900 mb-2">Que datos necesito para cotizar Kaspersky Next?</h3>
+            <p class="text-gray-600">Necesita numero de endpoints, servidores, usuarios moviles, sedes, edicion requerida, plazo de licencia, antivirus actual y si requiere EDR, XDR o MXDR.</p>
+          </div>
+          <div class="border border-gray-200 rounded-xl p-5">
+            <h3 class="font-bold text-gray-900 mb-2">Kaspersky se compra directo o por partner?</h3>
+            <p class="text-gray-600">Para empresas, trabajar con un partner o distribuidor corporativo reduce friccion porque une cotizacion, despliegue, capacitacion, renovacion y soporte local.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-[#111827] rounded-2xl p-8 text-white">
+        <h2 class="text-2xl font-bold mb-3">Cotice Kaspersky con un distribuidor corporativo en Colombia</h2>
+        <p class="text-gray-300 mb-6">Starsolution dimensiona la edicion correcta de Kaspersky Next, prepara el plan de implementacion y entrega soporte tecnico en espanol.</p>
+        <a href="/kaspersky/" class="inline-flex items-center justify-center bg-red-700 text-white font-semibold px-6 py-3 rounded hover:bg-[#dc2626] transition">Ver distribuidor corporativo Kaspersky</a>
+      </section>
+    </div>
+  </article>
+
+  <Footer />
+  <WhatsAppButton />
+</BaseLayout>
