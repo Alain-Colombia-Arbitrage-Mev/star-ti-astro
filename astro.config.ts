@@ -24,6 +24,19 @@ const blogDates = [...LASTMOD.entries()]
   .sort();
 if (blogDates.length) LASTMOD.set(`${SITE}/blog/`, blogDates[blogDates.length - 1]);
 
+// Landings comerciales actualizadas recientemente que no tienen fecha propia en
+// JSON-LD. Mantener estas fechas atadas a cambios reales de contenido.
+const COMMERCIAL_LASTMOD = [
+  ['/bitdefender/', '2026-08-18'],
+  ['/iso-27001/', '2026-08-18'],
+  ['/kaspersky/', '2026-08-18'],
+  ['/mejores-empresas-consultoria-iso-27001-colombia/', '2026-08-18'],
+  ['/miami/', '2026-08-18'],
+  ['/miami/contacto/', '2026-08-18'],
+  ['/seguridad-informatica-empresas/', '2026-08-18'],
+] as const;
+for (const [path, date] of COMMERCIAL_LASTMOD) LASTMOD.set(`${SITE}${path}`, date);
+
 // Clusters hreflang: deben coincidir con HREFLANG_HOME/HREFLANG_CONTACTO en
 // src/data/seo.ts (que los emite en el <head>). Aqui se inyectan tambien en el
 // sitemap como <xhtml:link>. La opcion `i18n` nativa no sirve porque exige que
