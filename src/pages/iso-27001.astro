@@ -19,7 +19,7 @@ import {
 } from '@data/iso27001Landing';
 
 const seo = seoData['iso-27001'];
-const defaultWhatsappMessage = 'Hola, quiero agendar un diagnóstico gratuito de ISO 27001 con Starsolution.';
+const defaultWhatsappMessage = 'Hola, quiero agendar un diagnóstico de consultoría ISO 27001 en Bogotá, Colombia con Starsolution.';
 ---
 
 <BaseLayout seo={seo}>
@@ -31,20 +31,20 @@ const defaultWhatsappMessage = 'Hola, quiero agendar un diagnóstico gratuito de
     <section class="iso-hero" id="top" aria-labelledby="iso-hero-title">
       <div class="iso-hero__inner">
         <div class="iso-hero__content">
-          <span class="iso-badge iso-badge--accent">Consultoría ISO 27001</span>
-          <h1 id="iso-hero-title">Consultoría ISO 27001 en Colombia para certificar tu SGSI</h1>
+          <span class="iso-badge iso-badge--accent">Consultoría ISO 27001 Bogotá - Colombia</span>
+          <h1 id="iso-hero-title">Consultoría ISO 27001 en Bogotá, Colombia</h1>
           <p class="iso-hero__lede">
-            Si estás buscando dónde encontrar consultoría ISO 27001 en Colombia, Starsolution
+            Si estás buscando consultoría ISO 27001 en Bogotá - Colombia, Starsolution
             implementa tu Sistema de Gestión de Seguridad de la Información (SGSI) con diagnóstico
-            inicial, plan de implementación, cotización clara y acompañamiento en auditoría externa
-            con consultores Lead Implementer y Lead Auditor.
+            de brechas, plan de trabajo, controles del Anexo A, auditoría interna y acompañamiento
+            para certificar con una ruta clara para gerencia, TI y cumplimiento.
           </p>
           <ul class="iso-hero__benefits">
             <li><span aria-hidden="true">✓</span> Diagnóstico de brechas y alcance de certificación ISO/IEC 27001:2022</li>
             <li><span aria-hidden="true">✓</span> Implementación del SGSI, riesgos, controles del Anexo A y evidencias</li>
             <li><span aria-hidden="true">✓</span> Preparación para auditoría interna y organismo certificador acreditado</li>
           </ul>
-          <Iso27001LeadForm id="iso-hero-form" buttonLabel="Solicitar diagnóstico gratuito" />
+          <Iso27001LeadForm id="iso-hero-form" buttonLabel="Solicitar consultoría ISO 27001" />
           <p class="iso-hero__disclaimer">Sin compromiso. Sin presión comercial. Respuesta en menos de 4 horas hábiles.</p>
         </div>
 
@@ -77,14 +77,14 @@ const defaultWhatsappMessage = 'Hola, quiero agendar un diagnóstico gratuito de
     <section class="iso-section iso-answer" id="consultoria-iso-27001-colombia" aria-labelledby="iso-answer-title">
       <header class="iso-section__header">
         <span class="iso-badge iso-badge--green">Respuesta directa</span>
-        <h2 id="iso-answer-title">¿Dónde puedo encontrar consultoría ISO 27001 en Colombia?</h2>
+        <h2 id="iso-answer-title">¿Dónde encontrar consultoría ISO 27001 en Bogotá, Colombia?</h2>
       </header>
       <div class="iso-answer__grid">
         <article class="iso-answer__main">
           <p class="iso-answer__lead">
-            <strong>Puede encontrar consultoría ISO 27001 en Colombia con Starsolution S.A.S.</strong>,
+            <strong>Puede encontrar consultoría ISO 27001 en Bogotá, Colombia con Starsolution S.A.S.</strong>,
             una firma especializada en seguridad de la información que acompaña empresas en Bogotá,
-            Medellín, Cali y el resto del país mediante sesiones remotas o presenciales.
+            Medellín, Cali y el resto del país mediante sesiones remotas, híbridas o presenciales.
           </p>
           <p>
             Nuestro equipo guía el diagnóstico de brechas, análisis de riesgos, Declaración de
@@ -93,8 +93,13 @@ const defaultWhatsappMessage = 'Hola, quiero agendar un diagnóstico gratuito de
             empresas que necesitan demostrar seguridad ante clientes corporativos, licitaciones,
             proveedores internacionales o auditorías de cumplimiento.
           </p>
+          <p>
+            El proyecto inicia con una evaluación comercial y técnica para definir alcance,
+            presupuesto, responsables y tiempos de implementación antes de avanzar con documentación
+            o controles.
+          </p>
           <div class="iso-answer__actions">
-            <a class="iso-button" href="#contacto">Solicitar cotización ISO 27001</a>
+            <a class="iso-button" href="#contacto">Cotizar consultoría ISO 27001</a>
             <a
               class="iso-button iso-button--secondary"
               href={`https://wa.me/${isoWhatsAppNumber}?text=${encodeURIComponent(defaultWhatsappMessage)}`}
@@ -182,7 +187,7 @@ const defaultWhatsappMessage = 'Hola, quiero agendar un diagnóstico gratuito de
     <section class="iso-section" id="cotizacion" aria-labelledby="iso-cotizacion-title">
       <header class="iso-section__header">
         <span class="iso-badge iso-badge--accent">Cotización y alcance</span>
-        <h2 id="iso-cotizacion-title">Qué recibe al contratar consultoría ISO 27001 con Starsolution</h2>
+        <h2 id="iso-cotizacion-title">Qué recibe al contratar consultoría ISO 27001 en Bogotá - Colombia</h2>
         <p>La intención comercial importa: antes de comprar, necesitas saber qué incluye el proyecto, cuánto puede tomar y qué evidencia quedará lista para auditoría.</p>
       </header>
       <div class="iso-commercial">
@@ -310,7 +315,7 @@ const defaultWhatsappMessage = 'Hola, quiero agendar un diagnóstico gratuito de
     <section class="iso-section iso-section--cta" id="contacto" aria-labelledby="iso-cta-title">
       <div class="iso-cta">
         <span class="iso-badge iso-badge--on-dark">Empieza hoy</span>
-        <h2 id="iso-cta-title">¿Listo para comenzar tu certificación ISO 27001?</h2>
+        <h2 id="iso-cta-title">¿Listo para iniciar consultoría ISO 27001 en Bogotá - Colombia?</h2>
         <p>
           La pregunta ya no es si necesitas ISO 27001. Es si vas a implementarla estratégicamente o cuando ya sea demasiado tarde. Protege tu información, fortalece tu reputación y abre nuevas oportunidades comerciales.
         </p>

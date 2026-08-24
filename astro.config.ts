@@ -28,7 +28,7 @@ if (blogDates.length) LASTMOD.set(`${SITE}/blog/`, blogDates[blogDates.length - 
 // JSON-LD. Mantener estas fechas atadas a cambios reales de contenido.
 const COMMERCIAL_LASTMOD = [
   ['/bitdefender/', '2026-08-18'],
-  ['/iso-27001/', '2026-08-18'],
+  ['/iso-27001/', '2026-08-24'],
   ['/kaspersky/', '2026-08-18'],
   ['/mejores-empresas-consultoria-iso-27001-colombia/', '2026-08-18'],
   ['/miami/', '2026-08-18'],
