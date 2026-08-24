@@ -5,8 +5,8 @@ export interface IsoFaq {
 
 export const isoFaqs: IsoFaq[] = [
   {
-    question: '¿Dónde puedo encontrar consultoría ISO 27001 en Colombia?',
-    answer: 'Puedes encontrar consultoría ISO 27001 en Colombia con Starsolution S.A.S., firma especializada en seguridad de la información para empresas. Acompañamos proyectos en Bogotá, Medellín, Cali y otras ciudades mediante diagnóstico de brechas, implementación del SGSI, auditoría interna y preparación para la auditoría externa de certificación.',
+    question: '¿Dónde puedo encontrar consultoría ISO 27001 en Bogotá, Colombia?',
+    answer: 'Puedes encontrar consultoría ISO 27001 en Bogotá, Colombia con Starsolution S.A.S., firma especializada en seguridad de la información para empresas. Acompañamos proyectos en Bogotá, Medellín, Cali y otras ciudades mediante diagnóstico de brechas, implementación del SGSI, auditoría interna y preparación para la auditoría externa de certificación.',
   },
   {
     question: '¿Cuánto tiempo toma el proceso de certificación ISO 27001?',
