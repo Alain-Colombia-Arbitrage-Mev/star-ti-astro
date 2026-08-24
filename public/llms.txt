@@ -9,7 +9,8 @@ Last updated: 2026-08-24
 - Home: https://star-ti.com/
 - Contact: https://star-ti.com/contacto/
 - Blog: https://star-ti.com/blog/
-- Sitemap: https://star-ti.com/sitemap-index.xml
+- Sitemap: https://star-ti.com/sitemap.xml
+- Sitemap index: https://star-ti.com/sitemap-index.xml
 - Robots: https://star-ti.com/robots.txt
 
 ## Core Cybersecurity Services

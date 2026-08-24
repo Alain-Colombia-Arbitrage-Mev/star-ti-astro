@@ -4,7 +4,8 @@
 User-agent: *
 Allow: /
 
-# Sitemap (generado por @astrojs/sitemap en cada build)
+# Sitemap principal y respaldo generado por @astrojs/sitemap en cada build
+Sitemap: https://star-ti.com/sitemap.xml
 Sitemap: https://star-ti.com/sitemap-index.xml
 
 # ──────────────────────────────────────────────
