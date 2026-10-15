@@ -134,7 +134,7 @@ export const seoData: Record<string, SEOData> = {
       url: BASE_URL,
       logo: `${BASE_URL}/logo.png`,
       description: 'Empresa de ciberseguridad empresarial con más de 13 años protegiendo organizaciones en Colombia, Venezuela y Estados Unidos',
-      address: { '@type': 'PostalAddress', streetAddress: 'Calle 52 A # 22 - 16', addressLocality: 'Bogotá', addressCountry: 'CO' },
+      address: { '@type': 'PostalAddress', streetAddress: 'Cra 27 # 49 - 19', addressLocality: 'Bogotá', addressCountry: 'CO' },
       telephone: '+573007010017',
       email: 'contacto@star-ti.com',
       foundingDate: '2013',

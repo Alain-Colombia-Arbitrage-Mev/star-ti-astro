@@ -34,7 +34,7 @@ export const regions: Record<string, RegionData> = {
     locale: 'es-CO',
     hreflang: 'es-CO',
     city: 'Bogota',
-    address: 'Calle 52 A # 22 - 16, Bogota',
+    address: 'Cra 27 # 49 - 19, Bogotá',
     phone: '+573007010017',
     phoneDisplay: '+57 300 701 0017',
     email: 'contacto@star-ti.com',

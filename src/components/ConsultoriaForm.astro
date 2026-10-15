@@ -1,0 +1,140 @@
+---
+// Formulario "Solicitar Consultoría Gratuita" reutilizable.
+// Envía a /api/leads (worker -> Airtable "Leads Web"). Las áreas marcadas
+// llegan al campo "Servicio" separadas por coma.
+interface Props {
+  /** Nombre del formulario que se guarda en Airtable (campo "Formulario"). */
+  sourceForm: string;
+  /** Prefijo para IDs únicos de los campos. */
+  idPrefix?: string;
+}
+
+const { sourceForm, idPrefix = 'consultoria' } = Astro.props;
+
+const areas = [
+  'Ciberseguridad y protección de datos',
+  'Certificación ISO 27001',
+  'Seguridad de Email',
+  'Equipos de cómputo',
+  'Acceso Remoto y Soporte IT',
+];
+
+const check = 'M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z';
+const benefits = ['Sin compromiso', 'Análisis de seguridad incluido', 'Respuesta en 24 horas', '100% confidencial'];
+const input = 'w-full px-4 py-3 backdrop-blur-md bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition';
+---
+
+<section id="consultoria" class="py-16 sm:py-24 lg:py-32 bg-gradient-to-br from-gray-950 via-gray-900 to-black text-white relative overflow-hidden">
+  <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-red-900/20 via-transparent to-transparent"></div>
+  <div class="absolute top-0 left-1/4 w-[600px] h-[600px] bg-red-500/10 rounded-full blur-3xl"></div>
+  <div class="absolute bottom-0 right-1/4 w-[600px] h-[600px] bg-blue-500/10 rounded-full blur-3xl"></div>
+
+  <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <div class="inline-flex items-center gap-2 backdrop-blur-md bg-white/10 border border-white/20 rounded-full px-4 py-2 mb-8">
+        <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+        <span class="text-sm font-medium text-gray-300 uppercase tracking-wide">Comience Hoy</span>
+      </div>
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6">
+        ¿Listo Para Fortalecer Su Seguridad?
+      </h2>
+      <p class="text-lg sm:text-xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
+        Transforme su postura de seguridad en 90 días. Complete el formulario y un experto
+        en ciberseguridad se pondrá en contacto con usted en menos de 24 horas.
+      </p>
+    </div>
+
+    <div class="backdrop-blur-2xl bg-white/10 border border-white/20 rounded-3xl p-6 sm:p-12 shadow-2xl mb-8">
+      <form action="/api/leads" method="post" data-lead-form data-consultoria-form class="space-y-6">
+        <input type="hidden" name="_redirect" value="/gracias" />
+        <input type="hidden" name="_source_form" value={sourceForm} />
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div>
+            <label for={`${idPrefix}-name`} class="block text-sm font-medium text-gray-300 mb-2">Nombre Completo *</label>
+            <input type="text" id={`${idPrefix}-name`} name="name" required autocomplete="name" class={input} placeholder="Juan Pérez" />
+          </div>
+          <div>
+            <label for={`${idPrefix}-company`} class="block text-sm font-medium text-gray-300 mb-2">Empresa *</label>
+            <input type="text" id={`${idPrefix}-company`} name="company" required autocomplete="organization" class={input} placeholder="Mi Empresa S.A.S." />
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div>
+            <label for={`${idPrefix}-email`} class="block text-sm font-medium text-gray-300 mb-2">Email Corporativo *</label>
+            <input type="email" id={`${idPrefix}-email`} name="email" required autocomplete="email" class={input} placeholder="juan@empresa.com" />
+          </div>
+          <div>
+            <label for={`${idPrefix}-phone`} class="block text-sm font-medium text-gray-300 mb-2">Teléfono *</label>
+            <input type="tel" id={`${idPrefix}-phone`} name="phone" required autocomplete="tel" class={input} placeholder="+57 300 123 4567" />
+          </div>
+        </div>
+
+        <fieldset>
+          <legend class="block text-sm font-medium text-gray-300 mb-1">Servicio de Interés *</legend>
+          <p class="text-xs text-gray-400 mb-3">Puede seleccionar una o varias áreas.</p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+            {areas.map((area, i) => (
+              <label for={`${idPrefix}-area-${i}`} class="flex items-center gap-3 px-4 py-3 bg-white/10 border border-white/20 rounded-xl cursor-pointer hover:bg-white/15 has-[:checked]:border-red-500 has-[:checked]:bg-red-500/15 transition">
+                <input type="checkbox" id={`${idPrefix}-area-${i}`} name="service" value={area} class="w-5 h-5 shrink-0 accent-red-500" />
+                <span class="text-sm text-white">{area}</span>
+              </label>
+            ))}
+          </div>
+          <p data-area-error class="hidden text-sm text-red-400 mt-2" role="alert">Seleccione al menos un área de interés.</p>
+        </fieldset>
+
+        <div>
+          <label for={`${idPrefix}-message`} class="block text-sm font-medium text-gray-300 mb-2">Mensaje (Opcional)</label>
+          <textarea id={`${idPrefix}-message`} name="message" rows="4" class={`${input} resize-none`} placeholder="Cuéntenos sobre sus necesidades de seguridad..."></textarea>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <input type="checkbox" id={`${idPrefix}-privacy`} name="privacy" required class="w-5 h-5 shrink-0 accent-red-500" />
+          <label for={`${idPrefix}-privacy`} class="text-sm text-gray-300">
+            Acepto la <a href="/privacidad/" class="text-red-400 hover:text-red-300 underline">Política de Privacidad</a> y el tratamiento de mis datos personales *
+          </label>
+        </div>
+
+        <div class="flex justify-center pt-4">
+          <button type="submit" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-gradient-to-r from-red-500 to-red-600 text-white font-semibold px-10 py-4 rounded-full hover:from-red-600 hover:to-red-700 transition shadow-2xl text-lg">
+            Solicitar Consultoría Gratuita
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <div class="flex flex-wrap items-center justify-center gap-6 text-sm text-gray-400">
+      {benefits.map((b) => (
+        <div class="flex items-center gap-2">
+          <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+            <path fill-rule="evenodd" d={check} clip-rule="evenodd" />
+          </svg>
+          <span>{b}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  // Exige al menos un área marcada antes de enviar.
+  document.querySelectorAll<HTMLFormElement>('form[data-consultoria-form]').forEach((form) => {
+    const boxes = form.querySelectorAll<HTMLInputElement>('input[name="service"]');
+    const error = form.querySelector<HTMLElement>('[data-area-error]');
+    const sync = () => {
+      const any = Array.from(boxes).some((b) => b.checked);
+      boxes[0]?.setCustomValidity(any ? '' : 'Seleccione al menos un área de interés.');
+      if (any) error?.classList.add('hidden');
+    };
+    boxes.forEach((b) => b.addEventListener('change', sync));
+    form.addEventListener('invalid', () => {
+      if (!Array.from(boxes).some((b) => b.checked)) error?.classList.remove('hidden');
+    }, true);
+    sync();
+  });
+</script>
