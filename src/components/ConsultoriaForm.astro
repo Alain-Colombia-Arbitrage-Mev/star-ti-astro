@@ -1,7 +1,7 @@
 ---
 // Formulario "Solicitar Consultoría Gratuita" reutilizable.
-// Envía a /api/leads (worker -> Airtable "Leads Web"). Las áreas marcadas
-// llegan al campo "Servicio" separadas por coma.
+// Envía a /api/leads (worker -> Airtable "Leads Web"). El área elegida
+// llega al campo "Servicio".
 interface Props {
   /** Nombre del formulario que se guarda en Airtable (campo "Formulario"). */
   sourceForm: string;
@@ -45,7 +45,7 @@ const input = 'w-full px-4 py-3 backdrop-blur-md bg-white/10 border border-white
     </div>
 
     <div class="backdrop-blur-2xl bg-white/10 border border-white/20 rounded-3xl p-6 sm:p-12 shadow-2xl mb-8">
-      <form action="/api/leads" method="post" data-lead-form data-consultoria-form class="space-y-6">
+      <form action="/api/leads" method="post" data-lead-form class="space-y-6">
         <input type="hidden" name="_redirect" value="/gracias" />
         <input type="hidden" name="_source_form" value={sourceForm} />
 
@@ -71,19 +71,13 @@ const input = 'w-full px-4 py-3 backdrop-blur-md bg-white/10 border border-white
           </div>
         </div>
 
-        <fieldset>
-          <legend class="block text-sm font-medium text-gray-300 mb-1">Servicio de Interés *</legend>
-          <p class="text-xs text-gray-400 mb-3">Puede seleccionar una o varias áreas.</p>
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-            {areas.map((area, i) => (
-              <label for={`${idPrefix}-area-${i}`} class="flex items-center gap-3 px-4 py-3 bg-white/10 border border-white/20 rounded-xl cursor-pointer hover:bg-white/15 has-[:checked]:border-red-500 has-[:checked]:bg-red-500/15 transition">
-                <input type="checkbox" id={`${idPrefix}-area-${i}`} name="service" value={area} class="w-5 h-5 shrink-0 accent-red-500" />
-                <span class="text-sm text-white">{area}</span>
-              </label>
-            ))}
-          </div>
-          <p data-area-error class="hidden text-sm text-red-400 mt-2" role="alert">Seleccione al menos un área de interés.</p>
-        </fieldset>
+        <div>
+          <label for={`${idPrefix}-service`} class="block text-sm font-medium text-gray-300 mb-2">Servicio de Interés *</label>
+          <select id={`${idPrefix}-service`} name="service" required class={input}>
+            <option value="" class="bg-gray-900">Seleccione un servicio</option>
+            {areas.map((area) => <option value={area} class="bg-gray-900">{area}</option>)}
+          </select>
+        </div>
 
         <div>
           <label for={`${idPrefix}-message`} class="block text-sm font-medium text-gray-300 mb-2">Mensaje (Opcional)</label>
@@ -120,21 +114,3 @@ const input = 'w-full px-4 py-3 backdrop-blur-md bg-white/10 border border-white
     </div>
   </div>
 </section>
-
-<script>
-  // Exige al menos un área marcada antes de enviar.
-  document.querySelectorAll<HTMLFormElement>('form[data-consultoria-form]').forEach((form) => {
-    const boxes = form.querySelectorAll<HTMLInputElement>('input[name="service"]');
-    const error = form.querySelector<HTMLElement>('[data-area-error]');
-    const sync = () => {
-      const any = Array.from(boxes).some((b) => b.checked);
-      boxes[0]?.setCustomValidity(any ? '' : 'Seleccione al menos un área de interés.');
-      if (any) error?.classList.add('hidden');
-    };
-    boxes.forEach((b) => b.addEventListener('change', sync));
-    form.addEventListener('invalid', () => {
-      if (!Array.from(boxes).some((b) => b.checked)) error?.classList.remove('hidden');
-    }, true);
-    sync();
-  });
-</script>

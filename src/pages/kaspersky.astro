@@ -2,6 +2,7 @@
 import BaseLayout from '@layouts/BaseLayout.astro';
 import Navbar from '@components/Navbar.astro';
 import Footer from '@components/Footer.astro';
+import ConsultoriaForm from '@components/ConsultoriaForm.astro';
 import WhatsAppButton from '@components/WhatsAppButton.astro';
 import { seoData, BASE_URL } from '@data/seo';
 
@@ -821,6 +822,8 @@ const serviceSchema = {
       </div>
     </div>
   </section>
+
+  <ConsultoriaForm sourceForm="kaspersky - Consultoria gratuita" />
 
   <Footer />
   <WhatsAppButton />
