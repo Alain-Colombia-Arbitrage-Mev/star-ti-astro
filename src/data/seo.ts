@@ -748,7 +748,7 @@ export const seoData: Record<string, SEOData> = {
   },
   gracias: {
     title: 'Gracias por Contactarnos | Star Solutions TI',
-    description: 'Gracias por contactar a Star Solutions TI. Te responderemos en menos de 2 horas con una propuesta personalizada.',
+    description: 'Gracias por contactar a Star Solutions TI. Nuestro equipo revisará su solicitud y se pondrá en contacto con usted.',
     keywords: 'gracias, confirmacion contacto, starsolution',
     canonical: `${BASE_URL}/gracias/`,
     ogTitle: 'Gracias - Star Solutions TI',
