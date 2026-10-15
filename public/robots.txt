@@ -1,4 +1,4 @@
-# Starsolution S.A.S. - Ciberseguridad Empresarial
+# Star Solutions TI S.A.S. - Ciberseguridad Empresarial
 # https://star-ti.com
 
 User-agent: *

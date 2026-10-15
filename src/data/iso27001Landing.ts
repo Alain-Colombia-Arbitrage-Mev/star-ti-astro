@@ -6,7 +6,7 @@ export interface IsoFaq {
 export const isoFaqs: IsoFaq[] = [
   {
     question: '¿Dónde puedo encontrar consultoría ISO 27001 en Bogotá, Colombia?',
-    answer: 'Puedes encontrar consultoría ISO 27001 en Bogotá, Colombia con Starsolution S.A.S., firma especializada en seguridad de la información para empresas. Acompañamos proyectos en Bogotá, Medellín, Cali y otras ciudades mediante diagnóstico de brechas, implementación del SGSI, auditoría interna y preparación para la auditoría externa de certificación.',
+    answer: 'Puedes encontrar consultoría ISO 27001 en Bogotá, Colombia con Star Solutions TI S.A.S., firma especializada en seguridad de la información para empresas. Acompañamos proyectos en Bogotá, Medellín, Cali y otras ciudades mediante diagnóstico de brechas, implementación del SGSI, auditoría interna y preparación para la auditoría externa de certificación.',
   },
   {
     question: '¿Cuánto tiempo toma el proceso de certificación ISO 27001?',
@@ -34,7 +34,7 @@ export const isoFaqs: IsoFaq[] = [
   },
   {
     question: '¿Cómo elegir el organismo certificador?',
-    answer: 'ICONTEC, SGS y Bureau Veritas son opciones habituales en Colombia. Antes de contratar, verifica el alcance en el Directorio Oficial de Acreditados de ONAC y compara experiencia sectorial, tiempos, costos y disponibilidad. Starsolution prepara el SGSI y acompaña la auditoría; el certificado lo emite el organismo certificador independiente.',
+    answer: 'ICONTEC, SGS y Bureau Veritas son opciones habituales en Colombia. Antes de contratar, verifica el alcance en el Directorio Oficial de Acreditados de ONAC y compara experiencia sectorial, tiempos, costos y disponibilidad. Star Solutions TI prepara el SGSI y acompaña la auditoría; el certificado lo emite el organismo certificador independiente.',
   },
   {
     question: '¿Qué pasa si no paso la auditoría externa?',
