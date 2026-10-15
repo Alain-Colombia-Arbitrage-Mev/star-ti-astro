@@ -190,13 +190,38 @@ async function handleLeadSubmission(request, env) {
   const sourcePath = sourceUrl ? new URL(sourceUrl).pathname : "";
   const redirectTo = getSafeRedirect(request, rawFields._redirect);
   const normalized = normalizeLead(rawFields, sourceUrl, sourcePath, request);
+
+  // La solicitud se guarda en Airtable (respaldo) y se envia por correo en
+  // paralelo. Basta con que uno de los dos funcione para no perder el lead.
+  const [airtable, email] = await Promise.all([
+    saveLeadToAirtable(normalized, env),
+    sendLeadEmail(normalized, env),
+  ]);
+
+  if (airtable === "ok" || email === "ok") {
+    if (wantsJson(request)) {
+      return Response.json({ ok: true });
+    }
+    return Response.redirect(new URL(redirectTo, request.url).href, 303);
+  }
+
+  if (airtable === "skipped" && email === "skipped") {
+    console.error("Lead not delivered: neither Airtable nor email is configured.");
+    return failLeadRequest(request, "Lead delivery is not configured.", 503, redirectTo);
+  }
+
+  return failLeadRequest(request, "Could not save lead.", 502, redirectTo);
+}
+
+/** @returns {Promise<"ok" | "skipped" | "failed">} */
+async function saveLeadToAirtable(fields, env) {
   const token = env.AIRTABLE_TOKEN;
   const baseId = env.AIRTABLE_BASE_ID;
   const table = env.AIRTABLE_TABLE_ID || env.AIRTABLE_TABLE_NAME || DEFAULT_AIRTABLE_TABLE;
 
   if (!token || !baseId) {
-    console.error("Airtable lead submission skipped: missing AIRTABLE_TOKEN or AIRTABLE_BASE_ID.");
-    return failLeadRequest(request, "Airtable is not configured.", 503, redirectTo);
+    console.warn("Airtable skipped: missing AIRTABLE_TOKEN or AIRTABLE_BASE_ID.");
+    return "skipped";
   }
 
   try {
@@ -208,25 +233,118 @@ async function handleLeadSubmission(request, env) {
       },
       body: JSON.stringify({
         typecast: true,
-        records: [{ fields: normalized }],
+        records: [{ fields }],
       }),
     });
 
     if (!response.ok) {
-      const body = await response.text();
-      console.error("Airtable lead submission failed", response.status, body);
-      return failLeadRequest(request, "Could not save lead.", 502, redirectTo);
+      console.error("Airtable lead submission failed", response.status, await response.text());
+      return "failed";
     }
-
-    if (wantsJson(request)) {
-      return Response.json({ ok: true });
-    }
-
-    return Response.redirect(new URL(redirectTo, request.url).href, 303);
+    return "ok";
   } catch (error) {
-    console.error("Lead submission failed", error);
-    return failLeadRequest(request, "Could not save lead.", 502, redirectTo);
+    console.error("Airtable lead submission failed", error);
+    return "failed";
   }
+}
+
+// --- Notificacion por correo (Resend: https://resend.com) ---
+// Secreto requerido en Cloudflare: RESEND_API_KEY.
+// Opcionales: LEAD_EMAIL_TO (correos separados por coma) y LEAD_EMAIL_FROM.
+const DEFAULT_LEAD_EMAIL_TO = ["contacto@star-ti.com", "soporte@star-ti.com", "facturacion@star-ti.com"];
+const DEFAULT_LEAD_EMAIL_FROM = "Sitio web Star Solutions TI <formularios@star-ti.com>";
+
+const EMAIL_FIELD_ORDER = [
+  FIELD_NAMES.name,
+  FIELD_NAMES.company,
+  FIELD_NAMES.email,
+  FIELD_NAMES.phone,
+  FIELD_NAMES.service,
+  FIELD_NAMES.message,
+  FIELD_NAMES.jobTitle,
+  FIELD_NAMES.country,
+  FIELD_NAMES.region,
+  FIELD_NAMES.budget,
+  FIELD_NAMES.employees,
+  FIELD_NAMES.networkPoints,
+  FIELD_NAMES.devices,
+  FIELD_NAMES.useCase,
+  FIELD_NAMES.acceptedPrivacy,
+  FIELD_NAMES.sourceForm,
+  FIELD_NAMES.sourceUrl,
+  FIELD_NAMES.utmSource,
+  FIELD_NAMES.utmMedium,
+  FIELD_NAMES.utmCampaign,
+  FIELD_NAMES.submittedAt,
+];
+
+/** @returns {Promise<"ok" | "skipped" | "failed">} */
+async function sendLeadEmail(fields, env) {
+  const apiKey = env.RESEND_API_KEY;
+  if (!apiKey) {
+    console.warn("Email skipped: missing RESEND_API_KEY.");
+    return "skipped";
+  }
+
+  const to = (env.LEAD_EMAIL_TO ? env.LEAD_EMAIL_TO.split(",") : DEFAULT_LEAD_EMAIL_TO)
+    .map((address) => address.trim())
+    .filter(Boolean);
+  const from = env.LEAD_EMAIL_FROM || DEFAULT_LEAD_EMAIL_FROM;
+  const leadEmail = fields[FIELD_NAMES.email];
+  const service = fields[FIELD_NAMES.service] || "Sin servicio indicado";
+  const who = fields[FIELD_NAMES.company] || fields[FIELD_NAMES.name] || leadEmail || "Contacto web";
+
+  const rows = EMAIL_FIELD_ORDER.filter((key) => fields[key]).map((key) => [key, fields[key]]);
+  const text = rows.map(([key, value]) => `${key}: ${value}`).join("\n");
+  const html = `<div style="font-family:Arial,sans-serif;font-size:14px;color:#111">
+<h2 style="margin:0 0 12px">Nueva solicitud desde star-ti.com</h2>
+<table cellpadding="6" style="border-collapse:collapse">${rows
+    .map(
+      ([key, value]) =>
+        `<tr><td style="border-bottom:1px solid #eee;color:#555;vertical-align:top"><strong>${escapeHtml(key)}</strong></td><td style="border-bottom:1px solid #eee;white-space:pre-wrap">${escapeHtml(value)}</td></tr>`,
+    )
+    .join("")}</table>
+<p style="color:#888;font-size:12px;margin-top:16px">Responda este correo para contestarle directamente al cliente.</p></div>`;
+
+  try {
+    const response = await fetch("https://api.resend.com/emails", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${apiKey}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        from,
+        to,
+        subject: `Nueva solicitud web: ${service} - ${who}`.slice(0, 200),
+        text,
+        html,
+        ...(isLikelyEmail(leadEmail) ? { reply_to: leadEmail } : {}),
+      }),
+    });
+
+    if (!response.ok) {
+      console.error("Lead email failed", response.status, await response.text());
+      return "failed";
+    }
+    return "ok";
+  } catch (error) {
+    console.error("Lead email failed", error);
+    return "failed";
+  }
+}
+
+function isLikelyEmail(value) {
+  return typeof value === "string" && /^[^\s@<>]+@[^\s@<>]+\.[^\s@<>]+$/.test(value);
+}
+
+function escapeHtml(value) {
+  return String(value)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
 }
 
 function normalizeLead(rawFields, sourceUrl, sourcePath, request) {
