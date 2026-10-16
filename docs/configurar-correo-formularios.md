@@ -4,8 +4,9 @@ Desde octubre de 2026, cada solicitud enviada desde los formularios del sitio
 (`/api/leads`) se envía **por correo** y se sigue guardando en **Airtable** como
 respaldo. Si uno de los dos falla, el otro asegura que la solicitud no se pierda.
 
-- **Destinatarios por defecto:** contacto@star-ti.com, soporte@star-ti.com,
-  facturacion@star-ti.com
+- **Destinatario por defecto:** solicitudes@star-ti.com, un grupo de distribución de
+  Microsoft 365. Quién recibe las solicitudes se cambia agregando o quitando miembros del
+  grupo, sin tocar el sitio. El grupo debe aceptar correos de remitentes externos.
 - **Remitente:** `Sitio web Star Solutions TI <formularios@star-ti.com>`. No hace
   falta que ese buzón exista.
 - **Responder al cliente:** al dar "Responder" en el correo, la respuesta va
@@ -47,7 +48,7 @@ Los debe hacer quien administre la cuenta de Cloudflare donde está el Worker
    **No agregar la clave al código ni al archivo `wrangler.jsonc`.**
 
 5. **Probar.** Enviar el formulario desde la vista previa de la rama o desde el
-   sitio. Revisar que el correo llegue a los tres buzones (y que no caiga en spam
+   sitio. Revisar que el correo llegue a los miembros de solicitudes@star-ti.com (y que no caiga en spam
    la primera vez) y que aparezca en *Resend → Emails*.
 
 ## Ajustes opcionales (sin tocar código)
@@ -56,7 +57,7 @@ En *Variables and Secrets* del Worker se pueden agregar estas variables:
 
 | Variable          | Para qué sirve                          | Ejemplo                                      |
 |-------------------|-----------------------------------------|----------------------------------------------|
-| `LEAD_EMAIL_TO`   | Cambiar los destinatarios (con comas)   | `contacto@star-ti.com,ventas@star-ti.com`    |
+| `LEAD_EMAIL_TO`   | Cambiar los destinatarios (con comas)   | `solicitudes@star-ti.com,ventas@star-ti.com`    |
 | `LEAD_EMAIL_FROM` | Cambiar el remitente                    | `Star Solutions TI <web@star-ti.com>`        |
 
 Importante: no definir variables en la sección `vars` de `wrangler.jsonc`. Al

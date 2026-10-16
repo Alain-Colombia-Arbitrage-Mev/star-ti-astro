@@ -251,7 +251,8 @@ async function saveLeadToAirtable(fields, env) {
 // --- Notificacion por correo (Resend: https://resend.com) ---
 // Secreto requerido en Cloudflare: RESEND_API_KEY.
 // Opcionales: LEAD_EMAIL_TO (correos separados por coma) y LEAD_EMAIL_FROM.
-const DEFAULT_LEAD_EMAIL_TO = ["contacto@star-ti.com", "soporte@star-ti.com", "facturacion@star-ti.com"];
+// Grupo de distribucion de Microsoft 365 creado para las solicitudes del sitio.
+const DEFAULT_LEAD_EMAIL_TO = ["solicitudes@star-ti.com"];
 const DEFAULT_LEAD_EMAIL_FROM = "Sitio web Star Solutions TI <formularios@star-ti.com>";
 
 const EMAIL_FIELD_ORDER = [

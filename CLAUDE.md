@@ -27,7 +27,8 @@ claro y no técnico, y explicar cada cambio antes de publicarlo.
 
 - Todos los formularios envían a `/api/leads`, que maneja `worker/index.js`.
 - Cada solicitud se guarda en Airtable (tabla "Leads Web") y además se envía por correo con Resend a
-  contacto@, soporte@ y facturacion@star-ti.com. Basta con que uno de los dos funcione.
+  solicitudes@star-ti.com (grupo de distribución de Microsoft 365). Basta con que uno de los dos
+  funcione.
 - El correo se activa cuando exista el secreto `RESEND_API_KEY` en el Worker.
   Los pasos están en `docs/configurar-correo-formularios.md`.
 - Componente reutilizable: `src/components/ConsultoriaForm.astro`. Campo "Servicio de Interés" como
@@ -59,7 +60,7 @@ Resend (configurado el 16-oct-2026):
 
 Pendiente:
 1. Probar el envío desde la vista previa de `star-solutions/desarrollo` (p. ej. desde /bitdefender/):
-   que llegue a los tres buzones, que no caiga en spam y que se vea en Resend → Emails.
+   que llegue a los miembros de solicitudes@star-ti.com, que no caiga en spam y que se vea en Resend → Emails.
 2. Decidir si se agrega una 6.ª área (Cableado estructurado / Impresoras Brother) al formulario.
 3. Decidir si las 6 páginas con formulario propio (Kaspersky, rThreat, ISO 27001, Mejores empresas
    ISO, Cableado, Equipos de cómputo) conservan los dos formularios o solo el estándar.
