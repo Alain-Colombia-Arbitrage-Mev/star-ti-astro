@@ -730,7 +730,7 @@ export const seoData: Record<string, SEOData> = {
   },
   contacto: {
     title: 'Contacto - Ciberseguridad Empresarial | Star Solutions TI Colombia',
-    description: 'Contacte a Star Solutions TI: ciberseguridad, equipos de computo y redes. Oficinas en Bogotá, Caracas y Miami. Respuesta en menos de 2 horas.',
+    description: 'Contacte a Star Solutions TI: ciberseguridad, equipos de computo y redes. Oficinas en Bogotá, Caracas y Miami. Le respondemos a la mayor brevedad.',
     keywords: 'contacto Star Solutions TI, teléfono, email, oficinas Bogotá, asesoria ciberseguridad gratuita',
     canonical: `${BASE_URL}/contacto/`,
     ogTitle: 'Contacto - Star Solutions TI',

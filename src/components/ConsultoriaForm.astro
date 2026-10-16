@@ -7,9 +7,15 @@ interface Props {
   sourceForm: string;
   /** Prefijo para IDs únicos de los campos. */
   idPrefix?: string;
+  /**
+   * Muestra la lista "Servicio de Interés". Solo en el inicio: en las páginas
+   * de producto el servicio es la propia página (p. ej. "Bitdefender").
+   */
+  showService?: boolean;
 }
 
-const { sourceForm, idPrefix = 'consultoria' } = Astro.props;
+const { sourceForm, idPrefix = 'consultoria', showService = false } = Astro.props;
+const pageService = sourceForm.split(' - ')[0].trim();
 
 const areas = [
   'Ciberseguridad y protección de datos',
@@ -71,13 +77,17 @@ const input = 'w-full px-4 py-3 backdrop-blur-md bg-white/10 border border-white
           </div>
         </div>
 
-        <div>
-          <label for={`${idPrefix}-service`} class="block text-sm font-medium text-gray-300 mb-2">Servicio de Interés *</label>
-          <select id={`${idPrefix}-service`} name="service" required class={input}>
-            <option value="" class="bg-gray-900">Seleccione un servicio</option>
-            {areas.map((area) => <option value={area} class="bg-gray-900">{area}</option>)}
-          </select>
-        </div>
+        {showService ? (
+          <div>
+            <label for={`${idPrefix}-service`} class="block text-sm font-medium text-gray-300 mb-2">Servicio de Interés *</label>
+            <select id={`${idPrefix}-service`} name="service" required class={input}>
+              <option value="" class="bg-gray-900">Seleccione un servicio</option>
+              {areas.map((area) => <option value={area} class="bg-gray-900">{area}</option>)}
+            </select>
+          </div>
+        ) : (
+          <input type="hidden" name="service" value={pageService} />
+        )}
 
         <div>
           <label for={`${idPrefix}-message`} class="block text-sm font-medium text-gray-300 mb-2">Mensaje (Opcional)</label>
