@@ -151,11 +151,11 @@ export const seoData: Record<string, SEOData> = {
   // STAR PROTECTION
   // =====================================================
   bitdefender: {
-    title: 'Reseller Platinum Bitdefender Colombia | Star Solutions TI',
-    description: 'Star Solutions TI es Reseller Platinum de Bitdefender, el nivel más alto, por encima de Gold. Cotice GravityZone en Colombia: licencias, EDR/XDR/MDR y soporte local.',
+    title: 'Distribuidor Bitdefender Colombia | Reseller Platinum',
+    description: 'Distribuidor Bitdefender en Colombia con nivel Reseller Platinum, el más alto, por encima de Gold. Cotice GravityZone: licencias, EDR/XDR/MDR y soporte local.',
     keywords: 'Reseller Platinum Bitdefender Colombia, Bitdefender Platinum partner Colombia, distribuidor Bitdefender, distribuidor Bitdefender Colombia, distribuidor Gold Bitdefender Colombia, distribuidor #1 Bitdefender Colombia, Bitdefender Gold partner Colombia, licencias Bitdefender Colombia, comprar Bitdefender empresas, Bitdefender GravityZone Colombia, gravity zone, gravityzone precio, GravityZone EDR XDR, antivirus corporativo empresas, endpoint security, partner Bitdefender Colombia',
     canonical: `${BASE_URL}/bitdefender/`,
-    ogTitle: 'Star Solutions TI - Reseller Platinum de Bitdefender en Colombia',
+    ogTitle: 'Distribuidor Bitdefender Colombia | Star Solutions TI, Reseller Platinum',
     ogType: 'website',
     ogImage: `${BASE_URL}/og-default.png`,
     preconnect: ['https://www.bitdefender.com'],
