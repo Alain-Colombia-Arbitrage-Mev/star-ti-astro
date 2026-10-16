@@ -10,7 +10,7 @@ const seo = seoData.bitdefender;
 
 // Imagenes y assets oficiales del CDN de Bitdefender (bitdefender.com/business)
 // Logo vigente en blanco (vectorial de Wikimedia Commons, servido desde el sitio).
-// Va sobre el azul de marca de Bitdefender, #006DFF.
+// Va sobre el rojo de la página (#ED1C24, color histórico de Bitdefender).
 const BITDEFENDER_LOGO_WHITE = '/marcas/bitdefender-blanco.webp';
 const GZ_XDR = 'https://www.bitdefender.com/adobe/dynamicmedia/deliver/dm-aid--5fc9976d-54cb-4896-a592-a58d2aa753bb/simplify-threat-2.jpg';
 const GZ_MDR = 'https://www.bitdefender.com/adobe/dynamicmedia/deliver/dm-aid--2a17b7b5-285a-46db-8d27-a260f94e4bac/02-mdr-1.png';
@@ -125,7 +125,7 @@ const serviceSchema = {
         <div class="grid grid-cols-1 lg:grid-cols-[1fr_1.05fr] gap-12 lg:gap-14 items-center">
           <div>
             <!-- Logo: en móvil arriba del texto; en escritorio va encima del video -->
-            <div class="lg:hidden mb-8 bg-[#006DFF] rounded-xl px-6 py-3.5 inline-flex items-center shadow-lg shadow-[#006DFF]/30 ring-1 ring-white/10">
+            <div class="lg:hidden mb-8 bg-gradient-to-br from-[#ed1c24] to-[#b3121a] rounded-xl px-6 py-3.5 inline-flex items-center shadow-lg shadow-[#ed1c24]/35 ring-1 ring-white/10">
               <img src={BITDEFENDER_LOGO_WHITE} alt="Logo oficial de Bitdefender" width="880" height="129" class="h-8 w-auto" loading="eager" fetchpriority="high" />
             </div>
 
@@ -162,7 +162,7 @@ const serviceSchema = {
           </div>
 
           <div class="relative lg:pl-4 flex flex-col items-center gap-8 lg:gap-10">
-            <div class="hidden lg:inline-flex bg-[#006DFF] rounded-2xl px-9 py-5 items-center shadow-xl shadow-[#006DFF]/30 ring-1 ring-white/10">
+            <div class="hidden lg:inline-flex bg-gradient-to-br from-[#ed1c24] to-[#b3121a] rounded-2xl px-9 py-5 items-center shadow-xl shadow-[#ed1c24]/35 ring-1 ring-white/10">
               <img src={BITDEFENDER_LOGO_WHITE} alt="Logo oficial de Bitdefender" width="880" height="129" class="h-11 xl:h-12 w-auto" loading="eager" fetchpriority="high" />
             </div>
 
