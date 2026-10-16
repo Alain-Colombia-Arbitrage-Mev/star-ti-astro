@@ -1,15 +1,20 @@
 ---
-// Franja animada con los logos de clientes (inicio). La lista se duplica para que
-// el desplazamiento sea continuo; la copia va oculta para lectores de pantalla.
-// Se detiene al pasar el mouse y queda estática si el usuario pidió menos movimiento.
+// Franja animada con los logos de clientes (inicio). Cada logo va a color en su
+// propia tarjeta; al pasar el mouse la franja se detiene y la tarjeta se eleva.
+// La lista se duplica para que el desplazamiento sea continuo; la copia va oculta
+// para lectores de pantalla. Queda estática si el usuario pidió menos movimiento.
 import { clientes } from '@data/clientes';
 ---
 
-<section class="bg-white py-12 sm:py-16 border-b border-gray-100" aria-labelledby="clientes-titulo">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h2 id="clientes-titulo" class="text-center text-gray-500 text-sm font-medium uppercase tracking-wider mb-10">
+<section class="bg-white py-16 sm:py-20" aria-labelledby="clientes-titulo">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-6 sm:mb-8">
+    <span class="text-red-700 text-xs font-semibold uppercase tracking-wider">Nuestros clientes</span>
+    <h2 id="clientes-titulo" class="text-3xl sm:text-4xl font-bold text-gray-900 mt-3 mb-3">
       Empresas y entidades que confían en nosotros
     </h2>
+    <p class="text-gray-600 max-w-2xl mx-auto">
+      Entidades públicas, sector salud, construcción, medios e industria protegen su información con Star Solutions TI.
+    </p>
   </div>
 
   <div class="clientes-viewport">
@@ -17,7 +22,7 @@ import { clientes } from '@data/clientes';
       {[0, 1].map((copy) => (
         <ul class="clientes-list" aria-hidden={copy === 1 ? 'true' : undefined}>
           {clientes.map((c) => (
-            <li class="clientes-item">
+            <li class="clientes-card">
               <img
                 src={c.logo}
                 alt={copy === 0 ? c.name : ''}
@@ -39,14 +44,15 @@ import { clientes } from '@data/clientes';
 <style>
   .clientes-viewport {
     overflow: hidden;
-    /* Desvanecido suave en los bordes */
-    mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
-    -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+    /* Espacio vertical para que la tarjeta pueda elevarse sin recortarse */
+    padding-block: 1.25rem 2rem;
+    mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
   }
   .clientes-track {
     display: flex;
     width: max-content;
-    animation: clientes-scroll 65s linear infinite;
+    animation: clientes-scroll 70s linear infinite;
   }
   .clientes-viewport:hover .clientes-track {
     animation-play-state: paused;
@@ -54,31 +60,54 @@ import { clientes } from '@data/clientes';
   .clientes-list {
     display: flex;
     align-items: center;
-    gap: 4rem;
-    padding-right: 4rem;
+    gap: 1.5rem;
+    padding-right: 1.5rem;
     margin: 0;
     list-style: none;
   }
-  .clientes-item {
+  .clientes-card {
     flex: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 6.5rem;
+    padding: 1rem 1.75rem;
+    background: #fff;
+    border: 1px solid #eef0f3;
+    border-radius: 1.25rem;
+    box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04), 0 4px 12px rgba(15, 23, 42, 0.04);
+    transition:
+      transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
+      box-shadow 0.35s ease,
+      border-color 0.35s ease;
+  }
+  .clientes-card:hover {
+    transform: translateY(-8px) scale(1.05);
+    border-color: #fecaca;
+    box-shadow: 0 18px 40px -12px rgba(220, 38, 38, 0.25), 0 6px 16px rgba(15, 23, 42, 0.08);
   }
   .clientes-logo {
-    height: 2.5rem;
+    height: 3.75rem;
     width: auto;
-    max-width: 11rem;
+    max-width: 12rem;
     object-fit: contain;
-    filter: grayscale(1);
-    opacity: 0.65;
-    transition: filter 0.3s ease, opacity 0.3s ease;
+    transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
   }
-  .clientes-logo:hover {
-    filter: none;
-    opacity: 1;
+  .clientes-card:hover .clientes-logo {
+    transform: scale(1.06);
   }
   @media (min-width: 640px) {
+    .clientes-list {
+      gap: 2rem;
+      padding-right: 2rem;
+    }
+    .clientes-card {
+      height: 8rem;
+      padding: 1.25rem 2.5rem;
+    }
     .clientes-logo {
-      height: 3rem;
-      max-width: 13rem;
+      height: 5rem;
+      max-width: 16rem;
     }
   }
   @keyframes clientes-scroll {
@@ -99,11 +128,18 @@ import { clientes } from '@data/clientes';
     .clientes-list {
       flex-wrap: wrap;
       justify-content: center;
-      row-gap: 2rem;
       padding: 0 1rem;
     }
     .clientes-list[aria-hidden='true'] {
       display: none;
+    }
+    .clientes-card,
+    .clientes-logo {
+      transition: none;
+    }
+    .clientes-card:hover,
+    .clientes-card:hover .clientes-logo {
+      transform: none;
     }
   }
 </style>
