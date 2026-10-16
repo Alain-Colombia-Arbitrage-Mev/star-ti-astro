@@ -6,12 +6,21 @@ claro y no técnico, y explicar cada cambio antes de publicarlo.
 
 ## Reglas de trabajo
 
-- **No tocar `main`.** `main` es el sitio en vivo: Cloudflare publica automáticamente cada cambio en
-  esa rama. Todo el trabajo va en la rama `star-solutions/desarrollo`.
-- Pasar cambios a `main` solo cuando George lo apruebe explícitamente.
-- Respaldo del sitio original: rama `backup/main-2026-10-15`. No modificarla.
-- Cada push a una rama genera una vista previa en Cloudflare. El enlace aparece en los checks del
-  commit en GitHub, como "Preview URL".
+- Ramas (desde el 16-oct-2026):
+  - `main`: **congelada.** Es el sitio original de Alain y el respaldo de George. No se toca nunca.
+    `backup/main-2026-10-15` es una copia idéntica; tampoco se toca.
+  - `star-solutions/desarrollo`: donde se trabaja. Solo genera vista previa.
+  - `produccion`: lo que está en vivo. Cloudflare publica automáticamente cada cambio en esta rama
+    (Settings → Build → Branch control → Production branch = `produccion`).
+- Publicar = pasar los cambios de `star-solutions/desarrollo` a `produccion`, solo cuando George lo
+  apruebe explícitamente.
+- Vista previa de desarrollo (siempre la última versión):
+  https://star-solutions-desarrollo-star-ti-astro.guardcolombia.workers.dev/
+  Cada push genera además un enlace propio, en los checks del commit en GitHub ("Preview URL").
+- **En Cloudflare no usar "Add variable and deploy" ni "Deploy"** en la configuración del Worker:
+  publica la última versión construida, aunque sea de desarrollo. Así pasó el 16-oct-2026 al guardar
+  `RESEND_API_KEY`: quedó en vivo una versión de desarrollo. Para variables, guardar sin publicar
+  (flecha ⌄ → "Save") o hacerlo junto con un push a `produccion`.
 - Antes de subir cambios, correr `npm run build` y verificar que no haya errores.
 - Nunca escribir claves ni secretos en el código, en `wrangler.jsonc` ni en el chat. Se configuran
   como *Secrets* del Worker en el panel de Cloudflare.
@@ -43,12 +52,16 @@ claro y no técnico, y explicar cada cambio antes de publicarlo.
 
 ## Estado al 16-oct-2026
 
-Hecho en `star-solutions/desarrollo`, todavía sin publicar en `main`:
+Publicado en vivo el 16-oct-2026 (rama `produccion`):
 - Nombre corregido, nueva dirección, formulario en todas las páginas del menú.
 - Envío por correo: código listo y Resend configurado (ver abajo). Falta la prueba de envío.
 - Origen de cada solicitud (página) visible en el correo y en Airtable.
 - Página `/gracias`: se quitaron los tiempos de respuesta estimados.
 - Inicio: "Protección Activa 24/7" se movió junto a las otras dos estadísticas.
+- Destinatario de los correos: solicitudes@star-ti.com.
+- Menú: se quitó "Contacto" (redundante con el botón rojo) y se agregó el sello ISO 27001 de SGS,
+  que descarga el certificado (`public/certificados/`). El certificado aún muestra la dirección
+  anterior; pedir a SGS que la actualice en la próxima auditoría.
 
 Resend (configurado el 16-oct-2026):
 - Cuenta de Resend creada por George. Dominio `star-ti.com` verificado (región São Paulo).
@@ -67,7 +80,7 @@ Pendiente:
 4. Quitar "Respuesta en menos de 2 horas" de la descripción SEO de /contacto (`src/data/seo.ts`).
 5. Revisar la cifra "590K+ Clientes Satisfechos" del inicio: no está claro de dónde sale y podría
    ser una afirmación difícil de sustentar.
-6. Publicar en `main` cuando todo esté probado.
+6. Revisar en Microsoft 365 que el grupo solicitudes@ acepte correos externos (si no, rebotan).
 7. A futuro: pasar a cuentas de la empresa el dominio, Cloudflare, GitHub y Airtable (hoy están en
    cuentas de Alain).
 
