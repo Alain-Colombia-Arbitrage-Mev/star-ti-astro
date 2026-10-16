@@ -9,7 +9,9 @@ import { seoData, BASE_URL } from '@data/seo';
 const seo = seoData.bitdefender;
 
 // Imagenes y assets oficiales del CDN de Bitdefender (bitdefender.com/business)
-const BITDEFENDER_LOGO = 'https://www.bitdefender.com/content/dam/bitdefender/bitdefender-blue-logo-png.png';
+// Logo vigente en blanco (vectorial de Wikimedia Commons, servido desde el sitio).
+// Va sobre el azul de marca de Bitdefender, #006DFF.
+const BITDEFENDER_LOGO_WHITE = '/marcas/bitdefender-blanco.webp';
 const GZ_DASHBOARD = 'https://www.bitdefender.com/en-us/business/_jcr_content/root/container/columncontainer_1032/tab_item_no_1/image.coreimg.svg/1773667996822/bitdefender-diagrama-homepage--1-.svg';
 const GZ_XDR = 'https://www.bitdefender.com/adobe/dynamicmedia/deliver/dm-aid--5fc9976d-54cb-4896-a592-a58d2aa753bb/simplify-threat-2.jpg';
 const GZ_MDR = 'https://www.bitdefender.com/adobe/dynamicmedia/deliver/dm-aid--2a17b7b5-285a-46db-8d27-a260f94e4bac/02-mdr-1.png';
@@ -122,8 +124,8 @@ const serviceSchema = {
       <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div>
-            <div class="mb-8 bg-white/95 backdrop-blur rounded-xl px-6 py-4 inline-flex items-center shadow-lg">
-              <img src={BITDEFENDER_LOGO} alt="Logo oficial de Bitdefender" width="220" height="44" class="h-10 sm:h-11 w-auto" loading="eager" fetchpriority="high" />
+            <div class="mb-8 bg-[#006DFF] rounded-xl px-7 py-4 inline-flex items-center shadow-lg shadow-[#006DFF]/30 ring-1 ring-white/10">
+              <img src={BITDEFENDER_LOGO_WHITE} alt="Logo oficial de Bitdefender" width="880" height="129" class="h-9 sm:h-10 w-auto" loading="eager" fetchpriority="high" />
             </div>
 
             <span class="inline-block bg-red-500/15 text-red-300 text-xs font-semibold px-3 py-1.5 rounded-full uppercase tracking-wider mb-6 border border-red-500/30">
@@ -607,7 +609,7 @@ const serviceSchema = {
           <div class="absolute inset-0 opacity-10" style="background-image: linear-gradient(to right, #ed1c24 1px, transparent 1px), linear-gradient(to bottom, #ed1c24 1px, transparent 1px); background-size: 40px 40px;"></div>
           <div class="relative grid grid-cols-1 lg:grid-cols-2 gap-8 p-8 lg:p-12">
             <div>
-              <img src={BITDEFENDER_LOGO} alt="Bitdefender" width="180" height="36" class="h-8 w-auto mb-6 brightness-0 invert" loading="lazy" />
+              <img src={BITDEFENDER_LOGO_WHITE} alt="Bitdefender" width="880" height="129" class="h-8 w-auto mb-6" loading="lazy" />
               <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">
                 Hablemos de su caso, no de un brochure
               </h2>
