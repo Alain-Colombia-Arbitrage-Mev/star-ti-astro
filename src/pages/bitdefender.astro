@@ -51,8 +51,16 @@ const PLATFORM_BULLETS = [
   'Cobertura desde laptops Windows/macOS hasta servidores Linux y workloads contenedorizados',
 ];
 
+// Platinum: nivel superior del Partner Advantage Network, creado por Bitdefender en
+// mayo de 2025 por encima de Bronze, Silver y Gold.
+const PLATINUM_BENEFITS = [
+  { t: 'Respaldo prioritario del fabricante', d: 'Como Reseller Platinum accedemos a soporte y escalamiento dedicados con Bitdefender cuando su caso lo requiere.' },
+  { t: 'Equipo certificado en GravityZone', d: 'Ingenieros y asesores comerciales certificados por Bitdefender dimensionan, implementan y ajustan su plataforma.' },
+  { t: 'Acompañamiento local en español', d: 'Cotización, renovación, despliegue y soporte desde Bogotá, para que la licencia quede operando y no solo facturada.' },
+];
+
 const DISTRIBUTOR_VALIDATION = [
-  { t: 'Nivel de partner verificable', d: 'Bitdefender publica niveles Bronze, Silver y Gold en su Partner Advantage Network. Validamos el nivel aplicable antes de emitir una propuesta comercial.' },
+  { t: 'Reseller Platinum verificable', d: 'Bitdefender publica los niveles Bronze, Silver, Gold y Platinum en su Partner Advantage Network. Star Solutions TI es Reseller Platinum, el nivel más alto.' },
   { t: 'Licenciamiento empresarial real', d: 'Dimensionamos GravityZone por endpoints, servidores, sedes, usuarios remotos y modulos EDR, XDR, MDR, CSPM+ o Patch Management.' },
   { t: 'Implementacion certificada', d: 'Configuramos consola, politicas, despliegue por grupos, reporteria y escalamiento tecnico para que la licencia quede operando, no solo facturada.' },
   { t: 'Soporte local en Colombia', d: 'Acompanamiento en espanol desde Bogota para renovaciones, incidentes, ajustes de politicas, auditorias y crecimiento del parque protegido.' },
@@ -65,8 +73,8 @@ const FAQS = [
   { q: '¿Cuanto tarda Star Solutions TI en dejarnos operando?', a: 'Una implementacion tipica en una empresa de 50 equipos se completa en menos de dos horas de trabajo efectivo: configuracion de consola en la nube, conexion con su Active Directory, definicion de las politicas base y prueba en un grupo piloto antes del despliegue total. Para parques de mas de 1.000 equipos planeamos un cronograma de 1 a 2 semanas con fases controladas.' },
   { q: '¿Sirve si tenemos teletrabajo y sucursales en otras ciudades?', a: 'Si, es uno de los escenarios donde GravityZone brilla mas. Como la consola es cloud, sus equipos en Medellin, Cali o cualquier sede remota reportan directamente sin necesidad de VPN ni servidores intermedios. Aplica las mismas politicas a empleados en home office que a la sede principal.' },
   { q: '¿Star Solutions TI es distribuidor Bitdefender en Colombia?', a: 'Si. Star Solutions TI opera como partner oficial y distribuidor Bitdefender para empresas en Colombia: cotizamos licencias GravityZone, gestionamos renovaciones, implementamos politicas, damos soporte en espanol y escalamos con el fabricante cuando el caso lo requiere.' },
-  { q: '¿Star Solutions TI es distribuidor Gold de Bitdefender en Colombia?', a: 'Bitdefender maneja niveles Bronze, Silver y Gold dentro de su Partner Advantage Network. Para evitar una afirmacion desactualizada, Star Solutions TI valida el nivel de partner vigente con el fabricante en el momento de la propuesta y acompana el licenciamiento empresarial de GravityZone en Colombia.' },
-  { q: '¿Quien es el distribuidor #1 de Bitdefender en Colombia?', a: 'No encontramos un ranking publico vigente de Bitdefender que declare un distribuidor #1 en Colombia. Si su busqueda es comparar al mejor canal para empresas, revise nivel de partner, certificaciones, experiencia de implementacion, soporte local y capacidad de escalamiento. Star Solutions TI cubre esos frentes para licencias GravityZone B2B.' },
+  { q: '¿Star Solutions TI es distribuidor Gold de Bitdefender en Colombia?', a: 'Star Solutions TI es Reseller Platinum de Bitdefender, un nivel por encima de Gold. Desde mayo de 2025 el Partner Advantage Network de Bitdefender tiene cuatro niveles (Bronze, Silver, Gold y Platinum) y Platinum es el más alto, reservado para los resellers de mayor desempeño. Desde ese nivel cotizamos, implementamos y damos soporte a GravityZone para empresas en Colombia.' },
+  { q: '¿Quien es el distribuidor #1 de Bitdefender en Colombia?', a: 'Bitdefender no publica un ranking de distribuidores por país, pero sí niveles de partner. Star Solutions TI tiene el nivel más alto, Reseller Platinum. Para elegir canal, compare además certificaciones, experiencia de implementación, soporte local y capacidad de escalamiento con el fabricante.' },
   { q: '¿Cuanto cuesta Bitdefender GravityZone en Colombia?', a: 'El precio de GravityZone se calcula por numero de endpoints y por la edicion elegida (Business Security, Business Security Premium o la capa de MDR con SOC 24/7). Como partner oficial en Colombia, Star Solutions TI le entrega una cotizacion en pesos o dolares sin costo, con descuentos por volumen y por licenciamiento multianual. Solicite su cotizacion y le respondemos el mismo dia.' },
   { q: '¿Como comprar o implementar GravityZone en Colombia?', a: 'Bitdefender GravityZone (a veces buscado como "Gravity Zone") se adquiere a traves de un distribuidor Bitdefender y partner oficial como Star Solutions TI, no directamente al fabricante. Gestionamos el licenciamiento, activamos la consola en la nube, conectamos su Active Directory y desplegamos los agentes con las politicas base. Puede empezar con una prueba gratuita y pasar a produccion sin reinstalar nada.' },
 ];
@@ -100,7 +108,7 @@ const serviceSchema = {
   },
   areaServed: { '@type': 'Country', name: 'Colombia' },
   url: `${BASE_URL}/bitdefender/`,
-  description: 'Cotizacion, renovacion, implementacion y soporte de Bitdefender GravityZone en Colombia, con validacion de nivel de partner cuando el cliente busca distribuidor Gold o un canal principal Bitdefender.',
+  description: 'Cotización, renovación, implementación y soporte de Bitdefender GravityZone en Colombia por Star Solutions TI, Reseller Platinum de Bitdefender (el nivel más alto de su programa de partners).',
   audience: { '@type': 'BusinessAudience', audienceType: 'Empresas medianas y grandes' },
   offers: {
     '@type': 'Offer',
@@ -185,6 +193,85 @@ const serviceSchema = {
       </div>
     </section>
 
+    <!-- Reseller Platinum: nivel más alto del programa de partners de Bitdefender -->
+    <section class="relative overflow-hidden bg-gradient-to-br from-slate-50 via-white to-indigo-50 py-16 sm:py-20 border-b border-gray-200" aria-labelledby="reseller-platinum-bitdefender">
+      <div class="absolute -top-24 -left-24 w-96 h-96 bg-indigo-200/40 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
+      <div class="absolute -bottom-32 right-0 w-[28rem] h-[28rem] bg-blue-200/30 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
+
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-[1fr_1.15fr] gap-12 lg:gap-16 items-center">
+
+          <!-- Sello y medalla -->
+          <div class="relative max-w-md mx-auto w-full pt-10 lg:pt-0">
+            <div class="absolute inset-6 bg-gradient-to-br from-indigo-400/30 to-blue-500/20 rounded-[2rem] blur-2xl" aria-hidden="true"></div>
+            <div class="relative bg-white rounded-3xl border border-indigo-100 shadow-2xl shadow-indigo-900/10 px-8 pt-16 pb-10 text-center">
+              <img
+                src="/marcas/medalla-primer-nivel.webp"
+                alt=""
+                width="291"
+                height="320"
+                class="absolute -top-12 left-1/2 -translate-x-1/2 w-24 h-auto drop-shadow-xl platinum-medal"
+                loading="lazy"
+                aria-hidden="true"
+              />
+              <img
+                src="/marcas/bitdefender-platinum-reseller.webp"
+                alt="Sello Bitdefender Reseller Platinum de Star Solutions TI"
+                width="438"
+                height="164"
+                class="w-full max-w-xs mx-auto h-auto rounded-xl"
+                loading="lazy"
+              />
+              <p class="mt-6 text-sm font-semibold uppercase tracking-widest text-indigo-900">Star Solutions TI</p>
+              <p class="text-xs text-gray-500 mt-1">Partner Advantage Network · Colombia</p>
+            </div>
+          </div>
+
+          <!-- Mensaje -->
+          <div>
+            <span class="inline-flex items-center gap-2 bg-indigo-100 text-indigo-900 text-xs font-semibold px-3 py-1.5 rounded-full uppercase tracking-wider">
+              <span class="w-1.5 h-1.5 rounded-full bg-indigo-700"></span>
+              El nivel más alto de Bitdefender
+            </span>
+            <h2 id="reseller-platinum-bitdefender" class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mt-5 mb-5 leading-tight">
+              Star Solutions TI es <span class="bg-gradient-to-r from-indigo-900 via-indigo-600 to-blue-600 bg-clip-text text-transparent">Reseller Platinum</span> de Bitdefender en Colombia
+            </h2>
+            <p class="text-lg text-gray-700 leading-relaxed mb-8">
+              Tenemos el nivel más alto del programa de partners de Bitdefender. Platinum es la categoría que el
+              fabricante reserva para sus resellers de mayor desempeño, por encima de Bronze, Silver y Gold.
+            </p>
+
+            <!-- Escalera de niveles -->
+            <ol class="grid grid-cols-4 gap-2 mb-8" aria-label="Niveles del programa de partners de Bitdefender">
+              <li class="rounded-lg border border-gray-200 bg-white py-2 text-center text-xs sm:text-sm font-medium text-gray-400">Bronze</li>
+              <li class="rounded-lg border border-gray-200 bg-white py-2 text-center text-xs sm:text-sm font-medium text-gray-400">Silver</li>
+              <li class="rounded-lg border border-gray-200 bg-white py-2 text-center text-xs sm:text-sm font-medium text-gray-400">Gold</li>
+              <li class="rounded-lg bg-gradient-to-r from-indigo-950 to-indigo-700 py-2 text-center text-xs sm:text-sm font-bold text-white shadow-lg shadow-indigo-900/30 ring-2 ring-indigo-300" aria-current="true">Platinum</li>
+            </ol>
+
+            <ul class="space-y-4 mb-8">
+              {PLATINUM_BENEFITS.map((b) => (
+                <li class="flex items-start gap-3">
+                  <span class="bg-indigo-50 border border-indigo-100 rounded-full p-1.5 mt-0.5 shrink-0">
+                    <svg class="w-4 h-4 text-indigo-700" fill="none" viewBox="0 0 14 14" aria-hidden="true"><path d={CHECK_PATH} stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" /></svg>
+                  </span>
+                  <span>
+                    <span class="block font-semibold text-gray-900">{b.t}</span>
+                    <span class="block text-sm text-gray-600">{b.d}</span>
+                  </span>
+                </li>
+              ))}
+            </ul>
+
+            <a href="#consultoria" class="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-indigo-950 to-indigo-700 text-white font-semibold px-7 py-3.5 rounded-full hover:from-indigo-900 hover:to-indigo-600 transition shadow-lg shadow-indigo-900/25 focus-visible:ring-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-2">
+              Cotizar con un Reseller Platinum
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Awards / Recognition strip -->
     <section class="bg-white py-12 border-y border-gray-200" aria-label="Reconocimientos de la industria">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -206,13 +293,13 @@ const serviceSchema = {
           <div>
             <span class="text-[#ed1c24] text-xs font-semibold uppercase tracking-wider">Busqueda comercial Bitdefender</span>
             <h2 id="distribuidor-gold-bitdefender-colombia" class="text-3xl sm:text-4xl font-bold mt-3 mb-5 text-gray-900">
-              Distribuidor Gold Bitdefender Colombia y #1: como validarlo antes de comprar
+              ¿Busca distribuidor Gold o #1 de Bitdefender en Colombia? Somos Reseller Platinum
             </h2>
             <p class="text-lg text-gray-700 leading-relaxed mb-5">
-              Muchas empresas buscan "distribuidor Gold Bitdefender Colombia" o "distribuidor #1 Bitdefender Colombia" cuando necesitan reducir riesgo de compra. Lo responsable es validar el nivel de partner publicado en la <a href="https://pan.bitdefender.com/main/program_details" target="_blank" rel="noopener noreferrer" class="font-semibold text-[#ed1c24] underline underline-offset-4">Partner Advantage Network de Bitdefender</a>, las certificaciones tecnicas, la experiencia local y el soporte real despues de activar la licencia.
+              Muchas empresas buscan "distribuidor Gold Bitdefender Colombia" o "distribuidor #1 Bitdefender Colombia" cuando necesitan reducir riesgo de compra. Desde 2025 la <a href="https://pan.bitdefender.com/main/program_details" target="_blank" rel="noopener noreferrer" class="font-semibold text-[#ed1c24] underline underline-offset-4">Partner Advantage Network de Bitdefender</a> tiene un nivel por encima de Gold: Platinum, el más alto del programa. Star Solutions TI es Reseller Platinum.
             </p>
             <p class="text-gray-600 leading-relaxed mb-6">
-              Star Solutions TI acompana esa validacion y gestiona cotizacion, renovacion, implementacion y soporte de Bitdefender GravityZone para empresas en Colombia. Si el proceso exige comprobar nivel Gold o autorizacion vigente, lo confirmamos con el fabricante antes de presentar la propuesta.
+              Además del nivel de partner, revise las certificaciones técnicas, la experiencia local y el soporte real después de activar la licencia. Star Solutions TI gestiona cotización, renovación, implementación y soporte de Bitdefender GravityZone para empresas en Colombia.
             </p>
             <div class="flex flex-col sm:flex-row gap-3">
               <a href="/contacto/" class="inline-flex items-center justify-center bg-[#ed1c24] text-white font-semibold px-6 py-3 rounded-lg hover:bg-red-700 transition focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2">
@@ -692,3 +779,18 @@ const serviceSchema = {
   <Footer />
   <WhatsAppButton />
 </BaseLayout>
+
+<style>
+  /* Medalla del sello Platinum: flota suavemente sobre la tarjeta */
+  .platinum-medal {
+    animation: platinum-float 4s ease-in-out infinite;
+  }
+  /* Solo eje vertical: el centrado horizontal lo hace -translate-x-1/2 (propiedad `translate`). */
+  @keyframes platinum-float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .platinum-medal { animation: none; }
+  }
+</style>

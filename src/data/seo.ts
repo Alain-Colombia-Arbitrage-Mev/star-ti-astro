@@ -151,11 +151,11 @@ export const seoData: Record<string, SEOData> = {
   // STAR PROTECTION
   // =====================================================
   bitdefender: {
-    title: 'Distribuidor Bitdefender Colombia | Gold y GravityZone',
-    description: '¿Busca distribuidor Gold o #1 de Bitdefender en Colombia? Cotice GravityZone con Star Solutions TI: licencias, implementacion EDR/XDR/MDR y soporte local.',
-    keywords: 'distribuidor Bitdefender, distribuidor Bitdefender Colombia, distribuidor Gold Bitdefender Colombia, distribuidor #1 Bitdefender Colombia, Bitdefender Gold partner Colombia, licencias Bitdefender Colombia, comprar Bitdefender empresas, Bitdefender GravityZone Colombia, gravity zone, gravityzone precio, GravityZone EDR XDR, antivirus corporativo empresas, endpoint security, partner Bitdefender Colombia',
+    title: 'Reseller Platinum Bitdefender Colombia | Star Solutions TI',
+    description: 'Star Solutions TI es Reseller Platinum de Bitdefender, el nivel más alto, por encima de Gold. Cotice GravityZone en Colombia: licencias, EDR/XDR/MDR y soporte local.',
+    keywords: 'Reseller Platinum Bitdefender Colombia, Bitdefender Platinum partner Colombia, distribuidor Bitdefender, distribuidor Bitdefender Colombia, distribuidor Gold Bitdefender Colombia, distribuidor #1 Bitdefender Colombia, Bitdefender Gold partner Colombia, licencias Bitdefender Colombia, comprar Bitdefender empresas, Bitdefender GravityZone Colombia, gravity zone, gravityzone precio, GravityZone EDR XDR, antivirus corporativo empresas, endpoint security, partner Bitdefender Colombia',
     canonical: `${BASE_URL}/bitdefender/`,
-    ogTitle: 'Distribuidor Bitdefender Colombia | Gold y GravityZone',
+    ogTitle: 'Star Solutions TI - Reseller Platinum de Bitdefender en Colombia',
     ogType: 'website',
     ogImage: `${BASE_URL}/og-default.png`,
     preconnect: ['https://www.bitdefender.com'],
@@ -163,7 +163,7 @@ export const seoData: Record<string, SEOData> = {
     jsonLd: product(
       'Bitdefender GravityZone para empresas',
       'Bitdefender',
-      'Licenciamiento e implementacion de Bitdefender GravityZone para empresas en Colombia, con EDR, XDR, Bitdefender MDR (SOC 24x7), CSPM+ y Patch Management. Star Solutions TI opera como partner oficial y distribuidor Bitdefender para empresas, con validacion de nivel de partner cuando el cliente busca Gold o un canal principal.',
+      'Licenciamiento e implementacion de Bitdefender GravityZone para empresas en Colombia, con EDR, XDR, Bitdefender MDR (SOC 24x7), CSPM+ y Patch Management. Star Solutions TI opera como partner oficial y distribuidor Bitdefender para empresas, con nivel Reseller Platinum, el más alto del programa de partners de Bitdefender.',
       { rating: { value: '4.9', count: '127' }, image: `${BASE_URL}/og-default.png` },
     ),
     faqJsonLd: faqSchema([
@@ -173,8 +173,8 @@ export const seoData: Record<string, SEOData> = {
       { q: 'Cuánto tarda Star Solutions TI en dejarnos operando?', a: 'Una implementación tipica en una empresa de 50 equipos se completa en menos de dos horas de trabajo efectivo: configuración de consola en la nube, conexion con su Active Directory, definicion de las políticas base y prueba en un grupo piloto antes del despliegue total. Para parques de más de 1.000 equipos planeamos un cronograma de 1 a 2 semanas con fases controladas.' },
       { q: 'Sirve si tenemos teletrabajo y sucursales en otras ciudades?', a: 'Sí, es uno de los escenarios donde GravityZone brilla mas. Como la consola es cloud, sus equipos en Medellín, Cali o cualquier sede remota reportan directamente sin necesidad de VPN ni servidores intermedios. Aplica las mismas políticas a empleados en home office que a la sede principal.' },
       { q: '¿Star Solutions TI es distribuidor Bitdefender en Colombia?', a: 'Si. Star Solutions TI opera como partner oficial y distribuidor Bitdefender para empresas en Colombia: cotizamos licencias GravityZone, gestionamos renovaciones, implementamos politicas, damos soporte en espanol y escalamos con el fabricante cuando el caso lo requiere.' },
-      { q: '¿Star Solutions TI es distribuidor Gold de Bitdefender en Colombia?', a: 'Bitdefender maneja niveles Bronze, Silver y Gold dentro de su Partner Advantage Network. Para evitar una afirmacion desactualizada, Star Solutions TI valida el nivel de partner vigente con el fabricante en el momento de la propuesta y acompana el licenciamiento empresarial de GravityZone en Colombia.' },
-      { q: '¿Quién es el distribuidor #1 de Bitdefender en Colombia?', a: 'No encontramos un ranking publico vigente de Bitdefender que declare un distribuidor #1 en Colombia. Si su busqueda es comparar al mejor canal para empresas, revise nivel de partner, certificaciones, experiencia de implementacion, soporte local y capacidad de escalamiento. Star Solutions TI cubre esos frentes para licencias GravityZone B2B.' },
+      { q: '¿Star Solutions TI es distribuidor Gold de Bitdefender en Colombia?', a: 'Star Solutions TI es Reseller Platinum de Bitdefender, un nivel por encima de Gold. Desde mayo de 2025 el Partner Advantage Network de Bitdefender tiene cuatro niveles (Bronze, Silver, Gold y Platinum) y Platinum es el más alto, reservado para los resellers de mayor desempeño. Desde ese nivel cotizamos, implementamos y damos soporte a GravityZone para empresas en Colombia.' },
+      { q: '¿Quién es el distribuidor #1 de Bitdefender en Colombia?', a: 'Bitdefender no publica un ranking de distribuidores por país, pero sí niveles de partner. Star Solutions TI tiene el nivel más alto, Reseller Platinum. Para elegir canal, compare además certificaciones, experiencia de implementación, soporte local y capacidad de escalamiento con el fabricante.' },
       { q: '¿Cuánto cuesta Bitdefender GravityZone en Colombia?', a: 'El precio de GravityZone se calcula por número de endpoints y por la edición elegida (Business Security, Business Security Premium o la capa de MDR con SOC 24/7). Como partner oficial en Colombia, Star Solutions TI entrega una cotización sin costo, con descuentos por volumen y por licenciamiento multianual.' },
       { q: '¿Cómo comprar o implementar GravityZone en Colombia?', a: 'Bitdefender GravityZone (también buscado como "Gravity Zone") se adquiere a través de un distribuidor Bitdefender y partner oficial como Star Solutions TI, no directamente al fabricante. Gestionamos el licenciamiento, activamos la consola en la nube, conectamos su Active Directory y desplegamos los agentes con las políticas base, con opción de prueba gratuita antes de pasar a producción.' },
     ]),
