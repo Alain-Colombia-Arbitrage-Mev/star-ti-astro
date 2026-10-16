@@ -36,19 +36,30 @@ claro y no técnico, y explicar cada cambio antes de publicarlo.
   Equipos de cómputo, Acceso Remoto y Soporte IT.
 - Ese formulario está en el inicio y en las 20 páginas del menú (Star Protection, Star Inspection,
   Star Compliance y Más Soluciones).
+- Cada solicitud indica desde qué página se llenó (`sourceForm`, p. ej. "Bitdefender - Consultoría
+  gratuita"): va en el asunto del correo ("[Bitdefender] …"), en un recuadro al inicio del correo y
+  al comienzo del título del registro en Airtable.
 
 ## Estado al 16-oct-2026
 
 Hecho en `star-solutions/desarrollo`, todavía sin publicar en `main`:
 - Nombre corregido, nueva dirección, formulario en todas las páginas del menú.
-- Envío por correo: el código está listo, falta la configuración en Resend y Cloudflare.
+- Envío por correo: código listo y Resend configurado (ver abajo). Falta la prueba de envío.
+- Origen de cada solicitud (página) visible en el correo y en Airtable.
 - Página `/gracias`: se quitaron los tiempos de respuesta estimados.
 - Inicio: "Protección Activa 24/7" se movió junto a las otras dos estadísticas.
 
+Resend (configurado el 16-oct-2026):
+- Cuenta de Resend creada por George. Dominio `star-ti.com` verificado (región São Paulo).
+- Los registros de Resend están en `send.star-ti.com` y `resend._domainkey.star-ti.com`. Los MX de
+  la raíz (Hornetsecurity y Outlook) no se tocaron.
+- Clave de API solo con permiso de envío, guardada como secreto `RESEND_API_KEY` en el Worker
+  `star-ti-astro` (Production y Previews).
+- Si en Resend quedó una clave "Onboarding" con acceso total y nadie la usa, conviene borrarla.
+
 Pendiente:
-1. George necesita acceso a la cuenta de Cloudflare (la administra Alain, quien construyó el sitio).
-   Luego: Resend → Add domain star-ti.com → "Auto configure" (revisar que no cree registros MX en la
-   raíz del dominio) → crear la API key → guardarla como secreto `RESEND_API_KEY` → probar el envío.
+1. Probar el envío desde la vista previa de `star-solutions/desarrollo` (p. ej. desde /bitdefender/):
+   que llegue a los tres buzones, que no caiga en spam y que se vea en Resend → Emails.
 2. Decidir si se agrega una 6.ª área (Cableado estructurado / Impresoras Brother) al formulario.
 3. Decidir si las 6 páginas con formulario propio (Kaspersky, rThreat, ISO 27001, Mejores empresas
    ISO, Cableado, Equipos de cómputo) conservan los dos formularios o solo el estándar.
