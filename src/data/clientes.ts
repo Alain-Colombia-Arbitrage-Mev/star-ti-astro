@@ -5,6 +5,10 @@
 // alto en public/clientes/ (se muestran a ~80 px, nitidez 2x). En los logos blancos,
 // pensados para fondo oscuro, solo los píxeles blancos se repintaron en gris oscuro.
 // Para agregar un cliente: guardar su logo en public/clientes/<slug>.webp y sumarlo aquí.
+// Subir este número cada vez que se reemplace un logo con el mismo nombre de archivo:
+// cambia la URL (?v=) y obliga a los navegadores a descargar la versión nueva.
+export const LOGOS_VERSION = 2;
+
 export interface Cliente {
   name: string;
   logo: string;

@@ -3,7 +3,7 @@
 // propia tarjeta; al pasar el mouse la franja se detiene y la tarjeta se eleva.
 // La lista se duplica para que el desplazamiento sea continuo; la copia va oculta
 // para lectores de pantalla. Queda estática si el usuario pidió menos movimiento.
-import { clientes } from '@data/clientes';
+import { clientes, LOGOS_VERSION } from '@data/clientes';
 ---
 
 <section class="bg-white py-16 sm:py-20" aria-labelledby="clientes-titulo">
@@ -24,7 +24,7 @@ import { clientes } from '@data/clientes';
           {clientes.map((c) => (
             <li class="clientes-card">
               <img
-                src={c.logo}
+                src={`${c.logo}?v=${LOGOS_VERSION}`}
                 alt={copy === 0 ? c.name : ''}
                 title={c.name}
                 width={c.width}
