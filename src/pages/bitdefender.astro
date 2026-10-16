@@ -12,7 +12,6 @@ const seo = seoData.bitdefender;
 // Logo vigente en blanco (vectorial de Wikimedia Commons, servido desde el sitio).
 // Va sobre el azul de marca de Bitdefender, #006DFF.
 const BITDEFENDER_LOGO_WHITE = '/marcas/bitdefender-blanco.webp';
-const GZ_DASHBOARD = 'https://www.bitdefender.com/en-us/business/_jcr_content/root/container/columncontainer_1032/tab_item_no_1/image.coreimg.svg/1773667996822/bitdefender-diagrama-homepage--1-.svg';
 const GZ_XDR = 'https://www.bitdefender.com/adobe/dynamicmedia/deliver/dm-aid--5fc9976d-54cb-4896-a592-a58d2aa753bb/simplify-threat-2.jpg';
 const GZ_MDR = 'https://www.bitdefender.com/adobe/dynamicmedia/deliver/dm-aid--2a17b7b5-285a-46db-8d27-a260f94e4bac/02-mdr-1.png';
 const GZ_CSPM = 'https://www.bitdefender.com/adobe/dynamicmedia/deliver/dm-aid--031e1093-478b-4fd8-b4f2-b97c75ed31c1/simplify-threat-1.jpg';
@@ -123,17 +122,18 @@ const serviceSchema = {
       <div class="absolute -top-20 right-1/4 w-[500px] h-[500px] bg-red-600/20 rounded-full blur-3xl pointer-events-none"></div>
 
       <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div class="grid grid-cols-1 lg:grid-cols-[1fr_1.05fr] gap-12 lg:gap-14 items-center">
           <div>
-            <div class="mb-8 bg-[#006DFF] rounded-xl px-7 py-4 inline-flex items-center shadow-lg shadow-[#006DFF]/30 ring-1 ring-white/10">
-              <img src={BITDEFENDER_LOGO_WHITE} alt="Logo oficial de Bitdefender" width="880" height="129" class="h-9 sm:h-10 w-auto" loading="eager" fetchpriority="high" />
+            <!-- Logo: en móvil arriba del texto; en escritorio va encima del video -->
+            <div class="lg:hidden mb-8 bg-[#006DFF] rounded-xl px-6 py-3.5 inline-flex items-center shadow-lg shadow-[#006DFF]/30 ring-1 ring-white/10">
+              <img src={BITDEFENDER_LOGO_WHITE} alt="Logo oficial de Bitdefender" width="880" height="129" class="h-8 w-auto" loading="eager" fetchpriority="high" />
             </div>
 
             <span class="inline-block bg-red-500/15 text-red-300 text-xs font-semibold px-3 py-1.5 rounded-full uppercase tracking-wider mb-6 border border-red-500/30">
               Distribuidor Bitdefender Colombia · GravityZone empresas
             </span>
 
-            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6 text-white">
+            <h1 class="text-4xl sm:text-5xl xl:text-[3.4rem] font-bold leading-[1.1] tracking-tight mb-6 text-white">
               Distribuidor Bitdefender Platinum para <span class="text-[#ed1c24]">empresas en Colombia</span>
             </h1>
             <p class="text-lg sm:text-xl text-gray-300 mb-8 max-w-xl leading-relaxed">
@@ -161,7 +161,12 @@ const serviceSchema = {
             </div>
           </div>
 
-          <div class="relative lg:pl-8">
+          <div class="relative lg:pl-4 flex flex-col items-center gap-8 lg:gap-10">
+            <div class="hidden lg:inline-flex bg-[#006DFF] rounded-2xl px-9 py-5 items-center shadow-xl shadow-[#006DFF]/30 ring-1 ring-white/10">
+              <img src={BITDEFENDER_LOGO_WHITE} alt="Logo oficial de Bitdefender" width="880" height="129" class="h-11 xl:h-12 w-auto" loading="eager" fetchpriority="high" />
+            </div>
+
+            <div class="relative w-full">
             <div class="absolute -inset-4 bg-gradient-to-tr from-red-500/20 to-blue-500/10 rounded-3xl blur-2xl"></div>
             <div class="relative bg-white/5 border border-white/10 rounded-2xl p-3 backdrop-blur shadow-2xl">
               <!-- 4,5 MB: sin autoplay y con preload="none" no se descarga hasta
@@ -169,7 +174,7 @@ const serviceSchema = {
                    evitan el desplazamiento de layout al cargar los metadatos. -->
               <video
                 src="/assets/videobitdefender.mp4"
-                poster={GZ_DASHBOARD}
+                poster="/assets/bitdefender-video-portada.webp"
                 controls
                 muted
                 loop
@@ -180,6 +185,7 @@ const serviceSchema = {
                 aria-label="Video institucional de Bitdefender GravityZone mostrando la plataforma de ciberseguridad empresarial"
                 class="w-full h-auto rounded-xl block"
               ></video>
+            </div>
             </div>
           </div>
         </div>
