@@ -293,11 +293,25 @@ async function sendLeadEmail(fields, env) {
   const leadEmail = fields[FIELD_NAMES.email];
   const service = fields[FIELD_NAMES.service] || "Sin servicio indicado";
   const who = fields[FIELD_NAMES.company] || fields[FIELD_NAMES.name] || leadEmail || "Contacto web";
+  const origin = getLeadOrigin(fields);
 
   const rows = EMAIL_FIELD_ORDER.filter((key) => fields[key]).map((key) => [key, fields[key]]);
-  const text = rows.map(([key, value]) => `${key}: ${value}`).join("\n");
+  const text = [
+    `ORIGEN: ${origin.form}`,
+    ...(fields[FIELD_NAMES.sourcePath] ? [`Pagina: ${fields[FIELD_NAMES.sourcePath]}`] : []),
+    "",
+    ...rows.map(([key, value]) => `${key}: ${value}`),
+  ].join("\n");
   const html = `<div style="font-family:Arial,sans-serif;font-size:14px;color:#111">
 <h2 style="margin:0 0 12px">Nueva solicitud desde star-ti.com</h2>
+<div style="background:#fdecec;border-left:4px solid #dc2626;padding:10px 14px;margin:0 0 16px">
+<div style="font-size:12px;color:#991b1b;text-transform:uppercase;letter-spacing:.5px">Origen del formulario</div>
+<div style="font-size:18px;font-weight:bold;color:#111">${escapeHtml(origin.form)}</div>${
+    fields[FIELD_NAMES.sourcePath]
+      ? `<div style="font-size:12px;color:#555">Página: ${escapeHtml(fields[FIELD_NAMES.sourcePath])}</div>`
+      : ""
+  }
+</div>
 <table cellpadding="6" style="border-collapse:collapse">${rows
     .map(
       ([key, value]) =>
@@ -316,7 +330,7 @@ async function sendLeadEmail(fields, env) {
       body: JSON.stringify({
         from,
         to,
-        subject: `Nueva solicitud web: ${service} - ${who}`.slice(0, 200),
+        subject: `[${origin.page}] Nueva solicitud web: ${service} - ${who}`.slice(0, 200),
         text,
         html,
         ...(isLikelyEmail(leadEmail) ? { reply_to: leadEmail } : {}),
@@ -332,6 +346,15 @@ async function sendLeadEmail(fields, env) {
     console.error("Lead email failed", error);
     return "failed";
   }
+}
+
+// Desde que parte del sitio se lleno el formulario. "form" es la etiqueta
+// completa (p. ej. "Bitdefender - Consultoría gratuita") y "page" solo la
+// pagina ("Bitdefender"), para el asunto del correo.
+function getLeadOrigin(fields) {
+  const form = fields[FIELD_NAMES.sourceForm] || fields[FIELD_NAMES.sourcePath] || "Sitio web";
+  const page = form.split(" - ")[0].trim() || form;
+  return { form, page };
 }
 
 function isLikelyEmail(value) {
@@ -353,10 +376,13 @@ function normalizeLead(rawFields, sourceUrl, sourcePath, request) {
   const phone = getFirst(rawFields, ["telefono", "phone"]);
   const company = getFirst(rawFields, ["empresa", "company"]);
   const service = getFirst(rawFields, ["servicio", "service"]);
+  const sourceForm = getFirst(rawFields, ["_source_form"]);
+  const originPage = (sourceForm || sourcePath).split(" - ")[0].trim();
   const titleParts = [name || email || company || "Lead sitio web", service || sourcePath || "Formulario"];
+  const title = titleParts.filter(Boolean).join(" - ");
 
   const fields = {};
-  setField(fields, FIELD_NAMES.lead, titleParts.filter(Boolean).join(" - ").slice(0, 120));
+  setField(fields, FIELD_NAMES.lead, (originPage ? `[${originPage}] ${title}` : title).slice(0, 120));
   setField(fields, FIELD_NAMES.submittedAt, new Date().toISOString());
   setField(fields, FIELD_NAMES.name, name);
   setField(fields, FIELD_NAMES.email, email);
@@ -373,7 +399,7 @@ function normalizeLead(rawFields, sourceUrl, sourcePath, request) {
   setField(fields, FIELD_NAMES.devices, getFirst(rawFields, ["dispositivos"]));
   setField(fields, FIELD_NAMES.useCase, getFirst(rawFields, ["caso"]));
   setField(fields, FIELD_NAMES.acceptedPrivacy, rawFields.privacy ? "si" : "");
-  setField(fields, FIELD_NAMES.sourceForm, getFirst(rawFields, ["_source_form"]));
+  setField(fields, FIELD_NAMES.sourceForm, sourceForm);
   setField(fields, FIELD_NAMES.sourceUrl, sourceUrl);
   setField(fields, FIELD_NAMES.sourcePath, sourcePath);
   setField(fields, FIELD_NAMES.userAgent, request.headers.get("User-Agent"));
