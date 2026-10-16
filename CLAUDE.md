@@ -54,7 +54,7 @@ claro y no técnico, y explicar cada cambio antes de publicarlo.
 
 Publicado en vivo el 16-oct-2026 (rama `produccion`):
 - Nombre corregido, nueva dirección, formulario en todas las páginas del menú.
-- Envío por correo: código listo y Resend configurado (ver abajo). Falta la prueba de envío.
+- Envío por correo con Resend configurado (ver abajo). Probado desde la vista previa.
 - Origen de cada solicitud (página) visible en el correo y en Airtable.
 - Página `/gracias`: se quitaron los tiempos de respuesta estimados.
 - Inicio: "Protección Activa 24/7" se movió junto a las otras dos estadísticas.
@@ -63,7 +63,7 @@ Publicado en vivo el 16-oct-2026 (rama `produccion`):
   que descarga el certificado (`public/certificados/`). El certificado aún muestra la dirección
   anterior; pedir a SGS que la actualice en la próxima auditoría.
 
-En `star-solutions/desarrollo`, pendiente de publicar (pasar a `produccion`):
+Segunda publicación, 16-oct-2026 (aprobada por George):
 - "Servicio de Interés" solo en el formulario del inicio.
 - Promesas de respuesta "en menos de 2 horas" cambiadas por "a la mayor brevedad" (Contacto,
   Cableado, Kaspersky, Equipos de cómputo, descripción SEO de /contacto).
@@ -78,7 +78,7 @@ En `star-solutions/desarrollo`, pendiente de publicar (pasar a `produccion`):
   `public/clientes/`). Al reemplazar un logo con el mismo nombre, subir `LOGOS_VERSION`.
 - Encabezado de cada herramienta con su logo oficial (`BrandLogoCard`, logos en `public/marcas/`)
   en lugar de imágenes genéricas. Hacking ético, ISO 27001, Cableado y Equipos de cómputo son
-  servicios propios y conservan su imagen.
+  servicios propios y conservan su imagen. Bitdefender: logo blanco sobre su azul (#006DFF).
 
 Resend (configurado el 16-oct-2026):
 - Cuenta de Resend creada por George. Dominio `star-ti.com` verificado (región São Paulo).
