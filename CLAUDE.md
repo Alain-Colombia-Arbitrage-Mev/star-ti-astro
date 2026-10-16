@@ -74,6 +74,11 @@ En `star-solutions/desarrollo`, pendiente de publicar (pasar a `produccion`):
   redirigen con 301 (worker y `public/_redirects`): /brother/ → /equipos-computo/,
   /soti-mdm/ → /teamviewer/, /black-duck/ y /rthreat-bogota-colombia/ → /hacking-etico/.
   No volver a crear esas URLs sin quitar antes la redirección.
+- Inicio: franja animada de clientes (`ClientesMarquee`, lista en `src/data/clientes.ts`, logos en
+  `public/clientes/`). Al reemplazar un logo con el mismo nombre, subir `LOGOS_VERSION`.
+- Encabezado de cada herramienta con su logo oficial (`BrandLogoCard`, logos en `public/marcas/`)
+  en lugar de imágenes genéricas. Hacking ético, ISO 27001, Cableado y Equipos de cómputo son
+  servicios propios y conservan su imagen.
 
 Resend (configurado el 16-oct-2026):
 - Cuenta de Resend creada por George. Dominio `star-ti.com` verificado (región São Paulo).
