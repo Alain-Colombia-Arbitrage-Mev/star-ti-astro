@@ -8,15 +8,11 @@
 /sealpath /sealpath/ 301
 /netwrix /netwrix/ 301
 /proofpoint /proofpoint/ 301
-/black-duck /black-duck/ 301
 /teamviewer /teamviewer/ 301
 /anydesk /anydesk/ 301
-/soti-mdm /soti-mdm/ 301
 /cableado-estructurado /cableado-estructurado/ 301
 /equipos-computo /equipos-computo/ 301
-/brother /brother/ 301
 /dlp-prevencion-perdida-datos /dlp-prevencion-perdida-datos/ 301
-/rthreat-bogota-colombia /rthreat-bogota-colombia/ 301
 /antivirus-empresas /antivirus-empresas/ 301
 /seguridad-informatica-empresas /seguridad-informatica-empresas/ 301
 /sobre-nosotros /sobre-nosotros/ 301
@@ -49,3 +45,13 @@
 /hornet-security/ /hornetsecurity/ 301
 /hornet-security /hornetsecurity/ 301
 /hornetsecurity /hornetsecurity/ 301
+
+# Paginas retiradas el 16-oct-2026: 301 a la solucion vigente mas cercana
+/black-duck /hacking-etico/ 301
+/black-duck/ /hacking-etico/ 301
+/soti-mdm /teamviewer/ 301
+/soti-mdm/ /teamviewer/ 301
+/brother /equipos-computo/ 301
+/brother/ /equipos-computo/ 301
+/rthreat-bogota-colombia /hacking-etico/ 301
+/rthreat-bogota-colombia/ /hacking-etico/ 301

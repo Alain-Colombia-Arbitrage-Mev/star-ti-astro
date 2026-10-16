@@ -326,23 +326,6 @@ export const seoData: Record<string, SEOData> = {
       { q: 'Qué diferencia hay entre escaneo de vulnerabilidades y pentesting?', a: 'El escaneo identifica vulnerabilidades conocidas (CVEs) de forma automatizada. El pentesting va mas alla: un experto explota manualmente las vulnerabilidades, encadena ataques complejos y simula el impacto real de un atacante.' },
     ]),
   },
-  'rthreat-bogota-colombia': {
-    title: 'Red Team y BAE con rThreat | Star Solutions TI Colombia',
-    description: 'Breach and Attack Emulation (BAE) con rThreat en Colombia. Valide EDR, SIEM y controles con malware real en entornos controlados. Soporte en español.',
-    keywords: 'red team Colombia, breach attack emulation, BAE, rThreat, emulación ataques, pentesting avanzado, zero-day, validación controles seguridad',
-    canonical: `${BASE_URL}/rthreat-bogota-colombia/`,
-    ogTitle: 'Red Team & Breach and Attack Emulation con rThreat Colombia',
-    ogType: 'website',
-    ogImage: `${BASE_URL}/og-default.png`,
-    breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Star Inspection', url: '/#star-inspection' }, { name: 'rThreat Red Team', url: '/rthreat-bogota-colombia/' }],
-    jsonLd: service('Red Team & Breach and Attack Emulation', 'Advanced Security Validation with BAE Platform rThreat'),
-    faqJsonLd: faqSchema([
-      { q: 'Cuál es la diferencia entre Breach and Attack Emulation (BAE) y Breach and Attack Simulation (BAS)?', a: 'BAE, como la que implementa rThreat, ejecuta artefactos de malware reales con variaciones de ofuscacion y tecnicas de evasion actuales. BAS tradicional usa firmas sinteticas que los EDR modernos ya conocen. Solo la emulación con malware real valida si su stack detecta amenazas que los atacantes reales usan hoy.' },
-      { q: 'Es seguro ejecutar simulaciones de ataque en produccion?', a: 'Sí. rThreat ejecuta malware real en entornos controlados: contenedores efimeros o sandbox aislados con kill switches automáticos. Las emulaciones no dañan sistemas ni datos. Cada ejercicio incluye un plan de contingencia coordinado con su equipo de TI antes de comenzar.' },
-      { q: 'Cada cuánto se debe realizar un ejercicio de Red Team con rThreat?', a: 'Se recomienda al menos una vez al ano para empresas reguladas y cada 6 meses para organizaciones con alto perfil de riesgo. rThreat puede ejecutarse de forma continua como plataforma de validación permanente, complementando los ejercicios de Red Team puntuales.' },
-      { q: 'Cuál es la diferencia entre Red Team y pentesting?', a: 'El pentesting busca vulnerabilidades tecnicas en un alcance definido. El Red Team simula un atacante real sin restricciones de alcance, incluyendo ingeniería social, acceso físico y ataques multi-vector, evaluando la capacidad de detección y respuesta de toda la organización.' },
-    ]),
-  },
 
   // =====================================================
   // STAR COMPLIANCE
@@ -534,23 +517,6 @@ export const seoData: Record<string, SEOData> = {
     jsonLd: product('LastPass Business', 'LastPass', 'Gestor de contraseñas y accesos empresarial con cifrado de conocimiento cero AES-256, más de 100 políticas de seguridad, MFA, SSO, carpetas compartidas, monitoreo de dark web e integración con Microsoft Entra ID, Google Workspace y Okta. Star Solutions TI lo implementa en Colombia con soporte en español.', { image: `${BASE_URL}/og-default.png` }),
     faqJsonLd: faqSchema(lastpassFaqs),
   },
-  'black-duck': {
-    title: 'Black Duck AppSec: Coverity, SCA, Polaris | Star Solutions TI',
-    description: 'Black Duck en Colombia: Coverity SAST, Black Duck SCA, Continuous Dynamic DAST, Seeker IAST y Polaris Platform. Implementamos DevSecOps con soporte local.',
-    keywords: 'Black Duck Colombia, Coverity SAST, Black Duck SCA, Continuous Dynamic DAST, Seeker IAST, Polaris Platform, application security testing, DevSecOps, SBOM, open source security',
-    canonical: `${BASE_URL}/black-duck/`,
-    ogTitle: 'Black Duck — Application Security Testing Platform | Star Solutions TI',
-    ogType: 'website',
-    ogImage: `${BASE_URL}/og-default.png`,
-    breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Star Compliance', url: '/#star-compliance' }, { name: 'Black Duck', url: '/black-duck/' }],
-    jsonLd: product('Black Duck — Application Security Testing Platform', 'Black Duck Software', 'Suite de seguridad de aplicaciones con Coverity SAST, Black Duck SCA, Continuous Dynamic DAST, Seeker IAST y Polaris Platform SaaS', { rating: { value: '4.8', count: '39' }, image: `${BASE_URL}/og-default.png` }),
-    faqJsonLd: faqSchema([
-      { q: 'Qué es Black Duck y que productos incluye?', a: 'Black Duck Software, Inc. es una empresa independiente de seguridad de aplicaciones (AppSec) escindida de Synopsys en octubre 2024. Su portfolio incluye Coverity (SAST), Black Duck SCA (análisis de composicion y SBOM), Continuous Dynamic (DAST), Seeker (IAST), Defensics (fuzzing) y la Black Duck Polaris Platform, una plataforma SaaS unificada. Star Solutions TI implementa e integra estos productos en Colombia con soporte en español.' },
-      { q: 'Cuál es la diferencia entre Coverity, Black Duck SCA y Continuous Dynamic?', a: 'Coverity es el producto SAST de Black Duck: analiza el codigo fuente estaticamente en más de 20 lenguajes antes de compilar. Black Duck SCA identifica componentes open source, CVEs y riesgos de licenciamiento, y genera SBOM en formatos SPDX y CycloneDX. Continuous Dynamic es el producto DAST: prueba la aplicacion en ejecución simulando ataques reales con production-safe payloads y validación por IA para minimizar falsos positivos.' },
-      { q: 'El escaneo ralentiza nuestro pipeline de CI/CD?', a: 'El impacto es minimo. El SCA tarda segundos; Coverity opera en modo incremental analizando solo el codigo modificado. Ambos se ejecutan en paralelo con el proceso de build sin bloquear el pipeline. La Black Duck Polaris Platform se integra nativamente con Jenkins, GitHub Actions, GitLab CI, Azure DevOps y CircleCI.' },
-      { q: 'Qué es la Black Duck Polaris Platform y como difiere de Software Risk Manager?', a: 'Black Duck Polaris Platform es la plataforma SaaS unificada que combina SAST (Coverity), SCA (Black Duck SCA) y DAST (Continuous Dynamic) en un solo flujo DevSecOps. Software Risk Manager es el producto ASPM (Application Security Posture Management) para centralizar y priorizar hallazgos de multiples herramientas a escala empresarial. Son productos complementarios: Polaris es el punto de entrada DevSecOps; Software Risk Manager es la capa de governance para CISOs.' },
-    ]),
-  },
   'dlp-prevencion-perdida-datos': {
     title: 'Software DLP Endpoint Protector | Star Solutions TI',
     description: 'Software DLP para prevención de pérdida de datos. Control USB, monitoreo endpoints y cifrado. Multiplataforma con cumplimiento GDPR.',
@@ -676,23 +642,6 @@ export const seoData: Record<string, SEOData> = {
       { q: 'AnyDesk consume muchos recursos?', a: 'El consumo es mínimo: cliente ligero de pocos MB (3.7 MB en la versión On-Premises), bajo uso de RAM y CPU, y desde 100 KB/s de ancho de banda por sesión gracias al codec DeskRT.' },
     ]),
   },
-  'soti-mdm': {
-    title: 'SOTI MobiControl EMM Colombia | Star Solutions TI',
-    description: 'SOTI MobiControl: gestión de dispositivos moviles para logística, retail, salud y campo en Colombia. Control remoto, kiosk mode y soporte local.',
-    keywords: 'SOTI MobiControl Colombia, MDM EMM, gestión dispositivos moviles, mobile device management, iOS Android empresarial, SOTI ONE Platform',
-    canonical: `${BASE_URL}/soti-mdm/`,
-    ogTitle: 'SOTI MobiControl - EMM Empresarial Colombia',
-    ogType: 'website',
-    ogImage: `${BASE_URL}/og-default.png`,
-    breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Infraestructura', url: '/#infraestructura' }, { name: 'SOTI MobiControl', url: '/soti-mdm/' }],
-    jsonLd: product('SOTI MobiControl', 'SOTI', 'Gestión de dispositivos moviles empresariales para industrias especializadas en Colombia', { rating: { value: '4.7', count: '35' }, image: `${BASE_URL}/og-default.png` }),
-    faqJsonLd: faqSchema([
-      { q: 'Cuál es la diferencia entre SOTI MobiControl y otros MDM?', a: 'SOTI ofrece APIs propietarias para hardware industrial de Zebra, Honeywell y Panasonic, capacidades de monitoreo de dispositivos rugged mediante la tecnología XTreme integrada en MobiControl, control remoto para soporte tecnico en tiempo real y Kiosk Mode con HTML5 nativo. Estas capacidades estan ausentes o son limitadas en MDM genericos. SOTI esta optimizado para verticales de logística, retail, manufactura y salud.' },
-      { q: 'Qué dispositivos soporta SOTI MobiControl?', a: 'SOTI MobiControl soporta Android 5+, iOS 11+, iPadOS, macOS y Windows 10/11, además de hardware especializado como escaneres y terminales Zebra (TC21, TC26), Honeywell (CT40, CT60), Panasonic Toughbook, impresoras industriales Zebra y kioscos interactivos. El enrolamiento express es compatible con Apple DEP, Android Zero-Touch, Samsung Knox Mobile Enrollment y Windows Autopilot.' },
-      { q: 'Cuánto cuesta SOTI MobiControl?', a: 'SOTI MobiControl se comercializa mediante cotizacion personalizada según número de dispositivos, sistemas operativos y modulos requeridos de la SOTI ONE Platform. No existe una lista de precios publica. Contacte a Star Solutions TI para recibir una propuesta ajustada al tamaño y necesidades específicas de su organización.' },
-      { q: 'Qué otros productos incluye la SOTI ONE Platform?', a: 'La SOTI ONE Platform reune: SOTI MobiControl (EMM/UEM principal), SOTI XSight (diagnóstico e inteligencia de soporte para flotas de dispositivos moviles), SOTI Snap (creacion no-code de apps moviles multiplataforma), SOTI Connect (gestión del ciclo de vida de impresoras moviles e industriales) y SOTI Identity (autenticación centralizada y SSO). Star Solutions TI integra los modulos que mejor se ajusten a la operación de su empresa.' },
-    ]),
-  },
   'cableado-estructurado': {
     title: 'Cableado Estructurado Bogotá | Star Solutions TI',
     description: 'Instalacion de cableado estructurado certificado en Bogotá y Colombia. Redes Cat6/Cat6A, fibra optica, certificación Fluke. Cotice gratis.',
@@ -719,20 +668,6 @@ export const seoData: Record<string, SEOData> = {
     jsonLd: product('Equipos de Computo Empresariales', 'Star Solutions TI', 'Laptops, desktops, workstations y All-in-One para empresas', { rating: { value: '4.8', count: '64' }, image: `${BASE_URL}/og-default.png` }),
     // faqJsonLd retirado: declaraba 3 preguntas que no existen en la pagina.
     // Contenido recuperable en git; conviene renderizarlo y reponer el marcado.
-  },
-  brother: {
-    title: 'Impresoras Brother para Empresas Colombia | Star Solutions TI',
-    description: 'Impresoras Brother para empresas en Colombia: línea Workhorse, láser, multifunción y escáneres ADS. Consumibles originales y soporte en español.',
-    keywords: 'impresoras Brother Colombia, Brother Workhorse, impresoras Brother empresas, multifunción láser, escáner Brother ADS, consumibles originales Brother',
-    canonical: `${BASE_URL}/brother/`,
-    ogTitle: 'Impresoras Brother para Empresas en Colombia',
-    ogType: 'website',
-    ogImage: `${BASE_URL}/og-default.png`,
-    breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Infraestructura', url: '/#infraestructura' }, { name: 'Brother', url: '/brother/' }],
-    jsonLd: product('Impresoras Brother Empresariales', 'Brother', 'Impresoras láser, multifuncionales y escáneres de la línea Brother Workhorse con seguridad Triple Layer Security y consumibles originales', { rating: { value: '4.7', count: '50' }, image: `${BASE_URL}/og-default.png` }),
-    // faqJsonLd retirado: declaraba 4 preguntas que no existen en la pagina.
-    // Es el contenido FAQ mas solido del sitio (modelos, premios con anio,
-    // capacidades). Recuperable en git: merece renderizarse y reponerse.
   },
 
   // =====================================================

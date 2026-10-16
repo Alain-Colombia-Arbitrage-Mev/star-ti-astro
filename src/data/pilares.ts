@@ -122,14 +122,6 @@ export const pilares: Pilar[] = [
         nameEn: 'Ethical Hacking and Pentesting',
         shortDescriptionEn: 'Professional CEH/OSCP-certified penetration testing. Complete security audit with an executive report.',
       },
-      {
-        slug: 'rthreat-bogota-colombia',
-        brand: 'rThreat',
-        name: 'Red Team & BAS',
-        shortDescription: 'Simulacion de brechas y ataques con malware real en entornos controlados. Validacion de controles de seguridad.',
-        nameEn: 'Red Team & BAS',
-        shortDescriptionEn: 'Breach and attack simulation with real malware in controlled environments. Validation of security controls.',
-      },
     ],
   },
   {
@@ -175,14 +167,6 @@ export const pilares: Pilar[] = [
         nameEn: 'Password and Access Management',
         shortDescriptionEn: 'Zero-knowledge encrypted vault, MFA, SSO and 100+ access policies. Evidence for ISO 27001 controls.',
       },
-      {
-        slug: 'black-duck',
-        brand: 'Black Duck',
-        name: 'Application Security Testing',
-        shortDescription: 'Analisis de seguridad de aplicaciones (SAST/DAST/SCA). Deteccion de vulnerabilidades en codigo y dependencias.',
-        nameEn: 'Application Security Testing',
-        shortDescriptionEn: 'Application security analysis (SAST/DAST/SCA). Detection of vulnerabilities in code and dependencies.',
-      },
     ],
   },
 ];
@@ -201,12 +185,6 @@ export const infraServices: Product[] = [
     shortDescription: 'El escritorio remoto mas rapido del mundo. 60 FPS, latencia <16ms, cifrado TLS 1.2.',
   },
   {
-    slug: 'soti-mdm',
-    brand: 'SOTI',
-    name: 'MobiControl MDM',
-    shortDescription: 'Gestion de dispositivos moviles para logistica, retail, manufactura y salud.',
-  },
-  {
     slug: 'cableado-estructurado',
     brand: 'Star Solutions TI',
     name: 'Cableado Estructurado',
@@ -217,11 +195,5 @@ export const infraServices: Product[] = [
     brand: 'Star Solutions TI',
     name: 'Equipos de Computo',
     shortDescription: 'Hardware empresarial: laptops, desktops, workstations y All-in-One.',
-  },
-  {
-    slug: 'brother',
-    brand: 'Brother',
-    name: 'Impresoras y Multifuncionales',
-    shortDescription: 'Distribuidor autorizado Brother. Impresoras laser, multifuncion y consumibles.',
   },
 ];

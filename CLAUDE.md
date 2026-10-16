@@ -40,12 +40,12 @@ claro y no técnico, y explicar cada cambio antes de publicarlo.
   funcione.
 - El correo se activa cuando exista el secreto `RESEND_API_KEY` en el Worker.
   Los pasos están en `docs/configurar-correo-formularios.md`.
-- Componente reutilizable: `src/components/ConsultoriaForm.astro`. Campo "Servicio de Interés" como
-  lista desplegable con 5 áreas:
-  Ciberseguridad y protección de datos, Certificación ISO 27001, Seguridad de Email,
-  Equipos de cómputo, Acceso Remoto y Soporte IT.
-- Ese formulario está en el inicio y en las 20 páginas del menú (Star Protection, Star Inspection,
-  Star Compliance y Más Soluciones).
+- Componente reutilizable: `src/components/ConsultoriaForm.astro`. Solo en el inicio muestra
+  "Servicio de Interés" (`showService`) con 5 áreas: Ciberseguridad y protección de datos,
+  Certificación ISO 27001, Seguridad de Email, Equipos de cómputo, Acceso Remoto y Soporte IT.
+  En las páginas de producto el servicio es la propia página y se envía oculto.
+- Ese formulario está en el inicio y en todas las páginas del menú (Star Protection, Star
+  Inspection, Star Compliance y Más Soluciones).
 - Cada solicitud indica desde qué página se llenó (`sourceForm`, p. ej. "Bitdefender - Consultoría
   gratuita"): va en el asunto del correo ("[Bitdefender] …"), en un recuadro al inicio del correo y
   al comienzo del título del registro en Airtable.
@@ -63,6 +63,18 @@ Publicado en vivo el 16-oct-2026 (rama `produccion`):
   que descarga el certificado (`public/certificados/`). El certificado aún muestra la dirección
   anterior; pedir a SGS que la actualice en la próxima auditoría.
 
+En `star-solutions/desarrollo`, pendiente de publicar (pasar a `produccion`):
+- "Servicio de Interés" solo en el formulario del inicio.
+- Promesas de respuesta "en menos de 2 horas" cambiadas por "a la mayor brevedad" (Contacto,
+  Cableado, Kaspersky, Equipos de cómputo, descripción SEO de /contacto).
+- Páginas nuevas: `/kymatio/` (Star Protection, después de Hornetsecurity) y `/lastpass/`
+  (Star Compliance, después de Netwrix). Contenido basado en las webs oficiales; confirmar con
+  George si hay acuerdo comercial con ambas marcas.
+- Páginas retiradas: Brother, SOTI MobiControl, Black Duck y rThreat (Red Team & BAS). Sus URLs
+  redirigen con 301 (worker y `public/_redirects`): /brother/ → /equipos-computo/,
+  /soti-mdm/ → /teamviewer/, /black-duck/ y /rthreat-bogota-colombia/ → /hacking-etico/.
+  No volver a crear esas URLs sin quitar antes la redirección.
+
 Resend (configurado el 16-oct-2026):
 - Cuenta de Resend creada por George. Dominio `star-ti.com` verificado (región São Paulo).
 - Los registros de Resend están en `send.star-ti.com` y `resend._domainkey.star-ti.com`. Los MX de
@@ -72,16 +84,14 @@ Resend (configurado el 16-oct-2026):
 - Si en Resend quedó una clave "Onboarding" con acceso total y nadie la usa, conviene borrarla.
 
 Pendiente:
-1. Probar el envío desde la vista previa de `star-solutions/desarrollo` (p. ej. desde /bitdefender/):
-   que llegue a los miembros de solicitudes@star-ti.com, que no caiga en spam y que se vea en Resend → Emails.
-2. Decidir si se agrega una 6.ª área (Cableado estructurado / Impresoras Brother) al formulario.
-3. Decidir si las 6 páginas con formulario propio (Kaspersky, rThreat, ISO 27001, Mejores empresas
-   ISO, Cableado, Equipos de cómputo) conservan los dos formularios o solo el estándar.
-4. Quitar "Respuesta en menos de 2 horas" de la descripción SEO de /contacto (`src/data/seo.ts`).
-5. Revisar la cifra "590K+ Clientes Satisfechos" del inicio: no está claro de dónde sale y podría
-   ser una afirmación difícil de sustentar.
-6. Revisar en Microsoft 365 que el grupo solicitudes@ acepte correos externos (si no, rebotan).
-7. A futuro: pasar a cuentas de la empresa el dominio, Cloudflare, GitHub y Airtable (hoy están en
+1. Hecho: prueba de correo desde la vista previa llegó a solicitudes@ con la etiqueta de origen, y
+   el grupo acepta correos externos. Falta una prueba desde star-ti.com y revisar Airtable.
+2. Decidir si las 5 páginas con formulario propio (Kaspersky, ISO 27001, Mejores empresas ISO,
+   Cableado, Equipos de cómputo) conservan los dos formularios o solo el estándar.
+3. Revisar la cifra "590K+ Clientes Satisfechos" del inicio: no está claro de dónde sale y podría
+   ser una afirmación difícil de sustentar. Unificar también "más de 3,000 empresas" (inicio) con
+   "más de 500 empresas" (Contacto).
+4. A futuro: pasar a cuentas de la empresa el dominio, Cloudflare, GitHub y Airtable (hoy están en
    cuentas de Alain).
 
 ## Comandos
