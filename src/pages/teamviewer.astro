@@ -4,6 +4,7 @@ import Navbar from '@components/Navbar.astro';
 import Footer from '@components/Footer.astro';
 import ConsultoriaForm from '@components/ConsultoriaForm.astro';
 import WhatsAppButton from '@components/WhatsAppButton.astro';
+import BrandLogoCard from '@components/BrandLogoCard.astro';
 import { seoData } from '@data/seo';
 
 const seo = seoData.teamviewer;
@@ -135,7 +136,7 @@ const seo = seoData.teamviewer;
 
             <!-- Hero Image -->
             <div class="mt-6 flex items-center justify-center">
-              <img src="/assets/emblema-seguridad-cloud.webp" alt="TeamViewer control remoto empresarial seguro con cifrado" class="w-full max-w-xs rounded-2xl shadow-xl" width="320" height="320" loading="lazy" />
+              <BrandLogoCard src="/marcas/teamviewer.webp" alt="Logo oficial de TeamViewer" width={800} height={107} maxWidth="max-w-xs" />
             </div>
           </div>
         </div>

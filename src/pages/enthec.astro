@@ -4,6 +4,7 @@ import Navbar from '@components/Navbar.astro';
 import Footer from '@components/Footer.astro';
 import ConsultoriaForm from '@components/ConsultoriaForm.astro';
 import WhatsAppButton from '@components/WhatsAppButton.astro';
+import BrandLogoCard from '@components/BrandLogoCard.astro';
 import { seoData } from '@data/seo';
 
 const seo = seoData.enthec;
@@ -49,14 +50,7 @@ const seo = seoData.enthec;
             </div>
           </div>
           <div class="hidden lg:flex items-center justify-center">
-            <img
-              src="/assets/icono-ojo-monitoreo-digital.webp"
-              alt="Icono de monitoreo digital para vigilancia de superficie de ataque Enthec"
-              class="w-full max-w-md mx-auto rounded-2xl shadow-xl"
-              width="400"
-              height="400"
-              loading="lazy"
-            />
+            <BrandLogoCard src="/marcas/enthec.webp" alt="Logo oficial de Enthec" width={800} height={152} maxWidth="max-w-md" />
           </div>
         </div>
       </div>

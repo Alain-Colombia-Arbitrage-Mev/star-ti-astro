@@ -4,6 +4,7 @@ import Navbar from '@components/Navbar.astro';
 import Footer from '@components/Footer.astro';
 import ConsultoriaForm from '@components/ConsultoriaForm.astro';
 import WhatsAppButton from '@components/WhatsAppButton.astro';
+import BrandLogoCard from '@components/BrandLogoCard.astro';
 import { seoData } from '@data/seo';
 
 const seo = seoData.anydesk;
@@ -79,7 +80,7 @@ const seo = seoData.anydesk;
 
         <!-- Hero Image -->
         <div class="hidden lg:flex items-center justify-center mt-12">
-          <img src="/assets/icono-dispositivo-endpoint-security.webp" alt="AnyDesk escritorio remoto empresarial ultra rápido" class="w-full max-w-sm rounded-2xl shadow-xl" width="384" height="384" loading="lazy" />
+          <BrandLogoCard src="/marcas/anydesk.webp" alt="Logo oficial de AnyDesk" width={800} height={148} maxWidth="max-w-sm" />
         </div>
       </div>
     </section>

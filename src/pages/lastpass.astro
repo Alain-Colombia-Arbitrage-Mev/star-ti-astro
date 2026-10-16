@@ -4,6 +4,7 @@ import Navbar from '@components/Navbar.astro';
 import Footer from '@components/Footer.astro';
 import ConsultoriaForm from '@components/ConsultoriaForm.astro';
 import WhatsAppButton from '@components/WhatsAppButton.astro';
+import BrandLogoCard from '@components/BrandLogoCard.astro';
 import { seoData } from '@data/seo';
 import { lastpassFaqs } from '@data/lastpass';
 
@@ -150,14 +151,7 @@ const LP_SECTORS = [
             </div>
           </div>
           <div class="hidden lg:flex items-center justify-center">
-            <img
-              src="/assets/emblema-seguridad-cloud.webp"
-              alt="Emblema de seguridad en la nube para la gestión de contraseñas empresariales con LastPass"
-              class="w-full max-w-md mx-auto rounded-2xl shadow-xl"
-              width="400"
-              height="400"
-              loading="eager"
-            />
+            <BrandLogoCard src="/marcas/lastpass.webp" alt="Logo oficial de LastPass" width={800} height={161} maxWidth="max-w-md" />
           </div>
         </div>
       </div>

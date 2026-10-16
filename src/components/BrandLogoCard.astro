@@ -1,0 +1,30 @@
+---
+// Tarjeta con el logo oficial de la marca para el encabezado de cada página de
+// herramienta (reemplaza las imágenes genéricas). Logos en public/marcas/,
+// normalizados a WebP de hasta 800x320 px con fondo transparente.
+interface Props {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+  /** Ancho máximo de la tarjeta (clase de Tailwind). */
+  maxWidth?: string;
+}
+
+const { src, alt, width, height, maxWidth = 'max-w-md' } = Astro.props;
+---
+
+<div class:list={['brand-logo-card relative w-full mx-auto aspect-[4/3] rounded-3xl bg-white border border-gray-100 shadow-xl overflow-hidden flex items-center justify-center', maxWidth]}>
+  <div class="absolute -top-16 -right-16 w-48 h-48 rounded-full bg-red-50" aria-hidden="true"></div>
+  <div class="absolute -bottom-20 -left-20 w-56 h-56 rounded-full bg-gray-50" aria-hidden="true"></div>
+  <img
+    src={src}
+    alt={alt}
+    width={width}
+    height={height}
+    class="relative w-[72%] max-h-[46%] object-contain"
+    loading="eager"
+    fetchpriority="high"
+    decoding="async"
+  />
+</div>

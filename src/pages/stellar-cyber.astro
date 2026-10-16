@@ -4,6 +4,7 @@ import Navbar from '@components/Navbar.astro';
 import Footer from '@components/Footer.astro';
 import ConsultoriaForm from '@components/ConsultoriaForm.astro';
 import WhatsAppButton from '@components/WhatsAppButton.astro';
+import BrandLogoCard from '@components/BrandLogoCard.astro';
 import { seoData } from '@data/seo';
 
 const seo = seoData['stellar-cyber'];
@@ -72,14 +73,7 @@ const SC_SECTORS = [
             </div>
           </div>
           <div class="hidden lg:flex items-center justify-center">
-            <img
-              src="/assets/robot-ia-laboratorio-monitores.webp"
-              alt="Robot de inteligencia artificial en laboratorio con monitores para plataforma SecOps Stellar Cyber Open XDR"
-              class="w-full max-w-md mx-auto rounded-2xl shadow-xl"
-              width="400"
-              height="400"
-              loading="lazy"
-            />
+            <BrandLogoCard src="/marcas/stellar-cyber.webp" alt="Logo oficial de Stellar Cyber" width={800} height={251} maxWidth="max-w-md" />
           </div>
         </div>
       </div>
