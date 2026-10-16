@@ -1,0 +1,109 @@
+---
+// Franja animada con los logos de clientes (inicio). La lista se duplica para que
+// el desplazamiento sea continuo; la copia va oculta para lectores de pantalla.
+// Se detiene al pasar el mouse y queda estática si el usuario pidió menos movimiento.
+import { clientes } from '@data/clientes';
+---
+
+<section class="bg-white py-12 sm:py-16 border-b border-gray-100" aria-labelledby="clientes-titulo">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 id="clientes-titulo" class="text-center text-gray-500 text-sm font-medium uppercase tracking-wider mb-10">
+      Empresas y entidades que confían en nosotros
+    </h2>
+  </div>
+
+  <div class="clientes-viewport">
+    <div class="clientes-track">
+      {[0, 1].map((copy) => (
+        <ul class="clientes-list" aria-hidden={copy === 1 ? 'true' : undefined}>
+          {clientes.map((c) => (
+            <li class="clientes-item">
+              <img
+                src={c.logo}
+                alt={copy === 0 ? c.name : ''}
+                title={c.name}
+                width={c.width}
+                height={c.height}
+                loading="eager"
+                decoding="async"
+                class="clientes-logo"
+              />
+            </li>
+          ))}
+        </ul>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .clientes-viewport {
+    overflow: hidden;
+    /* Desvanecido suave en los bordes */
+    mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+  }
+  .clientes-track {
+    display: flex;
+    width: max-content;
+    animation: clientes-scroll 45s linear infinite;
+  }
+  .clientes-viewport:hover .clientes-track {
+    animation-play-state: paused;
+  }
+  .clientes-list {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    padding-right: 4rem;
+    margin: 0;
+    list-style: none;
+  }
+  .clientes-item {
+    flex: none;
+  }
+  .clientes-logo {
+    height: 2.5rem;
+    width: auto;
+    max-width: 11rem;
+    object-fit: contain;
+    filter: grayscale(1);
+    opacity: 0.65;
+    transition: filter 0.3s ease, opacity 0.3s ease;
+  }
+  .clientes-logo:hover {
+    filter: none;
+    opacity: 1;
+  }
+  @media (min-width: 640px) {
+    .clientes-logo {
+      height: 3rem;
+      max-width: 13rem;
+    }
+  }
+  @keyframes clientes-scroll {
+    to {
+      transform: translateX(-50%);
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .clientes-viewport {
+      mask-image: none;
+      -webkit-mask-image: none;
+    }
+    .clientes-track {
+      animation: none;
+      width: auto;
+      justify-content: center;
+    }
+    .clientes-list {
+      flex-wrap: wrap;
+      justify-content: center;
+      row-gap: 2rem;
+      padding: 0 1rem;
+    }
+    .clientes-list[aria-hidden='true'] {
+      display: none;
+    }
+  }
+</style>
