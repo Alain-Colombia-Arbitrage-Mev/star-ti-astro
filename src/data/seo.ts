@@ -1,5 +1,6 @@
 import { isoFaqs } from './iso27001Landing';
 import { kymatioFaqs } from './kymatio';
+import { lastpassFaqs } from './lastpass';
 
 export interface SEOData {
   title: string;
@@ -520,6 +521,18 @@ export const seoData: Record<string, SEOData> = {
       { q: '¿Cuál es la diferencia entre Netwrix Auditor y Netwrix Access Analyzer?', a: 'Netwrix Auditor se enfoca en auditoría de cambios y cumplimiento: registra quién modificó qué en AD, servidores de archivos y entornos Microsoft 365. Netwrix Access Analyzer (antes StealthAUDIT) es el producto de Data Access Governance y DSPM: descubre y clasifica datos sensibles en 40+ fuentes, monitorea la actividad de Microsoft Copilot y automatiza la remediación de permisos. Son SKUs distintos que se complementan.' },
       { q: '¿Netwrix Privilege Secure es solo un gestor de contraseñas?', a: 'No. Netwrix Privilege Secure implementa el principio de Zero Standing Privilege: las credenciales privilegiadas se crean Just-In-Time para cada sesión y se eliminan al terminar. Esto es distinto de las soluciones de vaulting clásico que solo guardan contraseñas. Incluye grabación de sesiones, monitoreo en tiempo real y eliminación de cuentas permanentes de administrador.' },
     ]),
+  },
+  lastpass: {
+    title: 'LastPass Business Colombia | Gestor de Contraseñas | Star Solutions TI',
+    description: 'LastPass Business: gestor de contraseñas empresarial con cifrado zero-knowledge, MFA, SSO y 100+ políticas. Controles ISO 27001 de acceso. Implementamos en Colombia.',
+    keywords: 'LastPass Colombia, LastPass Business, gestor de contraseñas empresarial, gestión de credenciales, control de accesos, gestión de identidades, MFA, SSO, ISO 27001 control 5.17, cumplimiento Ley 1581',
+    canonical: `${BASE_URL}/lastpass/`,
+    ogTitle: 'LastPass Business - Gestión de Contraseñas y Accesos para Cumplimiento en Colombia',
+    ogType: 'website',
+    ogImage: `${BASE_URL}/og-default.png`,
+    breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Star Compliance', url: '/#star-compliance' }, { name: 'LastPass', url: '/lastpass/' }],
+    jsonLd: product('LastPass Business', 'LastPass', 'Gestor de contraseñas y accesos empresarial con cifrado de conocimiento cero AES-256, más de 100 políticas de seguridad, MFA, SSO, carpetas compartidas, monitoreo de dark web e integración con Microsoft Entra ID, Google Workspace y Okta. Star Solutions TI lo implementa en Colombia con soporte en español.', { image: `${BASE_URL}/og-default.png` }),
+    faqJsonLd: faqSchema(lastpassFaqs),
   },
   'black-duck': {
     title: 'Black Duck AppSec: Coverity, SCA, Polaris | Star Solutions TI',

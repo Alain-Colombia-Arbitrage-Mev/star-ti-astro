@@ -37,6 +37,7 @@ const TRAILING_SLASH_PATHS = new Set([
   "/bitdefender",
   "/kaspersky",
   "/kymatio",
+  "/lastpass",
   "/enthec",
   "/vicarius",
   "/stellar-cyber",
