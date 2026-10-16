@@ -1,4 +1,5 @@
 import { isoFaqs } from './iso27001Landing';
+import { kymatioFaqs } from './kymatio';
 
 export interface SEOData {
   title: string;
@@ -235,6 +236,18 @@ export const seoData: Record<string, SEOData> = {
       { q: '¿Proofpoint puede capacitar a mis empleados contra phishing con ZenGuide?', a: 'Sí. Proofpoint ZenGuide (Proofpoint Security Awareness) incluye simulaciones de phishing personalizadas y micro-capacitaciones interactivas basadas en riesgo, vinculadas a los datos de Very Attacked People (VAPs) para priorizar a los usuarios más atacados de la organización.' },
       { q: '¿Qué es Collaboration Security Prime y para quién aplica?', a: 'Collaboration Security Prime (también llamado Prime Threat Protection) es el tier premium unificado de Proofpoint lanzado en abril 2025. Combina protección multicanal (email, Teams, Slack, SharePoint), defensa contra ataques multietapa, guía de riesgo humano e impersonation protection en una sola plataforma. Aplica a empresas que buscan consolidar herramientas de seguridad, reemplazando aproximadamente 45+ soluciones puntuales por una única plataforma.' },
     ]),
+  },
+  kymatio: {
+    title: 'Kymatio Colombia | Gestión del Riesgo Humano | Star Solutions TI',
+    description: 'Kymatio: gestión del riesgo humano en ciberseguridad. Concienciación adaptativa, simulaciones de phishing y vishing, credenciales expuestas y bienestar digital.',
+    keywords: 'Kymatio Colombia, gestión del riesgo humano, human risk management, concienciación en ciberseguridad, simulación de phishing, vishing, credenciales expuestas, security awareness, ISO 27001 control 6.3',
+    canonical: `${BASE_URL}/kymatio/`,
+    ogTitle: 'Kymatio - Gestión del Riesgo Humano en Ciberseguridad para Empresas en Colombia',
+    ogType: 'website',
+    ogImage: `${BASE_URL}/og-default.png`,
+    breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Star Protection', url: '/#star-protection' }, { name: 'Kymatio', url: '/kymatio/' }],
+    jsonLd: product('Kymatio HRM', 'Kymatio', 'Plataforma SaaS de gestión del riesgo humano en ciberseguridad: evaluación y concienciación adaptativa, simulaciones de ingeniería social (phishing, smishing, vishing y ransomware), vigilancia de credenciales expuestas (Breach Scan) y bienestar digital. Star Solutions TI la implementa en Colombia con soporte en español.', { image: `${BASE_URL}/og-default.png` }),
+    faqJsonLd: faqSchema(kymatioFaqs),
   },
 
   // =====================================================

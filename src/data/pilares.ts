@@ -69,6 +69,14 @@ export const pilares: Pilar[] = [
         nameEn: 'Endpoint + Servers + Services',
         shortDescriptionEn: 'Endpoint protection with HuMachine Intelligence, centralized management and encryption for SMB and enterprise.',
       },
+      {
+        slug: 'kymatio',
+        brand: 'Kymatio',
+        name: 'Gestion del Riesgo Humano',
+        shortDescription: 'Concienciacion adaptativa, simulaciones de phishing y vishing, credenciales expuestas y bienestar digital del equipo.',
+        nameEn: 'Human Risk Management',
+        shortDescriptionEn: 'Adaptive awareness, phishing and vishing simulations, exposed credentials and digital wellbeing.',
+      },
     ],
   },
   {

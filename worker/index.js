@@ -36,6 +36,7 @@ const LEGACY_REDIRECTS = new Map([
 const TRAILING_SLASH_PATHS = new Set([
   "/bitdefender",
   "/kaspersky",
+  "/kymatio",
   "/enthec",
   "/vicarius",
   "/stellar-cyber",
