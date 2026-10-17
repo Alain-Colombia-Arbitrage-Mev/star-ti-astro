@@ -101,7 +101,7 @@ export const seoData: Record<string, SEOData> = {
   // =====================================================
   home: {
     title: 'Ciberseguridad Empresarial Colombia | Star Solutions TI',
-    description: 'Seguridad informática para empresas: antivirus EDR/XDR, hacking ético, ISO 27001 y monitoreo 24/7. Más de 1.150 empresas atendidas desde 2013. Cotice gratis.',
+    description: 'Seguridad informática para empresas: antivirus EDR/XDR, hacking ético, ISO 27001 y monitoreo 24/7. Más de 1.150 empresas atendidas desde 2016. Cotice gratis.',
     keywords: 'ciberseguridad empresarial Colombia, antivirus empresas, ISO 27001, Bitdefender, Kaspersky, hacking ético, pentesting, SOC, seguridad informatica Bogotá',
     canonical: `${BASE_URL}/`,
     ogTitle: 'Star Solutions TI - Ciberseguridad Empresarial Colombia',
@@ -118,11 +118,11 @@ export const seoData: Record<string, SEOData> = {
       alternateName: ['Star Solutions TI', 'Starsolution', 'Star TI'],
       url: BASE_URL,
       logo: `${BASE_URL}/logo.png`,
-      description: 'Empresa de ciberseguridad empresarial con más de 13 años protegiendo organizaciones en Colombia, Venezuela y Estados Unidos',
+      description: 'Empresa de ciberseguridad empresarial con 10 años protegiendo organizaciones en Colombia, Venezuela y Estados Unidos',
       address: { '@type': 'PostalAddress', streetAddress: 'Calle 52 A # 22 - 16', addressLocality: 'Bogotá', addressCountry: 'CO' },
       telephone: '+573007010017',
       email: 'contacto@star-ti.com',
-      foundingDate: '2013',
+      foundingDate: '2016',
       numberOfEmployees: { '@type': 'QuantitativeValue', minValue: 15 },
       sameAs: ['https://www.facebook.com/starsabordo', 'https://www.linkedin.com/company/starsolution-sas', 'https://x.com/stabordo'],
       knowsAbout: ['Cybersecurity', 'Seguridad Informática', 'Seguridad de la Información', 'ISO 27001', 'Penetration Testing', 'EDR/XDR', 'Data Loss Prevention'],
@@ -698,7 +698,7 @@ export const seoData: Record<string, SEOData> = {
   // =====================================================
   'sobre-nosotros': {
     title: 'Sobre Nosotros | Star Solutions TI SAS',
-    description: 'Star Solutions TI SAS: 13+ años en ciberseguridad y seguridad informática empresarial. Oficinas en Colombia, Venezuela y Miami. Equipo CEH, OSCP, CISSP.',
+    description: 'Star Solutions TI SAS: 10 años en ciberseguridad y seguridad informática empresarial. Oficinas en Colombia, Venezuela y Miami. Equipo CEH, OSCP, CISSP.',
     keywords: 'Star Solutions TI, empresa ciberseguridad Colombia, sobre nosotros, equipo expertos seguridad, historia',
     canonical: `${BASE_URL}/sobre-nosotros/`,
     ogTitle: 'Sobre Nosotros - Star Solutions TI SAS',
@@ -709,7 +709,7 @@ export const seoData: Record<string, SEOData> = {
       '@context': 'https://schema.org',
       '@type': 'AboutPage',
       name: 'Sobre Star Solutions TI SAS',
-      mainEntity: { ...ORG, foundingDate: '2013', numberOfEmployees: { '@type': 'QuantitativeValue', minValue: 15 } },
+      mainEntity: { ...ORG, foundingDate: '2016', numberOfEmployees: { '@type': 'QuantitativeValue', minValue: 15 } },
     },
   },
   contacto: {
@@ -1195,7 +1195,7 @@ export const seoData: Record<string, SEOData> = {
       keywords: 'ciberseguridad Colombia, ransomware, phishing, brecha de datos, ISO 27001, PYMES Colombia',
     },
     faqJsonLd: faqSchema([
-      { q: '¿De dónde provienen los datos del informe?', a: 'Los datos provienen de tres fuentes: (1) análisis anonimizado de incidentes en nuestra base de más de 1.150 empresas atendidas desde 2013, (2) bases de datos públicas de brechas como COLCERT, Policía Nacional y Have I Been Pwned, y (3) el Verizon Data Breach Investigations Report (DBIR) con contexto latinoamericano.' },
+      { q: '¿De dónde provienen los datos del informe?', a: 'Los datos provienen de tres fuentes: (1) análisis anonimizado de incidentes en nuestra base de más de 1.150 empresas atendidas desde 2016, (2) bases de datos públicas de brechas como COLCERT, Policía Nacional y Have I Been Pwned, y (3) el Verizon Data Breach Investigations Report (DBIR) con contexto latinoamericano.' },
       { q: '¿Puedo citar este informe en presentaciones académicas o corporativas?', a: 'Sí. Este informe es de libre difusión para uso académico, periodístico y corporativo, siempre que se cite la fuente como: "Star Solutions TI SAS – Informe de Ciberseguridad Empresarial Colombia 2026, star-ti.com". Para uso comercial o redistribución masiva, contáctenos.' },
       { q: '¿Cada cuánto se actualiza el informe?', a: 'El informe se publica anualmente cada enero con los datos del año anterior. Sin embargo, actualizamos las estadísticas clave trimestralmente cuando ocurren incidentes significativos en el ecosistema colombiano. Suscríbase a nuestra lista para recibir actualizaciones automáticas.' },
       { q: '¿Mi empresa podría estar en riesgo según los datos del informe?', a: 'Estadísticamente, el 73% de empresas colombianas sufrió al menos un incidente de seguridad en 2025. Si su empresa opera en los sectores financiero, salud, gobierno o manufactura, el riesgo es aún mayor. Ofrecemos un diagnóstico gratuito de exposición que analiza su superficie de ataque en menos de 48 horas.' },
