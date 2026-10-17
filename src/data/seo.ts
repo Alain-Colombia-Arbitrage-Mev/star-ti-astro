@@ -52,43 +52,25 @@ const HREFLANG_CONTACTO = [
   { lang: 'x-default', href: `${BASE_URL}/contacto/` },
 ];
 
-function product(
+function resellerService(
   name: string,
   brand: string,
   desc: string,
-  opts: { rating?: { value: string; count: string }; image?: string } = {},
+  opts: { image?: string } = {},
 ) {
+  // Service y no Product: se cotiza (sin precio publico) y lo que se vende es
+  // licenciamiento + implementacion. Sin aggregateRating/review: Google exige
+  // que las resenas marcadas sean reales y visibles en la pagina.
   const base: Record<string, unknown> = {
     '@context': 'https://schema.org',
-    '@type': 'Product',
+    '@type': 'Service',
     name,
     description: desc,
     brand: { '@type': 'Brand', name: brand },
-    offers: {
-      '@type': 'Offer',
-      availability: 'https://schema.org/InStock',
-      priceCurrency: 'COP',
-      seller: ORG,
-    },
+    provider: ORG,
+    areaServed: { '@type': 'Country', name: 'Colombia' },
   };
   if (opts.image) base.image = opts.image;
-  if (opts.rating) {
-    base.aggregateRating = {
-      '@type': 'AggregateRating',
-      ratingValue: opts.rating.value,
-      reviewCount: opts.rating.count,
-      bestRating: '5',
-    };
-    const productLabel = name.startsWith(brand) ? name : `${brand} ${name}`;
-    base.review = [
-      {
-        '@type': 'Review',
-        author: { '@type': 'Person', name: 'Carlos Mendoza' },
-        reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
-        reviewBody: `Implementación de ${productLabel} sin fricciones, soporte local en español y reportes listos para auditoría ISO 27001.`,
-      },
-    ];
-  }
   return base;
 }
 
@@ -121,7 +103,7 @@ export const seoData: Record<string, SEOData> = {
   // =====================================================
   home: {
     title: 'Ciberseguridad Empresarial Colombia | Star Solutions TI',
-    description: 'Seguridad informática para empresas: antivirus EDR/XDR, hacking ético, ISO 27001 y monitoreo 24/7. Más de 3,000 empresas protegidas en Colombia. Cotice gratis.',
+    description: 'Seguridad informática para empresas: antivirus EDR/XDR, hacking ético, ISO 27001 y monitoreo 24/7. Más de 1.150 empresas atendidas desde 2016. Cotice gratis.',
     keywords: 'ciberseguridad empresarial Colombia, antivirus empresas, ISO 27001, Bitdefender, Kaspersky, hacking ético, pentesting, SOC, seguridad informatica Bogotá',
     canonical: `${BASE_URL}/`,
     ogTitle: 'Star Solutions TI - Ciberseguridad Empresarial Colombia',
@@ -133,17 +115,29 @@ export const seoData: Record<string, SEOData> = {
       '@context': 'https://schema.org',
       '@type': 'Organization',
       name: 'Star Solutions TI S.A.S.',
+      legalName: 'Star Solutions TI S.A.S.',
+      taxID: '900968161-7',
+      alternateName: ['Star Solutions TI', 'Starsolution', 'Star TI'],
+      hasCredential: {
+        '@type': 'EducationalOccupationalCredential',
+        name: 'ISO/IEC 27001:2022',
+        credentialCategory: 'Certificación de sistema de gestión de seguridad de la información',
+        identifier: 'CO25/00000158',
+        url: `${BASE_URL}/certificados/certificado-iso-27001-star-solutions-ti.pdf`,
+        recognizedBy: { '@type': 'Organization', name: 'SGS Colombia S.A.S.', url: 'https://www.sgs.com.co' },
+        validFrom: '2025-11-14',
+        validUntil: '2027-11-12',
+      },
       url: BASE_URL,
       logo: `${BASE_URL}/logo.png`,
-      description: 'Empresa de ciberseguridad empresarial con más de 13 años protegiendo organizaciones en Colombia, Venezuela y Estados Unidos',
+      description: 'Empresa de ciberseguridad empresarial con 10 años protegiendo organizaciones en Colombia, Venezuela y Estados Unidos',
       address: { '@type': 'PostalAddress', streetAddress: 'Cra 27 # 49 - 19', addressLocality: 'Bogotá', addressCountry: 'CO' },
       telephone: '+573007010017',
       email: 'contacto@star-ti.com',
-      foundingDate: '2013',
+      foundingDate: '2016',
       numberOfEmployees: { '@type': 'QuantitativeValue', minValue: 15 },
-      sameAs: ['https://www.facebook.com/starsabordo', 'https://www.linkedin.com/company/starsolution-sas', 'https://x.com/stabordo'],
+      sameAs: ['https://www.facebook.com/starsolutionstisas/', 'https://www.instagram.com/starsolutionti/', 'https://www.linkedin.com/company/starsolutionstisas/', 'https://x.com/tistarsolutions'],
       knowsAbout: ['Cybersecurity', 'Seguridad Informática', 'Seguridad de la Información', 'ISO 27001', 'Penetration Testing', 'EDR/XDR', 'Data Loss Prevention'],
-      aggregateRating: { '@type': 'AggregateRating', ratingValue: '4.9', reviewCount: '127', bestRating: '5' },
     },
   },
 
@@ -160,11 +154,11 @@ export const seoData: Record<string, SEOData> = {
     ogImage: `${BASE_URL}/og-default.png`,
     preconnect: ['https://www.bitdefender.com'],
     breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Star Protection', url: '/#star-protection' }, { name: 'Bitdefender', url: '/bitdefender/' }],
-    jsonLd: product(
+    jsonLd: resellerService(
       'Bitdefender GravityZone para empresas',
       'Bitdefender',
       'Licenciamiento e implementacion de Bitdefender GravityZone para empresas en Colombia, con EDR, XDR, Bitdefender MDR (SOC 24x7), CSPM+ y Patch Management. Star Solutions TI opera como partner oficial y distribuidor Bitdefender para empresas, con nivel Reseller Platinum, el más alto del programa de partners de Bitdefender.',
-      { rating: { value: '4.9', count: '127' }, image: `${BASE_URL}/og-default.png` },
+      { image: `${BASE_URL}/og-default.png` },
     ),
     faqJsonLd: faqSchema([
       { q: 'El despliegue masivo va a saturar la red de la oficina?', a: 'No en la práctica. Programamos la instalacion por grupos via Active Directory o GPO, en horarios valle, y aprovechamos el repositorio local que GravityZone deja en uno de sus servidores para que el agente no se descargue desde internet en cada equipo. Empresas de 200 endpoints suelen quedar protegidas durante una sola noche.' },
@@ -188,11 +182,11 @@ export const seoData: Record<string, SEOData> = {
     ogType: 'website',
     ogImage: `${BASE_URL}/og-default.png`,
     breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Star Protection', url: '/#star-protection' }, { name: 'Kaspersky', url: '/kaspersky/' }],
-    jsonLd: product(
+    jsonLd: resellerService(
       'Kaspersky Next para empresas',
       'Kaspersky',
       'Licenciamiento corporativo e implementacion local de Kaspersky Next en Colombia, con EDR Foundations, EDR Optimum, XDR Optimum, MXDR Optimum, EDR Expert y XDR Expert. Incluye System Watcher anti-ransomware con rollback, EDR, XDR y deteccion gestionada para empresas.',
-      { rating: { value: '4.8', count: '94' }, image: `${BASE_URL}/og-default.png` },
+      { image: `${BASE_URL}/og-default.png` },
     ),
     faqJsonLd: faqSchema([
       { q: '¿Star Solutions TI es distribuidor corporativo Kaspersky en Colombia?', a: 'Si. Star Solutions TI atiende empresas como partner autorizado y distribuidor corporativo Kaspersky en Colombia: cotizamos licencias Kaspersky Next, renovaciones, ampliaciones, implementacion tecnica y soporte en espanol para entornos B2B.' },
@@ -212,7 +206,7 @@ export const seoData: Record<string, SEOData> = {
     ogType: 'website',
     ogImage: `${BASE_URL}/og-default.png`,
     breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Star Protection', url: '/#star-protection' }, { name: 'Hornetsecurity', url: '/hornetsecurity/' }],
-    jsonLd: product('Hornetsecurity 365 Total Protection', 'Hornetsecurity', 'Seguridad email completa para Microsoft 365 con backup, archiving y cifrado', { rating: { value: '4.7', count: '68' }, image: `${BASE_URL}/og-default.png` }),
+    jsonLd: resellerService('Hornetsecurity 365 Total Protection', 'Hornetsecurity', 'Seguridad email completa para Microsoft 365 con backup, archiving y cifrado', { image: `${BASE_URL}/og-default.png` }),
     faqJsonLd: faqSchema([
       { q: '¿Hornetsecurity funciona solo con Microsoft 365?', a: 'Sí, Hornetsecurity 365 Total Protection está diseñado exclusivamente para Microsoft 365. Se integra nativamente con Exchange Online, OneDrive y SharePoint para protección completa del ecosistema Microsoft.' },
       { q: '¿Qué incluye la protección de Hornetsecurity?', a: 'Incluye filtrado de spam y malware, protección contra phishing y BEC, backup automático de buzones, archiving de email con cumplimiento legal, y cifrado de comunicaciones. Todo gestionado desde una consola cloud única.' },
@@ -229,7 +223,7 @@ export const seoData: Record<string, SEOData> = {
     ogType: 'website',
     ogImage: `${BASE_URL}/og-default.png`,
     breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Star Protection', url: '/#star-protection' }, { name: 'Proofpoint', url: '/proofpoint/' }],
-    jsonLd: product('Proofpoint Email Security', 'Proofpoint', 'Protección avanzada de email contra phishing, BEC y amenazas dirigidas con plataforma Nexus e IA people-centric', { rating: { value: '4.9', count: '102' }, image: `${BASE_URL}/og-default.png` }),
+    jsonLd: resellerService('Proofpoint Email Security', 'Proofpoint', 'Protección avanzada de email contra phishing, BEC y amenazas dirigidas con plataforma Nexus e IA people-centric', { image: `${BASE_URL}/og-default.png` }),
     faqJsonLd: faqSchema([
       { q: '¿Proofpoint funciona con Microsoft 365 y Google Workspace?', a: 'Sí. Proofpoint se integra nativamente con Microsoft 365, Google Workspace y servidores de correo on-premise mediante registros MX, sin instalar agentes en los equipos de los usuarios.' },
       { q: '¿Cuánto tiempo toma la implementación de Proofpoint?', a: 'La implementación básica toma entre 3 y 5 días hábiles. La optimización completa, incluyendo ajuste de políticas y módulos avanzados, se completa en 2 a 4 semanas según el tamaño de la organización.' },
@@ -247,7 +241,7 @@ export const seoData: Record<string, SEOData> = {
     ogType: 'website',
     ogImage: `${BASE_URL}/og-default.png`,
     breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Star Protection', url: '/#star-protection' }, { name: 'Kymatio', url: '/kymatio/' }],
-    jsonLd: product('Kymatio HRM', 'Kymatio', 'Plataforma SaaS de gestión del riesgo humano en ciberseguridad: evaluación y concienciación adaptativa, simulaciones de ingeniería social (phishing, smishing, vishing y ransomware), vigilancia de credenciales expuestas (Breach Scan) y bienestar digital. Star Solutions TI la implementa en Colombia con soporte en español.', { image: `${BASE_URL}/og-default.png` }),
+    jsonLd: resellerService('Kymatio HRM', 'Kymatio', 'Plataforma SaaS de gestión del riesgo humano en ciberseguridad: evaluación y concienciación adaptativa, simulaciones de ingeniería social (phishing, smishing, vishing y ransomware), vigilancia de credenciales expuestas (Breach Scan) y bienestar digital. Star Solutions TI la implementa en Colombia con soporte en español.', { image: `${BASE_URL}/og-default.png` }),
     faqJsonLd: faqSchema(kymatioFaqs),
   },
 
@@ -263,7 +257,7 @@ export const seoData: Record<string, SEOData> = {
     ogType: 'website',
     ogImage: `${BASE_URL}/og-default.png`,
     breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Star Inspection', url: '/#star-inspection' }, { name: 'Enthec', url: '/enthec/' }],
-    jsonLd: product('Enthec Kartos - Corporate Threat Watchbots', 'Enthec', 'Kartos es la plataforma EASM de Enthec para monitoreo continuo de la superficie de ataque externa corporativa: credenciales filtradas, dark web, phishing y riesgo de terceros. Star Solutions TI lo implementa en Colombia con soporte en español.', { rating: { value: '4.7', count: '41' }, image: `${BASE_URL}/og-default.png` }),
+    jsonLd: resellerService('Enthec Kartos - Corporate Threat Watchbots', 'Enthec', 'Kartos es la plataforma EASM de Enthec para monitoreo continuo de la superficie de ataque externa corporativa: credenciales filtradas, dark web, phishing y riesgo de terceros. Star Solutions TI lo implementa en Colombia con soporte en español.', { image: `${BASE_URL}/og-default.png` }),
     faqJsonLd: faqSchema([
       { q: 'Qué es Enthec y cuales son sus productos?', a: 'Enthec es una plataforma avanzada de cibervigilancia impulsada por IA (Advanced AI-driven Cyber-Surveillance Platform). Sus dos productos son Kartos, para monitoreo de la superficie de ataque externa corporativa (EASM), y Qondar, para vigilancia de la identidad digital de personas como directivos y altos cargos. Star Solutions TI implementa ambas soluciones en Colombia con soporte en español.' },
       { q: 'Necesito instalar algo en mis servidores para usar Kartos?', a: 'No. Kartos opera 100% de forma externa y no intrusiva, sin agentes, sin acceso a la red interna ni permisos especiales. Solo ingresa el dominio de su empresa y el monitoreo comienza de forma automática, tal como lo haria un atacante externo.' },
@@ -280,7 +274,7 @@ export const seoData: Record<string, SEOData> = {
     ogType: 'website',
     ogImage: `${BASE_URL}/og-default.png`,
     breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Star Inspection', url: '/#star-inspection' }, { name: 'Vicarius', url: '/vicarius/' }],
-    jsonLd: product('Vicarius vRx', 'Vicarius', 'Plataforma Full Cycle Vulnerability Management con Patchless Protection (DBI), vRx Scripting Engine, vIntelligence y vAnalyzer. Niche Player en Gartner MQ for Exposure Assessment Platforms 2025.', { rating: { value: '4.6', count: '38' }, image: `${BASE_URL}/og-default.png` }),
+    jsonLd: resellerService('Vicarius vRx', 'Vicarius', 'Plataforma Full Cycle Vulnerability Management con Patchless Protection (DBI), vRx Scripting Engine, vIntelligence y vAnalyzer. Niche Player en Gartner MQ for Exposure Assessment Platforms 2025.', { image: `${BASE_URL}/og-default.png` }),
     faqJsonLd: faqSchema([
       { q: 'Qué es Patchless Protection y como funciona?', a: 'Patchless Protection es un modulo de vRx que mitiga vulnerabilidades a nivel de memoria mediante Dynamic Binary Instrumentation (DBI), sin necesidad del parche oficial del fabricante. Bloquea el vector de explotacion en tiempo real, sin reinicios ni interrupciones de servicio, permitiendo proteger sistemas críticos mientras se planifica la ventana de parcheo definitivo.' },
       { q: 'Vicarius reemplaza a mi escaner de vulnerabilidades actual?', a: 'Sí. Vicarius vRx reemplaza herramientas como Nessus, Qualys o Rapid7, y además agrega remediación automatizada. Elimina el ciclo manual de escanear-reportar-parchear que consume semanas y reduce en un 80% el tiempo dedicado a parcheo manual según datos oficiales de Vicarius.' },
@@ -297,7 +291,7 @@ export const seoData: Record<string, SEOData> = {
     ogType: 'website',
     ogImage: `${BASE_URL}/og-default.png`,
     breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Star Inspection', url: '/#star-inspection' }, { name: 'Stellar Cyber', url: '/stellar-cyber/' }],
-    jsonLd: product('Stellar Cyber SecOps Platform', 'Stellar Cyber', 'Plataforma SecOps AI-Native con arquitectura Open XDR para detección y respuesta unificada de amenazas', { rating: { value: '4.8', count: '52' }, image: `${BASE_URL}/og-default.png` }),
+    jsonLd: resellerService('Stellar Cyber SecOps Platform', 'Stellar Cyber', 'Plataforma SecOps AI-Native con arquitectura Open XDR para detección y respuesta unificada de amenazas', { image: `${BASE_URL}/og-default.png` }),
     faqJsonLd: faqSchema([
       { q: 'Qué diferencia hay entre XDR y Open XDR?', a: 'El XDR tradicional solo integra productos del mismo fabricante. Open XDR integra cualquier herramienta de seguridad existente en su empresa, sin dependencia de un solo proveedor ni necesidad de reemplazar su stack actual.' },
       { q: 'Stellar Cyber reemplaza mi SIEM?', a: 'Sí. Stellar Cyber incluye AI-Native Next-Gen SIEM, NDR, UEBA, ITDR y AI-Powered Case Orchestration en una sola plataforma. Además elimina el modelo de precios por volumen de logs que hace costosos a los SIEM tradicionales.' },
@@ -476,7 +470,7 @@ export const seoData: Record<string, SEOData> = {
     ogType: 'website',
     ogImage: `${BASE_URL}/og-default.png`,
     breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Star Compliance', url: '/#star-compliance' }, { name: 'SealPath IRM', url: '/sealpath/' }],
-    jsonLd: product('SealPath IRM — Information Rights Management', 'SealPath', 'Protección persistente de documentos con cifrado IRM/E-DRM, control de acceso granular, revocación remota y trazabilidad completa. Integración con Microsoft Information Protection (MIP) y Microsoft 365.', { rating: { value: '4.4', count: '11' }, image: `${BASE_URL}/og-default.png` }),
+    jsonLd: resellerService('SealPath IRM — Information Rights Management', 'SealPath', 'Protección persistente de documentos con cifrado IRM/E-DRM, control de acceso granular, revocación remota y trazabilidad completa. Integración con Microsoft Information Protection (MIP) y Microsoft 365.', { image: `${BASE_URL}/og-default.png` }),
     faqJsonLd: faqSchema([
       { q: 'Los usuarios externos necesitan instalar algo para abrir los documentos?', a: 'Los usuarios externos pueden abrir documentos protegidos a través de SealPath Secure Browser, un visor web agentless que no requiere instalación. Para funcionalidad completa (edición, impresión, etc.) se instala el agente ligero de SealPath IRM, disponible para Windows, macOS, iOS y Android. También existe SealPath Web Protector, que permite proteger y gestionar documentos desde el navegador sin instalación, compatible con Windows, macOS, Linux, iOS y Android.' },
       { q: '¿Qué tipos de archivos soporta SealPath IRM?', a: 'SealPath IRM protege documentos de Microsoft Office (Word, Excel, PowerPoint), PDF (Adobe, Foxit, Nitro), archivos CAD (AutoCAD, SolidWorks, CATIA), imágenes, texto y adjuntos de correo electrónico. También protege carpetas completas en File Servers, SharePoint, OneDrive, Box y Dropbox.' },
@@ -495,7 +489,7 @@ export const seoData: Record<string, SEOData> = {
     ogType: 'website',
     ogImage: `${BASE_URL}/og-default.png`,
     breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Star Compliance', url: '/#star-compliance' }, { name: 'Netwrix', url: '/netwrix/' }],
-    jsonLd: product('Netwrix — Plataforma de Seguridad de Datos e Identidades', 'Netwrix', 'Plataforma de seguridad de datos centrada en identidad: auditoría AD, PAM, DLP, clasificación de datos, IGA y DSPM para cumplimiento normativo', { rating: { value: '4.7', count: '164' }, image: `${BASE_URL}/og-default.png` }),
+    jsonLd: resellerService('Netwrix — Plataforma de Seguridad de Datos e Identidades', 'Netwrix', 'Plataforma de seguridad de datos centrada en identidad: auditoría AD, PAM, DLP, clasificación de datos, IGA y DSPM para cumplimiento normativo', { image: `${BASE_URL}/og-default.png` }),
     faqJsonLd: faqSchema([
       { q: '¿Netwrix requiere cambios en mi Active Directory?', a: 'No. Netwrix Auditor funciona en modo lectura mediante la captura de logs y eventos. No requiere cambios en el esquema de AD, no instala agentes en los controladores de dominio ni modifica la infraestructura existente.' },
       { q: '¿Cuánto tiempo toma la implementación?', a: 'Para Active Directory y servidores de archivos, la implementación toma entre 2 y 5 días. Un entorno híbrido completo con integraciones en la nube puede tomar entre 2 y 3 semanas. Star Solutions TI gestiona todo el despliegue desde Bogotá con soporte en español.' },
@@ -514,7 +508,7 @@ export const seoData: Record<string, SEOData> = {
     ogType: 'website',
     ogImage: `${BASE_URL}/og-default.png`,
     breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Star Compliance', url: '/#star-compliance' }, { name: 'LastPass', url: '/lastpass/' }],
-    jsonLd: product('LastPass Business', 'LastPass', 'Gestor de contraseñas y accesos empresarial con cifrado de conocimiento cero AES-256, más de 100 políticas de seguridad, MFA, SSO, carpetas compartidas, monitoreo de dark web e integración con Microsoft Entra ID, Google Workspace y Okta. Star Solutions TI lo implementa en Colombia con soporte en español.', { image: `${BASE_URL}/og-default.png` }),
+    jsonLd: resellerService('LastPass Business', 'LastPass', 'Gestor de contraseñas y accesos empresarial con cifrado de conocimiento cero AES-256, más de 100 políticas de seguridad, MFA, SSO, carpetas compartidas, monitoreo de dark web e integración con Microsoft Entra ID, Google Workspace y Okta. Star Solutions TI lo implementa en Colombia con soporte en español.', { image: `${BASE_URL}/og-default.png` }),
     faqJsonLd: faqSchema(lastpassFaqs),
   },
   'dlp-prevencion-perdida-datos': {
@@ -526,7 +520,7 @@ export const seoData: Record<string, SEOData> = {
     ogType: 'website',
     ogImage: `${BASE_URL}/og-default.png`,
     breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Star Compliance', url: '/#star-compliance' }, { name: 'Software DLP', url: '/dlp-prevencion-perdida-datos/' }],
-    jsonLd: product('Endpoint Protector DLP', 'CoSoSys', 'Software DLP multiplataforma para prevención de pérdida de datos empresariales', { rating: { value: '4.6', count: '44' }, image: `${BASE_URL}/og-default.png` }),
+    jsonLd: resellerService('Endpoint Protector DLP', 'CoSoSys', 'Software DLP multiplataforma para prevención de pérdida de datos empresariales', { image: `${BASE_URL}/og-default.png` }),
     faqJsonLd: faqSchema([
       { q: 'Necesito un servidor on-premise o es cloud?', a: 'Ambas opciones estan disponibles: SaaS cloud en datacenter Tier IV con certificación ISO 27001, o deployment On-Premise en VM compatible con VMware, Hyper-V y KVM. También existe modalidad hibrida.' },
       { q: 'Funciona sin conexion a internet?', a: 'Sí. Los agentes aplican políticas localmente sin depender de conectividad. El cache offline funciona hasta 30 días, y en entornos air-gapped las políticas se actualizan via USB con firma criptografica.' },
@@ -616,7 +610,7 @@ export const seoData: Record<string, SEOData> = {
     ogType: 'website',
     ogImage: `${BASE_URL}/og-default.png`,
     breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Infraestructura', url: '/#infraestructura' }, { name: 'TeamViewer', url: '/teamviewer/' }],
-    jsonLd: product('TeamViewer Tensor', 'TeamViewer', 'Plataforma enterprise de conectividad remota segura: acceso remoto y soporte a IT, OT, móvil y POS, con SSO, acceso condicional Zero Trust e integraciones ITSM (ServiceNow, Intune, Salesforce)', { rating: { value: '4.8', count: '89' }, image: `${BASE_URL}/og-default.png` }),
+    jsonLd: resellerService('TeamViewer Tensor', 'TeamViewer', 'Plataforma enterprise de conectividad remota segura: acceso remoto y soporte a IT, OT, móvil y POS, con SSO, acceso condicional Zero Trust e integraciones ITSM (ServiceNow, Intune, Salesforce)', { image: `${BASE_URL}/og-default.png` }),
     faqJsonLd: faqSchema([
       { q: '¿Qué es TeamViewer y qué productos ofrece para empresas?', a: 'TeamViewer es una plataforma de conectividad remota con cinco productos vigentes: TeamViewer Remote (acceso y soporte remoto con planes Business, Premium y Corporate), TeamViewer Tensor (plataforma enterprise para IT, OT, móvil y POS), TeamViewer DEX (experiencia digital del empleado, Leader en el Gartner Magic Quadrant de DEX Management Tools 2026), TeamViewer Frontline (realidad aumentada industrial) y TeamViewer ONE (plataforma unificadora). Star Solutions TI implementa y licencia estos productos en Colombia con soporte en español.' },
       { q: '¿Cuál plan de TeamViewer necesita mi empresa?', a: 'TeamViewer Business (1 puesto, hasta 200 dispositivos) sirve para un técnico individual. Premium (hasta 15 usuarios, 300 dispositivos) y Corporate (hasta 30 usuarios, 3 sesiones concurrentes, 500 dispositivos) cubren equipos de soporte. Para cientos o miles de dispositivos, SSO, Zero Trust e integraciones ITSM, el producto indicado es TeamViewer Tensor.' },
@@ -634,7 +628,7 @@ export const seoData: Record<string, SEOData> = {
     ogType: 'website',
     ogImage: `${BASE_URL}/og-default.png`,
     breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Infraestructura', url: '/#infraestructura' }, { name: 'AnyDesk', url: '/anydesk/' }],
-    jsonLd: product('AnyDesk', 'AnyDesk', 'Escritorio remoto de alto rendimiento con codec propietario DeskRT: 60 FPS, latencia menor a 16 ms y cifrado TLS 1.2 con Perfect Forward Secrecy. Planes Solo, Standard, Advanced y Ultimate (con AnyDesk On-Premises)', { rating: { value: '4.7', count: '73' }, image: `${BASE_URL}/og-default.png` }),
+    jsonLd: resellerService('AnyDesk', 'AnyDesk', 'Escritorio remoto de alto rendimiento con codec propietario DeskRT: 60 FPS, latencia menor a 16 ms y cifrado TLS 1.2 con Perfect Forward Secrecy. Planes Solo, Standard, Advanced y Ultimate (con AnyDesk On-Premises)', { image: `${BASE_URL}/og-default.png` }),
     faqJsonLd: faqSchema([
       { q: '¿Qué es AnyDesk y qué planes ofrece?', a: 'AnyDesk es un software de escritorio remoto que usa el codec propietario DeskRT para transmitir a 60 FPS con latencia menor a 16 ms y funcionar desde 100 KB/s de ancho de banda. Ofrece cuatro planes vigentes: Solo (1 usuario), Standard (hasta 20 usuarios), Advanced (hasta 100 usuarios, SSO SAML 2.0) y Ultimate, la única edición con AnyDesk On-Premises para desplegar en infraestructura propia. Star Solutions TI licencia e implementa AnyDesk en Colombia con soporte en español.' },
       { q: 'Es gratis AnyDesk para uso comercial?', a: 'No. El uso comercial requiere licencia de pago. AnyDesk ofrece cuatro planes: Solo, Standard, Advanced y Ultimate (este último con opción On-Premises). Los precios cambian por región y volumen; Star Solutions TI cotiza el plan adecuado para su operación en Colombia.' },
@@ -665,7 +659,7 @@ export const seoData: Record<string, SEOData> = {
     ogType: 'website',
     ogImage: `${BASE_URL}/og-default.png`,
     breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Infraestructura', url: '/#infraestructura' }, { name: 'Equipos de Computo', url: '/equipos-computo/' }],
-    jsonLd: product('Equipos de Computo Empresariales', 'Star Solutions TI', 'Laptops, desktops, workstations y All-in-One para empresas', { rating: { value: '4.8', count: '64' }, image: `${BASE_URL}/og-default.png` }),
+    jsonLd: resellerService('Equipos de Computo Empresariales', 'Star Solutions TI', 'Laptops, desktops, workstations y All-in-One para empresas', { image: `${BASE_URL}/og-default.png` }),
     // faqJsonLd retirado: declaraba 3 preguntas que no existen en la pagina.
     // Contenido recuperable en git; conviene renderizarlo y reponer el marcado.
   },
@@ -675,7 +669,7 @@ export const seoData: Record<string, SEOData> = {
   // =====================================================
   'sobre-nosotros': {
     title: 'Sobre Nosotros | Star Solutions TI S.A.S.',
-    description: 'Star Solutions TI S.A.S.: 13+ años en ciberseguridad y seguridad informática empresarial. Oficinas en Colombia, Venezuela y Miami. Equipo CEH, OSCP, CISSP.',
+    description: 'Star Solutions TI S.A.S.: 10 años en ciberseguridad y seguridad informática empresarial. Oficinas en Colombia, Venezuela y Miami. Equipo CEH, OSCP, CISSP.',
     keywords: 'Star Solutions TI, empresa ciberseguridad Colombia, sobre nosotros, equipo expertos seguridad, historia',
     canonical: `${BASE_URL}/sobre-nosotros/`,
     ogTitle: 'Sobre Nosotros - Star Solutions TI S.A.S.',
@@ -686,7 +680,7 @@ export const seoData: Record<string, SEOData> = {
       '@context': 'https://schema.org',
       '@type': 'AboutPage',
       name: 'Sobre Star Solutions TI S.A.S.',
-      mainEntity: { ...ORG, foundingDate: '2013', numberOfEmployees: { '@type': 'QuantitativeValue', minValue: 15 } },
+      mainEntity: { ...ORG, foundingDate: '2016', numberOfEmployees: { '@type': 'QuantitativeValue', minValue: 15 } },
     },
   },
   contacto: {
@@ -1149,8 +1143,8 @@ export const seoData: Record<string, SEOData> = {
   // REPORTS
   // =====================================================
   'informe-ciberseguridad-colombia-2026': {
-    title: 'Informe de Ciberseguridad Colombia 2026 | +3,000 Empresas',
-    description: 'El análisis más completo sobre ciberamenazas en Colombia: ransomware, BEC, phishing y brechas de datos. Datos de +3,000 empresas colombianas. Descargue gratis.',
+    title: 'Informe de Ciberseguridad Colombia 2026: Datos y Tendencias',
+    description: 'Informe 2026 de ciberamenazas en Colombia: ransomware, BEC, phishing y brechas de datos. Fuentes públicas, tendencias y recomendaciones. Descargue gratis.',
     keywords: 'informe ciberseguridad Colombia 2026, estadisticas ciberataques Colombia, costo brecha datos Colombia, amenazas ciberneticas empresas, ransomware Colombia, phishing Colombia',
     canonical: `${BASE_URL}/informe-ciberseguridad-colombia-2026/`,
     ogTitle: 'Informe de Ciberseguridad Empresarial Colombia 2026',
@@ -1161,7 +1155,7 @@ export const seoData: Record<string, SEOData> = {
       '@context': 'https://schema.org',
       '@type': 'Article',
       headline: 'Informe de Ciberseguridad Empresarial Colombia 2026',
-      description: 'El análisis más completo sobre ciberamenazas en Colombia con datos de más de 3,000 empresas colombianas. Ransomware, BEC, phishing, costos de brechas y recomendaciones.',
+      description: 'Análisis de ciberamenazas en Colombia con fuentes públicas (COLCERT, SIC, Verizon DBIR) y experiencia en campo. Ransomware, BEC, phishing, costos y recomendaciones.',
       datePublished: '2026-01-15',
       dateModified: '2026-03-01',
       author: AUTHOR,
@@ -1172,7 +1166,7 @@ export const seoData: Record<string, SEOData> = {
       keywords: 'ciberseguridad Colombia, ransomware, phishing, brecha de datos, ISO 27001, PYMES Colombia',
     },
     faqJsonLd: faqSchema([
-      { q: '¿De dónde provienen los datos del informe?', a: 'Los datos provienen de tres fuentes: (1) análisis anonimizado de incidentes en nuestra base de más de 3,000 clientes empresariales en Colombia, (2) bases de datos públicas de brechas como COLCERT, Policía Nacional y Have I Been Pwned, y (3) el Verizon Data Breach Investigations Report (DBIR) con contexto latinoamericano.' },
+      { q: '¿De dónde provienen los datos del informe?', a: 'Las cifras provienen de fuentes públicas: COLCERT, notificaciones a la SIC, Policía Nacional, Have I Been Pwned y el Verizon Data Breach Investigations Report (DBIR) con contexto latinoamericano. La interpretación y las recomendaciones se apoyan en la experiencia de nuestro equipo con más de 1.150 empresas atendidas desde 2016.' },
       { q: '¿Puedo citar este informe en presentaciones académicas o corporativas?', a: 'Sí. Este informe es de libre difusión para uso académico, periodístico y corporativo, siempre que se cite la fuente como: "Star Solutions TI S.A.S. – Informe de Ciberseguridad Empresarial Colombia 2026, star-ti.com". Para uso comercial o redistribución masiva, contáctenos.' },
       { q: '¿Cada cuánto se actualiza el informe?', a: 'El informe se publica anualmente cada enero con los datos del año anterior. Sin embargo, actualizamos las estadísticas clave trimestralmente cuando ocurren incidentes significativos en el ecosistema colombiano. Suscríbase a nuestra lista para recibir actualizaciones automáticas.' },
       { q: '¿Mi empresa podría estar en riesgo según los datos del informe?', a: 'Estadísticamente, el 73% de empresas colombianas sufrió al menos un incidente de seguridad en 2025. Si su empresa opera en los sectores financiero, salud, gobierno o manufactura, el riesgo es aún mayor. Ofrecemos un diagnóstico gratuito de exposición que analiza su superficie de ataque en menos de 48 horas.' },

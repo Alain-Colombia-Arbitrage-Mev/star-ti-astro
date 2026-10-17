@@ -56,7 +56,7 @@ export const regions: Record<string, RegionData> = {
     ],
     stats: [
       { label: 'Empresas Protegidas en Colombia', value: '2,500+' },
-      { label: 'Años de Experiencia', value: '12+' },
+      { label: 'Años de Experiencia', value: '10' },
       { label: 'Certificaciones Activas', value: '50+' },
       { label: 'Disponibilidad de Soporte', value: '24/7' },
     ],
@@ -79,7 +79,7 @@ export const regions: Record<string, RegionData> = {
     currency: 'USD',
     hours: 'Lun - Vie: 8am - 5pm VET',
     heroTitle: 'Empresa de Ciberseguridad en Venezuela',
-    heroSubtitle: 'Protección digital integral para empresas venezolanas. Oficina en Caracas con soporte remoto a nivel nacional. Más de 10 años atendiendo el mercado venezolano.',
+    heroSubtitle: 'Protección digital integral para empresas venezolanas. Oficina en Caracas con soporte remoto a nivel nacional. 10 años atendiendo el mercado venezolano.',
     services: [
       'Hacking Ético y Pentesting',
       'Consultoría ISO 27001',
@@ -92,7 +92,7 @@ export const regions: Record<string, RegionData> = {
     ],
     stats: [
       { label: 'Empresas Protegidas en Venezuela', value: '300+' },
-      { label: 'Años en el Mercado Venezolano', value: '10+' },
+      { label: 'Años en el Mercado Venezolano', value: '10' },
       { label: 'Proyectos Exitosos', value: '150+' },
       { label: 'Soporte en Español', value: '24/7' },
     ],
@@ -131,7 +131,7 @@ export const regions: Record<string, RegionData> = {
     ],
     stats: [
       { label: 'Endpoint Environments', value: '100-1k' },
-      { label: 'Years of Experience', value: '13+' },
+      { label: 'Years of Experience', value: '10' },
       { label: 'Bilingual Team Members', value: '15+' },
       { label: 'Support Availability', value: '24/7' },
     ],
