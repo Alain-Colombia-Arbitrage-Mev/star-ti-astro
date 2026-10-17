@@ -101,7 +101,7 @@ export const seoData: Record<string, SEOData> = {
   // =====================================================
   home: {
     title: 'Ciberseguridad Empresarial Colombia | Star Solutions TI',
-    description: 'Seguridad informática para empresas: antivirus EDR/XDR, hacking ético, ISO 27001 y monitoreo 24/7. Más de 3,000 empresas protegidas en Colombia. Cotice gratis.',
+    description: 'Seguridad informática para empresas: antivirus EDR/XDR, hacking ético, ISO 27001 y monitoreo 24/7. Más de 1.150 empresas atendidas desde 2013. Cotice gratis.',
     keywords: 'ciberseguridad empresarial Colombia, antivirus empresas, ISO 27001, Bitdefender, Kaspersky, hacking ético, pentesting, SOC, seguridad informatica Bogotá',
     canonical: `${BASE_URL}/`,
     ogTitle: 'Star Solutions TI - Ciberseguridad Empresarial Colombia',
@@ -1172,8 +1172,8 @@ export const seoData: Record<string, SEOData> = {
   // REPORTS
   // =====================================================
   'informe-ciberseguridad-colombia-2026': {
-    title: 'Informe de Ciberseguridad Colombia 2026 | +3,000 Empresas',
-    description: 'El análisis más completo sobre ciberamenazas en Colombia: ransomware, BEC, phishing y brechas de datos. Datos de +3,000 empresas colombianas. Descargue gratis.',
+    title: 'Informe de Ciberseguridad Colombia 2026: Datos y Tendencias',
+    description: 'El análisis más completo sobre ciberamenazas en Colombia: ransomware, BEC, phishing y brechas de datos. Datos, tendencias y recomendaciones. Descargue gratis.',
     keywords: 'informe ciberseguridad Colombia 2026, estadisticas ciberataques Colombia, costo brecha datos Colombia, amenazas ciberneticas empresas, ransomware Colombia, phishing Colombia',
     canonical: `${BASE_URL}/informe-ciberseguridad-colombia-2026/`,
     ogTitle: 'Informe de Ciberseguridad Empresarial Colombia 2026',
@@ -1184,7 +1184,7 @@ export const seoData: Record<string, SEOData> = {
       '@context': 'https://schema.org',
       '@type': 'Article',
       headline: 'Informe de Ciberseguridad Empresarial Colombia 2026',
-      description: 'El análisis más completo sobre ciberamenazas en Colombia con datos de más de 3,000 empresas colombianas. Ransomware, BEC, phishing, costos de brechas y recomendaciones.',
+      description: 'El análisis más completo sobre ciberamenazas en Colombia con datos de nuestra base de más de 1.150 empresas atendidas. Ransomware, BEC, phishing, costos de brechas y recomendaciones.',
       datePublished: '2026-01-15',
       dateModified: '2026-03-01',
       author: AUTHOR,
@@ -1195,7 +1195,7 @@ export const seoData: Record<string, SEOData> = {
       keywords: 'ciberseguridad Colombia, ransomware, phishing, brecha de datos, ISO 27001, PYMES Colombia',
     },
     faqJsonLd: faqSchema([
-      { q: '¿De dónde provienen los datos del informe?', a: 'Los datos provienen de tres fuentes: (1) análisis anonimizado de incidentes en nuestra base de más de 3,000 clientes empresariales en Colombia, (2) bases de datos públicas de brechas como COLCERT, Policía Nacional y Have I Been Pwned, y (3) el Verizon Data Breach Investigations Report (DBIR) con contexto latinoamericano.' },
+      { q: '¿De dónde provienen los datos del informe?', a: 'Los datos provienen de tres fuentes: (1) análisis anonimizado de incidentes en nuestra base de más de 1.150 empresas atendidas desde 2013, (2) bases de datos públicas de brechas como COLCERT, Policía Nacional y Have I Been Pwned, y (3) el Verizon Data Breach Investigations Report (DBIR) con contexto latinoamericano.' },
       { q: '¿Puedo citar este informe en presentaciones académicas o corporativas?', a: 'Sí. Este informe es de libre difusión para uso académico, periodístico y corporativo, siempre que se cite la fuente como: "Star Solutions TI SAS – Informe de Ciberseguridad Empresarial Colombia 2026, star-ti.com". Para uso comercial o redistribución masiva, contáctenos.' },
       { q: '¿Cada cuánto se actualiza el informe?', a: 'El informe se publica anualmente cada enero con los datos del año anterior. Sin embargo, actualizamos las estadísticas clave trimestralmente cuando ocurren incidentes significativos en el ecosistema colombiano. Suscríbase a nuestra lista para recibir actualizaciones automáticas.' },
       { q: '¿Mi empresa podría estar en riesgo según los datos del informe?', a: 'Estadísticamente, el 73% de empresas colombianas sufrió al menos un incidente de seguridad en 2025. Si su empresa opera en los sectores financiero, salud, gobierno o manufactura, el riesgo es aún mayor. Ofrecemos un diagnóstico gratuito de exposición que analiza su superficie de ataque en menos de 48 horas.' },
