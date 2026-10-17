@@ -142,6 +142,8 @@ export default {
   },
 };
 
+const LOCAL_HOSTS = new Set(["localhost", "127.0.0.1"]);
+
 function getCanonicalRedirectUrl(url) {
   const target = new URL(url.href);
   const decodedPath = safeDecodePathname(url.pathname);
@@ -149,6 +151,13 @@ function getCanonicalRedirectUrl(url) {
   const lookupPath = pathWithoutPunctuation.toLowerCase() || "/";
   const legacyTarget = LEGACY_REDIRECTS.get(lookupPath);
   let hasChanged = false;
+
+  // Todo el trafico va por HTTPS: sin esto, un enlace http:// (o el dominio
+  // antiguo) servia la pagina sin cifrar y Chrome la marcaba "No seguro".
+  if (url.protocol === "http:" && !LOCAL_HOSTS.has(url.hostname)) {
+    target.protocol = "https:";
+    hasChanged = true;
+  }
 
   if (MIGRATED_HOSTS.has(url.hostname)) {
     target.hostname = APEX;
