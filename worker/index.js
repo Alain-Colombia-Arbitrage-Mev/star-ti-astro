@@ -200,6 +200,15 @@ async function handleLeadSubmission(request, env) {
   const sourceUrl = getSourceUrl(request, rawFields);
   const sourcePath = sourceUrl ? new URL(sourceUrl).pathname : "";
   const redirectTo = getSafeRedirect(request, rawFields._redirect);
+
+  // Spam: se responde igual que un envio exitoso para no darle pistas al bot.
+  const spamReason = await detectSpam(request, env, rawFields);
+  if (spamReason) {
+    console.log("Lead descartado como spam", spamReason, sourcePath);
+    if (wantsJson(request)) return Response.json({ ok: true });
+    return Response.redirect(new URL(redirectTo, request.url).href, 303);
+  }
+
   const normalized = normalizeLead(rawFields, sourceUrl, sourcePath, request);
   const token = env.AIRTABLE_TOKEN;
   const baseId = env.AIRTABLE_BASE_ID;
@@ -281,11 +290,43 @@ function normalizeLead(rawFields, sourceUrl, sourcePath, request) {
   }
 
   const publicRawFields = Object.fromEntries(
-    Object.entries(rawFields).filter(([key]) => !key.startsWith("_")),
+    Object.entries(rawFields).filter(([key]) => !key.startsWith("_") && key !== TURNSTILE_FIELD),
   );
   setField(fields, FIELD_NAMES.rawFields, JSON.stringify(publicRawFields, null, 2));
 
   return fields;
+}
+
+// Senales que agrega src/components/LeadFormGuard.astro en el navegador.
+const MIN_FILL_MS = 3000;
+const TURNSTILE_FIELD = "cf-turnstile-response";
+
+async function detectSpam(request, env, fields) {
+  if (fields._website) return "honeypot";
+  // Sin _elapsed el envio no paso por el navegador (POST directo al endpoint).
+  const elapsed = Number(fields._elapsed);
+  if (!fields._elapsed || !Number.isFinite(elapsed)) return "sin-js";
+  if (elapsed < MIN_FILL_MS) return "demasiado-rapido";
+
+  // Turnstile solo se exige cuando el secreto existe en el worker.
+  if (env.TURNSTILE_SECRET_KEY) {
+    const token = fields[TURNSTILE_FIELD];
+    if (!token) return "turnstile-ausente";
+    try {
+      const body = new FormData();
+      body.append("secret", env.TURNSTILE_SECRET_KEY);
+      body.append("response", token);
+      const ip = request.headers.get("CF-Connecting-IP");
+      if (ip) body.append("remoteip", ip);
+      const result = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", { method: "POST", body });
+      const outcome = await result.json();
+      if (!outcome.success) return "turnstile-invalido";
+    } catch (error) {
+      // Si Cloudflare no responde se acepta el lead: perder un cliente cuesta mas que un spam.
+      console.error("Turnstile no disponible; lead aceptado", error);
+    }
+  }
+  return null;
 }
 
 function formDataToObject(formData) {
