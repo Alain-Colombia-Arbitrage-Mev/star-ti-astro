@@ -217,16 +217,11 @@ async function handleLeadSubmission(request, env) {
   const sourcePath = sourceUrl ? new URL(sourceUrl).pathname : "";
   const redirectTo = getSafeRedirect(request, rawFields._redirect);
 
-  // Spam. Solo se descarta el POST directo que no paso por la pagina (sin
-  // _elapsed): es el bot tipico. Todo lo demas llega a Airtable y al correo,
-  // marcado "[Posible spam]", porque el autocompletado del celular o un campo
+  // Spam: nunca se descarta. Todo llega a Airtable y al correo; lo sospechoso
+  // va marcado "[Posible spam: motivo]". Una pagina en cache del navegador (sin
+  // las senales de LeadFormGuard), el autocompletado del celular o un campo
   // trampa rellenado por el navegador no deben costar un cliente real.
   const spamReason = await detectSpam(request, env, rawFields);
-  if (spamReason === "sin-js") {
-    console.log("Lead descartado como spam", spamReason, sourcePath);
-    if (wantsJson(request)) return Response.json({ ok: true });
-    return Response.redirect(new URL(redirectTo, request.url).href, 303);
-  }
   const spamTag = spamReason ? `[Posible spam: ${spamReason}] ` : "";
   if (spamReason) console.log("Lead marcado como posible spam", spamReason, sourcePath);
 
