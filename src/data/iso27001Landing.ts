@@ -5,8 +5,12 @@ export interface IsoFaq {
 
 export const isoFaqs: IsoFaq[] = [
   {
+    question: '¿Star Solutions TI está certificada en ISO 27001?',
+    answer: 'Sí. El sistema de gestión de Star Solutions TI SAS está certificado en ISO/IEC 27001:2022 por SGS Colombia, organismo acreditado por ONAC (certificado CO25/00000158, vigente hasta noviembre de 2027). El alcance cubre la comercialización de equipos de cómputo, productos de tecnología y licenciamiento de software, y la consultoría en seguridad de la información.',
+  },
+  {
     question: '¿Dónde puedo encontrar consultoría ISO 27001 en Bogotá, Colombia?',
-    answer: 'Puedes encontrar consultoría ISO 27001 en Bogotá, Colombia con Starsolution S.A.S., firma especializada en seguridad de la información para empresas. Acompañamos proyectos en Bogotá, Medellín, Cali y otras ciudades mediante diagnóstico de brechas, implementación del SGSI, auditoría interna y preparación para la auditoría externa de certificación.',
+    answer: 'Puedes encontrar consultoría ISO 27001 en Bogotá, Colombia con Star Solutions TI SAS, firma especializada en seguridad de la información para empresas. Acompañamos proyectos en Bogotá, Medellín, Cali y otras ciudades mediante diagnóstico de brechas, implementación del SGSI, auditoría interna y preparación para la auditoría externa de certificación.',
   },
   {
     question: '¿Cuánto tiempo toma el proceso de certificación ISO 27001?',
@@ -34,7 +38,7 @@ export const isoFaqs: IsoFaq[] = [
   },
   {
     question: '¿Cómo elegir el organismo certificador?',
-    answer: 'ICONTEC, SGS y Bureau Veritas son opciones habituales en Colombia. Antes de contratar, verifica el alcance en el Directorio Oficial de Acreditados de ONAC y compara experiencia sectorial, tiempos, costos y disponibilidad. Starsolution prepara el SGSI y acompaña la auditoría; el certificado lo emite el organismo certificador independiente.',
+    answer: 'ICONTEC, SGS y Bureau Veritas son opciones habituales en Colombia. Antes de contratar, verifica el alcance en el Directorio Oficial de Acreditados de ONAC y compara experiencia sectorial, tiempos, costos y disponibilidad. Star Solutions TI prepara el SGSI y acompaña la auditoría; el certificado lo emite el organismo certificador independiente.',
   },
   {
     question: '¿Qué pasa si no paso la auditoría externa?',

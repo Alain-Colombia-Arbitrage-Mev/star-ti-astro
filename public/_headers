@@ -21,15 +21,18 @@
   Cache-Control: public, max-age=2592000, must-revalidate
 
 # HTML pages - short cache with revalidation
+# /gracias/* tambien recibe las cabeceras de /*: Cloudflare une con coma los
+# valores repetidos, asi que aqui solo va lo exclusivo de esta ruta.
 /gracias/*
   X-Robots-Tag: noindex, nofollow
-  Cache-Control: public, max-age=3600, must-revalidate
-  X-Content-Type-Options: nosniff
-  X-Frame-Options: SAMEORIGIN
-  Referrer-Policy: strict-origin-when-cross-origin
 
+# CSP: 'unsafe-inline' en script-src porque Astro emite <script type="module">
+# inline en cada pagina. Unico origen externo: imagenes de www.bitdefender.com.
 /*
   Cache-Control: public, max-age=3600, must-revalidate
   X-Content-Type-Options: nosniff
   X-Frame-Options: SAMEORIGIN
   Referrer-Policy: strict-origin-when-cross-origin
+  Strict-Transport-Security: max-age=31536000
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://star-ti.com https://www.bitdefender.com; media-src 'self'; font-src 'self'; connect-src 'self'; form-action 'self'; frame-ancestors 'self'; base-uri 'self'; object-src 'none'; upgrade-insecure-requests

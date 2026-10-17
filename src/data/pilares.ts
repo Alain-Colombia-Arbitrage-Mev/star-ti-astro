@@ -108,7 +108,7 @@ export const pilares: Pilar[] = [
       },
       {
         slug: 'hacking-etico',
-        brand: 'Starsolution',
+        brand: 'Star Solutions TI',
         name: 'Hacking Etico y Pentesting',
         shortDescription: 'Test de intrusion profesional certificado CEH/OSCP. Auditoria completa de seguridad con reporte ejecutivo.',
         nameEn: 'Ethical Hacking and Pentesting',
@@ -137,7 +137,7 @@ export const pilares: Pilar[] = [
     products: [
       {
         slug: 'iso-27001',
-        brand: 'Starsolution',
+        brand: 'Star Solutions TI',
         name: 'Consultoría ISO 27001',
         shortDescription: 'Gap Analysis, implementacion de SGSI y acompanamiento hacia la certificacion. Mas de 50 proyectos exitosos.',
         nameEn: 'ISO 27001 Consulting',
@@ -192,13 +192,13 @@ export const infraServices: Product[] = [
   },
   {
     slug: 'cableado-estructurado',
-    brand: 'Starsolution',
+    brand: 'Star Solutions TI',
     name: 'Cableado Estructurado',
     shortDescription: 'Instalacion y mantenimiento de redes empresariales certificadas.',
   },
   {
     slug: 'equipos-computo',
-    brand: 'Starsolution',
+    brand: 'Star Solutions TI',
     name: 'Equipos de Computo',
     shortDescription: 'Hardware empresarial: laptops, desktops, workstations y All-in-One.',
   },
