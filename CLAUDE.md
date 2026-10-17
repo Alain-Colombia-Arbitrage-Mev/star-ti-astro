@@ -114,7 +114,7 @@ Pendiente:
 
 En desarrollo (tanda 2): enlaces internos a /seguridad-informatica-empresas/, títulos ≤ 60 y
 descripciones ≤ 160, `lastmod` del sitemap, 301 con barra final faltantes, `noindex` en
-*.workers.dev, CSP y Permissions-Policy. HSTS pendiente hasta confirmar el certificado.
+*.workers.dev, CSP y Permissions-Policy. HSTS `max-age=31536000` (sin includeSubDomains ni preload).
 
 ## Antispam de formularios (tanda 3, en desarrollo)
 
