@@ -3,8 +3,10 @@
 // El worker valida lo que este script agrega:
 // 1. Campo trampa `_website`: invisible para personas; los bots lo llenan.
 // 2. `_elapsed`: milisegundos entre carga y envio; un bot envia en < 3 s.
-// 3. Cloudflare Turnstile, solo si existe PUBLIC_TURNSTILE_SITE_KEY en el build.
-const siteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY ?? '';
+// 3. Cloudflare Turnstile (widget "Star Solutions - formularios"). La clave del
+//    sitio es publica; la secreta vive solo en el Worker (TURNSTILE_SECRET_KEY).
+//    PUBLIC_TURNSTILE_SITE_KEY en el build la reemplaza si algun dia se rota.
+const siteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY ?? '0x4AAAAAAFZhj9AjInibWIe_';
 ---
 
 <div hidden data-lead-guard data-turnstile-sitekey={siteKey}></div>

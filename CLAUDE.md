@@ -128,7 +128,8 @@ descripciones ≤ 160, `lastmod` del sitemap, 301 con barra final faltantes, `no
   1. Cloudflare → Turnstile → Add widget: `star-ti.com` y `guardcolombia.workers.dev`, modo Managed.
   2. Worker → Settings → Variables and Secrets: secreto `TURNSTILE_SECRET_KEY`. **Guardar con
      "Save" (flecha ⌄), sin "Deploy".**
-  3. Worker → Settings → Build → Build variables: `PUBLIC_TURNSTILE_SITE_KEY` (pública).
+  3. La clave del sitio (pública, `0x4AAAAAAFZhj9AjInibWIe_`) ya está en `LeadFormGuard.astro`;
+     `PUBLIC_TURNSTILE_SITE_KEY` en el build solo hace falta si se cambia.
   4. Se activa con el siguiente push a `produccion`. Si siteverify no responde, el lead se acepta.
 
 ## Comandos
