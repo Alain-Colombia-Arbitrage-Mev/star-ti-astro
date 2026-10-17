@@ -73,6 +73,10 @@ const TRAILING_SLASH_PATHS = new Set([
   "/blog/zero-trust-2025",
   "/iso-27001",
   "/hornetsecurity",
+  "/mejores-empresas-consultoria-iso-27001-colombia",
+  "/blog/comprar-kaspersky-empresas-colombia",
+  "/blog/kaspersky-edr-xdr-mxdr-colombia",
+  "/blog/kaspersky-next-precio-colombia",
 ]);
 
 const FIELD_NAMES = {
@@ -119,6 +123,13 @@ export default {
     }
 
     const assetResponse = await env.ASSETS.fetch(request);
+    // *.workers.dev sigue activo para pruebas, pero no debe competir en Google
+    // con el dominio canonico.
+    if (url.hostname.endsWith(".workers.dev")) {
+      const noindexResponse = new Response(assetResponse.body, assetResponse);
+      noindexResponse.headers.set("X-Robots-Tag", "noindex, nofollow");
+      return noindexResponse;
+    }
     if (assetResponse.status !== 404 || !url.pathname.startsWith("/_astro/")) {
       return assetResponse;
     }
