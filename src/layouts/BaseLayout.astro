@@ -2,6 +2,7 @@
 import type { SEOData } from '@data/seo';
 import { BASE_URL } from '@data/seo';
 import '@/styles/global.css';
+import LeadFormGuard from '@/components/LeadFormGuard.astro';
 
 interface Props {
   seo: SEOData;
@@ -139,5 +140,6 @@ const breadcrumbJsonLd = seo.breadcrumb ? {
     <main>
       <slot />
     </main>
+    <LeadFormGuard />
   </body>
 </html>

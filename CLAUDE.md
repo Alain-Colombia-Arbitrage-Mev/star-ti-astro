@@ -116,6 +116,19 @@ En desarrollo (tanda 2): enlaces internos a /seguridad-informatica-empresas/, t�
 descripciones ≤ 160, `lastmod` del sitemap, 301 con barra final faltantes, `noindex` en
 *.workers.dev, CSP y Permissions-Policy. HSTS pendiente hasta confirmar el certificado.
 
+## Antispam de formularios (tanda 3, en desarrollo)
+
+- `src/components/LeadFormGuard.astro` (montado en `BaseLayout`) agrega a todo `form[data-lead-form]`
+  un campo trampa `_website` y `_elapsed` (ms hasta el envío). `detectSpam` en `worker/index.js`
+  descarta trampa llena, envíos sin JS o en menos de 3 s, sin guardar en Airtable ni enviar correo;
+  el bot recibe la misma redirección a /gracias. Motivo en el log: "Lead descartado como spam".
+- Cloudflare Turnstile se activa solo con las dos claves; sin ellas funcionan las otras capas:
+  1. Cloudflare → Turnstile → Add widget: `star-ti.com` y `guardcolombia.workers.dev`, modo Managed.
+  2. Worker → Settings → Variables and Secrets: secreto `TURNSTILE_SECRET_KEY`. **Guardar con
+     "Save" (flecha ⌄), sin "Deploy".**
+  3. Worker → Settings → Build → Build variables: `PUBLIC_TURNSTILE_SITE_KEY` (pública).
+  4. Se activa con el siguiente push a `produccion`. Si siteverify no responde, el lead se acepta.
+
 ## Comandos
 
 - `npm install`: instalar dependencias. Requiere Node.js 22.12 o superior.

@@ -1,0 +1,65 @@
+---
+// Antispam compartido para todos los form[data-lead-form] (POST a /api/leads).
+// El worker valida lo que este script agrega:
+// 1. Campo trampa `_website`: invisible para personas; los bots lo llenan.
+// 2. `_elapsed`: milisegundos entre carga y envio; un bot envia en < 3 s.
+// 3. Cloudflare Turnstile, solo si existe PUBLIC_TURNSTILE_SITE_KEY en el build.
+const siteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY ?? '';
+---
+
+<div hidden data-lead-guard data-turnstile-sitekey={siteKey}></div>
+
+<script>
+  const config = document.querySelector<HTMLElement>('[data-lead-guard]');
+  const siteKey = config?.dataset.turnstileSitekey ?? '';
+  const forms = document.querySelectorAll<HTMLFormElement>('form[data-lead-form]');
+  const loadedAt = performance.now();
+
+  function addHidden(form: HTMLFormElement, name: string, value = '') {
+    const input = document.createElement('input');
+    input.type = 'hidden';
+    input.name = name;
+    input.value = value;
+    form.append(input);
+    return input;
+  }
+
+  forms.forEach((form) => {
+    // Trampa: input de texto real fuera de pantalla (los bots ignoran type=hidden).
+    const trap = document.createElement('input');
+    trap.type = 'text';
+    trap.name = '_website';
+    trap.tabIndex = -1;
+    trap.autocomplete = 'off';
+    trap.setAttribute('aria-hidden', 'true');
+    trap.style.cssText = 'position:absolute;left:-10000px;width:1px;height:1px;opacity:0;';
+    form.append(trap);
+
+    const elapsed = addHidden(form, '_elapsed');
+    form.addEventListener('submit', () => {
+      elapsed.value = String(Math.round(performance.now() - loadedAt));
+    });
+
+    if (siteKey) {
+      const widget = document.createElement('div');
+      widget.className = 'lead-turnstile';
+      widget.style.margin = '0.5rem 0';
+      const submit = form.querySelector('[type="submit"]');
+      if (submit) submit.before(widget);
+      else form.append(widget);
+    }
+  });
+
+  if (siteKey && forms.length) {
+    (window as any).onTurnstileLoad = () => {
+      const lang = document.documentElement.lang.startsWith('en') ? 'en' : 'es';
+      document.querySelectorAll<HTMLElement>('.lead-turnstile').forEach((el) => {
+        (window as any).turnstile.render(el, { sitekey: siteKey, language: lang });
+      });
+    };
+    const script = document.createElement('script');
+    script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit&onload=onTurnstileLoad';
+    script.async = true;
+    document.head.append(script);
+  }
+</script>
