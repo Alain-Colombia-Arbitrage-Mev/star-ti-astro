@@ -134,7 +134,7 @@ export const seoData: Record<string, SEOData> = {
       email: 'contacto@star-ti.com',
       foundingDate: '2016',
       numberOfEmployees: { '@type': 'QuantitativeValue', minValue: 15 },
-      sameAs: ['https://www.facebook.com/starsabordo', 'https://www.linkedin.com/company/starsolution-sas', 'https://x.com/stabordo'],
+      sameAs: ['https://www.facebook.com/starsabordo', 'https://www.instagram.com/starsolutionti/', 'https://www.linkedin.com/company/starsolution-sas'],
       knowsAbout: ['Cybersecurity', 'Seguridad Informática', 'Seguridad de la Información', 'ISO 27001', 'Penetration Testing', 'EDR/XDR', 'Data Loss Prevention'],
     },
   },
