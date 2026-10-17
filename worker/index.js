@@ -217,22 +217,27 @@ async function handleLeadSubmission(request, env) {
   const sourcePath = sourceUrl ? new URL(sourceUrl).pathname : "";
   const redirectTo = getSafeRedirect(request, rawFields._redirect);
 
-  // Spam: se responde igual que un envio exitoso para no darle pistas al bot,
-  // y no se guarda en Airtable ni se envia correo.
+  // Spam. Solo se descarta el POST directo que no paso por la pagina (sin
+  // _elapsed): es el bot tipico. Todo lo demas llega a Airtable y al correo,
+  // marcado "[Posible spam]", porque el autocompletado del celular o un campo
+  // trampa rellenado por el navegador no deben costar un cliente real.
   const spamReason = await detectSpam(request, env, rawFields);
-  if (spamReason) {
+  if (spamReason === "sin-js") {
     console.log("Lead descartado como spam", spamReason, sourcePath);
     if (wantsJson(request)) return Response.json({ ok: true });
     return Response.redirect(new URL(redirectTo, request.url).href, 303);
   }
+  const spamTag = spamReason ? `[Posible spam: ${spamReason}] ` : "";
+  if (spamReason) console.log("Lead marcado como posible spam", spamReason, sourcePath);
 
   const normalized = normalizeLead(rawFields, sourceUrl, sourcePath, request);
+  if (spamTag) normalized[FIELD_NAMES.lead] = (spamTag + normalized[FIELD_NAMES.lead]).slice(0, 120);
 
   // La solicitud se guarda en Airtable (respaldo) y se envia por correo en
   // paralelo. Basta con que uno de los dos funcione para no perder el lead.
   const [airtable, email] = await Promise.all([
     saveLeadToAirtable(normalized, env),
-    sendLeadEmail(normalized, env),
+    sendLeadEmail(normalized, env, spamTag),
   ]);
 
   if (airtable === "ok" || email === "ok") {
@@ -317,7 +322,7 @@ const EMAIL_FIELD_ORDER = [
 ];
 
 /** @returns {Promise<"ok" | "skipped" | "failed">} */
-async function sendLeadEmail(fields, env) {
+async function sendLeadEmail(fields, env, spamTag = "") {
   const apiKey = env.RESEND_API_KEY;
   if (!apiKey) {
     console.warn("Email skipped: missing RESEND_API_KEY.");
@@ -368,7 +373,7 @@ async function sendLeadEmail(fields, env) {
       body: JSON.stringify({
         from,
         to,
-        subject: `[${origin.page}] Nueva solicitud web: ${service} - ${who}`.slice(0, 200),
+        subject: `${spamTag}[${origin.page}] Nueva solicitud web: ${service} - ${who}`.slice(0, 200),
         text,
         html,
         ...(isLikelyEmail(leadEmail) ? { reply_to: leadEmail } : {}),

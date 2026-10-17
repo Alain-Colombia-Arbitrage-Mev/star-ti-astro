@@ -120,8 +120,9 @@ descripciones ≤ 160, `lastmod` del sitemap, 301 con barra final faltantes, `no
 
 - `src/components/LeadFormGuard.astro` (montado en `BaseLayout`) agrega a todo `form[data-lead-form]`
   un campo trampa `_website` y `_elapsed` (ms hasta el envío). `detectSpam` en `worker/index.js`
-  descarta trampa llena, envíos sin JS o en menos de 3 s, sin guardar en Airtable ni enviar correo;
-  el bot recibe la misma redirección a /gracias. Motivo en el log: "Lead descartado como spam".
+  solo **descarta** el POST directo sin `_elapsed` (no pasó por la página). Trampa llena, envío en
+  menos de 3 s o Turnstile fallido **se entregan igual** a Airtable y al correo, con el prefijo
+  "[Posible spam: motivo]" (el autocompletado del celular puede enviar en < 3 s). Nunca perder leads.
 - Cloudflare Turnstile se activa solo con las dos claves; sin ellas funcionan las otras capas:
   1. Cloudflare → Turnstile → Add widget: `star-ti.com` y `guardcolombia.workers.dev`, modo Managed.
   2. Worker → Settings → Variables and Secrets: secreto `TURNSTILE_SECRET_KEY`. **Guardar con
