@@ -44,6 +44,10 @@ const LEGACY_REDIRECTS = new Map([
 ]);
 
 const TRAILING_SLASH_PATHS = new Set([
+  "/mejores-empresas-consultoria-iso-27001-colombia",
+  "/blog/comprar-kaspersky-empresas-colombia",
+  "/blog/kaspersky-edr-xdr-mxdr-colombia",
+  "/blog/kaspersky-next-precio-colombia",
   "/bitdefender",
   "/kaspersky",
   "/kymatio",
@@ -127,6 +131,12 @@ export default {
     }
 
     const assetResponse = await env.ASSETS.fetch(request);
+    // *.workers.dev (vistas previas) no debe competir en Google con star-ti.com.
+    if (url.hostname.endsWith(".workers.dev")) {
+      const noindexResponse = new Response(assetResponse.body, assetResponse);
+      noindexResponse.headers.set("X-Robots-Tag", "noindex, nofollow");
+      return noindexResponse;
+    }
     if (assetResponse.status !== 404 || !url.pathname.startsWith("/_astro/")) {
       return assetResponse;
     }

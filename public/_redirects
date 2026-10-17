@@ -55,3 +55,10 @@
 /brother/ /equipos-computo/ 301
 /rthreat-bogota-colombia /hacking-etico/ 301
 /rthreat-bogota-colombia/ /hacking-etico/ 301
+
+# Paginas nuevas y posts que faltaban (evita el 307 por defecto de Cloudflare)
+/kymatio /kymatio/ 301
+/lastpass /lastpass/ 301
+/blog/comprar-kaspersky-empresas-colombia /blog/comprar-kaspersky-empresas-colombia/ 301
+/blog/kaspersky-edr-xdr-mxdr-colombia /blog/kaspersky-edr-xdr-mxdr-colombia/ 301
+/blog/kaspersky-next-precio-colombia /blog/kaspersky-next-precio-colombia/ 301

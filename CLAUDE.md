@@ -99,6 +99,23 @@ Pendiente:
 4. A futuro: pasar a cuentas de la empresa el dominio, Cloudflare, GitHub y Airtable (hoy están en
    cuentas de Alain).
 
+## Publicado el 17-oct-2026 (aprobado por George)
+
+- Worker: toda petición `http://` se redirige con 301 a `https://` (el sitio aparecía "No seguro").
+- Schema sin `aggregateRating`/`review` inventados (riesgo de acción manual de Google): los
+  productos son `Service` (función `resellerService`). Organization con `legalName`, `taxID`
+  900968161-7, `hasCredential` ISO/IEC 27001:2022 (SGS CO25/00000158, vence 2027-11-12) y redes.
+- Cifras validadas por George: +1.150 empresas atendidas, 590K+ endpoints protegidos, 10 años
+  (constituida en 2016), 50M datos protegidos, 85M amenazas bloqueadas. No hay ISO 9001 (en proceso).
+- Casos de clientes autorizados: Canal Capital (Mauris Ávila) e Integral Group Solutions (Fabio Pachón).
+- Informe 2026: metodología basada en fuentes públicas (no hay análisis de incidentes de clientes).
+- Redes: facebook.com/starsolutionstisas, instagram.com/starsolutionti,
+  linkedin.com/company/starsolutionstisas, x.com/tistarsolutions.
+
+En desarrollo (tanda 2): enlaces internos a /seguridad-informatica-empresas/, títulos ≤ 60 y
+descripciones ≤ 160, `lastmod` del sitemap, 301 con barra final faltantes, `noindex` en
+*.workers.dev, CSP y Permissions-Policy. HSTS pendiente hasta confirmar el certificado.
+
 ## Comandos
 
 - `npm install`: instalar dependencias. Requiere Node.js 22.12 o superior.

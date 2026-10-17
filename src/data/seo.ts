@@ -174,7 +174,7 @@ export const seoData: Record<string, SEOData> = {
     ]),
   },
   kaspersky: {
-    title: 'Distribuidor Corporativo Kaspersky Colombia | Star Solutions TI',
+    title: 'Distribuidor Corporativo Kaspersky Colombia',
     description: 'Distribuidor corporativo Kaspersky en Colombia para empresas. Licencias Kaspersky Next, EDR/XDR/MXDR, implementacion, renovacion y soporte en Bogota.',
     keywords: 'distribuidor corporativo Kaspersky Colombia, distribuidor Kaspersky Colombia, partner Kaspersky Colombia, licencias Kaspersky empresas Colombia, Kaspersky Next Colombia, cotizar Kaspersky endpoint Colombia, antivirus corporativo Kaspersky Colombia, Kaspersky EDR Colombia, Kaspersky XDR Colombia, renovar Kaspersky empresas Colombia',
     canonical: `${BASE_URL}/kaspersky/`,
@@ -233,7 +233,7 @@ export const seoData: Record<string, SEOData> = {
     ]),
   },
   kymatio: {
-    title: 'Kymatio Colombia | Gestión del Riesgo Humano | Star Solutions TI',
+    title: 'Kymatio Colombia: Gestión del Riesgo Humano',
     description: 'Kymatio: gestión del riesgo humano en ciberseguridad. Concienciación adaptativa, simulaciones de phishing y vishing, credenciales expuestas y bienestar digital.',
     keywords: 'Kymatio Colombia, gestión del riesgo humano, human risk management, concienciación en ciberseguridad, simulación de phishing, vishing, credenciales expuestas, security awareness, ISO 27001 control 6.3',
     canonical: `${BASE_URL}/kymatio/`,
@@ -266,7 +266,7 @@ export const seoData: Record<string, SEOData> = {
     ]),
   },
   vicarius: {
-    title: 'Vicarius vRx | Gestión de Vulnerabilidades | Star Solutions TI',
+    title: 'Vicarius vRx Gestión de Vulnerabilidades | Star Solutions TI',
     description: 'Vicarius vRx: plataforma Full Cycle Vulnerability Management con Patchless Protection, vRx Scripting Engine y vIntelligence. Implementamos en Colombia.',
     keywords: 'Vicarius vRx, gestión vulnerabilidades, exposure assessment platforms, patch management, Patchless Protection, vRx Scripting Engine, exposure management Colombia',
     canonical: `${BASE_URL}/vicarius/`,
@@ -482,7 +482,7 @@ export const seoData: Record<string, SEOData> = {
   },
   netwrix: {
     title: 'Netwrix Seguridad de Datos e Identidades | Star Solutions TI',
-    description: 'Netwrix Colombia: auditoría AD, PAM, DLP y clasificación de datos. Cumpla Ley 1581, ISO 27001 y Circular 007. Star Solutions TI implementa con soporte en español.',
+    description: 'Netwrix Colombia: auditoría AD, PAM, DLP y clasificación de datos. Cumpla Ley 1581, ISO 27001 y Circular 007. Implementación con soporte en español.',
     keywords: 'Netwrix Colombia, Netwrix Auditor, Netwrix Access Analyzer, Netwrix Privilege Secure, Netwrix Endpoint Protector, auditoría Active Directory, PAM Zero Standing Privilege, DLP, clasificación datos, gobernanza identidad, Ley 1581, Circular 007',
     canonical: `${BASE_URL}/netwrix/`,
     ogTitle: 'Netwrix - Seguridad de Datos e Identidades en Colombia',
@@ -500,8 +500,8 @@ export const seoData: Record<string, SEOData> = {
     ]),
   },
   lastpass: {
-    title: 'LastPass Business Colombia | Gestor de Contraseñas | Star Solutions TI',
-    description: 'LastPass Business: gestor de contraseñas empresarial con cifrado zero-knowledge, MFA, SSO y 100+ políticas. Controles ISO 27001 de acceso. Implementamos en Colombia.',
+    title: 'LastPass Business Colombia: Gestor de Contraseñas',
+    description: 'LastPass Business: gestor de contraseñas empresarial con cifrado zero-knowledge, MFA, SSO y 100+ políticas. Controles ISO 27001. Implementamos en Colombia.',
     keywords: 'LastPass Colombia, LastPass Business, gestor de contraseñas empresarial, gestión de credenciales, control de accesos, gestión de identidades, MFA, SSO, ISO 27001 control 5.17, cumplimiento Ley 1581',
     canonical: `${BASE_URL}/lastpass/`,
     ogTitle: 'LastPass Business - Gestión de Contraseñas y Accesos para Cumplimiento en Colombia',
@@ -684,7 +684,7 @@ export const seoData: Record<string, SEOData> = {
     },
   },
   contacto: {
-    title: 'Contacto - Ciberseguridad Empresarial | Star Solutions TI Colombia',
+    title: 'Contacto Ciberseguridad Empresarial | Star Solutions TI',
     description: 'Contacte a Star Solutions TI: ciberseguridad, equipos de computo y redes. Oficinas en Bogotá, Caracas y Miami. Le respondemos a la mayor brevedad.',
     keywords: 'contacto Star Solutions TI, teléfono, email, oficinas Bogotá, asesoria ciberseguridad gratuita',
     canonical: `${BASE_URL}/contacto/`,
@@ -866,7 +866,7 @@ export const seoData: Record<string, SEOData> = {
   // =====================================================
   blog: {
     title: 'Blog de Ciberseguridad Empresarial | Star Solutions TI',
-    description: 'Artículos sobre ciberseguridad empresarial en Colombia: ransomware, respuesta a incidentes, ISO 27001, Zero Trust y cifrado. Guías prácticas de Star Solutions TI.',
+    description: 'Artículos sobre ciberseguridad empresarial en Colombia: ransomware, respuesta a incidentes, ISO 27001, Zero Trust y cifrado. Guías de Star Solutions TI.',
     keywords: 'blog ciberseguridad Colombia, artículos seguridad informática, ransomware, ISO 27001, Zero Trust, respuesta a incidentes',
     canonical: `${BASE_URL}/blog/`,
     ogTitle: 'Blog de Ciberseguridad Empresarial',
@@ -883,7 +883,7 @@ export const seoData: Record<string, SEOData> = {
     },
   },
   'blog/perfect-forward-secrecy': {
-    title: 'Perfect Forward Secrecy: Guia para Empresas | Star Solutions TI',
+    title: 'Perfect Forward Secrecy para Empresas | Star Solutions TI',
     description: 'Que es Perfect Forward Secrecy (PFS) y por que su empresa lo necesita hoy. Proteja comunicaciones cifradas aunque las claves maestras sean comprometidas.',
     keywords: 'Perfect Forward Secrecy, PFS empresas, cifrado comunicaciones, TLS seguridad, protección criptografica Colombia',
     canonical: `${BASE_URL}/blog/perfect-forward-secrecy/`,
@@ -939,7 +939,7 @@ export const seoData: Record<string, SEOData> = {
     ]),
   },
   'blog/iso-27001-regulaciones': {
-    title: 'ISO 27001:2022 y Empresas Colombianas: Que Cambia | Star Solutions TI',
+    title: 'ISO 27001:2022 en Colombia: Qué Cambia | Star Solutions TI',
     description: 'Análisis de los cambios de ISO 27001:2022 y su impacto en empresas colombianas. Nuevos controles, plazos de transicion y como prepararse con Star Solutions TI.',
     keywords: 'ISO 27001 2022 Colombia, nuevas regulaciones ISO 27001, SGSI actualizacion, cumplimiento normativo Colombia, transicion ISO 27001',
     canonical: `${BASE_URL}/blog/iso-27001-regulaciones/`,
@@ -963,7 +963,7 @@ export const seoData: Record<string, SEOData> = {
 
   'blog/ransomware-empresas-colombia': {
     title: 'Ransomware en Colombia: Prevención y Respuesta 2026',
-    description: 'Como prevenir y responder al ransomware en Colombia. Estadisticas 2025-2026, fases del ataque, capas de defensa EDR/backup/email y plan de respuesta a incidentes.',
+    description: 'Como prevenir y responder al ransomware en Colombia. Estadisticas 2025-2026, fases del ataque, capas de defensa EDR/backup/email y plan de respuesta.',
     keywords: 'ransomware empresas Colombia, protección ransomware, como prevenir ransomware empresa, ataque ransomware Colombia, respuesta incidentes ransomware, EDR anti-ransomware',
     canonical: `${BASE_URL}/blog/ransomware-empresas-colombia/`,
     ogTitle: 'Ransomware en Empresas Colombianas: Guia de Prevención y Respuesta 2026',
@@ -1157,7 +1157,7 @@ export const seoData: Record<string, SEOData> = {
       headline: 'Informe de Ciberseguridad Empresarial Colombia 2026',
       description: 'Análisis de ciberamenazas en Colombia con fuentes públicas (COLCERT, SIC, Verizon DBIR) y experiencia en campo. Ransomware, BEC, phishing, costos y recomendaciones.',
       datePublished: '2026-01-15',
-      dateModified: '2026-03-01',
+      dateModified: '2026-10-17',
       author: AUTHOR,
       publisher: { '@type': 'Organization', name: 'Star Solutions TI S.A.S.', url: BASE_URL, logo: { '@type': 'ImageObject', url: `${BASE_URL}/logo.png` } },
       image: `${BASE_URL}/og-default.png`,

@@ -27,13 +27,21 @@ if (blogDates.length) LASTMOD.set(`${SITE}/blog/`, blogDates[blogDates.length - 
 // Landings comerciales actualizadas recientemente que no tienen fecha propia en
 // JSON-LD. Mantener estas fechas atadas a cambios reales de contenido.
 const COMMERCIAL_LASTMOD = [
-  ['/bitdefender/', '2026-08-18'],
+  ['/', '2026-10-17'],
+  ['/bitdefender/', '2026-10-16'],
+  ['/cableado-estructurado/', '2026-10-16'],
+  ['/contacto/', '2026-10-17'],
+  ['/equipos-computo/', '2026-10-16'],
   ['/iso-27001/', '2026-08-24'],
-  ['/kaspersky/', '2026-08-18'],
+  ['/kaspersky/', '2026-10-17'],
+  ['/kymatio/', '2026-10-16'],
+  ['/lastpass/', '2026-10-16'],
   ['/mejores-empresas-consultoria-iso-27001-colombia/', '2026-08-18'],
-  ['/miami/', '2026-08-18'],
+  ['/miami/', '2026-10-17'],
   ['/miami/contacto/', '2026-08-18'],
-  ['/seguridad-informatica-empresas/', '2026-08-18'],
+  ['/seguridad-informatica-empresas/', '2026-10-17'],
+  ['/sobre-nosotros/', '2026-10-17'],
+  ['/venezuela/', '2026-10-17'],
 ] as const;
 for (const [path, date] of COMMERCIAL_LASTMOD) LASTMOD.set(`${SITE}${path}`, date);
 
