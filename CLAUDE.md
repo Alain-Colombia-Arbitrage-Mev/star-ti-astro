@@ -163,6 +163,15 @@ descripciones ≤ 160, `lastmod` del sitemap, 301 con barra final faltantes, `no
   decision de George (lleva 7 anos). Categoria principal: Servicio de seguridad para computadoras.
 - Estadisticas citadas deben ser del ano en curso (IBM 2026, Verizon DBIR 2026, FBI IC3 2025).
 - Web Analytics de Cloudflare estaba activo pero bloqueado por la CSP del 17-oct; corregido.
+- Mas decisiones de George (18-oct, tarde): Star NO opera en Panama. Es distribuidor de Proofpoint
+  y Partner Silver de Hornetsecurity (carta de Hornetsecurity Iberia, jul-2026; no publicarla: tiene
+  datos personales). Certificados tecnica y comercialmente en TODAS las marcas que distribuye.
+  Vende Fortinet. LinkedIn de Jorge (autor): /in/jorge-enrique-molano-moncaleano-58b093a4/.
+- Premios de Bitdefender y Kaspersky en `AwardsGrid.astro` (datos en cada pagina, con su ano).
+  Imagenes Open Graph en `public/og/*.jpg` (generador fuera del repo, plantilla 1200x630).
+- Airtable: la base que recibe los leads NO esta en la cuenta de George (jorgemolano@star-ti.com
+  solo tiene "My First Workspace" vacio). Pendiente: crear base propia (plantilla CSV con las 27
+  columnas de FIELD_NAMES) y rotar AIRTABLE_TOKEN / AIRTABLE_BASE_ID / AIRTABLE_TABLE_ID.
 
 ## Comandos
 
