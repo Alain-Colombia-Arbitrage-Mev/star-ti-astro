@@ -404,7 +404,7 @@ export const seoData: Record<string, SEOData> = {
           isPartOf: { '@type': 'WebSite', '@id': `${BASE_URL}/#website`, url: BASE_URL, name: 'Star Solutions TI' },
           about: { '@id': `${BASE_URL}/mejores-empresas-consultoria-iso-27001-colombia/#itemlist` },
           datePublished: '2026-08-18',
-          dateModified: '2026-08-18',
+          dateModified: '2026-10-18',
         },
         {
           '@type': 'Article',
@@ -416,7 +416,7 @@ export const seoData: Record<string, SEOData> = {
           publisher: ORG,
           mainEntityOfPage: { '@id': `${BASE_URL}/mejores-empresas-consultoria-iso-27001-colombia/#webpage` },
           datePublished: '2026-08-18',
-          dateModified: '2026-08-18',
+          dateModified: '2026-10-18',
         },
         {
           '@type': 'ItemList',

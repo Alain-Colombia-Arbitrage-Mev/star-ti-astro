@@ -41,7 +41,7 @@ const COMMERCIAL_LASTMOD = [
   ['/kaspersky/', '2026-10-18'],
   ['/kymatio/', '2026-10-16'],
   ['/lastpass/', '2026-10-16'],
-  ['/mejores-empresas-consultoria-iso-27001-colombia/', '2026-08-18'],
+  ['/mejores-empresas-consultoria-iso-27001-colombia/', '2026-10-18'],
   ['/sealpath/', '2026-10-18'],
   ['/seguridad-informatica-empresas/', '2026-10-17'],
   ['/sobre-nosotros/', '2026-10-17'],
