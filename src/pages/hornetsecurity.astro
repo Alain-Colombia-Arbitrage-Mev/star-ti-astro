@@ -9,6 +9,14 @@ import { seoData } from '@data/seo';
 
 const seo = seoData['hornetsecurity'];
 
+// Partner Silver: certificado por Hornetsecurity Iberia S.L. (Country Manager, 10-jul-2026).
+// La carta no se publica: contiene datos personales del firmante.
+const SILVER_BENEFITS = [
+  { t: 'Autorizados por el fabricante', d: 'Hornetsecurity certifica que Star Solutions TI está autorizada para comercializar, implementar y soportar sus soluciones.' },
+  { t: 'Respaldo directo de Hornetsecurity', d: 'Actualizaciones, soporte técnico y continuidad del servicio durante toda la vigencia de la suscripción.' },
+  { t: 'Acompañamiento local en español', d: 'Cotización, migración, configuración y soporte desde Bogotá, con licencias facturadas en Colombia.' },
+];
+
 const HS_SECTORS = [
   { sector: 'Banca y finanzas', need: 'Frenar el fraude del CEO (BEC) y el phishing dirigido a tesorería, con la trazabilidad que exige la Circular 007 de la Superfinanciera.', how: 'Advanced Threat Protection con sandbox y reescritura de URLs, más AI Recipient Validation para evitar envíos a destinatarios erróneos.' },
   { sector: 'Servicios legales y profesionales', need: 'Conservar correo con valor probatorio y sustentar controles de retención en auditorías ISO 27001.', how: 'Email Archiving a prueba de manipulación y 365 Permission Manager para controlar quién accede a qué en Microsoft 365.' },
@@ -36,7 +44,7 @@ const HS_SECTORS = [
                 <path d="M8 2L9.5 5L13 5.5L10.5 8L11 11.5L8 10L5 11.5L5.5 8L3 5.5L6.5 5L8 2Z" fill="#e44d26"/>
               </svg>
               <span class="text-[#e44d26] text-xs font-semibold tracking-wider uppercase">
-                Partner Oficial de Hornetsecurity
+                Partner Silver de Hornetsecurity
               </span>
             </div>
 
@@ -190,6 +198,69 @@ const HS_SECTORS = [
           <div>
             <div class="text-[#1f2937] text-xl font-bold tracking-tight">ISO 27001 · SOC 2</div>
             <div class="text-xs text-[#6b7280] uppercase tracking-wider">Certificaciones vigentes</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Partner Silver de Hornetsecurity -->
+    <section class="relative overflow-hidden bg-gradient-to-br from-slate-50 via-white to-lime-50 py-16 sm:py-20 border-b border-gray-200" aria-labelledby="partner-silver-hornetsecurity">
+      <div class="absolute -top-24 -left-24 w-96 h-96 bg-slate-200/50 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
+      <div class="absolute -bottom-32 right-0 w-[28rem] h-[28rem] bg-lime-200/30 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
+
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-[1fr_1.15fr] gap-12 lg:gap-16 items-center">
+
+          <!-- Sello -->
+          <div class="relative max-w-md mx-auto w-full pt-10 lg:pt-0">
+            <div class="absolute inset-6 bg-gradient-to-br from-slate-400/30 to-lime-400/20 rounded-[2rem] blur-2xl" aria-hidden="true"></div>
+            <div class="relative bg-white rounded-3xl border border-slate-200 shadow-2xl shadow-slate-900/10 px-8 pt-16 pb-10 text-center">
+              <span class="silver-medal absolute -top-10 left-1/2 -translate-x-1/2 w-20 h-20 rounded-full flex items-center justify-center shadow-xl" aria-hidden="true">
+                <svg class="w-9 h-9 text-white drop-shadow" fill="currentColor" viewBox="0 0 16 16"><path d="M8 1.5l1.9 3.9 4.3.6-3.1 3 .7 4.3L8 11.3l-3.8 2 .7-4.3-3.1-3 4.3-.6L8 1.5z"/></svg>
+              </span>
+              <img src="/marcas/hornetsecurity.webp" alt="Hornetsecurity by Proofpoint" width="502" height="320" class="w-40 mx-auto h-auto" loading="lazy" />
+              <div class="silver-plate mt-5 mx-auto inline-block rounded-xl px-6 py-2.5">
+                <span class="block text-xs font-semibold uppercase tracking-[0.3em] text-slate-600">Partner</span>
+                <span class="block text-2xl font-bold tracking-wide text-slate-800">SILVER</span>
+              </div>
+              <p class="mt-6 text-sm font-semibold uppercase tracking-widest text-slate-800">Star Solutions TI</p>
+              <p class="text-xs text-gray-500 mt-1">Hornetsecurity by Proofpoint · Colombia</p>
+            </div>
+          </div>
+
+          <!-- Mensaje -->
+          <div>
+            <span class="inline-flex items-center gap-2 bg-slate-100 text-slate-800 text-xs font-semibold px-3 py-1.5 rounded-full uppercase tracking-wider">
+              <span class="w-1.5 h-1.5 rounded-full bg-lime-600"></span>
+              Certificado por el fabricante
+            </span>
+            <h2 id="partner-silver-hornetsecurity" class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mt-5 mb-5 leading-tight">
+              Star Solutions TI es <span class="bg-gradient-to-r from-slate-500 via-slate-700 to-slate-500 bg-clip-text text-transparent">Partner Silver</span> de Hornetsecurity
+            </h2>
+            <p class="text-lg text-gray-700 leading-relaxed mb-8">
+              Hornetsecurity Iberia certificó en julio de 2026 que Star Solutions TI es partner Silver,
+              autorizada para comercializar, implementar y soportar 365 Total Protection y el resto de
+              soluciones de Hornetsecurity by Proofpoint en Colombia.
+            </p>
+
+            <ul class="space-y-4 mb-8">
+              {SILVER_BENEFITS.map((b) => (
+                <li class="flex items-start gap-3">
+                  <span class="bg-lime-50 border border-lime-200 rounded-full p-1.5 mt-0.5 shrink-0">
+                    <svg class="w-4 h-4 text-lime-700" fill="none" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 7.5l2.5 2.5L11 4.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" /></svg>
+                  </span>
+                  <span>
+                    <span class="block font-semibold text-gray-900">{b.t}</span>
+                    <span class="block text-sm text-gray-600 text-left">{b.d}</span>
+                  </span>
+                </li>
+              ))}
+            </ul>
+
+            <a href="/contacto/" class="inline-flex items-center gap-2 bg-gray-900 text-white font-semibold px-6 py-3 rounded-full hover:bg-gray-800 transition">
+              Cotizar Hornetsecurity
+              <span aria-hidden="true">&rarr;</span>
+            </a>
           </div>
         </div>
       </div>
@@ -895,3 +966,23 @@ const HS_SECTORS = [
   <Footer />
   <WhatsAppButton />
 </BaseLayout>
+
+<style>
+  .silver-medal {
+    background: linear-gradient(145deg, #f1f5f9 0%, #94a3b8 45%, #e2e8f0 70%, #64748b 100%);
+    border: 3px solid #fff;
+    animation: silver-float 4s ease-in-out infinite;
+  }
+  .silver-plate {
+    background: linear-gradient(135deg, #f8fafc 0%, #cbd5e1 40%, #f1f5f9 60%, #94a3b8 100%);
+    box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.8), 0 4px 12px rgb(15 23 42 / 0.12);
+  }
+  /* Solo eje vertical: el centrado horizontal lo hace -translate-x-1/2 (propiedad `translate`). */
+  @keyframes silver-float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .silver-medal { animation: none; }
+  }
+</style>

@@ -198,7 +198,7 @@ export const seoData: Record<string, SEOData> = {
   },
   'hornetsecurity': {
     title: 'Hornetsecurity Colombia | Seguridad de Correo Microsoft 365',
-    description: 'Hornetsecurity en Colombia: seguridad de correo (email security), backup, archivado y cifrado para Microsoft 365. Licencias e implementación local.',
+    description: 'Partner Silver de Hornetsecurity en Colombia: seguridad de correo, backup, archivado y cifrado para Microsoft 365. Licencias e implementación local.',
     keywords: 'Hornetsecurity, Hornetsecurity Colombia, Hornet email security, hornet mail security, seguridad email Microsoft 365, backup email, email encryption, protección correo empresarial Colombia',
     canonical: `${BASE_URL}/hornetsecurity/`,
     ogTitle: 'Hornetsecurity Colombia | Seguridad de Correo Microsoft 365',
