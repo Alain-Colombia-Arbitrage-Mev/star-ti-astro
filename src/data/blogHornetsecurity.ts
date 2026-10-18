@@ -27,6 +27,6 @@ export const hornetFaqs = [
   },
   {
     q: '¿Cuánto cuesta Hornetsecurity en Colombia?',
-    a: 'Hornetsecurity se licencia por usuario o buzón de Microsoft 365 y el valor depende del plan (Business, Enterprise, Enterprise Backup o Compliance & Awareness), del número de buzones y del plazo. Star Solutions TI, Partner Silver de Hornetsecurity, cotiza según su caso en pesos colombianos.',
+    a: 'No hay un precio único, porque cada empresa tiene una infraestructura y unas necesidades distintas. El valor depende del número de buzones, del plan (Business, Enterprise, Enterprise Backup o Compliance & Awareness), de si el correo está 100 % en Microsoft 365 o en un esquema híbrido con Exchange local, de cuánta información hay que respaldar y del alcance de la implementación. Star Solutions TI, Partner Silver de Hornetsecurity, revisa su caso y cotiza en pesos colombianos.',
   },
 ];
