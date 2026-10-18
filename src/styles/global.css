@@ -87,6 +87,13 @@
     66% { transform: translate(-20px, 20px) scale(0.9); }
     100% { transform: translate(0px, 0px) scale(1); }
   }
+  /* Texto justificado en todo el sitio (pedido de George, 18-oct-2026). Va en la
+     capa base: una clase utilitaria (text-center, text-left) en el propio <p> la
+     reemplaza, y los bloques centrados por su contenedor siguen centrados. El
+     guion automatico reduce los espacios grandes en pantallas angostas. */
+  main p { text-align: justify; hyphens: auto; -webkit-hyphens: auto; }
+  main :where(.text-center, .iso-section__header, .iso-step, .iso-cta) p { text-align: center; }
+
   .animate-blob { animation: blob 7s infinite; }
   .animation-delay-2000 { animation-delay: 2s; }
   .animation-delay-4000 { animation-delay: 4s; }
