@@ -167,7 +167,7 @@ const seo = seoData.home;
           </div>
 
           <!-- Badge flotante mejorado -->
-          <div class="absolute -bottom-6 -right-6 backdrop-blur-xl bg-white/90 border border-red-200/50 rounded-2xl shadow-2xl p-6">
+          <div class="absolute -bottom-6 right-2 sm:-right-6 backdrop-blur-xl bg-white/90 border border-red-200/50 rounded-2xl shadow-2xl p-6">
             <div class="text-sm text-gray-600 mb-2 font-medium">Amenazas Bloqueadas Hoy</div>
             <div class="text-4xl font-bold bg-gradient-to-r from-red-600 to-red-500 bg-clip-text text-transparent">1,247</div>
             <div class="text-xs text-green-600 mt-1 flex items-center gap-1">
@@ -513,6 +513,18 @@ const seo = seoData.home;
             <div class="text-sm text-gray-600 mt-1">Endpoints implementados y gestionados en Latinoamérica</div>
           </div>
         </div>
+      </div>
+
+      <!-- Sector público: enlace discreto a /ciberseguridad-sector-publico/ (George no lo quiere en el menú) -->
+      <div class="mt-8 flex flex-col sm:flex-row sm:items-center justify-between gap-5 bg-gray-50 border border-gray-200 rounded-3xl px-8 py-7">
+        <div>
+          <div class="text-2xl sm:text-3xl font-bold text-gray-900">+100 contratos con entidades públicas</div>
+          <p class="text-gray-600 mt-1 text-left">Ciberseguridad para el Estado colombiano: inscritos en el RUP, Mipyme y certificados en ISO 27001.</p>
+        </div>
+        <a href="/ciberseguridad-sector-publico/" class="shrink-0 inline-flex items-center justify-center gap-2 bg-gray-900 text-white font-semibold px-6 py-3 rounded-full hover:bg-gray-800 transition">
+          Ver experiencia en sector público
+          <span aria-hidden="true">&rarr;</span>
+        </a>
       </div>
     </div>
   </section>
