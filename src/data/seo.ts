@@ -232,7 +232,7 @@ export const seoData: Record<string, SEOData> = {
     ]),
   },
   kymatio: {
-    title: 'Kymatio Colombia: Gestión del Riesgo Humano',
+    title: 'Kymatio Colombia | Concienciación y Simulación de Phishing',
     description: 'Kymatio: gestión del riesgo humano en ciberseguridad. Concienciación adaptativa, simulaciones de phishing y vishing, credenciales expuestas y bienestar digital.',
     keywords: 'Kymatio Colombia, gestión del riesgo humano, human risk management, concienciación en ciberseguridad, simulación de phishing, vishing, credenciales expuestas, security awareness, ISO 27001 control 6.3',
     canonical: `${BASE_URL}/kymatio/`,
@@ -499,7 +499,7 @@ export const seoData: Record<string, SEOData> = {
     ]),
   },
   lastpass: {
-    title: 'LastPass Business Colombia: Gestor de Contraseñas',
+    title: 'LastPass Colombia | Gestor de Contraseñas para Empresas',
     description: 'LastPass Business: gestor de contraseñas empresarial con cifrado zero-knowledge, MFA, SSO y 100+ políticas. Controles ISO 27001. Implementamos en Colombia.',
     keywords: 'LastPass Colombia, LastPass Business, gestor de contraseñas empresarial, gestión de credenciales, control de accesos, gestión de identidades, MFA, SSO, ISO 27001 control 5.17, cumplimiento Ley 1581',
     canonical: `${BASE_URL}/lastpass/`,
