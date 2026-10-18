@@ -45,7 +45,7 @@ const COMMERCIAL_LASTMOD = [
   ['/sealpath/', '2026-10-18'],
   ['/seguridad-informatica-empresas/', '2026-10-17'],
   ['/sobre-nosotros/', '2026-10-17'],
-  ['/venezuela/', '2026-10-17'],
+  ['/venezuela/', '2026-10-18'],
 ] as const;
 for (const [path, date] of COMMERCIAL_LASTMOD) LASTMOD.set(`${SITE}${path}`, date);
 

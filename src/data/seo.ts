@@ -772,9 +772,9 @@ export const seoData: Record<string, SEOData> = {
   // REGIONES
   // =====================================================
   venezuela: {
-    title: 'Empresa de Ciberseguridad en Venezuela | Star Solutions TI',
-    description: 'Servicios de ciberseguridad para empresas en Venezuela: EDR/XDR, hacking ético, ISO 27001 y SOC 24/7. Oficina en Caracas, facturación en USD. Cotice gratis.',
-    keywords: 'empresa de ciberseguridad Venezuela, servicios de ciberseguridad Caracas, ciberseguridad empresarial Venezuela, hacking ético Venezuela, ISO 27001 Venezuela, antivirus empresas Caracas',
+    title: 'Ciberseguridad en Venezuela | Bitdefender y Kaspersky',
+    description: 'Distribuidor Bitdefender y Kaspersky en Venezuela: licencias en USD, EDR/XDR, hacking ético e ISO 27001 para empresas. Oficina en Caracas. Cotice gratis.',
+    keywords: 'distribuidor Bitdefender Venezuela, partner Bitdefender Venezuela, distribuidor Kaspersky Venezuela, partner Kaspersky Venezuela, empresa de ciberseguridad Venezuela, servicios de ciberseguridad Caracas, ciberseguridad empresarial Venezuela, hacking ético Venezuela, ISO 27001 Venezuela, antivirus empresas Caracas',
     canonical: `${BASE_URL}/venezuela/`,
     ogTitle: 'Star Solutions TI Venezuela — Empresa de Ciberseguridad en Caracas',
     ogType: 'website',
