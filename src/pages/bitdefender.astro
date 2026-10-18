@@ -28,10 +28,9 @@ const PARTNER_LOGOS = [
 
 // Reconocimientos (revisados el 18-oct-2026 en la sala de prensa de Bitdefender y prensa
 // especializada). Solo resultados verificables, con su año; al publicarse los de 2027,
-// actualizar aquí. category alimenta los filtros de la sección.
+// actualizar aquí.
 const AWARDS = [
   {
-    category: 'pruebas',
     org: 'AV-Comparatives',
     year: '2026',
     metric: '100%',
@@ -40,7 +39,6 @@ const AWARDS = [
     img: 'https://www.bitdefender.com/adobe/dynamicmedia/deliver/dm-aid--8dcbd827-620d-475b-8866-bf52908ca095/av-comparatives-exp-fragments3.png',
   },
   {
-    category: 'pruebas',
     org: 'AV-Comparatives',
     year: '2026',
     metric: '14/14',
@@ -48,7 +46,6 @@ const AWARDS = [
     desc: 'Telemetría relevante en los 14 pasos del ataque: único de los productos certificados con 100% de visibilidad.',
   },
   {
-    category: 'analistas',
     org: 'Gartner',
     year: '2026',
     metric: 'Visionary',
@@ -56,7 +53,6 @@ const AWARDS = [
     desc: 'Reconocido como Visionary en el cuadrante de plataformas de protección de endpoints.',
   },
   {
-    category: 'clientes',
     org: 'Gartner Peer Insights',
     year: '2026',
     metric: 'Customers’ Choice',
@@ -65,7 +61,6 @@ const AWARDS = [
     img: 'https://www.bitdefender.com/adobe/dynamicmedia/deliver/dm-aid--a7bbd3a0-eba2-4348-ae2c-1e111723b1be/gartner-peer-insights-customers-choice-badge-color-2026-outline.png',
   },
   {
-    category: 'pruebas',
     org: 'MITRE ATT&CK Evaluations',
     year: '2024',
     metric: 'Enterprise',
@@ -74,7 +69,6 @@ const AWARDS = [
     img: 'https://www.bitdefender.com/adobe/dynamicmedia/deliver/dm-aid--686fef75-98ad-4b0a-9e37-dc62dfebb86d/mitre-2024.png',
   },
   {
-    category: 'analistas',
     org: 'Forrester',
     year: '2024',
     metric: 'XDR',
@@ -84,12 +78,6 @@ const AWARDS = [
   },
 ];
 
-const AWARD_FILTERS = [
-  { id: 'todos', label: 'Todos' },
-  { id: 'pruebas', label: 'Pruebas independientes' },
-  { id: 'analistas', label: 'Analistas' },
-  { id: 'clientes', label: 'Clientes' },
-];
 
 const PRODUCT_MODULES = [
   { tag: 'EDR', title: 'GravityZone Endpoint Detection & Response', desc: 'Reconstruye la cadena de ataque sobre cada laptop o servidor comprometido y permite contener el incidente desde la consola sin tener que enviar a alguien presencial a la sede.' },
@@ -328,47 +316,38 @@ const serviceSchema = {
       </div>
     </section>
 
-    <!-- Reconocimientos: tarjetas filtrables (Pruebas / Analistas / Clientes) -->
-    <section class="bd-awards bg-[#0b0f19] py-16 sm:py-20" aria-labelledby="reconocimientos-bitdefender">
+    <!-- Reconocimientos: carrusel automático de premios (logo + reseña breve). La lista se
+         repite dos veces para que el desplazamiento sea continuo; la copia va aria-hidden. -->
+    <section class="bd-awards bg-gradient-to-b from-white to-gray-50 py-16 sm:py-20 border-y border-gray-200" aria-labelledby="reconocimientos-bitdefender">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center max-w-3xl mx-auto mb-10">
           <span class="text-[#ed1c24] text-xs font-semibold uppercase tracking-widest">Reconocimientos 2026</span>
-          <h2 id="reconocimientos-bitdefender" class="text-3xl sm:text-4xl font-bold text-white mt-3 mb-4">
+          <h2 id="reconocimientos-bitdefender" class="text-3xl sm:text-4xl font-bold text-gray-900 mt-3 mb-4">
             Bitdefender, validado por pruebas independientes, analistas y clientes
           </h2>
-          <p class="text-gray-400 text-center">
+          <p class="text-gray-600 text-center">
             Lo que respalda la tecnología que implementamos como Reseller Platinum en Colombia.
           </p>
-          <p class="sm:hidden text-gray-500 text-xs text-center mt-3">Desliza para ver más &rarr;</p>
         </div>
+      </div>
 
-        <div class="flex flex-wrap justify-center gap-2 mb-10" role="group" aria-label="Filtrar reconocimientos">
-          {AWARD_FILTERS.map((f, i) => (
-            <button type="button" data-award-filter={f.id} aria-pressed={i === 0 ? 'true' : 'false'} class="bd-awards__chip">
-              {f.label}
-            </button>
-          ))}
-        </div>
-
-        <ul class="bd-awards__list flex sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-5 overflow-x-auto sm:overflow-visible snap-x snap-mandatory scroll-px-4 -mx-4 px-4 sm:mx-0 sm:px-0 pb-2" role="list">
-          {AWARDS.map((a) => (
-            <li data-award-category={a.category} class="bd-awards__card group snap-start shrink-0 w-[85%] sm:w-auto">
-              <div class="flex items-start justify-between gap-4 mb-6">
-                <div class="h-14 flex items-center">
+      <div class="bd-awards__viewport" role="region" aria-label="Premios de Bitdefender">
+        <ul class="bd-awards__track" role="list">
+          {[...AWARDS, ...AWARDS].map((a, i) => (
+            <li class="bd-awards__card" aria-hidden={i >= AWARDS.length ? 'true' : undefined}>
+              <div class="flex items-center justify-between gap-3 mb-5">
+                <div class="h-12 flex items-center">
                   {a.img ? (
-                    <span class="bd-awards__logo bg-white rounded-xl px-3 py-2 inline-flex items-center h-14" data-org={a.org}>
-                      <img src={a.img} alt={`${a.org}: ${a.title}`} width="120" height="40" class="h-10 w-auto max-w-[120px] object-contain" loading="lazy" />
-                    </span>
+                    <img src={a.img} alt={i >= AWARDS.length ? '' : `${a.org}: ${a.title}`} width="120" height="40" class="bd-awards__img h-11 w-auto max-w-[130px] object-contain" loading="lazy" data-org={a.org} />
                   ) : (
-                    <span class="text-white font-bold text-lg leading-tight">{a.org}</span>
+                    <span class="font-bold text-gray-900 text-lg leading-tight">{a.org}</span>
                   )}
                 </div>
-                <span class={`shrink-0 text-xs font-semibold rounded-full px-3 py-1 ${a.year === '2026' ? 'bg-[#ed1c24] text-white' : 'bg-white/10 text-gray-300'}`}>{a.year}</span>
+                <span class={`shrink-0 text-xs font-semibold rounded-full px-3 py-1 ${a.year === '2026' ? 'bg-[#ed1c24] text-white' : 'bg-gray-100 text-gray-600'}`}>{a.year}</span>
               </div>
-              <div class="text-3xl font-bold text-white mb-2 transition-colors group-hover:text-[#ff4d55]">{a.metric}</div>
-              <h3 class="text-base font-semibold text-white mb-2">{a.title}</h3>
-              <p class="text-sm text-gray-400 leading-relaxed text-left">{a.desc}</p>
-              {a.img && <div class="bd-awards__orgline text-xs text-gray-500 mt-4">{a.org}</div>}
+              <div class="text-2xl font-bold text-[#ed1c24] mb-1">{a.metric}</div>
+              <h3 class="text-base font-semibold text-gray-900 mb-2">{a.title}</h3>
+              <p class="text-sm text-gray-600 leading-relaxed text-left">{a.desc}</p>
             </li>
           ))}
         </ul>
@@ -376,66 +355,52 @@ const serviceSchema = {
     </section>
 
     <style>
-      .bd-awards__chip {
-        border: 1px solid rgb(255 255 255 / 0.15);
-        color: rgb(209 213 219);
-        font-size: 0.875rem;
-        font-weight: 600;
-        padding: 0.5rem 1rem;
-        border-radius: 9999px;
-        transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+      .bd-awards__viewport {
+        overflow: hidden;
+        -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+        mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
       }
-      .bd-awards__chip:hover { border-color: rgb(255 255 255 / 0.4); color: #fff; }
-      .bd-awards__chip[aria-pressed='true'] { background: #ed1c24; border-color: #ed1c24; color: #fff; }
+      .bd-awards__track {
+        display: flex;
+        gap: 1.25rem;
+        width: max-content;
+        padding: 0.5rem 0 1rem;
+        animation: bd-awards-scroll 45s linear infinite;
+      }
+      .bd-awards__viewport:hover .bd-awards__track,
+      .bd-awards__viewport:focus-within .bd-awards__track { animation-play-state: paused; }
       .bd-awards__card {
-        background: linear-gradient(160deg, rgb(255 255 255 / 0.06), rgb(255 255 255 / 0.02));
-        border: 1px solid rgb(255 255 255 / 0.1);
+        width: 18.5rem;
+        flex-shrink: 0;
+        background: #fff;
+        border: 1px solid rgb(229 231 235);
         border-radius: 1.25rem;
-        padding: 1.75rem;
-        transition: transform 0.3s, border-color 0.3s, opacity 0.3s;
+        padding: 1.5rem;
+        box-shadow: 0 1px 3px rgb(15 23 42 / 0.06);
+        transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
       }
-      .bd-awards__card:hover { transform: translateY(-4px); border-color: rgb(237 28 36 / 0.6); }
-      .bd-awards__card[hidden] { display: none; }
-      .bd-awards__list { scrollbar-width: none; }
-      .bd-awards__list::-webkit-scrollbar { display: none; }
-      .bd-awards__card.is-entering { animation: bd-award-in 0.35s ease both; }
-      @keyframes bd-award-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+      .bd-awards__card:hover { transform: translateY(-4px); border-color: rgb(237 28 36 / 0.4); box-shadow: 0 12px 28px rgb(15 23 42 / 0.1); }
+      @keyframes bd-awards-scroll { to { transform: translateX(calc(-50% - 0.625rem)); } }
+      /* Sin animación: carrusel deslizable a mano y sin la copia de la lista. */
       @media (prefers-reduced-motion: reduce) {
-        .bd-awards__card, .bd-awards__card.is-entering { transition: none; animation: none; }
+        .bd-awards__viewport { overflow-x: auto; -webkit-mask-image: none; mask-image: none; }
+        .bd-awards__track { animation: none; padding-inline: 1rem; }
+        .bd-awards__card[aria-hidden='true'] { display: none; }
       }
     </style>
 
     <script>
-      document.querySelectorAll<HTMLElement>('.bd-awards').forEach((root) => {
-        const chips = root.querySelectorAll<HTMLButtonElement>('[data-award-filter]');
-        const cards = root.querySelectorAll<HTMLElement>('[data-award-category]');
-        // Los logos vienen del sitio de Bitdefender: si alguno deja de cargar, se muestra
-        // el nombre de la organización en lugar de un ícono roto.
-        root.querySelectorAll<HTMLElement>('.bd-awards__logo').forEach((logo) => {
-          const img = logo.querySelector('img');
-          const fallback = () => {
-            const text = document.createElement('span');
-            text.className = 'text-white font-bold text-lg leading-tight';
-            text.textContent = logo.dataset.org ?? '';
-            logo.closest('li')?.querySelector('.bd-awards__orgline')?.remove();
-            logo.replaceWith(text);
-          };
-          if (!img) return;
-          if (img.complete && img.naturalWidth === 0) fallback();
-          else img.addEventListener('error', fallback, { once: true });
-        });
-        chips.forEach((chip) => {
-          chip.addEventListener('click', () => {
-            const filter = chip.dataset.awardFilter;
-            chips.forEach((c) => c.setAttribute('aria-pressed', String(c === chip)));
-            cards.forEach((card) => {
-              const show = filter === 'todos' || card.dataset.awardCategory === filter;
-              card.hidden = !show;
-              card.classList.remove('is-entering');
-              if (show) { void card.offsetWidth; card.classList.add('is-entering'); }
-            });
-          });
-        });
+      // Los logos vienen del sitio de Bitdefender: si alguno deja de cargar, se muestra el
+      // nombre de la organización en lugar de un ícono roto.
+      document.querySelectorAll<HTMLImageElement>('.bd-awards__img').forEach((img) => {
+        const fallback = () => {
+          const text = document.createElement('span');
+          text.className = 'font-bold text-gray-900 text-lg leading-tight';
+          text.textContent = img.dataset.org ?? '';
+          img.replaceWith(text);
+        };
+        if (img.complete && img.naturalWidth === 0) fallback();
+        else img.addEventListener('error', fallback, { once: true });
       });
     </script>
 
