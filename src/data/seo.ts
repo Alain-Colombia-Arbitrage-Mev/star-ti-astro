@@ -146,7 +146,7 @@ export const seoData: Record<string, SEOData> = {
   // STAR PROTECTION
   // =====================================================
   bitdefender: {
-    title: 'Distribuidor Bitdefender Colombia | Reseller Platinum',
+    title: 'Bitdefender Colombia | Distribuidor y Partner Platinum',
     description: 'Distribuidor Bitdefender en Colombia con nivel Reseller Platinum, el más alto, por encima de Gold. Cotice GravityZone: licencias, EDR/XDR/MDR y soporte local.',
     keywords: 'Reseller Platinum Bitdefender Colombia, Bitdefender Platinum partner Colombia, distribuidor Bitdefender, distribuidor Bitdefender Colombia, distribuidor Gold Bitdefender Colombia, distribuidor #1 Bitdefender Colombia, Bitdefender Gold partner Colombia, licencias Bitdefender Colombia, comprar Bitdefender empresas, Bitdefender GravityZone Colombia, gravity zone, gravityzone precio, GravityZone EDR XDR, antivirus corporativo empresas, endpoint security, partner Bitdefender Colombia',
     canonical: `${BASE_URL}/bitdefender/`,
@@ -326,11 +326,11 @@ export const seoData: Record<string, SEOData> = {
   // STAR COMPLIANCE
   // =====================================================
   'iso-27001': {
-    title: 'Consultoría ISO 27001 Bogotá - Colombia | SGSI',
-    description: 'Consultoría ISO 27001 en Bogotá y Colombia: diagnóstico SGSI, gap analysis, Anexo A, auditoría interna y preparación para certificación. Cotice.',
+    title: 'Consultoría ISO 27001 en Bogotá | Empresa Certificada',
+    description: 'Consultoría ISO 27001 en Bogotá y Colombia por una empresa certificada ISO 27001:2022 por SGS. Diagnóstico gratuito, SGSI, Anexo A y auditoría.',
     keywords: 'consultoría ISO 27001 Bogotá Colombia, consultoria ISO 27001 bogota colombia, consultoria iso 27001, bogota - colombia, consultoría ISO 27001 Colombia, consultoria ISO 27001 Bogotá, consultor ISO 27001 Colombia, certificación ISO 27001, certificación SGSI, auditoría ISO 27001, gap analysis seguridad información, implementación ISO 27001, Anexo A, declaración de aplicabilidad, ISO 27001 Bogotá, ISO 27001 Medellín, ISO 27001 Cali, ISO 27001 precio, cotización ISO 27001',
     canonical: `${BASE_URL}/iso-27001/`,
-    ogTitle: 'Consultoría ISO 27001 Bogotá - Colombia | SGSI',
+    ogTitle: 'Consultoría ISO 27001 en Bogotá | Empresa Certificada',
     ogType: 'website',
     ogImage: `${BASE_URL}/og-default.png`,
     breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Star Compliance', url: '/#star-compliance' }, { name: 'ISO 27001', url: '/iso-27001/' }],
@@ -604,11 +604,11 @@ export const seoData: Record<string, SEOData> = {
     ]),
   },
   'antivirus-empresas': {
-    title: 'Antivirus Empresarial: Comparativa 2026 | Star Solutions TI',
-    description: 'Comparativa antivirus empresariales: Bitdefender vs Kaspersky vs Hornetsecurity. Cual es mejor para tu empresa? Asesoria gratuita.',
-    keywords: 'antivirus empresas Colombia, comparativa antivirus, Bitdefender vs Kaspersky, mejor antivirus corporativo 2026',
+    title: 'Antivirus Empresarial en Colombia: Comparativa 2026',
+    description: 'Antivirus empresarial y corporativo en Colombia: Bitdefender vs Kaspersky, precio por equipo y migración sin interrupciones. Asesoría gratuita.',
+    keywords: 'antivirus empresarial, antivirus para empresas, antivirus corporativo, antivirus empresarial Colombia, antivirus empresas Colombia, comparativa antivirus, Bitdefender vs Kaspersky, mejor antivirus corporativo 2026',
     canonical: `${BASE_URL}/antivirus-empresas/`,
-    ogTitle: 'Comparativa Antivirus Empresarial 2026',
+    ogTitle: 'Antivirus Empresarial en Colombia: Comparativa 2026',
     ogType: 'website',
     ogImage: `${BASE_URL}/og-default.png`,
     breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Comparativa Antivirus', url: '/antivirus-empresas/' }],
