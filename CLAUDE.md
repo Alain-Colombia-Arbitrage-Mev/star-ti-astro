@@ -148,6 +148,22 @@ descripciones ≤ 160, `lastmod` del sitemap, 301 con barra final faltantes, `no
 - Chrome en el celular traduce el panel de Cloudflare ("star-ti" → "estrella-ti",
   TURNSTILE_SECRET_KEY → "LLAVE SECRETA…"); desactivar la traducción para leer los nombres reales.
 
+## Publicado el 18-oct-2026 (Search Console y decisiones de George)
+
+- Search Console ya existia (propiedad de George). Sitemap enviado: `https://star-ti.com/sitemap.xml`.
+  Linea base del 18-oct guardada para comparar el 8-nov (antivirus, ISO 27001, Bitdefender).
+- 9 URLs antiguas que daban 404 redirigen (LEGACY_REDIRECTS en `worker/index.js`).
+- /miami/ retirada (no es mercado comercial): 301 a / y /contacto/. La oficina de EE. UU. si
+  existe y se sigue mencionando; el +1 321 438 6777 lo atiende George.
+- Venezuela: George es distribuidor autorizado ahi de todas sus marcas. Correo de contacto
+  contacto@star-ti.com y telefono/WhatsApp +57 300 701 0017 (el +58 ya no se usa). Cifras
+  300+ empresas / 150+ proyectos / 10 anos confirmadas por George. Diferencia horaria: 1 hora.
+- Sector Publico NO va en el menu (decision de George); solo pie de pagina y bloque en el inicio.
+- Ficha de Google Maps: George es propietario. El nombre con palabras clave se deja asi por
+  decision de George (lleva 7 anos). Categoria principal: Servicio de seguridad para computadoras.
+- Estadisticas citadas deben ser del ano en curso (IBM 2026, Verizon DBIR 2026, FBI IC3 2025).
+- Web Analytics de Cloudflare estaba activo pero bloqueado por la CSP del 17-oct; corregido.
+
 ## Comandos
 
 - `npm install`: instalar dependencias. Requiere Node.js 22.12 o superior.
