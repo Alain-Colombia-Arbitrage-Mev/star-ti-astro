@@ -7,6 +7,7 @@ import { hornetFaqs } from './blogHornetsecurity';
 import { pentestIsoFaqs } from './blogPentestingIso';
 import { bdEdrFaqs } from './blogBitdefenderEdr';
 import { certIsoFaqs } from './blogCertificacionIso';
+import { informeFaqs } from './informe2026';
 
 export interface SEOData {
   title: string;
@@ -1259,7 +1260,7 @@ export const seoData: Record<string, SEOData> = {
   // =====================================================
   'informe-ciberseguridad-colombia-2026': {
     title: 'Informe de Ciberseguridad Colombia 2026: Datos y Tendencias',
-    description: 'Informe 2026 de ciberamenazas en Colombia: ransomware, BEC, phishing y brechas de datos. Fuentes públicas, tendencias y recomendaciones. Descargue gratis.',
+    description: 'Informe 2026 de ciberseguridad en Colombia con fuentes públicas: denuncias de la Policía, costo de brechas (IBM), Verizon DBIR, ransomware, BEC y recomendaciones.',
     keywords: 'informe ciberseguridad Colombia 2026, estadisticas ciberataques Colombia, costo brecha datos Colombia, amenazas ciberneticas empresas, ransomware Colombia, phishing Colombia',
     canonical: `${BASE_URL}/informe-ciberseguridad-colombia-2026/`,
     ogTitle: 'Informe de Ciberseguridad Empresarial Colombia 2026',
@@ -1270,7 +1271,7 @@ export const seoData: Record<string, SEOData> = {
       '@context': 'https://schema.org',
       '@type': 'Article',
       headline: 'Informe de Ciberseguridad Empresarial Colombia 2026',
-      description: 'Análisis de ciberamenazas en Colombia con fuentes públicas (COLCERT, SIC, Verizon DBIR) y experiencia en campo. Ransomware, BEC, phishing, costos y recomendaciones.',
+      description: 'Análisis de ciberamenazas en Colombia con fuentes públicas citadas (Policía Nacional, IBM, Verizon DBIR, FBI IC3, MinTIC, Superfinanciera) y observaciones cualitativas de campo. Ransomware, BEC, costos y recomendaciones.',
       datePublished: '2026-01-15',
       dateModified: '2026-10-18',
       author: AUTHOR,
@@ -1280,12 +1281,6 @@ export const seoData: Record<string, SEOData> = {
       about: { '@type': 'Thing', name: 'Ciberseguridad Empresarial en Colombia' },
       keywords: 'ciberseguridad Colombia, ransomware, phishing, brecha de datos, ISO 27001, PYMES Colombia',
     },
-    faqJsonLd: faqSchema([
-      { q: '¿De dónde provienen los datos del informe?', a: 'Las cifras provienen de fuentes públicas: COLCERT, notificaciones a la SIC, Policía Nacional, Have I Been Pwned y el Verizon Data Breach Investigations Report (DBIR) con contexto latinoamericano. La interpretación y las recomendaciones se apoyan en la experiencia de nuestro equipo con más de 1.150 empresas atendidas desde 2016.' },
-      { q: '¿Puedo citar este informe en presentaciones académicas o corporativas?', a: 'Sí. Este informe es de libre difusión para uso académico, periodístico y corporativo, siempre que se cite la fuente como: "Star Solutions TI S.A.S. – Informe de Ciberseguridad Empresarial Colombia 2026, star-ti.com". Para uso comercial o redistribución masiva, contáctenos.' },
-      { q: '¿Cada cuánto se actualiza el informe?', a: 'El informe se publica anualmente cada enero con los datos del año anterior. Sin embargo, actualizamos las estadísticas clave trimestralmente cuando ocurren incidentes significativos en el ecosistema colombiano. Suscríbase a nuestra lista para recibir actualizaciones automáticas.' },
-      { q: '¿Mi empresa podría estar en riesgo según los datos del informe?', a: 'Estadísticamente, el 73% de empresas colombianas sufrió al menos un incidente de seguridad en 2025. Si su empresa opera en los sectores financiero, salud, gobierno o manufactura, el riesgo es aún mayor. Ofrecemos un diagnóstico gratuito de exposición que analiza su superficie de ataque en menos de 48 horas.' },
-      { q: '¿Cómo solicito un diagnóstico personalizado de ciberseguridad?', a: 'Puede solicitar su diagnóstico gratuito en nuestra página de contacto o escribiéndonos a contacto@star-ti.com. El diagnóstico incluye análisis de superficie de ataque externa, revisión de credenciales filtradas y un reporte ejecutivo con prioridades de remediación, sin costo ni compromiso.' },
-    ]),
+    faqJsonLd: faqSchema(informeFaqs),
   },
 };
