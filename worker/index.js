@@ -68,6 +68,7 @@ const TRAILING_SLASH_PATHS = new Set([
   "/blog/kaspersky-edr-xdr-mxdr-colombia",
   "/blog/kaspersky-next-precio-colombia",
   "/blog/que-es-hornetsecurity",
+  "/blog/pentesting-iso-27001",
   "/bitdefender",
   "/kaspersky",
   "/kymatio",

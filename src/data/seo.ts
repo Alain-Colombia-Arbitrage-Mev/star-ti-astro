@@ -4,6 +4,7 @@ import { lastpassFaqs } from './lastpass';
 import { sectorPublicoFaqs } from './sectorPublico';
 import { calcFaqs } from './iso27001Calculadora';
 import { hornetFaqs } from './blogHornetsecurity';
+import { pentestIsoFaqs } from './blogPentestingIso';
 
 export interface SEOData {
   title: string;
@@ -1072,6 +1073,36 @@ export const seoData: Record<string, SEOData> = {
       { q: '¿Que datos necesito para cotizar Kaspersky Next?', a: 'Para cotizar Kaspersky Next se necesita numero de endpoints, servidores, usuarios moviles, sedes, edicion requerida, plazo de licencia, antivirus actual y si la empresa necesita EDR, XDR o MXDR. Con esos datos se evita comprar una edicion insuficiente o sobredimensionada.' },
       { q: '¿Kaspersky se compra directo o por partner?', a: 'Kaspersky ofrece canales comerciales y programas de partners para venta, implementacion y soporte. Para empresas, trabajar con un distribuidor corporativo reduce friccion porque integra cotizacion, despliegue, capacitacion, renovacion y escalamiento tecnico.' },
     ]),
+  },
+
+  'blog/pentesting-iso-27001': {
+    title: 'Pentesting para ISO 27001: Qué Pide la Norma (Guía 2026)',
+    description: 'Qué controles de ISO 27001:2022 cubre un pentest, qué tipo necesita, cada cuánto hacerlo y qué debe tener el informe para el auditor. Guía práctica.',
+    keywords: 'pentesting para ISO 27001, pentest ISO 27001, ISO 27001 exige pentesting, control 8.8 ISO 27001, diferencia entre ethical hacking y pentesting, informe de pentest auditoría',
+    canonical: `${BASE_URL}/blog/pentesting-iso-27001/`,
+    ogTitle: 'Pentesting para ISO 27001: qué pide la norma y cómo prepararlo',
+    ogType: 'article',
+    ogImage: `${BASE_URL}/og/blog-pentesting-iso-27001.jpg`,
+    breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Blog', url: '/blog/' }, { name: 'Pentesting para ISO 27001', url: '/blog/pentesting-iso-27001/' }],
+    jsonLd: {
+      '@context': 'https://schema.org',
+      '@type': 'Article',
+      headline: 'Pentesting para ISO 27001: qué pide la norma y cómo prepararlo',
+      description: 'Guía sobre pruebas de penetración para ISO/IEC 27001:2022: controles 8.8, 8.29 y 5.35, tipos de pentest, frecuencia, informe para el auditor y marco legal en Colombia.',
+      datePublished: '2026-10-18',
+      dateModified: '2026-10-18',
+      inLanguage: 'es-CO',
+      author: AUTHOR,
+      publisher: { '@type': 'Organization', name: 'Star Solutions TI S.A.S.', url: BASE_URL, logo: { '@type': 'ImageObject', url: `${BASE_URL}/logo.png` } },
+      image: `${BASE_URL}/og/blog-pentesting-iso-27001.jpg`,
+      url: `${BASE_URL}/blog/pentesting-iso-27001/`,
+      about: [
+        { '@type': 'Thing', name: 'Prueba de penetración' },
+        { '@type': 'Thing', name: 'ISO/IEC 27001:2022' },
+      ],
+      keywords: 'pentesting, hacking ético, ISO 27001, auditoría, gestión de vulnerabilidades',
+    },
+    faqJsonLd: faqSchema(pentestIsoFaqs),
   },
 
   'blog/que-es-hornetsecurity': {
