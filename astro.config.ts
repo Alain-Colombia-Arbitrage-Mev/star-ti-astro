@@ -28,6 +28,7 @@ if (blogDates.length) LASTMOD.set(`${SITE}/blog/`, blogDates[blogDates.length - 
 // JSON-LD. Mantener estas fechas atadas a cambios reales de contenido.
 const COMMERCIAL_LASTMOD = [
   ['/', '2026-10-17'],
+  ['/ciberseguridad-sector-publico/', '2026-10-18'],
   ['/bitdefender/', '2026-10-16'],
   ['/cableado-estructurado/', '2026-10-16'],
   ['/contacto/', '2026-10-17'],

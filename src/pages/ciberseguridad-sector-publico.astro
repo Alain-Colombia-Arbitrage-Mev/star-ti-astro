@@ -1,0 +1,246 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Navbar from '@components/Navbar.astro';
+import Footer from '@components/Footer.astro';
+import WhatsAppButton from '@components/WhatsAppButton.astro';
+import ConsultoriaForm from '@components/ConsultoriaForm.astro';
+import { seoData } from '@data/seo';
+import { RUP, entidadesRup, codigosUnspsc, sectorPublicoFaqs } from '@data/sectorPublico';
+
+const seo = seoData['ciberseguridad-sector-publico'];
+
+const heroStats = [
+  { value: String(RUP.contratosPublicos), label: 'contratos con entidades públicas en el RUP' },
+  { value: 'ISO 27001', label: 'certificada por SGS' },
+  { value: 'Mipyme', label: 'clasificación en el RUP' },
+  { value: '2016', label: 'constituida en Bogotá' },
+];
+
+// Orden según lo que más contratan las entidades (George, 18-oct-2026).
+const soluciones = [
+  {
+    eyebrow: '01 · Protección de equipos y servidores',
+    title: 'Bitdefender GravityZone',
+    text: 'Licenciamiento e implementación de EDR/XDR para estaciones y servidores de la entidad, con consola en la nube, políticas por dependencia y soporte local en español.',
+    href: '/bitdefender/',
+    linkText: 'Ver Bitdefender GravityZone',
+  },
+  {
+    eyebrow: '02 · Seguridad del correo',
+    title: 'Hornetsecurity para Microsoft 365',
+    text: 'Filtrado de phishing y malware, protección contra suplantación, copias de seguridad y archivo del correo institucional en Microsoft 365.',
+    href: '/hornetsecurity/',
+    linkText: 'Ver Hornetsecurity',
+  },
+  {
+    eyebrow: '03 · Gestión de vulnerabilidades',
+    title: 'Análisis de vulnerabilidades',
+    text: 'Identificación y priorización de vulnerabilidades en equipos, servidores y servicios expuestos, con un plan de corrección por criticidad.',
+    href: '/vicarius/',
+    linkText: 'Ver gestión de vulnerabilidades',
+  },
+  {
+    eyebrow: '04 · Pruebas de seguridad',
+    title: 'Hacking ético',
+    text: 'Pruebas de penetración controladas sobre aplicaciones, red interna y perímetro, con informe técnico y ejecutivo para la entidad y sus auditores.',
+    href: '/hacking-etico/',
+    linkText: 'Ver hacking ético',
+  },
+];
+
+const complementos = [
+  { title: 'Consultoría ISO 27001 y MSPI', href: '/iso-27001/' },
+  { title: 'Equipos de cómputo', href: '/equipos-computo/' },
+  { title: 'Prevención de pérdida de datos (DLP)', href: '/dlp-prevencion-perdida-datos/' },
+];
+---
+
+<BaseLayout seo={seo}>
+  <Navbar />
+
+  <div class="bg-white min-h-screen w-full font-['Instrument_Sans',sans-serif] text-[#0f172a]">
+
+    <section class="relative overflow-hidden bg-[#07111f]" aria-labelledby="hero-title">
+      <img
+        src="/assets/seguridad-empresarial-data-center.webp"
+        alt="Infraestructura tecnológica protegida para entidades públicas"
+        class="absolute inset-0 h-full w-full object-cover opacity-50"
+        width="1600"
+        height="1067"
+        loading="eager"
+        fetchpriority="high"
+      />
+      <div class="absolute inset-0 bg-[linear-gradient(90deg,rgba(7,17,31,0.96)_0%,rgba(7,17,31,0.85)_45%,rgba(7,17,31,0.45)_100%)]"></div>
+      <div class="relative mx-auto max-w-7xl px-4 pb-14 pt-32 sm:px-6 lg:px-8 lg:pb-20 lg:pt-40">
+        <div class="max-w-4xl">
+          <div class="mb-6 inline-flex items-center gap-2 border border-red-300/30 bg-red-500/10 px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-red-100">
+            Contratación estatal · RUP vigente
+          </div>
+          <h1 id="hero-title" class="font-['Space_Grotesk',sans-serif] text-4xl font-bold leading-[1.05] text-white sm:text-5xl lg:text-6xl">
+            Ciberseguridad para entidades públicas en Colombia
+          </h1>
+          <p class="mt-6 max-w-3xl text-lg leading-relaxed text-slate-200 sm:text-xl">
+            Star Solutions TI protege equipos, servidores y correo de entidades del Estado con Bitdefender, Hornetsecurity, análisis de vulnerabilidades y hacking ético. Estamos inscritos en el RUP, somos Mipyme y nuestro sistema de gestión está certificado en ISO/IEC 27001:2022 por SGS.
+          </p>
+          <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+            <a href="#consultoria" class="inline-flex items-center justify-center bg-red-600 px-6 py-4 text-sm font-bold text-white transition hover:bg-red-700">
+              Solicitar acompañamiento
+            </a>
+            <a href="#datos-contratacion" class="inline-flex items-center justify-center border border-white/30 bg-white/10 px-6 py-4 text-sm font-bold text-white transition hover:bg-white/20">
+              Ver datos para su proceso
+            </a>
+          </div>
+        </div>
+
+        <div class="mt-12 grid grid-cols-2 gap-4 border-t border-white/15 pt-6 sm:grid-cols-4">
+          {heroStats.map((stat) => (
+            <div>
+              <div class="font-['Space_Grotesk',sans-serif] text-2xl font-bold text-white">{stat.value}</div>
+              <div class="mt-1 text-xs uppercase tracking-wide text-slate-300">{stat.label}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-white py-14 sm:py-20" aria-labelledby="respuesta-directa">
+      <div class="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-4 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-[0.18em] text-red-700">Respuesta directa</span>
+          <h2 id="respuesta-directa" class="mt-3 font-['Space_Grotesk',sans-serif] text-3xl font-bold leading-tight text-slate-950 sm:text-4xl">
+            Qué necesita una entidad pública de su proveedor de ciberseguridad
+          </h2>
+        </div>
+        <div class="space-y-5 text-lg leading-relaxed text-slate-700">
+          <p>
+            Además de la tecnología, la entidad necesita un proveedor que cumpla los requisitos habilitantes: RUP vigente con los códigos UNSPSC del objeto, experiencia con entidades del Estado, capacidad financiera y, cada vez más, una certificación de seguridad de la información.
+          </p>
+          <p>
+            Star Solutions TI reporta en su RUP {RUP.contratosPublicos} contratos ejecutados con entidades públicas, por cerca de {RUP.smmlvPublicos} SMMLV, y aplica ISO/IEC 27001 en su propia operación, el mismo estándar en el que se basa el MSPI de MinTIC.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-slate-50 py-16 sm:py-24" aria-labelledby="entidades-title">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mb-10 max-w-3xl">
+          <span class="text-xs font-bold uppercase tracking-[0.18em] text-red-700">Experiencia certificada en el RUP</span>
+          <h2 id="entidades-title" class="mt-3 font-['Space_Grotesk',sans-serif] text-3xl font-bold leading-tight text-slate-950 sm:text-4xl">
+            Entidades del Estado que han contratado con Star Solutions TI
+          </h2>
+          <p class="mt-4 text-lg leading-relaxed text-slate-600">
+            Contratos ejecutados y reportados en el Registro Único de Proponentes ({RUP.camara}).
+          </p>
+        </div>
+        <ul class="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          {entidadesRup.map((e) => (
+            <li class="flex items-start gap-3 border border-slate-200 bg-white p-4">
+              <span class="mt-1.5 h-2 w-2 shrink-0 bg-red-600"></span>
+              <span class="text-sm font-semibold text-slate-800">
+                {e.name}{e.contratos ? <span class="font-normal text-slate-500"> · {e.contratos} contratos</span> : null}
+              </span>
+            </li>
+          ))}
+        </ul>
+        <div class="mt-8 border-l-4 border-red-600 bg-white p-5 text-sm leading-relaxed text-slate-700">
+          <strong>Caso destacado:</strong> Canal Capital, el canal público de televisión de Bogotá, protege sus equipos con Bitdefender GravityZone y respalda su información con un sistema de copias de seguridad implementado y soportado por Star Solutions TI.
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-white py-16 sm:py-24" aria-labelledby="soluciones-title">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mb-12 max-w-3xl">
+          <span class="text-xs font-bold uppercase tracking-[0.18em] text-red-700">Lo que más contratan las entidades</span>
+          <h2 id="soluciones-title" class="mt-3 font-['Space_Grotesk',sans-serif] text-3xl font-bold leading-tight text-slate-950 sm:text-4xl">
+            Soluciones de ciberseguridad para el sector público
+          </h2>
+        </div>
+        <div class="grid grid-cols-1 gap-5 md:grid-cols-2">
+          {soluciones.map((s) => (
+            <a href={s.href} class="group block border border-slate-200 bg-white p-6 transition hover:-translate-y-1 hover:border-red-200 hover:shadow-xl">
+              <div class="text-xs font-bold uppercase tracking-[0.18em] text-red-700">{s.eyebrow}</div>
+              <h3 class="mt-3 font-['Space_Grotesk',sans-serif] text-2xl font-bold leading-tight text-slate-950 group-hover:text-red-700">{s.title}</h3>
+              <p class="mt-4 text-sm leading-relaxed text-slate-600">{s.text}</p>
+              <div class="mt-6 text-sm font-bold text-red-700">{s.linkText} &rarr;</div>
+            </a>
+          ))}
+        </div>
+        <p class="mt-8 text-sm text-slate-600">
+          También:
+          {complementos.map((c, i) => (
+            <span>{i > 0 ? ' · ' : ' '}<a href={c.href} class="font-bold text-red-700 hover:underline">{c.title}</a></span>
+          ))}
+        </p>
+      </div>
+    </section>
+
+    <section class="bg-slate-50 py-16 sm:py-24" aria-labelledby="normativa-title">
+      <div class="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-4 sm:px-6 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-[0.18em] text-red-700">Marco de referencia</span>
+          <h2 id="normativa-title" class="mt-3 font-['Space_Grotesk',sans-serif] text-3xl font-bold leading-tight text-slate-950 sm:text-4xl">
+            Alineados con el MSPI y la normativa de seguridad digital
+          </h2>
+        </div>
+        <div class="space-y-5 text-lg leading-relaxed text-slate-700">
+          <p>
+            Las entidades públicas deben gestionar la seguridad de la información dentro del Modelo de Seguridad y Privacidad de la Información (MSPI) de MinTIC, que toma como base ISO/IEC 27001, y proteger los datos personales bajo la Ley 1581 de 2012.
+          </p>
+          <p>
+            Nuestros servicios se entregan con la evidencia que esos marcos piden: inventario de equipos protegidos, reportes de la consola, informes de vulnerabilidades y de pruebas de penetración, y recomendaciones priorizadas para el plan de tratamiento de riesgos de la entidad.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="datos-contratacion" class="bg-white py-16 sm:py-24" aria-labelledby="datos-title">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mb-10 max-w-3xl">
+          <span class="text-xs font-bold uppercase tracking-[0.18em] text-red-700">Para su estudio de mercado</span>
+          <h2 id="datos-title" class="mt-3 font-['Space_Grotesk',sans-serif] text-3xl font-bold leading-tight text-slate-950 sm:text-4xl">
+            Datos de Star Solutions TI para procesos de contratación
+          </h2>
+        </div>
+        <div class="grid grid-cols-1 gap-8 lg:grid-cols-2">
+          <dl class="divide-y divide-slate-200 border border-slate-200">
+            <div class="grid grid-cols-[6.5rem_1fr] gap-3 p-4 sm:grid-cols-[10rem_1fr] sm:gap-4"><dt class="text-sm font-bold text-slate-500">Razón social</dt><dd class="text-sm text-slate-900">Star Solutions TI S.A.S.</dd></div>
+            <div class="grid grid-cols-[6.5rem_1fr] gap-3 p-4 sm:grid-cols-[10rem_1fr] sm:gap-4"><dt class="text-sm font-bold text-slate-500">NIT</dt><dd class="text-sm text-slate-900">900968161-7</dd></div>
+            <div class="grid grid-cols-[6.5rem_1fr] gap-3 p-4 sm:grid-cols-[10rem_1fr] sm:gap-4"><dt class="text-sm font-bold text-slate-500">RUP</dt><dd class="text-sm text-slate-900">Proponente {RUP.proponente}, {RUP.camara}. Renovado el {RUP.renovacion}.</dd></div>
+            <div class="grid grid-cols-[6.5rem_1fr] gap-3 p-4 sm:grid-cols-[10rem_1fr] sm:gap-4"><dt class="text-sm font-bold text-slate-500">Tamaño</dt><dd class="text-sm text-slate-900">{RUP.tamano}</dd></div>
+            <div class="grid grid-cols-[6.5rem_1fr] gap-3 p-4 sm:grid-cols-[10rem_1fr] sm:gap-4"><dt class="text-sm font-bold text-slate-500">Experiencia</dt><dd class="text-sm text-slate-900">{RUP.contratosTotales} contratos ejecutados reportados; {RUP.contratosPublicos} con entidades públicas</dd></div>
+            <div class="grid grid-cols-[6.5rem_1fr] gap-3 p-4 sm:grid-cols-[10rem_1fr] sm:gap-4"><dt class="text-sm font-bold text-slate-500">Certificación</dt><dd class="text-sm text-slate-900"><a href="/certificados/certificado-iso-27001-star-solutions-ti.pdf" target="_blank" rel="noopener" class="font-bold text-red-700 hover:underline">ISO/IEC 27001:2022, SGS (CO25/00000158)</a></dd></div>
+          </dl>
+          <div>
+            <h3 class="font-['Space_Grotesk',sans-serif] text-xl font-bold text-slate-950">Clases UNSPSC relevantes inscritas</h3>
+            <ul class="mt-4 divide-y divide-slate-200 border border-slate-200">
+              {codigosUnspsc.map((c) => (
+                <li class="flex gap-4 p-3 text-sm"><span class="w-24 shrink-0 font-mono font-bold text-red-700">{c.code}</span><span class="text-slate-700">{c.label}</span></li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-slate-50 py-16 sm:py-24" aria-labelledby="faq-title">
+      <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+        <h2 id="faq-title" class="font-['Space_Grotesk',sans-serif] text-3xl font-bold leading-tight text-slate-950 sm:text-4xl">Preguntas frecuentes</h2>
+        <div class="mt-8 space-y-3">
+          {sectorPublicoFaqs.map((item) => (
+            <details class="group border border-slate-200 bg-white">
+              <summary class="cursor-pointer list-none p-5 font-bold text-slate-900">{item.question}</summary>
+              <div class="px-5 pb-5 text-sm leading-relaxed text-slate-600">{item.answer}</div>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <ConsultoriaForm sourceForm="Sector público - Consultoría gratuita" />
+  <Footer />
+  <WhatsAppButton />
+</BaseLayout>

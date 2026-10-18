@@ -44,6 +44,7 @@ const LEGACY_REDIRECTS = new Map([
 ]);
 
 const TRAILING_SLASH_PATHS = new Set([
+  "/ciberseguridad-sector-publico",
   "/mejores-empresas-consultoria-iso-27001-colombia",
   "/blog/comprar-kaspersky-empresas-colombia",
   "/blog/kaspersky-edr-xdr-mxdr-colombia",

@@ -1,6 +1,7 @@
 import { isoFaqs } from './iso27001Landing';
 import { kymatioFaqs } from './kymatio';
 import { lastpassFaqs } from './lastpass';
+import { sectorPublicoFaqs } from './sectorPublico';
 
 export interface SEOData {
   title: string;
@@ -533,6 +534,36 @@ export const seoData: Record<string, SEOData> = {
   // =====================================================
   // COMPARATIVA
   // =====================================================
+  'ciberseguridad-sector-publico': {
+    title: 'Ciberseguridad para Entidades Públicas en Colombia',
+    description: 'Proveedor de ciberseguridad para entidades públicas: RUP vigente, Mipyme, ISO 27001 SGS y 23 contratos estatales. Bitdefender, Hornetsecurity y hacking ético.',
+    keywords: 'ciberseguridad sector público Colombia, proveedor ciberseguridad entidades públicas, ciberseguridad entidades del Estado, RUP ciberseguridad, MSPI MinTIC, antivirus entidades públicas, Bitdefender entidades públicas, hacking ético entidades públicas',
+    canonical: `${BASE_URL}/ciberseguridad-sector-publico/`,
+    ogTitle: 'Ciberseguridad para Entidades Públicas en Colombia | Star Solutions TI',
+    ogType: 'website',
+    ogImage: `${BASE_URL}/og-default.png`,
+    breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Sector público', url: '/ciberseguridad-sector-publico/' }],
+    jsonLd: {
+      '@context': 'https://schema.org',
+      '@type': 'Service',
+      name: 'Ciberseguridad para entidades públicas',
+      serviceType: 'Ciberseguridad y seguridad de la información para el sector público',
+      provider: ORG,
+      areaServed: { '@type': 'Country', name: 'Colombia' },
+      audience: { '@type': 'Audience', audienceType: 'Entidades públicas y del Estado colombiano' },
+      hasOfferCatalog: {
+        '@type': 'OfferCatalog',
+        name: 'Soluciones para entidades públicas',
+        itemListElement: [
+          { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Licenciamiento e implementación de Bitdefender GravityZone' } },
+          { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Seguridad de correo con Hornetsecurity para Microsoft 365' } },
+          { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Análisis de vulnerabilidades' } },
+          { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Hacking ético y pruebas de penetración' } },
+        ],
+      },
+    },
+    faqJsonLd: faqSchema(sectorPublicoFaqs.map((f) => ({ q: f.question, a: f.answer }))),
+  },
   'seguridad-informatica-empresas': {
     title: 'Seguridad Informática Empresarial | Defensa Ransomware',
     description: 'Seguridad informática empresarial en Colombia con defensa contra ransomware: EDR/XDR, correo seguro, backups, monitoreo 24/7 y respuesta a incidentes.',
