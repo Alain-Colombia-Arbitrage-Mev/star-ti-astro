@@ -91,7 +91,7 @@ export const CALC_DEFAULTS = { size: 'sm', sites: 'one', maturity: 'mid', scope:
 export const calcFaqs = [
   {
     question: '¿Cuánto cuesta certificarse en ISO 27001 en Colombia?',
-    answer: 'Como referencia, entre 25 y 120 millones de pesos según el tamaño: las pequeñas, entre 25 y 40 millones; las medianas, entre 40 y 90 millones; y las grandes, entre 85 y 120 millones. El valor final depende del tamaño, las sedes, lo que ya tenga avanzado y el alcance que quiera certificar.',
+    answer: 'Como referencia, la consultoría cuesta entre 25 y 120 millones de pesos según el tamaño: las pequeñas, entre 25 y 40 millones; las medianas, entre 40 y 90 millones; y las grandes, entre 85 y 120 millones. La auditoría del organismo certificador (SGS, ICONTEC u otro) se cotiza aparte. El valor final depende del tamaño, las sedes, lo que ya tenga avanzado y el alcance que quiera certificar.',
   },
   {
     question: '¿Cuánto tiempo toma certificarse en ISO 27001?',

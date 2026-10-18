@@ -14,7 +14,7 @@ export const isoFaqs: IsoFaq[] = [
   },
   {
     question: '¿Cuánto cuesta certificarse ISO 27001 en Colombia?',
-    answer: 'Como referencia, la inversión va de 25 a 120 millones de pesos colombianos según el tamaño de la empresa: las pequeñas, entre 25 y 40 millones; las medianas, entre 40 y 90 millones; y las grandes, entre 85 y 120 millones. El diagnóstico gratuito permite definir el alcance y entregar una cotización ajustada al caso.',
+    answer: 'Como referencia, la consultoría va de 25 a 120 millones de pesos colombianos según el tamaño de la empresa: las pequeñas, entre 25 y 40 millones; las medianas, entre 40 y 90 millones; y las grandes, entre 85 y 120 millones. La auditoría del organismo certificador se cotiza aparte. El diagnóstico gratuito permite definir el alcance y entregar una cotización ajustada al caso.',
   },
   {
     question: '¿ISO 27001 es obligatoria en Colombia?',

@@ -47,7 +47,7 @@ const seo = seoData['calculadora-costo-iso-27001'];
           </div>
 
           <aside class="lg:sticky lg:top-28 rounded-3xl border border-gray-200 bg-gradient-to-br from-gray-50 to-white shadow-xl p-7" aria-live="polite">
-            <p class="text-xs font-semibold uppercase tracking-widest text-red-700 mb-2">Inversión estimada</p>
+            <p class="text-xs font-semibold uppercase tracking-widest text-red-700 mb-2">Inversión estimada en consultoría</p>
             <p class="text-4xl font-bold text-gray-900 leading-tight"><span id="calc-cost">35 a 60</span> <span class="text-xl font-semibold text-gray-500">millones COP</span></p>
             <div class="mt-5 pt-5 border-t border-gray-200">
               <p class="text-xs font-semibold uppercase tracking-widest text-gray-500 mb-1">Tiempo estimado</p>
@@ -62,7 +62,7 @@ const seo = seoData['calculadora-costo-iso-27001'];
             <a href="#consultoria" class="mt-6 w-full inline-flex items-center justify-center gap-2 bg-red-600 hover:bg-red-700 text-white font-semibold px-6 py-3 rounded-full transition">
               Pedir cotización exacta <span aria-hidden="true">&rarr;</span>
             </a>
-            <p class="mt-4 text-xs text-gray-500 text-left">Valor de referencia. La cotización exacta sale de un diagnóstico sin costo.</p>
+            <p class="mt-4 text-xs text-gray-500 text-left">Valor de referencia de la consultoría. La auditoría del organismo certificador (SGS, ICONTEC u otro) se cotiza aparte. La cotización exacta sale de un diagnóstico sin costo.</p>
           </aside>
         </form>
       </div>
@@ -144,7 +144,7 @@ const seo = seoData['calculadora-costo-iso-27001'];
         .map((i) => i.closest('label')?.querySelector('span')?.textContent?.trim())
         .filter(Boolean)
         .join(' · ');
-      message.value = `Resultado de la calculadora ISO 27001: ${min} a ${max} millones COP, ${mMin} a ${mMax} meses. Respuestas: ${labels}.`;
+      message.value = `Resultado de la calculadora ISO 27001: consultoría ${min} a ${max} millones COP, ${mMin} a ${mMax} meses. Respuestas: ${labels}.`;
     }
   }
 
