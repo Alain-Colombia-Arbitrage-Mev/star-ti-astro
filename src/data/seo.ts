@@ -36,6 +36,7 @@ const AUTHOR = {
   alternateName: 'Jorge Enrique Molano Moncaleano',
   jobTitle: 'CEO',
   alumniOf: { '@type': 'CollegeOrUniversity', name: 'Universidad INCCA de Colombia' },
+  sameAs: ['https://www.linkedin.com/in/jorge-enrique-molano-moncaleano-58b093a4/'],
   worksFor: ORG,
   url: `${BASE_URL}/sobre-nosotros/`,
   knowsAbout: ['Ciberseguridad empresarial', 'ISO 27001', 'Zero Trust', 'Respuesta a incidentes', 'Cifrado y protección de datos'],
