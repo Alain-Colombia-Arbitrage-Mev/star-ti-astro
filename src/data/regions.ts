@@ -73,7 +73,7 @@ export const regions: Record<string, RegionData> = {
     address: 'Ed. Centro Empresarial Torre Araujo, M. OF A-1, Caracas, Venezuela',
     phone: '+584241499856',
     phoneDisplay: '+58 424 149 9856',
-    email: 'venezuela@star-ti.com',
+    email: 'contacto@star-ti.com',
     whatsapp: '584241499856',
     timezone: 'America/Caracas',
     currency: 'USD',

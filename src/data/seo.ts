@@ -790,7 +790,7 @@ export const seoData: Record<string, SEOData> = {
       url: `${BASE_URL}/venezuela/`,
       image: `${BASE_URL}/og-default.png`,
       telephone: '+584241499856',
-      email: 'venezuela@star-ti.com',
+      email: 'contacto@star-ti.com',
       address: { '@type': 'PostalAddress', streetAddress: 'Ed. Centro Empresarial Torre Araujo, M. OF A-1', addressLocality: 'Caracas', addressCountry: 'VE' },
       parentOrganization: ORG,
       openingHours: 'Mo-Fr 08:00-17:00',
