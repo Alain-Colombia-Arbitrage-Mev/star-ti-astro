@@ -1,0 +1,154 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Navbar from '@components/Navbar.astro';
+import Footer from '@components/Footer.astro';
+import ConsultoriaForm from '@components/ConsultoriaForm.astro';
+import WhatsAppButton from '@components/WhatsAppButton.astro';
+import { seoData } from '@data/seo';
+import { CALC_QUESTIONS, CALC_DEFAULTS, calcFaqs } from '@data/iso27001Calculadora';
+
+const seo = seoData['calculadora-costo-iso-27001'];
+---
+
+<BaseLayout seo={seo}>
+  <Navbar />
+
+    <!-- Hero -->
+    <section class="bg-gradient-to-br from-white via-gray-50 to-red-50 pt-16 sm:pt-20 pb-10 border-b border-gray-200">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <span class="inline-flex items-center gap-2 bg-red-50 border border-red-100 text-red-700 text-xs font-semibold uppercase tracking-wider px-4 py-2 rounded-full">Herramienta gratuita</span>
+        <h1 class="text-3xl sm:text-5xl font-bold text-gray-900 mt-6 mb-5 leading-tight">¿Cuánto cuesta certificarse en ISO 27001 en Colombia?</h1>
+        <p class="text-lg text-gray-600 text-center">Responda 5 preguntas y obtenga un rango de inversión y de tiempo para certificar su empresa en ISO/IEC 27001:2022. Lo calculamos con base en proyectos reales en Colombia.</p>
+      </div>
+    </section>
+
+    <!-- Calculadora -->
+    <section class="py-12 sm:py-16 bg-white" aria-labelledby="calculadora-titulo">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 id="calculadora-titulo" class="sr-only">Calculadora de costo ISO 27001</h2>
+        <form id="iso-calc" class="grid lg:grid-cols-[1.4fr_1fr] gap-8 items-start" onsubmit="return false">
+          <div class="space-y-7">
+            {CALC_QUESTIONS.map((q, i) => (
+              <fieldset>
+                <legend class="text-lg font-semibold text-gray-900 mb-3">
+                  <span class="text-red-600 mr-1">{i + 1}.</span> {q.title}
+                </legend>
+                <div class="flex flex-wrap gap-2">
+                  {q.options.map((o) => (
+                    <label class="iso-calc__opt">
+                      <input type="radio" name={q.id} value={o.id} checked={CALC_DEFAULTS[q.id] === o.id} class="sr-only" />
+                      <span class="block font-semibold">{o.label}</span>
+                      {o.hint && <span class="block text-xs font-normal opacity-75 mt-0.5">{o.hint}</span>}
+                    </label>
+                  ))}
+                </div>
+              </fieldset>
+            ))}
+          </div>
+
+          <aside class="lg:sticky lg:top-28 rounded-3xl border border-gray-200 bg-gradient-to-br from-gray-50 to-white shadow-xl p-7" aria-live="polite">
+            <p class="text-xs font-semibold uppercase tracking-widest text-red-700 mb-2">Inversión estimada</p>
+            <p class="text-4xl font-bold text-gray-900 leading-tight"><span id="calc-cost">55 a 80</span> <span class="text-xl font-semibold text-gray-500">millones COP</span></p>
+            <div class="mt-5 pt-5 border-t border-gray-200">
+              <p class="text-xs font-semibold uppercase tracking-widest text-gray-500 mb-1">Tiempo estimado</p>
+              <p class="text-2xl font-bold text-gray-900"><span id="calc-time">7 a 9</span> meses</p>
+            </div>
+            <ul class="mt-5 space-y-2 text-sm text-gray-600">
+              <li>✓ Diagnóstico de brechas y alcance del SGSI</li>
+              <li>✓ Análisis de riesgos y Declaración de Aplicabilidad</li>
+              <li>✓ Implementación de controles del Anexo A</li>
+              <li>✓ Auditoría interna y preparación para la certificación</li>
+            </ul>
+            <a href="#consultoria" class="mt-6 w-full inline-flex items-center justify-center gap-2 bg-red-600 hover:bg-red-700 text-white font-semibold px-6 py-3 rounded-full transition">
+              Pedir cotización exacta <span aria-hidden="true">&rarr;</span>
+            </a>
+            <p class="mt-4 text-xs text-gray-500 text-left">Valor de referencia. La cotización exacta sale de un diagnóstico sin costo.</p>
+          </aside>
+        </form>
+      </div>
+    </section>
+
+    <!-- Cómo se calcula -->
+    <section class="py-12 bg-gray-50 border-y border-gray-200" aria-labelledby="como-calculamos">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 id="como-calculamos" class="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">¿De qué depende el costo de la certificación ISO 27001?</h2>
+        <p class="text-gray-700 leading-relaxed mb-4">El factor que más pesa es el <strong>tamaño de la empresa</strong>: más personas, procesos y sistemas significan más riesgos que analizar y más controles que implementar. Le siguen el <strong>número de sedes</strong>, lo que la empresa <strong>ya tiene avanzado</strong> (políticas, inventarios, controles técnicos) y el <strong>alcance</strong>: certificar un solo proceso o servicio cuesta menos que certificar toda la organización. En sectores regulados, como el financiero, la salud o el sector público, suele haber más requisitos de evidencia.</p>
+        <p class="text-gray-700 leading-relaxed">Star Solutions TI es una empresa certificada en ISO/IEC 27001:2022 por SGS y ha acompañado a más de 50 empresas en su camino a la certificación. <a href="/iso-27001/" class="font-semibold text-red-700 hover:text-red-800">Conozca nuestra consultoría ISO 27001 en Bogotá</a>.</p>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-12 sm:py-16 bg-white" aria-labelledby="faq-calculadora">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 id="faq-calculadora" class="text-2xl sm:text-3xl font-bold text-gray-900 mb-6">Preguntas frecuentes</h2>
+        <div class="space-y-4">
+          {calcFaqs.map((f) => (
+            <details class="group border border-gray-200 rounded-2xl p-5">
+              <summary class="cursor-pointer font-semibold text-gray-900 list-none flex justify-between gap-4">
+                {f.question}<span class="text-red-600 group-open:rotate-45 transition" aria-hidden="true">+</span>
+              </summary>
+              <p class="mt-3 text-gray-700 leading-relaxed">{f.answer}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <ConsultoriaForm sourceForm="Calculadora ISO 27001 - Cotización" idPrefix="calc" />
+
+  <Footer />
+  <WhatsAppButton />
+</BaseLayout>
+
+<style>
+  .iso-calc__opt {
+    cursor: pointer;
+    border: 1.5px solid rgb(229 231 235);
+    background: #fff;
+    border-radius: 1rem;
+    padding: 0.7rem 1.1rem;
+    color: rgb(55 65 81);
+    transition: border-color 0.15s, background-color 0.15s, color 0.15s;
+    max-width: 18rem;
+  }
+  .iso-calc__opt:hover { border-color: rgb(248 113 113); }
+  .iso-calc__opt:has(input:checked) { border-color: #dc2626; background: #fef2f2; color: #991b1b; }
+  .iso-calc__opt:has(input:focus-visible) { outline: 2px solid #dc2626; outline-offset: 2px; }
+</style>
+
+<script>
+  import { CALC_BASE, CALC_FACTORS, CALC_MONTHS } from '@data/iso27001Calculadora';
+
+  const form = document.getElementById('iso-calc') as HTMLFormElement | null;
+  const costEl = document.getElementById('calc-cost');
+  const timeEl = document.getElementById('calc-time');
+  const message = document.getElementById('calc-message') as HTMLTextAreaElement | null;
+  const nf = new Intl.NumberFormat('es-CO');
+
+  function update() {
+    if (!form || !costEl || !timeEl) return;
+    const data = Object.fromEntries(new FormData(form)) as Record<string, string>;
+    const base = CALC_BASE[data.size];
+    const factor = ['sites', 'maturity', 'scope', 'regulated'].reduce((acc, k) => acc * (CALC_FACTORS[k][data[k]] ?? 1), 1);
+    const shift = ['sites', 'maturity', 'scope'].reduce((acc, k) => acc + (CALC_MONTHS[k][data[k]] ?? 0), 0);
+    // Pisos y techos alineados con lo publicado en /iso-27001/: desde 35 M COP y de 6 a 12 meses.
+    const min = Math.max(35, Math.round((base.min * factor) / 5) * 5);
+    const max = Math.max(min + 5, Math.round((base.max * factor) / 5) * 5);
+    const mMin = Math.min(11, Math.max(6, base.months[0] + shift));
+    const mMax = Math.min(12, Math.max(mMin + 1, base.months[1] + shift));
+    costEl.textContent = `${nf.format(min)} a ${nf.format(max)}`;
+    timeEl.textContent = `${mMin} a ${mMax}`;
+    // El resultado viaja con la solicitud para que el comercial lo vea en el correo.
+    if (message && !message.dataset.touched) {
+      const labels = [...form.querySelectorAll('input:checked')]
+        .map((i) => i.closest('label')?.querySelector('span')?.textContent?.trim())
+        .filter(Boolean)
+        .join(' · ');
+      message.value = `Resultado de la calculadora ISO 27001: ${min} a ${max} millones COP, ${mMin} a ${mMax} meses. Respuestas: ${labels}.`;
+    }
+  }
+
+  message?.addEventListener('input', () => { message.dataset.touched = '1'; });
+  form?.addEventListener('change', update);
+  update();
+</script>

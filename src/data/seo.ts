@@ -2,6 +2,7 @@ import { isoFaqs } from './iso27001Landing';
 import { kymatioFaqs } from './kymatio';
 import { lastpassFaqs } from './lastpass';
 import { sectorPublicoFaqs } from './sectorPublico';
+import { calcFaqs } from './iso27001Calculadora';
 
 export interface SEOData {
   title: string;
@@ -234,6 +235,29 @@ export const seoData: Record<string, SEOData> = {
       { q: '¿Qué es Collaboration Security Prime y para quién aplica?', a: 'Collaboration Security Prime (también llamado Prime Threat Protection) es el tier premium unificado de Proofpoint lanzado en abril 2025. Combina protección multicanal (email, Teams, Slack, SharePoint), defensa contra ataques multietapa, guía de riesgo humano e impersonation protection en una sola plataforma. Aplica a empresas que buscan consolidar herramientas de seguridad, reemplazando aproximadamente 45+ soluciones puntuales por una única plataforma.' },
     ]),
   },
+  'calculadora-costo-iso-27001': {
+    title: 'Calculadora: Costo de Certificarse en ISO 27001 en Colombia',
+    description: '¿Cuánto cuesta certificarse en ISO 27001 en Colombia? Responda 5 preguntas y obtenga un rango de inversión y de tiempo para su empresa. Gratis.',
+    keywords: 'cuánto cuesta certificarse en ISO 27001, costo certificación ISO 27001 Colombia, precio ISO 27001 Colombia, certificación ISO 27001 precio, calculadora ISO 27001, cuánto tiempo toma ISO 27001',
+    canonical: `${BASE_URL}/calculadora-costo-iso-27001/`,
+    ogTitle: 'Calculadora: ¿Cuánto cuesta certificarse en ISO 27001 en Colombia?',
+    ogType: 'website',
+    ogImage: `${BASE_URL}/og/calculadora-costo-iso-27001.jpg`,
+    breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'ISO 27001', url: '/iso-27001/' }, { name: 'Calculadora de costo', url: '/calculadora-costo-iso-27001/' }],
+    jsonLd: {
+      '@context': 'https://schema.org',
+      '@type': 'WebApplication',
+      name: 'Calculadora de costo de certificación ISO 27001',
+      url: `${BASE_URL}/calculadora-costo-iso-27001/`,
+      applicationCategory: 'BusinessApplication',
+      operatingSystem: 'Web',
+      inLanguage: 'es-CO',
+      offers: { '@type': 'Offer', price: '0', priceCurrency: 'COP' },
+      publisher: ORG,
+    },
+    faqJsonLd: faqSchema(calcFaqs.map((f) => ({ q: f.question, a: f.answer }))),
+  },
+
   kymatio: {
     title: 'Kymatio Colombia | Concienciación y Simulación de Phishing',
     description: 'Kymatio: gestión del riesgo humano en ciberseguridad. Concienciación adaptativa, simulaciones de phishing y vishing, credenciales expuestas y bienestar digital.',
