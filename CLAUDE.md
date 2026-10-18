@@ -167,6 +167,11 @@ descripciones ≤ 160, `lastmod` del sitemap, 301 con barra final faltantes, `no
   y Partner Silver de Hornetsecurity (carta de Hornetsecurity Iberia, jul-2026; no publicarla: tiene
   datos personales). Certificados tecnica y comercialmente en TODAS las marcas que distribuye.
   Vende Fortinet. LinkedIn de Jorge (autor): /in/jorge-enrique-molano-moncaleano-58b093a4/.
+- Cifras de la empresa (unicas en todo el sitio): 1.150+ empresas atendidas, 590K+ endpoints,
+  10 anos (desde 2016), 50M datos, 85M amenazas, +100 contratos publicos. No usar 500+, 15+ ni 98%.
+  Testimonios confirmados reales por George: caso financiero de Caracas (Venezuela) y los 3 de
+  /iso-27001/. El de TeamViewer (Carlos Mendez) era inventado y se quito. Sin confirmar: Bitdefender
+  150+ empresas/50K+ endpoints, Kaspersky 200+ implementaciones, ISO 50+ empresas, 12+ ingenieros BICSI.
 - Premios de Bitdefender y Kaspersky en `AwardsGrid.astro` (datos en cada pagina, con su ano).
   Imagenes Open Graph en `public/og/*.jpg` (generador fuera del repo, plantilla 1200x630).
 - Airtable: la base que recibe los leads NO esta en la cuenta de George (jorgemolano@star-ti.com
