@@ -173,6 +173,9 @@ descripciones ≤ 160, `lastmod` del sitemap, 301 con barra final faltantes, `no
   /iso-27001/. El de TeamViewer (Carlos Mendez) era inventado y se quito. Confirmadas por George
   (18-oct): Bitdefender 150+ empresas/50K+ endpoints, Kaspersky 200+ implementaciones, ISO 50+
   empresas, cableado 12+ ingenieros BICSI.
+- Precio ISO 27001 (George, 18-oct): SOLO consultoria, 25 a 120 M COP segun tamano; la auditoria
+  del certificador se cotiza aparte. Fuente unica: iso27001Landing.ts y iso27001Calculadora.ts
+  (calculadora en /calculadora-costo-iso-27001/, acotada a 25-120 M y 6-12 meses).
 - Premios de Bitdefender y Kaspersky en `AwardsGrid.astro` (datos en cada pagina, con su ano).
   Imagenes Open Graph en `public/og/*.jpg` (generador fuera del repo, plantilla 1200x630).
 - Airtable: la base que recibe los leads NO esta en la cuenta de George (jorgemolano@star-ti.com
