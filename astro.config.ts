@@ -29,6 +29,7 @@ if (blogDates.length) LASTMOD.set(`${SITE}/blog/`, blogDates[blogDates.length - 
 const COMMERCIAL_LASTMOD = [
   ['/', '2026-10-18'],
   ['/calculadora-costo-iso-27001/', '2026-10-18'],
+  ['/revision-dmarc-gratis/', '2026-10-18'],
   ['/ciberseguridad-sector-publico/', '2026-10-18'],
   ['/antivirus-empresas/', '2026-10-18'],
   ['/bitdefender/', '2026-10-18'],

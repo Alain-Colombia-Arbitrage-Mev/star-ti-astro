@@ -1,0 +1,112 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Navbar from '@components/Navbar.astro';
+import Footer from '@components/Footer.astro';
+import ConsultoriaForm from '@components/ConsultoriaForm.astro';
+import WhatsAppButton from '@components/WhatsAppButton.astro';
+import { seoData } from '@data/seo';
+import { dmarcChecks, dmarcFaqs } from '@data/revisionDmarc';
+
+const seo = seoData['revision-dmarc-gratis'];
+---
+
+<BaseLayout seo={seo}>
+  <Navbar />
+
+    <!-- Hero -->
+    <section class="bg-gradient-to-br from-white via-gray-50 to-red-50 pt-16 sm:pt-20 pb-12 border-b border-gray-200">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <span class="inline-flex items-center gap-2 bg-red-50 border border-red-100 text-red-700 text-xs font-semibold uppercase tracking-wider px-4 py-2 rounded-full">Revisión gratuita</span>
+        <h1 class="text-3xl sm:text-5xl font-bold text-gray-900 mt-6 mb-5 leading-tight">¿Alguien puede enviar correos haciéndose pasar por su empresa?</h1>
+        <p class="text-lg text-gray-600 text-center mb-8">Revisamos sin costo la protección de su dominio contra la suplantación (SPF, DKIM y DMARC) y le decimos qué corregir. Sin accesos, sin instalar nada y sin compromiso.</p>
+
+        <form id="dmarc-domain" class="max-w-xl mx-auto flex flex-col sm:flex-row gap-3" novalidate>
+          <label for="dmarc-domain-input" class="sr-only">Dominio de su empresa</label>
+          <input id="dmarc-domain-input" type="text" inputmode="url" autocomplete="url" placeholder="suempresa.com.co" class="flex-1 px-5 py-4 rounded-full border border-gray-300 bg-white text-gray-900 focus:outline-none focus:ring-2 focus:ring-red-500" />
+          <button type="submit" class="inline-flex items-center justify-center gap-2 bg-red-600 hover:bg-red-700 text-white font-semibold px-7 py-4 rounded-full transition">
+            Revisar mi dominio <span aria-hidden="true">&rarr;</span>
+          </button>
+        </form>
+        <p class="mt-3 text-xs text-gray-500 text-center">Solo revisamos dominios a solicitud de la propia empresa.</p>
+      </div>
+    </section>
+
+    <!-- Riesgo -->
+    <section class="py-12 sm:py-16 bg-white">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-6">
+        <div class="rounded-2xl border border-gray-200 p-6">
+          <p class="text-3xl font-bold text-red-600 mb-2">USD 3.046 M</p>
+          <p class="text-gray-700 text-sm text-left">Pérdidas reportadas por fraude de correo corporativo (BEC) en 2025, según el informe IC3 del FBI.</p>
+        </div>
+        <div class="rounded-2xl border border-gray-200 p-6">
+          <p class="text-3xl font-bold text-red-600 mb-2">62 %</p>
+          <p class="text-gray-700 text-sm text-left">De las brechas involucró el factor humano, como engaños por correo o credenciales robadas (Verizon DBIR 2026).</p>
+        </div>
+        <div class="rounded-2xl border border-gray-200 p-6">
+          <p class="text-3xl font-bold text-red-600 mb-2">Spam</p>
+          <p class="text-gray-700 text-sm text-left">Google, Yahoo y Microsoft exigen SPF, DKIM y DMARC a los remitentes masivos. Sin ellos, sus correos legítimos pueden no llegar.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Qué revisamos -->
+    <section class="py-12 sm:py-16 bg-gray-50 border-y border-gray-200" aria-labelledby="que-revisamos">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 id="que-revisamos" class="text-2xl sm:text-3xl font-bold text-gray-900 mb-6">Qué revisamos</h2>
+        <div class="grid sm:grid-cols-2 gap-5">
+          {dmarcChecks.map(([title, text]) => (
+            <div class="rounded-2xl border border-gray-200 bg-white p-6">
+              <h3 class="font-bold text-gray-900 mb-2">{title}</h3>
+              <p class="text-gray-600 text-sm leading-relaxed text-left">{text}</p>
+            </div>
+          ))}
+        </div>
+        <p class="text-gray-700 leading-relaxed mt-8">Le enviamos los resultados en lenguaje claro: qué está bien, qué falta y en qué orden corregirlo. Si quiere que lo implementemos nosotros, lo hacemos con soluciones de <a href="/hornetsecurity/" class="font-semibold text-red-700 hover:text-red-800">Hornetsecurity</a>, de la que somos Partner Silver, o de <a href="/proofpoint/" class="font-semibold text-red-700 hover:text-red-800">Proofpoint</a>.</p>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-12 sm:py-16 bg-white" aria-labelledby="faq-dmarc">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 id="faq-dmarc" class="text-2xl sm:text-3xl font-bold text-gray-900 mb-6">Preguntas frecuentes</h2>
+        <div class="space-y-4">
+          {dmarcFaqs.map((f) => (
+            <details class="group border border-gray-200 rounded-2xl p-5">
+              <summary class="cursor-pointer font-semibold text-gray-900 list-none flex justify-between gap-4">
+                {f.q}<span class="text-red-600 group-open:rotate-45 transition" aria-hidden="true">+</span>
+              </summary>
+              <p class="mt-3 text-gray-700 leading-relaxed">{f.a}</p>
+            </details>
+          ))}
+        </div>
+        <p class="text-gray-700 leading-relaxed mt-8">¿Quiere entender más? Lea nuestra <a href="/blog/que-es-hornetsecurity/" class="font-semibold text-red-700 hover:text-red-800">guía de seguridad de correo para Microsoft 365</a>.</p>
+      </div>
+    </section>
+
+    <ConsultoriaForm sourceForm="Revisión DMARC - Campaña correo" idPrefix="dmarc" />
+
+  <Footer />
+  <WhatsAppButton />
+</BaseLayout>
+
+<script>
+  // El dominio escrito arriba viaja en el mensaje del formulario, para que el
+  // comercial lo vea en el correo del lead sin pedirlo otra vez.
+  const domainForm = document.getElementById('dmarc-domain') as HTMLFormElement | null;
+  const domainInput = document.getElementById('dmarc-domain-input') as HTMLInputElement | null;
+  const message = document.getElementById('dmarc-message') as HTMLTextAreaElement | null;
+
+  function cleanDomain(value: string) {
+    return value.trim().toLowerCase().replace(/^https?:\/\//, '').replace(/^www\./, '').split(/[/?#\s]/)[0];
+  }
+
+  domainForm?.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const domain = cleanDomain(domainInput?.value ?? '');
+    if (message && domain) message.value = `Solicito la revisión gratuita de DMARC, SPF y DKIM del dominio de mi empresa: ${domain}`;
+    document.getElementById('consultoria')?.scrollIntoView({ behavior: 'smooth' });
+    document.getElementById('dmarc-name')?.focus({ preventScroll: true });
+  });
+
+  if (message && !message.value) message.value = 'Solicito la revisión gratuita de DMARC, SPF y DKIM del dominio de mi empresa: ';
+</script>

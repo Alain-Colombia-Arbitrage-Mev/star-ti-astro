@@ -8,6 +8,7 @@ import { pentestIsoFaqs } from './blogPentestingIso';
 import { bdEdrFaqs } from './blogBitdefenderEdr';
 import { certIsoFaqs } from './blogCertificacionIso';
 import { informeFaqs } from './informe2026';
+import { dmarcFaqs } from './revisionDmarc';
 
 export interface SEOData {
   title: string;
@@ -261,6 +262,28 @@ export const seoData: Record<string, SEOData> = {
       publisher: ORG,
     },
     faqJsonLd: faqSchema(calcFaqs.map((f) => ({ q: f.question, a: f.answer }))),
+  },
+
+  'revision-dmarc-gratis': {
+    title: 'Revisión Gratuita de DMARC, SPF y DKIM | Star Solutions TI',
+    description: '¿Pueden suplantar el correo de su empresa? Revisamos gratis su dominio (SPF, DKIM y DMARC) y le decimos qué corregir. Sin accesos ni instalaciones.',
+    keywords: 'revisión DMARC gratis, verificar DMARC, SPF DKIM DMARC Colombia, suplantación de correo empresa, protección contra spoofing, configurar DMARC',
+    canonical: `${BASE_URL}/revision-dmarc-gratis/`,
+    ogTitle: 'Revisión gratuita: ¿pueden suplantar el correo de su empresa?',
+    ogType: 'website',
+    ogImage: `${BASE_URL}/og/revision-dmarc-gratis.jpg`,
+    breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Hornetsecurity', url: '/hornetsecurity/' }, { name: 'Revisión DMARC gratis', url: '/revision-dmarc-gratis/' }],
+    jsonLd: {
+      '@context': 'https://schema.org',
+      '@type': 'Service',
+      name: 'Revisión gratuita de DMARC, SPF y DKIM',
+      serviceType: 'Evaluación de autenticación de correo electrónico',
+      url: `${BASE_URL}/revision-dmarc-gratis/`,
+      description: 'Revisión sin costo de los registros SPF, DKIM y DMARC del dominio de una empresa, con recomendaciones para protegerlo contra la suplantación.',
+      provider: ORG,
+      areaServed: { '@type': 'Country', name: 'Colombia' },
+    },
+    faqJsonLd: faqSchema(dmarcFaqs),
   },
 
   kymatio: {

@@ -62,6 +62,7 @@ const LEGACY_REDIRECTS = new Map([
 
 const TRAILING_SLASH_PATHS = new Set([
   "/calculadora-costo-iso-27001",
+  "/revision-dmarc-gratis",
   "/ciberseguridad-sector-publico",
   "/mejores-empresas-consultoria-iso-27001-colombia",
   "/blog/comprar-kaspersky-empresas-colombia",
