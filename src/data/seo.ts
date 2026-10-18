@@ -107,7 +107,7 @@ export const seoData: Record<string, SEOData> = {
     canonical: `${BASE_URL}/`,
     ogTitle: 'Star Solutions TI - Ciberseguridad Empresarial Colombia',
     ogType: 'website',
-    ogImage: `${BASE_URL}/og-default.png`,
+    ogImage: `${BASE_URL}/og/home.jpg`,
     hreflang: HREFLANG_HOME,
     breadcrumb: [{ name: 'Inicio', url: '/' }],
     jsonLd: {
@@ -150,7 +150,7 @@ export const seoData: Record<string, SEOData> = {
     canonical: `${BASE_URL}/bitdefender/`,
     ogTitle: 'Distribuidor Bitdefender Colombia | Star Solutions TI, Reseller Platinum',
     ogType: 'website',
-    ogImage: `${BASE_URL}/og-default.png`,
+    ogImage: `${BASE_URL}/og/bitdefender.jpg`,
     preconnect: ['https://www.bitdefender.com'],
     breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Star Protection', url: '/#star-protection' }, { name: 'Bitdefender', url: '/bitdefender/' }],
     jsonLd: resellerService(
@@ -179,7 +179,7 @@ export const seoData: Record<string, SEOData> = {
     canonical: `${BASE_URL}/kaspersky/`,
     ogTitle: 'Kaspersky Colombia | Partner y Distribuidor Corporativo',
     ogType: 'website',
-    ogImage: `${BASE_URL}/og-default.png`,
+    ogImage: `${BASE_URL}/og/kaspersky.jpg`,
     breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Star Protection', url: '/#star-protection' }, { name: 'Kaspersky', url: '/kaspersky/' }],
     jsonLd: resellerService(
       'Kaspersky Next para empresas',
@@ -203,7 +203,7 @@ export const seoData: Record<string, SEOData> = {
     canonical: `${BASE_URL}/hornetsecurity/`,
     ogTitle: 'Hornetsecurity Colombia | Seguridad de Correo Microsoft 365',
     ogType: 'website',
-    ogImage: `${BASE_URL}/og-default.png`,
+    ogImage: `${BASE_URL}/og/hornetsecurity.jpg`,
     breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Star Protection', url: '/#star-protection' }, { name: 'Hornetsecurity', url: '/hornetsecurity/' }],
     jsonLd: resellerService('Hornetsecurity 365 Total Protection', 'Hornetsecurity', 'Seguridad email completa para Microsoft 365 con backup, archiving y cifrado', { image: `${BASE_URL}/og-default.png` }),
     faqJsonLd: faqSchema([
@@ -220,7 +220,7 @@ export const seoData: Record<string, SEOData> = {
     canonical: `${BASE_URL}/proofpoint/`,
     ogTitle: 'Proofpoint - Seguridad de Email Avanzada para Empresas en Colombia',
     ogType: 'website',
-    ogImage: `${BASE_URL}/og-default.png`,
+    ogImage: `${BASE_URL}/og/proofpoint.jpg`,
     breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Star Protection', url: '/#star-protection' }, { name: 'Proofpoint', url: '/proofpoint/' }],
     jsonLd: resellerService('Proofpoint Email Security', 'Proofpoint', 'Protección avanzada de email contra phishing, BEC y amenazas dirigidas con plataforma Nexus e IA people-centric', { image: `${BASE_URL}/og-default.png` }),
     faqJsonLd: faqSchema([
@@ -238,7 +238,7 @@ export const seoData: Record<string, SEOData> = {
     canonical: `${BASE_URL}/kymatio/`,
     ogTitle: 'Kymatio - Gestión del Riesgo Humano en Ciberseguridad para Empresas en Colombia',
     ogType: 'website',
-    ogImage: `${BASE_URL}/og-default.png`,
+    ogImage: `${BASE_URL}/og/kymatio.jpg`,
     breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Star Protection', url: '/#star-protection' }, { name: 'Kymatio', url: '/kymatio/' }],
     jsonLd: resellerService('Kymatio HRM', 'Kymatio', 'Plataforma SaaS de gestión del riesgo humano en ciberseguridad: evaluación y concienciación adaptativa, simulaciones de ingeniería social (phishing, smishing, vishing y ransomware), vigilancia de credenciales expuestas (Breach Scan) y bienestar digital. Star Solutions TI la implementa en Colombia con soporte en español.', { image: `${BASE_URL}/og-default.png` }),
     faqJsonLd: faqSchema(kymatioFaqs),
@@ -254,7 +254,7 @@ export const seoData: Record<string, SEOData> = {
     canonical: `${BASE_URL}/enthec/`,
     ogTitle: 'Enthec Kartos y Qondar - Cibervigilancia en Colombia | Star Solutions TI',
     ogType: 'website',
-    ogImage: `${BASE_URL}/og-default.png`,
+    ogImage: `${BASE_URL}/og/enthec.jpg`,
     breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Star Inspection', url: '/#star-inspection' }, { name: 'Enthec', url: '/enthec/' }],
     jsonLd: resellerService('Enthec Kartos - Corporate Threat Watchbots', 'Enthec', 'Kartos es la plataforma EASM de Enthec para monitoreo continuo de la superficie de ataque externa corporativa: credenciales filtradas, dark web, phishing y riesgo de terceros. Star Solutions TI lo implementa en Colombia con soporte en español.', { image: `${BASE_URL}/og-default.png` }),
     faqJsonLd: faqSchema([
@@ -271,7 +271,7 @@ export const seoData: Record<string, SEOData> = {
     canonical: `${BASE_URL}/vicarius/`,
     ogTitle: 'Vicarius vRx - Full Cycle Vulnerability Management en Colombia',
     ogType: 'website',
-    ogImage: `${BASE_URL}/og-default.png`,
+    ogImage: `${BASE_URL}/og/vicarius.jpg`,
     breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Star Inspection', url: '/#star-inspection' }, { name: 'Vicarius', url: '/vicarius/' }],
     jsonLd: resellerService('Vicarius vRx', 'Vicarius', 'Plataforma Full Cycle Vulnerability Management con Patchless Protection (DBI), vRx Scripting Engine, vIntelligence y vAnalyzer. Niche Player en Gartner MQ for Exposure Assessment Platforms 2025.', { image: `${BASE_URL}/og-default.png` }),
     faqJsonLd: faqSchema([
@@ -288,7 +288,7 @@ export const seoData: Record<string, SEOData> = {
     canonical: `${BASE_URL}/stellar-cyber/`,
     ogTitle: 'Stellar Cyber SecOps Platform | Open XDR para SOC Automatizado',
     ogType: 'website',
-    ogImage: `${BASE_URL}/og-default.png`,
+    ogImage: `${BASE_URL}/og/stellar-cyber.jpg`,
     breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Star Inspection', url: '/#star-inspection' }, { name: 'Stellar Cyber', url: '/stellar-cyber/' }],
     jsonLd: resellerService('Stellar Cyber SecOps Platform', 'Stellar Cyber', 'Plataforma SecOps AI-Native con arquitectura Open XDR para detección y respuesta unificada de amenazas', { image: `${BASE_URL}/og-default.png` }),
     faqJsonLd: faqSchema([
@@ -307,7 +307,7 @@ export const seoData: Record<string, SEOData> = {
     canonical: `${BASE_URL}/hacking-etico/`,
     ogTitle: 'Servicio de Hacking Ético y Pentesting en Colombia',
     ogType: 'website',
-    ogImage: `${BASE_URL}/og-default.png`,
+    ogImage: `${BASE_URL}/og/hacking-etico.jpg`,
     breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Star Inspection', url: '/#star-inspection' }, { name: 'Hacking Ético', url: '/hacking-etico/' }],
     jsonLd: service('Hacking Ético y Pentesting', 'Cybersecurity Penetration Testing'),
     faqJsonLd: faqSchema([
@@ -330,7 +330,7 @@ export const seoData: Record<string, SEOData> = {
     canonical: `${BASE_URL}/iso-27001/`,
     ogTitle: 'Consultoría ISO 27001 en Bogotá | Empresa Certificada',
     ogType: 'website',
-    ogImage: `${BASE_URL}/og-default.png`,
+    ogImage: `${BASE_URL}/og/iso-27001.jpg`,
     breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Star Compliance', url: '/#star-compliance' }, { name: 'ISO 27001', url: '/iso-27001/' }],
     jsonLd: {
       '@context': 'https://schema.org',
@@ -467,7 +467,7 @@ export const seoData: Record<string, SEOData> = {
     canonical: `${BASE_URL}/sealpath/`,
     ogTitle: 'SealPath IRM - Protección Persistente de Documentos en Colombia',
     ogType: 'website',
-    ogImage: `${BASE_URL}/og-default.png`,
+    ogImage: `${BASE_URL}/og/sealpath.jpg`,
     breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Star Compliance', url: '/#star-compliance' }, { name: 'SealPath IRM', url: '/sealpath/' }],
     jsonLd: resellerService('SealPath IRM — Information Rights Management', 'SealPath', 'Protección persistente de documentos con cifrado IRM/E-DRM, control de acceso granular, revocación remota y trazabilidad completa. Integración con Microsoft Information Protection (MIP) y Microsoft 365.', { image: `${BASE_URL}/og-default.png` }),
     faqJsonLd: faqSchema([
@@ -486,7 +486,7 @@ export const seoData: Record<string, SEOData> = {
     canonical: `${BASE_URL}/netwrix/`,
     ogTitle: 'Netwrix - Seguridad de Datos e Identidades en Colombia',
     ogType: 'website',
-    ogImage: `${BASE_URL}/og-default.png`,
+    ogImage: `${BASE_URL}/og/netwrix.jpg`,
     breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Star Compliance', url: '/#star-compliance' }, { name: 'Netwrix', url: '/netwrix/' }],
     jsonLd: resellerService('Netwrix — Plataforma de Seguridad de Datos e Identidades', 'Netwrix', 'Plataforma de seguridad de datos centrada en identidad: auditoría AD, PAM, DLP, clasificación de datos, IGA y DSPM para cumplimiento normativo', { image: `${BASE_URL}/og-default.png` }),
     faqJsonLd: faqSchema([
@@ -505,7 +505,7 @@ export const seoData: Record<string, SEOData> = {
     canonical: `${BASE_URL}/lastpass/`,
     ogTitle: 'LastPass Business - Gestión de Contraseñas y Accesos para Cumplimiento en Colombia',
     ogType: 'website',
-    ogImage: `${BASE_URL}/og-default.png`,
+    ogImage: `${BASE_URL}/og/lastpass.jpg`,
     breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Star Compliance', url: '/#star-compliance' }, { name: 'LastPass', url: '/lastpass/' }],
     jsonLd: resellerService('LastPass Business', 'LastPass', 'Gestor de contraseñas y accesos empresarial con cifrado de conocimiento cero AES-256, más de 100 políticas de seguridad, MFA, SSO, carpetas compartidas, monitoreo de dark web e integración con Microsoft Entra ID, Google Workspace y Okta. Star Solutions TI lo implementa en Colombia con soporte en español.', { image: `${BASE_URL}/og-default.png` }),
     faqJsonLd: faqSchema(lastpassFaqs),
@@ -517,7 +517,7 @@ export const seoData: Record<string, SEOData> = {
     canonical: `${BASE_URL}/dlp-prevencion-perdida-datos/`,
     ogTitle: 'Software DLP - Prevención de Pérdida de Datos',
     ogType: 'website',
-    ogImage: `${BASE_URL}/og-default.png`,
+    ogImage: `${BASE_URL}/og/dlp-prevencion-perdida-datos.jpg`,
     breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Star Compliance', url: '/#star-compliance' }, { name: 'Software DLP', url: '/dlp-prevencion-perdida-datos/' }],
     jsonLd: resellerService('Endpoint Protector DLP', 'CoSoSys', 'Software DLP multiplataforma para prevención de pérdida de datos empresariales', { image: `${BASE_URL}/og-default.png` }),
     faqJsonLd: faqSchema([
@@ -539,7 +539,7 @@ export const seoData: Record<string, SEOData> = {
     canonical: `${BASE_URL}/ciberseguridad-sector-publico/`,
     ogTitle: 'Ciberseguridad para Entidades Públicas en Colombia | Star Solutions TI',
     ogType: 'website',
-    ogImage: `${BASE_URL}/og-default.png`,
+    ogImage: `${BASE_URL}/og/ciberseguridad-sector-publico.jpg`,
     breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Sector público', url: '/ciberseguridad-sector-publico/' }],
     jsonLd: {
       '@context': 'https://schema.org',
@@ -608,7 +608,7 @@ export const seoData: Record<string, SEOData> = {
     canonical: `${BASE_URL}/antivirus-empresas/`,
     ogTitle: 'Antivirus Empresarial en Colombia: Comparativa 2026',
     ogType: 'website',
-    ogImage: `${BASE_URL}/og-default.png`,
+    ogImage: `${BASE_URL}/og/antivirus-empresas.jpg`,
     breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Comparativa Antivirus', url: '/antivirus-empresas/' }],
     jsonLd: {
       '@context': 'https://schema.org',
@@ -637,7 +637,7 @@ export const seoData: Record<string, SEOData> = {
     canonical: `${BASE_URL}/teamviewer/`,
     ogTitle: 'TeamViewer - Control Remoto Empresarial Seguro',
     ogType: 'website',
-    ogImage: `${BASE_URL}/og-default.png`,
+    ogImage: `${BASE_URL}/og/teamviewer.jpg`,
     breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Infraestructura', url: '/#infraestructura' }, { name: 'TeamViewer', url: '/teamviewer/' }],
     jsonLd: resellerService('TeamViewer Tensor', 'TeamViewer', 'Plataforma enterprise de conectividad remota segura: acceso remoto y soporte a IT, OT, móvil y POS, con SSO, acceso condicional Zero Trust e integraciones ITSM (ServiceNow, Intune, Salesforce)', { image: `${BASE_URL}/og-default.png` }),
     faqJsonLd: faqSchema([
@@ -655,7 +655,7 @@ export const seoData: Record<string, SEOData> = {
     canonical: `${BASE_URL}/anydesk/`,
     ogTitle: 'AnyDesk - Escritorio Remoto Ultra Rapido',
     ogType: 'website',
-    ogImage: `${BASE_URL}/og-default.png`,
+    ogImage: `${BASE_URL}/og/anydesk.jpg`,
     breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Infraestructura', url: '/#infraestructura' }, { name: 'AnyDesk', url: '/anydesk/' }],
     jsonLd: resellerService('AnyDesk', 'AnyDesk', 'Escritorio remoto de alto rendimiento con codec propietario DeskRT: 60 FPS, latencia menor a 16 ms y cifrado TLS 1.2 con Perfect Forward Secrecy. Planes Solo, Standard, Advanced y Ultimate (con AnyDesk On-Premises)', { image: `${BASE_URL}/og-default.png` }),
     faqJsonLd: faqSchema([
@@ -673,7 +673,7 @@ export const seoData: Record<string, SEOData> = {
     canonical: `${BASE_URL}/cableado-estructurado/`,
     ogTitle: 'Cableado Estructurado en Bogotá y Colombia para Empresas',
     ogType: 'website',
-    ogImage: `${BASE_URL}/og-default.png`,
+    ogImage: `${BASE_URL}/og/cableado-estructurado.jpg`,
     breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Infraestructura', url: '/#infraestructura' }, { name: 'Cableado Estructurado', url: '/cableado-estructurado/' }],
     jsonLd: service('Cableado Estructurado', 'Structured Cabling Installation'),
     // faqJsonLd retirado: declaraba 3 preguntas que no existen en la pagina.
@@ -687,7 +687,7 @@ export const seoData: Record<string, SEOData> = {
     canonical: `${BASE_URL}/equipos-computo/`,
     ogTitle: 'Equipos de Computo para Empresas',
     ogType: 'website',
-    ogImage: `${BASE_URL}/og-default.png`,
+    ogImage: `${BASE_URL}/og/equipos-computo.jpg`,
     breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Infraestructura', url: '/#infraestructura' }, { name: 'Equipos de Computo', url: '/equipos-computo/' }],
     jsonLd: resellerService('Equipos de Computo Empresariales', 'Star Solutions TI', 'Laptops, desktops, workstations y All-in-One para empresas', { image: `${BASE_URL}/og-default.png` }),
     // faqJsonLd retirado: declaraba 3 preguntas que no existen en la pagina.
@@ -704,7 +704,7 @@ export const seoData: Record<string, SEOData> = {
     canonical: `${BASE_URL}/sobre-nosotros/`,
     ogTitle: 'Sobre Nosotros - Star Solutions TI S.A.S.',
     ogType: 'website',
-    ogImage: `${BASE_URL}/og-default.png`,
+    ogImage: `${BASE_URL}/og/sobre-nosotros.jpg`,
     breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Sobre Nosotros', url: '/sobre-nosotros/' }],
     jsonLd: {
       '@context': 'https://schema.org',
@@ -720,7 +720,7 @@ export const seoData: Record<string, SEOData> = {
     canonical: `${BASE_URL}/contacto/`,
     ogTitle: 'Contacto - Star Solutions TI',
     ogType: 'website',
-    ogImage: `${BASE_URL}/og-default.png`,
+    ogImage: `${BASE_URL}/og/contacto.jpg`,
     hreflang: HREFLANG_CONTACTO,
     breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Contacto', url: '/contacto/' }],
     jsonLd: {
@@ -779,7 +779,7 @@ export const seoData: Record<string, SEOData> = {
     canonical: `${BASE_URL}/venezuela/`,
     ogTitle: 'Star Solutions TI Venezuela — Empresa de Ciberseguridad en Caracas',
     ogType: 'website',
-    ogImage: `${BASE_URL}/og-default.png`,
+    ogImage: `${BASE_URL}/og/venezuela.jpg`,
     hreflang: HREFLANG_HOME,
     breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Venezuela', url: '/venezuela/' }],
     jsonLd: {
@@ -821,7 +821,7 @@ export const seoData: Record<string, SEOData> = {
     canonical: `${BASE_URL}/venezuela/contacto/`,
     ogTitle: 'Contacto - Star Solutions TI Venezuela',
     ogType: 'website',
-    ogImage: `${BASE_URL}/og-default.png`,
+    ogImage: `${BASE_URL}/og/venezuela.jpg`,
     hreflang: HREFLANG_CONTACTO,
     breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Venezuela', url: '/venezuela/' }, { name: 'Contacto', url: '/venezuela/contacto/' }],
     jsonLd: {
@@ -841,7 +841,7 @@ export const seoData: Record<string, SEOData> = {
     canonical: `${BASE_URL}/blog/`,
     ogTitle: 'Blog de Ciberseguridad Empresarial',
     ogType: 'website',
-    ogImage: `${BASE_URL}/og-default.png`,
+    ogImage: `${BASE_URL}/og/blog.jpg`,
     breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Blog', url: '/blog/' }],
     jsonLd: {
       '@context': 'https://schema.org',
@@ -1119,7 +1119,7 @@ export const seoData: Record<string, SEOData> = {
     canonical: `${BASE_URL}/informe-ciberseguridad-colombia-2026/`,
     ogTitle: 'Informe de Ciberseguridad Empresarial Colombia 2026',
     ogType: 'article',
-    ogImage: `${BASE_URL}/og-default.png`,
+    ogImage: `${BASE_URL}/og/informe-ciberseguridad-colombia-2026.jpg`,
     breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Informe 2026', url: '/informe-ciberseguridad-colombia-2026/' }],
     jsonLd: {
       '@context': 'https://schema.org',
