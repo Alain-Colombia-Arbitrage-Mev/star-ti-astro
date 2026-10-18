@@ -5,6 +5,7 @@ import { sectorPublicoFaqs } from './sectorPublico';
 import { calcFaqs } from './iso27001Calculadora';
 import { hornetFaqs } from './blogHornetsecurity';
 import { pentestIsoFaqs } from './blogPentestingIso';
+import { bdEdrFaqs } from './blogBitdefenderEdr';
 
 export interface SEOData {
   title: string;
@@ -1073,6 +1074,36 @@ export const seoData: Record<string, SEOData> = {
       { q: '¿Que datos necesito para cotizar Kaspersky Next?', a: 'Para cotizar Kaspersky Next se necesita numero de endpoints, servidores, usuarios moviles, sedes, edicion requerida, plazo de licencia, antivirus actual y si la empresa necesita EDR, XDR o MXDR. Con esos datos se evita comprar una edicion insuficiente o sobredimensionada.' },
       { q: '¿Kaspersky se compra directo o por partner?', a: 'Kaspersky ofrece canales comerciales y programas de partners para venta, implementacion y soporte. Para empresas, trabajar con un distribuidor corporativo reduce friccion porque integra cotizacion, despliegue, capacitacion, renovacion y escalamiento tecnico.' },
     ]),
+  },
+
+  'blog/bitdefender-edr-xdr-mdr': {
+    title: 'Bitdefender EDR, XDR o MDR: Cuál Necesita su Empresa',
+    description: 'Diferencias entre Bitdefender EDR, XDR y MDR, cómo funcionan la consola GravityZone y el agente BEST, y 4 preguntas para elegir el nivel correcto.',
+    keywords: 'Bitdefender EDR vs XDR, Bitdefender MDR Colombia, GravityZone XDR, consola Bitdefender GravityZone, Bitdefender Endpoint Security Tools qué es, BEST Bitdefender',
+    canonical: `${BASE_URL}/blog/bitdefender-edr-xdr-mdr/`,
+    ogTitle: 'Bitdefender EDR, XDR o MDR: cuál necesita su empresa',
+    ogType: 'article',
+    ogImage: `${BASE_URL}/og/blog-bitdefender-edr-xdr-mdr.jpg`,
+    breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Blog', url: '/blog/' }, { name: 'Bitdefender EDR, XDR o MDR', url: '/blog/bitdefender-edr-xdr-mdr/' }],
+    jsonLd: {
+      '@context': 'https://schema.org',
+      '@type': 'Article',
+      headline: 'Bitdefender EDR, XDR o MDR: cuál necesita su empresa',
+      description: 'Guía de los niveles de detección y respuesta de Bitdefender GravityZone (EDR, XDR y MDR), la consola GravityZone, el agente BEST y cómo elegir según el equipo de TI y el riesgo.',
+      datePublished: '2026-10-18',
+      dateModified: '2026-10-18',
+      inLanguage: 'es-CO',
+      author: AUTHOR,
+      publisher: { '@type': 'Organization', name: 'Star Solutions TI S.A.S.', url: BASE_URL, logo: { '@type': 'ImageObject', url: `${BASE_URL}/logo.png` } },
+      image: `${BASE_URL}/og/blog-bitdefender-edr-xdr-mdr.jpg`,
+      url: `${BASE_URL}/blog/bitdefender-edr-xdr-mdr/`,
+      about: [
+        { '@type': 'Organization', name: 'Bitdefender', url: 'https://www.bitdefender.com/' },
+        { '@type': 'SoftwareApplication', name: 'Bitdefender GravityZone', applicationCategory: 'SecurityApplication' },
+      ],
+      keywords: 'Bitdefender, GravityZone, EDR, XDR, MDR, BEST',
+    },
+    faqJsonLd: faqSchema(bdEdrFaqs),
   },
 
   'blog/pentesting-iso-27001': {

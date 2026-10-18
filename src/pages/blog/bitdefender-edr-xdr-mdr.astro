@@ -1,0 +1,223 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Navbar from '@components/Navbar.astro';
+import Footer from '@components/Footer.astro';
+import WhatsAppButton from '@components/WhatsAppButton.astro';
+import { seoData } from '@data/seo';
+import { bdEdrFaqs } from '@data/blogBitdefenderEdr';
+
+const seo = seoData['blog/bitdefender-edr-xdr-mdr'];
+
+const levels = [
+  {
+    name: 'EDR',
+    full: 'Endpoint Detection and Response',
+    what: 'Registra lo que pasa en cada computador y servidor, detecta comportamientos de ataque y permite aislar el equipo, matar procesos o investigar la cadena del ataque.',
+    who: 'Empresas con equipo de TI que pueda revisar alertas en horario laboral.',
+  },
+  {
+    name: 'XDR',
+    full: 'Extended Detection and Response',
+    what: 'Suma sensores de identidad (Directorio Activo y Entra ID), red, nube (AWS y Azure) y productividad (Microsoft 365 y Google Workspace), y une todas las señales en un solo incidente.',
+    who: 'Empresas con Microsoft 365, Directorio Activo o cargas en la nube.',
+  },
+  {
+    name: 'MDR',
+    full: 'Managed Detection and Response',
+    what: 'Un servicio: analistas de Bitdefender vigilan su entorno 24/7, buscan amenazas de forma proactiva y responden a los incidentes según lo acordado.',
+    who: 'Empresas sin un equipo de seguridad 24/7 o con riesgo alto.',
+  },
+];
+
+const compare = [
+  ['Qué cubre', 'Computadores y servidores', 'Equipos + identidad, red, nube y Microsoft 365', 'Lo que tenga contratado, vigilado por expertos'],
+  ['Quién revisa las alertas', 'Su equipo de TI', 'Su equipo de TI, con alertas agrupadas', 'Analistas de Bitdefender, 24/7'],
+  ['Horario de respuesta', 'El de su equipo', 'El de su equipo', '24/7, incluidos festivos'],
+  ['Esfuerzo interno', 'Medio', 'Medio, con menos ruido', 'Bajo'],
+];
+
+const questions = [
+  ['¿Quién revisa una alerta un sábado a las 2 a. m.?', 'Si nadie, considere MDR.'],
+  ['¿Usa Microsoft 365, Directorio Activo o nube?', 'Si sí, XDR le da visibilidad entre capas.'],
+  ['¿Cuántas personas de TI tiene y cuánto tiempo dedican a seguridad?', 'Con uno o dos técnicos, EDR solo puede saturarlos.'],
+  ['¿Le exigen evidencia de monitoreo (ISO 27001, Superfinanciera, MSPI)?', 'XDR y MDR dejan registros e informes para el auditor.'],
+];
+---
+
+<BaseLayout seo={seo}>
+  <Navbar />
+
+  <section class="relative bg-gradient-to-br from-[#0b1220] to-[#1f2937] overflow-hidden">
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-16 lg:pb-20">
+      <nav class="mb-8 flex items-center gap-2 text-sm text-gray-400" aria-label="Ruta de navegación">
+        <a href="/" class="hover:text-white transition-colors">Inicio</a>
+        <span>/</span>
+        <a href="/blog/" class="hover:text-white transition-colors">Blog</a>
+        <span>/</span>
+        <span class="text-gray-200">Bitdefender EDR, XDR o MDR</span>
+      </nav>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <div class="flex flex-wrap items-center gap-3 mb-6">
+            <span class="bg-red-500/20 border border-red-500/30 text-red-300 text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wide">Bitdefender</span>
+            <span class="text-gray-400 text-sm">18 oct 2026</span>
+          </div>
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+            Bitdefender EDR, XDR o MDR: cuál necesita su empresa
+          </h1>
+          <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+            Qué hace cada nivel de Bitdefender GravityZone, cómo funcionan la consola y el agente BEST, y cuatro preguntas para decidir sin pagar de más ni quedarse corto.
+          </p>
+          <div class="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-gray-400">
+            <span>Por Jorge Molano &middot; CEO de Star Solutions TI</span>
+            <span>&bull;</span>
+            <span>Tiempo de lectura: 7 min</span>
+          </div>
+        </div>
+        <div class="hidden lg:block">
+          <div class="bg-white rounded-2xl shadow-2xl p-10 max-w-md mx-auto">
+            <img src="/marcas/bitdefender-platinum-reseller.webp" alt="Sello Bitdefender Platinum Reseller" class="w-full h-auto" width="438" height="164" loading="eager" />
+            <p class="mt-6 text-center text-sm font-semibold text-gray-700">Star Solutions TI · Reseller Platinum de Bitdefender</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <article class="bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+      <section class="mb-12">
+        <p class="text-xl text-gray-700 leading-relaxed mb-6">
+          Un antivirus tradicional bloquea lo que reconoce. Pero hoy la mayoría de ataques usan herramientas legítimas, credenciales robadas o técnicas que no dejan un archivo malicioso. Para eso existen <strong>EDR, XDR y MDR</strong>, los tres niveles de detección y respuesta de <strong>Bitdefender GravityZone</strong>.
+        </p>
+        <div class="bg-red-50 border border-red-200 rounded-2xl p-6">
+          <h2 class="text-xl font-bold text-red-900 mb-2">Respuesta rápida</h2>
+          <p class="text-red-800 leading-relaxed">
+            <strong>EDR</strong> vigila los equipos. <strong>XDR</strong> vigila los equipos más identidades, red, nube y Microsoft 365. <strong>MDR</strong> es un servicio en el que expertos de Bitdefender vigilan y responden por usted 24/7. La elección depende menos del tamaño de su empresa y más de quién va a atender las alertas.
+          </p>
+        </div>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Los tres niveles, explicados</h2>
+        <div class="space-y-5">
+          {levels.map((l) => (
+            <div class="border border-gray-200 rounded-2xl p-6">
+              <div class="flex flex-wrap items-baseline gap-x-3 mb-2">
+                <h3 class="text-2xl font-bold text-red-700">{l.name}</h3>
+                <span class="text-sm text-gray-500">{l.full}</span>
+              </div>
+              <p class="text-gray-700 leading-relaxed mb-2">{l.what}</p>
+              <p class="text-sm"><span class="font-semibold text-gray-900">Para:</span> <span class="text-gray-600">{l.who}</span></p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Comparativa EDR vs. XDR vs. MDR</h2>
+        <div class="overflow-x-auto rounded-2xl border border-gray-200">
+          <table class="w-full text-sm min-w-[640px]">
+            <thead class="bg-gray-50">
+              <tr>
+                <th class="text-left px-4 py-3 font-bold text-gray-900"></th>
+                <th class="text-left px-4 py-3 font-bold text-gray-900">EDR</th>
+                <th class="text-left px-4 py-3 font-bold text-gray-900">XDR</th>
+                <th class="text-left px-4 py-3 font-bold text-gray-900">MDR</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-100">
+              {compare.map(([label, edr, xdr, mdr]) => (
+                <tr>
+                  <td class="px-4 py-3 font-semibold text-gray-900">{label}</td>
+                  <td class="px-4 py-3 text-gray-600">{edr}</td>
+                  <td class="px-4 py-3 text-gray-600">{xdr}</td>
+                  <td class="px-4 py-3 text-gray-600">{mdr}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p class="text-sm text-gray-500 mt-3">Los tres niveles se suman: XDR incluye EDR, y MDR se apoya en la tecnología de GravityZone instalada en su empresa.</p>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Cómo funciona por dentro: consola GravityZone y agente BEST</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-6">
+          <div class="border border-gray-200 rounded-xl p-5 bg-gray-50">
+            <h3 class="font-bold text-gray-900 mb-2">Consola GravityZone</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">El panel central donde se crean las políticas, se instalan los agentes, se ven las alertas y se sacan los informes. Puede estar en la nube de Bitdefender, que es lo más común, o instalada en su propia infraestructura.</p>
+          </div>
+          <div class="border border-gray-200 rounded-xl p-5 bg-gray-50">
+            <h3 class="font-bold text-gray-900 mb-2">Agente BEST</h3>
+            <p class="text-sm text-gray-600 leading-relaxed"><em>Bitdefender Endpoint Security Tools</em> es el programa que se instala en cada computador y servidor (Windows, macOS y Linux). Activa solo los módulos que su licencia y su política incluyan.</p>
+          </div>
+          <div class="border border-gray-200 rounded-xl p-5 bg-gray-50">
+            <h3 class="font-bold text-gray-900 mb-2">Rol Relay</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">Un equipo con BEST puede actuar como Relay: descarga las actualizaciones una vez y las reparte en la red local, descubre equipos sin protección e instala el agente en ellos. Ahorra ancho de banda en sedes y sucursales.</p>
+          </div>
+          <div class="border border-gray-200 rounded-xl p-5 bg-gray-50">
+            <h3 class="font-bold text-gray-900 mb-2">Sensores XDR</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">Conectores que llevan a la consola eventos del Directorio Activo, de la red, de AWS o Azure y de Microsoft 365 o Google Workspace. Son lo que convierte un EDR en XDR.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Cuatro preguntas para decidir</h2>
+        <ol class="space-y-5">
+          {questions.map(([q, a], index) => (
+            <li class="flex gap-4">
+              <span class="flex-shrink-0 w-9 h-9 bg-red-700 text-white rounded-full flex items-center justify-center font-bold">{index + 1}</span>
+              <div>
+                <h3 class="font-bold text-gray-900 mb-1">{q}</h3>
+                <p class="text-gray-600 leading-relaxed">{a}</p>
+              </div>
+            </li>
+          ))}
+        </ol>
+        <p class="text-lg text-gray-600 leading-relaxed mt-6">
+          <strong>Nuestra experiencia:</strong> el error más común no es comprar poco, sino comprar EDR o XDR y que nadie revise las alertas. Una herramienta que nadie mira no protege. Si su equipo no puede atenderla, es mejor un nivel menor bien operado, o MDR.
+        </p>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">¿Y las ediciones de GravityZone?</h2>
+        <p class="text-lg text-gray-600 leading-relaxed">
+          Bitdefender empaqueta estas capacidades en ediciones como Small Business Security, Business Security Premium y Business Security Enterprise. EDR y XDR están en las ediciones superiores, y MDR se contrata como servicio. Vea la comparativa de ediciones en nuestra página de <a href="/bitdefender/" class="text-red-700 font-semibold hover:underline">Bitdefender en Colombia</a>, o compare con otras marcas en la <a href="/antivirus-empresas/" class="text-red-700 font-semibold hover:underline">comparativa de antivirus empresarial</a>.
+        </p>
+      </section>
+
+      <section class="mb-12 bg-gray-50 border border-gray-200 rounded-2xl p-6">
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">Fuentes</h2>
+        <ul class="space-y-2 text-sm">
+          <li><a href="https://www.bitdefender.com/business/support/en/77212-392421-understanding-gravityzone-architecture.html" class="text-red-700 hover:underline" rel="noopener">Bitdefender: Understanding GravityZone architecture</a></li>
+          <li><a href="https://www.bitdefender.com/business/support/en/77212-376358-security-agents.html" class="text-red-700 hover:underline" rel="noopener">Bitdefender: Security agents (BEST y rol Relay)</a></li>
+          <li><a href="https://www.bitdefender.com/content/dam/bitdefender/business/products/xdr/Bitdefender-GravityZone-XDR-Datasheet_en.pdf" class="text-red-700 hover:underline" rel="noopener">Bitdefender: GravityZone XDR Datasheet</a></li>
+        </ul>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Preguntas frecuentes</h2>
+        <div class="space-y-5">
+          {bdEdrFaqs.map((f) => (
+            <div class="border border-gray-200 rounded-xl p-5">
+              <h3 class="font-bold text-gray-900 mb-2">{f.q}</h3>
+              <p class="text-gray-600">{f.a}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section class="bg-[#111827] rounded-2xl p-8 text-white">
+        <h2 class="text-2xl font-bold mb-3">Elija el nivel correcto con un Reseller Platinum</h2>
+        <p class="text-gray-300 mb-6">Star Solutions TI es Reseller Platinum de Bitdefender, el nivel más alto de su programa de partners, con más de 150 empresas y más de 50.000 equipos protegidos con GravityZone. Revisamos su infraestructura y le recomendamos el nivel que su equipo puede operar.</p>
+        <a href="/bitdefender/" class="inline-flex items-center justify-center bg-red-700 text-white font-semibold px-6 py-3 rounded hover:bg-[#dc2626] transition">Cotizar Bitdefender</a>
+      </section>
+    </div>
+  </article>
+
+  <Footer />
+  <WhatsAppButton />
+</BaseLayout>
