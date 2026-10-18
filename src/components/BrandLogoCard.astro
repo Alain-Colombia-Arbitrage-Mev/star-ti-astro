@@ -1,7 +1,9 @@
 ---
 // Tarjeta con el logo oficial de la marca para el encabezado de cada página de
 // herramienta (reemplaza las imágenes genéricas). Logos en public/marcas/,
-// normalizados a WebP de hasta 800x320 px con fondo transparente.
+// normalizados a WebP de hasta 800x320 px con fondo transparente. Lleva el sello
+// "certificados técnica y comercialmente": Star lo está en todas las marcas que
+// distribuye (confirmado por George, 18-oct-2026).
 interface Props {
   src: string;
   alt: string;
@@ -27,4 +29,8 @@ const { src, alt, width, height, maxWidth = 'max-w-md' } = Astro.props;
     fetchpriority="high"
     decoding="async"
   />
+  <span class="absolute bottom-4 left-1/2 -translate-x-1/2 inline-flex items-center gap-1.5 whitespace-nowrap rounded-full bg-gray-900 px-3.5 py-1.5 text-xs font-semibold text-white shadow-md">
+    <svg class="h-3.5 w-3.5 text-emerald-400" fill="none" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 7.5l2.5 2.5L11 4.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /></svg>
+    Certificados técnica y comercialmente
+  </span>
 </div>
