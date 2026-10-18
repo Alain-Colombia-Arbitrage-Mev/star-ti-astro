@@ -789,7 +789,7 @@ export const seoData: Record<string, SEOData> = {
       description: 'Empresa de ciberseguridad y soluciones tecnológicas para empresas en Venezuela',
       url: `${BASE_URL}/venezuela/`,
       image: `${BASE_URL}/og-default.png`,
-      telephone: '+584241499856',
+      telephone: '+573007010017',
       email: 'contacto@star-ti.com',
       address: { '@type': 'PostalAddress', streetAddress: 'Ed. Centro Empresarial Torre Araujo, M. OF A-1', addressLocality: 'Caracas', addressCountry: 'VE' },
       parentOrganization: ORG,
