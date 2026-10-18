@@ -489,6 +489,12 @@ async function detectSpam(request, env, fields) {
         // 5 min o reutilizado) o "invalid-input-secret" (secreto mal copiado).
         const codes = (outcome["error-codes"] || []).join(",");
         console.log("Turnstile rechazado", codes, outcome.hostname || "");
+        // Secreto mal configurado = error nuestro, no del visitante: no se marca
+        // el lead (si no, todos los clientes reales llegarian como spam).
+        if (/(missing|invalid)-input-secret/.test(codes)) {
+          console.error(`TURNSTILE_SECRET_KEY invalido (${turnstileSecret.length} caracteres): revisar el secreto del Worker.`);
+          return null;
+        }
         // Solo el largo (nunca el valor): la clave del sitio tiene 24 caracteres y
         // la secreta 35; asi se sabe si se pego la equivocada.
         const hint = codes.includes("invalid-input-secret") ? ` (secreto de ${turnstileSecret.length} caracteres)` : "";

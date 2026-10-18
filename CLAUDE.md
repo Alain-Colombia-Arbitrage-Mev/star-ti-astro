@@ -140,6 +140,10 @@ descripciones ≤ 160, `lastmod` del sitemap, 301 con barra final faltantes, `no
 - `TURNSTILE_SECRET_KEY` en el Worker (Producción). Cloudflare no muestra el valor guardado; para
   cambiarlo: lápiz → "Girar" (Rotate) → pegar → "Guardar versión" (nunca "Desplegar"), y luego
   publicar un cambio en `produccion` para que la versión en vivo use el valor nuevo.
+- **PENDIENTE (18-oct):** el secreto guardado es la clave del sitio (24 caracteres), no la llave
+  secreta. Mientras tanto el worker ignora `invalid-input-secret` (no marca leads como spam) y lo
+  registra en el log. Arreglo: copiar la llave secreta (empieza `0x4AAAAAAFZhj_`, más larga),
+  lápiz → Girar → pegar → Guardar versión, y publicar un cambio en `produccion`.
 - El asunto del correo indica el motivo de Cloudflare si la verificación falla:
   `invalid-input-secret` = llave mal copiada; `timeout-or-duplicate` = token de más de 5 minutos.
 - Chrome en el celular traduce el panel de Cloudflare ("star-ti" → "estrella-ti",
