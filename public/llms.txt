@@ -16,7 +16,7 @@ Last updated: 2026-08-24
 ## Core Cybersecurity Services
 
 - Enterprise cybersecurity and ransomware defense in Colombia: https://star-ti.com/seguridad-informatica-empresas/
-- Cybersecurity for Colombian public sector entities (100+ public contracts, 23 certified in RUP, ISO 27001): https://star-ti.com/ciberseguridad-sector-publico/
+- Cybersecurity for Colombian public sector entities (100+ certified public-sector contracts, ISO 27001): https://star-ti.com/ciberseguridad-sector-publico/
 - Ethical hacking and penetration testing: https://star-ti.com/hacking-etico/
 - ISO 27001 consulting in Bogota, Colombia and SGSI certification preparation: https://star-ti.com/iso-27001/
 - Best ISO 27001 consulting companies in Colombia comparison: https://star-ti.com/mejores-empresas-consultoria-iso-27001-colombia/

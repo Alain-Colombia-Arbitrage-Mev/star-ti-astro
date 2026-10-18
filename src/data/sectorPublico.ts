@@ -63,7 +63,7 @@ export interface SectorPublicoFaq {
 export const sectorPublicoFaqs: SectorPublicoFaq[] = [
   {
     question: '¿Star Solutions TI está inscrita en el RUP?',
-    answer: `Sí. Star Solutions TI S.A.S. (NIT 900968161-7) está inscrita en el Registro Único de Proponentes de la ${RUP.camara} con el número de proponente ${RUP.proponente}, renovado el ${RUP.renovacion}. Ha ejecutado más de 100 contratos con entidades públicas, entre mínimas cuantías, contratación directa y procesos competitivos; ${RUP.contratosPublicos} de ellos están certificados en el RUP, que reporta ${RUP.contratosTotales} contratos en total.`,
+    answer: `Sí. Star Solutions TI S.A.S. (NIT 900968161-7) está inscrita en el Registro Único de Proponentes de la ${RUP.camara} con el número de proponente ${RUP.proponente}, renovado el ${RUP.renovacion}. Tiene más de 100 contratos certificados con entidades públicas, entre los reportados en el RUP (${RUP.contratosTotales} contratos en total, ${RUP.contratosPublicos} con entidades públicas) y las mínimas cuantías y contrataciones directas, que no se reportan en el RUP.`,
   },
   {
     question: '¿Qué códigos UNSPSC tiene Star Solutions TI para ciberseguridad?',

@@ -138,7 +138,14 @@ export default {
       noindexResponse.headers.set("X-Robots-Tag", "noindex, nofollow");
       return noindexResponse;
     }
-    if (assetResponse.status !== 404 || !url.pathname.startsWith("/_astro/")) {
+    if (assetResponse.status === 404 && !url.pathname.startsWith("/_astro/")) {
+      // El 404 no se guarda en el navegador: si alguien entra a una pagina nueva
+      // mientras Cloudflare la publica, no debe seguir viendo el error una hora.
+      const notFound = new Response(assetResponse.body, assetResponse);
+      notFound.headers.set("Cache-Control", "no-store");
+      return notFound;
+    }
+    if (assetResponse.status !== 404) {
       return assetResponse;
     }
 
