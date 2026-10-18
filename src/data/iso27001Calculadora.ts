@@ -1,7 +1,7 @@
 // Calculadora de costo ISO 27001 (/calculadora-costo-iso-27001/). Los rangos base
-// salen de la FAQ publicada en /iso-27001/ (iso27001Landing.ts): pequeñas 35-50 M COP,
-// medianas 60-120 M, grandes desde 150 M; 6 a 12 meses, promedio 8. Si cambian allá,
-// actualizar aquí. Los ajustes por factor son una referencia comercial de Star para
+// salen de la FAQ publicada en /iso-27001/ (iso27001Landing.ts): de 25 a 120 M COP según
+// tamaño (confirmado por George, 18-oct-2026); 6 a 12 meses, promedio 8. Si cambian allá,
+// actualizar aquí y los límites del script de la calculadora. Los ajustes por factor son una referencia comercial de Star para
 // orientar al cliente; la cotización real sale del diagnóstico.
 
 export interface CalcOption {
@@ -65,10 +65,10 @@ export const CALC_QUESTIONS: CalcQuestion[] = [
 
 // Rango base en millones de COP y meses, por tamaño.
 export const CALC_BASE: Record<string, { min: number; max: number; months: [number, number] }> = {
-  xs: { min: 35, max: 50, months: [6, 8] },
-  sm: { min: 60, max: 90, months: [7, 9] },
-  md: { min: 90, max: 120, months: [8, 10] },
-  lg: { min: 150, max: 220, months: [9, 12] },
+  xs: { min: 25, max: 40, months: [6, 8] },
+  sm: { min: 40, max: 65, months: [7, 9] },
+  md: { min: 60, max: 90, months: [8, 10] },
+  lg: { min: 85, max: 120, months: [9, 12] },
 };
 
 // Multiplicadores sobre el rango base (1 = sin cambio).
@@ -91,7 +91,7 @@ export const CALC_DEFAULTS = { size: 'sm', sites: 'one', maturity: 'mid', scope:
 export const calcFaqs = [
   {
     question: '¿Cuánto cuesta certificarse en ISO 27001 en Colombia?',
-    answer: 'Como referencia, las empresas pequeñas invierten entre 35 y 50 millones de pesos; las medianas, entre 60 y 120 millones; y las grandes, desde 150 millones. El valor final depende del tamaño, las sedes, lo que ya tenga avanzado y el alcance que quiera certificar.',
+    answer: 'Como referencia, entre 25 y 120 millones de pesos según el tamaño: las pequeñas, entre 25 y 40 millones; las medianas, entre 40 y 90 millones; y las grandes, entre 85 y 120 millones. El valor final depende del tamaño, las sedes, lo que ya tenga avanzado y el alcance que quiera certificar.',
   },
   {
     question: '¿Cuánto tiempo toma certificarse en ISO 27001?',

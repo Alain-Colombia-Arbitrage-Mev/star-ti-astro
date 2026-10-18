@@ -48,7 +48,7 @@ const seo = seoData['calculadora-costo-iso-27001'];
 
           <aside class="lg:sticky lg:top-28 rounded-3xl border border-gray-200 bg-gradient-to-br from-gray-50 to-white shadow-xl p-7" aria-live="polite">
             <p class="text-xs font-semibold uppercase tracking-widest text-red-700 mb-2">Inversión estimada</p>
-            <p class="text-4xl font-bold text-gray-900 leading-tight"><span id="calc-cost">55 a 80</span> <span class="text-xl font-semibold text-gray-500">millones COP</span></p>
+            <p class="text-4xl font-bold text-gray-900 leading-tight"><span id="calc-cost">35 a 60</span> <span class="text-xl font-semibold text-gray-500">millones COP</span></p>
             <div class="mt-5 pt-5 border-t border-gray-200">
               <p class="text-xs font-semibold uppercase tracking-widest text-gray-500 mb-1">Tiempo estimado</p>
               <p class="text-2xl font-bold text-gray-900"><span id="calc-time">7 a 9</span> meses</p>
@@ -131,9 +131,9 @@ const seo = seoData['calculadora-costo-iso-27001'];
     const base = CALC_BASE[data.size];
     const factor = ['sites', 'maturity', 'scope', 'regulated'].reduce((acc, k) => acc * (CALC_FACTORS[k][data[k]] ?? 1), 1);
     const shift = ['sites', 'maturity', 'scope'].reduce((acc, k) => acc + (CALC_MONTHS[k][data[k]] ?? 0), 0);
-    // Pisos y techos alineados con lo publicado en /iso-27001/: desde 35 M COP y de 6 a 12 meses.
-    const min = Math.max(35, Math.round((base.min * factor) / 5) * 5);
-    const max = Math.max(min + 5, Math.round((base.max * factor) / 5) * 5);
+    // Pisos y techos alineados con lo publicado en /iso-27001/: de 25 a 120 M COP y de 6 a 12 meses.
+    const min = Math.min(115, Math.max(25, Math.round((base.min * factor) / 5) * 5));
+    const max = Math.min(120, Math.max(min + 5, Math.round((base.max * factor) / 5) * 5));
     const mMin = Math.min(11, Math.max(6, base.months[0] + shift));
     const mMax = Math.min(12, Math.max(mMin + 1, base.months[1] + shift));
     costEl.textContent = `${nf.format(min)} a ${nf.format(max)}`;
