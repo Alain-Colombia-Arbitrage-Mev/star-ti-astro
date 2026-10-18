@@ -89,9 +89,9 @@
   }
   /* Texto justificado en todo el sitio (pedido de George, 18-oct-2026). Va en la
      capa base: una clase utilitaria (text-center, text-left) en el propio <p> la
-     reemplaza, y los bloques centrados por su contenedor siguen centrados. El
-     guion automatico reduce los espacios grandes en pantallas angostas. */
-  main p { text-align: justify; hyphens: auto; -webkit-hyphens: auto; }
+     reemplaza, y los bloques centrados por su contenedor siguen centrados. Sin
+     guiones automaticos: George no quiere palabras cortadas (18-oct-2026). */
+  main p { text-align: justify; hyphens: manual; -webkit-hyphens: manual; }
   main :where(.text-center, .iso-section__header, .iso-step, .iso-cta) p { text-align: center; }
 
   .animate-blob { animation: blob 7s infinite; }
