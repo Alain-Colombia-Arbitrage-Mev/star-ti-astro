@@ -55,7 +55,7 @@ export const regions: Record<string, RegionData> = {
       'Gestión de Contraseñas y Accesos (LastPass)',
     ],
     stats: [
-      { label: 'Empresas Protegidas en Colombia', value: '2,500+' },
+      { label: 'Empresas Atendidas', value: '1.150+' },
       { label: 'Años de Experiencia', value: '10' },
       { label: 'Certificaciones Activas', value: '50+' },
       { label: 'Disponibilidad de Soporte', value: '24/7' },
