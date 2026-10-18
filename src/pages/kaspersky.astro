@@ -4,6 +4,7 @@ import Navbar from '@components/Navbar.astro';
 import Footer from '@components/Footer.astro';
 import ConsultoriaForm from '@components/ConsultoriaForm.astro';
 import WhatsAppButton from '@components/WhatsAppButton.astro';
+import AwardsGrid, { type Award } from '@components/AwardsGrid.astro';
 import { seoData, BASE_URL } from '@data/seo';
 
 const seo = seoData.kaspersky;
@@ -13,6 +14,90 @@ const KSP_SECTORS = [
   { sector: 'Salud y EPS', need: 'Proteger historias clinicas bajo la Ley 1581 de Habeas Data.', how: 'Anti-ransomware con reversion de cambios y Encryption Management en estaciones clinicas.' },
   { sector: 'Gobierno y entidades territoriales', need: 'Alinear con el MSPI de MinTIC y resistir amenazas dirigidas.', how: 'XDR Optimum con telemetria correlacionada y MXDR Optimum para el monitoreo 24/7 que la entidad no cubre.' },
   { sector: 'Manufactura y retail', need: 'Proteger sedes distribuidas sin equipo de TI en cada ciudad.', how: 'Consola cloud unica y Adaptive Anomaly Control para frenar comportamientos anomalos en cada sede.' },
+];
+
+// Reconocimientos (revisados el 18-oct-2026 en AV-Comparatives, AV-TEST y la sala de prensa de
+// Kaspersky). Solo resultados verificables, con su año; al publicarse los de 2027, actualizar.
+const AWARDS: Award[] = [
+  {
+    category: '2026',
+    org: 'AV-Comparatives',
+    year: '2026',
+    metric: '99,8%',
+    title: 'Business Security Test H1 2026',
+    desc: 'Tasa de protección en la prueba de amenazas reales (Real-World Protection) para empresas.',
+  },
+  {
+    category: '2026',
+    org: 'AV-Comparatives',
+    year: '2026',
+    metric: 'Certified',
+    title: 'EDR Detection Validation',
+    desc: 'Kaspersky EDR Expert, certificado en la validación de detección y respuesta en endpoints.',
+  },
+  {
+    category: '2026',
+    org: 'AV-Comparatives',
+    year: '2026',
+    metric: 'Approved',
+    title: 'LSASS Credential Dumping',
+    desc: 'Kaspersky Endpoint Security frena el robo de credenciales de Windows (volcado de LSASS).',
+  },
+  {
+    category: '2026',
+    org: 'SE Labs',
+    year: '2026',
+    metric: 'AAA',
+    title: 'Enterprise Endpoint Security',
+    desc: 'La calificación más alta de SE Labs en protección de endpoints empresariales.',
+  },
+  {
+    category: '2025',
+    org: 'AV-TEST',
+    year: '2025',
+    metric: '2 premios',
+    title: 'Best Advanced Protection y Best Usability',
+    desc: 'Kaspersky Endpoint Security, premiado para usuarios corporativos en los AV-TEST Awards 2025.',
+  },
+  {
+    category: '2025',
+    org: 'AV-Comparatives',
+    year: '2025',
+    metric: 'N.º 1',
+    title: 'Anti-Tampering Test',
+    desc: 'La mayor resistencia a los ataques que intentan desactivar la protección del equipo.',
+  },
+  {
+    category: '2025',
+    org: 'AV-Comparatives',
+    year: '2025',
+    metric: 'Certified',
+    title: 'Enterprise ATP y EDR Detection',
+    desc: 'Certificado en protección contra amenazas avanzadas y en detección EDR para empresas.',
+  },
+  {
+    category: 'trayectoria',
+    org: 'Pruebas independientes',
+    year: '2025',
+    metric: '90%',
+    title: 'Primer lugar en 100 evaluaciones',
+    desc: 'Según Kaspersky, en 2025 sus soluciones ocuparon el primer lugar en el 90% de 100 pruebas y el top 3 en el 94%.',
+  },
+  {
+    category: 'trayectoria',
+    org: 'AV-TEST',
+    year: '2024',
+    metric: 'Best Protection',
+    title: 'AV-TEST Award',
+    desc: 'Kaspersky Endpoint Security, mejor protección para usuarios corporativos.',
+  },
+];
+
+const AWARD_FILTERS = [
+  { id: 'todos', label: 'Todos' },
+  { id: '2026', label: 'Pruebas 2026' },
+  { id: '2025', label: 'Premios 2025' },
+  { id: 'trayectoria', label: 'Trayectoria' },
 ];
 
 const serviceSchema = {
@@ -183,6 +268,16 @@ const serviceSchema = {
       </div>
     </section>
 
+    <!-- Reconocimientos: tarjetas filtrables (Pruebas 2026 / Premios 2025 / Trayectoria) -->
+    <AwardsGrid
+      id="reconocimientos-kaspersky"
+      eyebrow="Reconocimientos 2026"
+      title="Kaspersky, validado por los laboratorios de pruebas independientes"
+      subtitle="Lo que respalda la tecnología que implementamos como distribuidor corporativo en Colombia."
+      awards={AWARDS}
+      filters={AWARD_FILTERS}
+    />
+
     <!-- Kaspersky Next Section -->
     <section class="bg-[#f9fafb] py-16 sm:py-20 lg:py-24">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -330,7 +425,7 @@ const serviceSchema = {
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
           <div class="border border-gray-200 rounded-xl p-6 bg-gray-50">
             <p class="text-xs font-bold text-red-700 uppercase tracking-wider mb-2">Reconocimientos</p>
-            <p class="text-sm text-gray-700 leading-relaxed">AV-TEST Best Protection 2024, SE Labs AAA con 100% Total Accuracy (TOP1) y la AV-Comparatives EDR Detection Validation Certification 2025, que Kaspersky Next EDR Expert fue el primer producto de la industria en superar por completo.</p>
+            <p class="text-sm text-gray-700 leading-relaxed">99,8% de protección en el Business Security Test 2026 de AV-Comparatives, SE Labs AAA 2026 y AV-TEST Best Advanced Protection 2025. <a href="#reconocimientos-kaspersky" class="font-semibold text-red-700 hover:text-red-800">Ver todos los reconocimientos</a></p>
           </div>
           <div class="border border-gray-200 rounded-xl p-6 bg-gray-50">
             <p class="text-xs font-bold text-red-700 uppercase tracking-wider mb-2">Verticales en Colombia</p>

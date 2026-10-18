@@ -1,0 +1,128 @@
+---
+// Sección de reconocimientos de un fabricante: tarjetas filtrables (carrusel deslizable en
+// celular). La usan /bitdefender/ y /kaspersky/; cada página define sus premios y filtros.
+export interface Award {
+  category: string;
+  org: string;
+  year: string;
+  metric: string;
+  title: string;
+  desc: string;
+  img?: string;
+}
+
+interface Props {
+  id: string;
+  eyebrow: string;
+  title: string;
+  subtitle: string;
+  awards: Award[];
+  filters: { id: string; label: string }[];
+}
+
+const { id, eyebrow, title, subtitle, awards, filters } = Astro.props;
+---
+
+<section class="bd-awards bg-gradient-to-b from-white to-gray-50 py-16 sm:py-20 border-y border-gray-200" aria-labelledby={id}>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-10">
+      <span class="text-[#ed1c24] text-xs font-semibold uppercase tracking-widest">{eyebrow}</span>
+      <h2 id={id} class="text-3xl sm:text-4xl font-bold text-gray-900 mt-3 mb-4">{title}</h2>
+      <p class="text-gray-600 text-center">{subtitle}</p>
+      <p class="sm:hidden text-gray-500 text-xs text-center mt-3">Desliza para ver más &rarr;</p>
+    </div>
+
+    <div class="flex flex-wrap justify-center gap-2 mb-10" role="group" aria-label="Filtrar reconocimientos">
+      {filters.map((f, i) => (
+        <button type="button" data-award-filter={f.id} aria-pressed={i === 0 ? 'true' : 'false'} class="bd-awards__chip">
+          {f.label}
+        </button>
+      ))}
+    </div>
+
+    <ul class="bd-awards__list flex sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-5 overflow-x-auto sm:overflow-visible snap-x snap-mandatory scroll-px-4 -mx-4 px-4 sm:mx-0 sm:px-0 pb-2" role="list">
+      {awards.map((a) => (
+        <li data-award-category={a.category} class="bd-awards__card group snap-start shrink-0 w-[85%] sm:w-auto">
+          <div class="flex items-start justify-between gap-4 mb-5">
+            <div class="h-12 flex items-center">
+              {a.img ? (
+                <img src={a.img} alt={`${a.org}: ${a.title}`} width="120" height="40" class="bd-awards__img h-11 w-auto max-w-[130px] object-contain" loading="lazy" data-org={a.org} />
+              ) : (
+                <span class="font-bold text-gray-900 text-lg leading-tight">{a.org}</span>
+              )}
+            </div>
+            <span class={`shrink-0 text-xs font-semibold rounded-full px-3 py-1 ${a.year === '2026' ? 'bg-[#ed1c24] text-white' : 'bg-gray-100 text-gray-600'}`}>{a.year}</span>
+          </div>
+          <div class="text-2xl font-bold text-[#ed1c24] mb-1">{a.metric}</div>
+          <h3 class="text-base font-semibold text-gray-900 mb-2">{a.title}</h3>
+          <p class="text-sm text-gray-600 leading-relaxed text-left">{a.desc}</p>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<style>
+  .bd-awards__chip {
+    border: 1px solid rgb(209 213 219);
+    background: #fff;
+    color: rgb(55 65 81);
+    font-size: 0.875rem;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+  }
+  .bd-awards__chip:hover { border-color: #ed1c24; color: #ed1c24; }
+  .bd-awards__chip[aria-pressed='true'] { background: #ed1c24; border-color: #ed1c24; color: #fff; }
+  .bd-awards__card {
+    background: #fff;
+    border: 1px solid rgb(229 231 235);
+    border-radius: 1.25rem;
+    padding: 1.5rem;
+    box-shadow: 0 1px 3px rgb(15 23 42 / 0.06);
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+  }
+  .bd-awards__card:hover { transform: translateY(-4px); border-color: rgb(237 28 36 / 0.4); box-shadow: 0 12px 28px rgb(15 23 42 / 0.1); }
+  .bd-awards__card[hidden] { display: none; }
+  .bd-awards__card.is-entering { animation: bd-award-in 0.35s ease both; }
+  .bd-awards__list { scrollbar-width: none; }
+  .bd-awards__list::-webkit-scrollbar { display: none; }
+  @keyframes bd-award-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+  @media (prefers-reduced-motion: reduce) {
+    .bd-awards__card, .bd-awards__card.is-entering { transition: none; animation: none; }
+  }
+</style>
+
+<script>
+  document.querySelectorAll<HTMLElement>('.bd-awards').forEach((root) => {
+    const chips = root.querySelectorAll<HTMLButtonElement>('[data-award-filter]');
+    const cards = root.querySelectorAll<HTMLElement>('[data-award-category]');
+    const list = root.querySelector<HTMLElement>('.bd-awards__list');
+    chips.forEach((chip) => {
+      chip.addEventListener('click', () => {
+        const filter = chip.dataset.awardFilter;
+        chips.forEach((c) => c.setAttribute('aria-pressed', String(c === chip)));
+        cards.forEach((card) => {
+          const show = filter === 'todos' || card.dataset.awardCategory === filter;
+          card.hidden = !show;
+          card.classList.remove('is-entering');
+          if (show) { void card.offsetWidth; card.classList.add('is-entering'); }
+        });
+        list?.scrollTo({ left: 0 });
+      });
+    });
+    // Los logos vienen del sitio de Bitdefender: si alguno deja de cargar, se muestra
+    // el nombre de la organización en lugar de un ícono roto.
+    root.querySelectorAll<HTMLImageElement>('.bd-awards__img').forEach((img) => {
+      const fallback = () => {
+        const text = document.createElement('span');
+        text.className = 'font-bold text-gray-900 text-lg leading-tight';
+        text.textContent = img.dataset.org ?? '';
+        img.replaceWith(text);
+      };
+      if (img.complete && img.naturalWidth === 0) fallback();
+      else img.addEventListener('error', fallback, { once: true });
+    });
+  });
+</script>
