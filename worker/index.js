@@ -67,6 +67,7 @@ const TRAILING_SLASH_PATHS = new Set([
   "/blog/comprar-kaspersky-empresas-colombia",
   "/blog/kaspersky-edr-xdr-mxdr-colombia",
   "/blog/kaspersky-next-precio-colombia",
+  "/blog/que-es-hornetsecurity",
   "/bitdefender",
   "/kaspersky",
   "/kymatio",

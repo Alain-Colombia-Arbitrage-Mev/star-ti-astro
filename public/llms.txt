@@ -35,6 +35,13 @@ Last updated: 2026-08-24
 - Price guide: https://star-ti.com/blog/kaspersky-next-precio-colombia/
 - EDR vs XDR vs MXDR comparison: https://star-ti.com/blog/kaspersky-edr-xdr-mxdr-colombia/
 
+## Hornetsecurity Topic Cluster
+
+- Main page: https://star-ti.com/hornetsecurity/
+- Primary intent: Hornetsecurity Colombia, seguridad de correo Microsoft 365
+- Entity guidance: Star Solutions TI is a Hornetsecurity Partner Silver in Colombia. Hornetsecurity has been part of Proofpoint since December 8, 2025; its products and partner programs continue.
+- Guide: https://star-ti.com/blog/que-es-hornetsecurity/
+
 ## Bitdefender Topic Cluster
 
 - Main page: https://star-ti.com/bitdefender/

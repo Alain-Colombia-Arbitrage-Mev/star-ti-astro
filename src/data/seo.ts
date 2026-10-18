@@ -3,6 +3,7 @@ import { kymatioFaqs } from './kymatio';
 import { lastpassFaqs } from './lastpass';
 import { sectorPublicoFaqs } from './sectorPublico';
 import { calcFaqs } from './iso27001Calculadora';
+import { hornetFaqs } from './blogHornetsecurity';
 
 export interface SEOData {
   title: string;
@@ -1071,6 +1072,36 @@ export const seoData: Record<string, SEOData> = {
       { q: '¿Que datos necesito para cotizar Kaspersky Next?', a: 'Para cotizar Kaspersky Next se necesita numero de endpoints, servidores, usuarios moviles, sedes, edicion requerida, plazo de licencia, antivirus actual y si la empresa necesita EDR, XDR o MXDR. Con esos datos se evita comprar una edicion insuficiente o sobredimensionada.' },
       { q: '¿Kaspersky se compra directo o por partner?', a: 'Kaspersky ofrece canales comerciales y programas de partners para venta, implementacion y soporte. Para empresas, trabajar con un distribuidor corporativo reduce friccion porque integra cotizacion, despliegue, capacitacion, renovacion y escalamiento tecnico.' },
     ]),
+  },
+
+  'blog/que-es-hornetsecurity': {
+    title: '¿Qué es Hornetsecurity? Guía 2026 para Microsoft 365',
+    description: 'Qué es Hornetsecurity, cómo protege el correo de Microsoft 365, en qué se diferencia de Defender, qué cambió con Proofpoint y cómo elegir plan.',
+    keywords: 'qué es Hornetsecurity, Hornetsecurity 365 Total Protection, Hornetsecurity Proofpoint, Hornetsecurity vs Microsoft Defender, seguridad correo Microsoft 365, backup Microsoft 365 Colombia',
+    canonical: `${BASE_URL}/blog/que-es-hornetsecurity/`,
+    ogTitle: '¿Qué es Hornetsecurity? Guía 2026 para proteger el correo de Microsoft 365',
+    ogType: 'article',
+    ogImage: `${BASE_URL}/og/blog-que-es-hornetsecurity.jpg`,
+    breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Blog', url: '/blog/' }, { name: 'Qué es Hornetsecurity', url: '/blog/que-es-hornetsecurity/' }],
+    jsonLd: {
+      '@context': 'https://schema.org',
+      '@type': 'Article',
+      headline: '¿Qué es Hornetsecurity? Guía 2026 para proteger el correo de Microsoft 365',
+      description: 'Guía sobre Hornetsecurity 365 Total Protection: cómo funciona, diferencias con la seguridad nativa de Microsoft 365, compra por Proofpoint, planes, implementación y relación con ISO 27001.',
+      datePublished: '2026-10-18',
+      dateModified: '2026-10-18',
+      inLanguage: 'es-CO',
+      author: AUTHOR,
+      publisher: { '@type': 'Organization', name: 'Star Solutions TI S.A.S.', url: BASE_URL, logo: { '@type': 'ImageObject', url: `${BASE_URL}/logo.png` } },
+      image: `${BASE_URL}/og/blog-que-es-hornetsecurity.jpg`,
+      url: `${BASE_URL}/blog/que-es-hornetsecurity/`,
+      about: [
+        { '@type': 'Organization', name: 'Hornetsecurity', url: 'https://www.hornetsecurity.com/' },
+        { '@type': 'SoftwareApplication', name: 'Hornetsecurity 365 Total Protection', applicationCategory: 'SecurityApplication' },
+      ],
+      keywords: 'Hornetsecurity, 365 Total Protection, seguridad de correo, Microsoft 365, Proofpoint',
+    },
+    faqJsonLd: faqSchema(hornetFaqs),
   },
 
   'blog/kaspersky-next-precio-colombia': {

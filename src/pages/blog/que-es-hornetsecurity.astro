@@ -1,0 +1,255 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Navbar from '@components/Navbar.astro';
+import Footer from '@components/Footer.astro';
+import WhatsAppButton from '@components/WhatsAppButton.astro';
+import { seoData } from '@data/seo';
+import { hornetFaqs } from '@data/blogHornetsecurity';
+
+const seo = seoData['blog/que-es-hornetsecurity'];
+
+const layers = [
+  ['Filtrado de spam y malware', 'Revisa cada correo antes de que llegue al buzón y bloquea spam, adjuntos maliciosos y remitentes con mala reputación.'],
+  ['Advanced Threat Protection', 'Abre adjuntos en un entorno aislado (sandbox), reescribe enlaces para revisarlos al momento del clic y detecta suplantación de directivos (fraude del CEO o BEC).'],
+  ['Cifrado y firmas', 'Cifra correos sensibles (TLS, S/MIME) y unifica firmas y avisos legales de toda la empresa.'],
+  ['Archivado', 'Guarda una copia inalterable de los correos para auditorías, procesos legales y requerimientos de entes de control.'],
+  ['365 Total Backup', 'Respaldo independiente de buzones, OneDrive, SharePoint y Teams, con restauración de un archivo, un buzón o un usuario completo.'],
+  ['Concienciación y permisos', 'Simulaciones de phishing y formación automática para usuarios, y control de quién tiene acceso a qué archivos compartidos en Microsoft 365.'],
+];
+
+const plans = [
+  ['365 Total Protection Business', 'Filtrado, anti-phishing, cifrado, firmas y archivado.', 'Pymes que necesitan la base de seguridad de correo.'],
+  ['365 Total Protection Enterprise', 'Todo lo anterior más Advanced Threat Protection (sandbox, enlaces, anti-BEC).', 'Empresas con riesgo de fraude o sectores regulados.'],
+  ['Enterprise Backup', 'Enterprise más backup de Microsoft 365 (correo, OneDrive, SharePoint y Teams).', 'Empresas que no pueden perder información ni parar la operación.'],
+  ['Compliance & Awareness', 'Enterprise Backup más concienciación de usuarios y gestión de permisos.', 'Organizaciones que deben demostrar cumplimiento y reducir el riesgo humano.'],
+];
+
+const steps = [
+  ['Diagnóstico', 'Revisamos su licencia de Microsoft 365, el número de buzones, los registros SPF, DKIM y DMARC, y las reglas de correo actuales.'],
+  ['Conexión del tenant', 'Se conecta Hornetsecurity a Microsoft 365 y se importan usuarios y grupos.'],
+  ['Cambio de registros MX', 'El correo entrante empieza a pasar por los filtros de Hornetsecurity. Se hace en una ventana acordada y con plan de reversa.'],
+  ['Ajuste de políticas', 'Durante las primeras semanas calibramos listas, cuarentenas y reglas para que no se bloquee correo legítimo.'],
+  ['Backup y entrega', 'Activamos el backup, verificamos una restauración de prueba y entregamos la operación documentada a su equipo de TI.'],
+];
+
+const iso = [
+  ['5.14', 'Transferencia de información', 'Cifrado y reglas para el correo que sale de la empresa.'],
+  ['8.7', 'Protección contra malware', 'Filtrado de adjuntos y sandbox.'],
+  ['8.13', 'Copias de seguridad', '365 Total Backup con restauraciones probadas.'],
+  ['6.3', 'Concienciación y formación', 'Simulaciones de phishing y formación continua.'],
+  ['5.33', 'Protección de registros', 'Archivado de correo inalterable.'],
+];
+---
+
+<BaseLayout seo={seo}>
+  <Navbar />
+
+  <section class="relative bg-gradient-to-br from-[#0f172a] to-[#1a2744] overflow-hidden">
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-16 lg:pb-20">
+      <nav class="mb-8 flex items-center gap-2 text-sm text-gray-400" aria-label="Ruta de navegación">
+        <a href="/" class="hover:text-white transition-colors">Inicio</a>
+        <span>/</span>
+        <a href="/blog/" class="hover:text-white transition-colors">Blog</a>
+        <span>/</span>
+        <span class="text-gray-200">Qué es Hornetsecurity</span>
+      </nav>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <div class="flex flex-wrap items-center gap-3 mb-6">
+            <span class="bg-red-500/20 border border-red-500/30 text-red-300 text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wide">Correo seguro</span>
+            <span class="text-gray-400 text-sm">18 oct 2026</span>
+          </div>
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+            ¿Qué es Hornetsecurity? Guía 2026 para proteger el correo de Microsoft 365
+          </h1>
+          <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+            Qué hace, en qué se diferencia de la seguridad que ya trae Microsoft, qué cambió con la compra de Proofpoint y cómo elegir el plan correcto para su empresa en Colombia.
+          </p>
+          <div class="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-gray-400">
+            <span>Por Jorge Molano &middot; CEO de Star Solutions TI</span>
+            <span>&bull;</span>
+            <span>Tiempo de lectura: 8 min</span>
+          </div>
+        </div>
+        <div class="hidden lg:block">
+          <div class="bg-white rounded-2xl shadow-2xl p-10 max-w-md mx-auto">
+            <img src="/marcas/hornetsecurity.webp" alt="Logo de Hornetsecurity" class="w-full h-auto" width="400" height="120" loading="eager" />
+            <p class="mt-6 text-center text-sm font-semibold text-gray-700">Star Solutions TI · Partner Silver de Hornetsecurity</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <article class="bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+      <section class="mb-12">
+        <p class="text-xl text-gray-700 leading-relaxed mb-6">
+          <strong>Hornetsecurity</strong> es un fabricante alemán de seguridad en la nube especializado en <strong>Microsoft 365</strong>. Su suite principal, <strong>365 Total Protection</strong>, protege el correo contra spam, malware, phishing y fraude, y además respalda la información de Exchange, OneDrive, SharePoint y Teams.
+        </p>
+        <div class="bg-red-50 border border-red-200 rounded-2xl p-6">
+          <h2 class="text-xl font-bold text-red-900 mb-2">Respuesta rápida</h2>
+          <p class="text-red-800 leading-relaxed">
+            Hornetsecurity se pone delante del correo de Microsoft 365 y revisa cada mensaje antes de que llegue al usuario. Sirve a empresas que quieren una segunda capa de protección, un backup independiente de Microsoft y evidencia de cumplimiento para ISO 27001 o auditorías. Desde diciembre de 2025 es parte de Proofpoint.
+          </p>
+        </div>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Quién está detrás de Hornetsecurity</h2>
+        <p class="text-lg text-gray-600 leading-relaxed mb-4">
+          Hornetsecurity nació en 2007 en Hannover, Alemania, como proveedor de filtrado de correo en la nube. Con los años se especializó en Microsoft 365 y amplió su oferta a backup, archivado y concienciación de usuarios.
+        </p>
+        <ul class="space-y-3 text-gray-700">
+          <li class="flex gap-3"><span class="text-red-600 font-bold">2024</span><span>En marzo integró a <strong>Vade</strong>, empresa francesa de seguridad de correo con detección basada en inteligencia artificial.</span></li>
+          <li class="flex gap-3"><span class="text-red-600 font-bold">2025</span><span>El 8 de diciembre, <strong>Proofpoint</strong> completó la compra de Hornetsecurity por USD 1.800 millones. Hornetsecurity quedó como una unidad de negocio propia, liderada por su fundador, Daniel Hofmann.</span></li>
+        </ul>
+        <p class="text-lg text-gray-600 leading-relaxed mt-4">
+          <strong>¿Qué significa para un cliente en Colombia?</strong> Proofpoint anunció que los productos, los programas de partners y el soporte se mantienen. Es decir, quien hoy tiene 365 Total Protection lo sigue usando igual, ahora con el respaldo de uno de los fabricantes más grandes de seguridad de correo del mundo.
+        </p>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Cómo funciona: las capas de 365 Total Protection</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          {layers.map(([title, text]) => (
+            <div class="border border-gray-200 rounded-xl p-5 bg-gray-50">
+              <h3 class="font-bold text-gray-900 mb-2">{title}</h3>
+              <p class="text-sm text-gray-600 leading-relaxed">{text}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Hornetsecurity vs. la seguridad nativa de Microsoft 365</h2>
+        <p class="text-lg text-gray-600 leading-relaxed mb-4">
+          Microsoft 365 trae protección básica de correo (Exchange Online Protection) y, según la licencia, Microsoft Defender para Office 365. La pregunta no es cuál es "mejor", sino qué le falta a su empresa.
+        </p>
+        <div class="overflow-x-auto rounded-2xl border border-gray-200">
+          <table class="w-full text-sm min-w-[640px]">
+            <thead class="bg-gray-50">
+              <tr>
+                <th class="text-left px-4 py-3 font-bold text-gray-900">Necesidad</th>
+                <th class="text-left px-4 py-3 font-bold text-gray-900">Solo Microsoft 365</th>
+                <th class="text-left px-4 py-3 font-bold text-gray-900">Con Hornetsecurity</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-100">
+              <tr><td class="px-4 py-3 font-semibold text-gray-900">Segunda opinión sobre cada correo</td><td class="px-4 py-3 text-gray-600">Un solo motor de filtrado.</td><td class="px-4 py-3 text-gray-600">Filtro independiente antes de Microsoft.</td></tr>
+              <tr><td class="px-4 py-3 font-semibold text-gray-900">Backup de correo, OneDrive y Teams</td><td class="px-4 py-3 text-gray-600">Papelera y retención con plazos limitados; no es un backup independiente.</td><td class="px-4 py-3 text-gray-600">Copia fuera del tenant con restauración granular.</td></tr>
+              <tr><td class="px-4 py-3 font-semibold text-gray-900">Archivado para auditorías</td><td class="px-4 py-3 text-gray-600">Depende de licencias de cumplimiento adicionales.</td><td class="px-4 py-3 text-gray-600">Incluido desde el plan Business.</td></tr>
+              <tr><td class="px-4 py-3 font-semibold text-gray-900">Continuidad si Microsoft falla</td><td class="px-4 py-3 text-gray-600">El correo se detiene con el servicio.</td><td class="px-4 py-3 text-gray-600">Cola de continuidad que retiene el correo entrante (según el plan).</td></tr>
+              <tr><td class="px-4 py-3 font-semibold text-gray-900">Consola y soporte en Colombia</td><td class="px-4 py-3 text-gray-600">Soporte de Microsoft.</td><td class="px-4 py-3 text-gray-600">Soporte local de Star Solutions TI en español.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="text-sm text-gray-500 mt-3">
+          Microsoft trabaja con un modelo de responsabilidad compartida: garantiza que el servicio esté disponible, pero la protección de los datos frente a borrados, errores o ransomware le corresponde al cliente.
+        </p>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Cómo elegir el plan de Hornetsecurity</h2>
+        <div class="space-y-4">
+          {plans.map(([name, what, who]) => (
+            <div class="border border-gray-200 rounded-xl p-5">
+              <h3 class="font-bold text-gray-900 mb-1">{name}</h3>
+              <p class="text-gray-600 text-sm mb-2">{what}</p>
+              <p class="text-sm"><span class="font-semibold text-red-700">Para:</span> <span class="text-gray-700">{who}</span></p>
+            </div>
+          ))}
+        </div>
+        <p class="text-lg text-gray-600 leading-relaxed mt-6">
+          <strong>Nuestra recomendación práctica:</strong> si su empresa ha recibido intentos de fraude con facturas o cambios de cuenta bancaria, empiece mínimo en <strong>Enterprise</strong>. Si un borrado accidental o un ransomware en OneDrive le pararía la operación, elija <strong>Enterprise Backup</strong>. Vea los cuatro planes en detalle en nuestra página de <a href="/hornetsecurity/" class="text-red-700 font-semibold hover:underline">Hornetsecurity en Colombia</a>.
+        </p>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">SPF, DKIM y DMARC: el paso que muchas empresas olvidan</h2>
+        <p class="text-lg text-gray-600 leading-relaxed mb-4">
+          Desde 2024 Google y Yahoo, y desde mayo de 2025 Microsoft para Outlook.com, exigen que los remitentes masivos autentiquen su dominio con SPF, DKIM y DMARC. Aunque su empresa no envíe miles de correos, sin estos registros sus mensajes pueden llegar a spam y su dominio queda expuesto a que lo suplanten.
+        </p>
+        <p class="text-lg text-gray-600 leading-relaxed">
+          Al implementar Hornetsecurity revisamos y ajustamos estos tres registros, porque un filtro de entrada protege lo que usted recibe, pero solo la autenticación del dominio protege a sus clientes de correos falsos a su nombre.
+        </p>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Cómo se implementa, paso a paso</h2>
+        <ol class="space-y-5">
+          {steps.map(([title, text], index) => (
+            <li class="flex gap-4">
+              <span class="flex-shrink-0 w-9 h-9 bg-red-700 text-white rounded-full flex items-center justify-center font-bold">{index + 1}</span>
+              <div>
+                <h3 class="font-bold text-gray-900 mb-1">{title}</h3>
+                <p class="text-gray-600 leading-relaxed">{text}</p>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Hornetsecurity e ISO 27001</h2>
+        <p class="text-lg text-gray-600 leading-relaxed mb-6">
+          Si su empresa está implementando o ya tiene <a href="/iso-27001/" class="text-red-700 font-semibold hover:underline">ISO 27001</a>, Hornetsecurity aporta evidencia directa para varios controles del Anexo A de la versión 2022:
+        </p>
+        <div class="overflow-x-auto rounded-2xl border border-gray-200">
+          <table class="w-full text-sm min-w-[560px]">
+            <thead class="bg-gray-50">
+              <tr>
+                <th class="text-left px-4 py-3 font-bold text-gray-900">Control</th>
+                <th class="text-left px-4 py-3 font-bold text-gray-900">Tema</th>
+                <th class="text-left px-4 py-3 font-bold text-gray-900">Cómo lo cubre Hornetsecurity</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-100">
+              {iso.map(([control, topic, how]) => (
+                <tr>
+                  <td class="px-4 py-3 font-semibold text-gray-900">{control}</td>
+                  <td class="px-4 py-3 text-gray-600">{topic}</td>
+                  <td class="px-4 py-3 text-gray-600">{how}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p class="text-sm text-gray-500 mt-3">
+          Star Solutions TI tiene su propio sistema de gestión certificado en ISO/IEC 27001:2022 por SGS.
+        </p>
+      </section>
+
+      <section class="mb-12 bg-gray-50 border border-gray-200 rounded-2xl p-6">
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">Fuentes</h2>
+        <ul class="space-y-2 text-sm">
+          <li><a href="https://www.proofpoint.com/us/newsroom/press-releases/proofpoint-completes-acquisition-hornetsecurity" class="text-red-700 hover:underline" rel="noopener">Proofpoint: Proofpoint Completes Acquisition of Hornetsecurity (8 de diciembre de 2025)</a></li>
+          <li><a href="https://www.securityinfowatch.com/cybersecurity/news/53098257/hornetsecurity-group-hornetsecurity-group-acquires-french-email-cybersecurity-company-vade" class="text-red-700 hover:underline" rel="noopener">SecurityInfoWatch: Hornetsecurity Group acquires Vade (marzo de 2024)</a></li>
+          <li><a href="https://www.hornetsecurity.com/" class="text-red-700 hover:underline" rel="noopener">Hornetsecurity: sitio oficial del fabricante</a></li>
+        </ul>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Preguntas frecuentes</h2>
+        <div class="space-y-5">
+          {hornetFaqs.map((f) => (
+            <div class="border border-gray-200 rounded-xl p-5">
+              <h3 class="font-bold text-gray-900 mb-2">{f.q}</h3>
+              <p class="text-gray-600">{f.a}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section class="bg-[#111827] rounded-2xl p-8 text-white">
+        <h2 class="text-2xl font-bold mb-3">Proteja el correo de su empresa con un Partner Silver</h2>
+        <p class="text-gray-300 mb-6">Star Solutions TI es Partner Silver de Hornetsecurity en Colombia, con certificación técnica y comercial. Cotizamos, implementamos y damos soporte local.</p>
+        <a href="/hornetsecurity/" class="inline-flex items-center justify-center bg-red-700 text-white font-semibold px-6 py-3 rounded hover:bg-[#dc2626] transition">Cotizar Hornetsecurity</a>
+      </section>
+    </div>
+  </article>
+
+  <Footer />
+  <WhatsAppButton />
+</BaseLayout>
