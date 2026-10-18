@@ -26,11 +26,12 @@ const PARTNER_LOGOS = [
   { name: 'WatchGuard', src: 'https://www.bitdefender.com/adobe/dynamicmedia/deliver/dm-aid--f918e9da-497b-4cb4-b680-297c9aa045cc/watchguard.png' },
 ];
 
-// Reconocimientos (revisados el 18-oct-2026 en la sala de prensa de Bitdefender y prensa
-// especializada). Solo resultados verificables, con su año; al publicarse los de 2027,
-// actualizar aquí.
+// Reconocimientos (revisados el 18-oct-2026 en la sala de prensa de Bitdefender, AV-TEST y
+// prensa especializada). Solo resultados verificables, con su año; al publicarse los de
+// 2027, actualizar aquí. category alimenta los filtros de la sección.
 const AWARDS = [
   {
+    category: 'pruebas',
     org: 'AV-Comparatives',
     year: '2026',
     metric: '100%',
@@ -39,6 +40,7 @@ const AWARDS = [
     img: 'https://www.bitdefender.com/adobe/dynamicmedia/deliver/dm-aid--8dcbd827-620d-475b-8866-bf52908ca095/av-comparatives-exp-fragments3.png',
   },
   {
+    category: 'pruebas',
     org: 'AV-Comparatives',
     year: '2026',
     metric: '14/14',
@@ -46,13 +48,15 @@ const AWARDS = [
     desc: 'Telemetría relevante en los 14 pasos del ataque: único de los productos certificados con 100% de visibilidad.',
   },
   {
+    category: 'analistas',
     org: 'Gartner',
     year: '2026',
     metric: 'Visionary',
     title: 'Magic Quadrant for Endpoint Protection Platforms',
-    desc: 'Reconocido como Visionary en el cuadrante de plataformas de protección de endpoints.',
+    desc: 'Visionary por segundo año consecutivo; en 2025 fue el único Visionary del cuadrante.',
   },
   {
+    category: 'clientes',
     org: 'Gartner Peer Insights',
     year: '2026',
     metric: 'Customers’ Choice',
@@ -61,21 +65,54 @@ const AWARDS = [
     img: 'https://www.bitdefender.com/adobe/dynamicmedia/deliver/dm-aid--a7bbd3a0-eba2-4348-ae2c-1e111723b1be/gartner-peer-insights-customers-choice-badge-color-2026-outline.png',
   },
   {
-    org: 'MITRE ATT&CK Evaluations',
-    year: '2024',
-    metric: 'Enterprise',
-    title: 'Evaluación MITRE Engenuity ATT&CK',
-    desc: 'Participa en la evaluación de referencia que simula técnicas de atacantes reales.',
-    img: 'https://www.bitdefender.com/adobe/dynamicmedia/deliver/dm-aid--686fef75-98ad-4b0a-9e37-dc62dfebb86d/mitre-2024.png',
+    category: 'industria',
+    org: 'The Hacker News',
+    year: '2026',
+    metric: 'Mejor EDR',
+    title: 'Cybersecurity Stars Awards',
+    desc: 'GravityZone EDR, elegida mejor plataforma de detección y respuesta en endpoints.',
   },
   {
-    org: 'Forrester',
-    year: '2024',
-    metric: 'XDR',
-    title: 'The Forrester Wave: XDR Platforms, Q2 2024',
-    desc: 'Incluido en la evaluación de Forrester de plataformas de detección y respuesta extendida.',
-    img: 'https://www.bitdefender.com/adobe/dynamicmedia/deliver/dm-aid--32a5eba0-82a5-411f-af8b-17dfddad8684/forrester-black-rgb-narrow.png',
+    category: 'industria',
+    org: 'The Hacker News',
+    year: '2026',
+    metric: 'Mejor ASM',
+    title: 'Cybersecurity Stars Awards',
+    desc: 'GravityZone PHASR, mejor plataforma de gestión de la superficie de ataque.',
   },
+  {
+    category: 'industria',
+    org: 'SC Awards Europe',
+    year: '2026',
+    metric: 'Best Endpoint Security',
+    title: 'Excellence Awards: Threat Solutions',
+    desc: 'GravityZone, premiada como la mejor solución de seguridad para endpoints.',
+  },
+  {
+    category: 'pruebas',
+    org: 'AV-TEST',
+    year: '2025',
+    metric: '2 premios',
+    title: 'Best Protection y Best Advanced Protection',
+    desc: 'GravityZone Business Security, la mejor protección para equipos Windows corporativos.',
+  },
+  {
+    category: 'pruebas',
+    org: 'MITRE ATT&CK Evaluations',
+    year: '2024',
+    metric: '100%',
+    title: 'Evaluación Enterprise',
+    desc: 'Detección de todos los pasos principales con el máximo nivel de detalle, tercer año consecutivo.',
+    img: 'https://www.bitdefender.com/adobe/dynamicmedia/deliver/dm-aid--686fef75-98ad-4b0a-9e37-dc62dfebb86d/mitre-2024.png',
+  },
+];
+
+const AWARD_FILTERS = [
+  { id: 'todos', label: 'Todos' },
+  { id: 'pruebas', label: 'Pruebas independientes' },
+  { id: 'analistas', label: 'Analistas' },
+  { id: 'industria', label: 'Premios de la industria' },
+  { id: 'clientes', label: 'Clientes' },
 ];
 
 
@@ -316,8 +353,7 @@ const serviceSchema = {
       </div>
     </section>
 
-    <!-- Reconocimientos: carrusel automático de premios (logo + reseña breve). La lista se
-         repite dos veces para que el desplazamiento sea continuo; la copia va aria-hidden. -->
+    <!-- Reconocimientos: tarjetas filtrables (Pruebas / Analistas / Industria / Clientes) -->
     <section class="bd-awards bg-gradient-to-b from-white to-gray-50 py-16 sm:py-20 border-y border-gray-200" aria-labelledby="reconocimientos-bitdefender">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center max-w-3xl mx-auto mb-10">
@@ -328,17 +364,24 @@ const serviceSchema = {
           <p class="text-gray-600 text-center">
             Lo que respalda la tecnología que implementamos como Reseller Platinum en Colombia.
           </p>
+          <p class="sm:hidden text-gray-500 text-xs text-center mt-3">Desliza para ver más &rarr;</p>
         </div>
-      </div>
 
-      <div class="bd-awards__viewport" role="region" aria-label="Premios de Bitdefender">
-        <ul class="bd-awards__track" role="list">
-          {[...AWARDS, ...AWARDS].map((a, i) => (
-            <li class="bd-awards__card" aria-hidden={i >= AWARDS.length ? 'true' : undefined}>
-              <div class="flex items-center justify-between gap-3 mb-5">
+        <div class="flex flex-wrap justify-center gap-2 mb-10" role="group" aria-label="Filtrar reconocimientos">
+          {AWARD_FILTERS.map((f, i) => (
+            <button type="button" data-award-filter={f.id} aria-pressed={i === 0 ? 'true' : 'false'} class="bd-awards__chip">
+              {f.label}
+            </button>
+          ))}
+        </div>
+
+        <ul class="bd-awards__list flex sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-5 overflow-x-auto sm:overflow-visible snap-x snap-mandatory scroll-px-4 -mx-4 px-4 sm:mx-0 sm:px-0 pb-2" role="list">
+          {AWARDS.map((a) => (
+            <li data-award-category={a.category} class="bd-awards__card group snap-start shrink-0 w-[85%] sm:w-auto">
+              <div class="flex items-start justify-between gap-4 mb-5">
                 <div class="h-12 flex items-center">
                   {a.img ? (
-                    <img src={a.img} alt={i >= AWARDS.length ? '' : `${a.org}: ${a.title}`} width="120" height="40" class="bd-awards__img h-11 w-auto max-w-[130px] object-contain" loading="lazy" data-org={a.org} />
+                    <img src={a.img} alt={`${a.org}: ${a.title}`} width="120" height="40" class="bd-awards__img h-11 w-auto max-w-[130px] object-contain" loading="lazy" data-org={a.org} />
                   ) : (
                     <span class="font-bold text-gray-900 text-lg leading-tight">{a.org}</span>
                   )}
@@ -355,23 +398,19 @@ const serviceSchema = {
     </section>
 
     <style>
-      .bd-awards__viewport {
-        overflow: hidden;
-        -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
-        mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+      .bd-awards__chip {
+        border: 1px solid rgb(209 213 219);
+        background: #fff;
+        color: rgb(55 65 81);
+        font-size: 0.875rem;
+        font-weight: 600;
+        padding: 0.5rem 1rem;
+        border-radius: 9999px;
+        transition: background-color 0.2s, color 0.2s, border-color 0.2s;
       }
-      .bd-awards__track {
-        display: flex;
-        gap: 1.25rem;
-        width: max-content;
-        padding: 0.5rem 0 1rem;
-        animation: bd-awards-scroll 45s linear infinite;
-      }
-      .bd-awards__viewport:hover .bd-awards__track,
-      .bd-awards__viewport:focus-within .bd-awards__track { animation-play-state: paused; }
+      .bd-awards__chip:hover { border-color: #ed1c24; color: #ed1c24; }
+      .bd-awards__chip[aria-pressed='true'] { background: #ed1c24; border-color: #ed1c24; color: #fff; }
       .bd-awards__card {
-        width: 18.5rem;
-        flex-shrink: 0;
         background: #fff;
         border: 1px solid rgb(229 231 235);
         border-radius: 1.25rem;
@@ -380,27 +419,46 @@ const serviceSchema = {
         transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
       }
       .bd-awards__card:hover { transform: translateY(-4px); border-color: rgb(237 28 36 / 0.4); box-shadow: 0 12px 28px rgb(15 23 42 / 0.1); }
-      @keyframes bd-awards-scroll { to { transform: translateX(calc(-50% - 0.625rem)); } }
-      /* Sin animación: carrusel deslizable a mano y sin la copia de la lista. */
+      .bd-awards__card[hidden] { display: none; }
+      .bd-awards__card.is-entering { animation: bd-award-in 0.35s ease both; }
+      .bd-awards__list { scrollbar-width: none; }
+      .bd-awards__list::-webkit-scrollbar { display: none; }
+      @keyframes bd-award-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
       @media (prefers-reduced-motion: reduce) {
-        .bd-awards__viewport { overflow-x: auto; -webkit-mask-image: none; mask-image: none; }
-        .bd-awards__track { animation: none; padding-inline: 1rem; }
-        .bd-awards__card[aria-hidden='true'] { display: none; }
+        .bd-awards__card, .bd-awards__card.is-entering { transition: none; animation: none; }
       }
     </style>
 
     <script>
-      // Los logos vienen del sitio de Bitdefender: si alguno deja de cargar, se muestra el
-      // nombre de la organización en lugar de un ícono roto.
-      document.querySelectorAll<HTMLImageElement>('.bd-awards__img').forEach((img) => {
-        const fallback = () => {
-          const text = document.createElement('span');
-          text.className = 'font-bold text-gray-900 text-lg leading-tight';
-          text.textContent = img.dataset.org ?? '';
-          img.replaceWith(text);
-        };
-        if (img.complete && img.naturalWidth === 0) fallback();
-        else img.addEventListener('error', fallback, { once: true });
+      document.querySelectorAll<HTMLElement>('.bd-awards').forEach((root) => {
+        const chips = root.querySelectorAll<HTMLButtonElement>('[data-award-filter]');
+        const cards = root.querySelectorAll<HTMLElement>('[data-award-category]');
+        const list = root.querySelector<HTMLElement>('.bd-awards__list');
+        chips.forEach((chip) => {
+          chip.addEventListener('click', () => {
+            const filter = chip.dataset.awardFilter;
+            chips.forEach((c) => c.setAttribute('aria-pressed', String(c === chip)));
+            cards.forEach((card) => {
+              const show = filter === 'todos' || card.dataset.awardCategory === filter;
+              card.hidden = !show;
+              card.classList.remove('is-entering');
+              if (show) { void card.offsetWidth; card.classList.add('is-entering'); }
+            });
+            list?.scrollTo({ left: 0 });
+          });
+        });
+        // Los logos vienen del sitio de Bitdefender: si alguno deja de cargar, se muestra
+        // el nombre de la organización en lugar de un ícono roto.
+        root.querySelectorAll<HTMLImageElement>('.bd-awards__img').forEach((img) => {
+          const fallback = () => {
+            const text = document.createElement('span');
+            text.className = 'font-bold text-gray-900 text-lg leading-tight';
+            text.textContent = img.dataset.org ?? '';
+            img.replaceWith(text);
+          };
+          if (img.complete && img.naturalWidth === 0) fallback();
+          else img.addEventListener('error', fallback, { once: true });
+        });
       });
     </script>
 
