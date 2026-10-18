@@ -214,8 +214,8 @@ export const seoData: Record<string, SEOData> = {
     ]),
   },
   proofpoint: {
-    title: 'Proofpoint Email Security Colombia | Star Solutions TI',
-    description: 'Proofpoint Leader Gartner MQ Email Security 2025. Protección contra phishing, BEC y amenazas dirigidas. ZenGuide, DMARC, DLP. Integramos en Colombia.',
+    title: 'Proofpoint en Colombia | Seguridad de Correo Empresarial',
+    description: '¿Qué es Proofpoint? Seguridad de correo líder en Gartner contra phishing, BEC y amenazas dirigidas, con DMARC y DLP. Implementación y soporte en Colombia.',
     keywords: 'Proofpoint Colombia, email security, anti-phishing empresas, BEC, DMARC, ZenGuide, security awareness, Collaboration Security Prime',
     canonical: `${BASE_URL}/proofpoint/`,
     ogTitle: 'Proofpoint - Seguridad de Email Avanzada para Empresas en Colombia',
@@ -248,8 +248,8 @@ export const seoData: Record<string, SEOData> = {
   // STAR INSPECTION
   // =====================================================
   enthec: {
-    title: 'Enthec Kartos y Qondar | Cibervigilancia | Star Solutions TI',
-    description: 'Enthec: cibervigilancia TEM con Kartos (EASM corporativo) y Qondar (vigilancia de personas). Diagnóstico gratuito de exposicion en Colombia.',
+    title: 'Enthec Colombia | Kartos y Qondar, Cibervigilancia',
+    description: 'Enthec en Colombia: cibervigilancia con Kartos (superficie de ataque externa) y Qondar (vigilancia de personas). Diagnóstico gratuito de exposición.',
     keywords: 'Enthec, Kartos, Qondar, cibervigilancia, EASM, Threat Exposure Management, superficie de ataque, credenciales filtradas, dark web Colombia',
     canonical: `${BASE_URL}/enthec/`,
     ogTitle: 'Enthec Kartos y Qondar - Cibervigilancia en Colombia | Star Solutions TI',
@@ -265,8 +265,8 @@ export const seoData: Record<string, SEOData> = {
     ]),
   },
   vicarius: {
-    title: 'Vicarius vRx Gestión de Vulnerabilidades | Star Solutions TI',
-    description: 'Vicarius vRx: plataforma Full Cycle Vulnerability Management con Patchless Protection, vRx Scripting Engine y vIntelligence. Implementamos en Colombia.',
+    title: 'Vicarius vRx en Colombia | Gestión de Vulnerabilidades',
+    description: '¿Qué es Vicarius vRx? Plataforma de gestión de vulnerabilidades con parcheo automático y Patchless Protection. Implementación y soporte en Colombia.',
     keywords: 'Vicarius vRx, gestión vulnerabilidades, exposure assessment platforms, patch management, Patchless Protection, vRx Scripting Engine, exposure management Colombia',
     canonical: `${BASE_URL}/vicarius/`,
     ogTitle: 'Vicarius vRx - Full Cycle Vulnerability Management en Colombia',
@@ -282,8 +282,8 @@ export const seoData: Record<string, SEOData> = {
     ]),
   },
   'stellar-cyber': {
-    title: 'Stellar Cyber SecOps | Open XDR con IA | Star Solutions TI',
-    description: 'Stellar Cyber SecOps Platform con Open XDR para Colombia: Multi-Layer AI, NDR, ITDR, UEBA y Case Orchestration. Implemente su SOC con Star Solutions TI.',
+    title: 'Stellar Cyber Colombia | Open XDR y SOC con IA',
+    description: 'Stellar Cyber en Colombia: plataforma Open XDR con IA, NDR, ITDR y UEBA para montar o fortalecer su SOC. Implementación y soporte con Star Solutions TI.',
     keywords: 'Stellar Cyber, Open XDR, SecOps Platform, SOC automatizado, Multi-Layer AI, NDR, UEBA, ITDR, AI Investigator, alternativa SIEM Colombia',
     canonical: `${BASE_URL}/stellar-cyber/`,
     ogTitle: 'Stellar Cyber SecOps Platform | Open XDR para SOC Automatizado',
@@ -461,8 +461,8 @@ export const seoData: Record<string, SEOData> = {
     ]),
   },
   sealpath: {
-    title: 'SealPath IRM | Protección de Documentos | Star Solutions TI',
-    description: 'SealPath IRM en Colombia: cifrado persistente, control de acceso granular, revocación remota y trazabilidad. IRM/E-DRM con integración Microsoft 365 y MIP.',
+    title: 'SealPath Colombia | Protección y Cifrado de Documentos',
+    description: '¿Qué es SealPath? IRM para proteger documentos: cifrado persistente, control de acceso y revocación remota, integrado con Microsoft 365. Soporte en Colombia.',
     keywords: 'SealPath IRM Colombia, IRM E-DRM protección documentos, cifrado persistente datos, control acceso documentos, Microsoft Information Protection, Ley 1581 protección datos',
     canonical: `${BASE_URL}/sealpath/`,
     ogTitle: 'SealPath IRM - Protección Persistente de Documentos en Colombia',
@@ -480,8 +480,8 @@ export const seoData: Record<string, SEOData> = {
     ]),
   },
   netwrix: {
-    title: 'Netwrix Seguridad de Datos e Identidades | Star Solutions TI',
-    description: 'Netwrix Colombia: auditoría AD, PAM, DLP y clasificación de datos. Cumpla Ley 1581, ISO 27001 y Circular 007. Implementación con soporte en español.',
+    title: 'Netwrix Colombia | Auditoría de Active Directory y Datos',
+    description: 'Netwrix en Colombia: Netwrix Auditor para Active Directory, PAM, DLP y clasificación de datos. Cumpla Ley 1581 e ISO 27001 con soporte en español.',
     keywords: 'Netwrix Colombia, Netwrix Auditor, Netwrix Access Analyzer, Netwrix Privilege Secure, Netwrix Endpoint Protector, auditoría Active Directory, PAM Zero Standing Privilege, DLP, clasificación datos, gobernanza identidad, Ley 1581, Circular 007',
     canonical: `${BASE_URL}/netwrix/`,
     ogTitle: 'Netwrix - Seguridad de Datos e Identidades en Colombia',
@@ -511,8 +511,8 @@ export const seoData: Record<string, SEOData> = {
     faqJsonLd: faqSchema(lastpassFaqs),
   },
   'dlp-prevencion-perdida-datos': {
-    title: 'Software DLP Endpoint Protector | Star Solutions TI',
-    description: 'Software DLP para prevención de pérdida de datos. Control USB, monitoreo endpoints y cifrado. Multiplataforma con cumplimiento GDPR.',
+    title: 'Software DLP para Empresas en Colombia | Endpoint DLP',
+    description: 'Software DLP para prevenir la pérdida de datos en empresas de Colombia: DLP endpoint, control de USB, cifrado y cumplimiento de la Ley 1581. Soporte local.',
     keywords: 'DLP Colombia, data loss prevention, prevención pérdida datos, Endpoint Protector, control USB, GDPR',
     canonical: `${BASE_URL}/dlp-prevencion-perdida-datos/`,
     ogTitle: 'Software DLP - Prevención de Pérdida de Datos',
@@ -631,8 +631,8 @@ export const seoData: Record<string, SEOData> = {
   // INFRAESTRUCTURA
   // =====================================================
   teamviewer: {
-    title: 'TeamViewer Empresarial | Control Remoto | Star Solutions TI',
-    description: 'TeamViewer para empresas en Colombia: planes Business, Premium, Corporate y Tensor. Acceso remoto seguro, soporte técnico y conectividad OT. Cotice hoy.',
+    title: 'TeamViewer Empresarial en Colombia | Licencias y Soporte',
+    description: 'Licencias TeamViewer para empresas en Colombia: planes Business, Premium, Corporate y Tensor. Acceso remoto seguro, implementación y soporte local.',
     keywords: 'TeamViewer Colombia, TeamViewer Tensor, acceso remoto empresarial, control remoto seguro, soporte técnico remoto, TeamViewer DEX',
     canonical: `${BASE_URL}/teamviewer/`,
     ogTitle: 'TeamViewer - Control Remoto Empresarial Seguro',
@@ -649,8 +649,8 @@ export const seoData: Record<string, SEOData> = {
     ]),
   },
   anydesk: {
-    title: 'AnyDesk Escritorio Remoto Empresas | Star Solutions TI',
-    description: 'AnyDesk: escritorio remoto a 60 FPS con latencia menor a 16ms y cifrado TLS 1.2. Licencias empresariales Colombia. Prueba gratis.',
+    title: 'AnyDesk Colombia | Licencias de Escritorio Remoto',
+    description: 'Licencias AnyDesk para empresas en Colombia: escritorio remoto rápido y cifrado que funciona tras el firewall sin abrir puertos. Implementación y soporte.',
     keywords: 'AnyDesk Colombia, escritorio remoto empresas, control remoto rápido, acceso remoto seguro, teletrabajo',
     canonical: `${BASE_URL}/anydesk/`,
     ogTitle: 'AnyDesk - Escritorio Remoto Ultra Rapido',
@@ -680,8 +680,8 @@ export const seoData: Record<string, SEOData> = {
     // (commit anterior a este); conviene renderizarlo en la pagina y reponerlo.
   },
   'equipos-computo': {
-    title: 'Equipos de Computo Empresariales | Star Solutions TI',
-    description: 'Venta de equipos de computo empresariales: laptops, desktops, workstations y All-in-One. Marcas lideres con garantía extendida en Colombia.',
+    title: 'Venta de Equipos de Cómputo para Empresas en Colombia',
+    description: 'Venta de equipos de cómputo para empresas en Colombia: portátiles, escritorios, workstations y todo en uno de marcas líderes, con garantía extendida.',
     keywords: 'equipos computo empresas Colombia, laptops corporativos, desktops empresariales, workstations, hardware Bogotá',
     canonical: `${BASE_URL}/equipos-computo/`,
     ogTitle: 'Equipos de Computo para Empresas',
