@@ -1,0 +1,230 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Navbar from '@components/Navbar.astro';
+import Footer from '@components/Footer.astro';
+import WhatsAppButton from '@components/WhatsAppButton.astro';
+import { seoData } from '@data/seo';
+import { certIsoFaqs } from '@data/blogCertificacionIso';
+
+const seo = seoData['blog/certificacion-iso-27001-colombia'];
+
+const phases = [
+  ['Diagnóstico de brechas', 'Mes 1', 'Se compara lo que la empresa tiene hoy contra los requisitos de la norma y los 93 controles del Anexo A. Sale una lista priorizada de lo que falta.'],
+  ['Alcance y contexto', 'Mes 1 a 2', 'Se define qué se certifica: toda la empresa o un proceso o servicio. Un alcance acotado reduce tiempo y costo.'],
+  ['Riesgos y Declaración de Aplicabilidad', 'Mes 2 a 3', 'Se identifican y evalúan los riesgos de seguridad, se decide cómo tratarlos y se documenta qué controles aplican y por qué (la Declaración de Aplicabilidad).'],
+  ['Implementación de controles', 'Mes 3 a 6', 'Políticas, procedimientos y controles técnicos: accesos, copias de seguridad, gestión de vulnerabilidades, proveedores, concienciación y respuesta a incidentes.'],
+  ['Operación y evidencias', 'Mes 5 a 7', 'El sistema debe funcionar y dejar registros. El auditor no certifica papeles, certifica un sistema que opera.'],
+  ['Auditoría interna y revisión por la dirección', 'Mes 7', 'Una auditoría interna independiente revisa todo el SGSI, y la alta dirección analiza los resultados y toma decisiones. Ambas son obligatorias antes de la certificación.'],
+  ['Auditoría de certificación', 'Mes 8', 'El organismo certificador hace la etapa 1 (documental) y la etapa 2 (en la práctica). Si todo está bien, emite el certificado.'],
+];
+
+const docs = [
+  ['4.3', 'Alcance del SGSI'],
+  ['5.2', 'Política de seguridad de la información'],
+  ['6.1.2', 'Proceso de evaluación de riesgos'],
+  ['6.1.3', 'Proceso de tratamiento de riesgos y Declaración de Aplicabilidad'],
+  ['6.2', 'Objetivos de seguridad de la información'],
+  ['7.2', 'Evidencia de competencia del personal'],
+  ['8.2 y 8.3', 'Resultados de la evaluación y del tratamiento de riesgos'],
+  ['9.1', 'Resultados del seguimiento y la medición'],
+  ['9.2', 'Programa y resultados de auditoría interna'],
+  ['9.3', 'Resultados de la revisión por la dirección'],
+  ['10.2', 'No conformidades y acciones correctivas'],
+];
+
+const mistakes = [
+  ['Copiar plantillas', 'Políticas genéricas que nadie cumple. El auditor lo detecta en las entrevistas.'],
+  ['Alcance demasiado amplio', 'Querer certificar toda la empresa el primer año alarga el proyecto. Empiece por el proceso que le piden sus clientes.'],
+  ['Dejar todo en manos de TI', 'ISO 27001 es un sistema de gestión: necesita a la dirección, a recursos humanos, a jurídica y a compras.'],
+  ['Llegar a la auditoría sin evidencias', 'Sin registros de operación de varios meses, el auditor no puede verificar que el sistema funciona.'],
+];
+---
+
+<BaseLayout seo={seo}>
+  <Navbar />
+
+  <section class="relative bg-gradient-to-br from-[#0f172a] to-[#14352a] overflow-hidden">
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-16 lg:pb-20">
+      <nav class="mb-8 flex items-center gap-2 text-sm text-gray-400" aria-label="Ruta de navegación">
+        <a href="/" class="hover:text-white transition-colors">Inicio</a>
+        <span>/</span>
+        <a href="/blog/" class="hover:text-white transition-colors">Blog</a>
+        <span>/</span>
+        <span class="text-gray-200">Certificación ISO 27001</span>
+      </nav>
+
+      <div class="max-w-3xl">
+        <div class="flex flex-wrap items-center gap-3 mb-6">
+          <span class="bg-emerald-500/20 border border-emerald-500/30 text-emerald-300 text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wide">ISO 27001</span>
+          <span class="text-gray-400 text-sm">18 oct 2026</span>
+        </div>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+          Certificación ISO 27001 en Colombia: paso a paso y tiempos reales
+        </h1>
+        <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+          Las 7 fases para certificarse, cuánto toma cada una, qué documentos exige la norma, quién certifica en Colombia y los errores que alargan el proceso. Escrito por una empresa que ya pasó por la auditoría.
+        </p>
+        <div class="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-gray-400">
+          <span>Por Jorge Molano &middot; CEO de Star Solutions TI</span>
+          <span>&bull;</span>
+          <span>Tiempo de lectura: 9 min</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <article class="bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+      <section class="mb-12">
+        <p class="text-xl text-gray-700 leading-relaxed mb-6">
+          La <strong>certificación ISO 27001</strong> demuestra que su empresa gestiona la seguridad de la información con un sistema auditado por un tercero independiente. En Colombia cada vez más clientes, entidades públicas y licitaciones la piden como requisito.
+        </p>
+        <div class="bg-emerald-50 border border-emerald-200 rounded-2xl p-6">
+          <h2 class="text-xl font-bold text-emerald-900 mb-2">Respuesta rápida</h2>
+          <p class="text-emerald-800 leading-relaxed">
+            Certificarse en ISO/IEC 27001:2022 toma entre <strong>6 y 12 meses</strong> (en promedio 8). Se hace en 7 fases: diagnóstico, alcance, riesgos, implementación, operación, auditoría interna y auditoría de certificación. Certifica un organismo acreditado, como SGS o ICONTEC, y el certificado dura <strong>3 años</strong> con auditorías de seguimiento anuales.
+          </p>
+        </div>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Las 7 fases de la certificación</h2>
+        <ol class="space-y-5">
+          {phases.map(([title, when, text], index) => (
+            <li class="flex gap-4">
+              <span class="flex-shrink-0 w-9 h-9 bg-emerald-700 text-white rounded-full flex items-center justify-center font-bold">{index + 1}</span>
+              <div>
+                <div class="flex flex-wrap items-baseline gap-x-3">
+                  <h3 class="font-bold text-gray-900">{title}</h3>
+                  <span class="text-xs font-semibold text-emerald-700 uppercase tracking-wide">{when}</span>
+                </div>
+                <p class="text-gray-600 leading-relaxed mt-1">{text}</p>
+              </div>
+            </li>
+          ))}
+        </ol>
+        <p class="text-sm text-gray-500 mt-4">Tiempos de referencia para una empresa mediana con un plazo de 8 meses. Las fases 4 y 5 se solapan.</p>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">¿Qué acelera o retrasa el proceso?</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <div class="border border-emerald-200 rounded-xl p-5 bg-emerald-50">
+            <h3 class="font-bold text-emerald-900 mb-3">Lo acelera</h3>
+            <ul class="space-y-2 text-sm text-emerald-900">
+              <li>&bull; Un alcance acotado (un proceso o servicio)</li>
+              <li>&bull; Políticas y controles técnicos que ya existen</li>
+              <li>&bull; Un responsable interno con tiempo asignado</li>
+              <li>&bull; Apoyo visible de la gerencia</li>
+            </ul>
+          </div>
+          <div class="border border-red-200 rounded-xl p-5 bg-red-50">
+            <h3 class="font-bold text-red-900 mb-3">Lo retrasa</h3>
+            <ul class="space-y-2 text-sm text-red-900">
+              <li>&bull; Varias sedes o alcance de toda la empresa</li>
+              <li>&bull; Empezar desde cero, sin análisis de riesgos</li>
+              <li>&bull; Rotación del equipo durante el proyecto</li>
+              <li>&bull; Proveedores críticos sin acuerdos de seguridad</li>
+            </ul>
+          </div>
+        </div>
+        <p class="text-lg text-gray-600 leading-relaxed mt-6">
+          ¿Quiere un estimado para su caso? Responda 5 preguntas en nuestra <a href="/calculadora-costo-iso-27001/" class="text-emerald-700 font-semibold hover:underline">calculadora de costo y tiempo de ISO 27001</a>.
+        </p>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Documentos que exige la norma</h2>
+        <p class="text-lg text-gray-600 leading-relaxed mb-6">
+          ISO/IEC 27001:2022 pide información documentada en estos puntos. Además, cada control del Anexo A que aplique necesita sus propias evidencias.
+        </p>
+        <div class="overflow-x-auto rounded-2xl border border-gray-200">
+          <table class="w-full text-sm min-w-[480px]">
+            <thead class="bg-gray-50">
+              <tr>
+                <th class="text-left px-4 py-3 font-bold text-gray-900 w-28">Cláusula</th>
+                <th class="text-left px-4 py-3 font-bold text-gray-900">Documento o registro</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-100">
+              {docs.map(([clause, doc]) => (
+                <tr>
+                  <td class="px-4 py-3 font-semibold text-gray-900">{clause}</td>
+                  <td class="px-4 py-3 text-gray-600">{doc}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">¿Quién certifica ISO 27001 en Colombia?</h2>
+        <p class="text-lg text-gray-600 leading-relaxed mb-4">
+          Un error común es pensar que la consultora certifica. <strong>La consultora prepara a la empresa; el certificado lo emite un organismo certificador acreditado</strong>, como SGS, ICONTEC o Bureau Veritas, entre otros.
+        </p>
+        <p class="text-lg text-gray-600 leading-relaxed mb-4">
+          Antes de contratar, verifique que el certificador esté acreditado para ISO/IEC 27001, ante <a href="https://onac.org.co/" class="text-emerald-700 font-semibold hover:underline" rel="noopener">ONAC</a> en Colombia o ante un acreditador internacional, y que el certificado se pueda consultar en <a href="https://www.iafcertsearch.org/" class="text-emerald-700 font-semibold hover:underline" rel="noopener">IAF CertSearch</a>. Un certificado de un organismo no acreditado puede no ser aceptado en licitaciones ni por clientes internacionales.
+        </p>
+        <p class="text-lg text-gray-600 leading-relaxed">
+          <strong>Importante:</strong> la transición a la versión 2022 terminó el 31 de octubre de 2025. Si un proveedor le muestra un certificado ISO 27001:2013, ya no está vigente.
+        </p>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Después del certificado</h2>
+        <p class="text-lg text-gray-600 leading-relaxed">
+          El certificado dura <strong>3 años</strong>. Cada año hay una auditoría de seguimiento y, al final del tercer año, una de recertificación. Por eso el SGSI no termina con la auditoría: hay que mantener el análisis de riesgos, las auditorías internas, la revisión por la dirección y las mejoras.
+        </p>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">4 errores que alargan la certificación</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          {mistakes.map(([title, text]) => (
+            <div class="border border-gray-200 rounded-xl p-5 bg-gray-50">
+              <h3 class="font-bold text-gray-900 mb-2">{title}</h3>
+              <p class="text-sm text-gray-600 leading-relaxed">{text}</p>
+            </div>
+          ))}
+        </div>
+        <p class="text-lg text-gray-600 leading-relaxed mt-6">
+          Si su empresa tiene sistemas expuestos a internet, una <a href="/blog/pentesting-iso-27001/" class="text-emerald-700 font-semibold hover:underline">prueba de penetración</a> antes de la auditoría le da evidencia sólida para los controles de gestión de vulnerabilidades.
+        </p>
+      </section>
+
+      <section class="mb-12 bg-gray-50 border border-gray-200 rounded-2xl p-6">
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">Fuentes</h2>
+        <ul class="space-y-2 text-sm">
+          <li><a href="https://www.iso.org/standard/27001" class="text-emerald-700 hover:underline" rel="noopener">ISO: ISO/IEC 27001:2022, Information security management systems</a></li>
+          <li><a href="https://www.iafcertsearch.org/" class="text-emerald-700 hover:underline" rel="noopener">IAF CertSearch: verificación de certificados acreditados</a></li>
+          <li><a href="https://onac.org.co/" class="text-emerald-700 hover:underline" rel="noopener">ONAC: Organismo Nacional de Acreditación de Colombia</a></li>
+        </ul>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Preguntas frecuentes</h2>
+        <div class="space-y-5">
+          {certIsoFaqs.map((f) => (
+            <div class="border border-gray-200 rounded-xl p-5">
+              <h3 class="font-bold text-gray-900 mb-2">{f.q}</h3>
+              <p class="text-gray-600">{f.a}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section class="bg-[#111827] rounded-2xl p-8 text-white">
+        <h2 class="text-2xl font-bold mb-3">Certifíquese con una empresa que ya lo logró</h2>
+        <p class="text-gray-300 mb-6">Star Solutions TI tiene su propio sistema de gestión certificado en ISO/IEC 27001:2022 por SGS, y ha acompañado a más de 50 empresas en su camino a la certificación. Empiece con un diagnóstico de brechas sin costo.</p>
+        <div class="flex flex-col sm:flex-row gap-3">
+          <a href="/iso-27001/" class="inline-flex items-center justify-center bg-red-700 text-white font-semibold px-6 py-3 rounded hover:bg-[#dc2626] transition">Solicitar diagnóstico</a>
+          <a href="/calculadora-costo-iso-27001/" class="inline-flex items-center justify-center border border-white/30 text-white font-semibold px-6 py-3 rounded hover:bg-white/10 transition">Calcular costo y tiempo</a>
+        </div>
+      </section>
+    </div>
+  </article>
+
+  <Footer />
+  <WhatsAppButton />
+</BaseLayout>

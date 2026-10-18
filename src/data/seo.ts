@@ -6,6 +6,7 @@ import { calcFaqs } from './iso27001Calculadora';
 import { hornetFaqs } from './blogHornetsecurity';
 import { pentestIsoFaqs } from './blogPentestingIso';
 import { bdEdrFaqs } from './blogBitdefenderEdr';
+import { certIsoFaqs } from './blogCertificacionIso';
 
 export interface SEOData {
   title: string;
@@ -1074,6 +1075,33 @@ export const seoData: Record<string, SEOData> = {
       { q: '¿Que datos necesito para cotizar Kaspersky Next?', a: 'Para cotizar Kaspersky Next se necesita numero de endpoints, servidores, usuarios moviles, sedes, edicion requerida, plazo de licencia, antivirus actual y si la empresa necesita EDR, XDR o MXDR. Con esos datos se evita comprar una edicion insuficiente o sobredimensionada.' },
       { q: '¿Kaspersky se compra directo o por partner?', a: 'Kaspersky ofrece canales comerciales y programas de partners para venta, implementacion y soporte. Para empresas, trabajar con un distribuidor corporativo reduce friccion porque integra cotizacion, despliegue, capacitacion, renovacion y escalamiento tecnico.' },
     ]),
+  },
+
+  'blog/certificacion-iso-27001-colombia': {
+    title: 'Certificación ISO 27001 en Colombia: Paso a Paso y Tiempos',
+    description: 'Cómo certificarse en ISO 27001 en Colombia: las 7 fases, cuánto toma cada una, documentos obligatorios, quién certifica y errores que alargan el proceso.',
+    keywords: 'certificación ISO 27001 Colombia, cómo certificarse ISO 27001, cuánto tiempo toma ISO 27001, quién certifica ISO 27001 Colombia, empresas certificadas ISO 27001 Colombia, documentos obligatorios ISO 27001',
+    canonical: `${BASE_URL}/blog/certificacion-iso-27001-colombia/`,
+    ogTitle: 'Certificación ISO 27001 en Colombia: paso a paso y tiempos reales',
+    ogType: 'article',
+    ogImage: `${BASE_URL}/og/blog-certificacion-iso-27001-colombia.jpg`,
+    breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Blog', url: '/blog/' }, { name: 'Certificación ISO 27001', url: '/blog/certificacion-iso-27001-colombia/' }],
+    jsonLd: {
+      '@context': 'https://schema.org',
+      '@type': 'Article',
+      headline: 'Certificación ISO 27001 en Colombia: paso a paso y tiempos reales',
+      description: 'Guía del proceso de certificación ISO/IEC 27001:2022 en Colombia: fases y tiempos, documentos obligatorios, organismos certificadores acreditados, auditorías y errores frecuentes.',
+      datePublished: '2026-10-18',
+      dateModified: '2026-10-18',
+      inLanguage: 'es-CO',
+      author: AUTHOR,
+      publisher: { '@type': 'Organization', name: 'Star Solutions TI S.A.S.', url: BASE_URL, logo: { '@type': 'ImageObject', url: `${BASE_URL}/logo.png` } },
+      image: `${BASE_URL}/og/blog-certificacion-iso-27001-colombia.jpg`,
+      url: `${BASE_URL}/blog/certificacion-iso-27001-colombia/`,
+      about: { '@type': 'Thing', name: 'Certificación ISO/IEC 27001:2022' },
+      keywords: 'ISO 27001, certificación, SGSI, auditoría, Colombia',
+    },
+    faqJsonLd: faqSchema(certIsoFaqs),
   },
 
   'blog/bitdefender-edr-xdr-mdr': {
