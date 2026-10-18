@@ -132,6 +132,19 @@ descripciones ≤ 160, `lastmod` del sitemap, 301 con barra final faltantes, `no
      `PUBLIC_TURNSTILE_SITE_KEY` en el build solo hace falta si se cambia.
   4. Se activa con el siguiente push a `produccion`. Si siteverify no responde, el lead se acepta.
 
+## Turnstile activo (18-oct-2026)
+
+- Widget "Star Solutions - formularios" (clave del sitio `0x4AAAAAAFZhj9AjInibWIe_`). En la misma
+  cuenta de Cloudflare hay otro widget ("capta…") de otro proyecto: no confundirlos al copiar la
+  llave secreta.
+- `TURNSTILE_SECRET_KEY` en el Worker (Producción). Cloudflare no muestra el valor guardado; para
+  cambiarlo: lápiz → "Girar" (Rotate) → pegar → "Guardar versión" (nunca "Desplegar"), y luego
+  publicar un cambio en `produccion` para que la versión en vivo use el valor nuevo.
+- El asunto del correo indica el motivo de Cloudflare si la verificación falla:
+  `invalid-input-secret` = llave mal copiada; `timeout-or-duplicate` = token de más de 5 minutos.
+- Chrome en el celular traduce el panel de Cloudflare ("star-ti" → "estrella-ti",
+  TURNSTILE_SECRET_KEY → "LLAVE SECRETA…"); desactivar la traducción para leer los nombres reales.
+
 ## Comandos
 
 - `npm install`: instalar dependencias. Requiere Node.js 22.12 o superior.
