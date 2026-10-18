@@ -471,12 +471,14 @@ async function detectSpam(request, env, fields) {
   if (elapsed < MIN_FILL_MS) return "demasiado-rapido";
 
   // Turnstile solo se exige cuando el secreto existe en el worker.
-  if (env.TURNSTILE_SECRET_KEY) {
+  // trim(): al pegar desde el celular se puede colar un espacio o salto de linea.
+  const turnstileSecret = (env.TURNSTILE_SECRET_KEY || "").trim();
+  if (turnstileSecret) {
     const token = fields[TURNSTILE_FIELD];
     if (!token) return "turnstile-ausente";
     try {
       const body = new FormData();
-      body.append("secret", env.TURNSTILE_SECRET_KEY);
+      body.append("secret", turnstileSecret);
       body.append("response", token);
       const ip = request.headers.get("CF-Connecting-IP");
       if (ip) body.append("remoteip", ip);
@@ -487,7 +489,10 @@ async function detectSpam(request, env, fields) {
         // 5 min o reutilizado) o "invalid-input-secret" (secreto mal copiado).
         const codes = (outcome["error-codes"] || []).join(",");
         console.log("Turnstile rechazado", codes, outcome.hostname || "");
-        return codes ? `turnstile-invalido: ${codes}` : "turnstile-invalido";
+        // Solo el largo (nunca el valor): la clave del sitio tiene 24 caracteres y
+        // la secreta 35; asi se sabe si se pego la equivocada.
+        const hint = codes.includes("invalid-input-secret") ? ` (secreto de ${turnstileSecret.length} caracteres)` : "";
+        return codes ? `turnstile-invalido: ${codes}${hint}` : "turnstile-invalido";
       }
     } catch (error) {
       // Si Cloudflare no responde se acepta el lead: perder un cliente cuesta mas que un spam.
