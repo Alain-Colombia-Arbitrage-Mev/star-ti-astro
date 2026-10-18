@@ -41,6 +41,17 @@ const LEGACY_REDIRECTS = new Map([
   ["/black-duck/", "/hacking-etico/"],
   ["/rthreat-bogota-colombia", "/hacking-etico/"],
   ["/rthreat-bogota-colombia/", "/hacking-etico/"],
+  // URLs del sitio anterior que Google seguia mostrando (Search Console, 18-oct-2026)
+  // y respondian 404: se redirigen a la pagina vigente equivalente.
+  ["/cableado-estructurado-redes-de-datos-y-fibra-optica-bogota-colombia", "/cableado-estructurado/"],
+  ["/auditor-iso-27001-consultores-iso-bogota", "/iso-27001/"],
+  ["/ethical-hacking-colombia", "/hacking-etico/"],
+  ["/equipos-de-computo-bogota-colombia", "/equipos-computo/"],
+  ["/contactenos-star-solutions-t-i", "/contacto/"],
+  ["/hornetsecurity-colombia", "/hornetsecurity/"],
+  ["/software-anydesk-colombia", "/anydesk/"],
+  ["/licenciamiento-teamviewer-colombia", "/teamviewer/"],
+  ["/politica-de-seguridad-y-privacidad-de-la-informacion", "/privacidad/"],
 ]);
 
 const TRAILING_SLASH_PATHS = new Set([
