@@ -45,9 +45,13 @@ const siteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY ?? '0x4AAAAAAFZhj9AjIn
     if (siteKey) {
       const widget = document.createElement('div');
       widget.className = 'lead-turnstile';
-      widget.style.margin = '0.5rem 0';
+      widget.style.cssText = 'display:flex;justify-content:center;margin:0.75rem 0;';
+      // Antes del bloque del formulario que contiene el boton, no dentro de su
+      // fila: en ConsultoriaForm el boton vive en un contenedor flex y el widget
+      // quedaba al lado, desbordando la pantalla en el celular.
       const submit = form.querySelector('[type="submit"]');
-      if (submit) submit.before(widget);
+      const anchor = submit?.closest('form > *') ?? submit;
+      if (anchor) anchor.before(widget);
       else form.append(widget);
     }
   });
