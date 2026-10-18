@@ -482,7 +482,13 @@ async function detectSpam(request, env, fields) {
       if (ip) body.append("remoteip", ip);
       const result = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", { method: "POST", body });
       const outcome = await result.json();
-      if (!outcome.success) return "turnstile-invalido";
+      if (!outcome.success) {
+        // error-codes de Cloudflare, p. ej. "timeout-or-duplicate" (token de mas de
+        // 5 min o reutilizado) o "invalid-input-secret" (secreto mal copiado).
+        const codes = (outcome["error-codes"] || []).join(",");
+        console.log("Turnstile rechazado", codes, outcome.hostname || "");
+        return codes ? `turnstile-invalido: ${codes}` : "turnstile-invalido";
+      }
     } catch (error) {
       // Si Cloudflare no responde se acepta el lead: perder un cliente cuesta mas que un spam.
       console.error("Turnstile no disponible; lead aceptado", error);
