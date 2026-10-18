@@ -536,7 +536,7 @@ export const seoData: Record<string, SEOData> = {
   // =====================================================
   'ciberseguridad-sector-publico': {
     title: 'Ciberseguridad para Entidades Públicas en Colombia',
-    description: 'Proveedor de ciberseguridad para entidades públicas: RUP vigente, Mipyme, ISO 27001 SGS y 23 contratos estatales. Bitdefender, Hornetsecurity y hacking ético.',
+    description: '60 contratos certificados en el RUP, 23 con entidades públicas. Ciberseguridad para el Estado: Bitdefender, Hornetsecurity y hacking ético. Mipyme e ISO 27001.',
     keywords: 'ciberseguridad sector público Colombia, proveedor ciberseguridad entidades públicas, ciberseguridad entidades del Estado, RUP ciberseguridad, MSPI MinTIC, antivirus entidades públicas, Bitdefender entidades públicas, hacking ético entidades públicas',
     canonical: `${BASE_URL}/ciberseguridad-sector-publico/`,
     ogTitle: 'Ciberseguridad para Entidades Públicas en Colombia | Star Solutions TI',

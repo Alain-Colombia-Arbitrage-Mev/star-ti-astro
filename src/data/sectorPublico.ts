@@ -33,16 +33,15 @@ export const entidadesRup: { name: string; contratos?: number }[] = [
   { name: 'Municipio de Chocontá' },
 ];
 
-// Clases UNSPSC (tercer nivel) del RUP relevantes para ciberseguridad y TI.
-export const codigosUnspsc: { code: string; label: string }[] = [
-  { code: '43233200', label: 'Software de seguridad y protección' },
-  { code: '43222500', label: 'Equipo de seguridad de red' },
-  { code: '81111800', label: 'Servicios de sistemas y administración de componentes de sistemas' },
-  { code: '81112200', label: 'Mantenimiento y soporte de software' },
-  { code: '81112500', label: 'Servicios de alquiler o arrendamiento de licencias de software' },
-  { code: '81111500', label: 'Ingeniería de software o hardware' },
-  { code: '43211500', label: 'Computadores' },
-  { code: '43222600', label: 'Equipo de servicio de red' },
+// Clases UNSPSC (tercer nivel) del RUP asociadas técnicamente a seguridad de la
+// información. Se excluyen a propósito computadores, ingeniería de software y equipo
+// de red general (están inscritas, pero no son de seguridad).
+export const codigosUnspsc: { code: string; label: string; detalle: string }[] = [
+  { code: '43233200', label: 'Software de seguridad y protección', detalle: 'Antivirus, EDR/XDR, protección de correo y cifrado (Bitdefender, Hornetsecurity).' },
+  { code: '43222500', label: 'Equipo de seguridad de red', detalle: 'Firewalls y dispositivos de seguridad perimetral.' },
+  { code: '81111800', label: 'Servicios de sistemas y administración de componentes de sistemas', detalle: 'Incluye servicios de seguridad de computadores, redes e internet: análisis de vulnerabilidades y hacking ético.' },
+  { code: '81112200', label: 'Mantenimiento y soporte de software', detalle: 'Renovación, actualización y soporte de las soluciones de seguridad.' },
+  { code: '81112500', label: 'Alquiler o arrendamiento de licencias de software', detalle: 'Licenciamiento por suscripción de software de seguridad.' },
 ];
 
 export interface SectorPublicoFaq {
@@ -53,11 +52,11 @@ export interface SectorPublicoFaq {
 export const sectorPublicoFaqs: SectorPublicoFaq[] = [
   {
     question: '¿Star Solutions TI está inscrita en el RUP?',
-    answer: `Sí. Star Solutions TI S.A.S. (NIT 900968161-7) está inscrita en el Registro Único de Proponentes de la ${RUP.camara} con el número de proponente ${RUP.proponente}, renovado el ${RUP.renovacion}. En el RUP reporta ${RUP.contratosTotales} contratos ejecutados, ${RUP.contratosPublicos} de ellos con entidades públicas.`,
+    answer: `Sí. Star Solutions TI S.A.S. (NIT 900968161-7) está inscrita en el Registro Único de Proponentes de la ${RUP.camara} con el número de proponente ${RUP.proponente}, renovado el ${RUP.renovacion}. En el RUP tiene certificados ${RUP.contratosTotales} contratos ejecutados, ${RUP.contratosPublicos} de ellos con entidades públicas, además de numerosos contratos de mínima cuantía con entidades del Estado que no se reportan en el RUP.`,
   },
   {
     question: '¿Qué códigos UNSPSC tiene Star Solutions TI para ciberseguridad?',
-    answer: 'Entre otras, las clases 43233200 (software de seguridad y protección), 43222500 (equipo de seguridad de red), 81111800 (servicios de sistemas y administración de componentes), 81112200 (mantenimiento y soporte de software) y 81112500 (arrendamiento de licencias de software).',
+    answer: 'Las clases asociadas a seguridad de la información son 43233200 (software de seguridad y protección), 43222500 (equipo de seguridad de red), 81111800 (servicios de sistemas y administración de componentes, que incluye seguridad de computadores, redes e internet), 81112200 (mantenimiento y soporte de software) y 81112500 (arrendamiento de licencias de software).',
   },
   {
     question: '¿Star Solutions TI es Mipyme?',
