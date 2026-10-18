@@ -214,8 +214,8 @@ export const seoData: Record<string, SEOData> = {
     ]),
   },
   proofpoint: {
-    title: 'Proofpoint en Colombia | Seguridad de Correo Empresarial',
-    description: '¿Qué es Proofpoint? Seguridad de correo líder en Gartner contra phishing, BEC y amenazas dirigidas, con DMARC y DLP. Implementación y soporte en Colombia.',
+    title: 'Proofpoint Colombia | Distribuidor de Seguridad de Correo',
+    description: '¿Qué es Proofpoint? Seguridad de correo líder en Gartner contra phishing, BEC y amenazas dirigidas. Somos distribuidor en Colombia: licencias y soporte.',
     keywords: 'Proofpoint Colombia, email security, anti-phishing empresas, BEC, DMARC, ZenGuide, security awareness, Collaboration Security Prime',
     canonical: `${BASE_URL}/proofpoint/`,
     ogTitle: 'Proofpoint - Seguridad de Email Avanzada para Empresas en Colombia',
