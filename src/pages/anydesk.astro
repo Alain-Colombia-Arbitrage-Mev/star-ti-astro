@@ -689,6 +689,25 @@ const seo = seoData.anydesk;
               </p>
             </div>
           </details>
+
+          <!-- FAQ 4 -->
+          <details class="bg-gray-50 border-2 border-gray-200 rounded-xl overflow-hidden group">
+            <summary class="px-6 py-5 flex items-center justify-between cursor-pointer hover:bg-gray-100 transition">
+              <span class="font-bold text-[#0f172a] text-lg pr-4">¿Qué puertos usa AnyDesk?</span>
+              <svg class="w-6 h-6 text-red-700 flex-shrink-0 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </summary>
+            <div class="px-6 pb-5 text-[#475569] leading-relaxed">
+              <p class="mb-3"><strong>Solo conexiones salientes.</strong> No hay que abrir puertos de entrada:</p>
+              <ul class="list-disc pl-6 space-y-2 text-sm">
+                <li><strong>TCP 80, 443 y 6568:</strong> conexión saliente hacia la red de AnyDesk</li>
+                <li><strong>TCP 7070:</strong> conexión directa entre equipos de la misma red</li>
+                <li><strong>UDP 50001 a 50003:</strong> descubrimiento de equipos en la red local</li>
+              </ul>
+              <p class="mt-3 text-sm">En firewalls restrictivos basta con permitir el dominio <strong>*.net.anydesk.com</strong>. Lo dejamos configurado al implementar las licencias.</p>
+            </div>
+          </details>
         </div>
       </div>
     </section>

@@ -670,8 +670,8 @@ const seo = seoData.teamviewer;
             <p class="text-sm text-[#64748b]">Licencia nombrada: asignada a un técnico específico. Licencia concurrente: compartida por múltiples técnicos (solo uno activo simultáneamente). Ideal para equipos grandes con turnos rotativos.</p>
           </div>
           <div class="bg-white border border-[#e5e7eb] rounded-lg p-6">
-            <h4 class="font-semibold text-[#0f172a] mb-2">¿TeamViewer funciona detrás de firewalls corporativos?</h4>
-            <p class="text-sm text-[#64748b]">Sí. TeamViewer usa conexión outbound en puerto 5938 o 443 (HTTPS) evitando configuracion de port forwarding. Compatible con proxies corporativos y whitelisting.</p>
+            <h4 class="font-semibold text-[#0f172a] mb-2">¿Qué puertos usa TeamViewer y funciona detrás de firewalls corporativos?</h4>
+            <p class="text-sm text-[#64748b]">TeamViewer solo necesita conexiones salientes: usa el puerto TCP/UDP 5938 y, si está bloqueado, pasa al 443 (HTTPS) y luego al 80. No hay que abrir puertos de entrada ni configurar port forwarding. En firewalls restrictivos basta con permitir el dominio *.teamviewer.com; también funciona con proxies corporativos.</p>
           </div>
           <div class="bg-white border border-[#e5e7eb] rounded-lg p-6">
             <h4 class="font-semibold text-[#0f172a] mb-2">¿Cómo se factura TeamViewer para MSPs?</h4>
