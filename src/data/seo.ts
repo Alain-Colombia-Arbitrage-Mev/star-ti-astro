@@ -382,13 +382,6 @@ export const seoData: Record<string, SEOData> = {
             { '@type': 'City', name: 'Medellín' },
             { '@type': 'City', name: 'Cali' },
           ],
-          offers: {
-            '@type': 'Offer',
-            name: 'Diagnóstico y cotización de consultoría ISO 27001',
-            availability: 'https://schema.org/InStock',
-            url: `${BASE_URL}/iso-27001/`,
-            priceSpecification: { '@type': 'PriceSpecification', priceCurrency: 'COP', minPrice: 25000000, maxPrice: 120000000 },
-          },
           audience: { '@type': 'BusinessAudience', audienceType: 'Empresas en Colombia que buscan certificación ISO 27001' },
           serviceOutput: { '@type': 'Thing', name: 'SGSI ISO/IEC 27001:2022 preparado para auditoría externa de certificación' },
         },
