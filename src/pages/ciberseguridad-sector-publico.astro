@@ -5,13 +5,13 @@ import Footer from '@components/Footer.astro';
 import WhatsAppButton from '@components/WhatsAppButton.astro';
 import ConsultoriaForm from '@components/ConsultoriaForm.astro';
 import { seoData } from '@data/seo';
-import { RUP, entidadesRup, codigosUnspsc, sectorPublicoFaqs } from '@data/sectorPublico';
+import { RUP, entidadesRup, codigosUnspsc, codigosTi, sectorPublicoFaqs } from '@data/sectorPublico';
 
 const seo = seoData['ciberseguridad-sector-publico'];
 
 const heroStats = [
-  { value: String(RUP.contratosTotales), label: 'contratos certificados en el RUP' },
-  { value: String(RUP.contratosPublicos), label: 'de ellos con entidades públicas' },
+  { value: '+100', label: 'contratos con entidades públicas' },
+  { value: String(RUP.contratosPublicos), label: 'certificados en el RUP' },
   { value: 'ISO 27001', label: 'certificada por SGS' },
   { value: 'Mipyme', label: 'clasificación en el RUP' },
 ];
@@ -80,7 +80,7 @@ const complementos = [
             Ciberseguridad para entidades públicas en Colombia
           </h1>
           <p class="mt-6 max-w-3xl text-lg leading-relaxed text-slate-200 sm:text-xl">
-            <strong class="text-white">{RUP.contratosTotales} contratos certificados en el RUP, {RUP.contratosPublicos} con entidades públicas</strong>, además de numerosos contratos de mínima cuantía con entidades del Estado. Protegemos equipos, servidores y correo con Bitdefender, Hornetsecurity, análisis de vulnerabilidades y hacking ético, como Mipyme certificada en ISO/IEC 27001:2022 por SGS.
+            <strong class="text-white">Más de 100 contratos con entidades públicas</strong>, entre mínimas cuantías, contratación directa y procesos competitivos; {RUP.contratosPublicos} de ellos certificados en el RUP. Protegemos equipos, servidores y correo con Bitdefender, Hornetsecurity, análisis de vulnerabilidades y hacking ético, como Mipyme certificada en ISO/IEC 27001:2022 por SGS.
           </p>
           <div class="mt-8 flex flex-col gap-3 sm:flex-row">
             <a href="#consultoria" class="inline-flex items-center justify-center bg-red-600 px-6 py-4 text-sm font-bold text-white transition hover:bg-red-700">
@@ -116,7 +116,7 @@ const complementos = [
             Además de la tecnología, la entidad necesita un proveedor que cumpla los requisitos habilitantes: RUP vigente con los códigos UNSPSC del objeto, experiencia con entidades del Estado, capacidad financiera y, cada vez más, una certificación de seguridad de la información.
           </p>
           <p>
-            Star Solutions TI tiene certificados en su RUP {RUP.contratosPublicos} contratos ejecutados con entidades públicas, por cerca de {RUP.smmlvPublicos} SMMLV, a los que se suman numerosos contratos de mínima cuantía que no se reportan en el RUP. Además aplica ISO/IEC 27001 en su propia operación, el mismo estándar en el que se basa el MSPI de MinTIC.
+            Star Solutions TI ha ejecutado más de 100 contratos con entidades públicas. De ellos, {RUP.contratosPublicos} están certificados en su RUP, por cerca de {RUP.smmlvPublicos} SMMLV; el resto son mínimas cuantías y contrataciones directas, que no se reportan en el RUP. Además aplica ISO/IEC 27001 en su propia operación, el mismo estándar en el que se basa el MSPI de MinTIC.
           </p>
         </div>
       </div>
@@ -130,7 +130,7 @@ const complementos = [
             Entidades del Estado que han contratado con Star Solutions TI
           </h2>
           <p class="mt-4 text-lg leading-relaxed text-slate-600">
-            Contratos ejecutados y certificados en el Registro Único de Proponentes ({RUP.camara}). No incluye los contratos de mínima cuantía, que no se reportan en el RUP.
+            Entidades con contratos certificados en el Registro Único de Proponentes ({RUP.camara}). Las mínimas cuantías y contrataciones directas no se reportan en el RUP.
           </p>
         </div>
         <ul class="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
@@ -209,7 +209,7 @@ const complementos = [
             <div class="grid grid-cols-[6.5rem_1fr] gap-3 p-4 sm:grid-cols-[10rem_1fr] sm:gap-4"><dt class="text-sm font-bold text-slate-500">NIT</dt><dd class="text-sm text-slate-900">900968161-7</dd></div>
             <div class="grid grid-cols-[6.5rem_1fr] gap-3 p-4 sm:grid-cols-[10rem_1fr] sm:gap-4"><dt class="text-sm font-bold text-slate-500">RUP</dt><dd class="text-sm text-slate-900">Proponente {RUP.proponente}, {RUP.camara}. Renovado el {RUP.renovacion}.</dd></div>
             <div class="grid grid-cols-[6.5rem_1fr] gap-3 p-4 sm:grid-cols-[10rem_1fr] sm:gap-4"><dt class="text-sm font-bold text-slate-500">Tamaño</dt><dd class="text-sm text-slate-900">{RUP.tamano}</dd></div>
-            <div class="grid grid-cols-[6.5rem_1fr] gap-3 p-4 sm:grid-cols-[10rem_1fr] sm:gap-4"><dt class="text-sm font-bold text-slate-500">Experiencia</dt><dd class="text-sm text-slate-900">{RUP.contratosTotales} contratos certificados en el RUP; {RUP.contratosPublicos} con entidades públicas. Además, contratos de mínima cuantía no reportados en el RUP.</dd></div>
+            <div class="grid grid-cols-[6.5rem_1fr] gap-3 p-4 sm:grid-cols-[10rem_1fr] sm:gap-4"><dt class="text-sm font-bold text-slate-500">Experiencia</dt><dd class="text-sm text-slate-900">Más de 100 contratos con entidades públicas. En el RUP: {RUP.contratosTotales} contratos certificados, {RUP.contratosPublicos} con entidades públicas.</dd></div>
             <div class="grid grid-cols-[6.5rem_1fr] gap-3 p-4 sm:grid-cols-[10rem_1fr] sm:gap-4"><dt class="text-sm font-bold text-slate-500">Certificación</dt><dd class="text-sm text-slate-900"><a href="/certificados/certificado-iso-27001-star-solutions-ti.pdf" target="_blank" rel="noopener" class="font-bold text-red-700 hover:underline">ISO/IEC 27001:2022, SGS (CO25/00000158)</a></dd></div>
           </dl>
           <div>
@@ -220,6 +220,12 @@ const complementos = [
                   <span class="w-20 shrink-0 font-mono font-bold text-red-700">{c.code}</span>
                   <span><span class="block font-semibold text-slate-800">{c.label}</span><span class="mt-0.5 block text-slate-600">{c.detalle}</span></span>
                 </li>
+              ))}
+            </ul>
+            <h3 class="mt-8 font-['Space_Grotesk',sans-serif] text-lg font-bold text-slate-950">Otras clases TI inscritas</h3>
+            <ul class="mt-3 divide-y divide-slate-200 border border-slate-200">
+              {codigosTi.map((c) => (
+                <li class="flex gap-4 p-3 text-sm"><span class="w-20 shrink-0 font-mono font-bold text-slate-500">{c.code}</span><span class="text-slate-700">{c.label}</span></li>
               ))}
             </ul>
           </div>

@@ -11,6 +11,10 @@ export const RUP = {
   tamano: 'Pequeña empresa (Mipyme)',
   contratosTotales: 60,
   contratosPublicos: 23,
+  // Estimado de George (18-oct-2026): más de 100 contratos con entidades públicas
+  // sumando mínimas cuantías y contratación directa (no se reportan en el RUP).
+  // Verificable en SECOP; actualizar si se consolida la cifra exacta.
+  contratosPublicosTotal: 'Más de 100',
   smmlvPublicos: '4.371',
 };
 
@@ -44,6 +48,13 @@ export const codigosUnspsc: { code: string; label: string; detalle: string }[] =
   { code: '81112500', label: 'Alquiler o arrendamiento de licencias de software', detalle: 'Licenciamiento por suscripción de software de seguridad.' },
 ];
 
+// Otras clases de TI inscritas en el RUP (infraestructura que acompaña los proyectos).
+export const codigosTi: { code: string; label: string }[] = [
+  { code: '81111500', label: 'Ingeniería de software o hardware' },
+  { code: '43211500', label: 'Computadores' },
+  { code: '43222600', label: 'Equipo de servicio de red' },
+];
+
 export interface SectorPublicoFaq {
   question: string;
   answer: string;
@@ -52,7 +63,7 @@ export interface SectorPublicoFaq {
 export const sectorPublicoFaqs: SectorPublicoFaq[] = [
   {
     question: '¿Star Solutions TI está inscrita en el RUP?',
-    answer: `Sí. Star Solutions TI S.A.S. (NIT 900968161-7) está inscrita en el Registro Único de Proponentes de la ${RUP.camara} con el número de proponente ${RUP.proponente}, renovado el ${RUP.renovacion}. En el RUP tiene certificados ${RUP.contratosTotales} contratos ejecutados, ${RUP.contratosPublicos} de ellos con entidades públicas, además de numerosos contratos de mínima cuantía con entidades del Estado que no se reportan en el RUP.`,
+    answer: `Sí. Star Solutions TI S.A.S. (NIT 900968161-7) está inscrita en el Registro Único de Proponentes de la ${RUP.camara} con el número de proponente ${RUP.proponente}, renovado el ${RUP.renovacion}. Ha ejecutado más de 100 contratos con entidades públicas, entre mínimas cuantías, contratación directa y procesos competitivos; ${RUP.contratosPublicos} de ellos están certificados en el RUP, que reporta ${RUP.contratosTotales} contratos en total.`,
   },
   {
     question: '¿Qué códigos UNSPSC tiene Star Solutions TI para ciberseguridad?',
