@@ -92,7 +92,7 @@ const breadcrumbJsonLd = seo.breadcrumb ? {
     <meta name="geo.region" content="CO" />
     <meta name="geo.placename" content="Bogota" />
 
-    <!-- Hreflang solo en paginas con equivalente regional real (home, venezuela, miami, contacto) -->
+    <!-- Hreflang solo en paginas con equivalente regional real (home, venezuela, contacto) -->
     {seo.hreflang?.map((alt) => (
       <link rel="alternate" hreflang={alt.lang} href={alt.href} />
     ))}

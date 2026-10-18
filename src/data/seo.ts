@@ -13,7 +13,7 @@ export interface SEOData {
   ogImage?: string;
   noindex?: boolean;
   lang?: string;
-  /** Alternates hreflang: solo para páginas con version regional equivalente (home, venezuela, miami). */
+  /** Alternates hreflang: solo para páginas con version regional equivalente (home, venezuela, contacto). */
   hreflang?: { lang: string; href: string }[];
   /** Origenes externos que la página realmente consume (preconnect solo donde aplica). */
   preconnect?: string[];
@@ -43,13 +43,11 @@ const AUTHOR = {
 const HREFLANG_HOME = [
   { lang: 'es-CO', href: `${BASE_URL}/` },
   { lang: 'es-VE', href: `${BASE_URL}/venezuela/` },
-  { lang: 'en-US', href: `${BASE_URL}/miami/` },
   { lang: 'x-default', href: `${BASE_URL}/` },
 ];
 const HREFLANG_CONTACTO = [
   { lang: 'es-CO', href: `${BASE_URL}/contacto/` },
   { lang: 'es-VE', href: `${BASE_URL}/venezuela/contacto/` },
-  { lang: 'en-US', href: `${BASE_URL}/miami/contacto/` },
   { lang: 'x-default', href: `${BASE_URL}/contacto/` },
 ];
 
@@ -832,66 +830,6 @@ export const seoData: Record<string, SEOData> = {
       url: `${BASE_URL}/venezuela/contacto/`,
     },
   },
-  miami: {
-    title: 'Cybersecurity Services in Miami & Fort Lauderdale',
-    description: 'Cybersecurity services in Miami and Fort Lauderdale for 100-1,000 endpoints: EDR/XDR, enterprise antivirus, SealPath DLP, pentesting and vCISO.',
-    keywords: 'cybersecurity services in Miami, cybersecurity services Miami, cybersecurity services Fort Lauderdale, Fort Lauderdale cybersecurity services, managed cybersecurity services South Florida, MSSP Miami, MSSP Fort Lauderdale, enterprise antivirus Miami, antivirus empresarial Miami, SealPath Miami, SealPath data protection Florida, EDR XDR Miami, penetration testing Miami, vCISO Miami, HIPAA compliance Florida, ISO 27001 Florida',
-    canonical: `${BASE_URL}/miami/`,
-    ogTitle: 'Cybersecurity Services in Miami & Fort Lauderdale | Star Solutions TI',
-    ogType: 'website',
-    ogImage: `${BASE_URL}/og-default.png`,
-    lang: 'en',
-    hreflang: HREFLANG_HOME,
-    breadcrumb: [{ name: 'Home', url: '/' }, { name: 'Miami', url: '/miami/' }],
-    jsonLd: {
-      '@context': 'https://schema.org',
-      '@type': 'ProfessionalService',
-      '@id': `${BASE_URL}/miami/#localbusiness`,
-      name: 'Star Solutions TI Florida',
-      description: 'Managed cybersecurity and IT security services across Florida, serving Miami, Fort Lauderdale and South Florida from our Orlando office. Services include EDR/XDR, enterprise antivirus, SealPath data protection, penetration testing, vCISO and compliance for 100-1,000 endpoint companies.',
-      url: `${BASE_URL}/miami/`,
-      image: `${BASE_URL}/og-default.png`,
-      telephone: '+13214386777',
-      email: 'miami@star-ti.com',
-      address: { '@type': 'PostalAddress', streetAddress: '8103 Gables Commons Dr', addressLocality: 'Orlando', addressRegion: 'FL', postalCode: '32821', addressCountry: 'US' },
-      parentOrganization: ORG,
-      openingHours: 'Mo-Fr 09:00-18:00',
-      priceRange: '$$',
-      paymentAccepted: 'Cash, Credit Card, Wire Transfer',
-      currenciesAccepted: 'USD',
-      areaServed: [
-        { '@type': 'City', name: 'Orlando' },
-        { '@type': 'City', name: 'Miami' },
-        { '@type': 'City', name: 'Fort Lauderdale' },
-        { '@type': 'City', name: 'Coral Gables' },
-        { '@type': 'City', name: 'Doral' },
-        { '@type': 'City', name: 'Boca Raton' },
-        { '@type': 'City', name: 'West Palm Beach' },
-      ],
-      knowsAbout: ['Cybersecurity services in Miami', 'Fort Lauderdale cybersecurity services', 'Managed EDR/XDR', 'Enterprise antivirus', 'SealPath IRM', 'Data loss prevention', 'Penetration testing', 'Virtual CISO', 'HIPAA compliance', 'SOC 2', 'PCI DSS', 'ISO 27001'],
-      hasOfferCatalog: {
-        '@type': 'OfferCatalog',
-        name: 'Cybersecurity services in Miami and Fort Lauderdale',
-        itemListElement: [
-          { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Managed EDR/XDR and enterprise antivirus for 100-1,000 endpoints' } },
-          { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'SealPath IRM and data loss prevention' } },
-          { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Penetration testing and breach simulation' } },
-          { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Virtual CISO and compliance readiness' } },
-        ],
-      },
-    },
-    faqJsonLd: faqSchema([
-      { q: 'Do you provide cybersecurity services in Miami and Fort Lauderdale for 100-1,000 endpoints?', a: 'Yes. Star Solutions TI designs managed cybersecurity programs for companies with 100 to 1,000 endpoints across Miami-Dade, Broward and South Florida. The typical scope includes endpoint protection, EDR/XDR, email security, data protection, vulnerability management, incident response and executive reporting.' },
-      { q: 'Can you replace our current antivirus with enterprise antivirus or EDR/XDR?', a: 'Yes. We migrate companies from unmanaged antivirus or legacy endpoint tools into Bitdefender GravityZone or Kaspersky, including policy design, staged deployment, exclusions, removal of the previous agent and post-deployment tuning.' },
-      { q: 'Do you implement SealPath for companies in Florida?', a: 'Yes. We implement SealPath IRM and data loss prevention controls for companies that need persistent document protection, external sharing control, revocation, audit trails and stronger protection for contracts, legal files, financial reports and regulated data.' },
-      { q: 'Can Spanish-speaking buyers ask for antivirus empresarial in Miami?', a: 'Yes. Many Latin American companies with operations in Miami search for antivirus empresarial, ciberseguridad empresarial or soporte en espanol. Our bilingual team can scope, quote, deploy and support enterprise antivirus and EDR/XDR in English or Spanish.' },
-      { q: 'Do you offer cybersecurity services in Spanish?', a: 'Yes. Our US team is fully bilingual English/Spanish, allowing us to serve both English-speaking and Latin American businesses in Florida without language barriers. All deliverables, reports, and support are available in both languages.' },
-      { q: 'What areas in South Florida do you serve?', a: 'We serve Miami-Dade, Broward, and Palm Beach counties including Miami, Fort Lauderdale, Coral Gables, Doral, and Boca Raton.' },
-      { q: 'Do I need to be in Miami for your services?', a: 'No. We offer remote cybersecurity assessments, managed EDR/XDR, and virtual CISO services for businesses anywhere in Florida and Latin America.' },
-      { q: 'What compliance frameworks do you help with?', a: 'We help with HIPAA, SOC 2, PCI DSS, CMMC, NIST CSF, and ISO 27001 compliance for South Florida businesses.' },
-      { q: 'How quickly can you respond to a security incident?', a: 'Our SOC provides under 1 hour incident response for managed clients, with 24/7 availability, plus on-site dispatch across South Florida when required.' },
-    ]),
-  },
   // =====================================================
   // BLOG
   // =====================================================
@@ -1203,24 +1141,5 @@ export const seoData: Record<string, SEOData> = {
       { q: '¿Mi empresa podría estar en riesgo según los datos del informe?', a: 'Estadísticamente, el 73% de empresas colombianas sufrió al menos un incidente de seguridad en 2025. Si su empresa opera en los sectores financiero, salud, gobierno o manufactura, el riesgo es aún mayor. Ofrecemos un diagnóstico gratuito de exposición que analiza su superficie de ataque en menos de 48 horas.' },
       { q: '¿Cómo solicito un diagnóstico personalizado de ciberseguridad?', a: 'Puede solicitar su diagnóstico gratuito en nuestra página de contacto o escribiéndonos a contacto@star-ti.com. El diagnóstico incluye análisis de superficie de ataque externa, revisión de credenciales filtradas y un reporte ejecutivo con prioridades de remediación, sin costo ni compromiso.' },
     ]),
-  },
-
-  'miami-contacto': {
-    title: 'Contact Miami Cybersecurity Services | Star Solutions TI',
-    description: 'Contact Star Solutions TI for cybersecurity services in Miami and Fort Lauderdale: EDR/XDR, enterprise antivirus, SealPath, pentesting and vCISO.',
-    keywords: 'contact Miami cybersecurity services, cybersecurity services Miami, cybersecurity services Fort Lauderdale, enterprise antivirus Miami, SealPath Miami, EDR XDR Miami, vCISO Miami',
-    canonical: `${BASE_URL}/miami/contacto/`,
-    ogTitle: 'Contact Miami Cybersecurity Services | Star Solutions TI',
-    ogType: 'website',
-    ogImage: `${BASE_URL}/og-default.png`,
-    lang: 'en',
-    hreflang: HREFLANG_CONTACTO,
-    breadcrumb: [{ name: 'Home', url: '/' }, { name: 'Miami', url: '/miami/' }, { name: 'Contact', url: '/miami/contacto/' }],
-    jsonLd: {
-      '@context': 'https://schema.org',
-      '@type': 'ContactPage',
-      name: 'Contact Star Solutions TI Florida',
-      url: `${BASE_URL}/miami/contacto/`,
-    },
   },
 };
