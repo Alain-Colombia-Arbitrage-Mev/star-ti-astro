@@ -45,6 +45,8 @@ const LEGACY_REDIRECTS = new Map([
   // y respondian 404: se redirigen a la pagina vigente equivalente.
   ["/cableado-estructurado-redes-de-datos-y-fibra-optica-bogota-colombia", "/cableado-estructurado/"],
   ["/auditor-iso-27001-consultores-iso-bogota", "/iso-27001/"],
+  ["/consultores-iso-27001", "/iso-27001/"],
+  ["/consultores-iso-27001/", "/iso-27001/"],
   ["/ethical-hacking-colombia", "/hacking-etico/"],
   ["/equipos-de-computo-bogota-colombia", "/equipos-computo/"],
   ["/contactenos-star-solutions-t-i", "/contacto/"],
