@@ -20,6 +20,7 @@ const ASSET_CASE_FIXES = new Map([
 ]);
 
 const LEGACY_REDIRECTS = new Map([
+  ["/portafolio.pdf", "/descargas/portafolio-star-solutions-ti.pdf"],
   ["/dlp-bogota-colombia", "/dlp-prevencion-perdida-datos/"],
   ["/safetica-dlp-bogota-colombia", "/dlp-prevencion-perdida-datos/"],
   ["/antivirus-para-empresas-colombia", "/antivirus-empresas/"],
