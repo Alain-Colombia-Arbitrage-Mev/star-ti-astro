@@ -40,6 +40,39 @@ export const socSteps = [
   ['Reporte ejecutivo', 'Resumen en lenguaje no técnico y evidencia para auditorías.'],
 ];
 
+export const socVsInHouse = [
+  ['Analistas', 'Mínimo 5 a 8 personas en turnos para cubrir 24/7, más vacaciones, incapacidades y rotación.', 'Incluidos: analistas certificados y Neo trabajando 24/7.'],
+  ['Plataforma', 'Comprar, instalar y mantener un SIEM, reglas de detección y almacenamiento de registros.', 'Incluida y actualizada por el centro de operaciones.'],
+  ['Tiempo para operar', 'Meses de contratación, configuración y ajuste.', 'Datos visibles en el portal desde que se instalan los agentes.'],
+  ['Inversión', 'Alta y fija: salarios, licencias e infraestructura.', 'Pago mensual por dispositivo, según el plan.'],
+  ['Actualización', 'Su equipo debe seguir solo las nuevas técnicas de ataque.', 'Inteligencia de amenazas compartida entre muchos clientes.'],
+];
+
+export const socAiControl = [
+  ['Neo investiga', 'Revisa cada alerta, reúne el contexto y propone qué hacer.'],
+  ['Acciones de bajo riesgo', 'Las contenciones predefinidas y de bajo riesgo se ejecutan de inmediato.'],
+  ['Decisiones críticas con humanos', 'Aislar un servidor o notificar a un cliente siempre lo aprueba un analista.'],
+  ['Usted aprueba', 'Neo puede ejecutar acciones que usted le pida, siempre con su aprobación.'],
+];
+
+export const socExtras = ['Monitoreo de red (NOC)', 'Inventario de activos y software', 'Gestión de vulnerabilidades', 'Superficie de ataque', 'Concientización contra phishing', 'Informes automatizados'];
+
+export const socPlanDetails = [
+  'Consola propia para ver sus eventos, sin intervención activa del SOC.',
+  'SOC activo 24/7, EDR y parcheo según la severidad.',
+  'Contención 24/7, protección de correo e identidades y evidencia mensual para auditores.',
+  'Gestor técnico dedicado, monitoreo de red (NOC), respuesta a incidentes con análisis forense y pentest anual.',
+];
+
+export const socChecklist = [
+  ['¿Hay un SLA formal?', 'Tiempos de atención y responsabilidades por escrito, con casos documentados de inicio a fin.'],
+  ['¿Quién aprueba las acciones críticas?', 'Aislar equipos o cortar accesos debe tener reglas claras y aprobación humana.'],
+  ['¿Qué fuentes están incluidas?', 'Equipos, servidores, red, nube, correo e identidades. Lo que no se conecta no se vigila.'],
+  ['¿Qué reportes recibe?', 'Informes ejecutivos para la gerencia y evidencia que su auditor pueda usar.'],
+  ['¿En qué idioma y desde dónde le atienden?', 'En un incidente, cada minuto cuenta: necesita un contacto que conozca su empresa.'],
+  ['¿Funciona con su equipo de TI?', 'El SOC vigila amenazas mientras TI sigue con la operación y los proyectos.'],
+];
+
 export const socPlans = ['Visibility', 'Guard', 'Response', 'Compliance'];
 export const socPlanNotes = ['Hasta 10 dispositivos', '', '', ''];
 export const socPlanFeatures: [string, number][] = [
@@ -56,7 +89,7 @@ export const socPlanFeatures: [string, number][] = [
 ];
 export const socPlanIdeal = ['Pequeñas empresas o evaluación inicial', 'Empresas en crecimiento', 'Organizaciones con mayor exposición', 'Sectores regulados y alta criticidad'];
 
-export const socCompliance = ['ISO/IEC 27001', 'PCI DSS', 'Circular 007 de la Superfinanciera', 'Ley 1581 de 2012 (datos personales)'];
+export const socCompliance = ['ISO/IEC 27001', 'PCI DSS', 'SOC 2', 'NIST CSF', 'Circular 007 de la Superfinanciera', 'Ley 1581 de 2012 (datos personales)'];
 
 export const socMarkets = [
   ['Colombia', 'Mercado principal'],
@@ -88,11 +121,23 @@ export const socFaqs = [
     a: 'Star Solutions TI es su contacto: le avisamos, coordinamos la respuesta con los analistas del centro de operaciones y le acompañamos hasta cerrar el incidente, en español.',
   },
   {
+    q: '¿La inteligencia artificial responde sola a los incidentes?',
+    a: 'No. Neo investiga las alertas y ejecuta contenciones predefinidas de bajo riesgo. Las decisiones críticas, como aislar un servidor o notificar a un cliente, siempre las aprueba un analista humano.',
+  },
+  {
+    q: '¿Sirve si ya tengo un equipo de TI?',
+    a: 'Sí, y es el caso más común. El SOC vigila las amenazas 24/7 mientras su equipo de TI se dedica a la operación y a los proyectos. Star coordina con ellos cuando hay un incidente.',
+  },
+  {
+    q: '¿Cuánto tarda en empezar a funcionar?',
+    a: 'Una vez instalados los agentes y conectadas las fuentes, los eventos empiezan a verse en el portal. El ajuste fino de las detecciones se hace en las primeras semanas, junto con su equipo.',
+  },
+  {
     q: '¿Cuánto cuesta Star SOC?',
     a: 'Depende del plan (Visibility, Guard, Response o Compliance) y del número de dispositivos. Después del diagnóstico le enviamos una propuesta en pesos colombianos. También puede empezar con una prueba piloto de 30 días.',
   },
   {
     q: '¿Star SOC sirve para cumplir ISO 27001 o la Circular 007?',
-    a: 'Sí. El monitoreo continuo, la gestión de incidentes y la evidencia que genera el servicio sirven para ISO 27001, PCI DSS y la Circular 007 de la Superfinanciera. El SOC no reemplaza el sistema de gestión, pero cubre la parte de detección, respuesta y registro.',
+    a: 'Sí. El monitoreo continuo, la gestión de incidentes y la evidencia que genera el servicio sirven para ISO 27001, PCI DSS, SOC 2, NIST CSF y la Circular 007 de la Superfinanciera. El SOC apoya el cumplimiento con controles y evidencia, pero no certifica por sí solo: eso depende también de los procesos de su empresa.',
   },
 ];

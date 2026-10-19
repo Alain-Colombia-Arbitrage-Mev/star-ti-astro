@@ -8,6 +8,7 @@ import { seoData } from '@data/seo';
 import {
   socBenefits, socStats, socNeo, socModules, socSteps, socPlans, socPlanNotes,
   socPlanFeatures, socPlanIdeal, socCompliance, socMarkets, socStart, socFaqs,
+  socVsInHouse, socAiControl, socExtras, socPlanDetails, socChecklist,
 } from '@data/starSoc';
 
 const seo = seoData['star-soc'];
@@ -85,6 +86,36 @@ const sectors = ['Empresas privadas', 'Sector financiero', 'Sector público', 'S
   </section>
 
   <section class="bg-white py-16 lg:py-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto text-center mb-10">
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">¿Qué es un SOC como servicio?</h2>
+        <p class="text-lg text-gray-600 leading-relaxed">Un SOC (centro de operaciones de seguridad) es el equipo y la plataforma que vigilan su infraestructura día y noche, detectan ataques y coordinan la respuesta. Como servicio, usted recibe todo eso sin contratar analistas, sin comprar un SIEM y sin cubrir turnos: paga por los dispositivos que protege.</p>
+      </div>
+      <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">SOC propio vs. Star SOC</h3>
+      <div class="overflow-x-auto rounded-2xl border border-gray-200">
+        <table class="w-full text-sm min-w-[640px]">
+          <thead class="bg-gray-50">
+            <tr>
+              <th class="text-left px-4 py-3 font-bold text-gray-900"></th>
+              <th class="text-left px-4 py-3 font-bold text-gray-900">SOC propio</th>
+              <th class="text-left px-4 py-3 font-bold text-violet-700">Star SOC</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-100">
+            {socVsInHouse.map(([label, own, star]) => (
+              <tr>
+                <td class="px-4 py-3 font-semibold text-gray-900">{label}</td>
+                <td class="px-4 py-3 text-gray-600">{own}</td>
+                <td class="px-4 py-3 text-gray-800 bg-violet-50/50">{star}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-gray-50 py-16 lg:py-20 border-y border-gray-200">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
       <div>
         <p class="text-xs font-bold uppercase tracking-widest text-violet-600 mb-2">Inteligencia artificial + analistas humanos</p>
@@ -93,13 +124,24 @@ const sectors = ['Empresas privadas', 'Sector financiero', 'Sector público', 'S
       </div>
       <ul class="space-y-3">
         {socNeo.map((item) => (
-          <li class="flex items-center gap-3 border border-gray-200 rounded-xl p-4 font-semibold text-gray-800"><span class="w-2.5 h-2.5 rounded-full bg-violet-600 flex-shrink-0"></span>{item}</li>
+          <li class="flex items-center gap-3 bg-white border border-gray-200 rounded-xl p-4 font-semibold text-gray-800"><span class="w-2.5 h-2.5 rounded-full bg-violet-600 flex-shrink-0"></span>{item}</li>
         ))}
       </ul>
     </div>
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
+      <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">Inteligencia artificial con control humano</h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        {socAiControl.map(([title, text]) => (
+          <div class="bg-white border border-gray-200 rounded-2xl p-5">
+            <h4 class="font-bold text-gray-900 mb-1">{title}</h4>
+            <p class="text-sm text-gray-600 leading-relaxed">{text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
   </section>
 
-  <section id="servicio" class="scroll-mt-24 bg-gray-50 py-16 lg:py-20 border-y border-gray-200">
+  <section id="servicio" class="scroll-mt-24 bg-white py-16 lg:py-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-2 text-center">Cobertura modular de seguridad</h2>
       <p class="text-lg text-gray-600 text-center mb-10">Protección integral, adaptada a las necesidades de su negocio.</p>
@@ -114,17 +156,20 @@ const sectors = ['Empresas privadas', 'Sector financiero', 'Sector público', 'S
           </div>
         ))}
       </div>
-      <p class="text-center text-gray-600 mt-8">Incluye además evaluación de superficie de ataque para identificar de forma proactiva los riesgos expuestos en internet.</p>
+      <h3 class="text-xl font-bold text-gray-900 mt-12 mb-4 text-center">Capacidades adicionales según el plan</h3>
+      <div class="flex flex-wrap justify-center gap-3">
+        {socExtras.map((x) => <span class="bg-white border border-violet-200 text-violet-800 text-sm font-semibold px-4 py-2 rounded-full">{x}</span>)}
+      </div>
     </div>
   </section>
 
-  <section id="como-funciona" class="scroll-mt-24 bg-white py-16 lg:py-20">
+  <section id="como-funciona" class="scroll-mt-24 bg-gray-50 py-16 lg:py-20 border-y border-gray-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-2 text-center">Cómo funciona Star SOC</h2>
       <p class="text-lg text-gray-600 text-center mb-10">Un flujo continuo de protección y respuesta.</p>
       <ol class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
         {socSteps.map(([title, text], index) => (
-          <li class="border border-gray-200 rounded-2xl p-5 text-center">
+          <li class="bg-white border border-gray-200 rounded-2xl p-5 text-center">
             <span class="mx-auto mb-3 w-10 h-10 bg-violet-600 text-white rounded-full flex items-center justify-center font-bold">{index + 1}</span>
             <h3 class="font-bold text-gray-900 mb-1">{title}</h3>
             <p class="text-sm text-gray-600 leading-relaxed">{text}</p>
@@ -134,7 +179,7 @@ const sectors = ['Empresas privadas', 'Sector financiero', 'Sector público', 'S
     </div>
   </section>
 
-  <section id="planes" class="scroll-mt-24 bg-gray-50 py-16 lg:py-20 border-y border-gray-200">
+  <section id="planes" class="scroll-mt-24 bg-white py-16 lg:py-20">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-2 text-center">Planes de servicio</h2>
       <p class="text-lg text-gray-600 text-center mb-10">Cuatro niveles, un mismo objetivo: su tranquilidad.</p>
@@ -160,6 +205,10 @@ const sectors = ['Empresas privadas', 'Sector financiero', 'Sector público', 'S
                 ))}
               </tr>
             ))}
+            <tr class="bg-gray-50 align-top">
+              <td class="px-4 py-3 font-bold text-gray-900">En resumen</td>
+              {socPlanDetails.map((text) => <td class="px-4 py-3 text-center text-gray-600 text-xs leading-relaxed">{text}</td>)}
+            </tr>
             <tr class="bg-gray-50">
               <td class="px-4 py-3 font-bold text-gray-900">Ideal para</td>
               {socPlanIdeal.map((text) => <td class="px-4 py-3 text-center text-gray-600">{text}</td>)}
@@ -205,7 +254,24 @@ const sectors = ['Empresas privadas', 'Sector financiero', 'Sector público', 'S
         <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3">
           {socCompliance.map((norm) => <li class="bg-white border border-gray-200 rounded-xl px-4 py-3 font-semibold text-gray-800">{norm}</li>)}
         </ul>
-        <p class="text-sm text-gray-600 mt-4">¿Vigilado por la Superfinanciera? Lea qué exige la <a href="/blog/circular-007-superfinanciera-ciberseguridad/" class="text-red-700 font-semibold hover:underline">Circular 007 en ciberseguridad</a>.</p>
+        <p class="text-sm text-gray-600 mt-4">El servicio apoya el cumplimiento con controles y evidencia; la certificación depende también de los procesos de su empresa.</p>
+        <p class="text-sm text-gray-600 mt-2">¿Vigilado por la Superfinanciera? Lea qué exige la <a href="/blog/circular-007-superfinanciera-ciberseguridad/" class="text-red-700 font-semibold hover:underline">Circular 007 en ciberseguridad</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-[#111827] py-16 lg:py-20 text-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-2 text-center">Seis preguntas antes de contratar un SOC</h2>
+      <p class="text-lg text-gray-300 text-center mb-10">Úselas para comparar cualquier propuesta, incluida la nuestra.</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        {socChecklist.map(([q, a], i) => (
+          <div class="bg-white/5 border border-white/10 rounded-2xl p-5">
+            <p class="text-violet-300 font-bold text-sm mb-1">{i + 1}</p>
+            <h3 class="font-bold mb-2">{q}</h3>
+            <p class="text-sm text-gray-300 leading-relaxed">{a}</p>
+          </div>
+        ))}
       </div>
     </div>
   </section>
