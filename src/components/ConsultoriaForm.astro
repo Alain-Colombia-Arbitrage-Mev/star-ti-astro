@@ -28,6 +28,9 @@ const areas = [
 const check = 'M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z';
 const benefits = ['Sin compromiso', 'Análisis de seguridad incluido', 'Respuesta en 24 horas', '100% confidencial'];
 const input = 'w-full px-4 py-3 backdrop-blur-md bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition';
+// Rango de equipos: clasifica el lead (la pauta apunta a empresas desde 100 equipos)
+// sin excluir a nadie. El worker lo guarda en el campo Dispositivos.
+const deviceRanges = ['1 a 99', '100 a 499', '500 a 1.999', '2.000 o más'];
 ---
 
 <section id="consultoria" class="py-16 sm:py-24 lg:py-32 bg-gradient-to-br from-gray-950 via-gray-900 to-black text-white relative overflow-hidden">
@@ -75,6 +78,14 @@ const input = 'w-full px-4 py-3 backdrop-blur-md bg-white/10 border border-white
             <label for={`${idPrefix}-phone`} class="block text-sm font-medium text-gray-300 mb-2">Teléfono *</label>
             <input type="tel" id={`${idPrefix}-phone`} name="phone" required autocomplete="tel" class={input} placeholder="+57 300 123 4567" />
           </div>
+        </div>
+
+        <div>
+          <label for={`${idPrefix}-devices`} class="block text-sm font-medium text-gray-300 mb-2">Número de equipos de la empresa *</label>
+          <select id={`${idPrefix}-devices`} name="dispositivos" required class={input}>
+            <option value="" class="bg-gray-900">Seleccione un rango</option>
+            {deviceRanges.map((range) => <option value={range} class="bg-gray-900">{range}</option>)}
+          </select>
         </div>
 
         {showService ? (

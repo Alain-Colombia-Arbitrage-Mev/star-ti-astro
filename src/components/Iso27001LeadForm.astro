@@ -28,6 +28,16 @@ const { id, buttonLabel, includeMessage = false } = Astro.props;
     Teléfono *
     <input name="telefono" required placeholder="+57 300 123 4567" autocomplete="tel" />
   </label>
+  <label style="grid-column: 1 / -1">
+    Número de equipos de la empresa *
+    <select name="dispositivos" required>
+      <option value="">Seleccione un rango</option>
+      <option>1 a 99</option>
+      <option>100 a 499</option>
+      <option>500 a 1.999</option>
+      <option>2.000 o más</option>
+    </select>
+  </label>
   <label>
     Cargo
     <input name="cargo" placeholder="Gerente de TI" autocomplete="organization-title" />
