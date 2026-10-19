@@ -54,6 +54,26 @@ const LEGACY_REDIRECTS = new Map([
   ["/software-anydesk-colombia", "/anydesk/"],
   ["/licenciamiento-teamviewer-colombia", "/teamviewer/"],
   ["/politica-de-seguridad-y-privacidad-de-la-informacion", "/privacidad/"],
+  // URLs del sitio anterior usadas como URL final o sitelink en Google Ads
+  // (revision de la cuenta 568-727-7952, 19-oct-2026).
+  ["/soporte-y-mantenimiento", "/equipos-computo/"],
+  ["/soporte-y-mantenimiento/", "/equipos-computo/"],
+  ["/seguridad-de-la-informacion", "/iso-27001/"],
+  ["/seguridad-de-la-informacion/", "/iso-27001/"],
+  ["/seguridad-informatica", "/seguridad-informatica-empresas/"],
+  ["/seguridad-informatica/", "/seguridad-informatica-empresas/"],
+  ["/antivirus-bitdefender", "/bitdefender/"],
+  ["/antivirus-bitdefender/", "/bitdefender/"],
+  ["/nosotros", "/sobre-nosotros/"],
+  ["/nosotros/", "/sobre-nosotros/"],
+  ["/licenciamiento", "/antivirus-empresas/"],
+  ["/licenciamiento/", "/antivirus-empresas/"],
+  ["/licenciamiento-y-seguridad", "/seguridad-informatica-empresas/"],
+  ["/licenciamiento-y-seguridad/", "/seguridad-informatica-empresas/"],
+  ["/servicios", "/"],
+  ["/servicios/", "/"],
+  ["/consultoria-organizacional", "/iso-27001/"],
+  ["/consultoria-organizacional/", "/iso-27001/"],
   // Landing de Miami retirada el 18-oct-2026: no es mercado comercial de Star
   // (George). Generaba impresiones en EE. UU. sin clics ni negocio.
   ["/miami", "/"],
