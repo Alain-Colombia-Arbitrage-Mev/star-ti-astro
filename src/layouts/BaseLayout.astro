@@ -151,7 +151,11 @@ const breadcrumbJsonLd = seo.breadcrumb ? {
     </main>
     <LeadFormGuard />
     <!-- Zoho SalesIQ (chat del sitio, Zoho One de Star). Los leads entran a Zoho CRM. -->
-    <script is:inline>window.$zoho=window.$zoho || {};$zoho.salesiq=$zoho.salesiq||{ready:function(){}}</script>
+    <script is:inline>window.$zoho=window.$zoho || {};$zoho.salesiq=$zoho.salesiq||{ready:function(){$zoho.salesiq.language("es");}}</script>
+    <style is:global>
+      /* Burbuja de SalesIQ del mismo tamano que el boton de WhatsApp (64 px). */
+      #zsiq_float, .zsiq_floatmain { transform: scale(1.5); transform-origin: bottom right; }
+    </style>
     <script is:inline id="zsiqscript" src="https://salesiq.zohopublic.com/widget?wc=siqccee16aa641815ba42697dac61caf02846f13ff800dc242433896540249be60c" defer></script>
   </body>
 </html>
