@@ -9,6 +9,7 @@ import { bdEdrFaqs } from './blogBitdefenderEdr';
 import { precioBdFaqs } from './blogPrecioBitdefender';
 import { bdVsKasFaqs } from './blogBitdefenderVsKaspersky';
 import { dmarcGuideFaqs } from './blogDmarc';
+import { circular007Faqs } from './blogCircular007';
 import { certIsoFaqs } from './blogCertificacionIso';
 import { informeFaqs } from './informe2026';
 import { dmarcFaqs } from './revisionDmarc';
@@ -1250,6 +1251,36 @@ export const seoData: Record<string, SEOData> = {
       keywords: 'DMARC, SPF, DKIM, correo, suplantación, Microsoft 365',
     },
     faqJsonLd: faqSchema(dmarcGuideFaqs),
+  },
+
+  'blog/circular-007-superfinanciera-ciberseguridad': {
+    title: 'Circular 007 Superfinanciera: Qué Exige en Ciberseguridad (2026)',
+    description: 'Requisitos de la Circular Externa 007 de 2018 de la Superfinanciera para la gestión del riesgo de ciberseguridad, qué falla en la práctica y cómo evidenciarlo.',
+    keywords: 'Circular 007 Superfinanciera, Circular Externa 007 de 2018, ciberseguridad sector financiero Colombia, requerimientos ciberseguridad Superfinanciera, Circular Básica Jurídica ciberseguridad, proveedores bancos ciberseguridad',
+    canonical: `${BASE_URL}/blog/circular-007-superfinanciera-ciberseguridad/`,
+    ogTitle: 'Circular 007 de la Superfinanciera: qué exige en ciberseguridad',
+    ogType: 'article',
+    ogImage: `${BASE_URL}/og/blog-circular-007-superfinanciera-ciberseguridad.jpg`,
+    breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Blog', url: '/blog/' }, { name: 'Circular 007 Superfinanciera', url: '/blog/circular-007-superfinanciera-ciberseguridad/' }],
+    jsonLd: {
+      '@context': 'https://schema.org',
+      '@type': 'Article',
+      headline: 'Circular 007 de la Superfinanciera: qué exige en ciberseguridad',
+      description: 'Guía de los requerimientos mínimos de gestión del riesgo de ciberseguridad de la Circular Externa 007 de 2018 de la Superintendencia Financiera de Colombia, errores comunes, controles y evidencia, y su efecto en los proveedores.',
+      datePublished: '2026-10-19',
+      dateModified: '2026-10-19',
+      inLanguage: 'es-CO',
+      author: AUTHOR,
+      publisher: { '@type': 'Organization', name: 'Star Solutions TI S.A.S.', url: BASE_URL, logo: { '@type': 'ImageObject', url: `${BASE_URL}/logo.png` } },
+      image: `${BASE_URL}/og/blog-circular-007-superfinanciera-ciberseguridad.jpg`,
+      url: `${BASE_URL}/blog/circular-007-superfinanciera-ciberseguridad/`,
+      about: [
+        { '@type': 'Legislation', name: 'Circular Externa 007 de 2018 de la Superintendencia Financiera de Colombia', legislationJurisdiction: 'CO' },
+        { '@type': 'GovernmentOrganization', name: 'Superintendencia Financiera de Colombia', url: 'https://www.superfinanciera.gov.co/' },
+      ],
+      keywords: 'Circular 007, Superfinanciera, ciberseguridad, sector financiero, Colombia',
+    },
+    faqJsonLd: faqSchema(circular007Faqs),
   },
 
   'blog/pentesting-iso-27001': {

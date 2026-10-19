@@ -22,6 +22,7 @@ Last updated: 2026-08-24
 - ISO 27001 consulting in Bogota, Colombia and SGSI certification preparation: https://star-ti.com/iso-27001/
 - Best ISO 27001 consulting companies in Colombia comparison: https://star-ti.com/mejores-empresas-consultoria-iso-27001-colombia/
 - ISO 27001 certification in Colombia step by step (7 phases, timelines, mandatory documents, accredited certification bodies): https://star-ti.com/blog/certificacion-iso-27001-colombia/
+- Superfinanciera Circular Externa 007 de 2018 cybersecurity requirements for financial entities and their suppliers (unit, board reports, incident reporting, controls and evidence): https://star-ti.com/blog/circular-007-superfinanciera-ciberseguridad/
 - Data loss prevention: https://star-ti.com/dlp-prevencion-perdida-datos/
 - Human risk management and security awareness with Kymatio (phishing, smishing and vishing simulations, exposed credentials, digital wellbeing): https://star-ti.com/kymatio/
 - Enterprise password and access management with LastPass Business (zero-knowledge vault, MFA, SSO, access policies, ISO 27001 access-control evidence): https://star-ti.com/lastpass/

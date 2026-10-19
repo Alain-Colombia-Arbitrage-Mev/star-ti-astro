@@ -1,0 +1,178 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Navbar from '@components/Navbar.astro';
+import Footer from '@components/Footer.astro';
+import WhatsAppButton from '@components/WhatsAppButton.astro';
+import { seoData } from '@data/seo';
+import { circular007Faqs } from '@data/blogCircular007';
+
+const seo = seoData['blog/circular-007-superfinanciera-ciberseguridad'];
+
+const requirements = [
+  ['Políticas y procedimientos', 'Políticas de seguridad de la información y ciberseguridad aprobadas y aplicadas en toda la entidad.'],
+  ['Unidad responsable', 'Una unidad que gestione los riesgos de seguridad de la información y ciberseguridad, dimensionada según el tamaño, los canales, el volumen transaccional y el número de clientes.'],
+  ['Informes a la junta', 'La unidad informa a la junta directiva y a la alta dirección por lo menos cada seis meses, con un resumen de los incidentes que afectaron a la entidad.'],
+  ['Prevención, detección y respuesta', 'Un esquema para prevenir, detectar, contener y responder a incidentes cibernéticos.'],
+  ['Reporte de incidentes', 'Comunicar los incidentes a las autoridades del modelo nacional de gestión de incidentes y a los consumidores afectados, con las medidas adoptadas.'],
+  ['Continuidad del negocio', 'El plan de continuidad debe cubrir la respuesta, recuperación y restauración ante un ataque cibernético.'],
+  ['Actualización y capacitación', 'Mantenerse al día sobre nuevas modalidades de ataque y capacitar periódicamente a los funcionarios.'],
+];
+
+const mapping = [
+  ['Políticas, unidad e informes a la junta', 'Consultoría ISO 27001: diagnóstico, SGSI, roles e indicadores para la junta', '/iso-27001/'],
+  ['Detección y respuesta en equipos y servidores', 'Bitdefender GravityZone con EDR, XDR y MDR 24/7', '/bitdefender/'],
+  ['Correlación de eventos y monitoreo', 'Stellar Cyber Open XDR', '/stellar-cyber/'],
+  ['Identificar vulnerabilidades antes que el atacante', 'Hacking ético y pruebas de penetración', '/hacking-etico/'],
+  ['Phishing, suplantación y continuidad del correo', 'Hornetsecurity para Microsoft 365 y revisión DMARC', '/hornetsecurity/'],
+  ['Capacitación de funcionarios', 'Kymatio: concienciación y riesgo humano', '/kymatio/'],
+];
+---
+
+<BaseLayout seo={seo}>
+  <Navbar />
+
+  <section class="relative bg-gradient-to-br from-[#0b1220] to-[#1f2937] overflow-hidden">
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-16 lg:pb-20">
+      <nav class="mb-8 flex items-center gap-2 text-sm text-gray-400" aria-label="Ruta de navegación">
+        <a href="/" class="hover:text-white transition-colors">Inicio</a>
+        <span>/</span>
+        <a href="/blog/" class="hover:text-white transition-colors">Blog</a>
+        <span>/</span>
+        <span class="text-gray-200">Circular 007 Superfinanciera</span>
+      </nav>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <div class="flex flex-wrap items-center gap-3 mb-6">
+            <span class="bg-red-500/20 border border-red-500/30 text-red-300 text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wide">Sector financiero</span>
+            <span class="text-gray-400 text-sm">19 oct 2026</span>
+          </div>
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+            Circular 007 de la Superfinanciera: qué exige en ciberseguridad
+          </h1>
+          <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+            Los requisitos mínimos de ciberseguridad para entidades vigiladas, explicados en lenguaje claro, y cómo convertirlos en controles y evidencia que resistan una revisión.
+          </p>
+          <div class="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-gray-400">
+            <span>Por Jorge Molano &middot; CEO de Star Solutions TI</span>
+            <span>&bull;</span>
+            <span>Tiempo de lectura: 7 min</span>
+          </div>
+        </div>
+        <div class="hidden lg:block">
+          <img src="/og/blog-circular-007-superfinanciera-ciberseguridad.jpg" alt="Circular 007 de la Superfinanciera: ciberseguridad en el sector financiero" class="w-full h-auto rounded-2xl shadow-2xl ring-1 ring-white/10" width="1200" height="630" loading="eager" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <article class="bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+      <section class="mb-12">
+        <p class="text-xl text-gray-700 leading-relaxed mb-6">
+          En junio de 2018 la Superintendencia Financiera de Colombia expidió la <strong>Circular Externa 007</strong>, que agregó a la Circular Básica Jurídica un capítulo con los <strong>requerimientos mínimos para la gestión del riesgo de ciberseguridad</strong>. Desde entonces, bancos, aseguradoras, fiduciarias y demás entidades vigiladas deben demostrar que gestionan este riesgo, y cada vez más lo exigen también a sus proveedores.
+        </p>
+        <div class="bg-red-50 border border-red-200 rounded-2xl p-6">
+          <h2 class="text-xl font-bold text-red-900 mb-2">Respuesta rápida</h2>
+          <p class="text-red-800 leading-relaxed">
+            La Circular 007 pide <strong>políticas aprobadas</strong>, una <strong>unidad responsable</strong> de seguridad de la información y ciberseguridad, <strong>informes semestrales a la junta</strong>, un esquema de <strong>prevención, detección y respuesta</strong>, <strong>reporte de incidentes</strong> a las autoridades y a los consumidores afectados, <strong>continuidad</strong> ante ataques y <strong>capacitación</strong>. No exige una marca ni una certificación: exige que funcione y que se pueda demostrar.
+          </p>
+        </div>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Los requisitos centrales</h2>
+        <div class="space-y-4">
+          {requirements.map(([title, text], index) => (
+            <div class="flex gap-4 border border-gray-200 rounded-2xl p-5">
+              <span class="flex-shrink-0 w-8 h-8 bg-red-700 text-white rounded-full flex items-center justify-center text-sm font-bold">{index + 1}</span>
+              <div>
+                <h3 class="font-bold text-gray-900 mb-1">{title}</h3>
+                <p class="text-gray-600 leading-relaxed">{text}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+        <p class="text-sm text-gray-500 mt-4">Resumen de los requisitos principales. La Superfinanciera actualiza la Circular Básica Jurídica; para un proyecto de cumplimiento, revise el texto vigente del Capítulo V.</p>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Lo que más falla en la práctica</h2>
+        <ul class="space-y-4 text-gray-700">
+          <li class="flex gap-3"><span class="text-red-700 font-bold">•</span><span><strong>Políticas que nadie aplica.</strong> El documento existe, pero los equipos no tienen el agente actualizado o las alertas no se revisan.</span></li>
+          <li class="flex gap-3"><span class="text-red-700 font-bold">•</span><span><strong>Detección solo en horario laboral.</strong> Los ataques de ransomware suelen ejecutarse de noche o en festivos, cuando nadie está mirando.</span></li>
+          <li class="flex gap-3"><span class="text-red-700 font-bold">•</span><span><strong>Informes a la junta sin indicadores.</strong> La junta necesita ver tendencias: incidentes, tiempos de respuesta, equipos sin protección, vulnerabilidades abiertas.</span></li>
+          <li class="flex gap-3"><span class="text-red-700 font-bold">•</span><span><strong>Proveedores fuera del radar.</strong> Un tercero con acceso a la red o a los datos es parte de su superficie de ataque.</span></li>
+        </ul>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">De la norma a los controles</h2>
+        <p class="text-lg text-gray-600 leading-relaxed mb-6">
+          Así llevamos cada requisito a una solución concreta que deja evidencia para la revisión:
+        </p>
+        <div class="overflow-x-auto rounded-2xl border border-gray-200">
+          <table class="w-full text-sm">
+            <thead class="bg-gray-50">
+              <tr>
+                <th class="text-left px-4 py-3 font-bold text-gray-900">Lo que pide la norma</th>
+                <th class="text-left px-4 py-3 font-bold text-gray-900">Cómo se cubre</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-100">
+              {mapping.map(([need, how, href]) => (
+                <tr>
+                  <td class="px-4 py-3 font-semibold text-gray-900">{need}</td>
+                  <td class="px-4 py-3"><a href={href} class="text-red-700 font-semibold hover:underline">{how}</a></td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">¿Y si usted es proveedor de una entidad financiera?</h2>
+        <p class="text-lg text-gray-600 leading-relaxed">
+          La circular obliga a la entidad vigilada, pero esa entidad responde también por los riesgos de sus terceros. Por eso los bancos y aseguradoras piden cada vez más a sus proveedores evidencia de seguridad: cuestionarios, pruebas de vulnerabilidades, antivirus con EDR administrado o una certificación ISO 27001. Tener esa evidencia lista acorta los procesos de contratación y renovación.
+        </p>
+      </section>
+
+      <section class="mb-12 bg-[#111827] rounded-2xl p-8 text-white">
+        <p class="text-xs font-bold uppercase tracking-widest text-red-400 mb-2">Por qué Star Solutions TI</p>
+        <h2 class="text-2xl font-bold mb-3">Certificados en ISO 27001 y con experiencia a gran escala</h2>
+        <p class="text-gray-300 leading-relaxed">Star Solutions TI está certificada en ISO/IEC 27001:2022 por SGS, acompaña procesos de certificación ISO 27001 y ha implementado y administrado Bitdefender GravityZone en 32.000 equipos de una entidad pública. Más de 1.150 empresas confían en nosotros desde 2016.</p>
+      </section>
+
+      <section class="mb-12 bg-gray-50 border border-gray-200 rounded-2xl p-6">
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">Fuentes</h2>
+        <ul class="space-y-2 text-sm">
+          <li><a href="https://www.superfinanciera.gov.co/publicaciones/10083443/normativanormativa-generalcircular-basica-juridica-ce-10083443/" class="text-red-700 hover:underline" rel="noopener">Superintendencia Financiera: Circular Básica Jurídica (texto vigente)</a></li>
+          <li><a href="https://www.ambitojuridico.com/sites/default/files/BancoMedios/Archivos/anexocircexterna-007-18(superfinanciera).pdf" class="text-red-700 hover:underline" rel="noopener">Anexo de la Circular Externa 007 de 2018 (Ámbito Jurídico)</a></li>
+          <li><a href="https://www.larepublica.co/finanzas/entidades-financieras-deben-informar-incidentes-ciberneticos-segun-superfinanciera-2735303" class="text-red-700 hover:underline" rel="noopener">La República: las entidades financieras deben informar incidentes cibernéticos</a></li>
+        </ul>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Preguntas frecuentes</h2>
+        <div class="space-y-5">
+          {circular007Faqs.map((f) => (
+            <div class="border border-gray-200 rounded-xl p-5">
+              <h3 class="font-bold text-gray-900 mb-2">{f.q}</h3>
+              <p class="text-gray-600">{f.a}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section class="bg-red-700 rounded-2xl p-8 text-white">
+        <h2 class="text-2xl font-bold mb-3">Diagnóstico frente a la Circular 007</h2>
+        <p class="text-red-50 mb-6">Revisamos con su equipo qué tiene cubierto, qué evidencia le falta y en qué orden cerrarlo, con un plan que su junta pueda seguir.</p>
+        <a href="/iso-27001/" class="inline-flex items-center justify-center bg-white text-red-700 font-semibold px-6 py-3 rounded hover:bg-red-50 transition">Solicitar diagnóstico</a>
+      </section>
+    </div>
+  </article>
+
+  <Footer />
+  <WhatsAppButton />
+</BaseLayout>

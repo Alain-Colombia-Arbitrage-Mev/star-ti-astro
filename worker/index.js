@@ -96,6 +96,7 @@ const TRAILING_SLASH_PATHS = new Set([
   "/blog/precio-bitdefender-gravityzone-colombia",
   "/blog/bitdefender-vs-kaspersky-empresas",
   "/blog/como-implementar-dmarc",
+  "/blog/circular-007-superfinanciera-ciberseguridad",
   "/blog/certificacion-iso-27001-colombia",
   "/bitdefender",
   "/kaspersky",
