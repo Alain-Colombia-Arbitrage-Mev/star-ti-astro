@@ -77,6 +77,14 @@ export const pilares: Pilar[] = [
         nameEn: 'Endpoint + Servers + Services',
         shortDescriptionEn: 'Endpoint protection with HuMachine Intelligence, centralized management and encryption for SMB and enterprise.',
       },
+      {
+        slug: 'acronis',
+        brand: 'Acronis',
+        name: 'Backup y Recuperacion',
+        shortDescription: 'Backup, recuperacion ante desastres y proteccion contra ransomware con rollback de archivos en una sola consola.',
+        nameEn: 'Backup and Recovery',
+        shortDescriptionEn: 'Backup, disaster recovery and ransomware protection with file rollback in a single console.',
+      },
     ],
   },
   {

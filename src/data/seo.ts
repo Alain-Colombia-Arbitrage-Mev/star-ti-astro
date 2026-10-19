@@ -11,6 +11,7 @@ import { bdVsKasFaqs } from './blogBitdefenderVsKaspersky';
 import { dmarcGuideFaqs } from './blogDmarc';
 import { circular007Faqs } from './blogCircular007';
 import { socFaqs } from './starSoc';
+import { acronisFaqs } from './acronis';
 import { certIsoFaqs } from './blogCertificacionIso';
 import { informeFaqs } from './informe2026';
 import { dmarcFaqs } from './revisionDmarc';
@@ -340,6 +341,18 @@ export const seoData: Record<string, SEOData> = {
       { q: 'Qué sistemas operativos soporta vRx?', a: 'Vicarius soporta Windows (Server y Desktop), Linux (Ubuntu, CentOS, RHEL, Debian) y macOS. El agente ocupa menos de 50MB de RAM y tiene impacto minimo en el rendimiento del endpoint.' },
       { q: 'Cuánto tiempo toma ver resultados con vRx?', a: 'El inventario completo de activos y vulnerabilidades esta disponible en menos de 24 horas desde el despliegue del agente. Vicarius reporta un MTTR (Mean Time To Remediate) promedio de 22 días con la plataforma, frente a los 205 días que tarda el ciclo discovery-to-remediation sin herramienta especializada.' },
     ]),
+  },
+  'acronis': {
+    title: 'Acronis Cyber Protect en Colombia | Backup y Recuperación',
+    description: 'Acronis Cyber Protect para empresas en Colombia: backup, recuperación ante desastres y protección contra ransomware en una consola. Implementación y soporte en español.',
+    keywords: 'Acronis Colombia, Acronis Cyber Protect, backup empresarial Colombia, recuperación ante desastres, backup contra ransomware, regla 3-2-1, copias de seguridad empresas',
+    canonical: `${BASE_URL}/acronis/`,
+    ogTitle: 'Acronis Cyber Protect: backup que resiste el ransomware',
+    ogType: 'website',
+    ogImage: `${BASE_URL}/og/acronis.jpg`,
+    breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Star Protection', url: '/#star-protection' }, { name: 'Acronis', url: '/acronis/' }],
+    jsonLd: service('Backup y recuperación con Acronis Cyber Protect', 'Backup, Disaster Recovery and Ransomware Protection'),
+    faqJsonLd: faqSchema(acronisFaqs),
   },
   'soc-24x7': {
     title: 'SOC 24x7 en Colombia | Star SOC con IA y Analistas',

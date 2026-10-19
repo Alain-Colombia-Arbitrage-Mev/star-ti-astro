@@ -1,0 +1,210 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Navbar from '@components/Navbar.astro';
+import Footer from '@components/Footer.astro';
+import ConsultoriaForm from '@components/ConsultoriaForm.astro';
+import WhatsAppButton from '@components/WhatsAppButton.astro';
+import { seoData } from '@data/seo';
+import { acronisCapabilities, acronisEditions, acronisSteps, acronisFaqs } from '@data/acronis';
+
+const seo = seoData['acronis'];
+
+const recovery = [
+  ['Ataque detectado', 'Active Protection reconoce el cifrado anormal de archivos.', 'bg-red-500'],
+  ['Proceso detenido', 'El proceso malicioso se bloquea antes de extenderse.', 'bg-amber-500'],
+  ['Archivos restaurados', 'Los archivos afectados vuelven a su versión anterior.', 'bg-green-500'],
+  ['Operación normal', 'El equipo sigue trabajando y queda el registro del incidente.', 'bg-blue-500'],
+];
+---
+
+<BaseLayout seo={seo}>
+  <Navbar />
+
+  <section class="relative overflow-hidden bg-[#070b14]">
+    <img src="/assets/seguridad-empresarial-servidores.webp" alt="" aria-hidden="true" class="absolute inset-0 w-full h-full object-cover saturate-[.3] brightness-[.35]" fetchpriority="high" loading="eager" width="1600" height="1067" />
+    <div class="absolute inset-0 bg-gradient-to-r from-[#070b14] via-[#070b14]/85 to-[#0b1a33]/60"></div>
+    <div class="absolute inset-0 pointer-events-none opacity-[.06]" style="background-image: linear-gradient(to right, #fff 1px, transparent 1px), linear-gradient(to bottom, #fff 1px, transparent 1px); background-size: 56px 56px;"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-16 lg:pb-24">
+      <nav class="mb-8 flex items-center gap-2 text-sm text-gray-400" aria-label="Ruta de navegación">
+        <a href="/" class="hover:text-white transition-colors">Inicio</a>
+        <span>/</span>
+        <span>Star Protection</span>
+        <span>/</span>
+        <span class="text-gray-200">Acronis</span>
+      </nav>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <span class="inline-flex items-center gap-2 bg-red-500/15 border border-red-400/30 text-red-200 text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wide mb-6">
+            <span class="w-2 h-2 rounded-full bg-red-500"></span> Star Protection · Backup y recuperación
+          </span>
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+            Acronis Cyber Protect: <span class="bg-gradient-to-r from-red-500 to-orange-400 bg-clip-text text-transparent">backup que resiste el ransomware</span>
+          </h1>
+          <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+            Respaldo, recuperación ante desastres y protección contra ransomware en un solo agente y una sola consola. Implementado, probado y con soporte en español por Star Solutions TI.
+          </p>
+          <div class="flex flex-wrap gap-3">
+            <a href="#contacto" class="inline-flex items-center justify-center bg-red-700 text-white font-semibold px-6 py-3 rounded hover:bg-[#dc2626] transition">Solicitar diagnóstico de backup</a>
+            <a href="#como-funciona" class="inline-flex items-center justify-center border border-white/40 text-white font-semibold px-6 py-3 rounded hover:bg-white/10 transition">Cómo funciona</a>
+          </div>
+        </div>
+        <div class="flex justify-center lg:justify-end">
+          <div class="w-full max-w-md rounded-3xl bg-[#0c111e]/85 border border-white/15 shadow-2xl shadow-black/60 backdrop-blur-xl p-6">
+            <div class="flex items-center gap-3 mb-5">
+              <span class="bg-white rounded-lg px-3 py-1 text-[#0a3d8f] font-extrabold tracking-tight text-lg">Acronis</span>
+              <span class="text-sm text-gray-400">Recuperación ante ransomware</span>
+            </div>
+            <ol class="space-y-4">
+              {recovery.map(([title, text, color], i) => (
+                <li class="flex gap-3">
+                  <span class={`flex-shrink-0 w-7 h-7 rounded-full ${color} text-white text-xs font-bold flex items-center justify-center`}>{i + 1}</span>
+                  <div><p class="font-semibold text-white">{title}</p><p class="text-sm text-gray-400">{text}</p></div>
+                </li>
+              ))}
+            </ol>
+            <p class="mt-5 text-[11px] text-gray-500">Flujo ilustrativo de Acronis Active Protection</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-white py-16 lg:py-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+      <div>
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">El backup es su última línea de defensa. El ransomware lo sabe.</h2>
+        <p class="text-lg text-gray-600 leading-relaxed mb-4">
+          Antes de cifrar, los atacantes buscan y borran las copias de respaldo, porque sin backup la empresa no tiene más opción que negociar. Una copia en un disco conectado a la red o una carpeta sincronizada en la nube no basta.
+        </p>
+        <p class="text-lg text-gray-600 leading-relaxed">
+          La protección real tiene tres partes: <strong>copias aisladas</strong> que no se puedan borrar desde la red, <strong>detección del ataque</strong> mientras ocurre y <strong>pruebas de restauración</strong> que demuestren que sí se puede volver a operar.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+        <div class="rounded-2xl bg-[#111827] text-white p-6">
+          <p class="text-5xl font-extrabold text-red-500 mb-2">94 %</p>
+          <p class="text-gray-300">de las organizaciones atacadas con ransomware vieron intentos de comprometer sus backups.</p>
+        </div>
+        <div class="rounded-2xl bg-[#111827] text-white p-6">
+          <p class="text-5xl font-extrabold text-red-500 mb-2">57 %</p>
+          <p class="text-gray-300">de esos intentos contra los backups tuvieron éxito.</p>
+        </div>
+        <p class="sm:col-span-2 text-xs text-gray-500">Fuente: Sophos, estudio sobre el impacto de los backups comprometidos en ataques de ransomware, 2024.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="capacidades" class="scroll-mt-24 bg-gray-50 py-16 lg:py-20 border-y border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-2 text-center">Qué hace Acronis Cyber Protect</h2>
+      <p class="text-lg text-gray-600 text-center mb-10">Un solo agente, una sola consola, menos herramientas que mantener.</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {acronisCapabilities.map(([title, text]) => (
+          <div class="bg-white border border-gray-200 rounded-2xl p-6">
+            <span class="block w-10 h-1 bg-red-600 rounded-full mb-4"></span>
+            <h3 class="text-lg font-bold text-gray-900 mb-2">{title}</h3>
+            <p class="text-gray-600 leading-relaxed">{text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-white py-16 lg:py-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-2 text-center">La regla 3-2-1, con una copia que el ransomware no alcanza</h2>
+      <p class="text-lg text-gray-600 text-center mb-10 max-w-3xl mx-auto">Es la práctica recomendada para que un ataque, un error humano o una falla física no se lleven su información.</p>
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-5">
+        <div class="rounded-2xl border border-gray-200 p-6 text-center"><p class="text-5xl font-extrabold text-red-600">3</p><p class="font-semibold text-gray-900 mt-2">copias</p><p class="text-sm text-gray-600 mt-1">El original y dos respaldos.</p></div>
+        <div class="rounded-2xl border border-gray-200 p-6 text-center"><p class="text-5xl font-extrabold text-red-600">2</p><p class="font-semibold text-gray-900 mt-2">medios distintos</p><p class="text-sm text-gray-600 mt-1">Por ejemplo, almacenamiento local y nube.</p></div>
+        <div class="rounded-2xl border border-gray-200 p-6 text-center"><p class="text-5xl font-extrabold text-red-600">1</p><p class="font-semibold text-gray-900 mt-2">fuera de la oficina</p><p class="text-sm text-gray-600 mt-1">Para sobrevivir a un desastre físico.</p></div>
+        <div class="rounded-2xl bg-[#111827] text-white p-6 text-center"><p class="text-5xl font-extrabold text-red-500">+1</p><p class="font-semibold mt-2">aislada o inmutable</p><p class="text-sm text-gray-300 mt-1">No se puede borrar ni cifrar desde la red.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-gray-50 py-16 lg:py-20 border-y border-gray-200">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-8 text-center">Ediciones para empresas</h2>
+      <div class="overflow-x-auto rounded-2xl border border-gray-200 bg-white">
+        <table class="w-full text-sm min-w-[640px]">
+          <thead class="bg-gray-50">
+            <tr>
+              <th class="text-left px-4 py-3 font-bold text-gray-900">Edición</th>
+              <th class="text-left px-4 py-3 font-bold text-gray-900">Qué incluye</th>
+              <th class="text-left px-4 py-3 font-bold text-gray-900">Para quién</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-100">
+            {acronisEditions.map(([name, what, who]) => (
+              <tr>
+                <td class="px-4 py-3 font-semibold text-gray-900">{name}</td>
+                <td class="px-4 py-3 text-gray-600">{what}</td>
+                <td class="px-4 py-3 text-gray-600">{who}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="text-center text-gray-600 mt-6">Le recomendamos la edición según lo que debe proteger y cuánto tiempo puede estar sin operar.</p>
+    </div>
+  </section>
+
+  <section id="como-funciona" class="scroll-mt-24 bg-white py-16 lg:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-2 text-center">Cómo lo implementamos</h2>
+      <p class="text-lg text-gray-600 text-center mb-10">Un backup vale por lo que se puede recuperar. Por eso probamos.</p>
+      <ol class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
+        {acronisSteps.map(([title, text], index) => (
+          <li class="border border-gray-200 rounded-2xl p-5">
+            <span class="mb-3 w-10 h-10 bg-red-600 text-white rounded-full flex items-center justify-center font-bold">{index + 1}</span>
+            <h3 class="font-bold text-gray-900 mb-1">{title}</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">{text}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <section class="bg-[#111827] py-16 lg:py-20 text-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold mb-2 text-center">Prevenir, detectar y recuperar</h2>
+      <p class="text-gray-300 text-center mb-10">Acronis es la capa de recuperación. Funciona mejor junto a las demás.</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <a href="/bitdefender/" class="rounded-2xl bg-white/5 border border-white/10 p-5 hover:bg-white/10 transition"><p class="text-xs font-bold text-red-300 uppercase tracking-wide mb-1">Prevenir</p><p class="font-semibold">Bitdefender GravityZone</p><p class="text-sm text-gray-400 mt-1">EDR y XDR en equipos y servidores.</p></a>
+        <a href="/hornetsecurity/" class="rounded-2xl bg-white/5 border border-white/10 p-5 hover:bg-white/10 transition"><p class="text-xs font-bold text-red-300 uppercase tracking-wide mb-1">Correo</p><p class="font-semibold">Hornetsecurity 365</p><p class="text-sm text-gray-400 mt-1">Filtro, archivo y backup de Microsoft 365.</p></a>
+        <a href="/soc-24x7/" class="rounded-2xl bg-white/5 border border-white/10 p-5 hover:bg-white/10 transition"><p class="text-xs font-bold text-violet-300 uppercase tracking-wide mb-1">Detectar</p><p class="font-semibold">SOC 24x7</p><p class="text-sm text-gray-400 mt-1">Monitoreo y respuesta todo el día.</p></a>
+        <div class="rounded-2xl bg-red-700 p-5"><p class="text-xs font-bold text-red-100 uppercase tracking-wide mb-1">Recuperar</p><p class="font-semibold">Acronis Cyber Protect</p><p class="text-sm text-red-100 mt-1">Backup y recuperación ante desastres.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-white py-16 lg:py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Preguntas frecuentes</h2>
+      <div class="space-y-5">
+        {acronisFaqs.map((f) => (
+          <div class="border border-gray-200 rounded-xl p-5">
+            <h3 class="font-bold text-gray-900 mb-2">{f.q}</h3>
+            <p class="text-gray-600">{f.a}</p>
+          </div>
+        ))}
+      </div>
+      <div class="mt-10 bg-gray-50 border border-gray-200 rounded-2xl p-6">
+        <h3 class="font-bold text-gray-900 mb-3">Fuentes</h3>
+        <ul class="space-y-2 text-sm">
+          <li><a href="https://www.acronis.com/es/" class="text-red-700 hover:underline" rel="noopener">Acronis: Cyber Protect</a></li>
+          <li><a href="https://www.acronis.com/en/blog/posts/acronis-cyber-protect-v17-2026-q2-continuous-innovation-for-integrated-cyber-protection/" class="text-red-700 hover:underline" rel="noopener">Acronis: novedades de Cyber Protect v17 (2026)</a></li>
+          <li><a href="https://www.techrepublic.com/article/ransomware-attackers-target-backups/" class="text-red-700 hover:underline" rel="noopener">TechRepublic: estudio de Sophos sobre backups atacados (2024)</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <div id="contacto" class="scroll-mt-24">
+    <ConsultoriaForm sourceForm="Acronis - Diagnóstico de backup" />
+  </div>
+
+  <Footer />
+  <WhatsAppButton />
+</BaseLayout>
