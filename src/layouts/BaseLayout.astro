@@ -150,5 +150,8 @@ const breadcrumbJsonLd = seo.breadcrumb ? {
       <slot />
     </main>
     <LeadFormGuard />
+    <!-- Zoho SalesIQ (chat del sitio, Zoho One de Star). Los leads entran a Zoho CRM. -->
+    <script is:inline>window.$zoho=window.$zoho || {};$zoho.salesiq=$zoho.salesiq||{ready:function(){}}</script>
+    <script is:inline id="zsiqscript" src="https://salesiq.zohopublic.com/widget?wc=siqccee16aa641815ba42697dac61caf02846f13ff800dc242433896540249be60c" defer></script>
   </body>
 </html>
