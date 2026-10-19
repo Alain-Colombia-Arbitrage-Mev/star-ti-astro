@@ -17,14 +17,17 @@ const GZ_XDR = 'https://www.bitdefender.com/adobe/dynamicmedia/deliver/dm-aid--5
 const GZ_MDR = 'https://www.bitdefender.com/adobe/dynamicmedia/deliver/dm-aid--2a17b7b5-285a-46db-8d27-a260f94e4bac/02-mdr-1.png';
 const GZ_CSPM = 'https://www.bitdefender.com/adobe/dynamicmedia/deliver/dm-aid--031e1093-478b-4fd8-b4f2-b97c75ed31c1/simplify-threat-1.jpg';
 
+// Fabricantes que licencian tecnologia de Bitdefender (programa OEM, "180+" segun
+// bitdefender.com/oem, revisado el 19-oct-2026) y Ferrari (socio de ciberseguridad).
+// "use" solo describe lo que tiene fuente publica; sin detalle, queda como socio OEM.
 const PARTNER_LOGOS = [
-  { name: 'Ferrari', src: 'https://www.bitdefender.com/adobe/dynamicmedia/deliver/dm-aid--04865c28-9d62-4c12-8f75-9ced77ce5ec9/ferrari-nb.png' },
-  { name: 'Sharp', src: 'https://www.bitdefender.com/adobe/dynamicmedia/deliver/dm-aid--01836a92-c4de-41a7-a1f3-024e3ec99583/sharp-nb.png' },
-  { name: 'GoTo', src: 'https://www.bitdefender.com/adobe/dynamicmedia/deliver/dm-aid--8f708076-3816-4248-b3cc-3b6a8f16cf51/goto-nb.png' },
-  { name: 'Netgear', src: 'https://www.bitdefender.com/adobe/dynamicmedia/deliver/dm-aid--9bf61444-ec33-4675-bbd4-265602d89022/netgear-nb.png' },
-  { name: 'Konica Minolta', src: 'https://www.bitdefender.com/adobe/dynamicmedia/deliver/dm-aid--866bb4f0-f4ec-48f1-8917-16f143568c9f/konica.png' },
-  { name: 'Acronis', src: 'https://www.bitdefender.com/adobe/dynamicmedia/deliver/dm-aid--1114a622-d193-4566-b36c-9c6b07d4f180/acronis.png' },
-  { name: 'WatchGuard', src: 'https://www.bitdefender.com/adobe/dynamicmedia/deliver/dm-aid--f918e9da-497b-4cb4-b680-297c9aa045cc/watchguard.png' },
+  { name: 'WatchGuard', use: 'Antimalware en sus firewalls', src: 'https://www.bitdefender.com/adobe/dynamicmedia/deliver/dm-aid--f918e9da-497b-4cb4-b680-297c9aa045cc/watchguard.png' },
+  { name: 'NETGEAR', use: 'NETGEAR Armor en routers Orbi y Nighthawk', src: 'https://www.bitdefender.com/adobe/dynamicmedia/deliver/dm-aid--9bf61444-ec33-4675-bbd4-265602d89022/netgear-nb.png' },
+  { name: 'GoTo', use: 'Protección endpoint de LogMeIn Resolve', src: 'https://www.bitdefender.com/adobe/dynamicmedia/deliver/dm-aid--8f708076-3816-4248-b3cc-3b6a8f16cf51/goto-nb.png' },
+  { name: 'Ferrari', use: 'Socio de ciberseguridad', src: 'https://www.bitdefender.com/adobe/dynamicmedia/deliver/dm-aid--04865c28-9d62-4c12-8f75-9ced77ce5ec9/ferrari-nb.png' },
+  { name: 'Acronis', use: 'Socio tecnológico OEM', src: 'https://www.bitdefender.com/adobe/dynamicmedia/deliver/dm-aid--1114a622-d193-4566-b36c-9c6b07d4f180/acronis.png' },
+  { name: 'Sharp', use: 'Socio tecnológico OEM', src: 'https://www.bitdefender.com/adobe/dynamicmedia/deliver/dm-aid--01836a92-c4de-41a7-a1f3-024e3ec99583/sharp-nb.png' },
+  { name: 'Konica Minolta', use: 'Socio tecnológico OEM', src: 'https://www.bitdefender.com/adobe/dynamicmedia/deliver/dm-aid--866bb4f0-f4ec-48f1-8917-16f143568c9f/konica.png' },
 ];
 
 // Reconocimientos (revisados el 18-oct-2026 en la sala de prensa de Bitdefender, AV-TEST y
@@ -531,40 +534,67 @@ const serviceSchema = {
       </div>
     </section>
 
-    <!-- Customer logos & testimonials -->
+    <!-- Tecnologia Bitdefender: fabricantes OEM, escala local y testimonios -->
     <section class="py-16 sm:py-20 lg:py-24 bg-white">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-3xl sm:text-4xl font-bold text-center text-gray-900 mb-4">
-          Quienes ya operan sobre GravityZone
-        </h2>
-        <p class="text-gray-600 text-center max-w-2xl mx-auto mb-14">
-          Una muestra de organizaciones globales que estandarizaron su seguridad endpoint en Bitdefender. En Colombia trabajamos con empresas medianas y grandes del sector financiero, salud, manufactura y servicios profesionales.
-        </p>
-
-        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-8 mb-16 items-center justify-items-center">
-          {PARTNER_LOGOS.map((brand) => (
-            <img src={brand.src} alt={`${brand.name}, cliente de Bitdefender`} width="120" height="48" class="h-10 w-auto object-contain opacity-70 hover:opacity-100 transition grayscale hover:grayscale-0" loading="lazy" />
-          ))}
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <span class="text-[#ed1c24] text-xs font-semibold uppercase tracking-wider">Tecnología probada</span>
+          <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mt-3 mb-4">
+            La misma tecnología que eligieron más de 180 fabricantes
+          </h2>
+          <p class="text-gray-600 leading-relaxed">
+            Marcas como WatchGuard, NETGEAR y GoTo integran el motor de Bitdefender dentro de sus propios productos. Con Star Solutions TI usted usa esa misma tecnología directamente en GravityZone, implementada y administrada con soporte local en Colombia.
+          </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <article class="bg-gray-50 border border-gray-200 rounded-2xl p-8">
-            <p class="text-gray-700 italic mb-6 leading-relaxed">
-              "Al anadir los GravityZone XDR Network Sensors podemos consolidar senales en red y endpoints para tener una vista mas completa de los riesgos y responder a las amenazas rapidamente."
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-5 mb-12">
+          {PARTNER_LOGOS.map((brand) => (
+            <div class="group flex flex-col items-center justify-between text-center rounded-2xl border border-gray-200 bg-white p-5 sm:p-6 shadow-sm hover:shadow-md hover:border-red-200 transition">
+              <div class="flex h-14 w-full items-center justify-center">
+                <img src={brand.src} alt={`Logo de ${brand.name}`} width="140" height="56" class="max-h-12 max-w-[140px] w-auto object-contain" loading="lazy" />
+              </div>
+              <p class="mt-4 text-xs sm:text-sm leading-snug text-gray-600"><span class="block font-semibold text-gray-900">{brand.name}</span>{brand.use}</p>
+            </div>
+          ))}
+          <div class="flex flex-col items-center justify-center text-center rounded-2xl bg-gradient-to-br from-[#ed1c24] to-[#b91c1c] p-5 sm:p-6 text-white shadow-md">
+            <span class="text-3xl sm:text-4xl font-bold">180+</span>
+            <span class="mt-2 text-xs sm:text-sm leading-snug text-red-50">fabricantes licencian tecnología de Bitdefender</span>
+          </div>
+        </div>
+
+        <div class="rounded-3xl bg-gray-900 text-white p-6 sm:p-10 mb-14 grid grid-cols-1 md:grid-cols-[auto_1fr] gap-6 md:gap-10 items-center">
+          <div class="text-center md:text-left">
+            <span class="block text-5xl sm:text-6xl font-bold">32.000</span>
+            <span class="block text-sm text-gray-400 mt-1">endpoints Bitdefender</span>
+          </div>
+          <div>
+            <p class="text-lg sm:text-xl font-semibold leading-snug">Implementados y administrados por Star Solutions TI en una sola entidad pública.</p>
+            <p class="text-gray-400 text-sm sm:text-base mt-2 leading-relaxed">Es nuestro despliegue más grande en Colombia. La misma ingeniería que lo sostiene acompaña a empresas de todos los tamaños.</p>
+          </div>
+        </div>
+
+        <h3 class="text-xl sm:text-2xl font-bold text-gray-900 text-center mb-2">Lo que dicen clientes de Bitdefender en el mundo</h3>
+        <p class="text-xs text-gray-500 text-center mb-8">Testimonios publicados por Bitdefender.</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+          <article class="relative bg-gray-50 border border-gray-200 rounded-2xl p-6 sm:p-8">
+            <span class="absolute top-4 right-6 text-6xl leading-none text-red-100 font-serif" aria-hidden="true">&ldquo;</span>
+            <p class="relative text-gray-700 mb-6 leading-relaxed">
+              Al añadir los GravityZone XDR Network Sensors podemos consolidar señales de red y endpoints para tener una vista más completa de los riesgos y responder a las amenazas rápidamente.
             </p>
-            <footer class="text-sm">
-              <span class="font-semibold text-gray-900">Paul Jobson</span>
-              <span class="text-gray-500"> · Director of IT Strategy, Bruce Automotive Group</span>
+            <footer class="text-sm border-t border-gray-200 pt-4">
+              <span class="block font-semibold text-gray-900">Paul Jobson</span>
+              <span class="text-gray-500">Director of IT Strategy, Bruce Automotive Group</span>
             </footer>
           </article>
 
-          <article class="bg-gray-50 border border-gray-200 rounded-2xl p-8">
-            <p class="text-gray-700 italic mb-6 leading-relaxed">
-              "Combinar Bitdefender EDR y XDR Sensors con MDR Foundations les da a nuestros clientes acceso a un SOC 24x7 atendido por expertos de Bitdefender."
+          <article class="relative bg-gray-50 border border-gray-200 rounded-2xl p-6 sm:p-8">
+            <span class="absolute top-4 right-6 text-6xl leading-none text-red-100 font-serif" aria-hidden="true">&ldquo;</span>
+            <p class="relative text-gray-700 mb-6 leading-relaxed">
+              Combinar Bitdefender EDR y XDR Sensors con MDR Foundations les da a nuestros clientes acceso a un SOC 24x7 atendido por expertos de Bitdefender.
             </p>
-            <footer class="text-sm">
-              <span class="font-semibold text-gray-900">Diederik Twickler</span>
-              <span class="text-gray-500"> · CEO, Campai BV</span>
+            <footer class="text-sm border-t border-gray-200 pt-4">
+              <span class="block font-semibold text-gray-900">Diederik Twickler</span>
+              <span class="text-gray-500">CEO, Campai BV</span>
             </footer>
           </article>
         </div>
@@ -578,10 +608,10 @@ const serviceSchema = {
           <div>
             <span class="text-[#ed1c24] text-xs font-semibold uppercase tracking-wider">Distribuidor Bitdefender en Colombia</span>
             <h2 class="text-3xl sm:text-4xl font-bold mt-3 mb-6 text-gray-900">
-              Por que elegir a Star Solutions TI como distribuidor Bitdefender
+              Por qué elegir a Star Solutions TI como distribuidor Bitdefender
             </h2>
             <p class="text-gray-600 mb-6 leading-relaxed">
-              Como distribuidor Bitdefender para empresas, no nos limitamos a entregar una licencia. Lo dificil es definir politicas que no rompan operaciones, integrar con el directorio activo legacy de la empresa, sustentar la inversion ante el gerente financiero y dejar al area de TI operando la consola sin depender de ingles tecnico. Eso es lo que hacemos desde Bogota: ingenieria local, en espanol, con responsabilidad sobre el resultado.
+              Como distribuidor Bitdefender para empresas, no nos limitamos a entregar una licencia. Lo difícil es definir políticas que no rompan operaciones, integrar con el directorio activo heredado de la empresa, sustentar la inversión ante el gerente financiero y dejar al área de TI operando la consola sin depender de inglés técnico. Eso es lo que hacemos desde Bogotá: ingeniería local, en español, con responsabilidad sobre el resultado.
             </p>
             <div class="grid grid-cols-2 sm:grid-cols-3 gap-6 mt-8">
               <div class="border-l-4 border-[#ed1c24] pl-4">
@@ -603,11 +633,11 @@ const serviceSchema = {
             <h3 class="text-xl font-semibold mb-6 text-gray-900">Incluye con nuestro servicio:</h3>
             <div class="space-y-5">
               {[
-                { t: 'Gestion de licencias y renovaciones', d: 'Cotizacion de nuevas licencias GravityZone, ampliaciones y renovaciones multianuales.' },
-                { t: 'Auditoria inicial y diseno de politicas', d: 'Analisis de su infraestructura y mapeo a las capacidades de GravityZone.' },
-                { t: 'Despliegue silencioso via Active Directory', d: 'Empresas de 50 endpoints protegidas en menos de 2 horas.' },
-                { t: 'Capacitacion al equipo IT', d: 'Sesion practica sobre la consola GravityZone, XDR e incident graph.' },
-                { t: 'Soporte tecnico prioritario', d: 'Respuesta menor a 2 horas en casos criticos, escalamiento directo a Bitdefender.' },
+                { t: 'Gestión de licencias y renovaciones', d: 'Cotización de nuevas licencias GravityZone, ampliaciones y renovaciones multianuales.' },
+                { t: 'Auditoría inicial y diseño de políticas', d: 'Análisis de su infraestructura y mapeo a las capacidades de GravityZone.' },
+                { t: 'Despliegue silencioso vía Active Directory', d: 'Empresas de 50 endpoints protegidas en menos de 2 horas.' },
+                { t: 'Capacitación al equipo de TI', d: 'Sesión práctica sobre la consola GravityZone, XDR e incident graph.' },
+                { t: 'Soporte técnico prioritario', d: 'Respuesta menor a 2 horas en casos criticos, escalamiento directo a Bitdefender.' },
               ].map((item) => (
                 <div class="flex items-start gap-3">
                   <div class="bg-emerald-100 border border-emerald-200 rounded-full p-1 mt-0.5 shrink-0">
