@@ -13,23 +13,29 @@ const seo = seoData.home;
 <BaseLayout seo={seo}>
   <Navbar />
 
-  <!-- Hero Section - "Fortalezca Su Seguridad" -->
-  <section class="relative overflow-hidden pt-16 sm:pt-24 lg:pt-32 pb-20 sm:pb-32 lg:pb-40 bg-gradient-to-br from-gray-950 via-gray-900 to-black">
+  <!-- Hero Section - fondo de centro de operaciones (Star SOC) y panel ilustrativo -->
+  <section class="relative overflow-hidden pt-16 sm:pt-24 lg:pt-32 pb-20 sm:pb-32 lg:pb-40 bg-[#070b14]">
+    <img
+      src="/assets/seguridad-empresarial-soc.webp"
+      alt=""
+      aria-hidden="true"
+      class="absolute inset-0 w-full h-full object-cover saturate-[.35] brightness-[.45]"
+      fetchpriority="high"
+      loading="eager"
+      width="1800"
+      height="1200"
+    />
+    <div class="absolute inset-0 bg-gradient-to-r from-[#070b14] via-[#070b14]/80 to-[#28060a]/60"></div>
     <!-- Grid decorativo -->
-    <div class="absolute inset-0 pointer-events-none opacity-10">
-      <div class="absolute inset-0" style="background-image: linear-gradient(to right, #6b7280 1px, transparent 1px), linear-gradient(to bottom, #6b7280 1px, transparent 1px); background-size: 60px 60px;"></div>
-    </div>
-
-    <!-- Glow effects -->
-    <div class="absolute top-20 left-1/4 w-[500px] h-[500px] bg-red-600/20 rounded-full blur-3xl"></div>
-    <div class="absolute bottom-20 right-1/4 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-3xl"></div>
+    <div class="absolute inset-0 pointer-events-none opacity-[.06]" style="background-image: linear-gradient(to right, #fff 1px, transparent 1px), linear-gradient(to bottom, #fff 1px, transparent 1px); background-size: 56px 56px;"></div>
+    <div class="absolute top-20 left-1/4 w-[500px] h-[500px] bg-red-600/15 rounded-full blur-3xl"></div>
 
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
         <!-- Left Column - Content -->
         <div>
           <h1 class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-6 text-white">
-            Ciberseguridad Empresarial para Proteger su Negocio
+            Ciberseguridad Empresarial para <span class="bg-gradient-to-r from-red-500 to-orange-400 bg-clip-text text-transparent">Proteger su Negocio</span>
           </h1>
           <p class="text-lg sm:text-xl text-gray-300 mb-8 leading-relaxed">
             Más de 1.150 empresas en Colombia, Venezuela y Estados Unidos han confiado en nuestras soluciones de <a href="/seguridad-informatica-empresas/" class="text-white underline decoration-red-500 underline-offset-4 hover:text-red-300 transition">seguridad informática</a>: EDR/XDR, pentesting profesional, ISO 27001 y monitoreo SOC 24/7.
@@ -64,28 +70,48 @@ const seo = seoData.home;
           </div>
         </div>
 
-        <!-- Right Column - Image -->
+        <!-- Right Column - Panel ilustrativo de Star SOC (sin cifras reales) -->
         <div class="relative flex justify-center lg:justify-end">
-          <div class="relative z-10 w-full max-w-md">
-            <div class="relative w-full overflow-hidden rounded-3xl shadow-2xl" style="aspect-ratio: 9/16;">
-              <img
-                src="/assets/hero-ciberseguridad-infraestructura.webp"
-                alt="Infraestructura de ciberseguridad empresarial con protección de red y endpoints - Star Solutions TI Colombia"
-                class="absolute inset-0 w-full h-full object-cover"
-                fetchpriority="high"
-                loading="eager"
-                width="450"
-                height="800"
-              />
+          <a href="/soc-24x7/" class="group block w-full max-w-lg rounded-3xl bg-[#0c111e]/85 border border-white/15 shadow-2xl shadow-black/60 ring-1 ring-red-500/15 backdrop-blur-xl p-5 sm:p-6 hover:border-red-400/40 transition" aria-label="Conozca Star SOC 24x7">
+            <div class="flex items-center gap-2">
+              <span class="font-bold text-white text-lg">Star SOC</span>
+              <span class="hidden sm:inline text-sm text-gray-400">· Centro de operaciones</span>
+              <span class="ml-auto flex items-center gap-1.5 text-xs font-semibold text-green-300">
+                <span class="relative flex h-2 w-2"><span class="absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75 animate-ping"></span><span class="relative inline-flex h-2 w-2 rounded-full bg-green-500"></span></span>
+                En vivo 24x7
+              </span>
             </div>
-          </div>
-
-          <!-- Decorative elements -->
-          <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] h-[110%] pointer-events-none opacity-30">
-            <div class="absolute inset-0 border-2 border-white/10 rounded-full"></div>
-            <div class="absolute inset-[8%] border-2 border-white/5 rounded-full"></div>
-          </div>
-
+            <div class="grid grid-cols-3 gap-2.5 my-4">
+              <div class="rounded-xl bg-white/5 p-3"><p class="text-xl sm:text-2xl font-bold text-red-500">24x7</p><p class="text-[11px] text-gray-400 leading-tight text-left">Monitoreo continuo</p></div>
+              <div class="rounded-xl bg-white/5 p-3"><p class="text-xl sm:text-2xl font-bold text-white">IA</p><p class="text-[11px] text-gray-400 leading-tight text-left">+ analistas certificados</p></div>
+              <div class="rounded-xl bg-white/5 p-3"><p class="text-xl sm:text-2xl font-bold text-white">XDR</p><p class="text-[11px] text-gray-400 leading-tight text-left">Equipos, red, correo y nube</p></div>
+            </div>
+            <div class="flex items-end gap-1.5 h-20 p-2.5 rounded-xl bg-white/[.04] mb-3" aria-hidden="true"><span class="flex-1 rounded-t bg-gradient-to-b from-red-500 to-red-900" style="height:30%"></span><span class="flex-1 rounded-t bg-gradient-to-b from-red-500 to-red-900" style="height:45%"></span><span class="flex-1 rounded-t bg-gradient-to-b from-red-500 to-red-900" style="height:38%"></span><span class="flex-1 rounded-t bg-gradient-to-b from-red-500 to-red-900" style="height:60%"></span><span class="flex-1 rounded-t bg-gradient-to-b from-red-500 to-red-900" style="height:52%"></span><span class="flex-1 rounded-t bg-gradient-to-b from-red-500 to-red-900" style="height:70%"></span><span class="flex-1 rounded-t bg-gradient-to-b from-red-500 to-red-900" style="height:64%"></span><span class="flex-1 rounded-t bg-gradient-to-b from-red-500 to-red-900" style="height:82%"></span><span class="flex-1 rounded-t bg-gradient-to-b from-red-500 to-red-900" style="height:75%"></span><span class="flex-1 rounded-t bg-gradient-to-b from-red-500 to-red-900" style="height:90%"></span><span class="flex-1 rounded-t bg-gradient-to-b from-red-500 to-red-900" style="height:68%"></span><span class="flex-1 rounded-t bg-gradient-to-b from-red-500 to-red-900" style="height:85%"></span></div>
+              <div class="flex items-center gap-3 py-2.5 border-t border-white/[.07]">
+                <span class="w-2.5 h-2.5 rounded-full bg-red-500 flex-shrink-0"></span>
+                <div class="min-w-0"><p class="text-sm font-semibold text-white">Ransomware bloqueado</p><p class="text-xs text-gray-400">Endpoint · Bogotá</p></div>
+                <span class="ml-auto text-[11px] text-gray-500 whitespace-nowrap">hace 12 s</span>
+              </div>
+              <div class="flex items-center gap-3 py-2.5 border-t border-white/[.07]">
+                <span class="w-2.5 h-2.5 rounded-full bg-amber-500 flex-shrink-0"></span>
+                <div class="min-w-0"><p class="text-sm font-semibold text-white">Phishing en cuarentena</p><p class="text-xs text-gray-400">Correo Microsoft 365</p></div>
+                <span class="ml-auto text-[11px] text-gray-500 whitespace-nowrap">hace 48 s</span>
+              </div>
+              <div class="flex items-center gap-3 py-2.5 border-t border-white/[.07]">
+                <span class="w-2.5 h-2.5 rounded-full bg-violet-500 flex-shrink-0"></span>
+                <div class="min-w-0"><p class="text-sm font-semibold text-white">Acceso sospechoso contenido</p><p class="text-xs text-gray-400">Identidad · VPN</p></div>
+                <span class="ml-auto text-[11px] text-gray-500 whitespace-nowrap">hace 2 min</span>
+              </div>
+              <div class="flex items-center gap-3 py-2.5 border-t border-white/[.07]">
+                <span class="w-2.5 h-2.5 rounded-full bg-green-500 flex-shrink-0"></span>
+                <div class="min-w-0"><p class="text-sm font-semibold text-white">Parche crítico aplicado</p><p class="text-xs text-gray-400">Servidor SQL</p></div>
+                <span class="ml-auto text-[11px] text-gray-500 whitespace-nowrap">hace 5 min</span>
+              </div>
+            <p class="mt-2 flex items-center justify-between text-[11px] text-gray-500">
+              <span>Vista ilustrativa del panel de monitoreo</span>
+              <span class="text-red-300 font-semibold group-hover:translate-x-0.5 transition">Conocer Star SOC →</span>
+            </p>
+          </a>
         </div>
       </div>
 
