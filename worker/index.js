@@ -275,13 +275,15 @@ async function handleLeadSubmission(request, env) {
   const sourcePath = sourceUrl ? new URL(sourceUrl).pathname : "";
   const redirectTo = getSafeRedirect(request, rawFields._redirect);
 
-  // Spam: nunca se descarta. Todo llega a Airtable y al correo; lo sospechoso
-  // va marcado "[Posible spam: motivo]". Una pagina en cache del navegador (sin
-  // las senales de LeadFormGuard), el autocompletado del celular o un campo
-  // trampa rellenado por el navegador no deben costar un cliente real.
+  // Spam: nunca se descarta. Todo llega a Airtable marcado "[Posible spam: motivo]".
+  // Lo dudoso (envio rapido, Turnstile, enlaces) tambien llega al correo marcado,
+  // porque el autocompletado del celular puede parecer un bot. Lo casi seguro
+  // (campo trampa o POST directo sin el JavaScript de la pagina) solo queda en
+  // Airtable, para no llenar el buzon (pedido de George, 19-oct-2026).
   const spamReason = await detectSpam(request, env, rawFields);
   const spamTag = spamReason ? `[Posible spam: ${spamReason}] ` : "";
-  if (spamReason) console.log("Lead marcado como posible spam", spamReason, sourcePath);
+  const silentSpam = spamReason === "honeypot" || spamReason === "sin-js";
+  if (spamReason) console.log("Lead marcado como posible spam", spamReason, silentSpam ? "(sin correo)" : "", sourcePath);
 
   const normalized = normalizeLead(rawFields, sourceUrl, sourcePath, request);
   if (spamTag) normalized[FIELD_NAMES.lead] = (spamTag + normalized[FIELD_NAMES.lead]).slice(0, 120);
@@ -290,8 +292,14 @@ async function handleLeadSubmission(request, env) {
   // paralelo. Basta con que uno de los dos funcione para no perder el lead.
   const [airtable, email] = await Promise.all([
     saveLeadToAirtable(normalized, env),
-    sendLeadEmail(normalized, env, spamTag),
+    silentSpam ? Promise.resolve("skipped") : sendLeadEmail(normalized, env, spamTag),
   ]);
+
+  // Al bot se le responde igual que a un cliente, para no darle pistas.
+  if (silentSpam) {
+    if (wantsJson(request)) return Response.json({ ok: true });
+    return Response.redirect(new URL(redirectTo, request.url).href, 303);
+  }
 
   if (airtable === "ok" || email === "ok") {
     if (wantsJson(request)) {
@@ -527,6 +535,9 @@ async function detectSpam(request, env, fields) {
   const elapsed = Number(fields._elapsed);
   if (!fields._elapsed || !Number.isFinite(elapsed)) return "sin-js";
   if (elapsed < MIN_FILL_MS) return "demasiado-rapido";
+  // Enlaces en el mensaje: tipico del spam de SEO ("<a href=...>").
+  const message = String(fields.mensaje || fields.message || fields.Mensaje || "");
+  if (/<a\s+href|\[url=|https?:\/\//i.test(message)) return "enlace-en-mensaje";
 
   // Turnstile solo se exige cuando el secreto existe en el worker.
   // trim(): al pegar desde el celular se puede colar un espacio o salto de linea.
