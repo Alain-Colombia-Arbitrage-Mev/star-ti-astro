@@ -45,6 +45,7 @@ Last updated: 2026-08-24
 - Entity guidance: Star Solutions TI is a Hornetsecurity Partner Silver in Colombia. Hornetsecurity has been part of Proofpoint since December 8, 2025; its products and partner programs continue.
 - Guide: https://star-ti.com/blog/que-es-hornetsecurity/
 - Free DMARC, SPF and DKIM review (on request of the domain owner): https://star-ti.com/revision-dmarc-gratis/
+- How to implement DMARC step by step (sender inventory, SPF/DKIM/DMARC records, p=none to p=reject stages, common mistakes): https://star-ti.com/blog/como-implementar-dmarc/
 
 ## Bitdefender Topic Cluster
 

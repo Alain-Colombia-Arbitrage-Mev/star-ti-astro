@@ -95,6 +95,7 @@ const TRAILING_SLASH_PATHS = new Set([
   "/blog/bitdefender-edr-xdr-mdr",
   "/blog/precio-bitdefender-gravityzone-colombia",
   "/blog/bitdefender-vs-kaspersky-empresas",
+  "/blog/como-implementar-dmarc",
   "/blog/certificacion-iso-27001-colombia",
   "/bitdefender",
   "/kaspersky",

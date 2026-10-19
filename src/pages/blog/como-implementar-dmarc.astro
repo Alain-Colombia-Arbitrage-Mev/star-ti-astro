@@ -1,0 +1,214 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Navbar from '@components/Navbar.astro';
+import Footer from '@components/Footer.astro';
+import WhatsAppButton from '@components/WhatsAppButton.astro';
+import { seoData } from '@data/seo';
+import { dmarcGuideFaqs } from '@data/blogDmarc';
+
+const seo = seoData['blog/como-implementar-dmarc'];
+
+const senders = [
+  'Microsoft 365 o Google Workspace',
+  'Proveedor de facturación electrónica que envía las facturas a nombre de su empresa',
+  'CRM y herramientas de ventas (Zoho, HubSpot, Salesforce)',
+  'Plataformas de email marketing y boletines',
+  'Sistemas internos: ERP, nómina, mesa de ayuda, impresoras y escáneres',
+];
+
+const stages = [
+  ['Monitoreo', 'p=none', 'No cambia la entrega de ningún correo. Solo recibe reportes de quién envía con su dominio.', '2 a 4 semanas'],
+  ['Cuarentena', 'p=quarantine', 'Los correos que fallan van a spam. Se puede aplicar a un porcentaje con pct=25 y subirlo.', '2 a 4 semanas'],
+  ['Rechazo', 'p=reject', 'Los correos falsos con su dominio se rechazan. Es el nivel de protección real.', 'Permanente'],
+];
+
+const errors = [
+  ['Dos registros SPF', 'Invalida SPF por completo. Debe haber uno solo, con todos los servicios dentro.'],
+  ['Más de 10 consultas en SPF', 'SPF falla aunque el servidor esté autorizado. Consolide o quite servicios que ya no usa.'],
+  ['Olvidar la facturación electrónica', 'Es el caso más común en Colombia: las facturas empiezan a llegar a spam o a ser rechazadas.'],
+  ['Quedarse en p=none para siempre', 'Con p=none tiene visibilidad, pero su dominio se puede seguir suplantando.'],
+  ['No leer los reportes', 'Los reportes llegan en XML. Sin una herramienta que los resuma, nadie los revisa.'],
+];
+---
+
+<BaseLayout seo={seo}>
+  <Navbar />
+
+  <section class="relative bg-gradient-to-br from-[#0b1220] to-[#1f2937] overflow-hidden">
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-16 lg:pb-20">
+      <nav class="mb-8 flex items-center gap-2 text-sm text-gray-400" aria-label="Ruta de navegación">
+        <a href="/" class="hover:text-white transition-colors">Inicio</a>
+        <span>/</span>
+        <a href="/blog/" class="hover:text-white transition-colors">Blog</a>
+        <span>/</span>
+        <span class="text-gray-200">Cómo implementar DMARC</span>
+      </nav>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <div class="flex flex-wrap items-center gap-3 mb-6">
+            <span class="bg-red-500/20 border border-red-500/30 text-red-300 text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wide">Seguridad de correo</span>
+            <span class="text-gray-400 text-sm">19 oct 2026</span>
+          </div>
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+            Cómo implementar DMARC paso a paso
+          </h1>
+          <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+            Guía práctica para proteger el dominio de su empresa contra la suplantación con SPF, DKIM y DMARC, sin que sus correos legítimos terminen en spam.
+          </p>
+          <div class="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-gray-400">
+            <span>Por Jorge Molano &middot; CEO de Star Solutions TI</span>
+            <span>&bull;</span>
+            <span>Tiempo de lectura: 8 min</span>
+          </div>
+        </div>
+        <div class="hidden lg:block">
+          <img src="/og/blog-como-implementar-dmarc.jpg" alt="Cómo implementar DMARC paso a paso" class="w-full h-auto rounded-2xl shadow-2xl ring-1 ring-white/10" width="1200" height="630" loading="eager" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <article class="bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+      <section class="mb-12">
+        <p class="text-xl text-gray-700 leading-relaxed mb-6">
+          Sin DMARC, cualquiera puede enviar un correo que diga venir de <em>facturacion@suempresa.com.co</em> y pedirle a sus clientes que paguen a otra cuenta. DMARC es un registro público en el DNS de su dominio que, junto con SPF y DKIM, le dice a los servidores de correo del mundo qué hacer con esos correos falsos.
+        </p>
+        <div class="bg-red-50 border border-red-200 rounded-2xl p-6">
+          <h2 class="text-xl font-bold text-red-900 mb-2">Respuesta rápida</h2>
+          <p class="text-red-800 leading-relaxed">
+            Son cuatro pasos: <strong>1)</strong> listar todo lo que envía correo con su dominio, <strong>2)</strong> publicar un solo registro SPF, <strong>3)</strong> activar la firma DKIM y <strong>4)</strong> publicar DMARC en modo monitoreo (<code>p=none</code>) y avanzar por etapas hasta rechazo (<code>p=reject</code>). Llegar a rechazo sin afectar correo legítimo suele tomar de uno a tres meses.
+          </p>
+        </div>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Paso 1. Haga el inventario de lo que envía correo</h2>
+        <p class="text-lg text-gray-600 leading-relaxed mb-4">
+          Es el paso que más se salta y el que más problemas causa. Antes de tocar el DNS, liste todos los sistemas que envían correo usando su dominio:
+        </p>
+        <ul class="space-y-3 text-gray-700">
+          {senders.map((s) => (
+            <li class="flex gap-3"><span class="text-red-700 font-bold">•</span><span>{s}</span></li>
+          ))}
+        </ul>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Paso 2. Publique un solo registro SPF</h2>
+        <p class="text-lg text-gray-600 leading-relaxed mb-4">
+          SPF dice qué servidores pueden enviar correo en nombre de su dominio. Es un registro TXT en la raíz del dominio. Ejemplo para una empresa con Microsoft 365 y un servicio adicional:
+        </p>
+        <pre class="bg-gray-900 text-green-300 text-sm rounded-xl p-4 overflow-x-auto mb-4"><code>v=spf1 include:spf.protection.outlook.com include:servicio-adicional.com -all</code></pre>
+        <p class="text-gray-600 leading-relaxed">
+          Reglas clave: un solo registro <code>v=spf1</code> por dominio, máximo 10 consultas DNS (cada <code>include</code> cuenta) y terminar en <code>-all</code> o <code>~all</code>. El <code>include</code> exacto de cada servicio lo da su proveedor.
+        </p>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Paso 3. Active la firma DKIM</h2>
+        <p class="text-lg text-gray-600 leading-relaxed mb-4">
+          DKIM firma cada correo para probar que salió de su empresa y que nadie lo alteró. Se activa en cada servicio que envía correo:
+        </p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <div class="border border-gray-200 rounded-xl p-5 bg-gray-50">
+            <h3 class="font-bold text-gray-900 mb-2">Microsoft 365</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">En el portal de Microsoft Defender, en la configuración de DKIM de su dominio, Microsoft le muestra dos registros CNAME. Publíquelos en su DNS tal como aparecen y active la firma.</p>
+          </div>
+          <div class="border border-gray-200 rounded-xl p-5 bg-gray-50">
+            <h3 class="font-bold text-gray-900 mb-2">Google Workspace</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">En la consola de administración, en la autenticación de correo de Gmail, genere la clave, publíquela como registro TXT y luego active la firma.</p>
+          </div>
+        </div>
+        <p class="text-gray-600 leading-relaxed mt-4">Haga lo mismo en la facturación electrónica, el CRM y la plataforma de marketing: casi todos tienen una opción para firmar con su dominio.</p>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Paso 4. Publique DMARC y avance por etapas</h2>
+        <p class="text-lg text-gray-600 leading-relaxed mb-4">
+          DMARC es un registro TXT en <code>_dmarc.suempresa.com.co</code>. Empiece en modo monitoreo:
+        </p>
+        <pre class="bg-gray-900 text-green-300 text-sm rounded-xl p-4 overflow-x-auto mb-6"><code>v=DMARC1; p=none; rua=mailto:dmarc@suempresa.com.co; fo=1</code></pre>
+        <div class="overflow-x-auto rounded-2xl border border-gray-200">
+          <table class="w-full text-sm min-w-[640px]">
+            <thead class="bg-gray-50">
+              <tr>
+                <th class="text-left px-4 py-3 font-bold text-gray-900">Etapa</th>
+                <th class="text-left px-4 py-3 font-bold text-gray-900">Política</th>
+                <th class="text-left px-4 py-3 font-bold text-gray-900">Qué pasa</th>
+                <th class="text-left px-4 py-3 font-bold text-gray-900">Duración típica</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-100">
+              {stages.map(([name, policy, what, time]) => (
+                <tr>
+                  <td class="px-4 py-3 font-semibold text-gray-900">{name}</td>
+                  <td class="px-4 py-3"><code class="text-red-700">{policy}</code></td>
+                  <td class="px-4 py-3 text-gray-600">{what}</td>
+                  <td class="px-4 py-3 text-gray-600">{time}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p class="text-gray-600 leading-relaxed mt-4">
+          Pase a la siguiente etapa solo cuando los reportes muestren que todo su correo legítimo pasa SPF o DKIM alineados con su dominio.
+        </p>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Por qué ya no es opcional</h2>
+        <p class="text-lg text-gray-600 leading-relaxed">
+          Desde 2024 Google y Yahoo, y desde mayo de 2025 Microsoft para Outlook.com, exigen SPF, DKIM y DMARC a quienes envían grandes volúmenes de correo. Sin ellos, sus correos legítimos pueden llegar a spam o ser rechazados. Y el fraude por correo corporativo, que se apoya en la suplantación del dominio, sigue siendo uno de los engaños más costosos para las empresas.
+        </p>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Los cinco errores más comunes</h2>
+        <div class="space-y-4">
+          {errors.map(([title, text]) => (
+            <div class="border-l-4 border-red-700 bg-gray-50 rounded-r-xl p-5">
+              <h3 class="font-bold text-gray-900 mb-1">{title}</h3>
+              <p class="text-gray-600">{text}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section class="mb-12 bg-gray-50 border border-gray-200 rounded-2xl p-6">
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">Fuentes</h2>
+        <ul class="space-y-2 text-sm">
+          <li><a href="https://datatracker.ietf.org/doc/html/rfc7489" class="text-red-700 hover:underline" rel="noopener">IETF: RFC 7489, especificación de DMARC</a></li>
+          <li><a href="https://learn.microsoft.com/en-us/defender-office-365/email-authentication-dkim-configure" class="text-red-700 hover:underline" rel="noopener">Microsoft: configurar DKIM en Microsoft 365</a></li>
+          <li><a href="https://learn.microsoft.com/en-us/defender-office-365/email-authentication-dmarc-configure" class="text-red-700 hover:underline" rel="noopener">Microsoft: configurar DMARC en Microsoft 365</a></li>
+          <li><a href="https://support.google.com/a/answer/81126" class="text-red-700 hover:underline" rel="noopener">Google: lineamientos para remitentes de correo</a></li>
+        </ul>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Preguntas frecuentes</h2>
+        <div class="space-y-5">
+          {dmarcGuideFaqs.map((f) => (
+            <div class="border border-gray-200 rounded-xl p-5">
+              <h3 class="font-bold text-gray-900 mb-2">{f.q}</h3>
+              <p class="text-gray-600">{f.a}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section class="bg-red-700 rounded-2xl p-8 text-white">
+        <h2 class="text-2xl font-bold mb-3">Revisamos su dominio gratis</h2>
+        <p class="text-red-50 mb-6">Le decimos en lenguaje claro qué tiene bien, qué le falta y en qué orden corregirlo. Solo necesitamos el dominio de su empresa: no pedimos accesos ni instalamos nada.</p>
+        <div class="flex flex-wrap gap-3">
+          <a href="/revision-dmarc-gratis/" class="inline-flex items-center justify-center bg-white text-red-700 font-semibold px-6 py-3 rounded hover:bg-red-50 transition">Solicitar revisión gratis</a>
+          <a href="/hornetsecurity/" class="inline-flex items-center justify-center border border-white/60 text-white font-semibold px-6 py-3 rounded hover:bg-white/10 transition">Ver protección de correo</a>
+        </div>
+      </section>
+    </div>
+  </article>
+
+  <Footer />
+  <WhatsAppButton />
+</BaseLayout>

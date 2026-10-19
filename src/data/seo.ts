@@ -8,6 +8,7 @@ import { pentestIsoFaqs } from './blogPentestingIso';
 import { bdEdrFaqs } from './blogBitdefenderEdr';
 import { precioBdFaqs } from './blogPrecioBitdefender';
 import { bdVsKasFaqs } from './blogBitdefenderVsKaspersky';
+import { dmarcGuideFaqs } from './blogDmarc';
 import { certIsoFaqs } from './blogCertificacionIso';
 import { informeFaqs } from './informe2026';
 import { dmarcFaqs } from './revisionDmarc';
@@ -1218,6 +1219,37 @@ export const seoData: Record<string, SEOData> = {
       keywords: 'Bitdefender, Kaspersky, comparativa, EDR, XDR, MDR, Colombia',
     },
     faqJsonLd: faqSchema(bdVsKasFaqs),
+  },
+
+  'blog/como-implementar-dmarc': {
+    title: 'Cómo Implementar DMARC Paso a Paso (SPF y DKIM) | Guía 2026',
+    description: 'Guía práctica para implementar SPF, DKIM y DMARC en Microsoft 365 o Google Workspace: registros de ejemplo, etapas de p=none a p=reject y errores comunes.',
+    keywords: 'cómo implementar DMARC, configurar DMARC, registro DMARC ejemplo, SPF DKIM DMARC Microsoft 365, DMARC p=reject, DMARC Colombia, suplantación de dominio correo',
+    canonical: `${BASE_URL}/blog/como-implementar-dmarc/`,
+    ogTitle: 'Cómo implementar DMARC paso a paso',
+    ogType: 'article',
+    ogImage: `${BASE_URL}/og/blog-como-implementar-dmarc.jpg`,
+    breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Blog', url: '/blog/' }, { name: 'Cómo implementar DMARC', url: '/blog/como-implementar-dmarc/' }],
+    jsonLd: {
+      '@context': 'https://schema.org',
+      '@type': 'Article',
+      headline: 'Cómo implementar DMARC paso a paso',
+      description: 'Guía para implementar SPF, DKIM y DMARC: inventario de remitentes, registros de ejemplo, etapas de monitoreo, cuarentena y rechazo, requisitos de Google, Yahoo y Microsoft, y errores comunes.',
+      datePublished: '2026-10-19',
+      dateModified: '2026-10-19',
+      inLanguage: 'es-CO',
+      author: AUTHOR,
+      publisher: { '@type': 'Organization', name: 'Star Solutions TI S.A.S.', url: BASE_URL, logo: { '@type': 'ImageObject', url: `${BASE_URL}/logo.png` } },
+      image: `${BASE_URL}/og/blog-como-implementar-dmarc.jpg`,
+      url: `${BASE_URL}/blog/como-implementar-dmarc/`,
+      about: [
+        { '@type': 'Thing', name: 'DMARC' },
+        { '@type': 'Thing', name: 'Sender Policy Framework (SPF)' },
+        { '@type': 'Thing', name: 'DomainKeys Identified Mail (DKIM)' },
+      ],
+      keywords: 'DMARC, SPF, DKIM, correo, suplantación, Microsoft 365',
+    },
+    faqJsonLd: faqSchema(dmarcGuideFaqs),
   },
 
   'blog/pentesting-iso-27001': {
