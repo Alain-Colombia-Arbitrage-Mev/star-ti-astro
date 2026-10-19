@@ -1,4 +1,4 @@
-// Contenido de /star-soc/: SOC administrado de marca blanca. El monitoreo 24/7, la
+// Contenido de /soc-24x7/ (pilar Star SOC): SOC administrado de marca blanca. El monitoreo 24/7, la
 // investigacion y la atencion de incidentes los opera un aliado especializado; Star
 // Solutions TI es el primer nivel de contacto con el cliente (definido por George,
 // 19-oct-2026). Contenido tomado de la presentacion comercial Star SOC de George.

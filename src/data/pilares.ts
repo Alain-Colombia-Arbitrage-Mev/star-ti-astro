@@ -173,7 +173,7 @@ export const pilares: Pilar[] = [
     icon: 'eye',
     products: [
       {
-        slug: 'star-soc',
+        slug: 'soc-24x7',
         brand: 'Star SOC',
         name: 'SOC 24x7',
         shortDescription: 'Monitoreo, deteccion y respuesta a incidentes 24x7 con IA y analistas certificados. Evidencia lista para auditorias.',

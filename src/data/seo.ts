@@ -341,15 +341,15 @@ export const seoData: Record<string, SEOData> = {
       { q: 'Cuánto tiempo toma ver resultados con vRx?', a: 'El inventario completo de activos y vulnerabilidades esta disponible en menos de 24 horas desde el despliegue del agente. Vicarius reporta un MTTR (Mean Time To Remediate) promedio de 22 días con la plataforma, frente a los 205 días que tarda el ciclo discovery-to-remediation sin herramienta especializada.' },
     ]),
   },
-  'star-soc': {
-    title: 'Star SOC | SOC 24/7 con IA y Analistas en Colombia',
+  'soc-24x7': {
+    title: 'SOC 24x7 en Colombia | Star SOC con IA y Analistas',
     description: 'Star SOC: ciberseguridad 360° con monitoreo y respuesta 24/7, IA y analistas humanos, cobertura de correo, endpoints, red y backup, y evidencia para auditorías.',
     keywords: 'SOC Colombia, SOC como servicio, SOC 24/7, SOC administrado, centro de operaciones de seguridad, monitoreo de ciberseguridad 24/7, MDR Colombia, respuesta a incidentes',
-    canonical: `${BASE_URL}/star-soc/`,
+    canonical: `${BASE_URL}/soc-24x7/`,
     ogTitle: 'Star SOC: monitoreo y respuesta a incidentes 24/7',
     ogType: 'website',
     ogImage: `${BASE_URL}/og/star-soc.jpg`,
-    breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Star SOC', url: '/star-soc/' }],
+    breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'SOC 24x7', url: '/soc-24x7/' }],
     jsonLd: service('Star SOC: monitoreo y respuesta a incidentes 24/7', 'Managed Security Operations Center (SOC as a Service)'),
     faqJsonLd: faqSchema(socFaqs),
   },
@@ -361,7 +361,7 @@ export const seoData: Record<string, SEOData> = {
     ogTitle: 'Stellar Cyber SecOps Platform | Open XDR para SOC Automatizado',
     ogType: 'website',
     ogImage: `${BASE_URL}/og/stellar-cyber.jpg`,
-    breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Star SOC', url: '/star-soc/' }, { name: 'Stellar Cyber', url: '/stellar-cyber/' }],
+    breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Star SOC', url: '/soc-24x7/' }, { name: 'Stellar Cyber', url: '/stellar-cyber/' }],
     jsonLd: resellerService('Stellar Cyber SecOps Platform', 'Stellar Cyber', 'Plataforma SecOps AI-Native con arquitectura Open XDR para detección y respuesta unificada de amenazas', { image: `${BASE_URL}/og-default.png` }),
     faqJsonLd: faqSchema([
       { q: 'Qué diferencia hay entre XDR y Open XDR?', a: 'El XDR tradicional solo integra productos del mismo fabricante. Open XDR integra cualquier herramienta de seguridad existente en su empresa, sin dependencia de un solo proveedor ni necesidad de reemplazar su stack actual.' },
