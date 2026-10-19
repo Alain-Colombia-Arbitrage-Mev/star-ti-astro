@@ -28,7 +28,8 @@
 
 # CSP: 'unsafe-inline' en script-src porque Astro emite <script type="module">
 # inline en cada pagina. Origenes externos: imagenes de www.bitdefender.com y
-# Cloudflare Turnstile (challenges.cloudflare.com) para los formularios.
+# Cloudflare Turnstile (challenges.cloudflare.com) para los formularios, y Google Tag
+# Manager / GA4 / Google Ads (medicion de visitas y conversiones de leads).
 /*
   Cache-Control: public, max-age=3600, must-revalidate
   X-Content-Type-Options: nosniff
@@ -36,4 +37,4 @@
   Referrer-Policy: strict-origin-when-cross-origin
   Strict-Transport-Security: max-age=31536000
   Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://challenges.cloudflare.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://star-ti.com https://www.bitdefender.com; media-src 'self'; font-src 'self'; connect-src 'self' https://challenges.cloudflare.com https://cloudflareinsights.com; frame-src https://challenges.cloudflare.com; form-action 'self'; frame-ancestors 'self'; base-uri 'self'; object-src 'none'; upgrade-insecure-requests
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://challenges.cloudflare.com https://static.cloudflareinsights.com https://www.googletagmanager.com https://*.googletagmanager.com https://www.google-analytics.com https://googleads.g.doubleclick.net https://www.googleadservices.com https://www.google.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://star-ti.com https://www.bitdefender.com https://*.google-analytics.com https://*.googletagmanager.com https://googleads.g.doubleclick.net https://www.google.com https://www.google.com.co https://www.googleadservices.com; media-src 'self'; font-src 'self'; connect-src 'self' https://challenges.cloudflare.com https://cloudflareinsights.com https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://googleads.g.doubleclick.net https://www.google.com https://www.googleadservices.com https://pagead2.googlesyndication.com; frame-src https://challenges.cloudflare.com https://www.googletagmanager.com https://td.doubleclick.net; form-action 'self'; frame-ancestors 'self'; base-uri 'self'; object-src 'none'; upgrade-insecure-requests
