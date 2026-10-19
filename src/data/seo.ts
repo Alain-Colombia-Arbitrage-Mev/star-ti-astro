@@ -10,6 +10,7 @@ import { precioBdFaqs } from './blogPrecioBitdefender';
 import { bdVsKasFaqs } from './blogBitdefenderVsKaspersky';
 import { dmarcGuideFaqs } from './blogDmarc';
 import { circular007Faqs } from './blogCircular007';
+import { socFaqs } from './starSoc';
 import { certIsoFaqs } from './blogCertificacionIso';
 import { informeFaqs } from './informe2026';
 import { dmarcFaqs } from './revisionDmarc';
@@ -339,6 +340,18 @@ export const seoData: Record<string, SEOData> = {
       { q: 'Qué sistemas operativos soporta vRx?', a: 'Vicarius soporta Windows (Server y Desktop), Linux (Ubuntu, CentOS, RHEL, Debian) y macOS. El agente ocupa menos de 50MB de RAM y tiene impacto minimo en el rendimiento del endpoint.' },
       { q: 'Cuánto tiempo toma ver resultados con vRx?', a: 'El inventario completo de activos y vulnerabilidades esta disponible en menos de 24 horas desde el despliegue del agente. Vicarius reporta un MTTR (Mean Time To Remediate) promedio de 22 días con la plataforma, frente a los 205 días que tarda el ciclo discovery-to-remediation sin herramienta especializada.' },
     ]),
+  },
+  'star-soc': {
+    title: 'Star SOC | SOC 24/7 Administrado en Colombia',
+    description: 'Star SOC: monitoreo, detección y respuesta a incidentes 24/7 para empresas en Colombia. SIEM/XDR, analistas de seguridad y soporte en español con Star Solutions TI.',
+    keywords: 'SOC Colombia, SOC como servicio, SOC 24/7, SOC administrado, centro de operaciones de seguridad, monitoreo de ciberseguridad 24/7, MDR Colombia, respuesta a incidentes',
+    canonical: `${BASE_URL}/star-soc/`,
+    ogTitle: 'Star SOC: monitoreo y respuesta a incidentes 24/7',
+    ogType: 'website',
+    ogImage: `${BASE_URL}/og/star-soc.jpg`,
+    breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Star SOC', url: '/star-soc/' }],
+    jsonLd: service('Star SOC: monitoreo y respuesta a incidentes 24/7', 'Managed Security Operations Center (SOC as a Service)'),
+    faqJsonLd: faqSchema(socFaqs),
   },
   'stellar-cyber': {
     title: 'Stellar Cyber Colombia | Open XDR y SOC con IA',

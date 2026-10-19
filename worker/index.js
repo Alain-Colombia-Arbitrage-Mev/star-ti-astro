@@ -105,6 +105,7 @@ const TRAILING_SLASH_PATHS = new Set([
   "/enthec",
   "/vicarius",
   "/stellar-cyber",
+  "/star-soc",
   "/hacking-etico",
   "/sealpath",
   "/netwrix",
