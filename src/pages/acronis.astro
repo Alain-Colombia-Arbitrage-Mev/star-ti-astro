@@ -5,7 +5,7 @@ import Footer from '@components/Footer.astro';
 import ConsultoriaForm from '@components/ConsultoriaForm.astro';
 import WhatsAppButton from '@components/WhatsAppButton.astro';
 import { seoData } from '@data/seo';
-import { acronisCapabilities, acronisEditions, acronisSteps, acronisFaqs } from '@data/acronis';
+import { acronisCapabilities, acronisEditions, acronisSteps, acronisFaqs, acronisAwards, acronisSpecs, acronisUseCases } from '@data/acronis';
 
 const seo = seoData['acronis'];
 
@@ -110,6 +110,23 @@ const recovery = [
     </div>
   </section>
 
+  <section id="reconocimientos" class="scroll-mt-24 bg-[#111827] py-16 lg:py-20 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <p class="text-xs font-bold uppercase tracking-widest text-red-300 text-center mb-2">Pruebas independientes</p>
+      <h2 class="text-3xl sm:text-4xl font-bold mb-2 text-center">Reconocimientos y certificaciones</h2>
+      <p class="text-gray-300 text-center mb-10 max-w-3xl mx-auto">Resultados de Acronis Cyber Protect Cloud, la edición en la nube de la misma plataforma, en laboratorios y firmas de análisis.</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+        {acronisAwards.map(([org, award, text]) => (
+          <div class="rounded-2xl bg-white/5 border border-white/10 p-5">
+            <p class="text-xs font-bold uppercase tracking-wide text-gray-400">{org}</p>
+            <p class="text-xl font-bold text-white mt-1 mb-2">{award}</p>
+            <p class="text-sm text-gray-300 leading-relaxed">{text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
   <section class="bg-white py-16 lg:py-20">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-2 text-center">La regla 3-2-1, con una copia que el ransomware no alcanza</h2>
@@ -119,6 +136,36 @@ const recovery = [
         <div class="rounded-2xl border border-gray-200 p-6 text-center"><p class="text-5xl font-extrabold text-red-600">2</p><p class="font-semibold text-gray-900 mt-2">medios distintos</p><p class="text-sm text-gray-600 mt-1">Por ejemplo, almacenamiento local y nube.</p></div>
         <div class="rounded-2xl border border-gray-200 p-6 text-center"><p class="text-5xl font-extrabold text-red-600">1</p><p class="font-semibold text-gray-900 mt-2">fuera de la oficina</p><p class="text-sm text-gray-600 mt-1">Para sobrevivir a un desastre físico.</p></div>
         <div class="rounded-2xl bg-[#111827] text-white p-6 text-center"><p class="text-5xl font-extrabold text-red-500">+1</p><p class="font-semibold mt-2">aislada o inmutable</p><p class="text-sm text-gray-300 mt-1">No se puede borrar ni cifrar desde la red.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="especificaciones" class="scroll-mt-24 bg-gray-50 py-16 lg:py-20 border-y border-gray-200">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-2 text-center">Especificaciones técnicas</h2>
+      <p class="text-lg text-gray-600 text-center mb-10">Lo que su equipo de TI quiere saber antes de decidir.</p>
+      <div class="rounded-2xl border border-gray-200 bg-white divide-y divide-gray-100">
+        {acronisSpecs.map(([label, text]) => (
+          <div class="grid grid-cols-1 sm:grid-cols-[220px_1fr] gap-1 sm:gap-6 px-5 py-4">
+            <p class="font-semibold text-gray-900">{label}</p>
+            <p class="text-gray-600 leading-relaxed">{text}</p>
+          </div>
+        ))}
+      </div>
+      <p class="text-xs text-gray-500 mt-3">Compatibilidad según la documentación pública de Acronis Cyber Protect v17. Confirmamos versiones y requisitos exactos en el diagnóstico.</p>
+    </div>
+  </section>
+
+  <section class="bg-white py-16 lg:py-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-10 text-center">Cuándo le salva el día</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        {acronisUseCases.map(([title, text]) => (
+          <div class="rounded-2xl border border-gray-200 p-6">
+            <h3 class="font-bold text-gray-900 mb-2">{title}</h3>
+            <p class="text-gray-600 leading-relaxed">{text}</p>
+          </div>
+        ))}
       </div>
     </div>
   </section>
@@ -196,6 +243,10 @@ const recovery = [
           <li><a href="https://www.acronis.com/es/" class="text-red-700 hover:underline" rel="noopener">Acronis: Cyber Protect</a></li>
           <li><a href="https://www.acronis.com/en/blog/posts/acronis-cyber-protect-v17-2026-q2-continuous-innovation-for-integrated-cyber-protection/" class="text-red-700 hover:underline" rel="noopener">Acronis: novedades de Cyber Protect v17 (2026)</a></li>
           <li><a href="https://www.techrepublic.com/article/ransomware-attackers-target-backups/" class="text-red-700 hover:underline" rel="noopener">TechRepublic: estudio de Sophos sobre backups atacados (2024)</a></li>
+          <li><a href="https://www.acronis.com/en/company/awards/" class="text-red-700 hover:underline" rel="noopener">Acronis: reconocimientos, certificaciones y pruebas</a></li>
+          <li><a href="https://www.acronis.com/en/blog/posts/av-test-gives-acronis-cyber-protect-cloud-their-top-score-in-february-2026-evaluation/" class="text-red-700 hover:underline" rel="noopener">AV-TEST: Top Product para Acronis Cyber Protect Cloud (febrero 2026)</a></li>
+          <li><a href="https://selabs.uk/wp-content/uploads/2025/06/advanced-security-test-report-acronis-acronis-cyber-protect-cloud-with-advanced-securityxdr-Pack-2025-06.pdf" class="text-red-700 hover:underline" rel="noopener">SE Labs: prueba de seguridad avanzada (AAA)</a></li>
+          <li><a href="https://www.acronis.com/en/solutions/backup/virtual/" class="text-red-700 hover:underline" rel="noopener">Acronis: backup de máquinas virtuales (hipervisores compatibles)</a></li>
         </ul>
       </div>
     </div>
