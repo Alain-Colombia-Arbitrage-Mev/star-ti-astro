@@ -150,8 +150,8 @@ const breadcrumbJsonLd = seo.breadcrumb ? {
       <slot />
     </main>
     <LeadFormGuard />
-    <!-- Zoho SalesIQ (chat del sitio, Zoho One de Star). Activo en todo el sitio
-         desde el 19-oct-2026; para apagarlo, poner CHAT_ENABLED en false. -->
+    <!-- Zoho SalesIQ (chat del sitio, Zoho One de Star). Apagado el 19-oct-2026 a
+         pedido de George; para encenderlo, poner CHAT_ENABLED en true. -->
     <style is:global>
       /* Burbuja de SalesIQ del mismo tamano que el boton de WhatsApp (64 px). */
       #zsiq_float, .zsiq_floatmain { transform: scale(1.5); transform-origin: bottom right; }
@@ -159,7 +159,7 @@ const breadcrumbJsonLd = seo.breadcrumb ? {
       html.chat-on .wa-float { right: auto; left: 1.5rem; }
     </style>
     <script is:inline>
-      var CHAT_ENABLED = true;
+      var CHAT_ENABLED = false;
       if (CHAT_ENABLED) {
         document.documentElement.classList.add('chat-on');
         window.$zoho = window.$zoho || {};
