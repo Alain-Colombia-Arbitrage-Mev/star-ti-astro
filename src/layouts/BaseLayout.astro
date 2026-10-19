@@ -150,12 +150,26 @@ const breadcrumbJsonLd = seo.breadcrumb ? {
       <slot />
     </main>
     <LeadFormGuard />
-    <!-- Zoho SalesIQ (chat del sitio, Zoho One de Star). Los leads entran a Zoho CRM. -->
-    <script is:inline>window.$zoho=window.$zoho || {};$zoho.salesiq=$zoho.salesiq||{ready:function(){$zoho.salesiq.language("es");}}</script>
+    <!-- Zoho SalesIQ (chat del sitio, Zoho One de Star). Los leads entran a Zoho CRM.
+         Por ahora solo carga fuera de star-ti.com (vista previa de desarrollo) hasta
+         terminar la configuracion. Para activarlo en produccion, quitar la condicion. -->
     <style is:global>
       /* Burbuja de SalesIQ del mismo tamano que el boton de WhatsApp (64 px). */
       #zsiq_float, .zsiq_floatmain { transform: scale(1.5); transform-origin: bottom right; }
+      /* Con el chat activo, WhatsApp pasa a la izquierda para no taparse con la burbuja. */
+      html.chat-on .wa-float { right: auto; left: 1.5rem; }
     </style>
-    <script is:inline id="zsiqscript" src="https://salesiq.zohopublic.com/widget?wc=siqccee16aa641815ba42697dac61caf02846f13ff800dc242433896540249be60c" defer></script>
+    <script is:inline>
+      if (!/(^|\.)star-ti\.com$/.test(location.hostname)) {
+        document.documentElement.classList.add('chat-on');
+        window.$zoho = window.$zoho || {};
+        $zoho.salesiq = $zoho.salesiq || { ready: function () { $zoho.salesiq.language('es'); } };
+        var zs = document.createElement('script');
+        zs.id = 'zsiqscript';
+        zs.defer = true;
+        zs.src = 'https://salesiq.zohopublic.com/widget?wc=siqccee16aa641815ba42697dac61caf02846f13ff800dc242433896540249be60c';
+        document.body.appendChild(zs);
+      }
+    </script>
   </body>
 </html>
