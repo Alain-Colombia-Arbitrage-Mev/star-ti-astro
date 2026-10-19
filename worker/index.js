@@ -121,6 +121,7 @@ const TRAILING_SLASH_PATHS = new Set([
   "/antivirus-empresas",
   "/seguridad-informatica-empresas",
   "/sobre-nosotros",
+  "/portafolio",
   "/contacto",
   "/gracias",
   "/terminos",

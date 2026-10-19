@@ -779,6 +779,16 @@ export const seoData: Record<string, SEOData> = {
   // =====================================================
   // EMPRESA
   // =====================================================
+  'portafolio': {
+    title: 'Portafolio de Soluciones 2026 | Star Solutions TI',
+    description: 'Descargue el portafolio 2026 de Star Solutions TI: cuatro pilares de ciberseguridad (Protection, Inspection, Compliance y SOC 24x7), fabricantes aliados y servicios en Colombia.',
+    keywords: 'portafolio Star Solutions TI, portafolio ciberseguridad Colombia, soluciones ciberseguridad empresas, brochure ciberseguridad PDF',
+    canonical: `${BASE_URL}/portafolio/`,
+    ogTitle: 'Portafolio de soluciones 2026 de Star Solutions TI',
+    ogType: 'website',
+    ogImage: `${BASE_URL}/og/portafolio.jpg`,
+    breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Portafolio', url: '/portafolio/' }],
+  },
   'sobre-nosotros': {
     title: 'Sobre Nosotros | Star Solutions TI S.A.S.',
     description: 'Star Solutions TI S.A.S.: 10 años en ciberseguridad y seguridad informática empresarial. Oficinas en Colombia, Venezuela y Miami. Equipo CEH, OSCP, CISSP.',
