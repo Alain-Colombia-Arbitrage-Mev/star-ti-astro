@@ -555,22 +555,39 @@ const serviceSchema = {
               <p class="mt-4 text-xs sm:text-sm leading-snug text-gray-600"><span class="block font-semibold text-gray-900">{brand.name}</span>{brand.use}</p>
             </div>
           ))}
-          <div class="flex flex-col items-center justify-center text-center rounded-2xl bg-gradient-to-br from-[#ed1c24] to-[#b91c1c] p-5 sm:p-6 text-white shadow-md">
+          <div class="col-span-2 sm:col-span-3 lg:col-span-2 flex flex-col items-center justify-center text-center rounded-2xl bg-gradient-to-br from-[#ed1c24] to-[#b91c1c] p-5 sm:p-6 text-white shadow-md">
             <span class="text-3xl sm:text-4xl font-bold">180+</span>
             <span class="mt-2 text-xs sm:text-sm leading-snug text-red-50">fabricantes licencian tecnología de Bitdefender</span>
           </div>
         </div>
 
-        <div class="rounded-3xl bg-gray-900 text-white p-6 sm:p-10 mb-14 grid grid-cols-1 md:grid-cols-[auto_1fr] gap-6 md:gap-10 items-center">
-          <div class="text-center md:text-left">
-            <span class="block text-5xl sm:text-6xl font-bold">32.000</span>
-            <span class="block text-sm text-gray-400 mt-1">endpoints Bitdefender</span>
+        <!-- Caso de exito propio. Solo datos confirmados por George (19-oct-2026): entidad
+             publica, Bitdefender, 32.000 endpoints, implementacion y administracion de Star. -->
+        <article class="rounded-3xl bg-gray-900 text-white p-6 sm:p-10 mb-14">
+          <span class="inline-block text-xs font-semibold uppercase tracking-wider text-red-400">Caso de éxito Star Solutions TI</span>
+          <h3 class="text-2xl sm:text-3xl font-bold mt-3 mb-8 leading-tight">Despliegue y administración de Bitdefender en una entidad pública</h3>
+          <div class="grid grid-cols-1 md:grid-cols-[auto_1fr] gap-8 md:gap-12 items-center">
+            <div class="text-center md:text-left">
+              <span class="block text-5xl sm:text-6xl font-bold">32.000</span>
+              <span class="block text-sm text-gray-400 mt-1">endpoints protegidos</span>
+            </div>
+            <dl class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div class="rounded-2xl bg-white/5 border border-white/10 p-4">
+                <dt class="text-xs uppercase tracking-wider text-gray-400">Cliente</dt>
+                <dd class="mt-1 font-semibold">Entidad pública en Colombia</dd>
+              </div>
+              <div class="rounded-2xl bg-white/5 border border-white/10 p-4">
+                <dt class="text-xs uppercase tracking-wider text-gray-400">Solución</dt>
+                <dd class="mt-1 font-semibold">Bitdefender GravityZone</dd>
+              </div>
+              <div class="rounded-2xl bg-white/5 border border-white/10 p-4">
+                <dt class="text-xs uppercase tracking-wider text-gray-400">Rol de Star</dt>
+                <dd class="mt-1 font-semibold">Implementación y administración</dd>
+              </div>
+            </dl>
           </div>
-          <div>
-            <p class="text-lg sm:text-xl font-semibold leading-snug">Implementados y administrados por Star Solutions TI en una sola entidad pública.</p>
-            <p class="text-gray-400 text-sm sm:text-base mt-2 leading-relaxed">Es nuestro despliegue más grande en Colombia. La misma ingeniería que lo sostiene acompaña a empresas de todos los tamaños.</p>
-          </div>
-        </div>
+          <p class="text-gray-400 text-sm sm:text-base mt-8 leading-relaxed">Es nuestro despliegue más grande en Colombia. La misma ingeniería que lo sostiene acompaña a empresas de todos los tamaños.</p>
+        </article>
 
         <h3 class="text-xl sm:text-2xl font-bold text-gray-900 text-center mb-2">Lo que dicen clientes de Bitdefender en el mundo</h3>
         <p class="text-xs text-gray-500 text-center mb-8">Testimonios publicados por Bitdefender.</p>
