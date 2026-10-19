@@ -342,8 +342,8 @@ export const seoData: Record<string, SEOData> = {
     ]),
   },
   'star-soc': {
-    title: 'Star SOC | SOC 24/7 Administrado en Colombia',
-    description: 'Star SOC: monitoreo, detección y respuesta a incidentes 24/7 para empresas en Colombia. SIEM/XDR, analistas de seguridad y soporte en español con Star Solutions TI.',
+    title: 'Star SOC | SOC 24/7 con IA y Analistas en Colombia',
+    description: 'Star SOC: ciberseguridad 360° con monitoreo y respuesta 24/7, IA y analistas humanos, cobertura de correo, endpoints, red y backup, y evidencia para auditorías.',
     keywords: 'SOC Colombia, SOC como servicio, SOC 24/7, SOC administrado, centro de operaciones de seguridad, monitoreo de ciberseguridad 24/7, MDR Colombia, respuesta a incidentes',
     canonical: `${BASE_URL}/star-soc/`,
     ogTitle: 'Star SOC: monitoreo y respuesta a incidentes 24/7',

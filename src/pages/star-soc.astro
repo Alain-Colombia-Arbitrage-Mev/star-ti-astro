@@ -5,16 +5,15 @@ import Footer from '@components/Footer.astro';
 import ConsultoriaForm from '@components/ConsultoriaForm.astro';
 import WhatsAppButton from '@components/WhatsAppButton.astro';
 import { seoData } from '@data/seo';
-import { socIncludes, socSteps, socFaqs } from '@data/starSoc';
+import {
+  socBenefits, socStats, socNeo, socModules, socSteps, socPlans, socPlanNotes,
+  socPlanFeatures, socPlanIdeal, socCompliance, socMarkets, socStart, socFaqs,
+} from '@data/starSoc';
 
 const seo = seoData['star-soc'];
 
-const sectors = [
-  ['Sector financiero', 'Monitoreo y reporte de incidentes que pide la Circular 007 de la Superfinanciera.'],
-  ['Salud', 'Historias clínicas y sistemas que no pueden detenerse.'],
-  ['Sector público', 'Protección de servicios al ciudadano y evidencia para auditorías.'],
-  ['Industria y comercio', 'Operación continua, plantas y sedes con poco personal de TI.'],
-];
+const planColors = ['bg-gray-500', 'bg-blue-600', 'bg-violet-600', 'bg-emerald-600'];
+const sectors = ['Empresas privadas', 'Sector financiero', 'Sector público', 'Salud y educación', 'Industria y retail'];
 ---
 
 <BaseLayout seo={seo}>
@@ -29,18 +28,22 @@ const sectors = [
       </nav>
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div>
-          <span class="inline-flex items-center gap-2 bg-violet-500/20 border border-violet-400/30 text-violet-200 text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wide mb-6">
-            <span class="w-2 h-2 rounded-full bg-violet-400"></span> Star SOC
-          </span>
-          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-            Monitoreo y respuesta a incidentes 24/7
+          <p class="text-4xl sm:text-5xl font-extrabold tracking-tight mb-3"><span class="text-white">STAR</span> <span class="text-amber-400">SOC</span></p>
+          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
+            Ciberseguridad 360° para un negocio sin interrupciones
           </h1>
-          <p class="text-xl text-gray-300 mb-8 leading-relaxed">
-            Un centro de operaciones de seguridad que vigila sus equipos, servidores, red, nube y correo todo el día, todos los días. Usted habla con Star Solutions TI, en español y desde Colombia.
+          <p class="text-xl text-gray-300 mb-6 leading-relaxed">
+            Monitoreo continuo, respuesta activa y cumplimiento normativo en un solo servicio. <span class="text-white font-semibold">Inteligencia artificial, analistas humanos, resultados reales.</span>
           </p>
+          <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-8 text-gray-200">
+            <li class="flex gap-2"><span class="text-emerald-400">✓</span>Visibilidad total de su entorno</li>
+            <li class="flex gap-2"><span class="text-emerald-400">✓</span>Detección y respuesta 24/7</li>
+            <li class="flex gap-2"><span class="text-emerald-400">✓</span>Inteligencia artificial y analistas humanos</li>
+            <li class="flex gap-2"><span class="text-emerald-400">✓</span>Evidencia automática para auditorías</li>
+          </ul>
           <div class="flex flex-wrap gap-3">
             <a href="#contacto" class="inline-flex items-center justify-center bg-red-700 text-white font-semibold px-6 py-3 rounded hover:bg-[#dc2626] transition">Solicitar diagnóstico</a>
-            <a href="#como-funciona" class="inline-flex items-center justify-center border border-white/40 text-white font-semibold px-6 py-3 rounded hover:bg-white/10 transition">Cómo funciona</a>
+            <a href="#planes" class="inline-flex items-center justify-center border border-white/40 text-white font-semibold px-6 py-3 rounded hover:bg-white/10 transition">Ver planes</a>
           </div>
         </div>
         <div class="hidden lg:block">
@@ -51,46 +54,120 @@ const sectors = [
   </section>
 
   <section class="bg-white py-16 lg:py-20">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">Los ataques no esperan al horario de oficina</h2>
-      <p class="text-lg text-gray-600 leading-relaxed mb-4">
-        Los ataques de ransomware suelen ejecutarse de noche, en fines de semana o en festivos, cuando nadie está mirando. Tener antivirus o EDR ayuda, pero alguien tiene que ver las alertas, entender qué significan y actuar a tiempo.
-      </p>
-      <p class="text-lg text-gray-600 leading-relaxed">
-        Montar un SOC propio exige analistas en turnos 24/7, una plataforma SIEM, licencias y entrenamiento continuo. <strong>Star SOC</strong> le entrega ese servicio completo, con un solo contacto que conoce su empresa.
-      </p>
-    </div>
-  </section>
-
-  <section id="servicio" class="scroll-mt-24 bg-gray-50 py-16 lg:py-20 border-y border-gray-200">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-10 text-center">Qué incluye Star SOC</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {socIncludes.map(([title, text]) => (
-          <div class="bg-white border border-gray-200 rounded-2xl p-6">
-            <span class="block w-10 h-1 bg-violet-600 rounded-full mb-4"></span>
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-2 text-center">La ciberseguridad como motor de continuidad</h2>
+      <p class="text-lg text-gray-600 text-center mb-10">Proteger hoy para asegurar el crecimiento de mañana.</p>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+        {socBenefits.map(([title, text]) => (
+          <div class="border border-gray-200 rounded-2xl p-6 text-center">
             <h3 class="text-lg font-bold text-gray-900 mb-2">{title}</h3>
-            <p class="text-gray-600 leading-relaxed">{text}</p>
+            <p class="text-gray-600">{text}</p>
           </div>
         ))}
       </div>
     </div>
   </section>
 
+  <section class="bg-[#111827] py-16 lg:py-20 text-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-2">El desafío actual</h2>
+      <p class="text-lg text-gray-300 mb-10">Un entorno de amenazas más rápido, sofisticado y orientado al negocio. Los ataques no esperan al horario de oficina.</p>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+        {socStats.map(([value, text, source]) => (
+          <div class="bg-white rounded-2xl p-6 text-gray-900">
+            <p class="text-4xl font-extrabold text-red-600 mb-2">{value}</p>
+            <p class="text-gray-700 leading-relaxed mb-3">{text}</p>
+            <p class="text-xs text-gray-500">Fuente: {source}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-white py-16 lg:py-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+      <div>
+        <p class="text-xs font-bold uppercase tracking-widest text-violet-600 mb-2">Inteligencia artificial + analistas humanos</p>
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Neo: su analista virtual de IA</h2>
+        <p class="text-lg text-gray-600 leading-relaxed">Triaje, investigación y resúmenes ejecutivos en lenguaje no técnico. Neo filtra el ruido para que los analistas se concentren en lo que de verdad importa.</p>
+      </div>
+      <ul class="space-y-3">
+        {socNeo.map((item) => (
+          <li class="flex items-center gap-3 border border-gray-200 rounded-xl p-4 font-semibold text-gray-800"><span class="w-2.5 h-2.5 rounded-full bg-violet-600 flex-shrink-0"></span>{item}</li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section id="servicio" class="scroll-mt-24 bg-gray-50 py-16 lg:py-20 border-y border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-2 text-center">Cobertura modular de seguridad</h2>
+      <p class="text-lg text-gray-600 text-center mb-10">Protección integral, adaptada a las necesidades de su negocio.</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {socModules.map(([title, items]) => (
+          <div class="bg-white border border-gray-200 rounded-2xl p-6">
+            <span class="block w-10 h-1 bg-violet-600 rounded-full mb-4"></span>
+            <h3 class="text-lg font-bold text-gray-900 mb-3">{title}</h3>
+            <ul class="space-y-2 text-sm text-gray-600">
+              {(items as string[]).map((i) => <li class="flex gap-2"><span class="text-violet-600">•</span>{i}</li>)}
+            </ul>
+          </div>
+        ))}
+      </div>
+      <p class="text-center text-gray-600 mt-8">Incluye además evaluación de superficie de ataque para identificar de forma proactiva los riesgos expuestos en internet.</p>
+    </div>
+  </section>
+
   <section id="como-funciona" class="scroll-mt-24 bg-white py-16 lg:py-20">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-10 text-center">Cómo funciona</h2>
-      <ol class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-2 text-center">Cómo funciona Star SOC</h2>
+      <p class="text-lg text-gray-600 text-center mb-10">Un flujo continuo de protección y respuesta.</p>
+      <ol class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
         {socSteps.map(([title, text], index) => (
-          <li class="flex gap-4 border border-gray-200 rounded-2xl p-6">
-            <span class="flex-shrink-0 w-10 h-10 bg-violet-600 text-white rounded-full flex items-center justify-center font-bold">{index + 1}</span>
-            <div>
-              <h3 class="text-lg font-bold text-gray-900 mb-1">{title}</h3>
-              <p class="text-gray-600 leading-relaxed">{text}</p>
-            </div>
+          <li class="border border-gray-200 rounded-2xl p-5 text-center">
+            <span class="mx-auto mb-3 w-10 h-10 bg-violet-600 text-white rounded-full flex items-center justify-center font-bold">{index + 1}</span>
+            <h3 class="font-bold text-gray-900 mb-1">{title}</h3>
+            <p class="text-sm text-gray-600 leading-relaxed">{text}</p>
           </li>
         ))}
       </ol>
+    </div>
+  </section>
+
+  <section id="planes" class="scroll-mt-24 bg-gray-50 py-16 lg:py-20 border-y border-gray-200">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-2 text-center">Planes de servicio</h2>
+      <p class="text-lg text-gray-600 text-center mb-10">Cuatro niveles, un mismo objetivo: su tranquilidad.</p>
+      <div class="overflow-x-auto rounded-2xl border border-gray-200 bg-white">
+        <table class="w-full text-sm min-w-[680px]">
+          <thead>
+            <tr>
+              <th class="text-left px-4 py-3 font-bold text-gray-900 bg-gray-50">Característica</th>
+              {socPlans.map((plan, i) => (
+                <th class={`px-4 py-3 text-white font-bold text-center ${planColors[i]}`}>
+                  {plan}
+                  {socPlanNotes[i] && <span class="block text-xs font-normal opacity-90">{socPlanNotes[i]}</span>}
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-100">
+            {socPlanFeatures.map(([feature, from]) => (
+              <tr>
+                <td class="px-4 py-3 text-gray-800">{feature}</td>
+                {socPlans.map((_, i) => (
+                  <td class="px-4 py-3 text-center">{i >= from ? <span class="text-emerald-600 font-bold" aria-label="Incluido">✓</span> : <span class="text-gray-300" aria-label="No incluido">–</span>}</td>
+                ))}
+              </tr>
+            ))}
+            <tr class="bg-gray-50">
+              <td class="px-4 py-3 font-bold text-gray-900">Ideal para</td>
+              {socPlanIdeal.map((text) => <td class="px-4 py-3 text-center text-gray-600">{text}</td>)}
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-center text-gray-600 mt-6">El valor depende del plan y del número de dispositivos. <a href="#contacto" class="text-red-700 font-semibold hover:underline">Solicite su propuesta</a>.</p>
     </div>
   </section>
 
@@ -99,11 +176,8 @@ const sectors = [
       <div>
         <p class="text-xs font-bold uppercase tracking-widest text-violet-300 mb-3">Un solo contacto</p>
         <h2 class="text-3xl font-bold mb-4">Star es su primer nivel, siempre</h2>
-        <p class="text-gray-300 leading-relaxed mb-4">
-          Usted no tiene que hablar con un centro de llamadas en otro país ni entender reportes en inglés. Star Solutions TI recibe sus solicitudes, le avisa cuando hay un incidente, coordina la respuesta con los analistas del centro de operaciones y le acompaña hasta cerrarlo.
-        </p>
         <p class="text-gray-300 leading-relaxed">
-          Conocemos su infraestructura porque la diagnosticamos y la conectamos nosotros.
+          Star Solutions TI recibe sus solicitudes, le avisa cuando hay un incidente, coordina la respuesta con los analistas del centro de operaciones y le acompaña hasta cerrarlo. Usted no tiene que hablar con un centro de llamadas en otro país ni entender reportes en inglés.
         </p>
       </div>
       <ul class="space-y-4">
@@ -115,41 +189,66 @@ const sectors = [
   </section>
 
   <section id="cumplimiento" class="scroll-mt-24 bg-white py-16 lg:py-20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4 text-center">Para quién es Star SOC</h2>
-      <p class="text-lg text-gray-600 text-center max-w-3xl mx-auto mb-10">Empresas medianas y grandes que no tienen un equipo de seguridad 24/7 o que necesitan demostrar monitoreo continuo ante un regulador, un auditor o sus clientes.</p>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        {sectors.map(([title, text]) => (
-          <div class="border border-gray-200 rounded-2xl p-6">
-            <h3 class="font-bold text-gray-900 mb-2">{title}</h3>
-            <p class="text-sm text-gray-600 leading-relaxed">{text}</p>
-          </div>
-        ))}
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-10">
+      <div>
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-2">Cumplimiento y evidencia</h2>
+        <p class="text-lg text-gray-600 mb-6">Listo para auditorías, sin esfuerzo adicional.</p>
+        <ul class="space-y-3 text-gray-700">
+          <li class="flex gap-3"><span class="text-emerald-600 font-bold">✓</span>Generación automática de evidencia inalterable</li>
+          <li class="flex gap-3"><span class="text-emerald-600 font-bold">✓</span>Registros, reportes y trazabilidad</li>
+          <li class="flex gap-3"><span class="text-emerald-600 font-bold">✓</span>Formato listo para auditorías</li>
+          <li class="flex gap-3"><span class="text-emerald-600 font-bold">✓</span>Almacenamiento seguro y controlado</li>
+        </ul>
       </div>
-      <p class="text-gray-600 text-center mt-8">
-        ¿Su empresa es vigilada por la Superfinanciera? Lea qué exige la <a href="/blog/circular-007-superfinanciera-ciberseguridad/" class="text-red-700 font-semibold hover:underline">Circular 007 en ciberseguridad</a>.
-      </p>
+      <div class="bg-gray-50 border border-gray-200 rounded-2xl p-6">
+        <h3 class="font-bold text-gray-900 mb-4">Apoya el cumplimiento de</h3>
+        <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          {socCompliance.map((norm) => <li class="bg-white border border-gray-200 rounded-xl px-4 py-3 font-semibold text-gray-800">{norm}</li>)}
+        </ul>
+        <p class="text-sm text-gray-600 mt-4">¿Vigilado por la Superfinanciera? Lea qué exige la <a href="/blog/circular-007-superfinanciera-ciberseguridad/" class="text-red-700 font-semibold hover:underline">Circular 007 en ciberseguridad</a>.</p>
+      </div>
     </div>
   </section>
 
   <section class="bg-gray-50 py-16 lg:py-20 border-y border-gray-200">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-3xl font-bold text-gray-900 mb-6 text-center">Se complementa con</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        <a href="/bitdefender/" class="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition"><p class="text-xs font-bold text-red-700 uppercase tracking-wide mb-1">Endpoints</p><p class="font-semibold text-sm text-gray-900">Bitdefender GravityZone</p></a>
-        <a href="/hornetsecurity/" class="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition"><p class="text-xs font-bold text-red-700 uppercase tracking-wide mb-1">Correo</p><p class="font-semibold text-sm text-gray-900">Hornetsecurity 365</p></a>
-        <a href="/hacking-etico/" class="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition"><p class="text-xs font-bold text-blue-700 uppercase tracking-wide mb-1">Pruebas</p><p class="font-semibold text-sm text-gray-900">Hacking ético</p></a>
-        <a href="/iso-27001/" class="bg-white border border-gray-200 rounded-xl p-4 hover:shadow-md transition"><p class="text-xs font-bold text-emerald-700 uppercase tracking-wide mb-1">Cumplimiento</p><p class="font-semibold text-sm text-gray-900">ISO 27001</p></a>
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-2 text-center">Mercados y sectores</h2>
+      <p class="text-lg text-gray-600 text-center mb-10">Experiencia en entornos empresariales y gubernamentales.</p>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+        {socMarkets.map(([country, role]) => (
+          <div class="bg-white border border-gray-200 rounded-2xl p-6">
+            <h3 class="text-xl font-bold text-gray-900">{country}</h3>
+            <p class="text-sm font-semibold text-violet-600 mb-3">{role}</p>
+            <ul class="space-y-1 text-sm text-gray-600">
+              {sectors.map((s) => <li>• {s}</li>)}
+            </ul>
+          </div>
+        ))}
       </div>
     </div>
   </section>
 
   <section class="bg-white py-16 lg:py-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-2 text-center">Comience hoy</h2>
+      <p class="text-lg text-gray-600 text-center mb-10">Dé el siguiente paso hacia una operación más segura.</p>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+        {socStart.map(([title, text], i) => (
+          <a href="#contacto" class={`rounded-2xl p-6 transition hover:shadow-lg ${i === 2 ? 'bg-red-700 text-white' : 'border border-gray-200 text-gray-900'}`}>
+            <h3 class="text-lg font-bold mb-2">{title}</h3>
+            <p class={i === 2 ? 'text-red-50' : 'text-gray-600'}>{text}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-gray-50 py-16 lg:py-20 border-t border-gray-200">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Preguntas frecuentes</h2>
       <div class="space-y-5">
         {socFaqs.map((f) => (
-          <div class="border border-gray-200 rounded-xl p-5">
+          <div class="bg-white border border-gray-200 rounded-xl p-5">
             <h3 class="font-bold text-gray-900 mb-2">{f.q}</h3>
             <p class="text-gray-600">{f.a}</p>
           </div>
