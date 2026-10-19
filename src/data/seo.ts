@@ -361,7 +361,7 @@ export const seoData: Record<string, SEOData> = {
     ogTitle: 'Stellar Cyber SecOps Platform | Open XDR para SOC Automatizado',
     ogType: 'website',
     ogImage: `${BASE_URL}/og/stellar-cyber.jpg`,
-    breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Star Inspection', url: '/#star-inspection' }, { name: 'Stellar Cyber', url: '/stellar-cyber/' }],
+    breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Star SOC', url: '/star-soc/' }, { name: 'Stellar Cyber', url: '/stellar-cyber/' }],
     jsonLd: resellerService('Stellar Cyber SecOps Platform', 'Stellar Cyber', 'Plataforma SecOps AI-Native con arquitectura Open XDR para detección y respuesta unificada de amenazas', { image: `${BASE_URL}/og-default.png` }),
     faqJsonLd: faqSchema([
       { q: 'Qué diferencia hay entre XDR y Open XDR?', a: 'El XDR tradicional solo integra productos del mismo fabricante. Open XDR integra cualquier herramienta de seguridad existente en su empresa, sin dependencia de un solo proveedor ni necesidad de reemplazar su stack actual.' },
