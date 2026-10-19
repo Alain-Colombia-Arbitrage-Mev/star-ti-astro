@@ -150,9 +150,8 @@ const breadcrumbJsonLd = seo.breadcrumb ? {
       <slot />
     </main>
     <LeadFormGuard />
-    <!-- Zoho SalesIQ (chat del sitio, Zoho One de Star). Los leads entran a Zoho CRM.
-         Por ahora solo carga fuera de star-ti.com (vista previa de desarrollo) hasta
-         terminar la configuracion. Para activarlo en produccion, quitar la condicion. -->
+    <!-- Zoho SalesIQ (chat del sitio, Zoho One de Star). Activo en todo el sitio
+         desde el 19-oct-2026; para apagarlo, poner CHAT_ENABLED en false. -->
     <style is:global>
       /* Burbuja de SalesIQ del mismo tamano que el boton de WhatsApp (64 px). */
       #zsiq_float, .zsiq_floatmain { transform: scale(1.5); transform-origin: bottom right; }
@@ -160,7 +159,8 @@ const breadcrumbJsonLd = seo.breadcrumb ? {
       html.chat-on .wa-float { right: auto; left: 1.5rem; }
     </style>
     <script is:inline>
-      if (!/(^|\.)star-ti\.com$/.test(location.hostname)) {
+      var CHAT_ENABLED = true;
+      if (CHAT_ENABLED) {
         document.documentElement.classList.add('chat-on');
         window.$zoho = window.$zoho || {};
         $zoho.salesiq = $zoho.salesiq || { ready: function () { $zoho.salesiq.language('es'); } };
