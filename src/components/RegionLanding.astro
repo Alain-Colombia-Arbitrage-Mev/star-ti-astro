@@ -15,6 +15,7 @@ const pilarColors: Record<string, { bg: string; text: string; border: string }> 
   red: { bg: 'bg-red-50', text: 'text-red-800', border: 'border-red-200' },
   blue: { bg: 'bg-blue-50', text: 'text-blue-800', border: 'border-blue-200' },
   emerald: { bg: 'bg-emerald-50', text: 'text-emerald-800', border: 'border-emerald-200' },
+  violet: { bg: 'bg-violet-50', text: 'text-violet-800', border: 'border-violet-200' },
 };
 ---
 
@@ -71,16 +72,16 @@ const pilarColors: Record<string, { bg: string; text: string; border: string }> 
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="text-center mb-16">
       <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-        {isEnglish ? `Our 3 Pillars of Digital Resilience` : `Los 3 Pilares de Resiliencia Digital`}
+        {isEnglish ? `Our 4 Pillars of Digital Resilience` : `Los 4 Pilares de Resiliencia Digital`}
       </h2>
       <p class="text-lg text-gray-600 max-w-2xl mx-auto">
         {isEnglish
-          ? `Three converging pillars providing complete cybersecurity coverage for businesses in ${region.countryEn ?? region.country}.`
-          : `Tres pilares convergentes que brindan cobertura completa de ciberseguridad para empresas en ${region.country}. Cada pilar incluye consultoría especializada, implementación y soporte continuo.`}
+          ? `Four converging pillars providing complete cybersecurity coverage for businesses in ${region.countryEn ?? region.country}.`
+          : `Cuatro pilares convergentes que brindan cobertura completa de ciberseguridad para empresas en ${region.country}. Cada pilar incluye consultoría especializada, implementación y soporte continuo.`}
       </p>
     </div>
 
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
       {pilares.map((pilar) => {
         const colors = pilarColors[pilar.color];
         return (
