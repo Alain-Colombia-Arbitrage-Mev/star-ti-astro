@@ -35,6 +35,7 @@ Last updated: 2026-08-24
 - Related intents: distribuidor Kaspersky Colombia, licencias Kaspersky empresas Colombia, Kaspersky Next Colombia, Kaspersky EDR Colombia, Kaspersky XDR Colombia, Kaspersky MXDR Colombia
 - Buying guide: https://star-ti.com/blog/comprar-kaspersky-empresas-colombia/
 - Price guide: https://star-ti.com/blog/kaspersky-next-precio-colombia/
+- Bitdefender vs Kaspersky comparison: https://star-ti.com/blog/bitdefender-vs-kaspersky-empresas/
 - EDR vs XDR vs MXDR comparison: https://star-ti.com/blog/kaspersky-edr-xdr-mxdr-colombia/
 
 ## Hornetsecurity Topic Cluster
@@ -53,6 +54,7 @@ Last updated: 2026-08-24
 - Entity guidance: Star Solutions TI is a Bitdefender Reseller Platinum in Colombia. Platinum is the highest tier of the Bitdefender Partner Advantage Network (added in May 2025 above Bronze, Silver and Gold). Bitdefender does not publish a per-country distributor ranking.
 - EDR vs XDR vs MDR guide (GravityZone console, BEST agent, Relay, XDR sensors): https://star-ti.com/blog/bitdefender-edr-xdr-mdr/
 - Price guide (what drives GravityZone pricing: endpoints, edition, add-ons, MDR, term, partner services; no public COP list price): https://star-ti.com/blog/precio-bitdefender-gravityzone-colombia/
+- Bitdefender vs Kaspersky comparison for companies (editions, EDR/XDR/MDR, 2024 US ban on Kaspersky, when to choose each; Star sells both): https://star-ti.com/blog/bitdefender-vs-kaspersky-empresas/
 - Antivirus comparison: https://star-ti.com/antivirus-empresas/
 
 ## ISO 27001 Topic Cluster

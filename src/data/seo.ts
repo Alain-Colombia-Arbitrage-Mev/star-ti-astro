@@ -7,6 +7,7 @@ import { hornetFaqs } from './blogHornetsecurity';
 import { pentestIsoFaqs } from './blogPentestingIso';
 import { bdEdrFaqs } from './blogBitdefenderEdr';
 import { precioBdFaqs } from './blogPrecioBitdefender';
+import { bdVsKasFaqs } from './blogBitdefenderVsKaspersky';
 import { certIsoFaqs } from './blogCertificacionIso';
 import { informeFaqs } from './informe2026';
 import { dmarcFaqs } from './revisionDmarc';
@@ -1187,6 +1188,36 @@ export const seoData: Record<string, SEOData> = {
       keywords: 'Bitdefender, GravityZone, precio, licencias, Colombia',
     },
     faqJsonLd: faqSchema(precioBdFaqs),
+  },
+
+  'blog/bitdefender-vs-kaspersky-empresas': {
+    title: 'Bitdefender vs Kaspersky para Empresas: Cómo Elegir (2026)',
+    description: 'Comparativa de Bitdefender GravityZone y Kaspersky Next para empresas en Colombia: ediciones, EDR, XDR, MDR, restricción en EE. UU. y cuándo elegir cada una.',
+    keywords: 'Bitdefender vs Kaspersky, Bitdefender o Kaspersky empresas, comparativa Bitdefender Kaspersky, Kaspersky prohibido Estados Unidos, mejor antivirus empresas Colombia, GravityZone vs Kaspersky Next',
+    canonical: `${BASE_URL}/blog/bitdefender-vs-kaspersky-empresas/`,
+    ogTitle: 'Bitdefender vs. Kaspersky para empresas: cómo elegir',
+    ogType: 'article',
+    ogImage: `${BASE_URL}/og/blog-bitdefender-vs-kaspersky-empresas.jpg`,
+    breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Blog', url: '/blog/' }, { name: 'Bitdefender vs. Kaspersky', url: '/blog/bitdefender-vs-kaspersky-empresas/' }],
+    jsonLd: {
+      '@context': 'https://schema.org',
+      '@type': 'Article',
+      headline: 'Bitdefender vs. Kaspersky para empresas: cómo elegir',
+      description: 'Comparativa equilibrada de Bitdefender GravityZone y Kaspersky Next para empresas en Colombia: ediciones, EDR, XDR, MDR, consola, restricción de EE. UU. a Kaspersky y criterios de elección.',
+      datePublished: '2026-10-19',
+      dateModified: '2026-10-19',
+      inLanguage: 'es-CO',
+      author: AUTHOR,
+      publisher: { '@type': 'Organization', name: 'Star Solutions TI S.A.S.', url: BASE_URL, logo: { '@type': 'ImageObject', url: `${BASE_URL}/logo.png` } },
+      image: `${BASE_URL}/og/blog-bitdefender-vs-kaspersky-empresas.jpg`,
+      url: `${BASE_URL}/blog/bitdefender-vs-kaspersky-empresas/`,
+      about: [
+        { '@type': 'SoftwareApplication', name: 'Bitdefender GravityZone', applicationCategory: 'SecurityApplication' },
+        { '@type': 'SoftwareApplication', name: 'Kaspersky Next', applicationCategory: 'SecurityApplication' },
+      ],
+      keywords: 'Bitdefender, Kaspersky, comparativa, EDR, XDR, MDR, Colombia',
+    },
+    faqJsonLd: faqSchema(bdVsKasFaqs),
   },
 
   'blog/pentesting-iso-27001': {

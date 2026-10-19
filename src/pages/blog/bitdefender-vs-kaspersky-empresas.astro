@@ -1,0 +1,200 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Navbar from '@components/Navbar.astro';
+import Footer from '@components/Footer.astro';
+import WhatsAppButton from '@components/WhatsAppButton.astro';
+import { seoData } from '@data/seo';
+import { bdVsKasFaqs } from '@data/blogBitdefenderVsKaspersky';
+
+const seo = seoData['blog/bitdefender-vs-kaspersky-empresas'];
+
+const compare = [
+  ['Fabricante', 'Bitdefender, con sede en Rumania (Unión Europea)', 'Kaspersky, empresa de origen ruso con holding en Reino Unido'],
+  ['Línea para empresas', 'GravityZone: Small Business Security, Business Security Premium y Enterprise', 'Kaspersky Next: EDR Foundations, EDR Optimum, XDR Optimum, MXDR Optimum, EDR Expert y XDR Expert'],
+  ['EDR y XDR', 'EDR desde Premium; XDR en Enterprise con sensores de identidad, red, nube y Microsoft 365', 'EDR desde EDR Foundations; XDR en las ediciones XDR'],
+  ['Servicio gestionado 24/7', 'Bitdefender MDR', 'Kaspersky MDR (incluido en MXDR Optimum)'],
+  ['Consola', 'GravityZone en la nube o instalada en su infraestructura', 'Consola en la nube o Kaspersky Security Center instalado'],
+  ['Pruebas independientes', 'Resultados altos de forma constante en AV-TEST y AV-Comparatives', 'Resultados altos de forma constante en AV-TEST y AV-Comparatives'],
+  ['Restricciones', 'Sin restricciones de gobiernos conocidas', 'Prohibida su venta y actualización en EE. UU. desde 2024'],
+];
+
+const pickBd = [
+  'Su casa matriz, sus clientes o un contrato tienen relación con Estados Unidos o le exigen evitar fabricantes de ciertos países.',
+  'Quiere XDR sobre Microsoft 365, Directorio Activo y nube en la misma consola.',
+  'Necesita una plataforma probada a gran escala: Star implementó y administra 32.000 equipos con GravityZone en una entidad pública.',
+];
+
+const pickKas = [
+  'Ya usa Kaspersky, funciona bien y su equipo de TI domina la consola.',
+  'Ninguna política interna, de clientes o de contratos le restringe el origen del fabricante.',
+  'Quiere administración de dispositivos móviles (MDM) incluida en la misma plataforma.',
+];
+---
+
+<BaseLayout seo={seo}>
+  <Navbar />
+
+  <section class="relative bg-gradient-to-br from-[#0b1220] to-[#1f2937] overflow-hidden">
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-16 lg:pb-20">
+      <nav class="mb-8 flex items-center gap-2 text-sm text-gray-400" aria-label="Ruta de navegación">
+        <a href="/" class="hover:text-white transition-colors">Inicio</a>
+        <span>/</span>
+        <a href="/blog/" class="hover:text-white transition-colors">Blog</a>
+        <span>/</span>
+        <span class="text-gray-200">Bitdefender vs. Kaspersky</span>
+      </nav>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <div class="flex flex-wrap items-center gap-3 mb-6">
+            <span class="bg-red-500/20 border border-red-500/30 text-red-300 text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wide">Comparativa</span>
+            <span class="text-gray-400 text-sm">19 oct 2026</span>
+          </div>
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+            Bitdefender vs. Kaspersky para empresas: cómo elegir
+          </h1>
+          <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+            Vendemos e implementamos las dos marcas. Esta es la comparación que le haríamos en una reunión: en qué se parecen, en qué se diferencian y qué debería decidir la elección.
+          </p>
+          <div class="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-gray-400">
+            <span>Por Jorge Molano &middot; CEO de Star Solutions TI</span>
+            <span>&bull;</span>
+            <span>Tiempo de lectura: 6 min</span>
+          </div>
+        </div>
+        <div class="hidden lg:block">
+          <img src="/og/blog-bitdefender-vs-kaspersky-empresas.jpg" alt="Bitdefender vs. Kaspersky para empresas" class="w-full h-auto rounded-2xl shadow-2xl ring-1 ring-white/10" width="1200" height="630" loading="eager" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <article class="bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+      <section class="mb-12">
+        <p class="text-xl text-gray-700 leading-relaxed mb-6">
+          Bitdefender y Kaspersky son dos de las marcas de protección de endpoints más usadas por empresas en Colombia, y las dos detectan muy bien. Por eso la pregunta útil no es cuál detecta más, sino <strong>cuál encaja con su operación, su riesgo y sus obligaciones</strong>.
+        </p>
+        <div class="bg-red-50 border border-red-200 rounded-2xl p-6">
+          <h2 class="text-xl font-bold text-red-900 mb-2">Respuesta rápida</h2>
+          <p class="text-red-800 leading-relaxed">
+            En protección, las dos están al nivel más alto. La diferencia la marcan tres cosas: <strong>el origen del fabricante</strong> (Kaspersky tiene restricciones en EE. UU. desde 2024), <strong>el nivel que necesita</strong> (EDR, XDR o MDR) y <strong>quién va a operar la consola</strong>. Si tiene vínculos con Estados Unidos o clientes que lo exigen, elija Bitdefender. Si ya usa Kaspersky sin esas restricciones y le funciona, cambiar no siempre se justifica.
+          </p>
+        </div>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Comparativa lado a lado</h2>
+        <div class="overflow-x-auto rounded-2xl border border-gray-200">
+          <table class="w-full text-sm min-w-[640px]">
+            <thead class="bg-gray-50">
+              <tr>
+                <th class="text-left px-4 py-3 font-bold text-gray-900"></th>
+                <th class="text-left px-4 py-3 font-bold text-gray-900">Bitdefender</th>
+                <th class="text-left px-4 py-3 font-bold text-gray-900">Kaspersky</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-100">
+              {compare.map(([label, bd, kas]) => (
+                <tr>
+                  <td class="px-4 py-3 font-semibold text-gray-900">{label}</td>
+                  <td class="px-4 py-3 text-gray-600">{bd}</td>
+                  <td class="px-4 py-3 text-gray-600">{kas}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">El tema que más preguntan: Kaspersky y Estados Unidos</h2>
+        <p class="text-lg text-gray-600 leading-relaxed mb-4">
+          En junio de 2024 el Departamento de Comercio de Estados Unidos prohibió a Kaspersky vender a personas y empresas de ese país (desde el 20 de julio de 2024) y entregar actualizaciones allí (desde el 29 de septiembre de 2024). Kaspersky rechazó los señalamientos y cerró su operación en Estados Unidos.
+        </p>
+        <p class="text-lg text-gray-600 leading-relaxed">
+          <strong>En Colombia no hay ninguna restricción</strong> y Kaspersky se compra, se usa y se actualiza con normalidad. Lo que recomendamos revisar es si su empresa es filial de una compañía estadounidense, si exporta o presta servicios a clientes de ese país, o si algún contrato o auditoría le pide evitar fabricantes de determinados orígenes. En esos casos, Bitdefender evita la discusión.
+        </p>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Cuándo elegir cada una</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          <div class="border-2 border-red-700 rounded-2xl p-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-4">Elija Bitdefender si…</h3>
+            <ul class="space-y-3">
+              {pickBd.map((item) => (
+                <li class="flex gap-3 text-gray-700"><span class="text-red-700 font-bold">✓</span><span>{item}</span></li>
+              ))}
+            </ul>
+          </div>
+          <div class="border border-gray-300 rounded-2xl p-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-4">Kaspersky le sirve si…</h3>
+            <ul class="space-y-3">
+              {pickKas.map((item) => (
+                <li class="flex gap-3 text-gray-700"><span class="text-gray-900 font-bold">✓</span><span>{item}</span></li>
+              ))}
+            </ul>
+          </div>
+        </div>
+        <p class="text-lg text-gray-600 leading-relaxed mt-6">
+          <strong>Nuestra experiencia:</strong> el resultado depende más de la implementación y la operación que de la marca. Un EDR que nadie revisa no protege, sea cual sea el fabricante. Antes de elegir, defina quién va a atender las alertas.
+        </p>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Si va a cambiar de una a otra</h2>
+        <ol class="space-y-4">
+          <li class="flex gap-4"><span class="flex-shrink-0 w-8 h-8 bg-gray-900 text-white rounded-full flex items-center justify-center text-sm font-bold">1</span><p class="text-gray-700 leading-relaxed pt-1">Empiece al menos un mes antes de que venza la licencia actual.</p></li>
+          <li class="flex gap-4"><span class="flex-shrink-0 w-8 h-8 bg-gray-900 text-white rounded-full flex items-center justify-center text-sm font-bold">2</span><p class="text-gray-700 leading-relaxed pt-1">Haga inventario de computadores, servidores y máquinas virtuales.</p></li>
+          <li class="flex gap-4"><span class="flex-shrink-0 w-8 h-8 bg-gray-900 text-white rounded-full flex items-center justify-center text-sm font-bold">3</span><p class="text-gray-700 leading-relaxed pt-1">Migre por grupos, empezando por un piloto, y verifique cada grupo antes de seguir.</p></li>
+          <li class="flex gap-4"><span class="flex-shrink-0 w-8 h-8 bg-gray-900 text-white rounded-full flex items-center justify-center text-sm font-bold">4</span><p class="text-gray-700 leading-relaxed pt-1">Configure las políticas y exclusiones antes del despliegue masivo, no después.</p></li>
+        </ol>
+      </section>
+
+      <section class="mb-12 bg-gray-50 border border-gray-200 rounded-2xl p-6">
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">Lecturas relacionadas</h2>
+        <ul class="space-y-2">
+          <li><a href="/blog/precio-bitdefender-gravityzone-colombia/" class="text-red-700 font-semibold hover:underline">Precio de Bitdefender GravityZone en Colombia</a></li>
+          <li><a href="/blog/kaspersky-next-precio-colombia/" class="text-red-700 font-semibold hover:underline">Precio de Kaspersky Next en Colombia</a></li>
+          <li><a href="/blog/bitdefender-edr-xdr-mdr/" class="text-red-700 font-semibold hover:underline">Bitdefender EDR, XDR o MDR: cuál necesita</a></li>
+          <li><a href="/antivirus-empresas/" class="text-red-700 font-semibold hover:underline">Comparativa de antivirus para empresas</a></li>
+        </ul>
+      </section>
+
+      <section class="mb-12 bg-gray-50 border border-gray-200 rounded-2xl p-6">
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">Fuentes</h2>
+        <ul class="space-y-2 text-sm">
+          <li><a href="https://www.mayerbrown.com/en/insights/publications/2024/06/bis-issues-first-icts-ban-prohibiting-sales-and-updates-to-kaspersky-products-and-services-in-the-us-while-ofac-sanctions-senior-executives-and-directors" class="text-red-700 hover:underline" rel="noopener">Mayer Brown: BIS prohíbe ventas y actualizaciones de Kaspersky en EE. UU. (junio 2024)</a></li>
+          <li><a href="https://www.infosecurity-magazine.com/news/kaspersky-to-quit-us/" class="text-red-700 hover:underline" rel="noopener">Infosecurity Magazine: Kaspersky sale de EE. UU. tras la prohibición</a></li>
+          <li><a href="https://www.av-test.org/en/antivirus/business-windows-client/" class="text-red-700 hover:underline" rel="noopener">AV-TEST: pruebas de protección para empresas</a></li>
+          <li><a href="https://www.av-comparatives.org/business/" class="text-red-700 hover:underline" rel="noopener">AV-Comparatives: pruebas de seguridad empresarial</a></li>
+        </ul>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Preguntas frecuentes</h2>
+        <div class="space-y-5">
+          {bdVsKasFaqs.map((f) => (
+            <div class="border border-gray-200 rounded-xl p-5">
+              <h3 class="font-bold text-gray-900 mb-2">{f.q}</h3>
+              <p class="text-gray-600">{f.a}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section class="bg-[#111827] rounded-2xl p-8 text-white">
+        <h2 class="text-2xl font-bold mb-3">Le recomendamos la que le conviene, no la que más vendemos</h2>
+        <p class="text-gray-300 mb-6">Star Solutions TI es Reseller Platinum de Bitdefender y partner de Kaspersky, con más de 1.150 empresas protegidas desde 2016. Revisamos su caso y le cotizamos la opción que su equipo puede operar.</p>
+        <div class="flex flex-wrap gap-3">
+          <a href="/bitdefender/" class="inline-flex items-center justify-center bg-red-700 text-white font-semibold px-6 py-3 rounded hover:bg-[#dc2626] transition">Cotizar Bitdefender</a>
+          <a href="/kaspersky/" class="inline-flex items-center justify-center border border-white/40 text-white font-semibold px-6 py-3 rounded hover:bg-white/10 transition">Cotizar Kaspersky</a>
+        </div>
+      </section>
+    </div>
+  </article>
+
+  <Footer />
+  <WhatsAppButton />
+</BaseLayout>
