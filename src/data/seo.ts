@@ -6,6 +6,7 @@ import { calcFaqs } from './iso27001Calculadora';
 import { hornetFaqs } from './blogHornetsecurity';
 import { pentestIsoFaqs } from './blogPentestingIso';
 import { bdEdrFaqs } from './blogBitdefenderEdr';
+import { precioBdFaqs } from './blogPrecioBitdefender';
 import { certIsoFaqs } from './blogCertificacionIso';
 import { informeFaqs } from './informe2026';
 import { dmarcFaqs } from './revisionDmarc';
@@ -1156,6 +1157,36 @@ export const seoData: Record<string, SEOData> = {
       keywords: 'Bitdefender, GravityZone, EDR, XDR, MDR, BEST',
     },
     faqJsonLd: faqSchema(bdEdrFaqs),
+  },
+
+  'blog/precio-bitdefender-gravityzone-colombia': {
+    title: 'Precio de Bitdefender GravityZone en Colombia (Guía 2026)',
+    description: 'De qué depende el precio de Bitdefender GravityZone para empresas en Colombia: equipos, edición, módulos, MDR y plazo. Cómo cotizar y comparar ofertas.',
+    keywords: 'precio Bitdefender GravityZone, cuánto cuesta Bitdefender empresas, Bitdefender precio Colombia, licencias Bitdefender empresas, cotizar Bitdefender GravityZone, Bitdefender Business Security Premium precio',
+    canonical: `${BASE_URL}/blog/precio-bitdefender-gravityzone-colombia/`,
+    ogTitle: 'Precio de Bitdefender GravityZone en Colombia: de qué depende',
+    ogType: 'article',
+    ogImage: `${BASE_URL}/og/blog-precio-bitdefender-gravityzone-colombia.jpg`,
+    breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Blog', url: '/blog/' }, { name: 'Precio de Bitdefender GravityZone', url: '/blog/precio-bitdefender-gravityzone-colombia/' }],
+    jsonLd: {
+      '@context': 'https://schema.org',
+      '@type': 'Article',
+      headline: 'Precio de Bitdefender GravityZone en Colombia: de qué depende',
+      description: 'Guía de los factores que determinan el precio de Bitdefender GravityZone para empresas en Colombia: número de equipos, edición, módulos adicionales, MDR, plazo y servicios del partner.',
+      datePublished: '2026-10-19',
+      dateModified: '2026-10-19',
+      inLanguage: 'es-CO',
+      author: AUTHOR,
+      publisher: { '@type': 'Organization', name: 'Star Solutions TI S.A.S.', url: BASE_URL, logo: { '@type': 'ImageObject', url: `${BASE_URL}/logo.png` } },
+      image: `${BASE_URL}/og/blog-precio-bitdefender-gravityzone-colombia.jpg`,
+      url: `${BASE_URL}/blog/precio-bitdefender-gravityzone-colombia/`,
+      about: [
+        { '@type': 'Organization', name: 'Bitdefender', url: 'https://www.bitdefender.com/' },
+        { '@type': 'SoftwareApplication', name: 'Bitdefender GravityZone', applicationCategory: 'SecurityApplication' },
+      ],
+      keywords: 'Bitdefender, GravityZone, precio, licencias, Colombia',
+    },
+    faqJsonLd: faqSchema(precioBdFaqs),
   },
 
   'blog/pentesting-iso-27001': {

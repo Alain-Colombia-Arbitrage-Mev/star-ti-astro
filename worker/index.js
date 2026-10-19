@@ -93,6 +93,7 @@ const TRAILING_SLASH_PATHS = new Set([
   "/blog/que-es-hornetsecurity",
   "/blog/pentesting-iso-27001",
   "/blog/bitdefender-edr-xdr-mdr",
+  "/blog/precio-bitdefender-gravityzone-colombia",
   "/blog/certificacion-iso-27001-colombia",
   "/bitdefender",
   "/kaspersky",

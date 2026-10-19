@@ -1,0 +1,215 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Navbar from '@components/Navbar.astro';
+import Footer from '@components/Footer.astro';
+import WhatsAppButton from '@components/WhatsAppButton.astro';
+import { seoData } from '@data/seo';
+import { precioBdFaqs } from '@data/blogPrecioBitdefender';
+
+const seo = seoData['blog/precio-bitdefender-gravityzone-colombia'];
+
+const factors = [
+  ['Número de equipos', 'GravityZone se licencia por endpoint: computadores, servidores y máquinas virtuales. A más volumen, menor precio por equipo.'],
+  ['Edición', 'Small Business Security, Business Security Premium o Enterprise. Cada una suma capacidades (EDR, sandbox, XDR) y cambia el valor por equipo.'],
+  ['Módulos adicionales', 'Patch Management, cifrado de disco, monitoreo de integridad y seguridad de correo se contratan aparte según la edición.'],
+  ['Servicio MDR', 'Si quiere que analistas de Bitdefender vigilen y respondan 24/7, el servicio MDR se suma a la licencia.'],
+  ['Plazo del contrato', 'Uno, dos o tres años. Los contratos plurianuales suelen bajar el precio anual por equipo.'],
+  ['Servicios del partner', 'Migración desde el antivirus anterior, implementación, políticas, capacitación y administración mensual.'],
+];
+
+const editions = [
+  ['Small Business Security', 'Antimalware, firewall, control web y protección contra ransomware.', 'Empresas pequeñas con TI básica.'],
+  ['Business Security Premium', 'Lo anterior más EDR, sandbox en la nube y análisis de riesgo de los equipos.', 'Empresas medianas y grandes con equipo de TI.'],
+  ['Business Security Enterprise', 'Lo anterior más XDR (identidad, red, nube y Microsoft 365). Se puede sumar MDR.', 'Organizaciones grandes, reguladas o del sector público.'],
+];
+
+const checklist = [
+  'Cantidad de computadores, servidores físicos y máquinas virtuales.',
+  'Sistemas operativos (Windows, macOS, Linux) y si hay servidores con Exchange o bases de datos críticas.',
+  'Número de buzones de Microsoft 365 o Google Workspace, si quiere proteger el correo.',
+  'Antivirus actual y fecha de vencimiento, para planear la migración sin quedar descubierto.',
+  'Quién va a revisar las alertas: su equipo de TI, un tercero o el MDR de Bitdefender.',
+  'Exigencias de cumplimiento: ISO 27001, Superfinanciera, MSPI o contratos con entidades públicas.',
+];
+
+const compareChecks = [
+  ['Misma edición', 'Una cotización de Small Business Security no se compara con una de Premium.'],
+  ['Mismo número de equipos y servidores', 'Algunas ofertas cotizan solo computadores y dejan los servidores por fuera.'],
+  ['Mismo plazo', 'Un año contra tres años no es comparable sin calcular el valor anual.'],
+  ['Qué servicios incluye', 'Implementación, migración, soporte en español y administración pueden marcar la diferencia.'],
+  ['Quién es el partner', 'Verifique el nivel en el programa de Bitdefender y la experiencia en implementaciones de su tamaño.'],
+];
+---
+
+<BaseLayout seo={seo}>
+  <Navbar />
+
+  <section class="relative bg-gradient-to-br from-[#0b1220] to-[#1f2937] overflow-hidden">
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-16 lg:pb-20">
+      <nav class="mb-8 flex items-center gap-2 text-sm text-gray-400" aria-label="Ruta de navegación">
+        <a href="/" class="hover:text-white transition-colors">Inicio</a>
+        <span>/</span>
+        <a href="/blog/" class="hover:text-white transition-colors">Blog</a>
+        <span>/</span>
+        <span class="text-gray-200">Precio de Bitdefender GravityZone</span>
+      </nav>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <div class="flex flex-wrap items-center gap-3 mb-6">
+            <span class="bg-red-500/20 border border-red-500/30 text-red-300 text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wide">Bitdefender</span>
+            <span class="text-gray-400 text-sm">19 oct 2026</span>
+          </div>
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+            Precio de Bitdefender GravityZone en Colombia: de qué depende
+          </h1>
+          <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+            Los seis factores que mueven el precio, qué incluye cada edición, los costos que no aparecen en la licencia y cómo pedir cotizaciones que se puedan comparar.
+          </p>
+          <div class="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-gray-400">
+            <span>Por Jorge Molano &middot; CEO de Star Solutions TI</span>
+            <span>&bull;</span>
+            <span>Tiempo de lectura: 6 min</span>
+          </div>
+        </div>
+        <div class="hidden lg:block">
+          <img src="/og/blog-precio-bitdefender-gravityzone-colombia.jpg" alt="Precio de Bitdefender GravityZone en Colombia" class="w-full h-auto rounded-2xl shadow-2xl ring-1 ring-white/10" width="1200" height="630" loading="eager" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <article class="bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+      <section class="mb-12">
+        <p class="text-xl text-gray-700 leading-relaxed mb-6">
+          "¿Cuánto vale Bitdefender?" es la primera pregunta que nos hacen. La respuesta honesta es que <strong>no hay un precio de lista en pesos</strong>: el valor de <strong>Bitdefender GravityZone</strong> se arma con el número de equipos, la edición, los módulos y el servicio que su empresa necesita. Esta guía le explica cada pieza para que llegue a la cotización sabiendo qué pedir.
+        </p>
+        <div class="bg-red-50 border border-red-200 rounded-2xl p-6">
+          <h2 class="text-xl font-bold text-red-900 mb-2">Respuesta rápida</h2>
+          <p class="text-red-800 leading-relaxed">
+            Bitdefender GravityZone se paga <strong>por equipo y por año</strong>. El precio baja con el volumen y con contratos de dos o tres años, y sube con la edición (EDR, XDR), los módulos adicionales y el servicio MDR 24/7. Para comparar ofertas, pida siempre la misma edición, el mismo número de equipos y servidores, y el mismo plazo.
+          </p>
+        </div>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Los seis factores que mueven el precio</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          {factors.map(([title, text], index) => (
+            <div class="border border-gray-200 rounded-2xl p-6">
+              <div class="flex items-center gap-3 mb-2">
+                <span class="flex-shrink-0 w-8 h-8 bg-red-700 text-white rounded-full flex items-center justify-center text-sm font-bold">{index + 1}</span>
+                <h3 class="text-lg font-bold text-gray-900">{title}</h3>
+              </div>
+              <p class="text-gray-600 leading-relaxed">{text}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Qué incluye cada edición</h2>
+        <div class="overflow-x-auto rounded-2xl border border-gray-200">
+          <table class="w-full text-sm min-w-[640px]">
+            <thead class="bg-gray-50">
+              <tr>
+                <th class="text-left px-4 py-3 font-bold text-gray-900">Edición</th>
+                <th class="text-left px-4 py-3 font-bold text-gray-900">Qué protege</th>
+                <th class="text-left px-4 py-3 font-bold text-gray-900">Para quién</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-100">
+              {editions.map(([name, what, who]) => (
+                <tr>
+                  <td class="px-4 py-3 font-semibold text-gray-900">{name}</td>
+                  <td class="px-4 py-3 text-gray-600">{what}</td>
+                  <td class="px-4 py-3 text-gray-600">{who}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p class="text-sm text-gray-500 mt-3">Si duda entre EDR, XDR y MDR, lea nuestra guía <a href="/blog/bitdefender-edr-xdr-mdr/" class="text-red-700 font-semibold hover:underline">Bitdefender EDR, XDR o MDR: cuál necesita su empresa</a>.</p>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Lo que no aparece en el precio de la licencia</h2>
+        <p class="text-lg text-gray-600 leading-relaxed mb-4">
+          La licencia le da derecho a usar el software. Que la protección funcione depende de cómo se implemente y de quién la opere. Antes de elegir la oferta más barata, revise si incluye:
+        </p>
+        <ul class="space-y-3 text-gray-700">
+          <li class="flex gap-3"><span class="text-red-700 font-bold">•</span><span><strong>Migración</strong> desde el antivirus actual, sin dejar equipos desprotegidos durante el cambio.</span></li>
+          <li class="flex gap-3"><span class="text-red-700 font-bold">•</span><span><strong>Despliegue del agente</strong> en todos los equipos, incluidas sedes y trabajo remoto.</span></li>
+          <li class="flex gap-3"><span class="text-red-700 font-bold">•</span><span><strong>Políticas</strong> ajustadas a su operación: exclusiones, control de dispositivos, control web.</span></li>
+          <li class="flex gap-3"><span class="text-red-700 font-bold">•</span><span><strong>Administración</strong> mensual: revisar alertas, equipos desactualizados e informes.</span></li>
+          <li class="flex gap-3"><span class="text-red-700 font-bold">•</span><span><strong>Soporte en español</strong> con ingenieros locales cuando hay un incidente.</span></li>
+        </ul>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Qué tener a mano para cotizar</h2>
+        <ol class="space-y-4">
+          {checklist.map((item, index) => (
+            <li class="flex gap-4">
+              <span class="flex-shrink-0 w-8 h-8 bg-gray-900 text-white rounded-full flex items-center justify-center text-sm font-bold">{index + 1}</span>
+              <p class="text-gray-700 leading-relaxed pt-1">{item}</p>
+            </li>
+          ))}
+        </ol>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Cómo comparar dos cotizaciones</h2>
+        <div class="space-y-4">
+          {compareChecks.map(([title, text]) => (
+            <div class="border-l-4 border-red-700 bg-gray-50 rounded-r-xl p-5">
+              <h3 class="font-bold text-gray-900 mb-1">{title}</h3>
+              <p class="text-gray-600">{text}</p>
+            </div>
+          ))}
+        </div>
+        <p class="text-lg text-gray-600 leading-relaxed mt-6">
+          <strong>Nuestra experiencia:</strong> la diferencia de precio entre dos ofertas casi siempre se explica por una de estas cinco cosas. Cuando se igualan, las cifras suelen quedar mucho más cerca de lo que parecía.
+        </p>
+      </section>
+
+      <section class="mb-12 bg-[#111827] rounded-2xl p-8 text-white">
+        <p class="text-xs font-bold uppercase tracking-widest text-red-400 mb-2">Caso de éxito Star Solutions TI</p>
+        <h2 class="text-2xl font-bold mb-3">32.000 endpoints en una sola entidad pública</h2>
+        <p class="text-gray-300 leading-relaxed">Implementamos y administramos Bitdefender GravityZone en 32.000 equipos de una entidad pública en Colombia. A ese volumen, la licencia es solo una parte: la planeación del despliegue, las políticas por dependencia y la administración continua son las que sostienen la protección.</p>
+      </section>
+
+      <section class="mb-12 bg-gray-50 border border-gray-200 rounded-2xl p-6">
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">Fuentes</h2>
+        <ul class="space-y-2 text-sm">
+          <li><a href="https://www.bitdefender.com/business/support/en/77209-1441675-security-features.html" class="text-red-700 hover:underline" rel="noopener">Bitdefender: GravityZone security features (módulos y add-ons)</a></li>
+          <li><a href="https://www.bitdefender.com/business/support/en/77209-376316-patch-management.html" class="text-red-700 hover:underline" rel="noopener">Bitdefender: Patch Management</a></li>
+          <li><a href="https://www.bitdefender.com/business/support/en/77209-376312-full-disk-encryption.html" class="text-red-700 hover:underline" rel="noopener">Bitdefender: Full Disk Encryption</a></li>
+          <li><a href="https://www.bitdefender.com/business/support/en/77209-398422-integrity-monitoring.html" class="text-red-700 hover:underline" rel="noopener">Bitdefender: Integrity Monitoring</a></li>
+        </ul>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Preguntas frecuentes</h2>
+        <div class="space-y-5">
+          {precioBdFaqs.map((f) => (
+            <div class="border border-gray-200 rounded-xl p-5">
+              <h3 class="font-bold text-gray-900 mb-2">{f.q}</h3>
+              <p class="text-gray-600">{f.a}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section class="bg-red-700 rounded-2xl p-8 text-white">
+        <h2 class="text-2xl font-bold mb-3">Pida su cotización a un Reseller Platinum</h2>
+        <p class="text-red-50 mb-6">Star Solutions TI es Reseller Platinum de Bitdefender, con más de 150 empresas y más de 50.000 equipos protegidos con GravityZone. Le enviamos una cotización en pesos colombianos, con la edición que su equipo puede operar.</p>
+        <a href="/bitdefender/" class="inline-flex items-center justify-center bg-white text-red-700 font-semibold px-6 py-3 rounded hover:bg-red-50 transition">Cotizar Bitdefender</a>
+      </section>
+    </div>
+  </article>
+
+  <Footer />
+  <WhatsAppButton />
+</BaseLayout>
