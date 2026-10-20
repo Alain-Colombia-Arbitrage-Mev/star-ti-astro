@@ -67,6 +67,9 @@ const LEGACY_REDIRECTS = new Map([
   ["/seguridad-informatica/", "/seguridad-informatica-empresas/"],
   ["/antivirus-bitdefender", "/bitdefender/"],
   ["/antivirus-bitdefender/", "/bitdefender/"],
+  // URL del sitio anterior enlazada desde el perfil de Unsplash (backlink activo, 20-oct-2026).
+  ["/antivirus-bitdefender-colombia", "/bitdefender/"],
+  ["/antivirus-bitdefender-colombia/", "/bitdefender/"],
   ["/nosotros", "/sobre-nosotros/"],
   ["/nosotros/", "/sobre-nosotros/"],
   ["/licenciamiento", "/antivirus-empresas/"],
