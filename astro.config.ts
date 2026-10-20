@@ -45,6 +45,8 @@ const COMMERCIAL_LASTMOD = [
   ['/lastpass/', '2026-10-16'],
   ['/mejores-empresas-consultoria-iso-27001-colombia/', '2026-10-18'],
   ['/sealpath/', '2026-10-18'],
+  ['/miami/', '2026-10-20'],
+  ['/miami/contacto/', '2026-10-20'],
   ['/seguridad-informatica-empresas/', '2026-10-17'],
   ['/sobre-nosotros/', '2026-10-17'],
   ['/venezuela/', '2026-10-18'],
@@ -55,15 +57,17 @@ for (const [path, date] of COMMERCIAL_LASTMOD) LASTMOD.set(`${SITE}${path}`, dat
 // src/data/seo.ts (que los emite en el <head>). Aqui se inyectan tambien en el
 // sitemap como <xhtml:link>. La opcion `i18n` nativa no sirve porque exige que
 // el locale sea un segmento de ruta (/es-CO/...), y este sitio usa /venezuela/,
-// /contacto/. Por eso se construyen los `links` a mano en serialize().
+// /miami/. Por eso se construyen los `links` a mano en serialize().
 const HREFLANG_HOME = [
   { lang: 'es-CO', url: `${SITE}/` },
   { lang: 'es-VE', url: `${SITE}/venezuela/` },
+  { lang: 'en-US', url: `${SITE}/miami/` },
   { lang: 'x-default', url: `${SITE}/` },
 ];
 const HREFLANG_CONTACTO = [
   { lang: 'es-CO', url: `${SITE}/contacto/` },
   { lang: 'es-VE', url: `${SITE}/venezuela/contacto/` },
+  { lang: 'en-US', url: `${SITE}/miami/contacto/` },
   { lang: 'x-default', url: `${SITE}/contacto/` },
 ];
 const HOME_CLUSTER = new Set(HREFLANG_HOME.filter((l) => l.lang !== 'x-default').map((l) => l.url));

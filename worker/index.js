@@ -77,12 +77,6 @@ const LEGACY_REDIRECTS = new Map([
   ["/servicios/", "/"],
   ["/consultoria-organizacional", "/iso-27001/"],
   ["/consultoria-organizacional/", "/iso-27001/"],
-  // Landing de Miami retirada el 18-oct-2026: no es mercado comercial de Star
-  // (George). Generaba impresiones en EE. UU. sin clics ni negocio.
-  ["/miami", "/"],
-  ["/miami/", "/"],
-  ["/miami/contacto", "/contacto/"],
-  ["/miami/contacto/", "/contacto/"],
 ]);
 
 const TRAILING_SLASH_PATHS = new Set([
@@ -131,6 +125,8 @@ const TRAILING_SLASH_PATHS = new Set([
   "/informe-ciberseguridad-colombia-2026",
   "/venezuela",
   "/venezuela/contacto",
+  "/miami",
+  "/miami/contacto",
   "/blog",
   "/blog/iso-27001-regulaciones",
   "/blog/perfect-forward-secrecy",

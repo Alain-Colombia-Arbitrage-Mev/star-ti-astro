@@ -26,9 +26,11 @@
 /politica-de-proteccion-de-datos-personales /politica-de-proteccion-de-datos-personales/ 301
 /informe-ciberseguridad-colombia-2026 /informe-ciberseguridad-colombia-2026/ 301
 /venezuela /venezuela/ 301
+/miami /miami/ 301
 
 # Subrutas anidadas (faltaban: Cloudflare las resolvia con 302 por defecto)
 /venezuela/contacto /venezuela/contacto/ 301
+/miami/contacto /miami/contacto/ 301
 
 # Blog: indice y posts
 /blog /blog/ 301
