@@ -389,7 +389,7 @@ export const seoData: Record<string, SEOData> = {
   },
   'hacking-etico': {
     title: 'Servicio de Hacking Ético y Pentesting en Colombia',
-    description: 'Servicio de hacking ético y pentesting para empresas y entidades públicas en Colombia: pruebas de penetración, vulnerabilidades y plan de remediación.',
+    description: 'Pruebas de penetración con autorización legal, informe ejecutivo y técnico, y re-test de lo corregido. Para empresas y entidades públicas en Colombia.',
     keywords: 'servicio de hacking ético, servicio de hackeo ético, empresas de hacking ético en Colombia, pentesting Colombia, servicio de pentesting, pruebas de penetración, test de intrusión, análisis de vulnerabilidades, pentesting para ISO 27001',
     canonical: `${BASE_URL}/hacking-etico/`,
     ogTitle: 'Servicio de Hacking Ético y Pentesting en Colombia',
@@ -415,8 +415,8 @@ export const seoData: Record<string, SEOData> = {
   // STAR COMPLIANCE
   // =====================================================
   'iso-27001': {
-    title: 'Consultoría ISO 27001 en Bogotá | Empresa Certificada',
-    description: 'Consultoría ISO 27001 en Bogotá y Colombia por una empresa certificada ISO 27001:2022 por SGS. Diagnóstico gratuito, SGSI, Anexo A y auditoría.',
+    title: 'Consultoría ISO 27001 en Bogotá | Certificados por SGS',
+    description: 'Le acompañamos hasta la certificación ISO 27001 con una empresa que ya la logró: certificada ISO/IEC 27001:2022 por SGS. Diagnóstico gratuito, SGSI y Anexo A.',
     keywords: 'consultoría ISO 27001 Bogotá Colombia, consultoria ISO 27001 bogota colombia, consultoria iso 27001, bogota - colombia, consultoría ISO 27001 Colombia, consultoria ISO 27001 Bogotá, consultor ISO 27001 Colombia, certificación ISO 27001, certificación SGSI, auditoría ISO 27001, gap analysis seguridad información, implementación ISO 27001, Anexo A, declaración de aplicabilidad, ISO 27001 Bogotá, ISO 27001 Medellín, ISO 27001 Cali, ISO 27001 precio, cotización ISO 27001',
     canonical: `${BASE_URL}/iso-27001/`,
     ogTitle: 'Consultoría ISO 27001 en Bogotá | Empresa Certificada',
@@ -462,8 +462,8 @@ export const seoData: Record<string, SEOData> = {
     faqJsonLd: faqSchema(isoFaqs.map((f) => ({ q: f.question, a: f.answer }))),
   },
   'mejores-empresas-consultoria-iso-27001-colombia': {
-    title: 'Mejores consultoras ISO 27001 Colombia | Guía 2026',
-    description: 'Compare empresas de consultoría ISO 27001 en Colombia: Star Solutions TI, firmas SGSI, plataformas GRC y certificadores. Criterios y cotización.',
+    title: 'Mejores Consultoras ISO 27001 en Colombia (2026)',
+    description: 'Comparativa 2026 de consultoras ISO 27001 en Colombia: firmas SGSI, plataformas GRC y certificadores. Criterios para elegir y qué pedir en la cotización.',
     keywords: 'mejores empresas de consultoría ISO 27001 Colombia, mejores consultoras ISO 27001 Colombia, empresas consultoría ISO 27001 Colombia, consultores ISO 27001 Colombia, ranking consultoras ISO 27001, certificación ISO 27001 Colombia, SGSI Colombia',
     canonical: `${BASE_URL}/mejores-empresas-consultoria-iso-27001-colombia/`,
     ogTitle: 'Mejores consultoras ISO 27001 Colombia | Guía 2026',
@@ -686,8 +686,8 @@ export const seoData: Record<string, SEOData> = {
     ]),
   },
   'antivirus-empresas': {
-    title: 'Antivirus Empresarial en Colombia: Comparativa 2026',
-    description: 'Antivirus empresarial y corporativo en Colombia: Bitdefender vs Kaspersky, precio por equipo y migración sin interrupciones. Asesoría gratuita.',
+    title: 'Antivirus para Empresas 2026: Bitdefender vs Kaspersky',
+    description: '¿Qué antivirus empresarial elegir en Colombia? Compare Bitdefender y Kaspersky: EDR, consola central, servidores y soporte local. Diagnóstico gratuito.',
     keywords: 'antivirus empresarial, antivirus para empresas, antivirus corporativo, antivirus empresarial Colombia, antivirus empresas Colombia, comparativa antivirus, Bitdefender vs Kaspersky, mejor antivirus corporativo 2026',
     canonical: `${BASE_URL}/antivirus-empresas/`,
     ogTitle: 'Antivirus Empresarial en Colombia: Comparativa 2026',
@@ -702,12 +702,12 @@ export const seoData: Record<string, SEOData> = {
       publisher: ORG,
     },
     faqJsonLd: faqSchema([
-      { q: 'Cuánto cuesta implementar un antivirus empresarial?', a: 'Para PYMES el rango es USD 30-80 por endpoint al ano; soluciones enterprise con EDR cuestan USD 100-200 por endpoint. Star Solutions TI ofrece planes flexibles con descuentos por volumen.' },
+      { q: '¿Cuánto cuesta implementar un antivirus empresarial?', a: 'No hay un precio único: depende del número de equipos y servidores, la edición (con o sin EDR/XDR), los módulos adicionales, el plazo del contrato y si incluye implementación y administración. Star Solutions TI cotiza ediciones equivalentes de Bitdefender y Kaspersky para que la comparación sea justa.' },
       { q: 'Cuánto tiempo toma la implementación?', a: 'Hasta 100 endpoints: 3 a 5 días habiles. Más de 500 endpoints: 2 a 4 semanas con despliegue por fases. La mayoria de organizaciones tiene sus equipos protegidos en menos de 48 horas.' },
       { q: 'Puedo migrar desde mi antivirus actual?', a: 'Sí. Gestionamos migraciones desde Symantec, McAfee, Trend Micro y otros sin interrumpir las operaciones, desinstalando el producto anterior y desplegando el nuevo de forma automática.' },
       { q: 'Qué diferencia hay entre Bitdefender y Kaspersky?', a: 'Bitdefender destaca en detección con IA y bajo impacto en rendimiento. Kaspersky ofrece mejor integración con SIEM y protección anti-APT mas avanzada para sectores regulados.' },
       { q: 'Incluye protección para servidores Linux y macOS?', a: 'Sí. Todas las soluciones que distribuimos protegen Windows, macOS, Linux, Android e iOS desde una consola unificada, con políticas diferenciadas por tipo de dispositivo.' },
-      { q: 'Qué pasa si detectan ransomware durante la implementación?', a: 'Actuamos de inmediato: aislamos el equipo afectado, realizamos análisis forense, eliminamos la amenaza y restauramos desde backup. La respuesta a incidentes esta incluida sin costo adicional.' },
+      { q: 'Qué pasa si detectan ransomware durante la implementación?', a: 'Actuamos de inmediato: aislamos el equipo afectado, realizamos análisis forense, eliminamos la amenaza y restauramos desde backup. El alcance de la respuesta a incidentes queda definido en la propuesta.' },
     ]),
   },
 
