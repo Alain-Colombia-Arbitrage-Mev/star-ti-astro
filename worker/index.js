@@ -89,6 +89,7 @@ const TRAILING_SLASH_PATHS = new Set([
   "/blog/kaspersky-next-precio-colombia",
   "/blog/que-es-hornetsecurity",
   "/blog/pentesting-iso-27001",
+  "/blog/cuanto-cuesta-un-pentest-colombia",
   "/blog/bitdefender-edr-xdr-mdr",
   "/blog/precio-bitdefender-gravityzone-colombia",
   "/blog/bitdefender-vs-kaspersky-empresas",

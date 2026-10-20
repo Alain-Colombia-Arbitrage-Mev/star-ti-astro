@@ -21,6 +21,7 @@ Last updated: 2026-08-24
 - Portfolio 2026 (downloadable PDF with the four pillars, partner brands and services): https://star-ti.com/portafolio/
 - Acronis Cyber Protect (Star Protection pillar): business backup, disaster recovery and ransomware rollback, 3-2-1 backup design and restore testing: https://star-ti.com/acronis/
 - Ethical hacking and penetration testing: https://star-ti.com/hacking-etico/
+- Pentest pricing guide (what drives the cost: scope, test type, black/grey/white box, manual depth, re-test; red flags in quotes; no list prices): https://star-ti.com/blog/cuanto-cuesta-un-pentest-colombia/
 - Pentesting for ISO 27001 guide (controls 8.8, 8.29, 5.35, frequency, audit report): https://star-ti.com/blog/pentesting-iso-27001/
 - ISO 27001 consulting in Bogota, Colombia and SGSI certification preparation: https://star-ti.com/iso-27001/
 - Best ISO 27001 consulting companies in Colombia comparison: https://star-ti.com/mejores-empresas-consultoria-iso-27001-colombia/

@@ -7,6 +7,7 @@ import { hornetFaqs } from './blogHornetsecurity';
 import { pentestIsoFaqs } from './blogPentestingIso';
 import { bdEdrFaqs } from './blogBitdefenderEdr';
 import { precioBdFaqs } from './blogPrecioBitdefender';
+import { precioPentestFaqs } from './blogPrecioPentest';
 import { bdVsKasFaqs } from './blogBitdefenderVsKaspersky';
 import { dmarcGuideFaqs } from './blogDmarc';
 import { circular007Faqs } from './blogCircular007';
@@ -1258,6 +1259,32 @@ export const seoData: Record<string, SEOData> = {
       keywords: 'Bitdefender, GravityZone, EDR, XDR, MDR, BEST',
     },
     faqJsonLd: faqSchema(bdEdrFaqs),
+  },
+
+  'blog/cuanto-cuesta-un-pentest-colombia': {
+    title: '¿Cuánto Cuesta un Pentest en Colombia? (Guía 2026)',
+    description: 'Qué define el precio de un pentest o servicio de hacking ético en Colombia: alcance, tipo de prueba, profundidad y re-test. Cómo comparar cotizaciones.',
+    keywords: 'cuánto cuesta un pentest, precio pentest Colombia, costo hacking ético, servicio de pentesting, servicio de hacking ético precio, pentesting Colombia, auditoría pentesting',
+    canonical: `${BASE_URL}/blog/cuanto-cuesta-un-pentest-colombia/`,
+    ogTitle: '¿Cuánto cuesta un pentest en Colombia? Lo que define el precio',
+    ogType: 'article',
+    ogImage: `${BASE_URL}/og/blog-cuanto-cuesta-un-pentest-colombia.jpg`,
+    breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Blog', url: '/blog/' }, { name: 'Cuánto cuesta un pentest', url: '/blog/cuanto-cuesta-un-pentest-colombia/' }],
+    jsonLd: {
+      '@context': 'https://schema.org',
+      '@type': 'Article',
+      headline: '¿Cuánto cuesta un pentest en Colombia? Lo que define el precio',
+      description: 'Guía de los factores que determinan el precio de un pentest o servicio de hacking ético en Colombia: alcance, tipo de prueba, caja negra o blanca, profundidad manual, condiciones y re-test.',
+      datePublished: '2026-10-20',
+      dateModified: '2026-10-20',
+      inLanguage: 'es-CO',
+      author: AUTHOR,
+      publisher: { '@type': 'Organization', name: 'Star Solutions TI S.A.S.', url: BASE_URL, logo: { '@type': 'ImageObject', url: `${BASE_URL}/logo.png` } },
+      image: `${BASE_URL}/og/blog-cuanto-cuesta-un-pentest-colombia.jpg`,
+      url: `${BASE_URL}/blog/cuanto-cuesta-un-pentest-colombia/`,
+      keywords: 'pentest, hacking ético, precio, pruebas de penetración, Colombia',
+    },
+    faqJsonLd: faqSchema(precioPentestFaqs),
   },
 
   'blog/precio-bitdefender-gravityzone-colombia': {
