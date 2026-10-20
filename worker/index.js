@@ -70,6 +70,27 @@ const LEGACY_REDIRECTS = new Map([
   // URL del sitio anterior enlazada desde el perfil de Unsplash (backlink activo, 20-oct-2026).
   ["/antivirus-bitdefender-colombia", "/bitdefender/"],
   ["/antivirus-bitdefender-colombia/", "/bitdefender/"],
+  // URLs del sitio anterior que Google seguia rastreando con 404 (informe de rastreo, 20-oct-2026).
+  ["/antivirus-sophos-bogota-colombia", "/antivirus-empresas/"],
+  ["/antivirus-sophos-bogota-colombia/", "/antivirus-empresas/"],
+  ["/antivirus-f-secure-2021-bogota-colombia", "/antivirus-empresas/"],
+  ["/antivirus-f-secure-2021-bogota-colombia/", "/antivirus-empresas/"],
+  ["/antivirus-para-empresas-colombia/", "/antivirus-empresas/"],
+  ["/antivirus-kaspersky-bogota-colombia/", "/kaspersky/"],
+  ["/licenciamiento-software-teamviewer-microsoft-fortinet", "/teamviewer/"],
+  ["/licenciamiento-software-teamviewer-microsoft-fortinet/", "/teamviewer/"],
+  ["/software-teletrabajo-colombia", "/teamviewer/"],
+  ["/software-teletrabajo-colombia/", "/teamviewer/"],
+  ["/redes-informaticas", "/cableado-estructurado/"],
+  ["/redes-informaticas/", "/cableado-estructurado/"],
+  ["/cableado-estructurado-redes-de-datos-y-fibra-optica-bogota-colombia/", "/cableado-estructurado/"],
+  ["/seguridad", "/seguridad-informatica-empresas/"],
+  ["/seguridad/", "/seguridad-informatica-empresas/"],
+  ["/auditor-iso-27001-consultores-iso-bogota/", "/iso-27001/"],
+  ["/consultores-iso-27001-bogota-colombia", "/iso-27001/"],
+  ["/consultores-iso-27001-bogota-colombia/", "/iso-27001/"],
+  ["/antivirus-bitdefender-colombia/amp", "/bitdefender/"],
+  ["/antivirus-bitdefender-colombia/amp/", "/bitdefender/"],
   ["/nosotros", "/sobre-nosotros/"],
   ["/nosotros/", "/sobre-nosotros/"],
   ["/licenciamiento", "/antivirus-empresas/"],
@@ -171,12 +192,20 @@ const FIELD_NAMES = {
   userAgent: "User agent",
 };
 
+const HACK_SPAM_PATH = /^\/[A-Za-z]+\/\d+\/\d+(\/\d+)?\/?$/;
+
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
 
     if (url.pathname === LEADS_PATH) {
       return handleLeadSubmission(request, env);
+    }
+
+    // Restos de un hackeo antiguo: paginas basura con forma /palabra/123/4567/890123.
+    // 410 (eliminado) le dice a Google que no existen y que deje de rastrearlas.
+    if (HACK_SPAM_PATH.test(url.pathname)) {
+      return new Response("Gone", { status: 410, headers: { "X-Robots-Tag": "noindex", "Cache-Control": "public, max-age=86400" } });
     }
 
     const canonicalUrl = getCanonicalRedirectUrl(url);
