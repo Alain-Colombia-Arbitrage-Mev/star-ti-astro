@@ -50,11 +50,10 @@ const contents = ['Quiénes somos y cifras', 'El reto: el costo de una brecha', 
             Conozca en un solo documento nuestros cuatro pilares, los fabricantes que integramos y cómo protegemos a más de 1.150 empresas en Colombia, Venezuela y Estados Unidos.
           </p>
           <div class="flex flex-wrap gap-3">
-            <a href={pdf} download class="inline-flex items-center justify-center gap-2 bg-red-700 text-white font-semibold px-6 py-3 rounded hover:bg-[#dc2626] transition">
-              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v12m0 0l-5-5m5 5l5-5M4 20h16" /></svg>
-              Descargar portafolio (PDF)
+            <a href={pdf} target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-2 bg-red-700 text-white font-semibold px-6 py-3 rounded hover:bg-[#dc2626] transition">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z" /><circle cx="12" cy="12" r="3" stroke-width="2" /></svg>
+              Ver portafolio (PDF)
             </a>
-            <a href={pdf} target="_blank" rel="noopener" class="inline-flex items-center justify-center border border-white/40 text-white font-semibold px-6 py-3 rounded hover:bg-white/10 transition">Ver en el navegador</a>
           </div>
           <p class="text-sm text-gray-500 mt-4">14 páginas · PDF · 3,5 MB · Actualizado en octubre de 2026</p>
         </div>
@@ -94,7 +93,7 @@ const contents = ['Quiénes somos y cifras', 'El reto: el costo de una brecha', 
               <li class="flex gap-3"><span class="text-orange-400 font-bold w-6">{String(i + 2).padStart(2, '0')}</span>{c}</li>
             ))}
           </ol>
-          <a href={pdf} download class="mt-8 inline-flex items-center gap-2 bg-red-700 text-white font-semibold px-6 py-3 rounded hover:bg-[#dc2626] transition">Descargar PDF</a>
+          <a href={pdf} target="_blank" rel="noopener" class="mt-8 inline-flex items-center gap-2 bg-red-700 text-white font-semibold px-6 py-3 rounded hover:bg-[#dc2626] transition">Descargar PDF</a>
         </div>
         <div class="lg:col-span-2 grid sm:grid-cols-2 gap-4">
           {previews.map(([file, label]) => (
@@ -114,7 +113,7 @@ const contents = ['Quiénes somos y cifras', 'El reto: el costo de una brecha', 
       <p class="text-gray-600 mb-8">Agende un diagnóstico gratuito y le mostramos qué parte del portafolio aplica a su organización.</p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a href="/contacto/" class="bg-[#dc2626] text-white px-8 py-4 rounded-lg font-semibold hover:bg-[#b91c1c] transition">Solicitar diagnóstico gratis</a>
-        <a href={pdf} download class="border-2 border-gray-900 text-gray-900 px-8 py-4 rounded-lg font-semibold hover:bg-gray-900 hover:text-white transition">Descargar portafolio</a>
+        <a href={pdf} target="_blank" rel="noopener" class="border-2 border-gray-900 text-gray-900 px-8 py-4 rounded-lg font-semibold hover:bg-gray-900 hover:text-white transition">Descargar portafolio</a>
       </div>
     </div>
   </section>
