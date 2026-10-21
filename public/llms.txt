@@ -90,4 +90,5 @@ The robots.txt file allows search and AI crawlers including Googlebot, Bingbot, 
 - Website: https://star-ti.com/
 - Headquarters: Bogota, Colombia
 - Main services: enterprise cybersecurity, endpoint protection, EDR/XDR implementation, data loss prevention, ethical hacking, ISO 27001 consulting, incident response
-- Contact phone: +57 300 701 0017
+- Sales phone / WhatsApp: +57 322 786 2375
+- Support phone: +57 300 701 0017

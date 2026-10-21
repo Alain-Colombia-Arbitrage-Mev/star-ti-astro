@@ -42,6 +42,8 @@ const breadcrumbJsonLd = seo.breadcrumb ? {
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-T28HTCQ');</script>
+    <!-- Medicion de contactos: envia a GTM un evento por cada clic a WhatsApp o telefono (contact_whatsapp / contact_phone). -->
+    <script is:inline>document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href]');if(!a)return;var h=a.getAttribute('href')||'',t=/wa\.me|whatsapp\.com/.test(h)?'contact_whatsapp':/^tel:/.test(h)?'contact_phone':null;if(!t)return;(window.dataLayer=window.dataLayer||[]).push({event:t,contact_number:(h.match(/\d{10,13}/)||[''])[0],page_path:location.pathname});},true);</script>
     <!-- Metricool (analitica web de redes). Copia literal del codigo que entrega Metricool: su verificador busca este texto exacto. -->
     <script is:inline>function loadScript(a){var b=document.getElementsByTagName("head")[0],c=document.createElement("script");c.type="text/javascript",c.src="https://tracker.metricool.com/resources/be.js",c.onreadystatechange=a,c.onload=a,b.appendChild(c)}loadScript(function(){beTracker.t({hash:"3d176ef8ca45e23c5d58bfbe2f5028ac"})});</script>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />

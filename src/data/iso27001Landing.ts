@@ -131,4 +131,4 @@ export const caseSteps = [
 ];
 
 export const isoLeadEmail = 'contacto@star-ti.com';
-export const isoWhatsAppNumber = '573007010017';
+export const isoWhatsAppNumber = '573227862375';

@@ -41,6 +41,6 @@ export const informeFaqs = [
   },
   {
     q: '¿Cómo solicito un diagnóstico de ciberseguridad?',
-    a: 'Puede solicitarlo sin costo en la página de contacto de star-ti.com, escribiendo a contacto@star-ti.com o llamando al +57 300 701 0017. Revisamos su exposición externa y le entregamos prioridades de remediación.',
+    a: 'Puede solicitarlo sin costo en la página de contacto de star-ti.com, escribiendo a contacto@star-ti.com o llamando al +57 322 786 2375. Revisamos su exposición externa y le entregamos prioridades de remediación.',
   },
 ];
