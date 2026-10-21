@@ -42,8 +42,8 @@ const breadcrumbJsonLd = seo.breadcrumb ? {
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-T28HTCQ');</script>
-    <!-- Metricool (analitica web de redes, sitio star-ti.com). Solo en el dominio real: las vistas previas no cuentan visitas. -->
-    <script is:inline>if(location.hostname==='star-ti.com'){(function(){var c=document.createElement('script');c.src='https://tracker.metricool.com/resources/be.js';c.async=true;c.onload=function(){window.beTracker&&beTracker.t({hash:'3d176ef8ca45e23c5d58bfbe2f5028ac'})};document.head.appendChild(c)})()}</script>
+    <!-- Metricool (analitica web de redes). Copia literal del codigo que entrega Metricool: su verificador busca este texto exacto. -->
+    <script is:inline>function loadScript(a){var b=document.getElementsByTagName("head")[0],c=document.createElement("script");c.type="text/javascript",c.src="https://tracker.metricool.com/resources/be.js",c.onreadystatechange=a,c.onload=a,b.appendChild(c)}loadScript(function(){beTracker.t({hash:"3d176ef8ca45e23c5d58bfbe2f5028ac"})});</script>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <!-- Self-hosted fonts for performance (no external requests) -->
