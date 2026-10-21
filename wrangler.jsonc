@@ -20,6 +20,8 @@
   // conectados como Custom Domains desde el dashboard. Los www usan rutas de zona
   // porque ya existian registros DNS proxied creados manualmente.
   // www.starsolutionsti.com.ve pendiente: la zona esta "moved" (NS fuera de Cloudflare).
+  // Cada hora: si hubo una publicacion reciente, avisa a Bing (IndexNow) las URLs que cambiaron.
+  "triggers": { "crons": ["7 * * * *"] },
   "routes": [
     { "pattern": "www.star-ti.com/*", "zone_name": "star-ti.com" },
     { "pattern": "www.starsolutionsti.com.co/*", "zone_name": "starsolutionsti.com.co" }

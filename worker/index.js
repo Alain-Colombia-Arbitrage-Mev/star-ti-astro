@@ -240,7 +240,34 @@ export default {
     caseFixedUrl.pathname = caseFixedPath;
     return env.ASSETS.fetch(new Request(caseFixedUrl, request));
   },
+
+  async scheduled(event, env, ctx) {
+    ctx.waitUntil(notifyIndexNow(env));
+  },
 };
+
+// IndexNow (Bing, Yandex, Seznam...): la clave es publica por diseno y vive en /<clave>.txt.
+const INDEXNOW_KEY = "7a27ca973cc6769d70b605653525dea3";
+const INDEXNOW_WINDOW_MS = 75 * 60 * 1000;
+
+async function notifyIndexNow(env) {
+  const res = await env.ASSETS.fetch(new Request("https://star-ti.com/indexnow-pending.json"));
+  if (!res.ok) return;
+  const pending = await res.json();
+  // Solo el primer cron despues de cada publicacion avisa; los siguientes ven el archivo viejo.
+  if (!pending.urls?.length || Date.now() - pending.generated > INDEXNOW_WINDOW_MS) return;
+  const answer = await fetch("https://api.indexnow.org/indexnow", {
+    method: "POST",
+    headers: { "Content-Type": "application/json; charset=utf-8" },
+    body: JSON.stringify({
+      host: "star-ti.com",
+      key: INDEXNOW_KEY,
+      keyLocation: `https://star-ti.com/${INDEXNOW_KEY}.txt`,
+      urlList: pending.urls.slice(0, 10000),
+    }),
+  });
+  console.log(`[indexnow] ${pending.urls.length} URL(s) -> HTTP ${answer.status}`);
+}
 
 const LOCAL_HOSTS = new Set(["localhost", "127.0.0.1"]);
 

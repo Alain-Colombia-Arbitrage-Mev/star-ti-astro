@@ -4,7 +4,7 @@
   "version": "1.6.0",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "astro build && node scripts/indexnow-manifest.mjs",
     "preview": "astro preview",
     "airtable:setup": "node scripts/setup-airtable-leads.mjs"
   },
