@@ -80,12 +80,12 @@ const posts = Object.entries(seoData)
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {posts.map((post) => (
           <a href={`/blog/${post.slug}/`} class="block">
-            <article class="group bg-white border border-gray-200/70 rounded-3xl overflow-hidden hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 h-full flex flex-col">
+            <article class="group bg-white border border-gray-200/70 rounded-3xl overflow-hidden hover:shadow-2xl transition duration-200 hover:-translate-y-1 h-full flex flex-col">
               <div class="relative h-56 overflow-hidden">
                 <img
                   src={post.image}
                   alt={post.title}
-                  class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
                   width="400"
                   height="224"
                   loading="lazy"

@@ -32,6 +32,16 @@
   --radius: 0.625rem;
 }
 
+@theme {
+  /* Movimiento (27-oct-2026). Curvas fuertes en lugar de las de fábrica, que
+     se sienten lentas al inicio. Toda transición de Tailwind sin curva ni
+     duración explícita usa estos valores. */
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  --default-transition-duration: 200ms;
+  --default-transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -91,7 +101,11 @@
      capa base: una clase utilitaria (text-center, text-left) en el propio <p> la
      reemplaza, y los bloques centrados por su contenedor siguen centrados. Sin
      guiones automaticos: George no quiere palabras cortadas (18-oct-2026). */
-  main p { text-align: justify; hyphens: manual; -webkit-hyphens: manual; }
+  /* 27-oct-2026: en celular el justificado deja huecos irregulares entre
+     palabras (columna angosta y sin guiones). Se justifica solo desde 768px. */
+  @media (min-width: 768px) {
+    main p { text-align: justify; hyphens: manual; -webkit-hyphens: manual; }
+  }
   main :where(.text-center, .iso-section__header, .iso-step, .iso-cta) p { text-align: center; }
 
   .animate-blob { animation: blob 7s infinite; }
@@ -142,4 +156,50 @@ form[data-lead-form] [type='submit'][aria-busy='true'] {
   .animate-ping { opacity: 0 !important; }
   :where(button, [type='submit'], a, .wa-float):active { scale: none; }
   .lead-spinner { animation-duration: 1.6s; }
+}
+
+/* ---------------------------------------------------------------------------
+   Preguntas frecuentes (<details>): el contenido se despliega en lugar de
+   aparecer de golpe. Mejora progresiva: Chrome/Edge lo animan; los demás
+   navegadores abren al instante como antes.
+   --------------------------------------------------------------------------- */
+@supports selector(::details-content) {
+  :root { interpolate-size: allow-keywords; }
+  details::details-content {
+    block-size: 0;
+    overflow-y: clip;
+    opacity: 0;
+    transition:
+      block-size 240ms var(--ease-out),
+      opacity 200ms ease,
+      content-visibility 240ms allow-discrete;
+  }
+  details[open]::details-content {
+    block-size: auto;
+    opacity: 1;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    details::details-content { transition: opacity 150ms ease, content-visibility 150ms allow-discrete; }
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Aparición al desplazarse (27-oct-2026). Las tarjetas de las secciones entran
+   con un leve ascenso al llegar a la pantalla. Solo CSS, ligado al scroll (no
+   bloquea nada); en navegadores sin soporte el contenido se ve normal. Nunca
+   en formularios ni en el primer pantallazo.
+   --------------------------------------------------------------------------- */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    main section:not(:first-of-type):not(#consultoria) :is(.grid, .space-y-4, .space-y-6) > :is(div, a, article, li):not(:has(input, select, textarea, form)) {
+      animation: st-reveal linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 60%;
+    }
+  }
+}
+@keyframes st-reveal {
+  /* transform (no translate): así no pisa el levantamiento al pasar el mouse */
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: none; }
 }

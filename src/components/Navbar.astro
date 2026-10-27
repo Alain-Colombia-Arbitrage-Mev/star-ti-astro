@@ -457,34 +457,34 @@ const isoCertificado = '/certificados/certificado-iso-27001-star-solutions-ti.pd
     opacity: 0; visibility: hidden;
     transform: translateY(-6px) scale(0.98);
     transform-origin: top left;
-    transition: opacity 140ms ease-out, transform 200ms cubic-bezier(0.2, 0.8, 0.2, 1), visibility 0s linear 200ms;
+    transition: opacity 140ms ease-out, transform 200ms var(--ease-out), visibility 0s linear 200ms;
   }
   .dd-panel--right { transform-origin: top right; }
   [data-dropdown][data-open] > .dd-panel {
     opacity: 1; visibility: visible; transform: none;
-    transition: opacity 120ms ease-out, transform 220ms cubic-bezier(0.2, 0.8, 0.2, 1), visibility 0s;
+    transition: opacity 120ms ease-out, transform 220ms var(--ease-out), visibility 0s;
   }
-  .dd-chevron { transition: transform 200ms cubic-bezier(0.2, 0.8, 0.2, 1); }
+  .dd-chevron { transition: transform 200ms var(--ease-out); }
   [data-dropdown][data-open] .dd-chevron { transform: rotate(180deg); }
 
   /* Menú móvil y acordeones: crecen hacia abajo desde su botón y se recogen
      por el mismo camino. Se pueden revertir a mitad de la animación. */
   .mm, .mm-acc {
     display: grid; grid-template-rows: 0fr; visibility: hidden;
-    transition: grid-template-rows 280ms cubic-bezier(0.2, 0.8, 0.2, 1), visibility 0s linear 280ms;
+    transition: grid-template-rows 280ms var(--ease-out), visibility 0s linear 280ms;
   }
   .mm[data-open='true'], .mm-acc[data-open='true'] {
     grid-template-rows: 1fr; visibility: visible;
-    transition: grid-template-rows 280ms cubic-bezier(0.2, 0.8, 0.2, 1), visibility 0s;
+    transition: grid-template-rows 280ms var(--ease-out), visibility 0s;
   }
   .mm-inner, .mm-acc-inner { min-height: 0; overflow: hidden; }
   .mm-inner > div, .mm-acc-inner > div {
     opacity: 0; transform: translateY(-4px);
-    transition: opacity 180ms ease-out, transform 280ms cubic-bezier(0.2, 0.8, 0.2, 1);
+    transition: opacity 180ms ease-out, transform 280ms var(--ease-out);
   }
   .mm[data-open='true'] > .mm-inner > div,
   .mm-acc[data-open='true'] > .mm-acc-inner > div { opacity: 1; transform: none; }
-  .dropdown-chevron { transition: transform 220ms cubic-bezier(0.2, 0.8, 0.2, 1); }
+  .dropdown-chevron { transition: transform 220ms var(--ease-out); }
   [aria-expanded='true'] > .dropdown-chevron { transform: rotate(180deg); }
 
   @media (prefers-reduced-motion: reduce) {
