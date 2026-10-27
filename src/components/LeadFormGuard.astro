@@ -38,8 +38,19 @@ const siteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY ?? '0x4AAAAAAFZhj9AjIn
     form.append(trap);
 
     const elapsed = addHidden(form, '_elapsed');
-    form.addEventListener('submit', () => {
+    form.addEventListener('submit', (event) => {
       elapsed.value = String(Math.round(performance.now() - loadedAt));
+      // Confirmación inmediata: el botón muestra "Enviando…" y no admite un
+      // segundo clic. Se aplaza un instante por si otro script cancela el envío.
+      const submit = (event as SubmitEvent).submitter ?? form.querySelector('[type="submit"]');
+      window.setTimeout(() => {
+        if (event.defaultPrevented || !(submit instanceof HTMLButtonElement)) return;
+        submit.dataset.label ??= submit.innerHTML;
+        const en = document.documentElement.lang.startsWith('en');
+        submit.innerHTML = `<span class="lead-spinner" aria-hidden="true"></span> ${en ? 'Sending…' : 'Enviando…'}`;
+        submit.setAttribute('aria-busy', 'true');
+        submit.disabled = true;
+      }, 0);
     });
 
     if (siteKey) {
@@ -54,6 +65,15 @@ const siteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY ?? '0x4AAAAAAFZhj9AjIn
       if (anchor) anchor.before(widget);
       else form.append(widget);
     }
+  });
+
+  window.addEventListener('pageshow', (e) => {
+    if (!e.persisted) return;
+    document.querySelectorAll<HTMLButtonElement>('form[data-lead-form] [type="submit"][aria-busy="true"]').forEach((b) => {
+      if (b.dataset.label) b.innerHTML = b.dataset.label;
+      b.removeAttribute('aria-busy');
+      b.disabled = false;
+    });
   });
 
   if (siteKey && forms.length) {

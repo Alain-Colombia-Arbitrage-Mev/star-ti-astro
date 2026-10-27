@@ -98,3 +98,48 @@
   .animation-delay-2000 { animation-delay: 2s; }
   .animation-delay-4000 { animation-delay: 4s; }
 }
+
+/* ---------------------------------------------------------------------------
+   Respuesta al presionar (27-oct-2026). Los botones y los enlaces con forma de
+   botón se hunden un poco en el instante en que se presionan, no al soltar.
+   Va fuera de @layer para ganarle a las utilidades; usa la propiedad `scale`
+   (no `transform`) para no pisar los desplazamientos de Tailwind.
+   --------------------------------------------------------------------------- */
+:where(button, [type='submit'], a[class*='rounded-full'][class*='bg-'], a[class*='rounded-xl'][class*='bg-'], a[class*='rounded-lg'][class*='bg-red'], .wa-float):not(:disabled):active {
+  scale: 0.97;
+}
+
+/* Estado "Enviando…" de los formularios (lo activa LeadFormGuard) */
+form[data-lead-form] [type='submit'][aria-busy='true'] {
+  opacity: 0.75;
+  cursor: progress;
+}
+.lead-spinner {
+  display: inline-block;
+  vertical-align: -0.125em;
+  margin-inline-end: 0.25em;
+  width: 1em;
+  height: 1em;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 9999px;
+  animation: lead-spin 0.7s linear infinite;
+}
+@keyframes lead-spin { to { transform: rotate(360deg); } }
+
+/* ---------------------------------------------------------------------------
+   Menos movimiento (27-oct-2026). Si la persona lo pidió en su sistema, se
+   detienen las animaciones que se repiten sin fin (pulsos, rebotes, burbujas)
+   y el efecto de presión. La información sigue visible; solo deja de moverse.
+   --------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  .animate-ping,
+  .animate-bounce,
+  .animate-pulse,
+  .animate-blob {
+    animation: none !important;
+  }
+  .animate-ping { opacity: 0 !important; }
+  :where(button, [type='submit'], a, .wa-float):active { scale: none; }
+  .lead-spinner { animation-duration: 1.6s; }
+}

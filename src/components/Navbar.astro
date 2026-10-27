@@ -25,13 +25,13 @@ const isoCertificado = '/certificados/certificado-iso-27001-star-solutions-ti.pd
         <a href={en ? '/miami/' : '/'} class="hidden 2xl:inline-block px-1.5 xl:px-2.5 2xl:px-3 py-2 text-sm font-medium whitespace-nowrap text-gray-900 hover:bg-gray-50 rounded-3xl transition">Home</a>
 
         <!-- STAR PROTECTION Dropdown -->
-        <div class="relative group/protection">
-          <button class="px-1.5 xl:px-2.5 2xl:px-3 py-2 text-sm font-medium whitespace-nowrap text-gray-900 hover:bg-red-50 rounded-3xl transition flex items-center gap-1.5">
+        <div class="relative group/protection" data-dropdown>
+          <button type="button" data-dropdown-btn aria-expanded="false" aria-controls="dd-protection" class="px-1.5 xl:px-2.5 2xl:px-3 py-2 text-sm font-medium whitespace-nowrap text-gray-900 hover:bg-red-50 rounded-3xl transition flex items-center gap-1.5">
             <span class="w-2 h-2 rounded-full bg-red-500"></span>
             Star Protection
-            <svg class="w-3 h-3 transition-transform duration-200 group-hover/protection:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+            <svg class="dd-chevron w-3 h-3" aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
           </button>
-          <div class="absolute top-full left-0 mt-2 w-72 bg-white border border-gray-200 rounded-2xl shadow-xl shadow-black/5 py-0 opacity-0 invisible group-hover/protection:opacity-100 group-hover/protection:visible transition-all duration-300 overflow-hidden">
+          <div id="dd-protection" class="dd-panel absolute top-full left-0 mt-2 w-72 bg-white border border-gray-200 rounded-2xl shadow-xl shadow-black/5 py-0 overflow-hidden">
             <div class="bg-red-50 px-4 py-3 border-b border-red-100">
               <div class="font-bold text-red-600 text-xs uppercase tracking-wider">Star Protection</div>
               <div class="text-xs text-red-500 mt-0.5">{t('Defensa proactiva de endpoints y email', 'Proactive endpoint and email defense')}</div>
@@ -66,13 +66,13 @@ const isoCertificado = '/certificados/certificado-iso-27001-star-solutions-ti.pd
         </div>
 
         <!-- STAR INSPECTION Dropdown -->
-        <div class="relative group/inspection">
-          <button class="px-1.5 xl:px-2.5 2xl:px-3 py-2 text-sm font-medium whitespace-nowrap text-gray-900 hover:bg-blue-50 rounded-3xl transition flex items-center gap-1.5">
+        <div class="relative group/inspection" data-dropdown>
+          <button type="button" data-dropdown-btn aria-expanded="false" aria-controls="dd-inspection" class="px-1.5 xl:px-2.5 2xl:px-3 py-2 text-sm font-medium whitespace-nowrap text-gray-900 hover:bg-blue-50 rounded-3xl transition flex items-center gap-1.5">
             <span class="w-2 h-2 rounded-full bg-blue-500"></span>
             Star Inspection
-            <svg class="w-3 h-3 transition-transform duration-200 group-hover/inspection:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+            <svg class="dd-chevron w-3 h-3" aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
           </button>
-          <div class="absolute top-full left-0 mt-2 w-72 bg-white border border-gray-200 rounded-2xl shadow-xl shadow-black/5 py-0 opacity-0 invisible group-hover/inspection:opacity-100 group-hover/inspection:visible transition-all duration-300 overflow-hidden">
+          <div id="dd-inspection" class="dd-panel absolute top-full left-0 mt-2 w-72 bg-white border border-gray-200 rounded-2xl shadow-xl shadow-black/5 py-0 overflow-hidden">
             <div class="bg-blue-50 px-4 py-3 border-b border-blue-100">
               <div class="font-bold text-blue-600 text-xs uppercase tracking-wider">Star Inspection</div>
               <div class="text-xs text-blue-500 mt-0.5">{t('Visibilidad y detección de amenazas', 'Visibility and threat detection')}</div>
@@ -95,13 +95,13 @@ const isoCertificado = '/certificados/certificado-iso-27001-star-solutions-ti.pd
         </div>
 
         <!-- STAR COMPLIANCE Dropdown -->
-        <div class="relative group/compliance">
-          <button class="px-1.5 xl:px-2.5 2xl:px-3 py-2 text-sm font-medium whitespace-nowrap text-gray-900 hover:bg-emerald-50 rounded-3xl transition flex items-center gap-1.5">
+        <div class="relative group/compliance" data-dropdown>
+          <button type="button" data-dropdown-btn aria-expanded="false" aria-controls="dd-compliance" class="px-1.5 xl:px-2.5 2xl:px-3 py-2 text-sm font-medium whitespace-nowrap text-gray-900 hover:bg-emerald-50 rounded-3xl transition flex items-center gap-1.5">
             <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
             Star Compliance
-            <svg class="w-3 h-3 transition-transform duration-200 group-hover/compliance:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+            <svg class="dd-chevron w-3 h-3" aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
           </button>
-          <div class="absolute top-full left-0 mt-2 w-72 bg-white border border-gray-200 rounded-2xl shadow-xl shadow-black/5 py-0 opacity-0 invisible group-hover/compliance:opacity-100 group-hover/compliance:visible transition-all duration-300 overflow-hidden">
+          <div id="dd-compliance" class="dd-panel absolute top-full left-0 mt-2 w-72 bg-white border border-gray-200 rounded-2xl shadow-xl shadow-black/5 py-0 overflow-hidden">
             <div class="bg-emerald-50 px-4 py-3 border-b border-emerald-100">
               <div class="font-bold text-emerald-600 text-xs uppercase tracking-wider">Star Compliance</div>
               <div class="text-xs text-emerald-500 mt-0.5">{t('Cumplimiento normativo y gobernanza', 'Regulatory compliance and governance')}</div>
@@ -132,13 +132,13 @@ const isoCertificado = '/certificados/certificado-iso-27001-star-solutions-ti.pd
         </div>
 
         <!-- STAR SOC Dropdown -->
-        <div class="relative group/soc">
-          <button class="px-1.5 xl:px-2.5 2xl:px-3 py-2 text-sm font-medium whitespace-nowrap text-gray-900 hover:bg-violet-50 rounded-3xl transition flex items-center gap-1.5">
+        <div class="relative group/soc" data-dropdown>
+          <button type="button" data-dropdown-btn aria-expanded="false" aria-controls="dd-soc" class="px-1.5 xl:px-2.5 2xl:px-3 py-2 text-sm font-medium whitespace-nowrap text-gray-900 hover:bg-violet-50 rounded-3xl transition flex items-center gap-1.5">
             <span class="w-2 h-2 rounded-full bg-violet-500"></span>
             Star SOC
-            <svg class="w-3 h-3 transition-transform duration-200 group-hover/soc:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+            <svg class="dd-chevron w-3 h-3" aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
           </button>
-          <div class="absolute top-full left-0 mt-2 w-72 bg-white border border-gray-200 rounded-2xl shadow-xl shadow-black/5 py-0 opacity-0 invisible group-hover/soc:opacity-100 group-hover/soc:visible transition-all duration-300 overflow-hidden">
+          <div id="dd-soc" class="dd-panel absolute top-full left-0 mt-2 w-72 bg-white border border-gray-200 rounded-2xl shadow-xl shadow-black/5 py-0 overflow-hidden">
             <div class="bg-violet-50 px-4 py-3 border-b border-violet-100">
               <div class="font-bold text-violet-600 text-xs uppercase tracking-wider">Star SOC</div>
               <div class="text-xs text-violet-500 mt-0.5">{t('Centro de operaciones de seguridad 24/7', '24/7 security operations center')}</div>
@@ -157,12 +157,12 @@ const isoCertificado = '/certificados/certificado-iso-27001-star-solutions-ti.pd
         </div>
 
         <!-- More Solutions Dropdown -->
-        <div class="relative group/soluciones">
-          <button class="px-1.5 xl:px-2.5 2xl:px-3 py-2 text-sm font-medium whitespace-nowrap text-gray-900 hover:bg-gray-50 rounded-3xl transition flex items-center gap-1.5">
+        <div class="relative group/soluciones" data-dropdown>
+          <button type="button" data-dropdown-btn aria-expanded="false" aria-controls="dd-soluciones" class="px-1.5 xl:px-2.5 2xl:px-3 py-2 text-sm font-medium whitespace-nowrap text-gray-900 hover:bg-gray-50 rounded-3xl transition flex items-center gap-1.5">
             {t('Más Soluciones', 'More Solutions')}
-            <svg class="w-3 h-3 transition-transform duration-200 group-hover/soluciones:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+            <svg class="dd-chevron w-3 h-3" aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
           </button>
-          <div class="absolute top-full right-0 mt-2 w-72 bg-white border border-gray-200 rounded-2xl shadow-xl shadow-black/5 py-0 opacity-0 invisible group-hover/soluciones:opacity-100 group-hover/soluciones:visible transition-all duration-300 overflow-hidden">
+          <div id="dd-soluciones" class="dd-panel dd-panel--right absolute top-full right-0 mt-2 w-72 bg-white border border-gray-200 rounded-2xl shadow-xl shadow-black/5 py-0 overflow-hidden">
             <div class="bg-gray-50 px-4 py-3 border-b border-gray-200">
               <div class="font-bold text-gray-600 text-xs uppercase tracking-wider">{t('Más Soluciones', 'More Solutions')}</div>
               <div class="text-xs text-gray-500 mt-0.5">{t('Infraestructura y productividad', 'Infrastructure and productivity')}</div>
@@ -223,6 +223,8 @@ const isoCertificado = '/certificados/certificado-iso-27001-star-solutions-ti.pd
         class="lg:hidden p-2 text-gray-900 transition-transform duration-200 active:scale-90"
         aria-label={t('Abrir menu', 'Open menu')}
         aria-expanded="false"
+        aria-controls="mobile-menu"
+        type="button"
       >
         <svg class="w-6 h-6 transition-transform duration-200" id="menu-icon-open" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
@@ -235,21 +237,22 @@ const isoCertificado = '/certificados/certificado-iso-27001-star-solutions-ti.pd
     </div>
 
     <!-- Mobile menu -->
-    <div id="mobile-menu" class="lg:hidden hidden py-4 space-y-1 border-t border-gray-200">
+    <div id="mobile-menu" class="mm lg:hidden" data-open="false">
+      <div class="mm-inner"><div class="py-4 space-y-1 border-t border-gray-200">
       <a href={en ? '/miami/' : '/'} class="block px-4 py-3 text-sm font-medium text-gray-900 hover:bg-gray-50 rounded-lg transition">Home</a>
 
       <!-- Mobile STAR PROTECTION -->
       <div class="space-y-1">
-        <button class="mobile-dropdown-btn w-full flex items-center justify-between px-4 py-3 text-sm font-medium text-gray-900 hover:bg-red-50 rounded-lg transition" data-target="mobile-protection">
+        <button class="mobile-dropdown-btn w-full flex items-center justify-between px-4 py-3 text-sm font-medium text-gray-900 hover:bg-red-50 rounded-lg transition" data-target="mobile-protection" aria-expanded="false" aria-controls="mobile-protection" type="button">
           <span class="flex items-center gap-2">
             <span class="w-2 h-2 rounded-full bg-red-500"></span>
             Star Protection
           </span>
-          <svg class="w-5 h-5 transition-transform duration-200 dropdown-chevron" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <svg class="w-5 h-5 dropdown-chevron" aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
           </svg>
         </button>
-        <div id="mobile-protection" class="hidden overflow-hidden">
+        <div id="mobile-protection" class="mm-acc"><div class="mm-acc-inner">
           <div class="pl-4 pr-2 py-2 space-y-1 bg-red-50/50 rounded-lg mx-2">
             <div class="px-4 py-2">
               <div class="font-bold text-red-600 text-xs uppercase tracking-wider">Star Protection</div>
@@ -280,21 +283,21 @@ const isoCertificado = '/certificados/certificado-iso-27001-star-solutions-ti.pd
               <div class="text-xs text-gray-500 mt-0.5">{t('Backup y recuperación ante ransomware', 'Backup and ransomware recovery')}</div>
             </a>
           </div>
-        </div>
+        </div></div>
       </div>
 
       <!-- Mobile STAR INSPECTION -->
       <div class="space-y-1">
-        <button class="mobile-dropdown-btn w-full flex items-center justify-between px-4 py-3 text-sm font-medium text-gray-900 hover:bg-blue-50 rounded-lg transition" data-target="mobile-inspection">
+        <button class="mobile-dropdown-btn w-full flex items-center justify-between px-4 py-3 text-sm font-medium text-gray-900 hover:bg-blue-50 rounded-lg transition" data-target="mobile-inspection" aria-expanded="false" aria-controls="mobile-inspection" type="button">
           <span class="flex items-center gap-2">
             <span class="w-2 h-2 rounded-full bg-blue-500"></span>
             Star Inspection
           </span>
-          <svg class="w-5 h-5 transition-transform duration-200 dropdown-chevron" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <svg class="w-5 h-5 dropdown-chevron" aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
           </svg>
         </button>
-        <div id="mobile-inspection" class="hidden overflow-hidden">
+        <div id="mobile-inspection" class="mm-acc"><div class="mm-acc-inner">
           <div class="pl-4 pr-2 py-2 space-y-1 bg-blue-50/50 rounded-lg mx-2">
             <div class="px-4 py-2">
               <div class="font-bold text-blue-600 text-xs uppercase tracking-wider">Star Inspection</div>
@@ -313,21 +316,21 @@ const isoCertificado = '/certificados/certificado-iso-27001-star-solutions-ti.pd
               <div class="text-xs text-gray-500 mt-0.5">{t('Pentesting certificado', 'Certified pentesting')}</div>
             </a>
           </div>
-        </div>
+        </div></div>
       </div>
 
       <!-- Mobile STAR COMPLIANCE -->
       <div class="space-y-1">
-        <button class="mobile-dropdown-btn w-full flex items-center justify-between px-4 py-3 text-sm font-medium text-gray-900 hover:bg-emerald-50 rounded-lg transition" data-target="mobile-compliance">
+        <button class="mobile-dropdown-btn w-full flex items-center justify-between px-4 py-3 text-sm font-medium text-gray-900 hover:bg-emerald-50 rounded-lg transition" data-target="mobile-compliance" aria-expanded="false" aria-controls="mobile-compliance" type="button">
           <span class="flex items-center gap-2">
             <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
             Star Compliance
           </span>
-          <svg class="w-5 h-5 transition-transform duration-200 dropdown-chevron" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <svg class="w-5 h-5 dropdown-chevron" aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
           </svg>
         </button>
-        <div id="mobile-compliance" class="hidden overflow-hidden">
+        <div id="mobile-compliance" class="mm-acc"><div class="mm-acc-inner">
           <div class="pl-4 pr-2 py-2 space-y-1 bg-emerald-50/50 rounded-lg mx-2">
             <div class="px-4 py-2">
               <div class="font-bold text-emerald-600 text-xs uppercase tracking-wider">Star Compliance</div>
@@ -354,21 +357,21 @@ const isoCertificado = '/certificados/certificado-iso-27001-star-solutions-ti.pd
               <div class="text-xs text-gray-500 mt-0.5">{t('Gestión de contraseñas y accesos', 'Password and access management')}</div>
             </a>
           </div>
-        </div>
+        </div></div>
       </div>
 
       <!-- Mobile STAR SOC -->
       <div class="space-y-1">
-        <button class="mobile-dropdown-btn w-full flex items-center justify-between px-4 py-3 text-sm font-medium text-gray-900 hover:bg-violet-50 rounded-lg transition" data-target="mobile-soc">
+        <button class="mobile-dropdown-btn w-full flex items-center justify-between px-4 py-3 text-sm font-medium text-gray-900 hover:bg-violet-50 rounded-lg transition" data-target="mobile-soc" aria-expanded="false" aria-controls="mobile-soc" type="button">
           <span class="flex items-center gap-2">
             <span class="w-2 h-2 rounded-full bg-violet-500"></span>
             Star SOC
           </span>
-          <svg class="w-5 h-5 transition-transform duration-200 dropdown-chevron" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <svg class="w-5 h-5 dropdown-chevron" aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
           </svg>
         </button>
-        <div id="mobile-soc" class="hidden overflow-hidden">
+        <div id="mobile-soc" class="mm-acc"><div class="mm-acc-inner">
           <div class="pl-4 pr-2 py-2 space-y-1 bg-violet-50/50 rounded-lg mx-2">
             <div class="px-4 py-2">
               <div class="font-bold text-violet-600 text-xs uppercase tracking-wider">Star SOC</div>
@@ -383,18 +386,18 @@ const isoCertificado = '/certificados/certificado-iso-27001-star-solutions-ti.pd
               <div class="text-xs text-gray-500 mt-0.5">{t('Monitoreo centralizado Open XDR', 'Centralized Open XDR monitoring')}</div>
             </a>
           </div>
-        </div>
+        </div></div>
       </div>
 
       <!-- Mobile More Solutions -->
       <div class="space-y-1">
-        <button class="mobile-dropdown-btn w-full flex items-center justify-between px-4 py-3 text-sm font-medium text-gray-900 hover:bg-gray-50 rounded-lg transition" data-target="mobile-soluciones">
+        <button class="mobile-dropdown-btn w-full flex items-center justify-between px-4 py-3 text-sm font-medium text-gray-900 hover:bg-gray-50 rounded-lg transition" data-target="mobile-soluciones" aria-expanded="false" aria-controls="mobile-soluciones" type="button">
           <span>{t('Más Soluciones', 'More Solutions')}</span>
-          <svg class="w-5 h-5 transition-transform duration-200 dropdown-chevron" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <svg class="w-5 h-5 dropdown-chevron" aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
           </svg>
         </button>
-        <div id="mobile-soluciones" class="hidden overflow-hidden">
+        <div id="mobile-soluciones" class="mm-acc"><div class="mm-acc-inner">
           <div class="pl-4 pr-2 py-2 space-y-1 bg-gray-50 rounded-lg mx-2">
             <div class="px-4 py-2">
               <div class="font-bold text-gray-600 text-xs uppercase tracking-wider">{t('Más Soluciones', 'More Solutions')}</div>
@@ -421,7 +424,7 @@ const isoCertificado = '/certificados/certificado-iso-27001-star-solutions-ti.pd
               <div class="text-xs text-gray-500 mt-0.5">{t('Todas nuestras soluciones', 'All our solutions')}</div>
             </a>
           </div>
-        </div>
+        </div></div>
       </div>
 
       <a href="/blog/" class="block px-4 py-3 text-sm font-medium text-gray-900 hover:bg-gray-50 rounded-lg transition">Blog</a>
@@ -436,31 +439,158 @@ const isoCertificado = '/certificados/certificado-iso-27001-star-solutions-ti.pd
           <svg class="w-4 h-4 transition-transform duration-200 group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5-5 5M6 12h12" /></svg>
         </a>
       </div>
-    </div>
+    </div></div></div>
   </div>
 </nav>
 
+<style is:global>
+  /* Menús desplegables (escritorio). Nacen del botón que los abre y se van por
+     el mismo camino; se abren al instante y esperan un instante antes de
+     cerrar, para que el mouse pueda cruzar el espacio hasta el panel. */
+  [data-dropdown] { position: relative; }
+  [data-dropdown][data-open]::after {
+    /* Puente invisible sobre el hueco entre botón y panel */
+    content: ''; position: absolute; top: 100%; left: 0; width: 18rem; height: 0.75rem;
+  }
+  [data-dropdown]:has(.dd-panel--right)[data-open]::after { left: auto; right: 0; }
+  .dd-panel {
+    opacity: 0; visibility: hidden;
+    transform: translateY(-6px) scale(0.98);
+    transform-origin: top left;
+    transition: opacity 140ms ease-out, transform 200ms cubic-bezier(0.2, 0.8, 0.2, 1), visibility 0s linear 200ms;
+  }
+  .dd-panel--right { transform-origin: top right; }
+  [data-dropdown][data-open] > .dd-panel {
+    opacity: 1; visibility: visible; transform: none;
+    transition: opacity 120ms ease-out, transform 220ms cubic-bezier(0.2, 0.8, 0.2, 1), visibility 0s;
+  }
+  .dd-chevron { transition: transform 200ms cubic-bezier(0.2, 0.8, 0.2, 1); }
+  [data-dropdown][data-open] .dd-chevron { transform: rotate(180deg); }
+
+  /* Menú móvil y acordeones: crecen hacia abajo desde su botón y se recogen
+     por el mismo camino. Se pueden revertir a mitad de la animación. */
+  .mm, .mm-acc {
+    display: grid; grid-template-rows: 0fr; visibility: hidden;
+    transition: grid-template-rows 280ms cubic-bezier(0.2, 0.8, 0.2, 1), visibility 0s linear 280ms;
+  }
+  .mm[data-open='true'], .mm-acc[data-open='true'] {
+    grid-template-rows: 1fr; visibility: visible;
+    transition: grid-template-rows 280ms cubic-bezier(0.2, 0.8, 0.2, 1), visibility 0s;
+  }
+  .mm-inner, .mm-acc-inner { min-height: 0; overflow: hidden; }
+  .mm-inner > div, .mm-acc-inner > div {
+    opacity: 0; transform: translateY(-4px);
+    transition: opacity 180ms ease-out, transform 280ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+  .mm[data-open='true'] > .mm-inner > div,
+  .mm-acc[data-open='true'] > .mm-acc-inner > div { opacity: 1; transform: none; }
+  .dropdown-chevron { transition: transform 220ms cubic-bezier(0.2, 0.8, 0.2, 1); }
+  [aria-expanded='true'] > .dropdown-chevron { transform: rotate(180deg); }
+
+  @media (prefers-reduced-motion: reduce) {
+    .dd-panel, [data-dropdown][data-open] > .dd-panel { transform: none; }
+    .mm, .mm-acc, .mm[data-open='true'], .mm-acc[data-open='true'] { transition: visibility 0s; }
+    .mm-inner > div, .mm-acc-inner > div { transform: none; transition: opacity 150ms ease; }
+    .dd-chevron, .dropdown-chevron { transition: none; }
+  }
+</style>
+
 <script>
+  // ---- Menús de escritorio: mouse, toque (tablets) y teclado ----
+  const CLOSE_DELAY = 140; // ms de gracia al salir con el mouse
+  const dropdowns = Array.from(document.querySelectorAll<HTMLElement>('[data-dropdown]'));
+
+  function setOpen(dd: HTMLElement, open: boolean) {
+    const btn = dd.querySelector<HTMLButtonElement>('[data-dropdown-btn]');
+    if (open) {
+      dropdowns.forEach((other) => { if (other !== dd) setOpen(other, false); });
+      dd.setAttribute('data-open', '');
+    } else {
+      dd.removeAttribute('data-open');
+    }
+    btn?.setAttribute('aria-expanded', String(open));
+  }
+
+  dropdowns.forEach((dd) => {
+    const btn = dd.querySelector<HTMLButtonElement>('[data-dropdown-btn]');
+    let closeTimer: number | undefined;
+    const cancelClose = () => window.clearTimeout(closeTimer);
+
+    dd.addEventListener('pointerenter', (e) => {
+      if (e.pointerType !== 'mouse') return;
+      cancelClose();
+      setOpen(dd, true);
+    });
+    dd.addEventListener('pointerleave', (e) => {
+      if (e.pointerType !== 'mouse') return;
+      cancelClose();
+      closeTimer = window.setTimeout(() => setOpen(dd, false), CLOSE_DELAY);
+    });
+    // Toque o teclado (Enter/Espacio): alterna. Con mouse ya se abrió al pasar.
+    btn?.addEventListener('click', (e) => {
+      const viaMouse = (e as PointerEvent).pointerType === 'mouse';
+      if (viaMouse && dd.hasAttribute('data-open')) return;
+      setOpen(dd, !dd.hasAttribute('data-open'));
+    });
+    let suppressFocusOpen = false;
+    // Solo el foco con teclado abre el panel; el foco que deja un toque o un
+    // clic lo maneja el evento click (si no, el toque abriría y cerraría a la vez).
+    dd.addEventListener('focusin', (e) => {
+      cancelClose();
+      if (suppressFocusOpen) return;
+      if ((e.target as Element).matches(':focus-visible')) setOpen(dd, true);
+    });
+    dd.addEventListener('focusout', (e) => {
+      if (!dd.contains(e.relatedTarget as Node | null)) setOpen(dd, false);
+    });
+    dd.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && dd.hasAttribute('data-open')) {
+        setOpen(dd, false);
+        // Devolver el foco al botón sin reabrir el panel
+        suppressFocusOpen = true;
+        btn?.focus({ preventScroll: true });
+        suppressFocusOpen = false;
+      }
+    });
+  });
+
+  document.addEventListener('pointerdown', (e) => {
+    dropdowns.forEach((dd) => { if (!dd.contains(e.target as Node)) setOpen(dd, false); });
+  });
+
+  // ---- Menú móvil ----
   const menuBtn = document.getElementById('mobile-menu-btn');
   const mobileMenu = document.getElementById('mobile-menu');
   const iconOpen = document.getElementById('menu-icon-open');
   const iconClose = document.getElementById('menu-icon-close');
 
-  menuBtn?.addEventListener('click', () => {
-    const isOpen = !mobileMenu?.classList.contains('hidden');
-    mobileMenu?.classList.toggle('hidden');
-    iconOpen?.classList.toggle('hidden');
-    iconClose?.classList.toggle('hidden');
-    menuBtn.setAttribute('aria-expanded', String(!isOpen));
+  function setMobileOpen(open: boolean) {
+    if (!mobileMenu || !menuBtn) return;
+    mobileMenu.dataset.open = String(open);
+    iconOpen?.classList.toggle('hidden', open);
+    iconClose?.classList.toggle('hidden', !open);
+    menuBtn.setAttribute('aria-expanded', String(open));
+  }
+
+  menuBtn?.addEventListener('click', () => setMobileOpen(mobileMenu?.dataset.open !== 'true'));
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && mobileMenu?.dataset.open === 'true') {
+      setMobileOpen(false);
+      menuBtn?.focus();
+    }
   });
 
-  document.querySelectorAll('.mobile-dropdown-btn').forEach(btn => {
+  // Al tocar un enlace (incluidos los que llevan al formulario en la misma página)
+  mobileMenu?.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => setMobileOpen(false)));
+
+  document.querySelectorAll<HTMLButtonElement>('.mobile-dropdown-btn').forEach((btn) => {
     btn.addEventListener('click', () => {
-      const targetId = (btn as HTMLElement).dataset.target;
-      const target = document.getElementById(targetId!);
-      const chevron = btn.querySelector('.dropdown-chevron');
-      target?.classList.toggle('hidden');
-      chevron?.classList.toggle('rotate-180');
+      const target = document.getElementById(btn.dataset.target!);
+      if (!target) return;
+      const open = target.dataset.open !== 'true';
+      target.dataset.open = String(open);
+      btn.setAttribute('aria-expanded', String(open));
     });
   });
 </script>
