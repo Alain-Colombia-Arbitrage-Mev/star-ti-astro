@@ -22,6 +22,11 @@
   // www.starsolutionsti.com.ve pendiente: la zona esta "moved" (NS fuera de Cloudflare).
   // Cada hora: si hubo una publicacion reciente, avisa a Bing (IndexNow) las URLs que cambiaron.
   "triggers": { "crons": ["7 * * * *"] },
+  // Limite de envios del formulario: 5 por minuto por IP (ver worker/index.js).
+  // namespace_id es un identificador numerico libre, unico dentro de la cuenta.
+  "ratelimits": [
+    { "name": "LEAD_LIMITER", "namespace_id": "1001", "simple": { "limit": 5, "period": 60 } }
+  ],
   "routes": [
     { "pattern": "www.star-ti.com/*", "zone_name": "star-ti.com" },
     { "pattern": "www.starsolutionsti.com.co/*", "zone_name": "starsolutionsti.com.co" }
