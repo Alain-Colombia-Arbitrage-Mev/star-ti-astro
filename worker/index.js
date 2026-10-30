@@ -187,16 +187,91 @@ function safeDecodePathname(pathname) {
   }
 }
 
+// --- Endurecimiento del endpoint de leads -----------------------------------
+// Limites pensados para formularios de contacto: holgados para personas,
+// estrechos para abuso (payloads gigantes, cientos de campos, archivos).
+const MAX_BODY_BYTES = 32 * 1024;
+const MAX_FIELDS = 40;
+const MAX_FIELD_CHARS = 500;
+const MAX_LONG_FIELD_CHARS = 5000;
+const LONG_FIELDS = new Set(["mensaje", "message", "caso"]);
+const ALLOWED_CONTENT_TYPES = ["application/x-www-form-urlencoded", "multipart/form-data"];
+// Origenes desde los que el navegador puede enviar formularios.
+const ALLOWED_ORIGIN_HOSTS = new Set([APEX, `www.${APEX}`, "starsolutionsti.com.co", "www.starsolutionsti.com.co"]);
+
+function apiHeaders(extra = {}) {
+  return { "Cache-Control": "no-store", "X-Content-Type-Options": "nosniff", ...extra };
+}
+
+function isAllowedOrigin(request) {
+  const origin = request.headers.get("Origin");
+  // Los navegadores siempre envian Origin en un POST; sin Origin es un script.
+  // No se bloquea aqui (el antispam ya lo descarta por falta de _elapsed).
+  if (!origin) return true;
+  try {
+    const host = new URL(origin).hostname;
+    if (ALLOWED_ORIGIN_HOSTS.has(host)) return true;
+    // Pruebas en *.workers.dev del propio worker.
+    return host === new URL(request.url).hostname && host.endsWith(".workers.dev");
+  } catch {
+    return false;
+  }
+}
+
 async function handleLeadSubmission(request, env) {
   if (request.method !== "POST") {
     return new Response("Method not allowed", {
       status: 405,
-      headers: { Allow: "POST" },
+      headers: apiHeaders({ Allow: "POST" }),
     });
   }
 
-  const formData = await request.formData();
+  // Formularios de otros sitios no pueden escribir en nuestro Airtable.
+  if (!isAllowedOrigin(request)) {
+    console.log("Lead rechazado: origen no permitido", request.headers.get("Origin"));
+    return new Response("Forbidden", { status: 403, headers: apiHeaders() });
+  }
+
+  // Limite de solicitudes por IP (binding LEAD_LIMITER en wrangler.jsonc).
+  // Si el binding no existe, el formulario sigue funcionando.
+  if (env.LEAD_LIMITER) {
+    const ip = request.headers.get("CF-Connecting-IP") || "sin-ip";
+    try {
+      const { success } = await env.LEAD_LIMITER.limit({ key: `lead:${ip}` });
+      if (!success) {
+        return new Response("Too many requests", { status: 429, headers: apiHeaders({ "Retry-After": "60" }) });
+      }
+    } catch (error) {
+      console.error("Rate limiter no disponible; se continua", error);
+    }
+  }
+
+  const contentType = (request.headers.get("Content-Type") || "").toLowerCase();
+  if (!ALLOWED_CONTENT_TYPES.some((type) => contentType.startsWith(type))) {
+    return new Response("Unsupported media type", { status: 415, headers: apiHeaders() });
+  }
+
+  const declaredLength = Number(request.headers.get("Content-Length") || 0);
+  if (declaredLength > MAX_BODY_BYTES) {
+    return new Response("Payload too large", { status: 413, headers: apiHeaders() });
+  }
+
+  let formData;
+  try {
+    // Se lee el cuerpo con tope real (Content-Length puede mentir o faltar).
+    const body = await readBodyWithLimit(request, MAX_BODY_BYTES);
+    if (body === null) {
+      return new Response("Payload too large", { status: 413, headers: apiHeaders() });
+    }
+    formData = await new Response(body, { headers: { "Content-Type": contentType } }).formData();
+  } catch {
+    return new Response("Bad request", { status: 400, headers: apiHeaders() });
+  }
+
   const rawFields = formDataToObject(formData);
+  if (rawFields === null) {
+    return new Response("Bad request", { status: 400, headers: apiHeaders() });
+  }
   const sourceUrl = getSourceUrl(request, rawFields);
   const sourcePath = sourceUrl ? new URL(sourceUrl).pathname : "";
   const redirectTo = getSafeRedirect(request, rawFields._redirect);
@@ -205,7 +280,7 @@ async function handleLeadSubmission(request, env) {
   const spamReason = await detectSpam(request, env, rawFields);
   if (spamReason) {
     console.log("Lead descartado como spam", spamReason, sourcePath);
-    if (wantsJson(request)) return Response.json({ ok: true });
+    if (wantsJson(request)) return Response.json({ ok: true }, { headers: apiHeaders() });
     return Response.redirect(new URL(redirectTo, request.url).href, 303);
   }
 
@@ -239,7 +314,7 @@ async function handleLeadSubmission(request, env) {
     }
 
     if (wantsJson(request)) {
-      return Response.json({ ok: true });
+      return Response.json({ ok: true }, { headers: apiHeaders() });
     }
 
     return Response.redirect(new URL(redirectTo, request.url).href, 303);
@@ -329,18 +404,63 @@ async function detectSpam(request, env, fields) {
   return null;
 }
 
+async function readBodyWithLimit(request, limit) {
+  if (!request.body) return new Uint8Array();
+  const reader = request.body.getReader();
+  const chunks = [];
+  let total = 0;
+  for (;;) {
+    const { done, value } = await reader.read();
+    if (done) break;
+    total += value.byteLength;
+    if (total > limit) {
+      await reader.cancel();
+      return null;
+    }
+    chunks.push(value);
+  }
+  const out = new Uint8Array(total);
+  let offset = 0;
+  for (const chunk of chunks) {
+    out.set(chunk, offset);
+    offset += chunk.byteLength;
+  }
+  return out;
+}
+
+// Devuelve null si el envio es claramente abusivo (archivos o demasiados campos).
 function formDataToObject(formData) {
   const fields = {};
+  let count = 0;
   for (const [key, value] of formData.entries()) {
-    const stringValue = typeof value === "string" ? value.trim() : value.name;
+    // Ningun formulario del sitio sube archivos: cualquier archivo es abuso.
+    if (typeof value !== "string") return null;
+    if (++count > MAX_FIELDS || key.length > 64) return null;
+    const max = LONG_FIELDS.has(key) ? MAX_LONG_FIELD_CHARS : MAX_FIELD_CHARS;
+    const stringValue = neutralizeFormula(stripControlChars(value).trim().slice(0, max));
     if (!stringValue) continue;
     if (fields[key]) {
-      fields[key] = `${fields[key]}, ${stringValue}`;
+      fields[key] = `${fields[key]}, ${stringValue}`.slice(0, MAX_LONG_FIELD_CHARS);
     } else {
       fields[key] = stringValue;
     }
   }
   return fields;
+}
+
+function stripControlChars(value) {
+  // Conserva saltos de linea y tabuladores del mensaje; elimina el resto.
+  return value.replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F]/gu, "");
+}
+
+// Inyeccion de formulas: si los leads se exportan de Airtable a Excel/Sheets,
+// un valor como "=HYPERLINK(...)" o "@SUM(...)" se ejecutaria al abrirlo.
+// Se antepone un apostrofo. Los telefonos "+57 300..." no se tocan.
+function neutralizeFormula(value) {
+  if (/^[=@\t\r]/u.test(value) || /^[+-](?![\d\s(])/u.test(value)) {
+    return `'${value}`;
+  }
+  return value;
 }
 
 function getFirst(fields, keys) {
@@ -386,7 +506,7 @@ function wantsJson(request) {
 
 function failLeadRequest(request, message, status, redirectTo = "/gracias") {
   if (wantsJson(request)) {
-    return Response.json({ ok: false, error: message }, { status });
+    return Response.json({ ok: false, error: message }, { status, headers: apiHeaders() });
   }
 
   return Response.redirect(new URL(redirectTo, request.url).href, 303);
