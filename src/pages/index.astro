@@ -72,7 +72,7 @@ const seo = seoData.home;
 
         <!-- Right Column - Panel ilustrativo de Star SOC (sin cifras reales) -->
         <div class="relative flex justify-center lg:justify-end">
-          <a href="/soc-24x7/" class="group block w-full max-w-lg rounded-3xl bg-[#0c111e]/85 border border-white/15 shadow-2xl shadow-black/60 ring-1 ring-red-500/15 backdrop-blur-xl p-5 sm:p-6 hover:border-red-400/40 transition" aria-label="Conozca Star SOC 24x7">
+          <a href="/soc-24x7/" id="soc-panel" class="soc-panel group block w-full max-w-lg rounded-3xl bg-[#0c111e]/85 border border-white/15 shadow-2xl shadow-black/60 ring-1 ring-red-500/15 backdrop-blur-xl p-5 sm:p-6 hover:border-red-400/40 transition" aria-label="Conozca Star SOC 24x7">
             <div class="flex items-center gap-2">
               <span class="font-bold text-white text-lg">Star SOC</span>
               <span class="hidden sm:inline text-sm text-gray-400">· Centro de operaciones</span>
@@ -86,26 +86,28 @@ const seo = seoData.home;
               <div class="rounded-xl bg-white/5 p-3"><p class="text-xl sm:text-2xl font-bold text-white">IA</p><p class="text-[11px] text-gray-400 leading-tight text-left">+ analistas certificados</p></div>
               <div class="rounded-xl bg-white/5 p-3"><p class="text-xl sm:text-2xl font-bold text-white">XDR</p><p class="text-[11px] text-gray-400 leading-tight text-left">Equipos, red, correo y nube</p></div>
             </div>
-            <div class="flex items-end gap-1.5 h-20 p-2.5 rounded-xl bg-white/[.04] mb-3" aria-hidden="true"><span class="flex-1 rounded-t bg-gradient-to-b from-red-500 to-red-900" style="height:30%"></span><span class="flex-1 rounded-t bg-gradient-to-b from-red-500 to-red-900" style="height:45%"></span><span class="flex-1 rounded-t bg-gradient-to-b from-red-500 to-red-900" style="height:38%"></span><span class="flex-1 rounded-t bg-gradient-to-b from-red-500 to-red-900" style="height:60%"></span><span class="flex-1 rounded-t bg-gradient-to-b from-red-500 to-red-900" style="height:52%"></span><span class="flex-1 rounded-t bg-gradient-to-b from-red-500 to-red-900" style="height:70%"></span><span class="flex-1 rounded-t bg-gradient-to-b from-red-500 to-red-900" style="height:64%"></span><span class="flex-1 rounded-t bg-gradient-to-b from-red-500 to-red-900" style="height:82%"></span><span class="flex-1 rounded-t bg-gradient-to-b from-red-500 to-red-900" style="height:75%"></span><span class="flex-1 rounded-t bg-gradient-to-b from-red-500 to-red-900" style="height:90%"></span><span class="flex-1 rounded-t bg-gradient-to-b from-red-500 to-red-900" style="height:68%"></span><span class="flex-1 rounded-t bg-gradient-to-b from-red-500 to-red-900" style="height:85%"></span></div>
-              <div class="flex items-center gap-3 py-2.5 border-t border-white/[.07]">
+            <div id="soc-bars" class="flex items-end gap-1.5 h-20 p-2.5 rounded-xl bg-white/[.04] mb-3 overflow-hidden" aria-hidden="true"><span class="flex-1 rounded-t bg-gradient-to-b from-red-500 to-red-900" style="height:30%"></span><span class="flex-1 rounded-t bg-gradient-to-b from-red-500 to-red-900" style="height:45%"></span><span class="flex-1 rounded-t bg-gradient-to-b from-red-500 to-red-900" style="height:38%"></span><span class="flex-1 rounded-t bg-gradient-to-b from-red-500 to-red-900" style="height:60%"></span><span class="flex-1 rounded-t bg-gradient-to-b from-red-500 to-red-900" style="height:52%"></span><span class="flex-1 rounded-t bg-gradient-to-b from-red-500 to-red-900" style="height:70%"></span><span class="flex-1 rounded-t bg-gradient-to-b from-red-500 to-red-900" style="height:64%"></span><span class="flex-1 rounded-t bg-gradient-to-b from-red-500 to-red-900" style="height:82%"></span><span class="flex-1 rounded-t bg-gradient-to-b from-red-500 to-red-900" style="height:75%"></span><span class="flex-1 rounded-t bg-gradient-to-b from-red-500 to-red-900" style="height:90%"></span><span class="flex-1 rounded-t bg-gradient-to-b from-red-500 to-red-900" style="height:68%"></span><span class="flex-1 rounded-t bg-gradient-to-b from-red-500 to-red-900" style="height:85%"></span></div>
+              <div id="soc-feed" aria-live="off">
+              <div class="soc-ev flex items-center gap-3 py-2.5 border-t border-white/[.07]">
                 <span class="w-2.5 h-2.5 rounded-full bg-red-500 flex-shrink-0"></span>
                 <div class="min-w-0"><p class="text-sm font-semibold text-white">Ransomware bloqueado</p><p class="text-xs text-gray-400">Endpoint · Bogotá</p></div>
-                <span class="ml-auto text-[11px] text-gray-500 whitespace-nowrap">hace 12 s</span>
+                <span class="soc-t ml-auto text-[11px] text-gray-500 whitespace-nowrap" data-s="12">hace 12 s</span>
               </div>
-              <div class="flex items-center gap-3 py-2.5 border-t border-white/[.07]">
+              <div class="soc-ev flex items-center gap-3 py-2.5 border-t border-white/[.07]">
                 <span class="w-2.5 h-2.5 rounded-full bg-amber-500 flex-shrink-0"></span>
                 <div class="min-w-0"><p class="text-sm font-semibold text-white">Phishing en cuarentena</p><p class="text-xs text-gray-400">Correo Microsoft 365</p></div>
-                <span class="ml-auto text-[11px] text-gray-500 whitespace-nowrap">hace 48 s</span>
+                <span class="soc-t ml-auto text-[11px] text-gray-500 whitespace-nowrap" data-s="48">hace 48 s</span>
               </div>
-              <div class="flex items-center gap-3 py-2.5 border-t border-white/[.07]">
+              <div class="soc-ev flex items-center gap-3 py-2.5 border-t border-white/[.07]">
                 <span class="w-2.5 h-2.5 rounded-full bg-violet-500 flex-shrink-0"></span>
                 <div class="min-w-0"><p class="text-sm font-semibold text-white">Acceso sospechoso contenido</p><p class="text-xs text-gray-400">Identidad · VPN</p></div>
-                <span class="ml-auto text-[11px] text-gray-500 whitespace-nowrap">hace 2 min</span>
+                <span class="soc-t ml-auto text-[11px] text-gray-500 whitespace-nowrap" data-s="120">hace 2 min</span>
               </div>
-              <div class="flex items-center gap-3 py-2.5 border-t border-white/[.07]">
+              <div class="soc-ev flex items-center gap-3 py-2.5 border-t border-white/[.07]">
                 <span class="w-2.5 h-2.5 rounded-full bg-green-500 flex-shrink-0"></span>
                 <div class="min-w-0"><p class="text-sm font-semibold text-white">Parche crítico aplicado</p><p class="text-xs text-gray-400">Servidor SQL</p></div>
-                <span class="ml-auto text-[11px] text-gray-500 whitespace-nowrap">hace 5 min</span>
+                <span class="soc-t ml-auto text-[11px] text-gray-500 whitespace-nowrap" data-s="300">hace 5 min</span>
+              </div>
               </div>
             <p class="mt-2 flex items-center justify-between text-[11px] text-gray-500">
               <span>Vista ilustrativa del panel de monitoreo</span>
@@ -800,4 +802,61 @@ const seo = seoData.home;
 
   <Footer />
   <WhatsAppButton />
+
+<script>
+  // Panel ilustrativo de Star SOC: barras, eventos y tiempos en movimiento (sin cifras reales).
+  const socReduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const socPanel = document.getElementById('soc-panel');
+  const socFeed = document.getElementById('soc-feed');
+  const socBars = document.getElementById('soc-bars');
+  if (socPanel && socFeed && socBars && !socReduce) {
+    const pool = [
+      ['bg-red-500', 'Ransomware bloqueado', 'Endpoint · Medellín'],
+      ['bg-amber-500', 'Phishing en cuarentena', 'Correo Microsoft 365'],
+      ['bg-violet-500', 'Inicio de sesión anómalo bloqueado', 'Identidad · Entra ID'],
+      ['bg-green-500', 'Parche crítico aplicado', 'Servidor Windows'],
+      ['bg-red-500', 'Equipo aislado de la red', 'Endpoint · Cali'],
+      ['bg-sky-500', 'Escaneo de puertos detectado', 'Red · Firewall'],
+      ['bg-amber-500', 'Adjunto malicioso eliminado', 'Correo'],
+      ['bg-green-500', 'Analista revisó la alerta', 'SOC · 24x7'],
+    ];
+    let k = 0;
+    const label = (s) => (s < 60 ? `hace ${s} s` : `hace ${Math.floor(s / 60)} min`);
+    setInterval(() => socFeed.querySelectorAll('.soc-t').forEach((t) => { t.dataset.s = String(+t.dataset.s + 1); t.textContent = label(+t.dataset.s); }), 1000);
+    setInterval(() => {
+      const [c, t, d] = pool[k++ % pool.length];
+      const row = document.createElement('div');
+      row.className = 'soc-ev soc-new flex items-center gap-3 py-2.5 border-t border-white/[.07]';
+      row.innerHTML = `<span class="w-2.5 h-2.5 rounded-full ${c} flex-shrink-0 soc-dot"></span><div class="min-w-0"><p class="text-sm font-semibold text-white">${t}</p><p class="text-xs text-gray-400">${d}</p></div><span class="soc-t ml-auto text-[11px] text-gray-500 whitespace-nowrap" data-s="1">hace 1 s</span>`;
+      socFeed.prepend(row);
+      const last = socFeed.lastElementChild;
+      if (socFeed.children.length > 4 && last) { last.classList.add('soc-out'); setTimeout(() => last.remove(), 400); }
+    }, 3200);
+    const bars = [...socBars.children];
+    setInterval(() => {
+      const first = bars.shift(); bars.push(first);
+      bars.forEach((b, n) => { const next = bars[n + 1]; b.style.height = next ? next.style.height : `${30 + Math.round(Math.random() * 65)}%`; });
+    }, 1300);
+    if (matchMedia('(hover:hover) and (pointer:fine)').matches) {
+      socPanel.addEventListener('pointermove', (e) => { const r = socPanel.getBoundingClientRect(); const x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5; socPanel.style.setProperty('--rx', `${-y * 7}deg`); socPanel.style.setProperty('--ry', `${x * 9}deg`); socPanel.style.setProperty('--gx', `${(x + .5) * 100}%`); socPanel.style.setProperty('--gy', `${(y + .5) * 100}%`); });
+      socPanel.addEventListener('pointerleave', () => { socPanel.style.setProperty('--rx', '0deg'); socPanel.style.setProperty('--ry', '0deg'); });
+    }
+  }
+</script>
+
+<style is:global>
+  .soc-panel{position:relative;transform:perspective(1100px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform .4s cubic-bezier(.23,1,.32,1),border-color .2s;animation:soc-in 1s cubic-bezier(.23,1,.32,1) .2s backwards}
+  @keyframes soc-in{from{opacity:0;transform:perspective(1100px) rotateY(-18deg) translateY(30px)}}
+  .soc-panel:before{content:"";position:absolute;inset:-1px;border-radius:inherit;padding:1px;pointer-events:none;background:conic-gradient(from var(--soc-a,0deg),transparent 0 72%,rgba(239,68,68,.9) 82%,rgba(249,115,22,.9) 90%,transparent);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;animation:soc-rot 6s linear infinite}
+  .soc-panel:after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:radial-gradient(260px circle at var(--gx,50%) var(--gy,0%),rgba(255,255,255,.07),transparent 60%)}
+  @property --soc-a{syntax:'<angle>';inherits:false;initial-value:0deg}
+  @keyframes soc-rot{to{--soc-a:360deg}}
+  #soc-bars span{transition:height .9s cubic-bezier(.23,1,.32,1)}
+  .soc-new{animation:soc-row .6s cubic-bezier(.23,1,.32,1)}
+  @keyframes soc-row{from{opacity:0;transform:translateY(-10px);background:rgba(239,68,68,.12)}}
+  .soc-new .soc-dot{animation:soc-ping 1.2s ease-out 2}
+  @keyframes soc-ping{0%{box-shadow:0 0 0 0 rgba(255,255,255,.6)}100%{box-shadow:0 0 0 10px rgba(255,255,255,0)}}
+  .soc-out{opacity:0;transform:translateY(8px);transition:opacity .35s,transform .35s}
+  @media (prefers-reduced-motion: reduce){.soc-panel,.soc-panel:before{animation:none}}
+</style>
 </BaseLayout>
