@@ -835,6 +835,15 @@ export const seoData: Record<string, SEOData> = {
     ogType: 'website',
     noindex: true,
   },
+  'lp/hornetsecurity': {
+    title: 'Proteja el correo de su empresa 24/7 con Hornetsecurity | Star Solutions TI',
+    description: 'Filtro de phishing, análisis de adjuntos, backup de Microsoft 365 y protección contra suplantación. Revisión gratuita de su correo y dominio. Partner Silver de Hornetsecurity.',
+    keywords: 'hornetsecurity colombia, seguridad correo microsoft 365, backup microsoft 365',
+    canonical: `${BASE_URL}/lp/hornetsecurity/`,
+    ogTitle: 'Proteja el correo de su empresa 24/7 con Hornetsecurity',
+    ogType: 'website',
+    noindex: true,
+  },
   gracias: {
     title: 'Gracias por Contactarnos | Star Solutions TI',
     description: 'Gracias por contactar a Star Solutions TI. Nuestro equipo revisará su solicitud y se pondrá en contacto con usted.',

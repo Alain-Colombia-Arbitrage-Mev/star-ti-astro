@@ -1,0 +1,417 @@
+---
+// Página de aterrizaje para pauta de Hornetsecurity. Sin menú, una sola oferta.
+// noindex y fuera del sitemap: no compite con /hornetsecurity/.
+import BaseLayout from '@layouts/BaseLayout.astro';
+import { seoData } from '@data/seo';
+
+const seo = seoData['lp/hornetsecurity'];
+const wa = 'https://wa.me/573227862375?text=' + encodeURIComponent('Hola, quiero proteger el correo de mi empresa con Hornetsecurity.');
+const deviceRanges = ['1 a 49', '50 a 249', '250 a 999', '1.000 o más'];
+
+const capas = [
+  { id: 'filtro', t: 'Antispam y antimalware', h: 'El correo malicioso no llega a la bandeja', d: 'Hornetsecurity filtra cada mensaje antes de que llegue a Microsoft 365: spam, malware, phishing y correos masivos se quedan afuera, sin que el usuario tenga que decidir.', i: '<path d="M3 5h18l-7 8v6l-4-2v-4z"/>' },
+  { id: 'atp', t: 'Protección avanzada', h: 'Adjuntos y enlaces revisados antes del clic', d: 'Los archivos sospechosos se abren en un entorno aislado (sandbox) y los enlaces se revisan al momento del clic, para detener ataques dirigidos y fraudes que un filtro común deja pasar.', i: '<path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3z"/><path d="m9 12 2 2 4-4"/>' },
+  { id: 'backup', t: 'Backup de Microsoft 365', h: 'Microsoft 365 no es un backup', d: 'Copia independiente y automática de correo, OneDrive, SharePoint y Teams. Si alguien borra, cifra o pierde información, se recupera en minutos.', i: '<path d="M4 7c0-1.7 3.6-3 8-3s8 1.3 8 3-3.6 3-8 3-8-1.3-8-3z"/><path d="M4 7v10c0 1.7 3.6 3 8 3s8-1.3 8-3V7M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/>' },
+  { id: 'cifrado', t: 'Cifrado y continuidad', h: 'Información sensible, solo para quien debe leerla', d: 'Cifrado del correo, firmas corporativas uniformes, archivo legal y continuidad del servicio si Microsoft 365 presenta fallas.', i: '<rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/>' },
+  { id: 'awareness', t: 'Concienciación', h: 'Un equipo que reconoce el engaño', d: 'Simulaciones de phishing y entrenamiento corto y continuo para que cada persona sepa detectar un correo falso antes de hacer clic.', i: '<circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/>' },
+];
+const faqs = [
+  { q: '¿La revisión tiene costo?', a: 'No. Revisamos gratis la protección de su correo y de su dominio (SPF, DKIM y DMARC) y le entregamos una recomendación, sin compromiso.' },
+  { q: '¿Funciona con Microsoft 365?', a: 'Sí. Hornetsecurity se integra con Microsoft 365 y agrega filtro avanzado, backup, cifrado y archivo que Microsoft no incluye por sí solo.' },
+  { q: '¿Microsoft 365 no hace backup?', a: 'Microsoft garantiza que el servicio esté disponible, pero proteger los datos frente a borrados, errores o ransomware le corresponde a cada empresa. La papelera tiene plazos limitados y no reemplaza un backup.' },
+  { q: '¿Qué es DMARC y por qué importa?', a: 'Es la configuración que impide que otros envíen correos haciéndose pasar por su dominio. Sin ella, cualquiera puede suplantar a su empresa ante clientes y proveedores.' },
+  { q: '¿Quién implementa y da soporte?', a: 'Star Solutions TI, Partner Silver de Hornetsecurity, con soporte local en Bogotá y cobertura nacional.' },
+];
+const eventos = [
+  ['#ef4444', 'Phishing: factura falsa de proveedor', 'BLOQUEADO'],
+  ['#fb923c', 'Adjunto sospechoso analizado en sandbox', 'CUARENTENA'],
+  ['#fbbf24', 'Suplantación del dominio rechazada', 'DMARC'],
+  ['#34d399', 'Backup de buzones completado', 'OK'],
+  ['#f472b6', 'Enlace malicioso reescrito', 'PROTEGIDO'],
+  ['#ef4444', 'Correo masivo no deseado', 'FILTRADO'],
+];
+---
+
+<BaseLayout seo={seo}>
+<div class="lp">
+  <div class="progress" id="lp-progress"></div>
+  <header class="top">
+    <div class="w row">
+      <span class="brand"><img src="/logo.png" alt="Star Solutions TI" width="36" height="36" /><span>Star Solutions TI</span></span>
+      <span class="pill hide-sm">Partner Silver de Hornetsecurity</span>
+      <a href={wa} target="_blank" rel="noopener" class="wa-btn">WhatsApp 322 786 2375</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="grid-bg"></div><div class="glow g1"></div><div class="glow g2"></div><div class="g3"></div>
+    <div class="w hero-in">
+      <div>
+        <span class="tag enter" style="--d:0"><i class="dot"></i>Correo protegido · 24 horas · 7 días</span>
+        <h1 class="enter" style="--d:1">El correo es la puerta de entrada. <span class="grad">Protéjalo 24/7.</span></h1>
+        <p class="lead enter" style="--d:2">Por el correo llegan las facturas, los contratos y la mayoría de los engaños. Hornetsecurity filtra el phishing, analiza adjuntos, respalda Microsoft 365 y evita que suplanten a su empresa. Star lo implementa y le responde en español.</p>
+        <div class="ctas enter" style="--d:3">
+          <a href="#proteger" class="btn-main">Quiero proteger mi correo <span aria-hidden="true">→</span></a>
+          <a href="#calcular" class="btn-ghost">¿Cuántos buzones tiene?</a>
+        </div>
+        <div class="stats enter" style="--d:4">
+          <div><b>USD 3.046 M</b><span>pérdidas por fraude de correo en 2025 (FBI)</span></div>
+          <div><b data-count="1150">0</b><b>+</b><span>empresas atendidas por Star</span></div>
+          <div><img src="/marcas/hornetsecurity.webp" alt="Hornetsecurity" width="130" height="40" /></div>
+        </div>
+      </div>
+      <div class="console enter-r" id="lp-console" aria-label="Ilustración del filtro de correo">
+        <div class="c-head"><i class="dot"></i>FILTRO DE CORREO · EN VIVO <span class="clock" id="lp-clock">02:00:00</span></div>
+        <div class="mailflow" aria-hidden="true">
+          <span class="lane"></span>
+          <span class="env e1"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span><span class="env e2 bad"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span><span class="env e3"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span><span class="env e4 bad"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
+          <span class="gate"><svg viewBox="0 0 24 24"><path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3z"/><path d="m9 12 2 2 4-4"/></svg></span>
+          <span class="inbox">Bandeja</span>
+        </div>
+        <ul class="feed" id="lp-feed">
+          {eventos.slice(0, 4).map(([c, t, s]) => <li><i style={`background:${c};box-shadow:0 0 10px ${c}`}></i><span>{t}</span><b style={`color:${c}`}>{s}</b></li>)}
+        </ul>
+        <p class="note">Ilustración. Eventos de ejemplo.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="protege">
+    <div class="w">
+      <p class="kick" data-rv>QUÉ PROTEGE HORNETSECURITY</p>
+      <h2 data-rv style="--d:1">Todo lo que entra, sale y se guarda en su correo</h2>
+      <div class="tabs" role="tablist" data-rv style="--d:2">
+        {capas.map((c, n) => <button role="tab" class={n === 0 ? 'tab on' : 'tab'} data-tab={c.id} aria-selected={n === 0 ? 'true' : 'false'}><svg viewBox="0 0 24 24" set:html={c.i}></svg>{c.t}</button>)}
+      </div>
+      {capas.map((c, n) => (
+        <div class={n === 0 ? 'panel on' : 'panel'} data-panel={c.id} role="tabpanel">
+          <div><h3>{c.h}</h3><p>{c.d}</p><a href="#proteger" class="link">Proteger mi correo →</a></div>
+          <div class="icon-big"><svg viewBox="0 0 24 24" set:html={c.i}></svg></div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="sec alt" id="m365">
+    <div class="w">
+      <p class="kick" data-rv>MICROSOFT 365</p>
+      <h2 data-rv style="--d:1">Tener Microsoft 365 no significa tener el correo protegido</h2>
+      <div class="xdr">
+        <div class="liq-card tilt" data-rv style="--d:2">
+          <span class="lvl">MICROSOFT</span>
+          <h3>Garantiza que el servicio funcione</h3>
+          <p>Que el correo, OneDrive y Teams estén disponibles. Incluye un filtro básico y una papelera con plazos limitados.</p>
+        </div>
+        <div class="liq-card hi tilt" data-rv style="--d:3">
+          <span class="lvl">SU EMPRESA</span>
+          <h3>Responde por sus datos y sus usuarios</h3>
+          <p>Proteger la información frente a phishing dirigido, borrados, errores y ransomware, y evitar que suplanten su dominio. Ahí es donde entra Hornetsecurity.</p>
+        </div>
+      </div>
+      <div class="sensors">
+        {[['Filtro avanzado','<path d="M3 5h18l-7 8v6l-4-2v-4z"/>'],['Sandbox','<rect x="4" y="4" width="16" height="16" rx="3"/><path d="M9 9h6v6H9z"/>'],['Backup M365','<path d="M4 7c0-1.7 3.6-3 8-3s8 1.3 8 3-3.6 3-8 3-8-1.3-8-3z"/><path d="M4 7v10c0 1.7 3.6 3 8 3s8-1.3 8-3V7"/>'],['Cifrado','<rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/>'],['DMARC','<path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3z"/>']].map(([t,i],n) => <div class="sensor tilt" data-rv style={`--d:${n+2}`}><svg viewBox="0 0 24 24" set:html={i}></svg><span>{t}</span></div>)}
+      </div>
+      <p class="xdr-note">Bonus: revisamos <b>gratis</b> si alguien puede enviar correos haciéndose pasar por su empresa (SPF, DKIM y DMARC).</p>
+      <div style="margin-top:24px"><a href="#proteger" class="btn-main">Revisar mi correo gratis →</a></div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="w">
+      <p class="kick" data-rv>ASÍ EMPIEZA UN FRAUDE</p>
+      <h2 data-rv style="--d:1">"Cambiamos de cuenta bancaria": el correo más costoso</h2>
+      <div class="timeline" data-rv>
+        <div class="tl" data-rv style="--d:2"><b>08:10</b><h4>Llega el correo</h4><p>Parece del proveedor de siempre y pide actualizar la cuenta para el próximo pago.</p></div>
+        <div class="tl" data-rv style="--d:3"><b>08:10</b><h4>Hornetsecurity lo analiza</h4><p>Revisa remitente, dominio, enlaces y patrones de fraude antes de entregarlo.</p></div>
+        <div class="tl" data-rv style="--d:4"><b>08:10</b><h4>Se bloquea o se advierte</h4><p>El correo se detiene o llega marcado para que su equipo no caiga.</p></div>
+        <div class="tl" data-rv style="--d:5"><b>08:11</b><h4>Su dinero sigue en casa</h4><p>Con un proceso claro: todo cambio de cuenta se confirma por teléfono.</p></div>
+      </div>
+      <p class="fine">Escenario ilustrativo. El resultado depende de la configuración y del servicio contratado.</p>
+    </div>
+  </section>
+
+  <section class="sec" id="calcular">
+    <div class="w calc">
+      <div>
+        <p class="kick" data-rv>ARME SU PROTECCIÓN</p>
+        <h2 data-rv style="--d:1">¿Cuántos buzones de correo tiene?</h2>
+        <p class="muted">Mueva la barra y vea qué protección le recomendamos como punto de partida.</p>
+        <div class="slider" data-rv style="--d:2">
+          <input type="range" id="lp-range" min="5" max="2000" step="5" value="100" aria-label="Número de buzones" />
+          <div class="slider-val"><b id="lp-num">100</b> buzones</div>
+        </div>
+      </div>
+      <div class="reco tilt" id="lp-reco" data-rv style="--d:2">
+        <p class="kick" id="lp-tier">RECOMENDACIÓN</p>
+        <h3 id="lp-title">+ Protección avanzada y archivo</h3>
+        <ul id="lp-list"><li>Análisis de adjuntos en sandbox</li></ul>
+        <a href="#proteger" class="btn-main" id="lp-reco-cta">Pedir esta recomendación →</a>
+        <p class="fine">Orientativo. La propuesta final depende de su revisión gratuita.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec case">
+    <div class="w case-in">
+      <div data-rv><p class="kick">EL RIESGO ES REAL</p><p class="big">USD 3.046 M</p><p class="case-t">en pérdidas reportadas por fraude de correo corporativo (BEC) en 2025, según el informe IC3 del FBI.</p></div>
+      <ul class="why stagger" data-rv>
+        <li><b>Partner Silver de Hornetsecurity</b>Implementación certificada en Microsoft 365.</li>
+        <li><b>Revisión DMARC gratuita</b>Le decimos si pueden suplantar su dominio y cómo corregirlo.</li>
+        <li><b>Soporte en español</b>Equipo local en Bogotá con cobertura nacional.</li>
+        <li><b>Desde 2016</b>Más de 1.150 empresas atendidas en Colombia.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec form-sec" id="proteger">
+    <div class="w form-in">
+      <div>
+        <p class="kick" data-rv>REVISIÓN GRATUITA</p>
+        <h2 data-rv style="--d:1">Proteja su correo 24/7. Empecemos por revisarlo.</h2>
+        <ul class="checks stagger" data-rv><li>Si pueden suplantar su dominio (SPF, DKIM y DMARC)</li><li>Qué está dejando pasar su filtro actual</li><li>Si su Microsoft 365 tiene backup real</li><li>Recomendación clara y sin compromiso</li></ul>
+        <a href={wa} target="_blank" rel="noopener" class="wa-big">Prefiero WhatsApp: 322 786 2375</a>
+      </div>
+      <form action="/api/leads" method="post" data-lead-form class="card-form" data-rv style="--d:2">
+        <input type="hidden" name="_redirect" value="/gracias" />
+        <input type="hidden" name="_source_form" value="Hornetsecurity - Landing pauta" />
+        <input type="hidden" name="service" value="Hornetsecurity" />
+        <div class="two"><label>Nombre *<input name="name" required autocomplete="name" /></label><label>Empresa *<input name="company" required autocomplete="organization" /></label></div>
+        <div class="two"><label>Correo corporativo *<input type="email" name="email" required autocomplete="email" /></label><label>Teléfono *<input type="tel" name="phone" required autocomplete="tel" /></label></div>
+        <div class="two"><label>Número de buzones *<select name="dispositivos" id="lp-devices" required><option value="">Seleccione un rango</option>{deviceRanges.map((r) => <option value={r}>{r}</option>)}</select></label><label>Dominio de su empresa<input name="message" placeholder="suempresa.com.co" /></label></div>
+        <label class="chk"><input type="checkbox" name="privacy" required /> <span>Acepto la <a href="/privacidad/">Política de Privacidad</a> y el tratamiento de mis datos *</span></label>
+        <button type="submit" class="btn-main full">Quiero proteger mi correo →</button>
+        <p class="fine">Revisión sin costo y sin compromiso.</p>
+      </form>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="w faq">
+      <h2 data-rv>Preguntas frecuentes</h2>
+      {faqs.map((f, n) => <details data-rv style={`--d:${n}`}><summary>{f.q}</summary><p>{f.a}</p></details>)}
+    </div>
+  </section>
+
+  <footer class="foot">Star Solutions TI S.A.S. · Cra 27 # 49-19, Bogotá · <a href="/privacidad/">Privacidad</a> · <a href="/">star-ti.com</a></footer>
+  <a href="#proteger" class="sticky-cta">Proteger mi correo 24/7 →</a>
+</div>
+
+<script define:vars={{ eventos }}>
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // Contadores
+  const fmt = (n) => n.toLocaleString('es-CO');
+  const io = new IntersectionObserver((es) => es.forEach((e) => {
+    if (!e.isIntersecting) return; io.unobserve(e.target);
+    const end = +e.target.dataset.count; if (reduce) { e.target.textContent = fmt(end); return; }
+    const t0 = performance.now(), d = 1400;
+    const step = (t) => { const p = Math.min(1, (t - t0) / d); e.target.textContent = fmt(Math.round(end * (1 - Math.pow(1 - p, 3)))); if (p < 1) requestAnimationFrame(step); };
+    requestAnimationFrame(step);
+  }), { threshold: .4 });
+  document.querySelectorAll('[data-count]').forEach((el) => io.observe(el));
+  // Pestañas
+  document.querySelectorAll('.tab').forEach((b) => b.addEventListener('click', () => {
+    document.querySelectorAll('.tab').forEach((x) => { x.classList.toggle('on', x === b); x.setAttribute('aria-selected', x === b ? 'true' : 'false'); });
+    document.querySelectorAll('.panel').forEach((p) => p.classList.toggle('on', p.dataset.panel === b.dataset.tab));
+  }));
+  // Consola en vivo (ilustrativa)
+  const feed = document.getElementById('lp-feed'), clock = document.getElementById('lp-clock');
+  let i = 4, secs = 7200;
+  if (!reduce) {
+    setInterval(() => { secs = (secs + 1) % 86400; const h = String(Math.floor(secs / 3600)).padStart(2, '0'), m = String(Math.floor(secs / 60) % 60).padStart(2, '0'), s = String(secs % 60).padStart(2, '0'); clock.textContent = `${h}:${m}:${s}`; }, 1000);
+    setInterval(() => {
+      const [c, t, st] = eventos[i++ % eventos.length];
+      const li = document.createElement('li'); li.className = 'new';
+      li.innerHTML = `<i style="background:${c};box-shadow:0 0 10px ${c}"></i><span>${t}</span><b style="color:${c}">${st}</b>`;
+      feed.prepend(li); if (feed.children.length > 4) feed.lastElementChild.remove();
+    }, 2600);
+  }
+  // Calculadora orientativa
+  const range = document.getElementById('lp-range'), num = document.getElementById('lp-num');
+  const tiers = [
+    { max: 49, k: 'EMPRESA PEQUEÑA', t: 'Filtro y cifrado del correo', l: ['Antispam y antimalware', 'Cifrado y firmas corporativas', 'Administración en la nube'], r: '1 a 49' },
+    { max: 249, k: 'EMPRESA MEDIANA', t: '+ Protección avanzada y archivo', l: ['Análisis de adjuntos en sandbox', 'Archivo legal del correo', 'Continuidad si Microsoft 365 falla'], r: '50 a 249' },
+    { max: 999, k: 'EMPRESA GRANDE', t: '+ Backup de Microsoft 365', l: ['Copia de correo, OneDrive, SharePoint y Teams', 'Recuperación en minutos', 'Todo lo anterior'], r: '250 a 999' },
+    { max: Infinity, k: 'CORPORATIVO / SECTOR PÚBLICO', t: 'Suite completa + concienciación', l: ['Entrenamiento antiphishing para el equipo', 'Gestión de permisos en Microsoft 365', 'Despliegue por fases con Star'], r: '1.000 o más' },
+  ];
+  const upd = () => {
+    const v = +range.value; num.textContent = fmt(v);
+    const tr = tiers.find((x) => v <= x.max);
+    document.getElementById('lp-tier').textContent = tr.k; document.getElementById('lp-title').textContent = tr.t;
+    document.getElementById('lp-list').innerHTML = tr.l.map((x) => `<li>${x}</li>`).join('');
+    range.style.setProperty('--p', ((v - 5) / 1995 * 100) + '%');
+    document.getElementById('lp-devices').value = tr.r;
+  };
+  range.addEventListener('input', upd); upd();
+
+  // Aparición al hacer scroll
+  const rv = document.querySelectorAll('.lp [data-rv]');
+  if (reduce || !('IntersectionObserver' in window)) rv.forEach((e) => e.classList.add('in'));
+  else { const ro = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); ro.unobserve(e.target); } }), { threshold: .15, rootMargin: '0px 0px -40px 0px' }); rv.forEach((e) => ro.observe(e)); }
+  // Barra de progreso de lectura
+  const bar = document.getElementById('lp-progress');
+  addEventListener('scroll', () => { const h = document.documentElement; bar.style.transform = `scaleX(${h.scrollTop / (h.scrollHeight - h.clientHeight)})`; }, { passive: true });
+  // Inclinación 3D al pasar el mouse
+  const fine = matchMedia('(hover:hover) and (pointer:fine)').matches;
+  if (!reduce && fine) {
+    document.querySelectorAll('.lp .tilt').forEach((el) => {
+      el.addEventListener('pointermove', (ev) => { const r = el.getBoundingClientRect(); const x = (ev.clientX - r.left) / r.width - .5, y = (ev.clientY - r.top) / r.height - .5; el.style.setProperty('--rx', `${-y * 8}deg`); el.style.setProperty('--ry', `${x * 10}deg`); el.style.setProperty('--gx', `${(x + .5) * 100}%`); el.style.setProperty('--gy', `${(y + .5) * 100}%`); });
+      el.addEventListener('pointerleave', () => { el.style.setProperty('--rx', '0deg'); el.style.setProperty('--ry', '0deg'); });
+    });
+    const hero = document.querySelector('.lp .hero'), con = document.getElementById('lp-console');
+    hero.addEventListener('pointermove', (ev) => { const r = hero.getBoundingClientRect(); const x = (ev.clientX - r.left) / r.width - .5, y = (ev.clientY - r.top) / r.height - .5; con.style.setProperty('--cx', `${-9 + x * 10}deg`); con.style.setProperty('--cy', `${4 - y * 8}deg`); hero.style.setProperty('--mx', `${x * 40}px`); hero.style.setProperty('--my', `${y * 40}px`); });
+  }
+  // Pestañas que rotan solas hasta que el usuario elige una
+  const tabs = [...document.querySelectorAll('.lp .tab')]; let ti = 0, auto = !reduce;
+  tabs.forEach((t) => t.addEventListener('click', () => { auto = false; }));
+  const tabIO = new IntersectionObserver((es) => es.forEach((e) => { e.target.dataset.vis = e.isIntersecting ? '1' : ''; }));
+  const tabsBox = document.querySelector('.lp .tabs'); if (tabsBox) tabIO.observe(tabsBox);
+  setInterval(() => { if (!auto || !tabsBox.dataset.vis) return; ti = (ti + 1) % tabs.length; const b = tabs[ti];
+    tabs.forEach((x) => { x.classList.toggle('on', x === b); x.setAttribute('aria-selected', x === b ? 'true' : 'false'); });
+    document.querySelectorAll('.lp .panel').forEach((p) => p.classList.toggle('on', p.dataset.panel === b.dataset.tab)); }, 4500);
+</script>
+
+<style is:global>
+.lp{--bg:#0b0f19;--bg2:#111827;--line:rgba(255,255,255,.16);--ink:#f3f4f6;--mut:#9ca3af;--c:#ef4444;--v:#f97316;--r:#ef4444;--grad:linear-gradient(90deg,#ef4444,#f97316);background:var(--bg);color:var(--ink);font-family:inherit}
+.lp .w{max-width:1160px;margin:0 auto;padding:0 20px}
+.lp .top{position:sticky;top:0;z-index:20;background:rgba(11,15,25,.8);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.lp .row{height:64px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.lp .brand{display:flex;align-items:center;gap:10px;font-weight:700}.lp .brand img{height:36px;width:36px}
+.lp .pill{font-size:12px;color:#fca5a5;border:1px solid rgba(239,68,68,.35);padding:6px 12px;border-radius:999px;letter-spacing:.06em}
+.lp .wa-btn{background:#25d366;color:#fff;font-weight:700;font-size:14px;padding:9px 16px;border-radius:999px}
+.lp .hero{position:relative;overflow:hidden;padding:72px 0 80px}
+.lp .grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.06) 1px,transparent 1px);background-size:48px 48px;mask-image:radial-gradient(ellipse at 60% 30%,#000 30%,transparent 75%)}
+.lp .glow{position:absolute;border-radius:50%;filter:blur(80px);opacity:.5}.lp .g1{width:520px;height:520px;background:#b91c1c;right:-120px;top:-80px}.lp .g2{width:420px;height:420px;background:#c2410c;left:-140px;bottom:-160px}
+.lp .hero-in{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+.lp .tag{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:700;letter-spacing:.1em;color:#fca5a5;border:1px solid rgba(239,68,68,.3);background:rgba(239,68,68,.06);padding:8px 14px;border-radius:999px;text-transform:uppercase}
+.lp .dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#34d399;box-shadow:0 0 10px #34d399;animation:lp-pulse 1.6s infinite}
+@keyframes lp-pulse{50%{opacity:.35}}
+.lp h1{font-size:clamp(34px,5vw,58px);line-height:1.04;letter-spacing:-.03em;margin:18px 0;font-weight:800;text-align:left}
+.lp .grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lp .lead{color:var(--mut);font-size:18px;max-width:560px;text-align:left}
+.lp .ctas{display:flex;flex-wrap:wrap;gap:12px;margin:28px 0}
+.lp .btn-main{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--grad);color:#ffffff;font-weight:800;padding:15px 24px;border-radius:12px;box-shadow:0 10px 30px rgba(239,68,68,.25);transition:transform .15s,box-shadow .2s}
+.lp .btn-main:hover{box-shadow:0 12px 40px rgba(249,115,22,.45)}.lp .btn-main:active{transform:scale(.97)}.lp .full{width:100%;border:0;cursor:pointer;font-size:17px}
+.lp .btn-ghost{display:inline-flex;align-items:center;padding:15px 22px;border-radius:12px;border:1px solid var(--line);color:var(--ink);font-weight:700}.lp .btn-ghost:hover{border-color:var(--c)}
+.lp .stats{display:flex;flex-wrap:wrap;align-items:center;gap:28px}.lp .stats b{font-size:28px;font-weight:800}.lp .stats span{display:block;font-size:13px;color:var(--mut)}.lp .stats img{height:50px;width:auto;background:#fff;border-radius:8px;padding:4px}
+.lp .console{background:linear-gradient(145deg,rgba(255,255,255,.09),rgba(255,255,255,.02));border:1px solid var(--line);border-radius:22px;padding:22px;box-shadow:0 40px 100px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.12);transform:perspective(1300px) rotateY(-9deg) rotateX(4deg)}
+.lp .c-head{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:700;letter-spacing:.14em;color:#86efac}.lp .clock{margin-left:auto;color:#fca5a5;font-variant-numeric:tabular-nums}
+.lp .radar{position:relative;height:150px;margin:16px 0;border-radius:14px;background:radial-gradient(circle,rgba(239,68,68,.12) 0,transparent 65%),repeating-radial-gradient(circle,transparent 0 24px,rgba(252,165,165,.18) 25px 26px);overflow:hidden}
+.lp .sweep{position:absolute;left:50%;top:50%;width:150px;height:150px;margin:-75px;border-radius:50%;background:conic-gradient(rgba(239,68,68,.45),transparent 25%);animation:lp-spin 4s linear infinite}
+@keyframes lp-spin{to{transform:rotate(360deg)}}
+.lp .blip{position:absolute;width:8px;height:8px;border-radius:50%;background:#f472b6;box-shadow:0 0 12px #f472b6;animation:lp-pulse 2s infinite}.lp .b1{left:62%;top:30%}.lp .b2{left:38%;top:62%;animation-delay:.7s}.lp .b3{left:55%;top:70%;background:#fbbf24;box-shadow:0 0 12px #fbbf24;animation-delay:1.3s}
+.lp .feed{list-style:none;padding:0;margin:0;display:grid;gap:8px}.lp .feed li{display:flex;align-items:center;gap:10px;font-size:14px;padding:10px 12px;border-radius:10px;background:rgba(255,255,255,.04);border:1px solid var(--line)}
+.lp .feed li i{flex:none;width:9px;height:9px;border-radius:50%}.lp .feed li span{flex:1;color:#e5e7eb}.lp .feed li b{font-size:11px;letter-spacing:.08em}
+.lp .feed li.new{animation:lp-in .5s cubic-bezier(.23,1,.32,1)}@keyframes lp-in{from{opacity:0;transform:translateY(-8px)}}
+.lp .note,.lp .fine{font-size:12px;color:#6b7280;margin-top:10px}
+.lp .sec{padding:84px 0}.lp .alt{background:var(--bg2)}
+.lp .kick{font-size:12px;font-weight:800;letter-spacing:.16em;color:#fca5a5;margin-bottom:10px}
+.lp h2{font-size:clamp(28px,3.6vw,42px);line-height:1.1;letter-spacing:-.025em;font-weight:800;margin-bottom:28px;text-align:left}
+.lp .muted{color:var(--mut)}
+.lp .tabs{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:20px}
+.lp .tab{display:inline-flex;align-items:center;gap:8px;padding:11px 16px;border-radius:12px;border:1px solid var(--line);background:rgba(255,255,255,.03);color:var(--mut);font-weight:700;cursor:pointer;transition:all .2s}
+.lp .tab svg,.lp .icon-big svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.lp .tab.on,.lp .tab:hover{color:#fff;background:var(--grad);border-color:transparent}
+.lp .panel{display:none;grid-template-columns:1fr auto;gap:30px;align-items:center;padding:32px;border-radius:22px;border:1px solid var(--line);background:linear-gradient(145deg,rgba(239,68,68,.07),rgba(249,115,22,.07))}
+.lp .panel.on{display:grid;animation:lp-in .4s cubic-bezier(.23,1,.32,1)}
+.lp .panel h3{font-size:24px;margin-bottom:10px}.lp .panel p{color:var(--mut);max-width:640px;text-align:left}.lp .link{display:inline-block;margin-top:16px;color:#fca5a5;font-weight:700}
+.lp .icon-big{width:120px;height:120px;border-radius:28px;display:flex;align-items:center;justify-content:center;background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.3);color:#fca5a5;box-shadow:0 0 50px rgba(239,68,68,.2)}.lp .icon-big svg{width:56px;height:56px}
+.lp .timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;position:relative}
+.lp .tl{padding:24px;border-radius:18px;background:rgba(255,255,255,.04);border:1px solid var(--line);position:relative}
+.lp .tl b{font-size:22px;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;font-variant-numeric:tabular-nums}.lp .tl h4{margin:8px 0 6px;font-size:17px}.lp .tl p{color:var(--mut);font-size:14px;text-align:left}
+.lp .calc{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.lp .slider{margin-top:26px}.lp input[type=range]{--p:5%;-webkit-appearance:none;appearance:none;width:100%;height:10px;border-radius:99px;background:linear-gradient(90deg,#ef4444,#f97316) 0/var(--p) 100% no-repeat,rgba(255,255,255,.1);outline:none}
+.lp input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:28px;height:28px;border-radius:50%;background:#fff;box-shadow:0 0 0 6px rgba(239,68,68,.25),0 0 20px #ef4444;cursor:pointer}
+.lp input[type=range]::-moz-range-thumb{width:28px;height:28px;border:0;border-radius:50%;background:#fff;box-shadow:0 0 0 6px rgba(239,68,68,.25)}
+.lp .slider-val{margin-top:16px;font-size:18px;color:var(--mut)}.lp .slider-val b{font-size:44px;color:#fff;font-weight:800;font-variant-numeric:tabular-nums}
+.lp .reco{padding:30px;border-radius:22px;border:1px solid rgba(239,68,68,.3);background:linear-gradient(145deg,rgba(239,68,68,.1),rgba(249,115,22,.12));box-shadow:0 20px 60px rgba(239,68,68,.08)}
+.lp .reco h3{font-size:28px;margin-bottom:12px}.lp .reco ul{margin:0 0 22px;padding-left:20px;color:#e5e7eb;display:grid;gap:6px}
+.lp .case{background:radial-gradient(600px 300px at 20% 50%,rgba(239,68,68,.15),transparent 70%),var(--bg2)}
+.lp .case-in{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.lp .big{font-size:clamp(64px,9vw,110px);font-weight:800;letter-spacing:-.04em;line-height:1}.lp .case-t{font-size:20px;color:#e5e7eb;margin-top:10px;text-align:left}
+.lp .why{list-style:none;padding:0;display:grid;gap:14px}.lp .why li{padding:16px 18px;border-radius:14px;background:rgba(255,255,255,.04);border:1px solid var(--line);color:var(--mut)}.lp .why b{display:block;color:#fff;margin-bottom:2px}
+.lp .form-in{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:start}
+.lp .checks{list-style:none;padding:0;display:grid;gap:12px;margin-bottom:24px}.lp .checks li{padding-left:30px;position:relative;color:#e5e7eb}.lp .checks li:before{content:"✓";position:absolute;left:0;top:-1px;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:#ffffff;background:var(--grad)}
+.lp .wa-big{display:inline-block;padding:13px 20px;border-radius:12px;background:#25d366;color:#fff;font-weight:700}
+.lp .card-form{display:grid;gap:14px;padding:28px;border-radius:22px;background:rgba(255,255,255,.05);border:1px solid var(--line);box-shadow:0 30px 80px rgba(0,0,0,.4)}
+.lp .card-form label{display:grid;gap:6px;font-size:13px;font-weight:700;color:var(--mut)}
+.lp .card-form input:not([type=checkbox]),.lp .card-form select{font:inherit;font-weight:500;color:var(--ink);background:rgba(11,15,25,.6);border:1px solid var(--line);border-radius:10px;padding:12px 14px}
+.lp .card-form select option{background:#111827}
+.lp .card-form input:focus,.lp .card-form select:focus{outline:none;border-color:var(--c);box-shadow:0 0 0 3px rgba(239,68,68,.15)}
+.lp .two{display:grid;grid-template-columns:1fr 1fr;gap:12px}.lp .chk{display:flex!important;align-items:flex-start;gap:10px;font-weight:500!important}.lp .chk input{margin-top:3px;accent-color:#ef4444}.lp .chk a{color:#fca5a5;text-decoration:underline}
+.lp .faq{max-width:820px}.lp details{border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin-bottom:12px;background:rgba(255,255,255,.03)}.lp summary{font-weight:700;cursor:pointer}.lp details p{color:var(--mut);margin-top:10px;text-align:left}
+.lp .foot{border-top:1px solid var(--line);padding:30px 20px 90px;text-align:center;font-size:13px;color:#6b7280}.lp .foot a{text-decoration:underline}
+.lp .sticky-cta{display:none}
+@media(max-width:900px){.lp .hero-in,.lp .calc,.lp .case-in,.lp .form-in{grid-template-columns:1fr}.lp .timeline{grid-template-columns:1fr 1fr}.lp .console{transform:none}.lp .panel{grid-template-columns:1fr}.lp .icon-big{display:none}.lp .hide-sm{display:none}.lp .two{grid-template-columns:1fr}
+.lp .sticky-cta{display:block;position:fixed;left:12px;right:12px;bottom:12px;z-index:30;text-align:center;padding:15px;border-radius:14px;background:var(--grad);color:#ffffff;font-weight:800;box-shadow:0 10px 30px rgba(0,0,0,.5)}}
+
+.lp .glow{filter:blur(70px);opacity:.55;animation:lp-morph 14s ease-in-out infinite alternate}
+.lp .g1{border-radius:42% 58% 63% 37%/45% 38% 62% 55%}.lp .g2{border-radius:58% 42% 35% 65%/52% 60% 40% 48%;animation-duration:18s}
+.lp .g3{position:absolute;width:360px;height:360px;left:40%;top:30%;background:#f97316;opacity:.25;filter:blur(80px);border-radius:50% 40% 60% 45%;animation:lp-morph 20s ease-in-out infinite alternate-reverse}
+@keyframes lp-morph{0%{transform:translate(0,0) rotate(0) scale(1);border-radius:42% 58% 63% 37%/45% 38% 62% 55%}50%{transform:translate(40px,-30px) rotate(40deg) scale(1.1);border-radius:60% 40% 35% 65%/58% 50% 50% 42%}100%{transform:translate(-30px,30px) rotate(90deg) scale(.95);border-radius:35% 65% 55% 45%/40% 60% 40% 60%}}
+.lp .console,.lp .card-form,.lp .reco,.lp .panel,.lp .liq-card{backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);background:linear-gradient(145deg,rgba(255,255,255,.10),rgba(255,255,255,.03));border:1px solid rgba(255,255,255,.14);box-shadow:0 30px 80px rgba(0,0,0,.45),inset 0 1px 0 rgba(255,255,255,.18)}
+.lp .xdr{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.lp .liq-card{position:relative;overflow:hidden;padding:30px;border-radius:26px}
+.lp .liq-card:before{content:"";position:absolute;width:260px;height:260px;right:-80px;top:-90px;background:radial-gradient(closest-side,rgba(239,68,68,.35),transparent);border-radius:45% 55% 60% 40%;animation:lp-morph 12s ease-in-out infinite alternate}
+.lp .liq-card.hi{border-color:rgba(239,68,68,.45)}.lp .liq-card.hi:before{background:radial-gradient(closest-side,rgba(249,115,22,.45),transparent)}
+.lp .liq-card h3{font-size:22px;margin:12px 0 8px;position:relative}.lp .liq-card p{color:var(--mut);position:relative;text-align:left}
+.lp .lvl{position:relative;display:inline-block;font-weight:800;font-size:13px;letter-spacing:.14em;padding:6px 12px;border-radius:999px;background:var(--grad);color:#fff}
+.lp .sensors{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:20px}
+.lp .sensor{display:flex;flex-direction:column;align-items:center;gap:10px;padding:18px 10px;border-radius:18px;background:rgba(255,255,255,.04);border:1px solid var(--line);text-align:center;font-weight:600;font-size:14px;color:#e5e7eb;transition:transform .2s,border-color .2s}
+.lp .sensor:hover{transform:translateY(-3px);border-color:rgba(239,68,68,.5)}
+.lp .sensor svg{width:28px;height:28px;fill:none;stroke:#fca5a5;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.lp .xdr-note{margin-top:20px;color:var(--mut);text-align:left}.lp .xdr-note b{color:#fff}
+@media(max-width:900px){.lp .xdr{grid-template-columns:1fr}.lp .sensors{grid-template-columns:repeat(2,1fr)}}
+@media(prefers-reduced-motion:reduce){.lp .glow,.lp .g3,.lp .liq-card:before{animation:none}}
+
+.lp .progress{position:fixed;left:0;top:0;height:3px;width:100%;z-index:50;background:var(--grad);transform-origin:0 50%;transform:scaleX(0)}
+.lp [data-rv]{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.23,1,.32,1),transform .8s cubic-bezier(.23,1,.32,1);transition-delay:calc(var(--d,0) * 90ms)}
+.lp [data-rv].in{opacity:1;transform:none}
+.lp .stagger.in li{animation:lp-up .7s cubic-bezier(.23,1,.32,1) both}
+.lp .stagger li:nth-child(2){animation-delay:.1s}.lp .stagger li:nth-child(3){animation-delay:.2s}.lp .stagger li:nth-child(4){animation-delay:.3s}
+@keyframes lp-up{from{opacity:0;transform:translateX(-18px)}}
+.lp .enter{animation:lp-up2 .9s cubic-bezier(.23,1,.32,1) both;animation-delay:calc(var(--d,0) * 120ms)}
+@keyframes lp-up2{from{opacity:0;transform:translateY(24px);filter:blur(6px)}}
+.lp .enter-r{animation:lp-in-r 1.1s cubic-bezier(.23,1,.32,1) .35s both}
+@keyframes lp-in-r{from{opacity:0;transform:perspective(1300px) rotateY(-25deg) translateX(60px)}}
+.lp .console{transform:perspective(1300px) rotateY(var(--cx,-9deg)) rotateX(var(--cy,4deg));transition:transform .4s cubic-bezier(.23,1,.32,1)}
+.lp .g1{translate:var(--mx,0) var(--my,0)}.lp .g2{translate:calc(var(--mx,0) * -1) calc(var(--my,0) * -1)}
+.lp .tilt{transform:perspective(900px) rotateX(var(--rx,0)) rotateY(var(--ry,0));transition:transform .35s cubic-bezier(.23,1,.32,1),border-color .2s,opacity .8s cubic-bezier(.23,1,.32,1)}
+.lp [data-rv].tilt:not(.in){transform:translateY(28px)}
+.lp .tilt:after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:radial-gradient(240px circle at var(--gx,50%) var(--gy,50%),rgba(255,255,255,.10),transparent 60%);opacity:0;transition:opacity .3s}
+.lp .tilt:hover:after{opacity:1}.lp .sensor,.lp .reco{position:relative}
+.lp .btn-main{position:relative;overflow:hidden}
+.lp .btn-main:after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.45),transparent);transform:skewX(-20deg);animation:lp-shine 3.2s ease-in-out infinite}
+@keyframes lp-shine{0%,60%{left:-60%}100%{left:130%}}
+.lp .card-form{position:relative}
+.lp .card-form:before{content:"";position:absolute;inset:-1px;border-radius:inherit;padding:1px;background:conic-gradient(from var(--ang,0deg),transparent 0 70%,#ef4444 80%,#f97316 90%,transparent);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;animation:lp-rot 5s linear infinite;pointer-events:none}
+@property --ang{syntax:'<angle>';inherits:false;initial-value:0deg}
+@keyframes lp-rot{to{--ang:360deg}}
+.lp .timeline:before{content:"";position:absolute;left:24px;right:24px;top:44px;height:2px;background:var(--grad);transform-origin:0 50%;transform:scaleX(0);transition:transform 1.6s cubic-bezier(.23,1,.32,1) .3s;opacity:.6}
+.lp .timeline.in:before{transform:scaleX(1)}
+.lp .tl{transition:transform .25s,border-color .25s}.lp .tl:hover{transform:translateY(-6px);border-color:rgba(239,68,68,.5)}
+.lp .panel.on{animation:lp-panel .55s cubic-bezier(.23,1,.32,1)}
+@keyframes lp-panel{from{opacity:0;transform:translateY(12px) scale(.98);filter:blur(4px)}}
+.lp .icon-big{animation:lp-bob 4s ease-in-out infinite}@keyframes lp-bob{50%{transform:translateY(-10px)}}
+.lp .tab{position:relative;overflow:hidden}.lp .tab.on:after{content:"";position:absolute;left:0;bottom:0;height:2px;width:100%;background:rgba(255,255,255,.7);transform-origin:0;animation:lp-bar 4.5s linear}
+@keyframes lp-bar{from{transform:scaleX(0)}}
+.lp .big{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lp .wa-btn,.lp .wa-big{transition:transform .2s}.lp .wa-btn:hover,.lp .wa-big:hover{transform:translateY(-2px)}
+.lp details summary{transition:color .2s}.lp details[open] summary{color:#fca5a5}
+@media(prefers-reduced-motion:reduce){.lp [data-rv],.lp .enter,.lp .enter-r,.lp .stagger li{opacity:1!important;transform:none!important;animation:none!important;filter:none!important}.lp .btn-main:after,.lp .card-form:before,.lp .icon-big,.lp .tab.on:after{animation:none}}
+@media(prefers-reduced-motion:reduce){.lp .sweep,.lp .dot,.lp .blip{animation:none}}
+.lp .mailflow{position:relative;height:150px;margin:16px 0;border-radius:14px;overflow:hidden;background:radial-gradient(circle at 70% 50%,rgba(239,68,68,.14),transparent 60%),rgba(255,255,255,.03)}
+.lp .lane{position:absolute;left:14px;right:14px;top:50%;height:2px;background:repeating-linear-gradient(90deg,rgba(255,255,255,.25) 0 10px,transparent 10px 20px);animation:lp-lane 1s linear infinite}
+@keyframes lp-lane{to{background-position:20px 0}}
+.lp .env{position:absolute;top:50%;left:-40px;width:34px;height:34px;margin-top:-17px;border-radius:9px;display:flex;align-items:center;justify-content:center;background:rgba(52,211,153,.15);border:1px solid rgba(52,211,153,.6);animation:lp-mail 4s linear infinite}
+.lp .env svg{width:20px;height:20px;fill:none;stroke:#6ee7b7;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.lp .env.bad{background:rgba(239,68,68,.18);border-color:rgba(239,68,68,.7);animation-name:lp-mail-bad}.lp .env.bad svg{stroke:#fca5a5}
+.lp .e2{animation-delay:1s}.lp .e3{animation-delay:2s}.lp .e4{animation-delay:3s}
+@keyframes lp-mail{0%{left:-40px;opacity:0}10%{opacity:1}100%{left:calc(100% + 10px);opacity:1}}
+@keyframes lp-mail-bad{0%{left:-40px;opacity:0}10%{opacity:1}52%{left:calc(62% - 50px);transform:none;opacity:1}62%{left:calc(62% - 50px);transform:translateY(40px) rotate(25deg);opacity:0}100%{left:calc(62% - 50px);opacity:0}}
+.lp .gate{position:absolute;left:62%;top:50%;width:56px;height:56px;margin:-28px 0 0 -28px;border-radius:16px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#ef4444,#f97316);box-shadow:0 0 30px rgba(239,68,68,.6);animation:lp-gate 2s ease-in-out infinite;z-index:2}
+.lp .gate svg{width:30px;height:30px;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+@keyframes lp-gate{50%{box-shadow:0 0 50px rgba(249,115,22,.85)}}
+.lp .inbox{position:absolute;right:12px;bottom:10px;font-size:11px;font-weight:700;letter-spacing:.12em;color:#6ee7b7;text-transform:uppercase}
+@media(prefers-reduced-motion:reduce){.lp .env,.lp .lane,.lp .gate{animation:none}}
+</style>
+</BaseLayout>
