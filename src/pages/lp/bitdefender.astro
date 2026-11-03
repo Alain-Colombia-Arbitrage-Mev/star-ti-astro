@@ -35,6 +35,7 @@ const eventos = [
 
 <BaseLayout seo={seo}>
 <div class="lp">
+  <div class="progress" id="lp-progress"></div>
   <header class="top">
     <div class="w row">
       <span class="brand"><img src="/logo.png" alt="Star Solutions TI" width="36" height="36" /><span>Star Solutions TI</span></span>
@@ -47,20 +48,20 @@ const eventos = [
     <div class="grid-bg"></div><div class="glow g1"></div><div class="glow g2"></div><div class="g3"></div>
     <div class="w hero-in">
       <div>
-        <span class="tag"><i class="dot"></i>Protección activa · 24 horas · 7 días</span>
-        <h1>Los equipos de su empresa deben estar <span class="grad">protegidos 24/7.</span></h1>
-        <p class="lead">Con Bitdefender GravityZone (prevención, EDR, XDR y MDR), cada computador y servidor queda protegido contra ransomware, phishing y ataques avanzados, de día y de noche. Star lo implementa, lo administra y le responde en español.</p>
-        <div class="ctas">
+        <span class="tag enter" style="--d:0"><i class="dot"></i>Protección activa · 24 horas · 7 días</span>
+        <h1 class="enter" style="--d:1">Los equipos de su empresa deben estar <span class="grad">protegidos 24/7.</span></h1>
+        <p class="lead enter" style="--d:2">Con Bitdefender GravityZone (prevención, EDR, XDR y MDR), cada computador y servidor queda protegido contra ransomware, phishing y ataques avanzados, de día y de noche. Star lo implementa, lo administra y le responde en español.</p>
+        <div class="ctas enter" style="--d:3">
           <a href="#proteger" class="btn-main">Quiero proteger mis equipos <span aria-hidden="true">→</span></a>
           <a href="#calcular" class="btn-ghost">¿Cuántos equipos tiene?</a>
         </div>
-        <div class="stats">
+        <div class="stats enter" style="--d:4">
           <div><b data-count="150">0</b><b>+</b><span>empresas protegidas</span></div>
           <div><b data-count="50000">0</b><b>+</b><span>equipos con GravityZone</span></div>
           <div><img src="/marcas/bitdefender-platinum-reseller.webp" alt="Bitdefender Reseller Platinum" width="130" height="49" /></div>
         </div>
       </div>
-      <div class="console" aria-label="Ilustración de la consola de protección">
+      <div class="console enter-r" id="lp-console" aria-label="Ilustración de la consola de protección">
         <div class="c-head"><i class="dot"></i>CONSOLA · PROTECCIÓN ACTIVA <span class="clock" id="lp-clock">02:00:00</span></div>
         <div class="radar"><span class="sweep"></span><span class="blip b1"></span><span class="blip b2"></span><span class="blip b3"></span></div>
         <ul class="feed" id="lp-feed">
@@ -73,9 +74,9 @@ const eventos = [
 
   <section class="sec" id="protege">
     <div class="w">
-      <p class="kick">QUÉ PROTEGE BITDEFENDER</p>
-      <h2>Una sola plataforma para todo lo que puede ser atacado</h2>
-      <div class="tabs" role="tablist">
+      <p class="kick" data-rv>QUÉ PROTEGE BITDEFENDER</p>
+      <h2 data-rv style="--d:1">Una sola plataforma para todo lo que puede ser atacado</h2>
+      <div class="tabs" role="tablist" data-rv style="--d:2">
         {capas.map((c, n) => <button role="tab" class={n === 0 ? 'tab on' : 'tab'} data-tab={c.id} aria-selected={n === 0 ? 'true' : 'false'}><svg viewBox="0 0 24 24" set:html={c.i}></svg>{c.t}</button>)}
       </div>
       {capas.map((c, n) => (
@@ -90,22 +91,22 @@ const eventos = [
 
   <section class="sec alt" id="xdr">
     <div class="w">
-      <p class="kick">GRAVITYZONE XDR</p>
-      <h2>De EDR a XDR: ver el ataque completo, no solo un equipo</h2>
+      <p class="kick" data-rv>GRAVITYZONE XDR</p>
+      <h2 data-rv style="--d:1">De EDR a XDR: ver el ataque completo, no solo un equipo</h2>
       <div class="xdr">
-        <div class="liq-card">
+        <div class="liq-card tilt" data-rv style="--d:2">
           <span class="lvl">EDR</span>
           <h3>Vigila cada equipo</h3>
           <p>Registra lo que pasa en cada computador y servidor: procesos, archivos y conexiones. Si algo es malicioso, lo detiene y permite aislar el equipo.</p>
         </div>
-        <div class="liq-card hi">
+        <div class="liq-card hi tilt" data-rv style="--d:3">
           <span class="lvl">XDR</span>
           <h3>Une toda la empresa en una sola historia</h3>
           <p>Correlaciona lo que ocurre en equipos, servidores, correo, nube, identidades y red. Detecta movimientos que en un solo equipo pasarían desapercibidos y responde en toda la organización.</p>
         </div>
       </div>
       <div class="sensors">
-        {[['Equipos y servidores','<rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/>'],['Identidades','<circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/>'],['Correo y Microsoft 365','<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/>'],['Nube','<path d="M17.5 19a4.5 4.5 0 1 0-1.4-8.8A6 6 0 0 0 4 12a4 4 0 0 0 1 7.9z"/>'],['Red','<circle cx="12" cy="5" r="2"/><circle cx="5" cy="19" r="2"/><circle cx="19" cy="19" r="2"/><path d="M12 7v5M12 12l-5 5M12 12l5 5"/>']].map(([t,i]) => <div class="sensor"><svg viewBox="0 0 24 24" set:html={i}></svg><span>{t}</span></div>)}
+        {[['Equipos y servidores','<rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/>'],['Identidades','<circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/>'],['Correo y Microsoft 365','<rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/>'],['Nube','<path d="M17.5 19a4.5 4.5 0 1 0-1.4-8.8A6 6 0 0 0 4 12a4 4 0 0 0 1 7.9z"/>'],['Red','<circle cx="12" cy="5" r="2"/><circle cx="5" cy="19" r="2"/><circle cx="19" cy="19" r="2"/><path d="M12 7v5M12 12l-5 5M12 12l5 5"/>']].map(([t,i],n) => <div class="sensor tilt" data-rv style={`--d:${n+2}`}><svg viewBox="0 0 24 24" set:html={i}></svg><span>{t}</span></div>)}
       </div>
       <p class="xdr-note">Con <b>MDR</b>, analistas de Bitdefender operan el XDR las 24 horas por usted. Star lo implementa, lo configura y es su contacto en español.</p>
       <div style="margin-top:24px"><a href="#proteger" class="btn-main">Quiero XDR para mi empresa →</a></div>
@@ -114,13 +115,13 @@ const eventos = [
 
   <section class="sec">
     <div class="w">
-      <p class="kick">¿POR QUÉ 24/7?</p>
-      <h2>Los ataques no esperan el horario de oficina</h2>
-      <div class="timeline">
-        <div class="tl"><b>02:00</b><h4>Alguien abre un adjunto</h4><p>Un correo bien hecho llega a la bandeja de un empleado que trabaja desde casa.</p></div>
-        <div class="tl"><b>02:00</b><h4>Bitdefender lo detiene</h4><p>El comportamiento malicioso se bloquea en el equipo, sin esperar a nadie.</p></div>
-        <div class="tl"><b>02:05</b><h4>Se aísla el equipo</h4><p>Con EDR o MDR, el equipo afectado se separa de la red para que no se propague.</p></div>
-        <div class="tl"><b>08:00</b><h4>Usted recibe el informe</h4><p>Qué pasó, qué se hizo y qué recomendamos. Sin perder la operación.</p></div>
+      <p class="kick" data-rv>¿POR QUÉ 24/7?</p>
+      <h2 data-rv style="--d:1">Los ataques no esperan el horario de oficina</h2>
+      <div class="timeline" data-rv>
+        <div class="tl" data-rv style="--d:2"><b>02:00</b><h4>Alguien abre un adjunto</h4><p>Un correo bien hecho llega a la bandeja de un empleado que trabaja desde casa.</p></div>
+        <div class="tl" data-rv style="--d:3"><b>02:00</b><h4>Bitdefender lo detiene</h4><p>El comportamiento malicioso se bloquea en el equipo, sin esperar a nadie.</p></div>
+        <div class="tl" data-rv style="--d:4"><b>02:05</b><h4>Se aísla el equipo</h4><p>Con EDR o MDR, el equipo afectado se separa de la red para que no se propague.</p></div>
+        <div class="tl" data-rv style="--d:5"><b>08:00</b><h4>Usted recibe el informe</h4><p>Qué pasó, qué se hizo y qué recomendamos. Sin perder la operación.</p></div>
       </div>
       <p class="fine">Escenario ilustrativo. Los tiempos dependen de la edición y del servicio contratado.</p>
     </div>
@@ -129,15 +130,15 @@ const eventos = [
   <section class="sec" id="calcular">
     <div class="w calc">
       <div>
-        <p class="kick">ARME SU PROTECCIÓN</p>
-        <h2>¿Cuántos equipos tiene su empresa?</h2>
+        <p class="kick" data-rv>ARME SU PROTECCIÓN</p>
+        <h2 data-rv style="--d:1">¿Cuántos equipos tiene su empresa?</h2>
         <p class="muted">Mueva la barra y vea qué nivel de protección le recomendamos como punto de partida.</p>
-        <div class="slider">
+        <div class="slider" data-rv style="--d:2">
           <input type="range" id="lp-range" min="10" max="3000" step="10" value="150" aria-label="Número de equipos" />
           <div class="slider-val"><b id="lp-num">150</b> equipos</div>
         </div>
       </div>
-      <div class="reco" id="lp-reco">
+      <div class="reco tilt" id="lp-reco" data-rv style="--d:2">
         <p class="kick" id="lp-tier">RECOMENDACIÓN</p>
         <h3 id="lp-title">Prevención + EDR</h3>
         <ul id="lp-list"><li>Protección contra malware y ransomware</li><li>EDR: detección y respuesta</li><li>Consola en la nube</li></ul>
@@ -149,8 +150,8 @@ const eventos = [
 
   <section class="sec case">
     <div class="w case-in">
-      <div><p class="kick">CASO REAL</p><p class="big" data-count="32000">0</p><p class="case-t">equipos protegidos con Bitdefender en una sola entidad pública, implementados y administrados por Star.</p></div>
-      <ul class="why">
+      <div data-rv><p class="kick">CASO REAL</p><p class="big" data-count="32000">0</p><p class="case-t">equipos protegidos con Bitdefender en una sola entidad pública, implementados y administrados por Star.</p></div>
+      <ul class="why stagger" data-rv>
         <li><b>Reseller Platinum</b>El nivel más alto del programa de partners de Bitdefender.</li>
         <li><b>Implementación completa</b>No solo vendemos la licencia: la dejamos funcionando y configurada.</li>
         <li><b>Soporte en español</b>Equipo local en Bogotá con cobertura nacional.</li>
@@ -162,12 +163,12 @@ const eventos = [
   <section class="sec form-sec" id="proteger">
     <div class="w form-in">
       <div>
-        <p class="kick">REVISIÓN GRATUITA</p>
-        <h2>Proteja sus equipos 24/7. Empecemos por revisar lo que tiene.</h2>
-        <ul class="checks"><li>Cuántos equipos protege hoy y cuántos tiene realmente</li><li>Qué funciones paga y no usa</li><li>Qué le falta: EDR, XDR, correo o MDR 24/7</li><li>Recomendación clara: renovar, ajustar o migrar</li></ul>
+        <p class="kick" data-rv>REVISIÓN GRATUITA</p>
+        <h2 data-rv style="--d:1">Proteja sus equipos 24/7. Empecemos por revisar lo que tiene.</h2>
+        <ul class="checks stagger" data-rv><li>Cuántos equipos protege hoy y cuántos tiene realmente</li><li>Qué funciones paga y no usa</li><li>Qué le falta: EDR, XDR, correo o MDR 24/7</li><li>Recomendación clara: renovar, ajustar o migrar</li></ul>
         <a href={wa} target="_blank" rel="noopener" class="wa-big">Prefiero WhatsApp: 322 786 2375</a>
       </div>
-      <form action="/api/leads" method="post" data-lead-form class="card-form">
+      <form action="/api/leads" method="post" data-lead-form class="card-form" data-rv style="--d:2">
         <input type="hidden" name="_redirect" value="/gracias" />
         <input type="hidden" name="_source_form" value="Bitdefender - Landing pauta" />
         <input type="hidden" name="service" value="Bitdefender" />
@@ -183,8 +184,8 @@ const eventos = [
 
   <section class="sec">
     <div class="w faq">
-      <h2>Preguntas frecuentes</h2>
-      {faqs.map((f) => <details><summary>{f.q}</summary><p>{f.a}</p></details>)}
+      <h2 data-rv>Preguntas frecuentes</h2>
+      {faqs.map((f, n) => <details data-rv style={`--d:${n}`}><summary>{f.q}</summary><p>{f.a}</p></details>)}
     </div>
   </section>
 
@@ -238,6 +239,32 @@ const eventos = [
     document.getElementById('lp-devices').value = tr.r;
   };
   range.addEventListener('input', upd); upd();
+
+  // Aparición al hacer scroll
+  const rv = document.querySelectorAll('.lp [data-rv]');
+  if (reduce || !('IntersectionObserver' in window)) rv.forEach((e) => e.classList.add('in'));
+  else { const ro = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('in'); ro.unobserve(e.target); } }), { threshold: .15, rootMargin: '0px 0px -40px 0px' }); rv.forEach((e) => ro.observe(e)); }
+  // Barra de progreso de lectura
+  const bar = document.getElementById('lp-progress');
+  addEventListener('scroll', () => { const h = document.documentElement; bar.style.transform = `scaleX(${h.scrollTop / (h.scrollHeight - h.clientHeight)})`; }, { passive: true });
+  // Inclinación 3D al pasar el mouse
+  const fine = matchMedia('(hover:hover) and (pointer:fine)').matches;
+  if (!reduce && fine) {
+    document.querySelectorAll('.lp .tilt').forEach((el) => {
+      el.addEventListener('pointermove', (ev) => { const r = el.getBoundingClientRect(); const x = (ev.clientX - r.left) / r.width - .5, y = (ev.clientY - r.top) / r.height - .5; el.style.setProperty('--rx', `${-y * 8}deg`); el.style.setProperty('--ry', `${x * 10}deg`); el.style.setProperty('--gx', `${(x + .5) * 100}%`); el.style.setProperty('--gy', `${(y + .5) * 100}%`); });
+      el.addEventListener('pointerleave', () => { el.style.setProperty('--rx', '0deg'); el.style.setProperty('--ry', '0deg'); });
+    });
+    const hero = document.querySelector('.lp .hero'), con = document.getElementById('lp-console');
+    hero.addEventListener('pointermove', (ev) => { const r = hero.getBoundingClientRect(); const x = (ev.clientX - r.left) / r.width - .5, y = (ev.clientY - r.top) / r.height - .5; con.style.setProperty('--cx', `${-9 + x * 10}deg`); con.style.setProperty('--cy', `${4 - y * 8}deg`); hero.style.setProperty('--mx', `${x * 40}px`); hero.style.setProperty('--my', `${y * 40}px`); });
+  }
+  // Pestañas que rotan solas hasta que el usuario elige una
+  const tabs = [...document.querySelectorAll('.lp .tab')]; let ti = 0, auto = !reduce;
+  tabs.forEach((t) => t.addEventListener('click', () => { auto = false; }));
+  const tabIO = new IntersectionObserver((es) => es.forEach((e) => { e.target.dataset.vis = e.isIntersecting ? '1' : ''; }));
+  const tabsBox = document.querySelector('.lp .tabs'); if (tabsBox) tabIO.observe(tabsBox);
+  setInterval(() => { if (!auto || !tabsBox.dataset.vis) return; ti = (ti + 1) % tabs.length; const b = tabs[ti];
+    tabs.forEach((x) => { x.classList.toggle('on', x === b); x.setAttribute('aria-selected', x === b ? 'true' : 'false'); });
+    document.querySelectorAll('.lp .panel').forEach((p) => p.classList.toggle('on', p.dataset.panel === b.dataset.tab)); }, 4500);
 </script>
 
 <style is:global>
@@ -332,6 +359,42 @@ const eventos = [
 .lp .xdr-note{margin-top:20px;color:var(--mut);text-align:left}.lp .xdr-note b{color:#fff}
 @media(max-width:900px){.lp .xdr{grid-template-columns:1fr}.lp .sensors{grid-template-columns:repeat(2,1fr)}}
 @media(prefers-reduced-motion:reduce){.lp .glow,.lp .g3,.lp .liq-card:before{animation:none}}
+
+.lp .progress{position:fixed;left:0;top:0;height:3px;width:100%;z-index:50;background:var(--grad);transform-origin:0 50%;transform:scaleX(0)}
+.lp [data-rv]{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.23,1,.32,1),transform .8s cubic-bezier(.23,1,.32,1);transition-delay:calc(var(--d,0) * 90ms)}
+.lp [data-rv].in{opacity:1;transform:none}
+.lp .stagger.in li{animation:lp-up .7s cubic-bezier(.23,1,.32,1) both}
+.lp .stagger li:nth-child(2){animation-delay:.1s}.lp .stagger li:nth-child(3){animation-delay:.2s}.lp .stagger li:nth-child(4){animation-delay:.3s}
+@keyframes lp-up{from{opacity:0;transform:translateX(-18px)}}
+.lp .enter{animation:lp-up2 .9s cubic-bezier(.23,1,.32,1) both;animation-delay:calc(var(--d,0) * 120ms)}
+@keyframes lp-up2{from{opacity:0;transform:translateY(24px);filter:blur(6px)}}
+.lp .enter-r{animation:lp-in-r 1.1s cubic-bezier(.23,1,.32,1) .35s both}
+@keyframes lp-in-r{from{opacity:0;transform:perspective(1300px) rotateY(-25deg) translateX(60px)}}
+.lp .console{transform:perspective(1300px) rotateY(var(--cx,-9deg)) rotateX(var(--cy,4deg));transition:transform .4s cubic-bezier(.23,1,.32,1)}
+.lp .g1{translate:var(--mx,0) var(--my,0)}.lp .g2{translate:calc(var(--mx,0) * -1) calc(var(--my,0) * -1)}
+.lp .tilt{transform:perspective(900px) rotateX(var(--rx,0)) rotateY(var(--ry,0));transition:transform .35s cubic-bezier(.23,1,.32,1),border-color .2s,opacity .8s cubic-bezier(.23,1,.32,1)}
+.lp [data-rv].tilt:not(.in){transform:translateY(28px)}
+.lp .tilt:after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:radial-gradient(240px circle at var(--gx,50%) var(--gy,50%),rgba(255,255,255,.10),transparent 60%);opacity:0;transition:opacity .3s}
+.lp .tilt:hover:after{opacity:1}.lp .sensor,.lp .reco{position:relative}
+.lp .btn-main{position:relative;overflow:hidden}
+.lp .btn-main:after{content:"";position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.45),transparent);transform:skewX(-20deg);animation:lp-shine 3.2s ease-in-out infinite}
+@keyframes lp-shine{0%,60%{left:-60%}100%{left:130%}}
+.lp .card-form{position:relative}
+.lp .card-form:before{content:"";position:absolute;inset:-1px;border-radius:inherit;padding:1px;background:conic-gradient(from var(--ang,0deg),transparent 0 70%,#ef4444 80%,#f97316 90%,transparent);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;animation:lp-rot 5s linear infinite;pointer-events:none}
+@property --ang{syntax:'<angle>';inherits:false;initial-value:0deg}
+@keyframes lp-rot{to{--ang:360deg}}
+.lp .timeline:before{content:"";position:absolute;left:24px;right:24px;top:44px;height:2px;background:var(--grad);transform-origin:0 50%;transform:scaleX(0);transition:transform 1.6s cubic-bezier(.23,1,.32,1) .3s;opacity:.6}
+.lp .timeline.in:before{transform:scaleX(1)}
+.lp .tl{transition:transform .25s,border-color .25s}.lp .tl:hover{transform:translateY(-6px);border-color:rgba(239,68,68,.5)}
+.lp .panel.on{animation:lp-panel .55s cubic-bezier(.23,1,.32,1)}
+@keyframes lp-panel{from{opacity:0;transform:translateY(12px) scale(.98);filter:blur(4px)}}
+.lp .icon-big{animation:lp-bob 4s ease-in-out infinite}@keyframes lp-bob{50%{transform:translateY(-10px)}}
+.lp .tab{position:relative;overflow:hidden}.lp .tab.on:after{content:"";position:absolute;left:0;bottom:0;height:2px;width:100%;background:rgba(255,255,255,.7);transform-origin:0;animation:lp-bar 4.5s linear}
+@keyframes lp-bar{from{transform:scaleX(0)}}
+.lp .big{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lp .wa-btn,.lp .wa-big{transition:transform .2s}.lp .wa-btn:hover,.lp .wa-big:hover{transform:translateY(-2px)}
+.lp details summary{transition:color .2s}.lp details[open] summary{color:#fca5a5}
+@media(prefers-reduced-motion:reduce){.lp [data-rv],.lp .enter,.lp .enter-r,.lp .stagger li{opacity:1!important;transform:none!important;animation:none!important;filter:none!important}.lp .btn-main:after,.lp .card-form:before,.lp .icon-big,.lp .tab.on:after{animation:none}}
 @media(prefers-reduced-motion:reduce){.lp .sweep,.lp .dot,.lp .blip{animation:none}}
 </style>
 </BaseLayout>
