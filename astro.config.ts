@@ -81,7 +81,7 @@ export default defineConfig({
   },
   integrations: [
     sitemap({
-      filter: (page) => !page.includes('/gracias/') && !page.includes('/404'),
+      filter: (page) => !page.includes('/gracias/') && !page.includes('/404') && !page.includes('/lp/'),
       serialize: (item) => {
         if (item.url === `${SITE}/`) {
           item.changefreq = 'weekly' as const;

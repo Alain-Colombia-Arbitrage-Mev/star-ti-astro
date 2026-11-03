@@ -1,0 +1,136 @@
+---
+// Página de aterrizaje para pauta (Google/Meta/LinkedIn). Sin menú, una sola oferta,
+// formulario en la primera pantalla. noindex y fuera del sitemap: no compite con /bitdefender/.
+import BaseLayout from '@layouts/BaseLayout.astro';
+import { seoData } from '@data/seo';
+
+const seo = seoData['lp/bitdefender'];
+const wa = 'https://wa.me/573227862375?text=' + encodeURIComponent('Hola, quiero la revisión gratuita de mi licencia Bitdefender.');
+const deviceRanges = ['1 a 99', '100 a 499', '500 a 1.999', '2.000 o más'];
+const input = 'w-full px-4 py-3 bg-white border border-slate-300 rounded-xl text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent transition';
+const incluye = [
+  { t: 'Equipos reales vs. licenciados', d: 'Comparamos cuántos equipos protege hoy con cuántos tiene realmente, para que no pague de más ni deje equipos sin protección.' },
+  { t: 'Funciones que paga y no usa', d: 'Revisamos la edición y la configuración de GravityZone para sacarle provecho a lo que ya tiene.' },
+  { t: 'Lo que le falta', d: 'EDR, protección del correo o backup de Microsoft 365: le decimos qué vale la pena sumar y qué no.' },
+];
+const faqs = [
+  { q: '¿La revisión tiene costo?', a: 'No. Es gratuita y sin compromiso de compra.' },
+  { q: '¿Tengo que tener Bitdefender hoy?', a: 'No. Si usa otro antivirus, le mostramos cómo se compara y qué cambiaría al migrar.' },
+  { q: '¿Quién hace la revisión?', a: 'El equipo técnico de Star Solutions TI, Reseller Platinum de Bitdefender, con soporte local en Bogotá.' },
+];
+const check = 'M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z';
+---
+
+<BaseLayout seo={seo}>
+  <header class="bg-white border-b border-slate-200">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <span class="flex items-center gap-3">
+        <img src="/logo.png" alt="Star Solutions TI" width="40" height="40" class="h-10 w-10" />
+        <span class="font-bold text-slate-900 hidden sm:inline">Star Solutions TI</span>
+      </span>
+      <a href={wa} target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-[#25D366] text-white font-semibold px-4 py-2 rounded-full text-sm hover:brightness-95 transition">WhatsApp 322 786 2375</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="bg-gradient-to-br from-slate-50 via-white to-red-50 py-10 sm:py-16">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-10 items-start">
+        <div>
+          <span class="inline-flex items-center gap-2 bg-red-50 border border-red-100 text-red-700 text-xs font-semibold uppercase tracking-wider px-4 py-2 rounded-full">Bitdefender GravityZone · Reseller Platinum</span>
+          <h1 class="text-3xl sm:text-5xl font-bold text-slate-900 mt-5 mb-5 leading-tight">¿Su antivirus se renueva pronto? <span class="text-red-600">Revisemos antes de pagar.</span></h1>
+          <p class="text-lg text-slate-600 mb-6 text-left">Le hacemos una revisión gratuita de su licencia: cuántos equipos protege realmente, qué funciones usa y qué le falta. Sin compromiso.</p>
+          <ul class="space-y-3 mb-8">
+            {['Revisión gratuita y sin compromiso', 'Recomendación clara: renovar, ajustar o migrar', 'Implementación y soporte local en Bogotá'].map((b) => (
+              <li class="flex items-start gap-3 text-slate-800"><svg class="w-6 h-6 text-green-600 shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path fill-rule="evenodd" d={check} clip-rule="evenodd" /></svg>{b}</li>
+            ))}
+          </ul>
+          <div class="flex flex-wrap items-center gap-6">
+            <img src="/marcas/bitdefender-platinum-reseller.webp" alt="Bitdefender Reseller Platinum" width="146" height="55" class="h-14 w-auto rounded-lg border border-slate-200 bg-white p-1" />
+            <div><p class="text-2xl font-bold text-slate-900">150+</p><p class="text-sm text-slate-500">empresas protegidas</p></div>
+            <div><p class="text-2xl font-bold text-slate-900">50.000+</p><p class="text-sm text-slate-500">equipos con GravityZone</p></div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-3xl shadow-2xl border border-slate-200 p-6 sm:p-8" id="revision">
+          <h2 class="text-xl font-bold text-slate-900 mb-1">Solicite su revisión gratuita</h2>
+          <p class="text-sm text-slate-500 mb-5">Le contactamos para coordinarla.</p>
+          <form action="/api/leads" method="post" data-lead-form class="space-y-4">
+            <input type="hidden" name="_redirect" value="/gracias" />
+            <input type="hidden" name="_source_form" value="Bitdefender - Landing pauta" />
+            <input type="hidden" name="service" value="Bitdefender" />
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div><label for="lp-name" class="block text-sm font-medium text-slate-700 mb-1">Nombre *</label><input id="lp-name" name="name" required autocomplete="name" class={input} /></div>
+              <div><label for="lp-company" class="block text-sm font-medium text-slate-700 mb-1">Empresa *</label><input id="lp-company" name="company" required autocomplete="organization" class={input} /></div>
+            </div>
+            <div class="grid sm:grid-cols-2 gap-4">
+              <div><label for="lp-email" class="block text-sm font-medium text-slate-700 mb-1">Correo corporativo *</label><input id="lp-email" type="email" name="email" required autocomplete="email" class={input} /></div>
+              <div><label for="lp-phone" class="block text-sm font-medium text-slate-700 mb-1">Teléfono *</label><input id="lp-phone" type="tel" name="phone" required autocomplete="tel" class={input} /></div>
+            </div>
+            <div>
+              <label for="lp-devices" class="block text-sm font-medium text-slate-700 mb-1">Número de equipos *</label>
+              <select id="lp-devices" name="dispositivos" required class={input}>
+                <option value="">Seleccione un rango</option>
+                {deviceRanges.map((r) => <option value={r}>{r}</option>)}
+              </select>
+            </div>
+            <div class="flex items-start gap-3">
+              <input type="checkbox" id="lp-privacy" name="privacy" required class="w-5 h-5 mt-0.5 shrink-0 accent-red-600" />
+              <label for="lp-privacy" class="text-sm text-slate-600">Acepto la <a href="/privacidad/" class="text-red-600 underline">Política de Privacidad</a> y el tratamiento de mis datos personales *</label>
+            </div>
+            <button type="submit" class="w-full inline-flex items-center justify-center gap-2 bg-red-600 hover:bg-red-700 text-white font-semibold px-6 py-4 rounded-xl text-lg transition">Solicitar revisión gratuita <span aria-hidden="true">&rarr;</span></button>
+            <a href={wa} target="_blank" rel="noopener" class="block text-center text-sm font-semibold text-slate-700 hover:text-green-700">o escríbanos por WhatsApp: 322 786 2375</a>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-14 bg-white">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <h2 class="text-2xl sm:text-3xl font-bold text-slate-900 text-center mb-10">Qué incluye la revisión</h2>
+        <div class="grid md:grid-cols-3 gap-6">
+          {incluye.map((i, n) => (
+            <div class="rounded-2xl border border-slate-200 p-6">
+              <p class="text-red-600 font-bold text-sm mb-2">0{n + 1}</p>
+              <h3 class="font-bold text-slate-900 text-lg mb-2">{i.t}</h3>
+              <p class="text-slate-600 text-sm text-left">{i.d}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="py-14 bg-slate-900 text-white">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 grid md:grid-cols-2 gap-10 items-center">
+        <div>
+          <p class="text-sm font-semibold uppercase tracking-wider text-red-400 mb-3">Caso real</p>
+          <p class="text-6xl font-bold">32.000</p>
+          <p class="text-xl mt-2 text-left">equipos protegidos con Bitdefender en una sola entidad pública, implementados y administrados por Star.</p>
+        </div>
+        <ul class="space-y-4 text-slate-200">
+          <li><b class="text-white">Reseller Platinum:</b> el nivel más alto del programa de partners de Bitdefender.</li>
+          <li><b class="text-white">Implementación y administración:</b> no solo vendemos la licencia, la dejamos funcionando.</li>
+          <li><b class="text-white">Opción MDR 24/7:</b> analistas de Bitdefender vigilando y respondiendo por usted.</li>
+          <li><b class="text-white">Soporte local en Bogotá</b>, en español.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="py-14 bg-white">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6">
+        <h2 class="text-2xl font-bold text-slate-900 text-center mb-8">Preguntas frecuentes</h2>
+        <div class="space-y-4">
+          {faqs.map((f) => (
+            <details class="rounded-xl border border-slate-200 p-5"><summary class="font-semibold text-slate-900 cursor-pointer">{f.q}</summary><p class="text-slate-600 mt-3 text-left">{f.a}</p></details>
+          ))}
+        </div>
+        <div class="text-center mt-10">
+          <a href="#revision" class="inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white font-semibold px-8 py-4 rounded-xl transition">Solicitar revisión gratuita &rarr;</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-slate-200 py-8 text-center text-sm text-slate-500">
+    Star Solutions TI S.A.S. · Cra 27 # 49-19, Bogotá · <a href="/privacidad/" class="underline">Privacidad</a> · <a href="/" class="underline">star-ti.com</a>
+  </footer>
+</BaseLayout>

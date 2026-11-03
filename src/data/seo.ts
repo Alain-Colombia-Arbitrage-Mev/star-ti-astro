@@ -826,6 +826,15 @@ export const seoData: Record<string, SEOData> = {
       mainEntity: { ...ORG, telephone: '+573227862375', email: 'contacto@star-ti.com' },
     },
   },
+  'lp/bitdefender': {
+    title: 'Revisión gratuita de su licencia Bitdefender | Star Solutions TI',
+    description: 'Antes de renovar su antivirus, revisamos gratis cuántos equipos protege, qué funciones usa y qué le falta. Reseller Platinum de Bitdefender en Colombia.',
+    keywords: 'renovar bitdefender, licencia bitdefender colombia, bitdefender gravityzone empresas',
+    canonical: `${BASE_URL}/lp/bitdefender/`,
+    ogTitle: 'Revisión gratuita de su licencia Bitdefender',
+    ogType: 'website',
+    noindex: true,
+  },
   gracias: {
     title: 'Gracias por Contactarnos | Star Solutions TI',
     description: 'Gracias por contactar a Star Solutions TI. Nuestro equipo revisará su solicitud y se pondrá en contacto con usted.',

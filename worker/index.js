@@ -104,6 +104,7 @@ const LEGACY_REDIRECTS = new Map([
 ]);
 
 const TRAILING_SLASH_PATHS = new Set([
+  "/lp/bitdefender",
   "/calculadora-costo-iso-27001",
   "/revision-dmarc-gratis",
   "/ciberseguridad-sector-publico",
