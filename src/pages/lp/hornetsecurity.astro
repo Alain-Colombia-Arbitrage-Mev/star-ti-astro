@@ -9,15 +9,15 @@ const wa = 'https://wa.me/573227862375?text=' + encodeURIComponent('Hola, quiero
 const deviceRanges = ['1 a 49', '50 a 249', '250 a 999', '1.000 o más'];
 
 const capas = [
-  { id: 'filtro', t: 'Antispam y antimalware', h: 'El correo malicioso no llega a la bandeja', d: 'Hornetsecurity filtra cada mensaje antes de que llegue a Microsoft 365: spam, malware, phishing y correos masivos se quedan afuera, sin que el usuario tenga que decidir.', i: '<path d="M3 5h18l-7 8v6l-4-2v-4z"/>' },
+  { id: 'filtro', t: 'Antispam y antimalware', h: 'El correo malicioso no llega a la bandeja', d: 'Hornetsecurity filtra cada mensaje antes de que llegue a Microsoft 365 o Google Workspace: spam, malware, phishing y correos masivos se quedan afuera, sin que el usuario tenga que decidir.', i: '<path d="M3 5h18l-7 8v6l-4-2v-4z"/>' },
   { id: 'atp', t: 'Protección avanzada', h: 'Adjuntos y enlaces revisados antes del clic', d: 'Los archivos sospechosos se abren en un entorno aislado (sandbox) y los enlaces se revisan al momento del clic, para detener ataques dirigidos y fraudes que un filtro común deja pasar.', i: '<path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3z"/><path d="m9 12 2 2 4-4"/>' },
   { id: 'backup', t: 'Backup de Microsoft 365', h: 'Microsoft 365 no es un backup', d: 'Copia independiente y automática de correo, OneDrive, SharePoint y Teams. Si alguien borra, cifra o pierde información, se recupera en minutos.', i: '<path d="M4 7c0-1.7 3.6-3 8-3s8 1.3 8 3-3.6 3-8 3-8-1.3-8-3z"/><path d="M4 7v10c0 1.7 3.6 3 8 3s8-1.3 8-3V7M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/>' },
-  { id: 'cifrado', t: 'Cifrado y continuidad', h: 'Información sensible, solo para quien debe leerla', d: 'Cifrado del correo, firmas corporativas uniformes, archivo legal y continuidad del servicio si Microsoft 365 presenta fallas.', i: '<rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/>' },
+  { id: 'cifrado', t: 'Cifrado y continuidad', h: 'Información sensible, solo para quien debe leerla', d: 'Cifrado del correo, firmas corporativas uniformes, archivo legal y continuidad del servicio si su plataforma de correo presenta fallas.', i: '<rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/>' },
   { id: 'awareness', t: 'Concienciación', h: 'Un equipo que reconoce el engaño', d: 'Simulaciones de phishing y entrenamiento corto y continuo para que cada persona sepa detectar un correo falso antes de hacer clic.', i: '<circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/>' },
 ];
 const faqs = [
   { q: '¿La revisión tiene costo?', a: 'No. Revisamos gratis la protección de su correo y de su dominio (SPF, DKIM y DMARC) y le entregamos una recomendación, sin compromiso.' },
-  { q: '¿Funciona con Microsoft 365?', a: 'Sí. Hornetsecurity se integra con Microsoft 365 y agrega filtro avanzado, backup, cifrado y archivo que Microsoft no incluye por sí solo.' },
+  { q: '¿Funciona con Microsoft 365 y con Google Workspace?', a: 'Sí. El filtro avanzado, la protección contra adjuntos y enlaces, el cifrado, el archivo y la concienciación funcionan con Microsoft 365 y con Google Workspace. El backup de buzones, OneDrive, SharePoint y Teams aplica a Microsoft 365.' },
   { q: '¿Microsoft 365 no hace backup?', a: 'Microsoft garantiza que el servicio esté disponible, pero proteger los datos frente a borrados, errores o ransomware le corresponde a cada empresa. La papelera tiene plazos limitados y no reemplaza un backup.' },
   { q: '¿Qué es DMARC y por qué importa?', a: 'Es la configuración que impide que otros envíen correos haciéndose pasar por su dominio. Sin ella, cualquiera puede suplantar a su empresa ante clientes y proveedores.' },
   { q: '¿Quién implementa y da soporte?', a: 'Star Solutions TI, Partner Silver de Hornetsecurity, con soporte local en Bogotá y cobertura nacional.' },
@@ -49,7 +49,7 @@ const eventos = [
       <div>
         <span class="tag enter" style="--d:0"><i class="dot"></i>Correo protegido · 24 horas · 7 días</span>
         <h1 class="enter" style="--d:1">El correo es la puerta de entrada. <span class="grad">Protéjalo 24/7.</span></h1>
-        <p class="lead enter" style="--d:2">Por el correo llegan las facturas, los contratos y la mayoría de los engaños. Hornetsecurity filtra el phishing, analiza adjuntos, respalda Microsoft 365 y evita que suplanten a su empresa. Star lo implementa y le responde en español.</p>
+        <p class="lead enter" style="--d:2">Por el correo llegan las facturas, los contratos y la mayoría de los engaños. Hornetsecurity filtra el phishing, analiza adjuntos y evita que suplanten a su empresa, en Microsoft 365 o Google Workspace. Star lo implementa y le responde en español.</p>
         <div class="ctas enter" style="--d:3">
           <a href="#proteger" class="btn-main">Quiero proteger mi correo <span aria-hidden="true">→</span></a>
           <a href="#calcular" class="btn-ghost">¿Cuántos buzones tiene?</a>
@@ -94,13 +94,13 @@ const eventos = [
 
   <section class="sec alt" id="m365">
     <div class="w">
-      <p class="kick" data-rv>MICROSOFT 365</p>
-      <h2 data-rv style="--d:1">Tener Microsoft 365 no significa tener el correo protegido</h2>
+      <p class="kick" data-rv>MICROSOFT 365 Y GOOGLE WORKSPACE</p>
+      <h2 data-rv style="--d:1">Tener Microsoft 365 o Google Workspace no significa tener el correo protegido</h2>
       <div class="xdr">
         <div class="liq-card tilt" data-rv style="--d:2">
-          <span class="lvl">MICROSOFT</span>
+          <span class="lvl">MICROSOFT · GOOGLE</span>
           <h3>Garantiza que el servicio funcione</h3>
-          <p>Que el correo, OneDrive y Teams estén disponibles. Incluye un filtro básico y una papelera con plazos limitados.</p>
+          <p>Que el correo y sus aplicaciones estén disponibles. Incluyen un filtro básico y una papelera con plazos limitados.</p>
         </div>
         <div class="liq-card hi tilt" data-rv style="--d:3">
           <span class="lvl">SU EMPRESA</span>
@@ -109,7 +109,7 @@ const eventos = [
         </div>
       </div>
       <div class="sensors">
-        {[['Filtro avanzado','<path d="M3 5h18l-7 8v6l-4-2v-4z"/>'],['Sandbox','<rect x="4" y="4" width="16" height="16" rx="3"/><path d="M9 9h6v6H9z"/>'],['Backup M365','<path d="M4 7c0-1.7 3.6-3 8-3s8 1.3 8 3-3.6 3-8 3-8-1.3-8-3z"/><path d="M4 7v10c0 1.7 3.6 3 8 3s8-1.3 8-3V7"/>'],['Cifrado','<rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/>'],['DMARC','<path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3z"/>']].map(([t,i],n) => <div class="sensor tilt" data-rv style={`--d:${n+2}`}><svg viewBox="0 0 24 24" set:html={i}></svg><span>{t}</span></div>)}
+        {[['Filtro avanzado','<path d="M3 5h18l-7 8v6l-4-2v-4z"/>'],['Sandbox','<rect x="4" y="4" width="16" height="16" rx="3"/><path d="M9 9h6v6H9z"/>'],['Backup Microsoft 365','<path d="M4 7c0-1.7 3.6-3 8-3s8 1.3 8 3-3.6 3-8 3-8-1.3-8-3z"/><path d="M4 7v10c0 1.7 3.6 3 8 3s8-1.3 8-3V7"/>'],['Cifrado','<rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/>'],['DMARC','<path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3z"/>']].map(([t,i],n) => <div class="sensor tilt" data-rv style={`--d:${n+2}`}><svg viewBox="0 0 24 24" set:html={i}></svg><span>{t}</span></div>)}
       </div>
       <p class="xdr-note">Bonus: revisamos <b>gratis</b> si alguien puede enviar correos haciéndose pasar por su empresa (SPF, DKIM y DMARC).</p>
       <div style="margin-top:24px"><a href="#proteger" class="btn-main">Revisar mi correo gratis →</a></div>
@@ -119,18 +119,18 @@ const eventos = [
 
   <section class="sec">
     <div class="w">
-      <p class="kick" data-rv>"YA TENGO MICROSOFT 365"</p>
-      <h2 data-rv style="--d:1">Hornetsecurity no reemplaza a Microsoft: le agrega lo que le falta</h2>
+      <p class="kick" data-rv>"YA TENGO MICROSOFT 365 O GOOGLE"</p>
+      <h2 data-rv style="--d:1">Hornetsecurity no reemplaza a Microsoft ni a Google: les agrega lo que les falta</h2>
       <div class="cmp" data-rv style="--d:2">
-        <div class="cmp-row cmp-h"><span></span><span>Solo Microsoft 365</span><span>Microsoft 365 + Hornetsecurity</span></div>
+        <div class="cmp-row cmp-h"><span></span><span>Solo Microsoft 365 o Google Workspace</span><span>+ Hornetsecurity</span></div>
         <div class="cmp-row"><span>Filtro antispam y antimalware</span><span>Básico (según su plan)</span><span class="ok">Avanzado, antes de llegar a la bandeja</span></div>
         <div class="cmp-row"><span>Adjuntos y enlaces sospechosos</span><span>Según su plan</span><span class="ok">Sandbox y revisión al momento del clic</span></div>
-        <div class="cmp-row"><span>Backup independiente de correo, OneDrive, SharePoint y Teams</span><span class="no">No incluido</span><span class="ok">Automático y restaurable</span></div>
+        <div class="cmp-row"><span>Backup independiente de correo, OneDrive, SharePoint y Teams</span><span class="no">No incluido</span><span class="ok">Automático y restaurable (Microsoft 365)</span></div>
         <div class="cmp-row"><span>Archivo legal y continuidad del correo</span><span>Según su plan</span><span class="ok">Incluido según la edición</span></div>
         <div class="cmp-row"><span>Entrenamiento antiphishing para el equipo</span><span class="no">No incluido</span><span class="ok">Simulaciones y cursos cortos</span></div>
         <div class="cmp-row"><span>Revisión de suplantación del dominio (DMARC)</span><span class="no">La configura usted</span><span class="ok">Star la revisa y la corrige</span></div>
       </div>
-      <p class="fine">Las funciones de Microsoft varían según el plan contratado. En la revisión gratuita le decimos exactamente qué tiene y qué le falta.</p>
+      <p class="fine">Las funciones de Microsoft 365 y Google Workspace varían según el plan contratado. En la revisión gratuita le decimos exactamente qué tiene y qué le falta.</p>
     </div>
   </section>
 
@@ -187,7 +187,7 @@ const eventos = [
       <p class="kick" data-rv>QUÉ PASA DESPUÉS</p>
       <h2 data-rv style="--d:1">Así funciona: sin cortar su correo y sin enredos</h2>
       <div class="steps4">
-        <div class="st tilt" data-rv style="--d:2"><span>1</span><h4>Le contactamos</h4><p>Un especialista de Star le escribe para entender su caso y su plan de Microsoft 365.</p></div>
+        <div class="st tilt" data-rv style="--d:2"><span>1</span><h4>Le contactamos</h4><p>Un especialista de Star le escribe para entender su caso y su plataforma de correo: Microsoft 365 o Google Workspace.</p></div>
         <div class="st tilt" data-rv style="--d:3"><span>2</span><h4>Revisamos su correo</h4><p>Dominio (SPF, DKIM y DMARC), filtro actual y respaldo. Le mostramos qué está expuesto.</p></div>
         <div class="st tilt" data-rv style="--d:4"><span>3</span><h4>Propuesta clara</h4><p>Edición recomendada, alcance y tiempos, por escrito. Usted decide sin presión.</p></div>
         <div class="st tilt" data-rv style="--d:5"><span>4</span><h4>Implementación planificada</h4><p>El cambio se hace en una ventana acordada, para que su equipo siga recibiendo correo.</p></div>
@@ -200,7 +200,7 @@ const eventos = [
       <div>
         <p class="kick" data-rv>REVISIÓN GRATUITA</p>
         <h2 data-rv style="--d:1">Proteja su correo 24/7. Empecemos por revisarlo.</h2>
-        <ul class="checks stagger" data-rv><li>Si pueden suplantar su dominio (SPF, DKIM y DMARC)</li><li>Qué está dejando pasar su filtro actual</li><li>Si su Microsoft 365 tiene backup real</li><li>Recomendación clara y sin compromiso</li></ul>
+        <ul class="checks stagger" data-rv><li>Si pueden suplantar su dominio (SPF, DKIM y DMARC)</li><li>Qué está dejando pasar su filtro actual</li><li>Si su correo tiene respaldo real</li><li>Recomendación clara y sin compromiso</li></ul>
         <a href={wa} target="_blank" rel="noopener" class="wa-big">Prefiero WhatsApp: 322 786 2375</a>
       </div>
       <form action="/api/leads" method="post" data-lead-form class="card-form" data-rv style="--d:2">
