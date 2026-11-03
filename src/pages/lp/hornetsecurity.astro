@@ -456,5 +456,8 @@ const eventos = [
 .lp .st span{display:inline-flex;width:38px;height:38px;border-radius:12px;align-items:center;justify-content:center;font-weight:800;background:var(--grad);color:#fff;box-shadow:0 0 24px rgba(239,68,68,.4)}
 .lp .st h4{margin:14px 0 6px;font-size:18px}.lp .st p{color:var(--mut);font-size:14px;text-align:left}
 @media(max-width:900px){.lp .cmp-row{grid-template-columns:1fr;gap:4px}.lp .cmp-h{display:none}.lp .steps4{grid-template-columns:1fr 1fr}}
+.lp .tabs{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.lp .tab{justify-content:center;white-space:nowrap;font-size:14px;padding:12px 10px}
+@media(max-width:900px){.lp .tabs{display:flex;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;padding-bottom:4px}.lp .tabs::-webkit-scrollbar{display:none}.lp .tab{flex:none}}
 </style>
 </BaseLayout>

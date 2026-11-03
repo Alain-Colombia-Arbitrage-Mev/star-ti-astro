@@ -396,5 +396,8 @@ const eventos = [
 .lp details summary{transition:color .2s}.lp details[open] summary{color:#fca5a5}
 @media(prefers-reduced-motion:reduce){.lp [data-rv],.lp .enter,.lp .enter-r,.lp .stagger li{opacity:1!important;transform:none!important;animation:none!important;filter:none!important}.lp .btn-main:after,.lp .card-form:before,.lp .icon-big,.lp .tab.on:after{animation:none}}
 @media(prefers-reduced-motion:reduce){.lp .sweep,.lp .dot,.lp .blip{animation:none}}
+.lp .tabs{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.lp .tab{justify-content:center;white-space:nowrap;font-size:14px;padding:12px 10px}
+@media(max-width:900px){.lp .tabs{display:flex;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;padding-bottom:4px}.lp .tabs::-webkit-scrollbar{display:none}.lp .tab{flex:none}}
 </style>
 </BaseLayout>
