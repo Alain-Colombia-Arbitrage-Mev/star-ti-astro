@@ -116,6 +116,24 @@ const eventos = [
     </div>
   </section>
 
+
+  <section class="sec">
+    <div class="w">
+      <p class="kick" data-rv>"YA TENGO MICROSOFT 365"</p>
+      <h2 data-rv style="--d:1">Hornetsecurity no reemplaza a Microsoft: le agrega lo que le falta</h2>
+      <div class="cmp" data-rv style="--d:2">
+        <div class="cmp-row cmp-h"><span></span><span>Solo Microsoft 365</span><span>Microsoft 365 + Hornetsecurity</span></div>
+        <div class="cmp-row"><span>Filtro antispam y antimalware</span><span>Básico (según su plan)</span><span class="ok">Avanzado, antes de llegar a la bandeja</span></div>
+        <div class="cmp-row"><span>Adjuntos y enlaces sospechosos</span><span>Según su plan</span><span class="ok">Sandbox y revisión al momento del clic</span></div>
+        <div class="cmp-row"><span>Backup independiente de correo, OneDrive, SharePoint y Teams</span><span class="no">No incluido</span><span class="ok">Automático y restaurable</span></div>
+        <div class="cmp-row"><span>Archivo legal y continuidad del correo</span><span>Según su plan</span><span class="ok">Incluido según la edición</span></div>
+        <div class="cmp-row"><span>Entrenamiento antiphishing para el equipo</span><span class="no">No incluido</span><span class="ok">Simulaciones y cursos cortos</span></div>
+        <div class="cmp-row"><span>Revisión de suplantación del dominio (DMARC)</span><span class="no">La configura usted</span><span class="ok">Star la revisa y la corrige</span></div>
+      </div>
+      <p class="fine">Las funciones de Microsoft varían según el plan contratado. En la revisión gratuita le decimos exactamente qué tiene y qué le falta.</p>
+    </div>
+  </section>
+
   <section class="sec">
     <div class="w">
       <p class="kick" data-rv>ASÍ EMPIEZA UN FRAUDE</p>
@@ -160,6 +178,20 @@ const eventos = [
         <li><b>Soporte en español</b>Equipo local en Bogotá con cobertura nacional.</li>
         <li><b>Desde 2016</b>Más de 1.150 empresas atendidas en Colombia.</li>
       </ul>
+    </div>
+  </section>
+
+
+  <section class="sec alt">
+    <div class="w">
+      <p class="kick" data-rv>QUÉ PASA DESPUÉS</p>
+      <h2 data-rv style="--d:1">Así funciona: sin cortar su correo y sin enredos</h2>
+      <div class="steps4">
+        <div class="st tilt" data-rv style="--d:2"><span>1</span><h4>Le contactamos</h4><p>Un especialista de Star le escribe para entender su caso y su plan de Microsoft 365.</p></div>
+        <div class="st tilt" data-rv style="--d:3"><span>2</span><h4>Revisamos su correo</h4><p>Dominio (SPF, DKIM y DMARC), filtro actual y respaldo. Le mostramos qué está expuesto.</p></div>
+        <div class="st tilt" data-rv style="--d:4"><span>3</span><h4>Propuesta clara</h4><p>Edición recomendada, alcance y tiempos, por escrito. Usted decide sin presión.</p></div>
+        <div class="st tilt" data-rv style="--d:5"><span>4</span><h4>Implementación planificada</h4><p>El cambio se hace en una ventana acordada, para que su equipo siga recibiendo correo.</p></div>
+      </div>
     </div>
   </section>
 
@@ -413,5 +445,16 @@ const eventos = [
 @keyframes lp-gate{50%{box-shadow:0 0 50px rgba(249,115,22,.85)}}
 .lp .inbox{position:absolute;right:12px;bottom:10px;font-size:11px;font-weight:700;letter-spacing:.12em;color:#6ee7b7;text-transform:uppercase}
 @media(prefers-reduced-motion:reduce){.lp .env,.lp .lane,.lp .gate{animation:none}}
+.lp .cmp{border:1px solid var(--line);border-radius:22px;overflow:hidden;backdrop-filter:blur(14px);background:linear-gradient(145deg,rgba(255,255,255,.07),rgba(255,255,255,.02))}
+.lp .cmp-row{display:grid;grid-template-columns:1.3fr 1fr 1.2fr;gap:16px;padding:15px 22px;border-top:1px solid var(--line);align-items:center;font-size:15px;color:#e5e7eb;transition:background .2s}
+.lp .cmp-row:hover{background:rgba(239,68,68,.06)}
+.lp .cmp-h{border-top:0;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:#fca5a5;background:rgba(255,255,255,.03)}
+.lp .cmp-row span:nth-child(2){color:var(--mut)}.lp .cmp .no{color:#f87171!important}.lp .cmp .ok{color:#fff;font-weight:600;padding-left:26px;position:relative}
+.lp .cmp .ok:before{content:"✓";position:absolute;left:0;top:-1px;width:18px;height:18px;border-radius:50%;background:var(--grad);font-size:11px;display:flex;align-items:center;justify-content:center;color:#fff}
+.lp .steps4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.lp .st{position:relative;padding:26px;border-radius:22px;border:1px solid var(--line);background:linear-gradient(145deg,rgba(255,255,255,.08),rgba(255,255,255,.02));backdrop-filter:blur(14px)}
+.lp .st span{display:inline-flex;width:38px;height:38px;border-radius:12px;align-items:center;justify-content:center;font-weight:800;background:var(--grad);color:#fff;box-shadow:0 0 24px rgba(239,68,68,.4)}
+.lp .st h4{margin:14px 0 6px;font-size:18px}.lp .st p{color:var(--mut);font-size:14px;text-align:left}
+@media(max-width:900px){.lp .cmp-row{grid-template-columns:1fr;gap:4px}.lp .cmp-h{display:none}.lp .steps4{grid-template-columns:1fr 1fr}}
 </style>
 </BaseLayout>
