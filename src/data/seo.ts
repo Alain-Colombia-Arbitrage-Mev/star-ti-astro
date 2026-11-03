@@ -827,11 +827,11 @@ export const seoData: Record<string, SEOData> = {
     },
   },
   'lp/bitdefender': {
-    title: 'Revisión gratuita de su licencia Bitdefender | Star Solutions TI',
+    title: 'Proteja los equipos de su empresa 24/7 con Bitdefender | Star Solutions TI',
     description: 'Antes de renovar su antivirus, revisamos gratis cuántos equipos protege, qué funciones usa y qué le falta. Reseller Platinum de Bitdefender en Colombia.',
     keywords: 'renovar bitdefender, licencia bitdefender colombia, bitdefender gravityzone empresas',
     canonical: `${BASE_URL}/lp/bitdefender/`,
-    ogTitle: 'Revisión gratuita de su licencia Bitdefender',
+    ogTitle: 'Proteja los equipos de su empresa 24/7 con Bitdefender',
     ogType: 'website',
     noindex: true,
   },
