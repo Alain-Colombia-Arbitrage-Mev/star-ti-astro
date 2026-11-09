@@ -13,14 +13,14 @@ import {
 
 const seo = seoData['soc-24x7'];
 
-const planColors = ['bg-gray-500', 'bg-blue-600', 'bg-violet-600', 'bg-emerald-600'];
+const planColors = ['bg-[#101828]', 'bg-[#101828]', 'bg-[#101828]', 'bg-[#101828]'];
 const sectors = ['Empresas privadas', 'Sector financiero', 'Sector público', 'Salud y educación', 'Industria y retail'];
 ---
 
 <BaseLayout seo={seo}>
   <Navbar />
 
-  <section class="relative bg-gradient-to-br from-[#0b1220] to-[#1f2937] overflow-hidden">
+  <section class="relative bg-[#030213] overflow-hidden">
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-16 lg:pb-20">
       <nav class="mb-8 flex items-center gap-2 text-sm text-gray-400" aria-label="Ruta de navegación">
         <a href="/" class="hover:text-white transition-colors">Inicio</a>
@@ -31,22 +31,23 @@ const sectors = ['Empresas privadas', 'Sector financiero', 'Sector público', 'S
       </nav>
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div>
-          <p class="text-4xl sm:text-5xl font-extrabold tracking-tight mb-3"><span class="text-white">STAR</span> <span class="text-amber-400">SOC</span></p>
+          <img src="/logo-star-solutions-ti.png" alt="Star Solutions TI" width="1174" height="604" class="h-24 w-auto mb-4" loading="eager" />
+          <p class="text-sm font-bold uppercase tracking-widest text-[#ff8904] mb-3">Star SOC · SOC 24x7 en Colombia</p>
           <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
-            Ciberseguridad 360° para un negocio sin interrupciones
+            Ciberseguridad 360° para un negocio <span class="bg-gradient-to-r from-[#fb2c36] to-[#ff8904] bg-clip-text text-transparent">sin interrupciones</span>
           </h1>
           <p class="text-xl text-gray-300 mb-6 leading-relaxed">
             Monitoreo continuo, respuesta activa y cumplimiento normativo en un solo servicio. <span class="text-white font-semibold">Inteligencia artificial, analistas humanos, resultados reales.</span>
           </p>
           <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-8 text-gray-200">
-            <li class="flex gap-2"><span class="text-emerald-400">✓</span>Visibilidad total de su entorno</li>
-            <li class="flex gap-2"><span class="text-emerald-400">✓</span>Detección y respuesta 24/7</li>
-            <li class="flex gap-2"><span class="text-emerald-400">✓</span>Inteligencia artificial y analistas humanos</li>
-            <li class="flex gap-2"><span class="text-emerald-400">✓</span>Evidencia automática para auditorías</li>
+            <li class="flex gap-2"><span class="text-[#ff8904]">✓</span>Visibilidad total de su entorno</li>
+            <li class="flex gap-2"><span class="text-[#ff8904]">✓</span>Detección y respuesta 24/7</li>
+            <li class="flex gap-2"><span class="text-[#ff8904]">✓</span>Inteligencia artificial y analistas humanos</li>
+            <li class="flex gap-2"><span class="text-[#ff8904]">✓</span>Evidencia automática para auditorías</li>
           </ul>
           <div class="flex flex-wrap gap-3">
-            <a href="#contacto" class="inline-flex items-center justify-center bg-red-700 text-white font-semibold px-6 py-3 rounded hover:bg-[#dc2626] transition">Solicitar diagnóstico</a>
-            <a href="#planes" class="inline-flex items-center justify-center border border-white/40 text-white font-semibold px-6 py-3 rounded hover:bg-white/10 transition">Ver planes</a>
+            <a href="#contacto" class="inline-flex items-center justify-center bg-[#e7000b] text-white font-semibold px-7 py-3 rounded-full hover:bg-[#b80009] transition">Solicitar diagnóstico</a>
+            <a href="#planes" class="inline-flex items-center justify-center border border-white/50 text-white font-semibold px-7 py-3 rounded-3xl hover:bg-white/10 transition">Ver planes</a>
           </div>
         </div>
         <div class="hidden lg:block">
@@ -71,14 +72,14 @@ const sectors = ['Empresas privadas', 'Sector financiero', 'Sector público', 'S
     </div>
   </section>
 
-  <section class="bg-[#111827] py-16 lg:py-20 text-white">
+  <section class="bg-[#101828] py-16 lg:py-20 text-white">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <h2 class="text-3xl sm:text-4xl font-bold mb-2">El desafío actual</h2>
       <p class="text-lg text-gray-300 mb-10">Un entorno de amenazas más rápido, sofisticado y orientado al negocio. Los ataques no esperan al horario de oficina.</p>
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
         {socStats.map(([value, text, source]) => (
           <div class="bg-white rounded-2xl p-6 text-gray-900">
-            <p class="text-4xl font-extrabold text-red-600 mb-2">{value}</p>
+            <p class="text-4xl font-extrabold text-[#e7000b] mb-2">{value}</p>
             <p class="text-gray-700 leading-relaxed mb-3">{text}</p>
             <p class="text-xs text-gray-500">Fuente: {source}</p>
           </div>
@@ -100,7 +101,7 @@ const sectors = ['Empresas privadas', 'Sector financiero', 'Sector público', 'S
             <tr>
               <th class="text-left px-4 py-3 font-bold text-gray-900"></th>
               <th class="text-left px-4 py-3 font-bold text-gray-900">SOC propio</th>
-              <th class="text-left px-4 py-3 font-bold text-violet-700">Star SOC</th>
+              <th class="text-left px-4 py-3 font-bold text-[#b3410a]">Star SOC</th>
             </tr>
           </thead>
           <tbody class="divide-y divide-gray-100">
@@ -108,7 +109,7 @@ const sectors = ['Empresas privadas', 'Sector financiero', 'Sector público', 'S
               <tr>
                 <td class="px-4 py-3 font-semibold text-gray-900">{label}</td>
                 <td class="px-4 py-3 text-gray-600">{own}</td>
-                <td class="px-4 py-3 text-gray-800 bg-violet-50/50">{star}</td>
+                <td class="px-4 py-3 text-gray-800 bg-orange-50/60">{star}</td>
               </tr>
             ))}
           </tbody>
@@ -117,16 +118,16 @@ const sectors = ['Empresas privadas', 'Sector financiero', 'Sector público', 'S
     </div>
   </section>
 
-  <section class="bg-gray-50 py-16 lg:py-20 border-y border-gray-200">
+  <section class="bg-[#eef0f3] py-16 lg:py-20 border-y border-gray-200">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
       <div>
-        <p class="text-xs font-bold uppercase tracking-widest text-violet-600 mb-2">Inteligencia artificial + analistas humanos</p>
+        <p class="text-xs font-bold uppercase tracking-widest text-[#b3410a] mb-2">Inteligencia artificial + analistas humanos</p>
         <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Neo: su analista virtual de IA</h2>
         <p class="text-lg text-gray-600 leading-relaxed">Triaje, investigación y resúmenes ejecutivos en lenguaje no técnico. Neo filtra el ruido para que los analistas se concentren en lo que de verdad importa.</p>
       </div>
       <ul class="space-y-3">
         {socNeo.map((item) => (
-          <li class="flex items-center gap-3 bg-white border border-gray-200 rounded-xl p-4 font-semibold text-gray-800"><span class="w-2.5 h-2.5 rounded-full bg-violet-600 flex-shrink-0"></span>{item}</li>
+          <li class="flex items-center gap-3 bg-white border border-gray-200 rounded-xl p-4 font-semibold text-gray-800"><span class="w-2.5 h-2.5 rounded-full bg-[#e8580c] flex-shrink-0"></span>{item}</li>
         ))}
       </ul>
     </div>
@@ -150,29 +151,29 @@ const sectors = ['Empresas privadas', 'Sector financiero', 'Sector público', 'S
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {socModules.map(([title, items]) => (
           <div class="bg-white border border-gray-200 rounded-2xl p-6">
-            <span class="block w-10 h-1 bg-violet-600 rounded-full mb-4"></span>
+            <span class="block w-10 h-1 bg-[#e8580c] rounded-full mb-4"></span>
             <h3 class="text-lg font-bold text-gray-900 mb-3">{title}</h3>
             <ul class="space-y-2 text-sm text-gray-600">
-              {(items as string[]).map((i) => <li class="flex gap-2"><span class="text-violet-600">•</span>{i}</li>)}
+              {(items as string[]).map((i) => <li class="flex gap-2"><span class="text-[#b3410a]">•</span>{i}</li>)}
             </ul>
           </div>
         ))}
       </div>
       <h3 class="text-xl font-bold text-gray-900 mt-12 mb-4 text-center">Capacidades adicionales según el plan</h3>
       <div class="flex flex-wrap justify-center gap-3">
-        {socExtras.map((x) => <span class="bg-white border border-violet-200 text-violet-800 text-sm font-semibold px-4 py-2 rounded-full">{x}</span>)}
+        {socExtras.map((x) => <span class="bg-white border border-orange-200 text-[#7c2d12] text-sm font-semibold px-4 py-2 rounded-full">{x}</span>)}
       </div>
     </div>
   </section>
 
-  <section id="como-funciona" class="scroll-mt-24 bg-gray-50 py-16 lg:py-20 border-y border-gray-200">
+  <section id="como-funciona" class="scroll-mt-24 bg-[#eef0f3] py-16 lg:py-20 border-y border-gray-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-2 text-center">Cómo funciona Star SOC</h2>
       <p class="text-lg text-gray-600 text-center mb-10">Un flujo continuo de protección y respuesta.</p>
       <ol class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
         {socSteps.map(([title, text], index) => (
           <li class="bg-white border border-gray-200 rounded-2xl p-5 text-center">
-            <span class="mx-auto mb-3 w-10 h-10 bg-violet-600 text-white rounded-full flex items-center justify-center font-bold">{index + 1}</span>
+            <span class="mx-auto mb-3 w-10 h-10 bg-[#e7000b] text-white rounded-full flex items-center justify-center font-bold">{index + 1}</span>
             <h3 class="font-bold text-gray-900 mb-1">{title}</h3>
             <p class="text-sm text-gray-600 leading-relaxed">{text}</p>
           </li>
@@ -183,13 +184,13 @@ const sectors = ['Empresas privadas', 'Sector financiero', 'Sector público', 'S
 
   <section class="bg-white pb-4">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="border-2 border-violet-200 bg-violet-50/60 rounded-2xl p-6 sm:p-8 flex flex-col sm:flex-row sm:items-center gap-6 mt-16">
+      <div class="border-2 border-orange-200 bg-orange-50/60 rounded-2xl p-6 sm:p-8 flex flex-col sm:flex-row sm:items-center gap-6 mt-16">
         <div class="flex-1">
-          <p class="text-xs font-bold uppercase tracking-widest text-violet-600 mb-1">¿Prefiere operar su propio SOC?</p>
+          <p class="text-xs font-bold uppercase tracking-widest text-[#b3410a] mb-1">¿Prefiere operar su propio SOC?</p>
           <h3 class="text-xl font-bold text-gray-900 mb-2">Stellar Cyber Open XDR</h3>
           <p class="text-gray-600 leading-relaxed">Si su empresa tiene o quiere montar su propio equipo de seguridad, Stellar Cyber le da la plataforma: SIEM, NDR, UEBA y respuesta automatizada con IA en una sola consola. Star la implementa y le da soporte en español.</p>
         </div>
-        <a href="/stellar-cyber/" class="inline-flex items-center justify-center bg-violet-600 text-white font-semibold px-6 py-3 rounded hover:bg-violet-700 transition whitespace-nowrap">Conocer Stellar Cyber</a>
+        <a href="/stellar-cyber/" class="inline-flex items-center justify-center bg-[#e7000b] text-white font-semibold px-7 py-3 rounded-full hover:bg-[#b80009] transition whitespace-nowrap">Conocer Stellar Cyber</a>
       </div>
     </div>
   </section>
@@ -216,7 +217,7 @@ const sectors = ['Empresas privadas', 'Sector financiero', 'Sector público', 'S
               <tr>
                 <td class="px-4 py-3 text-gray-800">{feature}</td>
                 {socPlans.map((_, i) => (
-                  <td class="px-4 py-3 text-center">{i >= from ? <span class="text-emerald-600 font-bold" aria-label="Incluido">✓</span> : <span class="text-gray-300" aria-label="No incluido">–</span>}</td>
+                  <td class="px-4 py-3 text-center">{i >= from ? <span class="text-[#e8580c] font-bold" aria-label="Incluido">✓</span> : <span class="text-gray-300" aria-label="No incluido">–</span>}</td>
                 ))}
               </tr>
             ))}
@@ -235,10 +236,10 @@ const sectors = ['Empresas privadas', 'Sector financiero', 'Sector público', 'S
     </div>
   </section>
 
-  <section id="respuesta" class="scroll-mt-24 bg-[#111827] py-16 lg:py-20 text-white">
+  <section id="respuesta" class="scroll-mt-24 bg-[#030213] py-16 lg:py-20 text-white">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
       <div>
-        <p class="text-xs font-bold uppercase tracking-widest text-violet-300 mb-3">Un solo contacto</p>
+        <p class="text-xs font-bold uppercase tracking-widest text-[#ff8904] mb-3">Un solo contacto</p>
         <h2 class="text-3xl font-bold mb-4">Star es su primer nivel, siempre</h2>
         <p class="text-gray-300 leading-relaxed">
           Star Solutions TI recibe sus solicitudes, le avisa cuando hay un incidente, coordina la respuesta con los analistas del centro de operaciones y le acompaña hasta cerrarlo. Usted no tiene que hablar con un centro de llamadas en otro país ni entender reportes en inglés.
@@ -258,10 +259,10 @@ const sectors = ['Empresas privadas', 'Sector financiero', 'Sector público', 'S
         <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-2">Cumplimiento y evidencia</h2>
         <p class="text-lg text-gray-600 mb-6">Listo para auditorías, sin esfuerzo adicional.</p>
         <ul class="space-y-3 text-gray-700">
-          <li class="flex gap-3"><span class="text-emerald-600 font-bold">✓</span>Generación automática de evidencia inalterable</li>
-          <li class="flex gap-3"><span class="text-emerald-600 font-bold">✓</span>Registros, reportes y trazabilidad</li>
-          <li class="flex gap-3"><span class="text-emerald-600 font-bold">✓</span>Formato listo para auditorías</li>
-          <li class="flex gap-3"><span class="text-emerald-600 font-bold">✓</span>Almacenamiento seguro y controlado</li>
+          <li class="flex gap-3"><span class="text-[#e8580c] font-bold">✓</span>Generación automática de evidencia inalterable</li>
+          <li class="flex gap-3"><span class="text-[#e8580c] font-bold">✓</span>Registros, reportes y trazabilidad</li>
+          <li class="flex gap-3"><span class="text-[#e8580c] font-bold">✓</span>Formato listo para auditorías</li>
+          <li class="flex gap-3"><span class="text-[#e8580c] font-bold">✓</span>Almacenamiento seguro y controlado</li>
         </ul>
       </div>
       <div class="bg-gray-50 border border-gray-200 rounded-2xl p-6">
@@ -275,14 +276,14 @@ const sectors = ['Empresas privadas', 'Sector financiero', 'Sector público', 'S
     </div>
   </section>
 
-  <section class="bg-[#111827] py-16 lg:py-20 text-white">
+  <section class="bg-[#101828] py-16 lg:py-20 text-white">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <h2 class="text-3xl sm:text-4xl font-bold mb-2 text-center">Seis preguntas antes de contratar un SOC</h2>
       <p class="text-lg text-gray-300 text-center mb-10">Úselas para comparar cualquier propuesta, incluida la nuestra.</p>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
         {socChecklist.map(([q, a], i) => (
           <div class="bg-white/5 border border-white/10 rounded-2xl p-5">
-            <p class="text-violet-300 font-bold text-sm mb-1">{i + 1}</p>
+            <p class="text-[#ff8904] font-bold text-sm mb-1">{i + 1}</p>
             <h3 class="font-bold mb-2">{q}</h3>
             <p class="text-sm text-gray-300 leading-relaxed">{a}</p>
           </div>
@@ -291,7 +292,7 @@ const sectors = ['Empresas privadas', 'Sector financiero', 'Sector público', 'S
     </div>
   </section>
 
-  <section class="bg-gray-50 py-16 lg:py-20 border-y border-gray-200">
+  <section class="bg-[#eef0f3] py-16 lg:py-20 border-y border-gray-200">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-2 text-center">Mercados y sectores</h2>
       <p class="text-lg text-gray-600 text-center mb-10">Experiencia en entornos empresariales y gubernamentales.</p>
@@ -299,7 +300,7 @@ const sectors = ['Empresas privadas', 'Sector financiero', 'Sector público', 'S
         {socMarkets.map(([country, role]) => (
           <div class="bg-white border border-gray-200 rounded-2xl p-6">
             <h3 class="text-xl font-bold text-gray-900">{country}</h3>
-            <p class="text-sm font-semibold text-violet-600 mb-3">{role}</p>
+            <p class="text-sm font-semibold text-[#b3410a] mb-3">{role}</p>
             <ul class="space-y-1 text-sm text-gray-600">
               {sectors.map((s) => <li>• {s}</li>)}
             </ul>
@@ -315,7 +316,7 @@ const sectors = ['Empresas privadas', 'Sector financiero', 'Sector público', 'S
       <p class="text-lg text-gray-600 text-center mb-10">Dé el siguiente paso hacia una operación más segura.</p>
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
         {socStart.map(([title, text], i) => (
-          <a href="#contacto" class={`rounded-2xl p-6 transition hover:shadow-lg ${i === 2 ? 'bg-red-700 text-white' : 'border border-gray-200 text-gray-900'}`}>
+          <a href="#contacto" class={`rounded-2xl p-6 transition hover:shadow-lg ${i === 2 ? 'bg-[#e7000b] text-white' : 'border border-gray-200 text-gray-900'}`}>
             <h3 class="text-lg font-bold mb-2">{title}</h3>
             <p class={i === 2 ? 'text-red-50' : 'text-gray-600'}>{text}</p>
           </a>
@@ -324,7 +325,7 @@ const sectors = ['Empresas privadas', 'Sector financiero', 'Sector público', 'S
     </div>
   </section>
 
-  <section class="bg-gray-50 py-16 lg:py-20 border-t border-gray-200">
+  <section class="bg-[#eef0f3] py-16 lg:py-20 border-t border-gray-200">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <h2 class="text-3xl font-bold text-gray-900 mb-8 text-center">Preguntas frecuentes</h2>
       <div class="space-y-5">
