@@ -473,6 +473,66 @@ const serviceSchema = {
       </div>
     </section>
 
+    <!-- GravityZone XDR: sensores y respuesta (contenido basado en la ficha técnica oficial de Bitdefender) -->
+    <section class="py-16 sm:py-20 bg-white border-t border-gray-100" aria-labelledby="gravityzone-xdr">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-3xl mb-10">
+          <span class="text-[#ed1c24] text-xs font-semibold uppercase tracking-wider">GravityZone XDR</span>
+          <h2 id="gravityzone-xdr" class="text-2xl sm:text-3xl font-bold text-gray-900 mt-3 mb-4">
+            XDR de Bitdefender: ver el ataque completo, no solo el equipo infectado
+          </h2>
+          <p class="text-gray-600 leading-relaxed mb-3">
+            Un ataque rara vez se queda en un computador. Empieza en un correo, roba una contraseña, salta a la nube y se mueve por la red. GravityZone XDR junta en una sola consola la información de los equipos, las cuentas, el correo, la nube y la red, y la presenta como un incidente con su causa y su recorrido, en lugar de decenas de alertas sueltas.
+          </p>
+          <p class="text-gray-600 leading-relaxed">
+            Funciona sobre GravityZone EDR: a los datos de los equipos se les suman <strong>sensores</strong> que vigilan cada frente.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-10">
+          {[
+            { t: 'Sensor de aplicaciones de productividad', d: 'Vigila Microsoft 365 (también Google Workspace en la plataforma): desactivación del antiphishing, usuarios nuevos sin doble factor, macros sospechosas, accesos masivos a archivos, correos de exfiltración, spearphishing y permisos raros sobre buzones.' },
+            { t: 'Sensor en la nube', d: 'Detecta acciones fuera de lo normal en entornos como AWS: claves de acceso creadas sin motivo, servicios de monitoreo desactivados, cifrado de almacenamiento retirado o funciones que ejecutan acciones sospechosas.' },
+            { t: 'Sensor de identidad', d: 'Mira Active Directory y las cuentas de usuario: fuerza bruta, tickets Kerberos robados, controladores de dominio no autorizados e inicios de sesión con credenciales robadas.' },
+            { t: 'Sensor de red', d: 'Es un dispositivo virtual que observa el tráfico: escaneo de puertos, ataques de fuerza bruta, intentos de moverse entre equipos y salida de datos hacia ubicaciones externas.' },
+            { t: 'Sensor de aplicaciones empresariales', d: 'Se integra con Atlassian Cloud (Jira, Confluence y Bitbucket) para detectar y correlacionar amenazas que nacen en esas herramientas de trabajo.' },
+            { t: 'Un solo panel y una sola línea de tiempo', d: 'El Incident Advisor reconstruye la cadena del ataque y el posible impacto. El analista ve de dónde vino, qué tocó y qué falta por contener.' },
+          ].map((c) => (
+            <article class="bg-gray-50 border border-gray-200 rounded-2xl p-5">
+              <h3 class="text-base font-semibold text-gray-900 mb-2">{c.t}</h3>
+              <p class="text-sm text-gray-600 leading-relaxed">{c.d}</p>
+            </article>
+          ))}
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div class="bg-[#111827] text-white rounded-2xl p-6">
+            <h3 class="text-lg font-semibold mb-3">Qué se puede hacer desde la consola</h3>
+            <ul class="space-y-2 text-sm text-gray-300">
+              <li>• Aislar un equipo de la red mientras se investiga.</li>
+              <li>• Eliminar correos maliciosos de los buzones de Microsoft 365 y suspender cuentas comprometidas.</li>
+              <li>• Desactivar una cuenta de Active Directory o forzar el cambio de su contraseña.</li>
+              <li>• Enviar un archivo sospechoso al entorno aislado (sandbox) o bloquearlo.</li>
+              <li>• Terminar procesos y abrir una sesión remota en el equipo afectado.</li>
+            </ul>
+          </div>
+          <div class="bg-gray-50 border border-gray-200 rounded-2xl p-6">
+            <h3 class="text-lg font-semibold text-gray-900 mb-3">¿Y si no tiene quién vigile de noche?</h3>
+            <p class="text-sm text-gray-600 leading-relaxed mb-3">
+              XDR genera la información; alguien tiene que mirarla. Para empresas que no tienen equipo de seguridad las 24 horas, Bitdefender ofrece <strong>MDR</strong>: su equipo de analistas opera GravityZone XDR por usted, y nosotros somos su contacto local en Colombia.
+            </p>
+            <p class="text-sm text-gray-600 leading-relaxed">
+              Si no sabe si necesita EDR, XDR o MDR, lea <a href="/blog/bitdefender-edr-xdr-mdr/" class="text-[#ed1c24] font-semibold hover:underline">Bitdefender EDR, XDR o MDR: cuál necesita</a> o <a href="#planes" class="text-[#ed1c24] font-semibold hover:underline">compare los planes</a>.
+            </p>
+          </div>
+        </div>
+
+        <p class="text-xs text-gray-500 mt-6">
+          Fuente: ficha técnica «GravityZone XDR – Detección y respuesta ampliadas» de Bitdefender (2024) y sitio oficial de Bitdefender. Los sensores disponibles pueden variar según la edición contratada; confirmamos el alcance exacto en la cotización.
+        </p>
+      </div>
+    </section>
+
     <!-- MDR Section -->
     <section class="py-16 sm:py-20 lg:py-24 bg-white">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
