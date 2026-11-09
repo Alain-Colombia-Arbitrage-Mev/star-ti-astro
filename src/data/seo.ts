@@ -163,8 +163,8 @@ export const seoData: Record<string, SEOData> = {
   // STAR PROTECTION
   // =====================================================
   bitdefender: {
-    title: 'Bitdefender Colombia | Distribuidor y Partner Platinum',
-    description: 'Distribuidor Bitdefender en Colombia con nivel Reseller Platinum, el más alto, por encima de Gold. Cotice GravityZone: licencias, EDR/XDR/MDR y soporte local.',
+    title: 'Bitdefender Colombia | Reseller Platinum | GravityZone',
+    description: 'Distribuidor Bitdefender en Colombia, nivel Reseller Platinum. Licencias GravityZone, EDR/XDR/MDR, renovación y soporte local. Cotización gratis.',
     keywords: 'Reseller Platinum Bitdefender Colombia, Bitdefender Platinum partner Colombia, distribuidor Bitdefender, distribuidor Bitdefender Colombia, distribuidor Gold Bitdefender Colombia, distribuidor #1 Bitdefender Colombia, Bitdefender Gold partner Colombia, licencias Bitdefender Colombia, comprar Bitdefender empresas, Bitdefender GravityZone Colombia, gravity zone, gravityzone precio, GravityZone EDR XDR, antivirus corporativo empresas, endpoint security, partner Bitdefender Colombia',
     canonical: `${BASE_URL}/bitdefender/`,
     ogTitle: 'Distribuidor Bitdefender Colombia | Star Solutions TI, Reseller Platinum',
@@ -192,8 +192,8 @@ export const seoData: Record<string, SEOData> = {
     ]),
   },
   kaspersky: {
-    title: 'Kaspersky Colombia | Partner y Distribuidor Corporativo',
-    description: 'Partner y distribuidor corporativo Kaspersky en Colombia. Licencias Kaspersky Next, EDR/XDR/MXDR, implementación, renovación y soporte en Bogotá.',
+    title: 'Kaspersky Partner en Colombia | Licencias para Empresas',
+    description: 'Partner y distribuidor corporativo de Kaspersky en Colombia: licencias Kaspersky Next, EDR/XDR, renovación y soporte en Bogotá. Cotice gratis.',
     keywords: 'distribuidor corporativo Kaspersky Colombia, distribuidor Kaspersky Colombia, partner Kaspersky Colombia, licencias Kaspersky empresas Colombia, Kaspersky Next Colombia, cotizar Kaspersky endpoint Colombia, antivirus corporativo Kaspersky Colombia, Kaspersky EDR Colombia, Kaspersky XDR Colombia, renovar Kaspersky empresas Colombia',
     canonical: `${BASE_URL}/kaspersky/`,
     ogTitle: 'Kaspersky Colombia | Partner y Distribuidor Corporativo',
@@ -216,7 +216,7 @@ export const seoData: Record<string, SEOData> = {
     ]),
   },
   'hornetsecurity': {
-    title: 'Hornetsecurity Colombia | Seguridad de Correo Microsoft 365',
+    title: 'Hornetsecurity Colombia | Seguridad de Correo 365',
     description: 'Partner Silver de Hornetsecurity en Colombia: seguridad de correo, backup, archivado y cifrado para Microsoft 365. Licencias e implementación local.',
     keywords: 'Hornetsecurity, Hornetsecurity Colombia, Hornet email security, hornet mail security, seguridad email Microsoft 365, backup email, email encryption, protección correo empresarial Colombia',
     canonical: `${BASE_URL}/hornetsecurity/`,
@@ -233,8 +233,8 @@ export const seoData: Record<string, SEOData> = {
     ]),
   },
   proofpoint: {
-    title: 'Proofpoint Colombia | Distribuidor de Seguridad de Correo',
-    description: '¿Qué es Proofpoint? Seguridad de correo líder en Gartner contra phishing, BEC y amenazas dirigidas. Somos distribuidor en Colombia: licencias y soporte.',
+    title: 'Proofpoint Colombia | Seguridad de Correo contra Phishing',
+    description: 'Proofpoint en Colombia: seguridad de correo contra phishing, BEC y amenazas dirigidas. Somos distribuidor: licencias, implementación y soporte local.',
     keywords: 'Proofpoint Colombia, email security, anti-phishing empresas, BEC, DMARC, ZenGuide, security awareness, Collaboration Security Prime',
     canonical: `${BASE_URL}/proofpoint/`,
     ogTitle: 'Proofpoint - Seguridad de Email Avanzada para Empresas en Colombia',
@@ -296,8 +296,8 @@ export const seoData: Record<string, SEOData> = {
   },
 
   kymatio: {
-    title: 'Kymatio Colombia | Concienciación y Simulación de Phishing',
-    description: 'Kymatio: gestión del riesgo humano en ciberseguridad. Concienciación adaptativa, simulaciones de phishing y vishing, credenciales expuestas y bienestar digital.',
+    title: 'Kymatio Colombia | Simulación de Phishing y Concienciación',
+    description: 'Kymatio en Colombia: concienciación adaptativa, simulaciones de phishing y vishing, y credenciales expuestas. Gestión del riesgo humano. Cotice.',
     keywords: 'Kymatio Colombia, gestión del riesgo humano, human risk management, concienciación en ciberseguridad, simulación de phishing, vishing, credenciales expuestas, security awareness, ISO 27001 control 6.3',
     canonical: `${BASE_URL}/kymatio/`,
     ogTitle: 'Kymatio - Gestión del Riesgo Humano en Ciberseguridad para Empresas en Colombia',
@@ -371,7 +371,7 @@ export const seoData: Record<string, SEOData> = {
   },
   'stellar-cyber': {
     title: 'Stellar Cyber Colombia | Open XDR y SOC con IA',
-    description: 'Stellar Cyber en Colombia: plataforma Open XDR con IA, NDR, ITDR y UEBA para montar o fortalecer su SOC. Implementación y soporte con Star Solutions TI.',
+    description: 'Stellar Cyber en Colombia: plataforma Open XDR con IA, NDR, ITDR y UEBA para montar o fortalecer su SOC. Implementación con Star Solutions TI.',
     keywords: 'Stellar Cyber, Open XDR, SecOps Platform, SOC automatizado, Multi-Layer AI, NDR, UEBA, ITDR, AI Investigator, alternativa SIEM Colombia',
     canonical: `${BASE_URL}/stellar-cyber/`,
     ogTitle: 'Stellar Cyber SecOps Platform | Open XDR para SOC Automatizado',
@@ -416,8 +416,8 @@ export const seoData: Record<string, SEOData> = {
   // STAR COMPLIANCE
   // =====================================================
   'iso-27001': {
-    title: 'Consultoría ISO 27001 en Bogotá | Certificados por SGS',
-    description: 'Le acompañamos hasta la certificación ISO 27001 con una empresa que ya la logró: certificada ISO/IEC 27001:2022 por SGS. Diagnóstico gratuito, SGSI y Anexo A.',
+    title: 'Consultoría ISO 27001 en Bogotá y Colombia | SGS',
+    description: 'Consultoría ISO 27001 en Bogotá y toda Colombia, con una empresa certificada ISO/IEC 27001:2022 por SGS. Diagnóstico gratuito, SGSI y Anexo A.',
     keywords: 'consultoría ISO 27001 Bogotá Colombia, consultoria ISO 27001 bogota colombia, consultoria iso 27001, bogota - colombia, consultoría ISO 27001 Colombia, consultoria ISO 27001 Bogotá, consultor ISO 27001 Colombia, certificación ISO 27001, certificación SGSI, auditoría ISO 27001, gap analysis seguridad información, implementación ISO 27001, Anexo A, declaración de aplicabilidad, ISO 27001 Bogotá, ISO 27001 Medellín, ISO 27001 Cali, ISO 27001 precio, cotización ISO 27001',
     canonical: `${BASE_URL}/iso-27001/`,
     ogTitle: 'Consultoría ISO 27001 en Bogotá | Empresa Certificada',
@@ -546,8 +546,8 @@ export const seoData: Record<string, SEOData> = {
     ]),
   },
   sealpath: {
-    title: 'SealPath Colombia | Protección y Cifrado de Documentos',
-    description: '¿Qué es SealPath? IRM para proteger documentos: cifrado persistente, control de acceso y revocación remota, integrado con Microsoft 365. Soporte en Colombia.',
+    title: 'SealPath Colombia | Protección de Documentos (IRM)',
+    description: 'SealPath en Colombia: proteja documentos con cifrado persistente, control de acceso y revocación remota, integrado con Microsoft 365. Soporte local.',
     keywords: 'SealPath IRM Colombia, IRM E-DRM protección documentos, cifrado persistente datos, control acceso documentos, Microsoft Information Protection, Ley 1581 protección datos',
     canonical: `${BASE_URL}/sealpath/`,
     ogTitle: 'SealPath IRM - Protección Persistente de Documentos en Colombia',
@@ -565,8 +565,8 @@ export const seoData: Record<string, SEOData> = {
     ]),
   },
   netwrix: {
-    title: 'Netwrix Colombia | Auditoría de Active Directory y Datos',
-    description: 'Netwrix en Colombia: Netwrix Auditor para Active Directory, PAM, DLP y clasificación de datos. Cumpla Ley 1581 e ISO 27001 con soporte en español.',
+    title: 'Netwrix Colombia | Auditoría de Active Directory',
+    description: 'Netwrix en Colombia: Netwrix Auditor para Active Directory, PAM y clasificación de datos. Apoyo para Ley 1581 e ISO 27001, con soporte en español.',
     keywords: 'Netwrix Colombia, Netwrix Auditor, Netwrix Access Analyzer, Netwrix Privilege Secure, Netwrix Endpoint Protector, auditoría Active Directory, PAM Zero Standing Privilege, DLP, clasificación datos, gobernanza identidad, Ley 1581, Circular 007',
     canonical: `${BASE_URL}/netwrix/`,
     ogTitle: 'Netwrix - Seguridad de Datos e Identidades en Colombia',
@@ -687,8 +687,8 @@ export const seoData: Record<string, SEOData> = {
     ]),
   },
   'antivirus-empresas': {
-    title: 'Antivirus para Empresas 2026: Bitdefender vs Kaspersky',
-    description: '¿Qué antivirus empresarial elegir en Colombia? Compare Bitdefender y Kaspersky: EDR, consola central, servidores y soporte local. Diagnóstico gratuito.',
+    title: 'Antivirus Empresarial en Colombia | Bitdefender y Kaspersky',
+    description: 'Antivirus empresarial en Colombia: compare Bitdefender y Kaspersky (EDR, consola central, servidores). Licencias, instalación y soporte local. Cotice gratis.',
     keywords: 'antivirus empresarial, antivirus para empresas, antivirus corporativo, antivirus empresarial Colombia, antivirus empresas Colombia, comparativa antivirus, Bitdefender vs Kaspersky, mejor antivirus corporativo 2026',
     canonical: `${BASE_URL}/antivirus-empresas/`,
     ogTitle: 'Antivirus Empresarial en Colombia: Comparativa 2026',
@@ -810,7 +810,7 @@ export const seoData: Record<string, SEOData> = {
   },
   contacto: {
     title: 'Contacto Ciberseguridad Empresarial | Star Solutions TI',
-    description: 'Contacte a Star Solutions TI: ciberseguridad, equipos de computo y redes. Oficinas en Bogotá, Caracas y Miami. Le respondemos a la mayor brevedad.',
+    description: 'Contacte a Star Solutions TI: ciberseguridad, equipos de cómputo y redes. Oficinas en Bogotá, Caracas y Miami. Le respondemos a la mayor brevedad.',
     keywords: 'contacto Star Solutions TI, teléfono, email, oficinas Bogotá, asesoria ciberseguridad gratuita',
     canonical: `${BASE_URL}/contacto/`,
     ogTitle: 'Contacto - Star Solutions TI',
@@ -858,16 +858,16 @@ export const seoData: Record<string, SEOData> = {
   // LEGAL
   // =====================================================
   terminos: {
-    title: 'Terminos y Condiciones | Star Solutions TI',
-    description: 'Terminos y Condiciones de uso de los servicios de Star Solutions TI S.A.S. Derechos, obligaciones y políticas de servicio.',
+    title: 'Términos y Condiciones | Star Solutions TI',
+    description: 'Términos y Condiciones de uso de los servicios de Star Solutions TI S.A.S. Derechos, obligaciones y políticas de servicio.',
     keywords: 'terminos condiciones, política uso, derechos obligaciones, starsolution',
     canonical: `${BASE_URL}/terminos/`,
-    ogTitle: 'Terminos y Condiciones',
+    ogTitle: 'Términos y Condiciones',
     ogType: 'website',
   },
   privacidad: {
     title: 'Política de Privacidad | Star Solutions TI',
-    description: 'Política de Privacidad de Star Solutions TI S.A.S. Como recopilamos, usamos y protegemos su información personal conforme a la ley colombiana.',
+    description: 'Política de Privacidad de Star Solutions TI S.A.S. Cómo recopilamos, usamos y protegemos su información personal conforme a la ley colombiana.',
     keywords: 'política privacidad, datos personales, protección información, Star Solutions TI',
     canonical: `${BASE_URL}/privacidad/`,
     ogTitle: 'Política de Privacidad',
