@@ -1,0 +1,225 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Navbar from '@components/Navbar.astro';
+import Footer from '@components/Footer.astro';
+import WhatsAppButton from '@components/WhatsAppButton.astro';
+import { seoData } from '@data/seo';
+import { caidaMicrosoftFaqs } from '@data/blogCaidaMicrosoft';
+
+const seo = seoData['blog/caida-microsoft-365-continuidad-correo'];
+
+const timeline = [
+  ['1:10 p. m. (hora de Colombia)', 'Se disparan los reportes de fallas en Outlook: los usuarios no pueden entrar a su buzón, ni enviar o recibir correos. En Downdetector se superan los 130.000 reportes de Outlook y los 48.000 de Microsoft 365.'],
+  ['Primeras horas', 'Microsoft confirma el problema en Exchange Online (incidente EX1550543) y luego en Microsoft 365 (MO1550821). Teams y Copilot también presentan fallas de conexión. Lo que empezó en las Américas se confirma en todas las regiones.'],
+  ['La causa', 'Según Microsoft, varios servidores dejaron de estar disponibles de forma inesperada y el resto de la infraestructura quedó sobrecargado. No se trata de más tráfico ni Microsoft lo ha vinculado a un ciberataque.'],
+  ['La respuesta', 'Microsoft pausó todos sus despliegues, desvió el tráfico hacia infraestructura alterna y reinició los servidores afectados. Al cierre de esta nota no había anunciado la normalización completa del servicio.'],
+];
+
+const impact = [
+  ['Licitaciones y contratos', 'Observaciones, aclaraciones y propuestas con plazo que se coordinan por correo. Un corte en la tarde del día de cierre puede costar un proceso.'],
+  ['Facturación y pagos', 'Facturas electrónicas, órdenes de compra y soportes de pago que llegan y salen por correo.'],
+  ['Atención a clientes', 'Solicitudes, cotizaciones y reclamos que nadie ve mientras el buzón no abre.'],
+  ['Operación interna', 'Aprobaciones, notificaciones de sistemas y alertas de seguridad que dependen del correo.'],
+];
+
+const plan = [
+  ['Correo con ruta de respaldo', 'Que el correo entrante pase por una pasarela de seguridad con servicio de continuidad, para que siga llegando y se pueda responder aunque el buzón principal no esté disponible.'],
+  ['Copia de respaldo de Microsoft 365', 'Microsoft garantiza su servicio, no la recuperación de sus datos ante borrados, ransomware o errores. Correo, OneDrive, SharePoint y Teams deben tener una copia fuera de Microsoft.'],
+  ['Canal alterno acordado', 'Teléfono, WhatsApp corporativo o una lista de contactos críticos fuera del correo, para avisar a clientes y proveedores cuando algo falla.'],
+  ['Saber dónde mirar', 'El estado de los servicios está en el centro de administración de Microsoft 365 (Estado del servicio) y en status.cloud.microsoft. Alguien en la empresa debe tener ese acceso.'],
+  ['Plan escrito y probado', 'Quién decide, a quién se avisa y qué se activa. ISO/IEC 27001:2022 lo exige en su control 5.30 de preparación de las TIC para la continuidad del negocio.'],
+];
+
+const howItWorks = [
+  ['Se activa solo', 'Cuando el servidor de correo (por ejemplo, Exchange Online) deja de estar disponible, Email Continuity se activa automáticamente en segundos. No hay que llamar a nadie ni cambiar configuraciones durante la emergencia.'],
+  ['El correo sigue llegando', 'Los mensajes que no se pueden entregar a Microsoft quedan disponibles en una interfaz web de Hornetsecurity. Nada rebota ni se pierde.'],
+  ['Se puede responder', 'Desde esa misma interfaz los usuarios leen, responden y envían correos con su dirección habitual.'],
+  ['Todo vuelve a su lugar', 'Cuando Microsoft se recupera, el servicio compara los datos y entrega en el buzón los correos que faltan. El panel muestra qué ya se entregó.'],
+];
+---
+
+<BaseLayout seo={seo}>
+  <Navbar />
+
+  <section class="relative bg-gradient-to-br from-[#0b1220] to-[#1f2937] overflow-hidden">
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-16 lg:pb-20">
+      <nav class="mb-8 flex items-center gap-2 text-sm text-gray-400" aria-label="Ruta de navegación">
+        <a href="/" class="hover:text-white transition-colors">Inicio</a>
+        <span>/</span>
+        <a href="/blog/" class="hover:text-white transition-colors">Blog</a>
+        <span>/</span>
+        <span class="text-gray-200">Caída de Microsoft 365</span>
+      </nav>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <div class="flex flex-wrap items-center gap-3 mb-6">
+            <span class="bg-red-500/20 border border-red-500/30 text-red-300 text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wide">Continuidad del negocio</span>
+            <span class="text-gray-400 text-sm">12 nov 2026</span>
+          </div>
+          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
+            Microsoft 365 se cayó en todo el mundo: cómo seguir recibiendo y enviando correo cuando Outlook falla
+          </h1>
+          <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+            Outlook, Teams y Copilot fallaron durante horas el 12 de noviembre. Qué pasó, cuánto le cuesta a una empresa quedarse sin correo y cómo se mantiene operando con un servicio de continuidad.
+          </p>
+          <div class="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-gray-400">
+            <span>Por Jorge Molano &middot; CEO de Star Solutions TI</span>
+            <span>&bull;</span>
+            <span>Tiempo de lectura: 6 min</span>
+          </div>
+        </div>
+        <div class="hidden lg:block">
+          <img src="/og/blog-caida-microsoft-365-continuidad-correo.jpg" alt="Caída de Microsoft 365: cómo mantener el correo funcionando" class="w-full h-auto rounded-2xl shadow-2xl ring-1 ring-white/10" width="1200" height="630" loading="eager" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <article class="bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+      <section class="mb-12">
+        <p class="text-xl text-gray-700 leading-relaxed mb-6">
+          Este jueves 12 de noviembre de 2026, a la hora de más trabajo en Colombia, millones de personas abrieron Outlook y no pudieron entrar a su correo. La falla alcanzó a Teams, a Copilot y a las aplicaciones de Microsoft 365 en todas las regiones. <strong>No fue un ataque: fue una falla de la propia infraestructura de Microsoft.</strong> Y eso es justamente lo que la hace una lección para cualquier empresa.
+        </p>
+        <div class="bg-red-50 border border-red-200 rounded-2xl p-6">
+          <h2 class="text-xl font-bold text-red-900 mb-2">Respuesta rápida</h2>
+          <p class="text-red-800 leading-relaxed">
+            Tener el correo en la nube no es lo mismo que tener continuidad. Cuando Microsoft falla, su empresa se queda sin correo, sin importar cuánto pague por la licencia. <strong>La continuidad se diseña antes</strong>: con una ruta de respaldo para el correo, copias de los datos fuera de Microsoft y un canal alterno para avisar a clientes y proveedores.
+          </p>
+        </div>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Qué pasó</h2>
+        <div class="space-y-4">
+          {timeline.map(([title, text], index) => (
+            <div class="flex gap-4 border border-gray-200 rounded-2xl p-5">
+              <span class="flex-shrink-0 w-8 h-8 bg-red-700 text-white rounded-full flex items-center justify-center text-sm font-bold">{index + 1}</span>
+              <div>
+                <h3 class="font-bold text-gray-900 mb-1">{title}</h3>
+                <p class="text-gray-600 leading-relaxed">{text}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-4">Lo que se detiene cuando se cae el correo</h2>
+        <p class="text-lg text-gray-600 leading-relaxed mb-6">
+          En muchas empresas colombianas el correo no es una herramienta más: es el canal formal de casi todo. Unas horas sin él se notan en cuatro frentes.
+        </p>
+        <div class="grid sm:grid-cols-2 gap-4">
+          {impact.map(([title, text]) => (
+            <div class="border border-gray-200 rounded-2xl p-5">
+              <h3 class="font-bold text-gray-900 mb-1">{title}</h3>
+              <p class="text-gray-600 leading-relaxed">{text}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-4">Cómo funciona Email Continuity de Hornetsecurity</h2>
+        <p class="text-lg text-gray-600 leading-relaxed mb-6">
+          Hornetsecurity filtra el correo antes de que llegue a Microsoft 365. Como el correo ya pasa por su plataforma, puede mantenerlo disponible cuando el buzón principal falla.
+        </p>
+        <div class="space-y-4">
+          {howItWorks.map(([title, text], index) => (
+            <div class="flex gap-4 border border-gray-200 rounded-2xl p-5">
+              <span class="flex-shrink-0 w-8 h-8 bg-[#e44d26] text-white rounded-full flex items-center justify-center text-sm font-bold">{index + 1}</span>
+              <div>
+                <h3 class="font-bold text-gray-900 mb-1">{title}</h3>
+                <p class="text-gray-600 leading-relaxed">{text}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div class="mt-6 bg-gray-50 border border-gray-200 rounded-2xl p-5">
+          <h3 class="font-bold text-gray-900 mb-2">Lo que hay que saber antes de contratarlo</h3>
+          <ul class="space-y-2 text-gray-600">
+            <li><strong>Cubre el correo,</strong> no Teams, SharePoint ni OneDrive.</li>
+            <li><strong>El correo debe pasar por Hornetsecurity:</strong> el servicio exige tener activo su filtro antispam y antimalware, es decir, que los registros MX del dominio apunten a Hornetsecurity.</li>
+            <li><strong>Depende de la edición:</strong> viene incluido en algunos planes de 365 Total Protection o se agrega como servicio. Le indicamos cuál le corresponde.</li>
+            <li><strong>No reemplaza la copia de respaldo:</strong> la continuidad mantiene el correo funcionando; la copia de respaldo recupera la información borrada o cifrada.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">El plan mínimo de continuidad para el correo</h2>
+        <div class="space-y-4">
+          {plan.map(([title, text], index) => (
+            <div class="flex gap-4 border border-gray-200 rounded-2xl p-5">
+              <span class="flex-shrink-0 w-8 h-8 bg-gray-900 text-white rounded-full flex items-center justify-center text-sm font-bold">{index + 1}</span>
+              <div>
+                <h3 class="font-bold text-gray-900 mb-1">{title}</h3>
+                <p class="text-gray-600 leading-relaxed">{text}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Cómo lo implementamos</h2>
+        <div class="overflow-x-auto rounded-2xl border border-gray-200">
+          <table class="w-full text-sm">
+            <thead class="bg-gray-50">
+              <tr>
+                <th class="text-left px-4 py-3 font-bold text-gray-900">La necesidad</th>
+                <th class="text-left px-4 py-3 font-bold text-gray-900">La solución</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-100">
+              <tr><td class="px-4 py-3 font-semibold text-gray-900">Correo operativo durante la caída</td><td class="px-4 py-3"><a href="/hornetsecurity/" class="text-red-700 font-semibold hover:underline">Hornetsecurity 365 Total Protection con Email Continuity</a></td></tr>
+              <tr><td class="px-4 py-3 font-semibold text-gray-900">Copia de respaldo de Microsoft 365</td><td class="px-4 py-3"><a href="/acronis/" class="text-red-700 font-semibold hover:underline">Acronis Cyber Protect</a> o el respaldo de Hornetsecurity</td></tr>
+              <tr><td class="px-4 py-3 font-semibold text-gray-900">Vigilancia y respuesta 24/7</td><td class="px-4 py-3"><a href="/soc-24x7/" class="text-red-700 font-semibold hover:underline">Star SOC 24/7</a></td></tr>
+              <tr><td class="px-4 py-3 font-semibold text-gray-900">Plan de continuidad documentado y auditable</td><td class="px-4 py-3"><a href="/iso-27001/" class="text-red-700 font-semibold hover:underline">Consultoría ISO 27001</a></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="mb-12 bg-[#111827] rounded-2xl p-8 text-white">
+        <p class="text-xs font-bold uppercase tracking-widest text-red-400 mb-2">Por qué Star Solutions TI</p>
+        <h2 class="text-2xl font-bold mb-3">Partner Silver de Hornetsecurity y certificados en ISO 27001</h2>
+        <p class="text-gray-300 leading-relaxed">Somos Partner Silver de Hornetsecurity en Colombia y estamos certificados en ISO/IEC 27001:2022 por SGS. Configuramos la continuidad del correo, el respaldo de Microsoft 365 y el plan para que su empresa no dependa de un solo proveedor. Más de 1.150 empresas confían en nosotros desde 2016.</p>
+      </section>
+
+      <section class="mb-12 bg-gray-50 border border-gray-200 rounded-2xl p-6">
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">Fuentes</h2>
+        <ul class="space-y-2 text-sm">
+          <li><a href="https://www.elimparcial.com/tecnologia/2026/11/12/microsoft-confirma-falla-global-en-outlook-teams-y-copilot-este-12-de-noviembre-tras-registrar-mas-de-178-mil-reportes-de-usuarios-en-todo-el-mundo/" class="text-red-700 hover:underline" rel="noopener">El Imparcial: Microsoft confirma falla global en Outlook, Teams y Copilot (12-nov-2026)</a></li>
+          <li><a href="https://www.infobae.com/tecno/2026/11/12/microsoft-confirma-caida-de-su-correo-electronico-outlook-que-afecta-a-millones-de-usuarios-en-todo-el-mundo/" class="text-red-700 hover:underline" rel="noopener">Infobae: Microsoft confirma caída de Outlook (12-nov-2026)</a></li>
+          <li><a href="https://www.abc.net.au/news/2026-11-13/microsoft-outage-affects-users-worldwide/107381050" class="text-red-700 hover:underline" rel="noopener">ABC News: Microsoft outage affects users worldwide</a></li>
+          <li><a href="https://www.hornetsecurity.com/es/blog/caida-microsoft-outlook/" class="text-red-700 hover:underline" rel="noopener">Hornetsecurity: qué hacer cuando Outlook se cae</a></li>
+          <li><a href="https://status.cloud.microsoft/" class="text-red-700 hover:underline" rel="noopener">Estado de los servicios de Microsoft 365</a></li>
+        </ul>
+        <p class="text-xs text-gray-500 mt-4">Artículo publicado el 12 de noviembre de 2026, con la caída aún en curso. Lo actualizaremos cuando Microsoft confirme la normalización y la causa definitiva.</p>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Preguntas frecuentes</h2>
+        <div class="space-y-5">
+          {caidaMicrosoftFaqs.map((f) => (
+            <div class="border border-gray-200 rounded-xl p-5">
+              <h3 class="font-bold text-gray-900 mb-2">{f.q}</h3>
+              <p class="text-gray-600">{f.a}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section class="bg-red-700 rounded-2xl p-8 text-white">
+        <h2 class="text-2xl font-bold mb-3">¿Su empresa siguió trabajando hoy?</h2>
+        <p class="text-red-50 mb-6">Revisamos cómo entra y sale su correo, qué pasaría en la próxima caída y qué necesita para no detenerse. Sin costo y sin compromiso.</p>
+        <a href="/hornetsecurity/#consultoria" class="inline-flex items-center justify-center bg-white text-red-700 font-semibold px-6 py-3 rounded hover:bg-red-50 transition">Solicitar revisión de continuidad</a>
+      </section>
+    </div>
+  </article>
+
+  <Footer />
+  <WhatsAppButton />
+</BaseLayout>

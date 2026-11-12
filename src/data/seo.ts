@@ -12,6 +12,7 @@ import { bdVsKasFaqs } from './blogBitdefenderVsKaspersky';
 import { dmarcGuideFaqs } from './blogDmarc';
 import { circular007Faqs } from './blogCircular007';
 import { registraduriaFaqs } from './blogRegistraduria';
+import { caidaMicrosoftFaqs } from './blogCaidaMicrosoft';
 import { socFaqs } from './starSoc';
 import { acronisFaqs } from './acronis';
 import { certIsoFaqs } from './blogCertificacionIso';
@@ -1395,6 +1396,36 @@ export const seoData: Record<string, SEOData> = {
       keywords: 'DMARC, SPF, DKIM, correo, suplantación, Microsoft 365',
     },
     faqJsonLd: faqSchema(dmarcGuideFaqs),
+  },
+
+  'blog/caida-microsoft-365-continuidad-correo': {
+    title: 'Caída de Microsoft 365: cómo seguir con el correo (2026)',
+    description: 'Outlook, Teams y Copilot cayeron en todo el mundo el 12 de noviembre. Qué pasó y cómo mantener el correo operando con Hornetsecurity Email Continuity.',
+    keywords: 'caída Microsoft 365, caída Outlook 12 noviembre 2026, Outlook no funciona, Exchange Online caído, continuidad del correo, Hornetsecurity Email Continuity, plan de continuidad Microsoft 365 Colombia',
+    canonical: `${BASE_URL}/blog/caida-microsoft-365-continuidad-correo/`,
+    ogTitle: 'Microsoft 365 se cayó en todo el mundo: cómo seguir con el correo cuando Outlook falla',
+    ogType: 'article',
+    ogImage: `${BASE_URL}/og/blog-caida-microsoft-365-continuidad-correo.jpg`,
+    breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Blog', url: '/blog/' }, { name: 'Caída de Microsoft 365', url: '/blog/caida-microsoft-365-continuidad-correo/' }],
+    jsonLd: {
+      '@context': 'https://schema.org',
+      '@type': 'NewsArticle',
+      headline: 'Microsoft 365 se cayó en todo el mundo: cómo seguir recibiendo y enviando correo cuando Outlook falla',
+      description: 'La caída global de Outlook, Teams y Copilot del 12 de noviembre de 2026, su causa según Microsoft, el impacto para las empresas y cómo funciona la continuidad del correo con Hornetsecurity.',
+      datePublished: '2026-11-12',
+      dateModified: '2026-11-12',
+      inLanguage: 'es-CO',
+      author: AUTHOR,
+      publisher: { '@type': 'Organization', name: 'Star Solutions TI S.A.S.', url: BASE_URL, logo: { '@type': 'ImageObject', url: `${BASE_URL}/logo.png` } },
+      image: `${BASE_URL}/og/blog-caida-microsoft-365-continuidad-correo.jpg`,
+      url: `${BASE_URL}/blog/caida-microsoft-365-continuidad-correo/`,
+      about: [
+        { '@type': 'SoftwareApplication', name: 'Microsoft 365' },
+        { '@type': 'Thing', name: 'Continuidad del negocio' },
+      ],
+      keywords: 'Microsoft 365, Outlook, caída, continuidad del correo, Hornetsecurity',
+    },
+    faqJsonLd: faqSchema(caidaMicrosoftFaqs),
   },
 
   'blog/supuesta-filtracion-registraduria-41-millones': {

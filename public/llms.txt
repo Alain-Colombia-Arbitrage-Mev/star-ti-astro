@@ -28,6 +28,7 @@ Last updated: 2026-08-24
 - ISO 27001 certification in Colombia step by step (7 phases, timelines, mandatory documents, accredited certification bodies): https://star-ti.com/blog/certificacion-iso-27001-colombia/
 - Superfinanciera Circular Externa 007 de 2018 cybersecurity requirements for financial entities and their suppliers (unit, board reports, incident reporting, controls and evidence): https://star-ti.com/blog/circular-007-superfinanciera-ciberseguridad/
 - Alleged sale of 41.4M biometric records attributed to Colombia's Registraduría (Nov 2026): what is known vs. unconfirmed, official denial, and identity-fraud controls for companies: https://star-ti.com/blog/supuesta-filtracion-registraduria-41-millones/
+- Global Microsoft 365 outage of Nov 12, 2026 (Outlook, Teams, Copilot) and how to keep email running with Hornetsecurity Email Continuity: https://star-ti.com/blog/caida-microsoft-365-continuidad-correo/
 - Data loss prevention: https://star-ti.com/dlp-prevencion-perdida-datos/
 - Human risk management and security awareness with Kymatio (phishing, smishing and vishing simulations, exposed credentials, digital wellbeing): https://star-ti.com/kymatio/
 - Enterprise password and access management with LastPass Business (zero-knowledge vault, MFA, SSO, access policies, ISO 27001 access-control evidence): https://star-ti.com/lastpass/
