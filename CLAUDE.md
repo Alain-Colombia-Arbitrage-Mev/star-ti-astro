@@ -199,3 +199,12 @@ descripciones ≤ 160, `lastmod` del sitemap, 301 con barra final faltantes, `no
 - `npm install`: instalar dependencias. Requiere Node.js 22.12 o superior.
 - `npm run dev`: ver el sitio en http://localhost:4321 mientras se edita.
 - `npm run build`: compilar y verificar que no haya errores.
+
+## 12-nov-2026 (tarde): blog publicado con wrangler
+
+- Cloudflare sigue desconectado de GitHub (sin compilaciones desde el 3-nov). George publico
+  `produccion` (0b880fa) a mano con `wrangler deploy` desde su PC y lo verifico. Mientras no se
+  reconecte, cada publicacion se hace asi.
+- En vivo: /blog/caida-microsoft-365-continuidad-correo/ y /blog/supuesta-filtracion-registraduria-41-millones/.
+- Redes (Metricool, marca starsolutionti): LinkedIn, Facebook, Instagram y Google Business Profile
+  programados el 12-nov 4:30-4:45 p. m. X no esta conectada; YouTube exige video.
