@@ -182,6 +182,18 @@ descripciones ≤ 160, `lastmod` del sitemap, 301 con barra final faltantes, `no
   solo tiene "My First Workspace" vacio). Pendiente: crear base propia (plantilla CSV con las 27
   columnas de FIELD_NAMES) y rotar AIRTABLE_TOKEN / AIRTABLE_BASE_ID / AIRTABLE_TABLE_ID.
 
+## Publicado el 12-nov-2026: paquete de seguridad (aprobado por George)
+
+- Trae el trabajo de `seguridad/hardening-2026-10` (30-oct), que no se habia aplicado: chocaba con el
+  worker posterior y Astro 7 exige Node >= 22.23.4. Se adapto sobre desarrollo (commit 9967aec).
+- `/api/leads`: 403 a origenes ajenos, 400 archivos/exceso de campos, 413 > 32 KB, 415 no-formulario,
+  429 a mas de 5 envios/min por IP (binding `LEAD_LIMITER` en `wrangler.jsonc`). Respuestas no-store.
+  Se mantiene "nunca descartar un lead". El token de Turnstile (`cf-turnstile-response`) NO se recorta.
+- Astro 7.4 y `.node-version` = 24 (npm audit: 15 -> 0). Si Cloudflare no compila, agregar en
+  Settings -> Build -> Variables `NODE_VERSION=24` (guardar sin "Deploy").
+- Verificado en local: mismas 60 paginas, texto, titulos, schema, sitemap y robots. Pendiente
+  confirmar en Cloudflare que la compilacion de produccion termino bien.
+
 ## Comandos
 
 - `npm install`: instalar dependencias. Requiere Node.js 22.12 o superior.
