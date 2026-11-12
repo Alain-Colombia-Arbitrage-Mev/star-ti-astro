@@ -1,0 +1,204 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Navbar from '@components/Navbar.astro';
+import Footer from '@components/Footer.astro';
+import WhatsAppButton from '@components/WhatsAppButton.astro';
+import { seoData } from '@data/seo';
+import { registraduriaFaqs } from '@data/blogRegistraduria';
+
+const seo = seoData['blog/supuesta-filtracion-registraduria-41-millones'];
+
+const facts = [
+  ['Lo que dice el vendedor', 'El 4 de noviembre de 2026 un usuario de un foro clandestino de venta de datos (DarkForums) publicó un anuncio titulado «Colombian National Civil Registry – 41.4 million biometric records». Afirma haber entrado por una API vulnerable y extraído 41.415.693 registros con foto, huellas y datos de la cédula. Como prueba mostró supuestas fichas de figuras públicas, entre ellas un expresidente.'],
+  ['Lo que dice la Registraduría', 'El 5 de noviembre la entidad informó que revisó sus registros de auditoría, sus mecanismos de monitoreo y la trazabilidad de los accesos, y que «no se identificó ninguna intrusión ni acceso no autorizado a sus sistemas de información». Añadió que seguirá monitoreando el acceso a sus bases de datos.'],
+  ['Lo que no cuadra', 'La cifra anunciada es casi idéntica al censo electoral de las presidenciales de 2026 (41.421.973 personas habilitadas), un dato público. Y en agosto de 2026 el registrador informó que el Archivo Nacional de Identificación tiene cerca de 60 millones de registros y más de 800 millones de huellas. Mezclar bases viejas y presentarlas como un ataque nuevo es una táctica conocida en estos foros.'],
+  ['Lo que nadie ha confirmado', 'A la fecha de este artículo ninguna autoridad ha confirmado ni descartado con un análisis forense público que los datos sean auténticos, completos o recientes. Eso exige examinar el archivo: formatos, metadatos, fechas y tablas de origen.'],
+];
+
+const actions = [
+  ['Deje de usar la cédula como contraseña', 'Si su empresa confirma la identidad de un cliente o empleado preguntando el número de cédula, la fecha de nacimiento o la fecha de expedición, asuma que un delincuente ya conoce esas respuestas. Cámbielas por un código enviado a una aplicación o por una pregunta que solo esté en sus propios registros.'],
+  ['Doble factor resistente al phishing', 'Correo, VPN, banca empresarial y aplicaciones en la nube con verificación por aplicación o llave física. El SMS es el eslabón débil: con datos de identidad completos es más fácil convencer a un operador de duplicar una SIM.'],
+  ['Confirmación por un segundo canal', 'Ningún cambio de cuenta bancaria de un proveedor, pago urgente o solicitud del «gerente» se ejecuta sin confirmarlo por un canal distinto al que llegó. Es la defensa más barata contra el fraude por suplantación.'],
+  ['Biometría con prueba de vida', 'Si usa reconocimiento facial o huella para vincular clientes o autorizar operaciones, exija detección de vida (liveness). Una foto o una huella filtrada no debe bastar para pasar el control.'],
+  ['Capacite a quien atiende el teléfono', 'Los equipos de servicio al cliente, nómina y tesorería son el blanco natural. Deben saber que «la persona sabe todos sus datos» ya no prueba que sea quien dice ser.'],
+  ['Prepare su propio reporte', 'Si su empresa trata datos personales y sufre un incidente, la Superintendencia de Industria y Comercio exige reportarlo en el Registro Nacional de Bases de Datos dentro de los 15 días hábiles siguientes a conocerlo. Tener el procedimiento listo evita improvisar.'],
+];
+
+const mapping = [
+  ['Suplantación por correo y fraude al «gerente»', 'Hornetsecurity y Proofpoint: filtro de correo y protección contra suplantación', '/hornetsecurity/'],
+  ['Contraseñas reutilizadas y acceso sin doble factor', 'LastPass Business: gestor de contraseñas y políticas de acceso', '/lastpass/'],
+  ['Personal que cae en llamadas y mensajes de ingeniería social', 'Kymatio: concienciación y medición del riesgo humano', '/kymatio/'],
+  ['Saber si los datos de su empresa ya circulan en foros', 'Enthec: vigilancia de filtraciones y de la superficie de ataque', '/enthec/'],
+  ['Detectar a tiempo un acceso con credenciales robadas', 'Bitdefender GravityZone XDR y Star SOC 24/7', '/soc-24x7/'],
+  ['Políticas, reporte de incidentes y evidencia', 'Consultoría ISO 27001', '/iso-27001/'],
+];
+---
+
+<BaseLayout seo={seo}>
+  <Navbar />
+
+  <section class="relative bg-gradient-to-br from-[#0b1220] to-[#1f2937] overflow-hidden">
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-16 lg:pb-20">
+      <nav class="mb-8 flex items-center gap-2 text-sm text-gray-400" aria-label="Ruta de navegación">
+        <a href="/" class="hover:text-white transition-colors">Inicio</a>
+        <span>/</span>
+        <a href="/blog/" class="hover:text-white transition-colors">Blog</a>
+        <span>/</span>
+        <span class="text-gray-200">Supuesta filtración de la Registraduría</span>
+      </nav>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <div class="flex flex-wrap items-center gap-3 mb-6">
+            <span class="bg-red-500/20 border border-red-500/30 text-red-300 text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wide">Alerta</span>
+            <span class="text-gray-400 text-sm">12 nov 2026</span>
+          </div>
+          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
+            ¿Hackearon la Registraduría? Lo que se sabe de la supuesta venta de huellas de 41 millones de colombianos
+          </h1>
+          <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+            Un vendedor anónimo ofrece fotos, huellas y datos de identidad; la Registraduría dice que no hubo intrusión. Separamos lo comprobado de lo que no, y explicamos qué deben cambiar las empresas desde ya.
+          </p>
+          <div class="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-gray-400">
+            <span>Por Jorge Molano &middot; CEO de Star Solutions TI</span>
+            <span>&bull;</span>
+            <span>Tiempo de lectura: 6 min</span>
+          </div>
+        </div>
+        <div class="hidden lg:block">
+          <img src="/og/blog-supuesta-filtracion-registraduria-41-millones.jpg" alt="Supuesta filtración de datos biométricos de la Registraduría: lo que se sabe" class="w-full h-auto rounded-2xl shadow-2xl ring-1 ring-white/10" width="1200" height="630" loading="eager" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <article class="bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+      <section class="mb-12">
+        <p class="text-xl text-gray-700 leading-relaxed mb-6">
+          El 4 de noviembre de 2026 apareció en un foro clandestino la oferta que más ha inquietado a la comunidad de ciberseguridad en Colombia este año: <strong>41,4 millones de registros biométricos</strong> atribuidos a la Registraduría Nacional del Estado Civil. Fotos, huellas dactilares y datos de la cédula. Un día después, la Registraduría respondió que <strong>no encontró ninguna intrusión</strong> en sus sistemas.
+        </p>
+        <div class="bg-red-50 border border-red-200 rounded-2xl p-6">
+          <h2 class="text-xl font-bold text-red-900 mb-2">Respuesta rápida</h2>
+          <p class="text-red-800 leading-relaxed">
+            <strong>No está confirmado que haya existido un hackeo.</strong> Hay un anuncio de venta no verificado y un desmentido oficial. Pero, sea cierta o no esta oferta, los datos de identidad de millones de colombianos ya circulan en el mercado criminal. Para una empresa, la conclusión práctica es la misma: <strong>la cédula y los datos personales ya no sirven para comprobar que alguien es quien dice ser.</strong>
+          </p>
+        </div>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Lo que se sabe y lo que no</h2>
+        <div class="space-y-4">
+          {facts.map(([title, text], index) => (
+            <div class="flex gap-4 border border-gray-200 rounded-2xl p-5">
+              <span class="flex-shrink-0 w-8 h-8 bg-red-700 text-white rounded-full flex items-center justify-center text-sm font-bold">{index + 1}</span>
+              <div>
+                <h3 class="font-bold text-gray-900 mb-1">{title}</h3>
+                <p class="text-gray-600 leading-relaxed">{text}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+        <p class="text-sm text-gray-500 mt-4">No reproducimos las muestras publicadas por el vendedor: contienen fotos, huellas y datos de identidad de personas reales. Los datos biométricos son datos sensibles según la Ley 1581 de 2012.</p>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Nuestra lectura: por qué importa aunque resulte falso</h2>
+        <p class="text-lg text-gray-600 leading-relaxed mb-4">
+          <strong>Una contraseña se cambia; una huella no.</strong> Si una base biométrica de este tamaño estuviera en manos criminales, el daño no se corregiría con un parche: duraría toda la vida de las personas afectadas.
+        </p>
+        <p class="text-lg text-gray-600 leading-relaxed mb-4">
+          El propio vendedor dice que entró por una <strong>API vulnerable</strong>, es decir, por un servicio de consulta y no necesariamente por la base central. Esto es una hipótesis, no un hecho: en Colombia hay entidades autorizadas que consultan datos de identidad para validar a sus clientes, y cualquier eslabón de esa cadena puede ser el punto débil. Es el mismo patrón que vemos en las empresas: el ataque rara vez entra por la puerta principal; entra por una integración, un proveedor o una cuenta con demasiados permisos.
+        </p>
+        <p class="text-lg text-gray-600 leading-relaxed">
+          Tampoco es un caso aislado. En marzo de 2026 se ofreció en el mismo tipo de foros una supuesta base de <strong>18 millones de registros de la DIAN</strong> por US$2.000, que la entidad dijo no tener evidencia de fuga. Y en 2024 la Fiscalía capturó una red de fraude bancario que había accedido a bases de la Registraduría. Con o sin este caso, nombres, cédulas, fechas de expedición y fotos ya están disponibles para quien quiera suplantar a alguien.
+        </p>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Qué deben cambiar las empresas desde esta semana</h2>
+        <div class="space-y-4">
+          {actions.map(([title, text], index) => (
+            <div class="flex gap-4 border border-gray-200 rounded-2xl p-5">
+              <span class="flex-shrink-0 w-8 h-8 bg-gray-900 text-white rounded-full flex items-center justify-center text-sm font-bold">{index + 1}</span>
+              <div>
+                <h3 class="font-bold text-gray-900 mb-1">{title}</h3>
+                <p class="text-gray-600 leading-relaxed">{text}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Y como persona</h2>
+        <ul class="space-y-4 text-gray-700">
+          <li class="flex gap-3"><span class="text-red-700 font-bold">•</span><span><strong>Active la verificación en dos pasos</strong> en su banco y su correo, con una aplicación en lugar de SMS.</span></li>
+          <li class="flex gap-3"><span class="text-red-700 font-bold">•</span><span><strong>Revise sus reportes en las centrales de riesgo</strong> para detectar créditos o líneas que no solicitó.</span></li>
+          <li class="flex gap-3"><span class="text-red-700 font-bold">•</span><span><strong>Desconfíe de quien ya sabe todo de usted.</strong> Que una llamada o un mensaje tenga su número de cédula y su fecha de nacimiento no lo hace legítimo.</span></li>
+        </ul>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Cómo ayudamos a cerrar estas brechas</h2>
+        <div class="overflow-x-auto rounded-2xl border border-gray-200">
+          <table class="w-full text-sm">
+            <thead class="bg-gray-50">
+              <tr>
+                <th class="text-left px-4 py-3 font-bold text-gray-900">El riesgo</th>
+                <th class="text-left px-4 py-3 font-bold text-gray-900">Cómo se cubre</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-100">
+              {mapping.map(([need, how, href]) => (
+                <tr>
+                  <td class="px-4 py-3 font-semibold text-gray-900">{need}</td>
+                  <td class="px-4 py-3"><a href={href} class="text-red-700 font-semibold hover:underline">{how}</a></td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="mb-12 bg-[#111827] rounded-2xl p-8 text-white">
+        <p class="text-xs font-bold uppercase tracking-widest text-red-400 mb-2">Por qué Star Solutions TI</p>
+        <h2 class="text-2xl font-bold mb-3">Certificados en ISO 27001 y con experiencia en el sector público</h2>
+        <p class="text-gray-300 leading-relaxed">Star Solutions TI está certificada en ISO/IEC 27001:2022 por SGS y ha ejecutado más de 100 contratos con entidades públicas. Más de 1.150 empresas confían en nosotros desde 2016.</p>
+      </section>
+
+      <section class="mb-12 bg-gray-50 border border-gray-200 rounded-2xl p-6">
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">Fuentes</h2>
+        <ul class="space-y-2 text-sm">
+          <li><a href="https://www.eldiario.com.co/noticias/registraduria-descarto-hackeo-de-sus-bases-de-datos-tras-alerta-por-presunta-filtracion-de-informacion-de-414-millones-de-colombianos/" class="text-red-700 hover:underline" rel="noopener">El Diario: Registraduría descartó hackeo de sus bases de datos (6-nov-2026)</a></li>
+          <li><a href="https://www.publimetro.co/noticias/2026/11/05/denuncian-hackeo-a-la-registraduria-estarian-vendiendo-fotos-y-huellas-de-41-millones-de-colombianos/" class="text-red-700 hover:underline" rel="noopener">Publimetro: denuncian venta de fotos y huellas de 41 millones de colombianos (5-nov-2026)</a></li>
+          <li><a href="https://www.vanguardia.com/colombia/2026/11/05/registraduria-se-pronuncio-tras-rumores-de-hackeo-a-la-informacion-de-los-ciudadanos/" class="text-red-700 hover:underline" rel="noopener">Vanguardia: la Registraduría se pronunció tras rumores de hackeo (5-nov-2026)</a></li>
+          <li><a href="https://www.eltiempo.com/economia/empresas/hackers-estarian-vendiendo-datos-confidenciales-de-millones-de-colombianos-tras-presunta-vulneracion-a-plataforma-de-la-dian-nombres-cedulas-y-mas-3537355" class="text-red-700 hover:underline" rel="noopener">El Tiempo: supuesta venta de datos de la DIAN (4-mar-2026)</a></li>
+          <li><a href="https://www.buk.co/blog/rnbd-colombia-que-es-como-registrar-bases-de-datos" class="text-red-700 hover:underline" rel="noopener">Registro Nacional de Bases de Datos: plazo de 15 días hábiles para reportar incidentes</a></li>
+        </ul>
+        <p class="text-xs text-gray-500 mt-4">Artículo actualizado el 12 de noviembre de 2026. Si la Registraduría o las autoridades publican nueva información, lo actualizaremos.</p>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">Preguntas frecuentes</h2>
+        <div class="space-y-5">
+          {registraduriaFaqs.map((f) => (
+            <div class="border border-gray-200 rounded-xl p-5">
+              <h3 class="font-bold text-gray-900 mb-2">{f.q}</h3>
+              <p class="text-gray-600">{f.a}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section class="bg-red-700 rounded-2xl p-8 text-white">
+        <h2 class="text-2xl font-bold mb-3">¿Su empresa verifica identidades por teléfono o correo?</h2>
+        <p class="text-red-50 mb-6">Revisamos con su equipo dónde se usa la cédula como prueba de identidad, qué accesos no tienen doble factor y si los datos de su empresa ya aparecen en foros de filtraciones. Sin costo y sin compromiso.</p>
+        <a href="/#consultoria" class="inline-flex items-center justify-center bg-white text-red-700 font-semibold px-6 py-3 rounded hover:bg-red-50 transition">Solicitar diagnóstico</a>
+      </section>
+    </div>
+  </article>
+
+  <Footer />
+  <WhatsAppButton />
+</BaseLayout>

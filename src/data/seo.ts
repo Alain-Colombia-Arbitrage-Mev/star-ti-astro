@@ -11,6 +11,7 @@ import { precioPentestFaqs } from './blogPrecioPentest';
 import { bdVsKasFaqs } from './blogBitdefenderVsKaspersky';
 import { dmarcGuideFaqs } from './blogDmarc';
 import { circular007Faqs } from './blogCircular007';
+import { registraduriaFaqs } from './blogRegistraduria';
 import { socFaqs } from './starSoc';
 import { acronisFaqs } from './acronis';
 import { certIsoFaqs } from './blogCertificacionIso';
@@ -1394,6 +1395,36 @@ export const seoData: Record<string, SEOData> = {
       keywords: 'DMARC, SPF, DKIM, correo, suplantación, Microsoft 365',
     },
     faqJsonLd: faqSchema(dmarcGuideFaqs),
+  },
+
+  'blog/supuesta-filtracion-registraduria-41-millones': {
+    title: '¿Hackearon la Registraduría? Lo que se sabe (nov 2026)',
+    description: 'Supuesta venta de fotos y huellas de 41,4 millones de colombianos: qué dice el vendedor, qué responde la Registraduría y qué deben cambiar las empresas.',
+    keywords: 'hackeo Registraduría, filtración Registraduría 41 millones, huellas Registraduría venta, datos biométricos colombianos filtrados, Registraduría DarkForums, suplantación de identidad Colombia, filtración datos Colombia 2026',
+    canonical: `${BASE_URL}/blog/supuesta-filtracion-registraduria-41-millones/`,
+    ogTitle: '¿Hackearon la Registraduría? Lo que se sabe de la supuesta venta de 41 millones de huellas',
+    ogType: 'article',
+    ogImage: `${BASE_URL}/og/blog-supuesta-filtracion-registraduria-41-millones.jpg`,
+    breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Blog', url: '/blog/' }, { name: 'Supuesta filtración de la Registraduría', url: '/blog/supuesta-filtracion-registraduria-41-millones/' }],
+    jsonLd: {
+      '@context': 'https://schema.org',
+      '@type': 'NewsArticle',
+      headline: '¿Hackearon la Registraduría? Lo que se sabe de la supuesta venta de huellas de 41 millones de colombianos',
+      description: 'Análisis de la supuesta venta de 41,4 millones de registros biométricos atribuidos a la Registraduría Nacional del Estado Civil, el desmentido oficial, las inconsistencias de la oferta y las medidas que deben tomar las empresas contra la suplantación de identidad.',
+      datePublished: '2026-11-12',
+      dateModified: '2026-11-12',
+      inLanguage: 'es-CO',
+      author: AUTHOR,
+      publisher: { '@type': 'Organization', name: 'Star Solutions TI S.A.S.', url: BASE_URL, logo: { '@type': 'ImageObject', url: `${BASE_URL}/logo.png` } },
+      image: `${BASE_URL}/og/blog-supuesta-filtracion-registraduria-41-millones.jpg`,
+      url: `${BASE_URL}/blog/supuesta-filtracion-registraduria-41-millones/`,
+      about: [
+        { '@type': 'GovernmentOrganization', name: 'Registraduría Nacional del Estado Civil', url: 'https://www.registraduria.gov.co/' },
+        { '@type': 'Thing', name: 'Filtración de datos biométricos' },
+      ],
+      keywords: 'Registraduría, filtración de datos, datos biométricos, suplantación de identidad, Colombia',
+    },
+    faqJsonLd: faqSchema(registraduriaFaqs),
   },
 
   'blog/circular-007-superfinanciera-ciberseguridad': {
