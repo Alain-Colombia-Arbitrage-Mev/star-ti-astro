@@ -69,8 +69,35 @@ const howItWorks = [
             <span>Tiempo de lectura: 6 min</span>
           </div>
         </div>
-        <div class="hidden lg:block">
-          <img src="/og/blog-caida-microsoft-365-continuidad-correo.jpg" alt="Caída de Microsoft 365: cómo mantener el correo funcionando" class="w-full h-auto rounded-2xl shadow-2xl ring-1 ring-white/10" width="1200" height="630" loading="eager" />
+        <div class="ms-board mt-4 lg:mt-0" role="img" aria-label="Panel de estado: Outlook, Teams y Copilot con interrupción el 12 de noviembre de 2026; más de 178.000 reportes de usuarios; el correo con Email Continuity sigue operativo">
+          <div class="ms-board__head">
+            <span>Estado de servicios &middot; 12 nov 2026</span>
+            <span class="ms-live"><i></i>En vivo</span>
+          </div>
+          <ul class="ms-rows">
+            <li><span>Outlook / Exchange Online</span><b class="bad"><i></i>Interrupción</b></li>
+            <li><span>Microsoft Teams</span><b class="bad"><i></i>Degradado</b></li>
+            <li><span>Copilot</span><b class="bad"><i></i>Degradado</b></li>
+            <li class="ok-row"><span>Correo con Email Continuity</span><b class="ok"><i></i>Operativo</b></li>
+          </ul>
+          <div class="ms-chart">
+            <svg viewBox="0 0 400 110" preserveAspectRatio="none" aria-hidden="true">
+              <defs>
+                <linearGradient id="msFill" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#ef4444" stop-opacity=".45" />
+                  <stop offset="1" stop-color="#ef4444" stop-opacity="0" />
+                </linearGradient>
+              </defs>
+              <g class="ms-grid"><line x1="0" y1="27" x2="400" y2="27" /><line x1="0" y1="55" x2="400" y2="55" /><line x1="0" y1="83" x2="400" y2="83" /></g>
+              <path class="ms-area" d="M0,104 L60,103 L110,102 L140,100 L160,92 L175,40 L190,8 L210,14 L235,26 L265,38 L300,52 L340,62 L400,70 L400,110 L0,110 Z" fill="url(#msFill)" />
+              <path class="ms-line" pathLength="1" d="M0,104 L60,103 L110,102 L140,100 L160,92 L175,40 L190,8 L210,14 L235,26 L265,38 L300,52 L340,62 L400,70" />
+              <circle class="ms-peak" cx="190" cy="8" r="5" />
+            </svg>
+            <div class="ms-chart__foot">
+              <span>Reportes de usuarios</span>
+              <strong>+<span data-ms-count="178000">178.000</span></strong>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -92,7 +119,7 @@ const howItWorks = [
 
       <section class="mb-12">
         <h2 class="text-3xl font-bold text-gray-900 mb-6">Qué pasó</h2>
-        <div class="space-y-4">
+        <div class="space-y-4 ms-timeline">
           {timeline.map(([title, text], index) => (
             <div class="flex gap-4 border border-gray-200 rounded-2xl p-5">
               <span class="flex-shrink-0 w-8 h-8 bg-red-700 text-white rounded-full flex items-center justify-center text-sm font-bold">{index + 1}</span>
@@ -125,6 +152,68 @@ const howItWorks = [
         <p class="text-lg text-gray-600 leading-relaxed mb-6">
           Hornetsecurity filtra el correo antes de que llegue a Microsoft 365. Como el correo ya pasa por su plataforma, puede mantenerlo disponible cuando el buzón principal falla.
         </p>
+        <figure class="ms-flow mb-8">
+          <svg viewBox="0 0 720 400" role="img" aria-labelledby="msFlowT msFlowD">
+            <title id="msFlowT">Cómo se desvía el correo cuando Microsoft 365 falla</title>
+            <desc id="msFlowD">Los correos llegan a Hornetsecurity. Como Microsoft 365 no responde, Hornetsecurity los deja en el webmail de continuidad y el equipo sigue leyendo y respondiendo.</desc>
+            <defs>
+              <path id="msRoute" d="M95,80 L360,80 L360,310 L625,310" />
+              <path id="msFail" d="M360,80 L540,80" />
+            </defs>
+
+            <g class="ms-wires">
+              <line x1="170" y1="80" x2="285" y2="80" />
+              <line class="ms-wire-bad" x1="435" y1="80" x2="550" y2="80" />
+              <line class="ms-wire-ok" x1="360" y1="120" x2="360" y2="270" />
+              <line class="ms-wire-ok" x1="435" y1="310" x2="550" y2="310" />
+            </g>
+
+            <g class="ms-envs">
+              <g class="ms-env"><rect x="-15" y="-10" width="30" height="20" rx="3" /><path d="M-15,-9 L0,3 L15,-9" />
+                <animateMotion dur="4.2s" repeatCount="indefinite" begin="0s" calcMode="linear"><mpath href="#msRoute" /></animateMotion>
+              </g>
+              <g class="ms-env"><rect x="-15" y="-10" width="30" height="20" rx="3" /><path d="M-15,-9 L0,3 L15,-9" />
+                <animateMotion dur="4.2s" repeatCount="indefinite" begin="-1.4s" calcMode="linear"><mpath href="#msRoute" /></animateMotion>
+              </g>
+              <g class="ms-env"><rect x="-15" y="-10" width="30" height="20" rx="3" /><path d="M-15,-9 L0,3 L15,-9" />
+                <animateMotion dur="4.2s" repeatCount="indefinite" begin="-2.8s" calcMode="linear"><mpath href="#msRoute" /></animateMotion>
+              </g>
+              <g class="ms-env ms-env-fail"><rect x="-15" y="-10" width="30" height="20" rx="3" /><path d="M-15,-9 L0,3 L15,-9" />
+                <animateMotion dur="2.1s" repeatCount="indefinite" begin="0s" calcMode="linear"><mpath href="#msFail" /></animateMotion>
+                <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.15;.7;1" dur="2.1s" begin="0s" repeatCount="indefinite" />
+              </g>
+            </g>
+
+            <g class="ms-node">
+              <rect x="20" y="40" width="150" height="80" rx="16" />
+              <text x="95" y="76">Remitentes</text>
+              <text x="95" y="100" class="sub">clientes, proveedores</text>
+            </g>
+            <g class="ms-node ms-node-hornet">
+              <rect x="285" y="40" width="150" height="80" rx="16" />
+              <text x="360" y="76">Hornetsecurity</text>
+              <text x="360" y="100" class="sub">filtro + continuidad</text>
+            </g>
+            <g class="ms-node ms-node-down">
+              <rect x="550" y="40" width="150" height="80" rx="16" />
+              <text x="625" y="76">Microsoft 365</text>
+              <text x="625" y="100" class="sub">no responde</text>
+              <g class="ms-x"><circle cx="694" cy="46" r="17" /><path d="M686,38 L702,54 M702,38 L686,54" /></g>
+            </g>
+            <g class="ms-node ms-node-ok">
+              <rect x="285" y="270" width="150" height="80" rx="16" />
+              <text x="360" y="306">Webmail</text>
+              <text x="360" y="330" class="sub">de continuidad</text>
+            </g>
+            <g class="ms-node ms-node-ok">
+              <rect x="550" y="270" width="150" height="80" rx="16" />
+              <text x="625" y="306">Su equipo</text>
+              <text x="625" y="330" class="sub">responde y envía</text>
+            </g>
+            <text x="372" y="200" class="ms-tag">desvío automático</text>
+          </svg>
+          <figcaption>Cuando Microsoft 365 deja de responder, el correo que ya pasa por Hornetsecurity se desvía al webmail de continuidad. Al volver el servicio, todo se sincroniza en el buzón.</figcaption>
+        </figure>
         <div class="space-y-4">
           {howItWorks.map(([title, text], index) => (
             <div class="flex gap-4 border border-gray-200 rounded-2xl p-5">
@@ -223,3 +312,139 @@ const howItWorks = [
   <Footer />
   <WhatsAppButton />
 </BaseLayout>
+
+<script>
+  // Contador del panel de estado: sube de 0 a 178.000 una sola vez.
+  const el = document.querySelector<HTMLElement>('[data-ms-count]');
+  if (el && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const target = Number(el.dataset.msCount);
+    const fmt = new Intl.NumberFormat('es-CO');
+    const start = performance.now() + 600;
+    const dur = 1800;
+    el.textContent = '0';
+    const tick = (now: number) => {
+      const t = Math.min(1, Math.max(0, (now - start) / dur));
+      el.textContent = fmt.format(Math.round(target * (1 - Math.pow(1 - t, 3))));
+      if (t < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  }
+</script>
+
+<style>
+  /* ---------- Panel de estado (portada) ---------- */
+  .ms-board {
+    position: relative;
+    background: linear-gradient(160deg, rgba(17,24,39,.92), rgba(11,18,32,.96));
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 1.25rem;
+    padding: 1.25rem;
+    box-shadow: 0 30px 80px -20px rgba(239,68,68,.35), inset 0 1px 0 rgba(255,255,255,.06);
+    color: #e5e7eb;
+    overflow: hidden;
+    animation: ms-rise .8s var(--ease-out) both;
+  }
+  .ms-board::before {
+    content: ''; position: absolute; inset: -40% -10% auto auto; width: 70%; aspect-ratio: 1;
+    background: radial-gradient(circle, rgba(239,68,68,.22), transparent 65%);
+    pointer-events: none;
+    animation: ms-glow 4s ease-in-out infinite alternate;
+  }
+  .ms-board__head { display: flex; justify-content: space-between; align-items: center; font-size: .8rem; color: #9ca3af; margin-bottom: .9rem; letter-spacing: .02em; }
+  .ms-live { display: inline-flex; align-items: center; gap: .4rem; color: #fca5a5; font-weight: 700; text-transform: uppercase; font-size: .7rem; letter-spacing: .1em; }
+  .ms-live i, .ms-rows b i { width: .55rem; height: .55rem; border-radius: 999px; background: currentColor; display: inline-block; position: relative; }
+  .ms-live i::after, .ms-rows .bad i::after { content: ''; position: absolute; inset: 0; border-radius: inherit; background: currentColor; animation: ms-ping 1.6s cubic-bezier(0,0,.2,1) infinite; }
+  .ms-rows { list-style: none; margin: 0; padding: 0; display: grid; gap: .5rem; }
+  .ms-rows li {
+    display: flex; justify-content: space-between; align-items: center; gap: 1rem;
+    background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.06);
+    border-radius: .75rem; padding: .6rem .85rem; font-size: .9rem;
+    animation: ms-slide .6s var(--ease-out) both;
+  }
+  .ms-rows li:nth-child(1) { animation-delay: .15s; }
+  .ms-rows li:nth-child(2) { animation-delay: .25s; }
+  .ms-rows li:nth-child(3) { animation-delay: .35s; }
+  .ms-rows li:nth-child(4) { animation-delay: .9s; }
+  .ms-rows b { display: inline-flex; align-items: center; gap: .45rem; font-size: .75rem; font-weight: 700; white-space: nowrap; }
+  .ms-rows .bad { color: #f87171; }
+  .ms-rows .ok { color: #4ade80; }
+  .ms-rows .ok-row { border-color: rgba(74,222,128,.3); background: rgba(74,222,128,.07); }
+  .ms-chart { margin-top: .9rem; background: rgba(0,0,0,.25); border-radius: .75rem; padding: .75rem .85rem .6rem; }
+  .ms-chart svg { width: 100%; height: 90px; display: block; overflow: visible; }
+  .ms-grid line { stroke: rgba(255,255,255,.07); stroke-width: 1; vector-effect: non-scaling-stroke; }
+  .ms-line { fill: none; stroke: #ef4444; stroke-width: 2.5; vector-effect: non-scaling-stroke; stroke-linejoin: round; stroke-dasharray: 1; stroke-dashoffset: 1; animation: ms-draw 2.2s .5s var(--ease-out) forwards; }
+  .ms-area { opacity: 0; animation: ms-fade 1s 1.6s ease forwards; }
+  .ms-peak { fill: #fff; stroke: #ef4444; stroke-width: 3; opacity: 0; transform-box: fill-box; transform-origin: center; animation: ms-fade .3s 1.5s forwards, ms-beat 1.6s 1.8s ease-in-out infinite; }
+  .ms-chart__foot { display: flex; justify-content: space-between; align-items: baseline; margin-top: .4rem; font-size: .75rem; color: #9ca3af; }
+  .ms-chart__foot strong { color: #fff; font-size: 1.35rem; font-variant-numeric: tabular-nums; }
+
+  /* ---------- Imágenes del artículo ---------- */
+  .ms-photo { position: relative; border-radius: 1.25rem; overflow: hidden; box-shadow: 0 25px 60px -25px rgba(15,23,42,.55); }
+  .ms-photo img { display: block; width: 100%; height: auto; transform-origin: 60% 40%; }
+  .ms-photo figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 2.5rem 1.25rem 1rem; color: #e5e7eb; font-size: .85rem; background: linear-gradient(transparent, rgba(2,6,23,.85)); }
+  .ms-photo::after { content: ''; position: absolute; inset: 0; background: linear-gradient(110deg, transparent 30%, rgba(255,255,255,.12) 45%, transparent 60%); transform: translateX(-100%); pointer-events: none; }
+
+  /* ---------- Línea de tiempo ---------- */
+  .ms-timeline { position: relative; }
+  .ms-timeline::before {
+    content: ''; position: absolute; left: 2.25rem; top: 1.5rem; bottom: 1.5rem; width: 2px;
+    background: linear-gradient(#b91c1c, #fca5a5); transform-origin: top; z-index: 0;
+  }
+  .ms-timeline > div { position: relative; z-index: 1; background: #fff; transition: border-color .3s, box-shadow .3s, transform .3s var(--ease-out); }
+  .ms-timeline > div:hover { border-color: #fca5a5; box-shadow: 0 12px 30px -18px rgba(185,28,28,.5); }
+
+  /* ---------- Diagrama de continuidad ---------- */
+  .ms-flow { background: radial-gradient(120% 120% at 0% 0%, #111827, #0b1220); border-radius: 1.25rem; padding: 1.25rem 1.25rem .5rem; box-shadow: 0 25px 60px -30px rgba(15,23,42,.7); }
+  .ms-flow svg { width: 100%; height: auto; display: block; }
+  .ms-flow figcaption { color: #9ca3af; font-size: .85rem; padding: .5rem .25rem .75rem; line-height: 1.5; }
+  .ms-wires line { stroke: rgba(255,255,255,.25); stroke-width: 3; stroke-dasharray: 8 8; animation: ms-dash 1s linear infinite; }
+  .ms-wires .ms-wire-bad { stroke: #ef4444; opacity: .7; animation: ms-blink 1.2s steps(2) infinite; }
+  .ms-wires .ms-wire-ok { stroke: #f97316; }
+  .ms-node rect { fill: #1f2937; stroke: rgba(255,255,255,.15); stroke-width: 2; }
+  .ms-node text { fill: #f9fafb; font-size: 21px; font-weight: 700; text-anchor: middle; font-family: inherit; }
+  .ms-node text.sub { fill: #9ca3af; font-size: 15px; font-weight: 500; }
+  .ms-node-hornet rect { fill: #7c2d12; stroke: #f97316; filter: drop-shadow(0 0 14px rgba(249,115,22,.55)); animation: ms-halo 2.4s ease-in-out infinite; }
+  .ms-node-down rect { fill: #2a1215; stroke: #ef4444; }
+  .ms-node-down text { fill: #fecaca; }
+  .ms-node-ok rect { fill: #052e1a; stroke: #22c55e; }
+  .ms-x circle { fill: #ef4444; }
+  .ms-x path { stroke: #fff; stroke-width: 3.5; stroke-linecap: round; }
+  .ms-x { transform-box: fill-box; transform-origin: center; animation: ms-beat 1.4s ease-in-out infinite; }
+  .ms-env rect { fill: #fb923c; stroke: #fff7ed; stroke-width: 1.5; }
+  .ms-env path { fill: none; stroke: #7c2d12; stroke-width: 2; }
+  .ms-env-fail rect { fill: #ef4444; }
+  .ms-tag { fill: #fdba74; font-size: 15px; font-weight: 600; font-family: inherit; }
+
+  /* ---------- Movimiento al desplazarse (solo navegadores compatibles) ---------- */
+  @supports (animation-timeline: view()) {
+    @media (prefers-reduced-motion: no-preference) {
+      .ms-timeline::before { animation: ms-grow linear both; animation-timeline: view(); animation-range: entry 20% cover 60%; }
+      .ms-photo img { animation: ms-zoom linear both; animation-timeline: view(); animation-range: entry 0% exit 100%; }
+      .ms-photo::after { animation: ms-sheen linear both; animation-timeline: view(); animation-range: entry 40% cover 55%; }
+      .ms-flow, .ms-photo { animation: ms-in linear both; animation-timeline: view(); animation-range: entry 0% entry 55%; }
+    }
+  }
+
+  @keyframes ms-rise { from { opacity: 0; transform: translateY(24px) scale(.98); } to { opacity: 1; transform: none; } }
+  @keyframes ms-slide { from { opacity: 0; transform: translateX(16px); } to { opacity: 1; transform: none; } }
+  @keyframes ms-draw { to { stroke-dashoffset: 0; } }
+  @keyframes ms-fade { to { opacity: 1; } }
+  @keyframes ms-beat { 0%,100% { transform: scale(1); } 50% { transform: scale(1.18); } }
+  @keyframes ms-ping { 75%,100% { transform: scale(2.4); opacity: 0; } }
+  @keyframes ms-glow { from { opacity: .6; } to { opacity: 1; transform: translate(-6%, 6%); } }
+  @keyframes ms-dash { to { stroke-dashoffset: -16; } }
+  @keyframes ms-blink { 50% { opacity: .15; } }
+  @keyframes ms-halo { 50% { filter: drop-shadow(0 0 24px rgba(249,115,22,.85)); } }
+  @keyframes ms-grow { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+  @keyframes ms-zoom { from { transform: scale(1.12); } to { transform: scale(1); } }
+  @keyframes ms-sheen { from { transform: translateX(-100%); } to { transform: translateX(100%); } }
+  @keyframes ms-in { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: none; } }
+
+  @media (prefers-reduced-motion: reduce) {
+    .ms-board, .ms-board::before, .ms-rows li, .ms-live i::after, .ms-rows .bad i::after,
+    .ms-peak, .ms-x, .ms-wires line, .ms-node-hornet rect { animation: none !important; }
+    .ms-line { animation: none; stroke-dashoffset: 0; }
+    .ms-area, .ms-peak { opacity: 1; }
+    .ms-envs { display: none; }
+  }
+</style>
