@@ -202,9 +202,13 @@ descripciones ≤ 160, `lastmod` del sitemap, 301 con barra final faltantes, `no
 
 ## 12-nov-2026 (tarde): blog publicado con wrangler
 
-- Cloudflare sigue desconectado de GitHub (sin compilaciones desde el 3-nov). George publico
-  `produccion` (0b880fa) a mano con `wrangler deploy` desde su PC y lo verifico. Mientras no se
-  reconecte, cada publicacion se hace asi.
-- En vivo: /blog/caida-microsoft-365-continuidad-correo/ y /blog/supuesta-filtracion-registraduria-41-millones/.
-- Redes (Metricool, marca starsolutionti): LinkedIn, Facebook, Instagram y Google Business Profile
-  programados el 12-nov 4:30-4:45 p. m. X no esta conectada; YouTube exige video.
+- Cloudflare sigue desconectado de GitHub (sin compilaciones desde el 3-nov). Mientras no se
+  reconecte, se publica a mano desde el PC de George ("Ingenieria"): ese PC no tiene Git; se instalo
+  Node LTS con winget. Procedimiento: descargar el zip de la rama `produccion`
+  (github.com/.../archive/refs/heads/produccion.zip) en Documents, descomprimir
+  (`star-ti-astro-produccion`), `npm.cmd ci`, `npm.cmd run build`, `npx.cmd wrangler deploy --keep-vars`.
+  Un primer intento (desde una copia vieja) dejo los articulos en 404; usar SIEMPRE un zip nuevo.
+- Publicado ~4:38 p. m. (0b880fa): /blog/caida-microsoft-365-continuidad-correo/ y
+  /blog/supuesta-filtracion-registraduria-41-millones/.
+- Redes (Metricool, marca starsolutionti): LinkedIn, Facebook, Instagram y Google Business Profile,
+  4:41 p. m. X no esta conectada; YouTube exige video.
