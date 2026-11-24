@@ -1,3 +1,4 @@
+import { keywordFaqs } from './keywordFaqs';
 import { isoFaqs } from './iso27001Landing';
 import { kymatioFaqs } from './kymatio';
 import { lastpassFaqs } from './lastpass';
@@ -167,7 +168,7 @@ export const seoData: Record<string, SEOData> = {
   bitdefender: {
     title: 'Bitdefender Colombia | Reseller Platinum | GravityZone',
     description: 'Distribuidor Bitdefender en Colombia, nivel Reseller Platinum. Licencias GravityZone, EDR/XDR/MDR, renovación y soporte local. Cotización gratis.',
-    keywords: 'Reseller Platinum Bitdefender Colombia, Bitdefender Platinum partner Colombia, distribuidor Bitdefender, distribuidor Bitdefender Colombia, distribuidor Gold Bitdefender Colombia, distribuidor #1 Bitdefender Colombia, Bitdefender Gold partner Colombia, licencias Bitdefender Colombia, comprar Bitdefender empresas, Bitdefender GravityZone Colombia, gravity zone, gravityzone precio, GravityZone EDR XDR, antivirus corporativo empresas, endpoint security, partner Bitdefender Colombia',
+    keywords: 'Reseller Platinum Bitdefender Colombia, Bitdefender Platinum partner Colombia, distribuidor Bitdefender, distribuidor Bitdefender Colombia, distribuidor Gold Bitdefender Colombia, distribuidor #1 Bitdefender Colombia, Bitdefender Gold partner Colombia, licencias Bitdefender Colombia, comprar Bitdefender empresas, Bitdefender GravityZone Colombia, gravity zone, gravityzone precio, GravityZone EDR XDR, antivirus corporativo empresas, endpoint security, partner Bitdefender Colombia, licencias Bitdefender para empresas, precio Bitdefender GravityZone, comprar Bitdefender para empresas, renovación licencias Bitdefender, Bitdefender Business Security, Bitdefender EDR XDR Colombia, Bitdefender MDR Colombia, partner Bitdefender Platinum Colombia, antivirus Bitdefender corporativo, Bitdefender Bogotá',
     canonical: `${BASE_URL}/bitdefender/`,
     ogTitle: 'Distribuidor Bitdefender Colombia | Star Solutions TI, Reseller Platinum',
     ogType: 'website',
@@ -196,7 +197,7 @@ export const seoData: Record<string, SEOData> = {
   kaspersky: {
     title: 'Kaspersky Partner en Colombia | Licencias para Empresas',
     description: 'Partner y distribuidor corporativo de Kaspersky en Colombia: licencias Kaspersky Next, EDR/XDR, renovación y soporte en Bogotá. Cotice gratis.',
-    keywords: 'distribuidor corporativo Kaspersky Colombia, distribuidor Kaspersky Colombia, partner Kaspersky Colombia, licencias Kaspersky empresas Colombia, Kaspersky Next Colombia, cotizar Kaspersky endpoint Colombia, antivirus corporativo Kaspersky Colombia, Kaspersky EDR Colombia, Kaspersky XDR Colombia, renovar Kaspersky empresas Colombia',
+    keywords: 'distribuidor corporativo Kaspersky Colombia, distribuidor Kaspersky Colombia, partner Kaspersky Colombia, licencias Kaspersky empresas Colombia, Kaspersky Next Colombia, cotizar Kaspersky endpoint Colombia, antivirus corporativo Kaspersky Colombia, Kaspersky EDR Colombia, Kaspersky XDR Colombia, renovar Kaspersky empresas Colombia, precio Kaspersky Next Colombia, Kaspersky Endpoint Security for Business, renovación Kaspersky empresas, Kaspersky EDR Optimum, antivirus Kaspersky corporativo, Kaspersky Small Office Security, Kaspersky Bogotá',
     canonical: `${BASE_URL}/kaspersky/`,
     ogTitle: 'Kaspersky Colombia | Partner y Distribuidor Corporativo',
     ogType: 'website',
@@ -220,7 +221,7 @@ export const seoData: Record<string, SEOData> = {
   'hornetsecurity': {
     title: 'Hornetsecurity Colombia | Correo seguro M365 y Google',
     description: 'Hornetsecurity en Colombia: antiphishing, filtro de spam, cifrado y backup de correo para Microsoft 365 y Google Workspace. Partner Silver, licencias y soporte local.',
-    keywords: 'Hornetsecurity, Hornet Security, qué es Hornetsecurity, Hornetsecurity Colombia, Hornetsecurity Google Workspace, Hornet email security, hornet mail security, seguridad email Microsoft 365, backup email, email encryption, protección correo empresarial Colombia',
+    keywords: 'Hornetsecurity, Hornet Security, qué es Hornetsecurity, Hornetsecurity Colombia, Hornetsecurity Google Workspace, Hornet email security, hornet mail security, seguridad email Microsoft 365, backup email, email encryption, protección correo empresarial Colombia, seguridad de correo Microsoft 365, backup Microsoft 365 Colombia, protección de correo electrónico empresas, filtro antispam empresarial, respaldo correo Office 365, archivado de correo electrónico, precio Hornetsecurity 365 Total Protection, protección contra phishing correo, cifrado de correo empresarial, antispam Exchange Online',
     canonical: `${BASE_URL}/hornetsecurity/`,
     ogTitle: 'Hornetsecurity Colombia | Seguridad de Correo Microsoft 365',
     ogType: 'website',
@@ -237,7 +238,7 @@ export const seoData: Record<string, SEOData> = {
   proofpoint: {
     title: 'Proofpoint Colombia | Seguridad de Correo contra Phishing',
     description: 'Proofpoint en Colombia: seguridad de correo contra phishing, BEC y amenazas dirigidas. Somos distribuidor: licencias, implementación y soporte local.',
-    keywords: 'Proofpoint Colombia, email security, anti-phishing empresas, BEC, DMARC, ZenGuide, security awareness, Collaboration Security Prime',
+    keywords: 'Proofpoint Colombia, email security, anti-phishing empresas, BEC, DMARC, ZenGuide, security awareness, Collaboration Security Prime, Proofpoint email security, precio Proofpoint, protección contra fraude BEC, anti phishing empresarial, DMARC Colombia, Proofpoint Essentials, seguridad de correo avanzada, suplantación de correo electrónico empresas, capacitación phishing empleados, partner Proofpoint Colombia',
     canonical: `${BASE_URL}/proofpoint/`,
     ogTitle: 'Proofpoint - Seguridad de Email Avanzada para Empresas en Colombia',
     ogType: 'website',
@@ -300,7 +301,7 @@ export const seoData: Record<string, SEOData> = {
   kymatio: {
     title: 'Kymatio Colombia | Simulación de Phishing y Concienciación',
     description: 'Kymatio en Colombia: concienciación adaptativa, simulaciones de phishing y vishing, y credenciales expuestas. Gestión del riesgo humano. Cotice.',
-    keywords: 'Kymatio Colombia, gestión del riesgo humano, human risk management, concienciación en ciberseguridad, simulación de phishing, vishing, credenciales expuestas, security awareness, ISO 27001 control 6.3',
+    keywords: 'Kymatio Colombia, gestión del riesgo humano, human risk management, concienciación en ciberseguridad, simulación de phishing, vishing, credenciales expuestas, security awareness, ISO 27001 control 6.3, gestión del riesgo humano ciberseguridad, concientización en ciberseguridad empleados, capacitación en ciberseguridad para empresas, simulación de phishing empleados, plataforma security awareness, programa de concienciación seguridad de la información, ISO 27001 control 6.3 concienciación, ingeniería social capacitación, simulación de vishing',
     canonical: `${BASE_URL}/kymatio/`,
     ogTitle: 'Kymatio - Gestión del Riesgo Humano en Ciberseguridad para Empresas en Colombia',
     ogType: 'website',
@@ -316,7 +317,7 @@ export const seoData: Record<string, SEOData> = {
   enthec: {
     title: 'Enthec Colombia | Kartos y Qondar, Cibervigilancia',
     description: 'Enthec en Colombia: cibervigilancia con Kartos (superficie de ataque externa) y Qondar (vigilancia de personas). Diagnóstico gratuito de exposición.',
-    keywords: 'Enthec, Kartos, Qondar, cibervigilancia, EASM, Threat Exposure Management, superficie de ataque, credenciales filtradas, dark web Colombia',
+    keywords: 'Enthec, Kartos, Qondar, cibervigilancia, EASM, Threat Exposure Management, superficie de ataque, credenciales filtradas, dark web Colombia, monitoreo dark web empresas, credenciales filtradas empresa, Enthec Kartos Colombia, vigilancia de superficie de ataque externa, EASM Colombia, cibervigilancia empresas, protección de marca digital, detección de phishing de marca, monitoreo de filtraciones de datos, protección digital de ejecutivos',
     canonical: `${BASE_URL}/enthec/`,
     ogTitle: 'Enthec Kartos y Qondar - Cibervigilancia en Colombia | Star Solutions TI',
     ogType: 'website',
@@ -333,7 +334,7 @@ export const seoData: Record<string, SEOData> = {
   vicarius: {
     title: 'Vicarius vRx en Colombia | Gestión de Vulnerabilidades',
     description: '¿Qué es Vicarius vRx? Plataforma de gestión de vulnerabilidades con parcheo automático y Patchless Protection. Implementación y soporte en Colombia.',
-    keywords: 'Vicarius vRx, gestión vulnerabilidades, exposure assessment platforms, patch management, Patchless Protection, vRx Scripting Engine, exposure management Colombia',
+    keywords: 'Vicarius vRx, gestión vulnerabilidades, exposure assessment platforms, patch management, Patchless Protection, vRx Scripting Engine, exposure management Colombia, análisis de vulnerabilidades Colombia, escaneo de vulnerabilidades empresas, gestión de vulnerabilidades, análisis de vulnerabilidades precio, Vicarius vRx Colombia, gestión de parches automatizada, patch management empresas, evaluación de vulnerabilidades Bogotá, remediación de vulnerabilidades, software de gestión de vulnerabilidades, vulnerabilidades críticas CVE empresas',
     canonical: `${BASE_URL}/vicarius/`,
     ogTitle: 'Vicarius vRx - Full Cycle Vulnerability Management en Colombia',
     ogType: 'website',
@@ -374,7 +375,7 @@ export const seoData: Record<string, SEOData> = {
   'stellar-cyber': {
     title: 'Stellar Cyber Colombia | Open XDR y SOC con IA',
     description: 'Stellar Cyber en Colombia: plataforma Open XDR con IA, NDR, ITDR y UEBA para montar o fortalecer su SOC. Implementación con Star Solutions TI.',
-    keywords: 'Stellar Cyber, Open XDR, SecOps Platform, SOC automatizado, Multi-Layer AI, NDR, UEBA, ITDR, AI Investigator, alternativa SIEM Colombia',
+    keywords: 'Stellar Cyber, Open XDR, SecOps Platform, SOC automatizado, Multi-Layer AI, NDR, UEBA, ITDR, AI Investigator, alternativa SIEM Colombia, Stellar Cyber Colombia, SIEM para empresas Colombia, SOC como servicio Colombia, plataforma SIEM, detección y respuesta XDR, NDR detección de amenazas en red, plataforma SecOps, monitoreo de seguridad 24/7, precio SIEM, alternativa a SIEM tradicional',
     canonical: `${BASE_URL}/stellar-cyber/`,
     ogTitle: 'Stellar Cyber SecOps Platform | Open XDR para SOC Automatizado',
     ogType: 'website',
@@ -393,7 +394,7 @@ export const seoData: Record<string, SEOData> = {
   'hacking-etico': {
     title: 'Servicio de Hacking Ético y Pentesting en Colombia',
     description: 'Pruebas de penetración con autorización legal, informe ejecutivo y técnico, y re-test de lo corregido. Para empresas y entidades públicas en Colombia.',
-    keywords: 'servicio de hacking ético, servicio de hackeo ético, empresas de hacking ético en Colombia, pentesting Colombia, servicio de pentesting, pruebas de penetración, test de intrusión, análisis de vulnerabilidades, pentesting para ISO 27001',
+    keywords: 'servicio de hacking ético, servicio de hackeo ético, empresas de hacking ético en Colombia, pentesting Colombia, servicio de pentesting, pruebas de penetración, test de intrusión, análisis de vulnerabilidades, pentesting para ISO 27001, hacking ético Colombia, pruebas de penetración Bogotá, precio test de penetración, pentest aplicaciones web, ethical hacking empresas, auditoría de seguridad informática, pruebas de intrusión, red team Colombia, pentesting externo e interno, empresa de pentesting Bogotá, evaluación de seguridad de aplicaciones',
     canonical: `${BASE_URL}/hacking-etico/`,
     ogTitle: 'Servicio de Hacking Ético y Pentesting en Colombia',
     ogType: 'website',
@@ -420,7 +421,7 @@ export const seoData: Record<string, SEOData> = {
   'iso-27001': {
     title: 'Consultoría ISO 27001 en Bogotá y Colombia | SGS',
     description: 'Consultoría ISO 27001 en Bogotá y toda Colombia, con una empresa certificada ISO/IEC 27001:2022 por SGS. Diagnóstico gratuito, SGSI y Anexo A.',
-    keywords: 'consultoría ISO 27001 Bogotá Colombia, consultoria ISO 27001 bogota colombia, consultoria iso 27001, bogota - colombia, consultoría ISO 27001 Colombia, consultoria ISO 27001 Bogotá, consultor ISO 27001 Colombia, certificación ISO 27001, certificación SGSI, auditoría ISO 27001, gap analysis seguridad información, implementación ISO 27001, Anexo A, declaración de aplicabilidad, ISO 27001 Bogotá, ISO 27001 Medellín, ISO 27001 Cali, ISO 27001 precio, cotización ISO 27001',
+    keywords: 'consultoría ISO 27001 Bogotá Colombia, consultoria ISO 27001 bogota colombia, consultoria iso 27001, bogota - colombia, consultoría ISO 27001 Colombia, consultoria ISO 27001 Bogotá, consultor ISO 27001 Colombia, certificación ISO 27001, certificación SGSI, auditoría ISO 27001, gap analysis seguridad información, implementación ISO 27001, Anexo A, declaración de aplicabilidad, ISO 27001 Bogotá, ISO 27001 Medellín, ISO 27001 Cali, ISO 27001 precio, cotización ISO 27001, certificación ISO 27001 Colombia, consultor ISO 27001 Bogotá, costo certificación ISO 27001 Colombia, implementación SGSI, ISO 27001:2022 requisitos, auditoría interna ISO 27001, MSPI MinTIC, declaración de aplicabilidad ISO 27001, gap analysis ISO 27001',
     canonical: `${BASE_URL}/iso-27001/`,
     ogTitle: 'Consultoría ISO 27001 en Bogotá | Empresa Certificada',
     ogType: 'website',
@@ -550,7 +551,7 @@ export const seoData: Record<string, SEOData> = {
   sealpath: {
     title: 'SealPath Colombia | Protección de Documentos (IRM)',
     description: 'SealPath en Colombia: proteja documentos con cifrado persistente, control de acceso y revocación remota, integrado con Microsoft 365. Soporte local.',
-    keywords: 'SealPath IRM Colombia, IRM E-DRM protección documentos, cifrado persistente datos, control acceso documentos, Microsoft Information Protection, Ley 1581 protección datos',
+    keywords: 'SealPath IRM Colombia, IRM E-DRM protección documentos, cifrado persistente datos, control acceso documentos, Microsoft Information Protection, Ley 1581 protección datos, SealPath Colombia, protección de documentos confidenciales, IRM gestión de derechos de información, cifrado de documentos empresas, control de acceso a documentos, proteger archivos compartidos, DRM para documentos, revocar acceso a documentos enviados, protección de datos Ley 1581, seguridad de documentos Microsoft 365',
     canonical: `${BASE_URL}/sealpath/`,
     ogTitle: 'SealPath IRM - Protección Persistente de Documentos en Colombia',
     ogType: 'website',
@@ -569,7 +570,7 @@ export const seoData: Record<string, SEOData> = {
   netwrix: {
     title: 'Netwrix Colombia | Auditoría de Active Directory',
     description: 'Netwrix en Colombia: Netwrix Auditor para Active Directory, PAM y clasificación de datos. Apoyo para Ley 1581 e ISO 27001, con soporte en español.',
-    keywords: 'Netwrix Colombia, Netwrix Auditor, Netwrix Access Analyzer, Netwrix Privilege Secure, Netwrix Endpoint Protector, auditoría Active Directory, PAM Zero Standing Privilege, DLP, clasificación datos, gobernanza identidad, Ley 1581, Circular 007',
+    keywords: 'Netwrix Colombia, Netwrix Auditor, Netwrix Access Analyzer, Netwrix Privilege Secure, Netwrix Endpoint Protector, auditoría Active Directory, PAM Zero Standing Privilege, DLP, clasificación datos, gobernanza identidad, Ley 1581, Circular 007, monitoreo de cambios Active Directory, gestión de accesos privilegiados PAM, auditoría de permisos de archivos, clasificación de datos, seguridad de identidades, auditoría para cumplimiento Ley 1581, precio Netwrix',
     canonical: `${BASE_URL}/netwrix/`,
     ogTitle: 'Netwrix - Seguridad de Datos e Identidades en Colombia',
     ogType: 'website',
@@ -588,7 +589,7 @@ export const seoData: Record<string, SEOData> = {
   lastpass: {
     title: 'LastPass Colombia | Gestor de Contraseñas para Empresas',
     description: 'LastPass Business: gestor de contraseñas empresarial con cifrado zero-knowledge, MFA, SSO y 100+ políticas. Controles ISO 27001. Implementamos en Colombia.',
-    keywords: 'LastPass Colombia, LastPass Business, gestor de contraseñas empresarial, gestión de credenciales, control de accesos, gestión de identidades, MFA, SSO, ISO 27001 control 5.17, cumplimiento Ley 1581',
+    keywords: 'LastPass Colombia, LastPass Business, gestor de contraseñas empresarial, gestión de credenciales, control de accesos, gestión de identidades, MFA, SSO, ISO 27001 control 5.17, cumplimiento Ley 1581, LastPass Business Colombia, administrador de contraseñas para empresas, precio LastPass empresas, LastPass Teams, gestión de contraseñas corporativas, bóveda de contraseñas, SSO y MFA para empresas, política de contraseñas en la empresa',
     canonical: `${BASE_URL}/lastpass/`,
     ogTitle: 'LastPass Business - Gestión de Contraseñas y Accesos para Cumplimiento en Colombia',
     ogType: 'website',
@@ -600,7 +601,7 @@ export const seoData: Record<string, SEOData> = {
   'dlp-prevencion-perdida-datos': {
     title: 'Software DLP para Empresas en Colombia | Endpoint DLP',
     description: 'Software DLP para prevenir la pérdida de datos en empresas de Colombia: DLP endpoint, control de USB, cifrado y cumplimiento de la Ley 1581. Soporte local.',
-    keywords: 'DLP Colombia, data loss prevention, prevención pérdida datos, Endpoint Protector, control USB, GDPR',
+    keywords: 'DLP Colombia, data loss prevention, prevención pérdida datos, Endpoint Protector, control USB, GDPR, prevención de pérdida de datos, software DLP para empresas, Endpoint Protector Colombia, bloqueo de USB en empresas, control de dispositivos USB, fuga de información empresas, protección de datos sensibles, precio DLP, data loss prevention Colombia, protección de datos personales empresas',
     canonical: `${BASE_URL}/dlp-prevencion-perdida-datos/`,
     ogTitle: 'Software DLP - Prevención de Pérdida de Datos',
     ogType: 'website',
@@ -622,7 +623,7 @@ export const seoData: Record<string, SEOData> = {
   'ciberseguridad-sector-publico': {
     title: 'Ciberseguridad para Entidades Públicas en Colombia',
     description: 'Más de 100 contratos certificados con entidades públicas. Ciberseguridad para el Estado: Bitdefender, Hornetsecurity y hacking ético. Mipyme con ISO 27001.',
-    keywords: 'ciberseguridad sector público Colombia, proveedor ciberseguridad entidades públicas, ciberseguridad entidades del Estado, RUP ciberseguridad, MSPI MinTIC, antivirus entidades públicas, Bitdefender entidades públicas, hacking ético entidades públicas',
+    keywords: 'ciberseguridad sector público Colombia, proveedor ciberseguridad entidades públicas, ciberseguridad entidades del Estado, RUP ciberseguridad, MSPI MinTIC, antivirus entidades públicas, Bitdefender entidades públicas, hacking ético entidades públicas, ciberseguridad para entidades públicas, proveedor de ciberseguridad entidades del Estado, licencias antivirus entidades públicas, seguridad digital entidades públicas, ciberseguridad alcaldías, SECOP ciberseguridad',
     canonical: `${BASE_URL}/ciberseguridad-sector-publico/`,
     ogTitle: 'Ciberseguridad para Entidades Públicas en Colombia | Star Solutions TI',
     ogType: 'website',
@@ -652,7 +653,7 @@ export const seoData: Record<string, SEOData> = {
   'seguridad-informatica-empresas': {
     title: 'Seguridad Informática Empresarial | Defensa Ransomware',
     description: 'Seguridad informática empresarial en Colombia con defensa contra ransomware: EDR/XDR, correo seguro, backups, monitoreo 24/7 y respuesta a incidentes.',
-    keywords: 'seguridad informática empresarial, defensa ransomware empresas, seguridad informática empresas Colombia, protección ransomware Colombia, EDR XDR empresas, respuesta ransomware',
+    keywords: 'seguridad informática empresarial, defensa ransomware empresas, seguridad informática empresas Colombia, protección ransomware Colombia, EDR XDR empresas, respuesta ransomware, seguridad informática para empresas, empresa de ciberseguridad Colombia, empresas de ciberseguridad en Bogotá, ciberseguridad empresarial Bogotá, servicios de ciberseguridad, protección contra ransomware empresas, consultoría en ciberseguridad, seguridad de la información empresas, ciberseguridad para pymes, proveedor de ciberseguridad',
     canonical: `${BASE_URL}/seguridad-informatica-empresas/`,
     ogTitle: 'Seguridad Informática Empresarial contra Ransomware',
     ogType: 'website',
@@ -691,7 +692,7 @@ export const seoData: Record<string, SEOData> = {
   'antivirus-empresas': {
     title: 'Antivirus Empresarial en Colombia | Bitdefender y Kaspersky',
     description: 'Antivirus empresarial en Colombia: compare Bitdefender y Kaspersky (EDR, consola central, servidores). Licencias, instalación y soporte local. Cotice gratis.',
-    keywords: 'antivirus empresarial, antivirus para empresas, antivirus corporativo, antivirus empresarial Colombia, antivirus empresas Colombia, comparativa antivirus, Bitdefender vs Kaspersky, mejor antivirus corporativo 2026',
+    keywords: 'antivirus empresarial, antivirus para empresas, antivirus corporativo, antivirus empresarial Colombia, antivirus empresas Colombia, comparativa antivirus, Bitdefender vs Kaspersky, mejor antivirus corporativo 2026, antivirus para empresas Colombia, mejor antivirus para empresas, comparativa antivirus empresariales, antivirus para servidores, antivirus en la nube para empresas, EDR vs antivirus, antivirus para pymes, precio antivirus para empresas, antivirus con consola centralizada',
     canonical: `${BASE_URL}/antivirus-empresas/`,
     ogTitle: 'Antivirus Empresarial en Colombia: Comparativa 2026',
     ogType: 'website',
@@ -720,7 +721,7 @@ export const seoData: Record<string, SEOData> = {
   teamviewer: {
     title: 'TeamViewer Empresarial en Colombia | Licencias y Soporte',
     description: 'Licencias TeamViewer para empresas en Colombia: planes Business, Premium, Corporate y Tensor. Acceso remoto seguro, implementación y soporte local.',
-    keywords: 'TeamViewer Colombia, TeamViewer Tensor, acceso remoto empresarial, control remoto seguro, soporte técnico remoto, TeamViewer DEX',
+    keywords: 'TeamViewer Colombia, TeamViewer Tensor, acceso remoto empresarial, control remoto seguro, soporte técnico remoto, TeamViewer DEX, licencia TeamViewer empresas, precio TeamViewer Colombia, comprar TeamViewer, TeamViewer Business, distribuidor TeamViewer Colombia, soporte remoto para empresas, TeamViewer Remote',
     canonical: `${BASE_URL}/teamviewer/`,
     ogTitle: 'TeamViewer - Control Remoto Empresarial Seguro',
     ogType: 'website',
@@ -738,7 +739,7 @@ export const seoData: Record<string, SEOData> = {
   anydesk: {
     title: 'AnyDesk Colombia | Licencias de Escritorio Remoto',
     description: 'Licencias AnyDesk para empresas en Colombia: escritorio remoto rápido y cifrado que funciona tras el firewall sin abrir puertos. Implementación y soporte.',
-    keywords: 'AnyDesk Colombia, escritorio remoto empresas, control remoto rápido, acceso remoto seguro, teletrabajo',
+    keywords: 'AnyDesk Colombia, escritorio remoto empresas, control remoto rápido, acceso remoto seguro, teletrabajo, licencia AnyDesk empresas, precio AnyDesk, comprar AnyDesk, AnyDesk Standard, AnyDesk Advanced, AnyDesk On-Premises, distribuidor AnyDesk Colombia, escritorio remoto para empresas, alternativa a TeamViewer',
     canonical: `${BASE_URL}/anydesk/`,
     ogTitle: 'AnyDesk - Escritorio Remoto Ultra Rapido',
     ogType: 'website',
@@ -756,7 +757,7 @@ export const seoData: Record<string, SEOData> = {
   'cableado-estructurado': {
     title: 'Cableado Estructurado en Bogotá y Colombia para Empresas',
     description: 'Empresa de cableado estructurado en Bogotá y Colombia: redes Cat6/Cat6A, fibra óptica y certificación Fluke para empresas y entidades. Cotice gratis.',
-    keywords: 'cableado estructurado Bogotá, cableado estructurado en Colombia, cableado estructurado empresas, empresa de cableado estructurado, instalación redes empresariales, Cat6 Cat6A, fibra óptica, certificación redes Colombia',
+    keywords: 'cableado estructurado Bogotá, cableado estructurado en Colombia, cableado estructurado empresas, empresa de cableado estructurado, instalación redes empresariales, Cat6 Cat6A, fibra óptica, certificación redes Colombia, cableado estructurado Colombia, cotización cableado estructurado, precio cableado estructurado por punto, instalación de red de datos, cableado categoría 6A, certificación de puntos de red, fibra óptica para empresas Bogotá, puntos de red para oficina, racks y gabinetes de comunicaciones',
     canonical: `${BASE_URL}/cableado-estructurado/`,
     ogTitle: 'Cableado Estructurado en Bogotá y Colombia para Empresas',
     ogType: 'website',
@@ -770,7 +771,7 @@ export const seoData: Record<string, SEOData> = {
   'equipos-computo': {
     title: 'Venta de Equipos de Cómputo para Empresas en Colombia',
     description: 'Venta de equipos de cómputo para empresas en Colombia: portátiles, escritorios, workstations y todo en uno de marcas líderes, con garantía extendida.',
-    keywords: 'equipos computo empresas Colombia, laptops corporativos, desktops empresariales, workstations, hardware Bogotá',
+    keywords: 'equipos computo empresas Colombia, laptops corporativos, desktops empresariales, workstations, hardware Bogotá, equipos de cómputo para empresas Colombia, computadores para empresas, portátiles corporativos, venta de computadores Bogotá, workstations Colombia, computadores Lenovo HP Dell empresas, proveedor de tecnología para empresas, renovación de parque de computadores, equipos de cómputo entidades públicas',
     canonical: `${BASE_URL}/equipos-computo/`,
     ogTitle: 'Equipos de Computo para Empresas',
     ogType: 'website',
@@ -1656,3 +1657,13 @@ export const seoData: Record<string, SEOData> = {
     },
   },
 };
+
+// Suma las preguntas de compra (keywordFaqs.ts) al FAQPage de cada página.
+for (const [key, items] of Object.entries(keywordFaqs)) {
+  const entry = seoData[key];
+  if (!entry) continue;
+  const extra = items.map((i) => ({ '@type': 'Question', name: i.q, acceptedAnswer: { '@type': 'Answer', text: i.a } }));
+  const current = entry.faqJsonLd as { mainEntity?: unknown[] } | undefined;
+  if (current && Array.isArray(current.mainEntity)) current.mainEntity.push(...extra);
+  else entry.faqJsonLd = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: extra };
+}

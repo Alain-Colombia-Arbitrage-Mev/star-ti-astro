@@ -2,6 +2,7 @@
 import BaseLayout from '@layouts/BaseLayout.astro';
 import Navbar from '@components/Navbar.astro';
 import Footer from '@components/Footer.astro';
+import KeywordFaq from '@components/KeywordFaq.astro';
 import WhatsAppButton from '@components/WhatsAppButton.astro';
 import { seoData } from '@data/seo';
 
@@ -195,6 +196,8 @@ const seo = seoData['antivirus-empresas'];
       </div>
     </div>
   </section>
+
+  <KeywordFaq page="antivirus-empresas" />
 
   <Footer />
   <WhatsAppButton />
