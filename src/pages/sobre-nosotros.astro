@@ -2,6 +2,7 @@
 import BaseLayout from '@layouts/BaseLayout.astro';
 import Navbar from '@components/Navbar.astro';
 import Footer from '@components/Footer.astro';
+import KeywordFaq from '@components/KeywordFaq.astro';
 import WhatsAppButton from '@components/WhatsAppButton.astro';
 import { seoData, BASE_URL } from '@data/seo';
 
@@ -573,6 +574,8 @@ const personJsonLd = {
       </div>
     </div>
   </section>
+
+  <KeywordFaq page="sobre-nosotros" title="Más preguntas frecuentes" />
 
   <Footer />
   <WhatsAppButton />

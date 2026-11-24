@@ -2,6 +2,7 @@
 import BaseLayout from '@layouts/BaseLayout.astro';
 import Navbar from '@components/Navbar.astro';
 import Footer from '@components/Footer.astro';
+import KeywordFaq from '@components/KeywordFaq.astro';
 import WhatsAppButton from '@components/WhatsAppButton.astro';
 import { seoData } from '@data/seo';
 
@@ -783,6 +784,8 @@ const seo = seoData['blog/ransomware-empresas-colombia'];
       </div>
     </div>
   </section>
+
+  <KeywordFaq page="blog/ransomware-empresas-colombia" title="Más preguntas frecuentes" />
 
   <Footer />
   <WhatsAppButton />

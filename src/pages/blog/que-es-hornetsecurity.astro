@@ -2,6 +2,7 @@
 import BaseLayout from '@layouts/BaseLayout.astro';
 import Navbar from '@components/Navbar.astro';
 import Footer from '@components/Footer.astro';
+import KeywordFaq from '@components/KeywordFaq.astro';
 import WhatsAppButton from '@components/WhatsAppButton.astro';
 import { seoData } from '@data/seo';
 import { hornetFaqs } from '@data/blogHornetsecurity';
@@ -249,6 +250,8 @@ const iso = [
       </section>
     </div>
   </article>
+
+  <KeywordFaq page="blog/que-es-hornetsecurity" title="Más preguntas frecuentes" />
 
   <Footer />
   <WhatsAppButton />

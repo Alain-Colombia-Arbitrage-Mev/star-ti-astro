@@ -116,4 +116,99 @@ export const keywordFaqs: Record<string, KwFaq[]> = {
     { q: '¿Venden licencias de antivirus para entidades públicas?', a: 'Sí. Vendemos licencias de antivirus para entidades públicas, entre ellas Bitdefender para entidades públicas, con implementación y soporte. Participamos en procesos de ciberseguridad por SECOP según la modalidad de cada entidad.' },
     { q: '¿Apoyan el MSPI de MinTIC y la seguridad digital de alcaldías?', a: 'Sí. La seguridad digital de las entidades públicas, incluida la ciberseguridad de las alcaldías, se apoya en el MSPI de MinTIC. Acompañamos la implementación, hacemos hacking ético para entidades públicas y dejamos la evidencia para los entes de control.' },
   ],
+  // ===== Páginas adicionales (búsquedas reales de Search Console, 28 días a 22-nov-2026) =====
+  'soc-24x7': [
+    { q: '¿Qué es un SOC 24/7 y quién lo ofrece en Colombia?', a: 'Un SOC (centro de operaciones de seguridad) vigila los equipos, servidores, correo y red de la empresa las 24 horas, detecta ataques y coordina la respuesta. Star SOC es un servicio de SOC 24/7 en Colombia para empresas de Bogotá y del resto del país que no quieren montar su propio centro.' },
+    { q: '¿Qué diferencia hay entre un SOC como servicio y uno propio?', a: 'Un SOC propio exige personal en turnos, herramientas como un SIEM y procesos; un SOC como servicio entrega el monitoreo, la detección y la respuesta a incidentes por una cuota, sin contratar ni comprar infraestructura.' },
+    { q: '¿Cuánto cuesta un SOC en Colombia?', a: 'Depende del número de equipos y fuentes que se monitorean y del nivel de respuesta. Lo cotizamos sin costo después de un diagnóstico.' },
+  ],
+  acronis: [
+    { q: '¿Star Solutions TI vende Acronis en Colombia?', a: 'Sí. Vendemos e implementamos Acronis Cyber Protect en Colombia: backup, recuperación ante ransomware y protección del equipo en una sola consola. Atendemos en Bogotá y de forma remota en Medellín, Cali, Barranquilla y el resto del país.' },
+    { q: '¿Qué es Acronis y para qué sirve el backup de Acronis?', a: 'Acronis es una plataforma de copias de seguridad y ciberprotección. El backup de Acronis respalda equipos, servidores, máquinas virtuales y Microsoft 365, y permite recuperar la información si un ransomware la cifra.' },
+    { q: '¿Cuál es el precio de Acronis para empresas?', a: 'Depende de la edición, del número de equipos y del almacenamiento en la nube. Le enviamos la cotización sin costo.' },
+  ],
+  venezuela: [
+    { q: '¿Star Solutions TI es partner de Bitdefender en Venezuela?', a: 'Sí. Atendemos empresas en Venezuela como partner de Bitdefender, con licencias GravityZone, implementación y soporte en español. También somos partner de Kaspersky para empresas en Venezuela.' },
+    { q: '¿Qué empresas de ciberseguridad atienden en Venezuela?', a: 'Star Solutions TI atiende la ciberseguridad en Venezuela con presencia en Caracas: antivirus empresarial, protección de correo, hacking ético y consultoría ISO 27001, con el respaldo de nuestra operación en Colombia.' },
+  ],
+  miami: [
+    { q: 'Do you provide cybersecurity services in Miami and Fort Lauderdale?', a: 'Yes. Star Solutions TI provides cybersecurity services to companies in Miami, Fort Lauderdale and South Florida: endpoint protection, email security, network security, penetration testing and ISO 27001 consulting, with bilingual support in English and Spanish.' },
+    { q: 'Which antivirus do you offer for businesses near Miami?', a: 'We license and deploy Bitdefender GravityZone and Kaspersky Next for businesses, with central management, EDR and optional 24/7 monitoring. Quotes are free.' },
+  ],
+  'calculadora-costo-iso-27001': [
+    { q: '¿Cuál es el precio de la certificación ISO 27001 en Colombia?', a: 'El precio de la certificación ISO 27001 en Colombia suma la consultoría de implementación y la auditoría del organismo certificador. Como referencia, la consultoría va de 25 a 120 millones de pesos según el tamaño de la empresa; esta calculadora le da un rango para su caso.' },
+    { q: '¿Cuánto cuesta certificarse en ISO 27001 una empresa pequeña?', a: 'En una empresa pequeña el costo es menor porque hay menos procesos, sedes y sistemas en el alcance. Use la calculadora con sus datos y, si quiere un valor exacto, le hacemos un diagnóstico gratuito.' },
+  ],
+  'informe-ciberseguridad-colombia-2026': [
+    { q: '¿Cuántos ciberataques hay en Colombia en 2026?', a: 'Este informe reúne las cifras públicas de ciberataques en Colombia en 2026 con su fuente, para que pueda citarlas en presentaciones y en el análisis de riesgos de su empresa.' },
+    { q: '¿Dónde encontrar datos estadísticos de ciberseguridad en Colombia?', a: 'En este informe están las estadísticas de ciberseguridad de Colombia con el enlace a cada fuente oficial. Se actualiza cuando salen nuevos datos.' },
+  ],
+  'mejores-empresas-consultoria-iso-27001-colombia': [
+    { q: '¿Cómo elegir una consultoría ISO 27001 en Bogotá?', a: 'Revise que la consultora esté certificada en ISO 27001, que tenga proyectos en su sector, que entregue un cronograma con fases y que no venda la certificación garantizada. Star Solutions TI está certificada por SGS y ha acompañado más de 50 proyectos.' },
+    { q: '¿Qué consultoras ayudan con la gestión de riesgos de TI que pide la Superintendencia Financiera?', a: 'Las consultoras que trabajan ISO 27001 y gestión de riesgos de TI pueden alinear el sistema con la Circular 007 de la Superintendencia Financiera. Ese es uno de los casos que atendemos en el sector financiero.' },
+  ],
+  'revision-dmarc-gratis': [
+    { q: '¿Qué es el protocolo DMARC y cómo se relaciona con SPF y DKIM?', a: 'SPF dice qué servidores pueden enviar correo por su dominio, DKIM firma los mensajes y DMARC le dice al receptor qué hacer con los correos que fallan. Los tres juntos evitan que suplanten su dominio.' },
+    { q: '¿Qué entrega la revisión gratuita de DMARC?', a: 'Revisamos los registros SPF, DKIM y DMARC de su dominio y le enviamos qué está bien, qué falta y cómo corregirlo, sin costo.' },
+  ],
+  'sobre-nosotros': [
+    { q: '¿Quién es Star Solutions TI?', a: 'Star Solutions TI es una empresa colombiana de ciberseguridad fundada en 2016, con sede en Bogotá. Ha trabajado con más de 1.150 empresas y tiene más de 100 contratos públicos. Está certificada en ISO/IEC 27001:2022 por SGS.' },
+    { q: '¿Qué hace una empresa de ciberseguridad como Star Solutions TI?', a: 'Protegemos equipos y correo, hacemos hacking ético y gestión de vulnerabilidades, acompañamos la certificación ISO 27001 y ofrecemos monitoreo 24/7, organizados en cuatro pilares: Star Protection, Star Inspection, Star Compliance y Star SOC.' },
+  ],
+  'blog/perfect-forward-secrecy': [
+    { q: '¿Qué es PFS (Perfect Forward Secrecy)?', a: 'PFS, o Perfect Forward Secrecy, es una propiedad del cifrado que genera una llave nueva para cada sesión. Si un atacante roba la llave del servidor, no puede descifrar las conversaciones pasadas.' },
+    { q: '¿Qué significa PFS en una VPN o un sitio web?', a: 'Significa que la conexión usa intercambio de llaves efímeras (como ECDHE). Se activa en la configuración TLS del servidor o de la VPN y hoy es una práctica básica.' },
+  ],
+  'blog/circular-007-superfinanciera-ciberseguridad': [
+    { q: '¿Qué es la Circular Externa 007 de 2018 de la Superfinanciera?', a: 'La Circular Externa 007 de 2018 de la Superintendencia Financiera fijó los requisitos mínimos de seguridad de la información y ciberseguridad para las entidades vigiladas. En este artículo explicamos qué exige y cómo cumplirla.' },
+    { q: '¿Qué pide la circular 007 de la Superintendencia Financiera en ciberseguridad?', a: 'Pide gestión de riesgos de ciberseguridad, monitoreo, reporte de incidentes, pruebas de seguridad y gobierno de la información. ISO 27001 y un SOC 24/7 ayudan a cubrir buena parte de los requisitos.' },
+  ],
+  'blog/bitdefender-edr-xdr-mdr': [
+    { q: '¿Qué es Bitdefender EDR?', a: 'Bitdefender EDR registra lo que pasa en cada equipo, detecta comportamientos sospechosos y permite investigar y responder desde la consola GravityZone.' },
+    { q: '¿Qué es Bitdefender MDR?', a: 'Bitdefender MDR suma un equipo de Bitdefender que vigila sus alertas 24/7 y responde cuando hay un ataque. Es para empresas que no tienen quién revise las alertas a toda hora.' },
+  ],
+  'blog/cuanto-cuesta-un-pentest-colombia': [
+    { q: '¿Qué empresas hacen pentesting en Colombia?', a: 'Hay varias empresas de pentesting en Colombia; elija una que firme acuerdo de confidencialidad y autorización, tenga pentesters certificados y entregue informe ejecutivo, técnico y re-test. Star Solutions TI ofrece servicio de hacking ético para empresas y entidades públicas.' },
+    { q: '¿Qué incluye un servicio de pentesting para empresas?', a: 'Un servicio de pentesting incluye definir el alcance, las pruebas (externas, internas, web), el informe con riesgos priorizados y la verificación de lo corregido. El costo depende de ese alcance.' },
+  ],
+  'blog/como-implementar-dmarc': [
+    { q: '¿Cómo configurar SPF, DKIM y DMARC?', a: 'Primero publique SPF con los servidores que envían por su dominio, luego active DKIM en su proveedor de correo y al final publique DMARC en modo monitoreo (p=none) antes de pasar a cuarentena o rechazo.' },
+    { q: '¿Qué hace el protocolo DMARC?', a: 'El protocolo DMARC le indica a los servidores qué hacer con los correos que usan su dominio sin pasar SPF o DKIM, y le envía reportes de quién está enviando a su nombre.' },
+  ],
+  'blog/que-es-hornetsecurity': [
+    { q: '¿Qué es Hornetsecurity?', a: 'Hornetsecurity es un fabricante alemán de seguridad de correo y backup para Microsoft 365, hoy parte de Proofpoint. Su suite incluye filtro de spam y phishing, cifrado, archivado y backup.' },
+    { q: '¿Hornet Security funciona con Google Workspace?', a: 'Sí. El filtro de correo, la protección contra phishing, el cifrado y el archivado funcionan con Google Workspace; el backup de buzones aplica a Microsoft 365.' },
+  ],
+  'blog/pentesting-iso-27001': [
+    { q: '¿ISO 27001 exige pentest?', a: 'ISO 27001 no dice la palabra pentest, pero el control 8.8 pide gestionar las vulnerabilidades técnicas y el 8.29 pide pruebas de seguridad. Un pentest es la evidencia más usada ante el auditor.' },
+    { q: '¿Cada cuánto se hace un pentest para ISO 27001?', a: 'Lo habitual es al menos una vez al año y después de cambios importantes en sistemas expuestos.' },
+  ],
+  'blog/kaspersky-edr-xdr-mxdr-colombia': [
+    { q: '¿Qué diferencia hay entre Kaspersky EDR y XDR?', a: 'Kaspersky EDR analiza lo que pasa en los equipos; Kaspersky XDR correlaciona además red, correo e identidad para ver el ataque completo.' },
+    { q: '¿Qué es Kaspersky MXDR?', a: 'Kaspersky MXDR es XDR con monitoreo 24/7 gestionado por Kaspersky: su equipo vigila las alertas y responde.' },
+  ],
+  'blog/precio-bitdefender-gravityzone-colombia': [
+    { q: '¿Cuál es el precio de Bitdefender GravityZone en Colombia?', a: 'El precio de GravityZone depende del número de equipos, la edición y el plazo. Le enviamos la cotización sin costo como Reseller Platinum en Colombia.' },
+  ],
+  'blog/bitdefender-vs-kaspersky-empresas': [
+    { q: '¿Qué es mejor para empresas, Bitdefender o Kaspersky?', a: 'Los dos son antivirus empresariales con consola central y EDR. La elección depende del tamaño de la empresa, de quién va a operar la consola y de si necesita monitoreo 24/7. Implementamos ambos y le recomendamos uno según su caso.' },
+  ],
+  'blog/comprar-kaspersky-empresas-colombia': [
+    { q: '¿Dónde comprar Kaspersky para empresas en Colombia?', a: 'Kaspersky para empresas se compra a través de un partner autorizado. Star Solutions TI es partner Kaspersky en Colombia con más de 200 implementaciones.' },
+  ],
+  'blog/kaspersky-next-precio-colombia': [
+    { q: '¿Cuánto cuesta Kaspersky Next en Colombia?', a: 'Depende de la edición (EDR Foundations, EDR Optimum, XDR Optimum o MXDR) y del número de equipos. La cotización no tiene costo.' },
+  ],
+  'blog/ransomware-empresas-colombia': [
+    { q: '¿Cómo proteger una empresa del ransomware?', a: 'Con antivirus con EDR, backup aislado y probado, parches al día, MFA, capacitación a los empleados y un plan de respuesta a incidentes.' },
+  ],
+  'blog/respuesta-incidentes-ciberseguridad': [
+    { q: '¿Qué hacer ante un incidente de ciberseguridad?', a: 'Aislar los equipos afectados sin apagarlos, avisar al responsable de seguridad, conservar la evidencia, contener y erradicar el ataque, recuperar desde copias limpias y documentar lo aprendido.' },
+  ],
+  'blog/zero-trust-2025': [
+    { q: '¿Qué es Zero Trust?', a: 'Zero Trust es un modelo de seguridad que no confía en nadie por estar dentro de la red: verifica identidad, equipo y contexto en cada acceso y da solo los permisos necesarios.' },
+  ],
+  'blog/iso-27001-regulaciones': [
+    { q: '¿Qué cambió en ISO 27001:2022?', a: 'La versión 2022 reorganizó el Anexo A en 93 controles y 4 temas, y agregó controles nuevos como inteligencia de amenazas, seguridad en la nube y prevención de fuga de datos.' },
+  ],
 };

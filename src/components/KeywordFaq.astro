@@ -1,14 +1,16 @@
 ---
 // Preguntas de compra de cada página (datos en src/data/keywordFaqs.ts).
 import { keywordFaqs } from '@data/keywordFaqs';
-interface Props { page: string; title?: string }
-const { page, title = 'Preguntas antes de cotizar' } = Astro.props;
+interface Props { page: string; title?: string; lang?: 'es' | 'en'; ctaHref?: string }
+const { page, lang = 'es', ctaHref = lang === 'en' ? '/miami/contacto/' : '/contacto/' } = Astro.props;
+const title = Astro.props.title ?? (lang === 'en' ? 'Frequently asked questions' : 'Preguntas antes de cotizar');
 const items = keywordFaqs[page] ?? [];
+const hid = `kwfaq-${page.replace(/[^a-z0-9]+/g, '-')}`;
 ---
 {items.length > 0 && (
-  <section class="kwfaq" aria-labelledby={`kwfaq-${page}`}>
+  <section class="kwfaq" aria-labelledby={hid}>
     <div class="kwfaq-in">
-      <h2 id={`kwfaq-${page}`}>{title}</h2>
+      <h2 id={hid}>{title}</h2>
       <div class="kwfaq-list">
         {items.map((f, i) => (
           <details open={i === 0}>
@@ -17,7 +19,9 @@ const items = keywordFaqs[page] ?? [];
           </details>
         ))}
       </div>
-      <p class="kwfaq-cta"><a href="/contacto/">Pida su cotización sin costo</a> o escríbanos por WhatsApp.</p>
+      {lang === 'en'
+        ? <p class="kwfaq-cta"><a href={ctaHref}>Request a free quote</a> or message us on WhatsApp.</p>
+        : <p class="kwfaq-cta"><a href={ctaHref}>Pida su cotización sin costo</a> o escríbanos por WhatsApp.</p>}
     </div>
   </section>
 )}
