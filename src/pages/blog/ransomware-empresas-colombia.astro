@@ -2,6 +2,7 @@
 import BaseLayout from '@layouts/BaseLayout.astro';
 import Navbar from '@components/Navbar.astro';
 import Footer from '@components/Footer.astro';
+import NextStep from '@components/NextStep.astro';
 import KeywordFaq from '@components/KeywordFaq.astro';
 import WhatsAppButton from '@components/WhatsAppButton.astro';
 import { seoData } from '@data/seo';
@@ -105,7 +106,7 @@ const seo = seoData['blog/ransomware-empresas-colombia'];
 
       <!-- Section 1: Que es ransomware -->
       <section class="mb-12">
-        <h2 class="text-3xl font-bold text-gray-900 mb-6">¿Que es el Ransomware?</h2>
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">¿Qué es el ransomware?</h2>
         <p class="text-lg text-gray-600 leading-relaxed mb-6">
           El ransomware es un tipo de malware que cifra los archivos de la victima y exige un pago
           (generalmente en criptomonedas) a cambio de la clave de descifrado. Las variantes modernas
@@ -629,7 +630,7 @@ const seo = seoData['blog/ransomware-empresas-colombia'];
               a: 'Si los backups en la nube estan montados como unidad de red (por ejemplo, OneDrive o Google Drive sincronizados en Windows), el ransomware puede cifrar esos archivos locales y la sincronizacion automatica propagara el cifrado a la nube. La proteccion requiere backups con versionado inmutable y retention independiente del endpoint.',
             },
             {
-              q: '¿Que hago si ya recibi la nota de rescate?',
+              q: '¿Qué hago si ya recibí la nota de rescate?',
               a: 'Primero: aislar los equipos afectados de la red inmediatamente. Segundo: no apagar los equipos (se pierde evidencia forense). Tercero: contactar a su equipo de respuesta a incidentes o a Star Solutions TI. Cuarto: no comunicar el ataque publicamente ni en redes sociales hasta tener asesoria legal. Quinto: documentar todo lo que ocurrio para el proceso forense.',
             },
             {
@@ -784,6 +785,8 @@ const seo = seoData['blog/ransomware-empresas-colombia'];
       </div>
     </div>
   </section>
+
+  <NextStep items={[{"href": "/antivirus-empresas/", "kicker": "Comparativa", "title": "Antivirus para empresas", "text": "Bitdefender o Kaspersky: cuál conviene según el tamaño de su empresa."}, {"href": "/soc-24x7/", "kicker": "Star SOC", "title": "Monitoreo 24/7", "text": "Detección y respuesta a incidentes las 24 horas."}, {"href": "/hacking-etico/", "kicker": "Hacking ético", "title": "Pentesting para empresas", "text": "Pruebas de penetración con informe ejecutivo y re-test de lo corregido."}]} />
 
   <KeywordFaq page="blog/ransomware-empresas-colombia" title="Más preguntas frecuentes" />
 

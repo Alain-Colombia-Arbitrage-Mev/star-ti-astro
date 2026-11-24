@@ -2,6 +2,7 @@
 import BaseLayout from '@layouts/BaseLayout.astro';
 import Navbar from '@components/Navbar.astro';
 import Footer from '@components/Footer.astro';
+import NextStep from '@components/NextStep.astro';
 import KeywordFaq from '@components/KeywordFaq.astro';
 import WhatsAppButton from '@components/WhatsAppButton.astro';
 import { seoData } from '@data/seo';
@@ -771,6 +772,8 @@ const seo = seoData['informe-ciberseguridad-colombia-2026'];
       </div>
     </div>
   </section>
+
+  <NextStep items={[{"href": "/antivirus-empresas/", "kicker": "Comparativa", "title": "Antivirus para empresas", "text": "Bitdefender o Kaspersky: cuál conviene según el tamaño de su empresa."}, {"href": "/soc-24x7/", "kicker": "Star SOC", "title": "Monitoreo 24/7", "text": "Detección y respuesta a incidentes las 24 horas."}, {"href": "/seguridad-informatica-empresas/", "kicker": "Servicios", "title": "Seguridad informática para empresas", "text": "Los cuatro pilares de Star en un solo proveedor."}]} />
 
   <KeywordFaq page="informe-ciberseguridad-colombia-2026" title="Más preguntas frecuentes" />
 

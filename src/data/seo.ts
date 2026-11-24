@@ -220,7 +220,7 @@ export const seoData: Record<string, SEOData> = {
   },
   'hornetsecurity': {
     title: 'Hornetsecurity Colombia | Correo seguro M365 y Google',
-    description: 'Hornetsecurity en Colombia: antiphishing, filtro de spam, cifrado y backup de correo para Microsoft 365 y Google Workspace. Partner Silver, licencias y soporte local.',
+    description: 'Hornetsecurity en Colombia: antiphishing, antispam, cifrado y backup de correo para Microsoft 365 y Google Workspace. Partner Silver con soporte local.',
     keywords: 'Hornetsecurity, Hornet Security, qué es Hornetsecurity, Hornetsecurity Colombia, Hornetsecurity Google Workspace, Hornet email security, hornet mail security, seguridad email Microsoft 365, backup email, email encryption, protección correo empresarial Colombia, seguridad de correo Microsoft 365, backup Microsoft 365 Colombia, protección de correo electrónico empresas, filtro antispam empresarial, respaldo correo Office 365, archivado de correo electrónico, precio Hornetsecurity 365 Total Protection, protección contra phishing correo, cifrado de correo empresarial, antispam Exchange Online',
     canonical: `${BASE_URL}/hornetsecurity/`,
     ogTitle: 'Hornetsecurity Colombia | Seguridad de Correo Microsoft 365',
@@ -236,8 +236,8 @@ export const seoData: Record<string, SEOData> = {
     ]),
   },
   proofpoint: {
-    title: 'Proofpoint Colombia | Seguridad de Correo contra Phishing',
-    description: 'Proofpoint en Colombia: seguridad de correo contra phishing, BEC y amenazas dirigidas. Somos distribuidor: licencias, implementación y soporte local.',
+    title: 'Proofpoint Colombia: Frene el Phishing y el Fraude BEC',
+    description: '¿Le suplantan el correo a la gerencia? Proofpoint detiene phishing, fraude BEC y suplantación. Distribuidor en Colombia: licencias, implementación y soporte.',
     keywords: 'Proofpoint Colombia, email security, anti-phishing empresas, BEC, DMARC, ZenGuide, security awareness, Collaboration Security Prime, Proofpoint email security, precio Proofpoint, protección contra fraude BEC, anti phishing empresarial, DMARC Colombia, Proofpoint Essentials, seguridad de correo avanzada, suplantación de correo electrónico empresas, capacitación phishing empleados, partner Proofpoint Colombia',
     canonical: `${BASE_URL}/proofpoint/`,
     ogTitle: 'Proofpoint - Seguridad de Email Avanzada para Empresas en Colombia',
@@ -299,8 +299,8 @@ export const seoData: Record<string, SEOData> = {
   },
 
   kymatio: {
-    title: 'Kymatio Colombia | Simulación de Phishing y Concienciación',
-    description: 'Kymatio en Colombia: concienciación adaptativa, simulaciones de phishing y vishing, y credenciales expuestas. Gestión del riesgo humano. Cotice.',
+    title: 'Kymatio: Que sus Empleados No Caigan en Phishing',
+    description: 'Mida y reduzca el riesgo humano: simulaciones de phishing y vishing, concienciación por área y evidencia para ISO 27001. Kymatio en Colombia. Cotice.',
     keywords: 'Kymatio Colombia, gestión del riesgo humano, human risk management, concienciación en ciberseguridad, simulación de phishing, vishing, credenciales expuestas, security awareness, ISO 27001 control 6.3, gestión del riesgo humano ciberseguridad, concientización en ciberseguridad empleados, capacitación en ciberseguridad para empresas, simulación de phishing empleados, plataforma security awareness, programa de concienciación seguridad de la información, ISO 27001 control 6.3 concienciación, ingeniería social capacitación, simulación de vishing',
     canonical: `${BASE_URL}/kymatio/`,
     ogTitle: 'Kymatio - Gestión del Riesgo Humano en Ciberseguridad para Empresas en Colombia',
@@ -332,8 +332,8 @@ export const seoData: Record<string, SEOData> = {
     ]),
   },
   vicarius: {
-    title: 'Vicarius vRx en Colombia | Gestión de Vulnerabilidades',
-    description: '¿Qué es Vicarius vRx? Plataforma de gestión de vulnerabilidades con parcheo automático y Patchless Protection. Implementación y soporte en Colombia.',
+    title: 'Vicarius vRx: Parches Automáticos y Vulnerabilidades',
+    description: 'Encuentre y cierre vulnerabilidades sin hacerlo a mano: parches automáticos en Windows, Mac y Linux, y protección sin parche. Vicarius vRx en Colombia.',
     keywords: 'Vicarius vRx, gestión vulnerabilidades, exposure assessment platforms, patch management, Patchless Protection, vRx Scripting Engine, exposure management Colombia, análisis de vulnerabilidades Colombia, escaneo de vulnerabilidades empresas, gestión de vulnerabilidades, análisis de vulnerabilidades precio, Vicarius vRx Colombia, gestión de parches automatizada, patch management empresas, evaluación de vulnerabilidades Bogotá, remediación de vulnerabilidades, software de gestión de vulnerabilidades, vulnerabilidades críticas CVE empresas',
     canonical: `${BASE_URL}/vicarius/`,
     ogTitle: 'Vicarius vRx - Full Cycle Vulnerability Management en Colombia',
@@ -342,7 +342,7 @@ export const seoData: Record<string, SEOData> = {
     breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Star Inspection', url: '/#star-inspection' }, { name: 'Vicarius', url: '/vicarius/' }],
     jsonLd: resellerService('Vicarius vRx', 'Vicarius', 'Plataforma Full Cycle Vulnerability Management con Patchless Protection (DBI), vRx Scripting Engine, vIntelligence y vAnalyzer. Niche Player en Gartner MQ for Exposure Assessment Platforms 2025.', { image: `${BASE_URL}/og-default.png` }),
     faqJsonLd: faqSchema([
-      { q: 'Qué es Patchless Protection y como funciona?', a: 'Patchless Protection es un modulo de vRx que mitiga vulnerabilidades a nivel de memoria mediante Dynamic Binary Instrumentation (DBI), sin necesidad del parche oficial del fabricante. Bloquea el vector de explotacion en tiempo real, sin reinicios ni interrupciones de servicio, permitiendo proteger sistemas críticos mientras se planifica la ventana de parcheo definitivo.' },
+      { q: '¿Qué es Patchless Protection y cómo funciona?', a: 'Patchless Protection es un modulo de vRx que mitiga vulnerabilidades a nivel de memoria mediante Dynamic Binary Instrumentation (DBI), sin necesidad del parche oficial del fabricante. Bloquea el vector de explotacion en tiempo real, sin reinicios ni interrupciones de servicio, permitiendo proteger sistemas críticos mientras se planifica la ventana de parcheo definitivo.' },
       { q: 'Vicarius reemplaza a mi escaner de vulnerabilidades actual?', a: 'Sí. Vicarius vRx reemplaza herramientas como Nessus, Qualys o Rapid7, y además agrega remediación automatizada. Elimina el ciclo manual de escanear-reportar-parchear que consume semanas y reduce en un 80% el tiempo dedicado a parcheo manual según datos oficiales de Vicarius.' },
       { q: 'Qué sistemas operativos soporta vRx?', a: 'Vicarius soporta Windows (Server y Desktop), Linux (Ubuntu, CentOS, RHEL, Debian) y macOS. El agente ocupa menos de 50MB de RAM y tiene impacto minimo en el rendimiento del endpoint.' },
       { q: 'Cuánto tiempo toma ver resultados con vRx?', a: 'El inventario completo de activos y vulnerabilidades esta disponible en menos de 24 horas desde el despliegue del agente. Vicarius reporta un MTTR (Mean Time To Remediate) promedio de 22 días con la plataforma, frente a los 205 días que tarda el ciclo discovery-to-remediation sin herramienta especializada.' },
@@ -350,7 +350,7 @@ export const seoData: Record<string, SEOData> = {
   },
   'acronis': {
     title: 'Acronis Cyber Protect en Colombia | Backup y Recuperación',
-    description: 'Acronis Cyber Protect para empresas en Colombia: backup, recuperación ante desastres y protección contra ransomware en una consola. Implementación y soporte en español.',
+    description: 'Acronis Cyber Protect en Colombia: backup, recuperación ante desastres y protección contra ransomware en una sola consola. Implementación y soporte local.',
     keywords: 'Acronis Colombia, Acronis Cyber Protect, backup empresarial Colombia, recuperación ante desastres, backup contra ransomware, regla 3-2-1, copias de seguridad empresas',
     canonical: `${BASE_URL}/acronis/`,
     ogTitle: 'Acronis Cyber Protect: backup que resiste el ransomware',
@@ -787,7 +787,7 @@ export const seoData: Record<string, SEOData> = {
   // =====================================================
   'portafolio': {
     title: 'Portafolio de Soluciones 2026 | Star Solutions TI',
-    description: 'Descargue el portafolio 2026 de Star Solutions TI: cuatro pilares de ciberseguridad (Protection, Inspection, Compliance y SOC 24x7), fabricantes aliados y servicios en Colombia.',
+    description: 'Descargue el portafolio 2026 de Star Solutions TI: cuatro pilares de ciberseguridad (Protection, Inspection, Compliance y SOC 24x7) y fabricantes aliados.',
     keywords: 'portafolio Star Solutions TI, portafolio ciberseguridad Colombia, soluciones ciberseguridad empresas, brochure ciberseguridad PDF',
     canonical: `${BASE_URL}/portafolio/`,
     ogTitle: 'Portafolio de soluciones 2026 de Star Solutions TI',
@@ -812,8 +812,8 @@ export const seoData: Record<string, SEOData> = {
     },
   },
   contacto: {
-    title: 'Contacto Ciberseguridad Empresarial | Star Solutions TI',
-    description: 'Contacte a Star Solutions TI: ciberseguridad, equipos de cómputo y redes. Oficinas en Bogotá, Caracas y Miami. Le respondemos a la mayor brevedad.',
+    title: 'Contacto Star Solutions TI | Diagnóstico Gratis',
+    description: 'Hable con un asesor de ciberseguridad: diagnóstico gratis, cotización sin costo y respuesta por WhatsApp. Oficinas en Bogotá, Caracas y Miami.',
     keywords: 'contacto Star Solutions TI, teléfono, email, oficinas Bogotá, asesoria ciberseguridad gratuita',
     canonical: `${BASE_URL}/contacto/`,
     ogTitle: 'Contacto - Star Solutions TI',
@@ -1227,7 +1227,7 @@ export const seoData: Record<string, SEOData> = {
 
   'blog/certificacion-iso-27001-colombia': {
     title: 'Certificación ISO 27001 en Colombia: Precio, Tiempos y Pasos',
-    description: 'Cuánto cuesta y cuánto tarda la certificación ISO 27001 en Colombia: las 7 fases, documentos obligatorios, quién certifica y calculadora de costo para su empresa.',
+    description: 'Cuánto cuesta y cuánto tarda la certificación ISO 27001 en Colombia: las 7 fases, documentos obligatorios, quién certifica y una calculadora de costo.',
     keywords: 'certificación ISO 27001 Colombia, cómo certificarse ISO 27001, cuánto tiempo toma ISO 27001, quién certifica ISO 27001 Colombia, empresas certificadas ISO 27001 Colombia, documentos obligatorios ISO 27001',
     canonical: `${BASE_URL}/blog/certificacion-iso-27001-colombia/`,
     ogTitle: 'Certificación ISO 27001 en Colombia: paso a paso y tiempos reales',
@@ -1460,7 +1460,7 @@ export const seoData: Record<string, SEOData> = {
   },
 
   'blog/circular-007-superfinanciera-ciberseguridad': {
-    title: 'Circular 007 Superfinanciera: Qué Exige en Ciberseguridad (2026)',
+    title: 'Circular 007 Superfinanciera: Qué Exige en Ciberseguridad',
     description: 'Requisitos de la Circular Externa 007 de 2018 de la Superfinanciera para la gestión del riesgo de ciberseguridad, qué falla en la práctica y cómo evidenciarlo.',
     keywords: 'Circular 007 Superfinanciera, Circular Externa 007 de 2018, ciberseguridad sector financiero Colombia, requerimientos ciberseguridad Superfinanciera, Circular Básica Jurídica ciberseguridad, proveedores bancos ciberseguridad',
     canonical: `${BASE_URL}/blog/circular-007-superfinanciera-ciberseguridad/`,
@@ -1614,7 +1614,7 @@ export const seoData: Record<string, SEOData> = {
   // =====================================================
   'informe-ciberseguridad-colombia-2026': {
     title: 'Informe de Ciberseguridad Colombia 2026: Datos y Tendencias',
-    description: 'Informe 2026 de ciberseguridad en Colombia con fuentes públicas: denuncias de la Policía, costo de brechas (IBM), Verizon DBIR, ransomware, BEC y recomendaciones.',
+    description: 'Ciberseguridad en Colombia 2026 con fuentes públicas: denuncias de la Policía, costo de brechas (IBM), Verizon DBIR, ransomware, BEC y recomendaciones.',
     keywords: 'informe ciberseguridad Colombia 2026, estadisticas ciberataques Colombia, costo brecha datos Colombia, amenazas ciberneticas empresas, ransomware Colombia, phishing Colombia',
     canonical: `${BASE_URL}/informe-ciberseguridad-colombia-2026/`,
     ogTitle: 'Informe de Ciberseguridad Empresarial Colombia 2026',

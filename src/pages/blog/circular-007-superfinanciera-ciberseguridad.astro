@@ -2,6 +2,7 @@
 import BaseLayout from '@layouts/BaseLayout.astro';
 import Navbar from '@components/Navbar.astro';
 import Footer from '@components/Footer.astro';
+import NextStep from '@components/NextStep.astro';
 import KeywordFaq from '@components/KeywordFaq.astro';
 import WhatsAppButton from '@components/WhatsAppButton.astro';
 import { seoData } from '@data/seo';
@@ -173,6 +174,8 @@ const mapping = [
       </section>
     </div>
   </article>
+
+  <NextStep items={[{"href": "/iso-27001/", "kicker": "Consultoría", "title": "Consultoría ISO 27001 en Bogotá", "text": "Acompañamiento completo hasta la certificación, con una empresa certificada por SGS."}, {"href": "/soc-24x7/", "kicker": "Star SOC", "title": "Monitoreo 24/7", "text": "Detección y respuesta a incidentes las 24 horas."}, {"href": "/hacking-etico/", "kicker": "Hacking ético", "title": "Pentesting para empresas", "text": "Pruebas de penetración con informe ejecutivo y re-test de lo corregido."}]} />
 
   <KeywordFaq page="blog/circular-007-superfinanciera-ciberseguridad" title="Más preguntas frecuentes" />
 

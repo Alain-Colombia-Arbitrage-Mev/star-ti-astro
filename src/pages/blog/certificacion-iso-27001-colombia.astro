@@ -2,6 +2,7 @@
 import BaseLayout from '@layouts/BaseLayout.astro';
 import Navbar from '@components/Navbar.astro';
 import Footer from '@components/Footer.astro';
+import NextStep from '@components/NextStep.astro';
 import WhatsAppButton from '@components/WhatsAppButton.astro';
 import { seoData } from '@data/seo';
 import { certIsoFaqs } from '@data/blogCertificacionIso';
@@ -224,6 +225,8 @@ const mistakes = [
       </section>
     </div>
   </article>
+
+  <NextStep items={[{"href": "/iso-27001/", "kicker": "Consultoría", "title": "Consultoría ISO 27001 en Bogotá", "text": "Acompañamiento completo hasta la certificación, con una empresa certificada por SGS."}, {"href": "/calculadora-costo-iso-27001/", "kicker": "Calculadora", "title": "¿Cuánto le cuesta certificarse?", "text": "Un rango de costo para su empresa en dos minutos."}, {"href": "/hacking-etico/", "kicker": "Hacking ético", "title": "Pentesting para empresas", "text": "Pruebas de penetración con informe ejecutivo y re-test de lo corregido."}]} />
 
   <Footer />
   <WhatsAppButton />

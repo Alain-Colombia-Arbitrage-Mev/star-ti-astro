@@ -12,7 +12,6 @@ export const keywordFaqs: Record<string, KwFaq[]> = {
     { q: '¿Ofrecen Bitdefender EDR XDR y MDR en Colombia?', a: 'Sí. Implementamos Bitdefender EDR XDR en Colombia sobre la misma consola GravityZone, y Bitdefender MDR para empresas que necesitan monitoreo 24/7 sin armar un equipo propio. Le ayudamos a elegir según el tamaño y el riesgo de su empresa.' },
   ],
   kaspersky: [
-    { q: '¿Star Solutions TI es distribuidor Kaspersky en Colombia?', a: 'Sí. Somos partner Kaspersky en Colombia, con más de 200 implementaciones y oficina en Bogotá. Vendemos licencias Kaspersky para empresas en Colombia, las instalamos y damos soporte en español.' },
     { q: '¿Cuál es el precio de Kaspersky Next en Colombia?', a: 'El precio de Kaspersky Next en Colombia depende de la edición (EDR Foundations, Kaspersky EDR Optimum, XDR Optimum o MXDR) y del número de equipos. Lo cotizamos sin costo y le mostramos qué edición se ajusta a lo que su equipo puede operar.' },
     { q: '¿Hacen la renovación de Kaspersky para empresas?', a: 'Sí. Gestionamos la renovación de Kaspersky para empresas, incluida la migración de Kaspersky Endpoint Security for Business a Kaspersky Next, sin perder las políticas ni dejar equipos sin protección.' },
     { q: '¿Qué opción de antivirus Kaspersky corporativo conviene a una pyme?', a: 'Para oficinas pequeñas existe Kaspersky Small Office Security; cuando la empresa necesita consola central y detección avanzada recomendamos Kaspersky Next, y para entornos grandes Kaspersky XDR. En Colombia le ayudamos a escoger y a instalarlo, en Bogotá o en remoto.' },
@@ -27,8 +26,6 @@ export const keywordFaqs: Record<string, KwFaq[]> = {
     { q: '¿Incluye capacitación en phishing para los empleados?', a: 'Sí. Proofpoint tiene módulos de capacitación en phishing para los empleados, con simulaciones y entrenamiento corto. Así el anti phishing empresarial no depende solo de la tecnología.' },
   ],
   kymatio: [
-    { q: '¿Qué es la gestión del riesgo humano en ciberseguridad?', a: 'Es medir y reducir el riesgo que generan las personas: clics en phishing, contraseñas expuestas, malas prácticas. Kymatio es una plataforma de security awareness que combina concientización en ciberseguridad para los empleados, simulación de phishing y de vishing, y seguimiento por área.' },
-    { q: '¿Sirve para cumplir el control 6.3 de ISO 27001?', a: 'Sí. El control 6.3 de ISO 27001 pide concienciación, educación y formación demostrables. Kymatio deja la evidencia de su programa de concienciación en seguridad de la información: quién se capacitó, con qué resultado y cómo mejoró.' },
     { q: '¿Ofrecen capacitación en ciberseguridad para empresas?', a: 'Sí. La capacitación en ciberseguridad para empresas incluye ingeniería social (phishing, smishing y vishing), contenidos cortos y mediciones periódicas. La implementamos en Colombia y la acompañamos en español.' },
   ],
   enthec: [
@@ -48,13 +45,10 @@ export const keywordFaqs: Record<string, KwFaq[]> = {
   ],
   'hacking-etico': [
     { q: '¿Quién hace hacking ético y pentesting en Colombia?', a: 'Star Solutions TI es una empresa de pentesting en Bogotá que hace hacking ético en Colombia para empresas y entidades públicas: pruebas de penetración en Bogotá o en remoto, pentesting externo e interno, pentest de aplicaciones web y técnicas de red team, siempre con autorización firmada.' },
-    { q: '¿Cuál es el precio de un test de penetración?', a: 'El precio de un test de penetración depende del alcance: número de IP, aplicaciones, si es externo o interno y si incluye ingeniería social. Lo cotizamos sin costo; en el blog explicamos los rangos y qué los mueve.' },
     { q: '¿En qué se diferencia de una auditoría de seguridad informática?', a: 'Una auditoría de seguridad informática revisa controles y configuraciones; las pruebas de intrusión intentan explotar las fallas como lo haría un atacante. El ethical hacking para empresas combina ambas y entrega una evaluación de seguridad de las aplicaciones y la red con un plan de corrección.' },
   ],
   'iso-27001': [
-    { q: '¿Cuánto cuesta la certificación ISO 27001 en Colombia?', a: 'El costo de la certificación ISO 27001 en Colombia tiene dos partes: la consultoría de implementación y la auditoría del organismo certificador, que se cotiza aparte. Puede calcular un rango para su empresa con nuestra calculadora de costo de ISO 27001.' },
     { q: '¿Qué incluye la consultoría ISO 27001 en Colombia?', a: 'La consultoría ISO 27001 en Colombia empieza con un gap analysis de ISO 27001, sigue con la implementación del SGSI según los requisitos de ISO 27001:2022, la declaración de aplicabilidad de ISO 27001 y la auditoría interna de ISO 27001 antes de la auditoría de certificación.' },
-    { q: '¿Tienen consultores ISO 27001 en Bogotá?', a: 'Sí. Nuestro equipo de consultores ISO 27001 está en Bogotá y atiende en toda Colombia. Star Solutions TI está certificada en ISO/IEC 27001:2022 por SGS y acompaña la implementación de ISO 27001 con más de 50 proyectos.' },
     { q: '¿ISO 27001 sirve para el MSPI de MinTIC?', a: 'Sí. El MSPI de MinTIC se basa en ISO 27001, así que la implementación del SGSI sirve como base para las entidades públicas que deben cumplirlo.' },
   ],
   sealpath: [
@@ -100,7 +94,6 @@ export const keywordFaqs: Record<string, KwFaq[]> = {
   'antivirus-empresas': [
     { q: '¿Cuál es el mejor antivirus para empresas en Colombia?', a: 'Depende del tamaño y del equipo de TI. En esta comparativa de antivirus empresariales ponemos Bitdefender vs Kaspersky, los dos que más implementamos: ambos son antivirus en la nube para empresas, con consola centralizada y EDR. Le recomendamos uno según su caso.' },
     { q: '¿Qué diferencia hay entre EDR y antivirus?', a: 'El antivirus bloquea amenazas conocidas; el EDR registra lo que pasa en cada equipo, detecta comportamientos sospechosos y permite responder. Hoy un antivirus para empresas en Colombia debería incluir EDR o tener la opción de agregarlo.' },
-    { q: '¿Cuál es el precio de un antivirus para empresas?', a: 'El precio de un antivirus para empresas depende del número de equipos, si incluye antivirus para servidores y la edición. Para pymes hay ediciones de entrada; lo cotizamos sin costo.' },
   ],
   'seguridad-informatica-empresas': [
     { q: '¿Qué incluye la seguridad informática para empresas?', a: 'La seguridad informática para empresas cubre protección de equipos y correo, protección contra ransomware, hacking ético, gestión de vulnerabilidades, seguridad de la información y monitoreo 24/7. Star Solutions TI es una empresa de ciberseguridad en Colombia que ofrece estos servicios de ciberseguridad bajo cuatro pilares.' },
@@ -114,14 +107,10 @@ export const keywordFaqs: Record<string, KwFaq[]> = {
   ],
   // ===== Páginas adicionales (búsquedas reales de Search Console, 28 días a 22-nov-2026) =====
   'soc-24x7': [
-    { q: '¿Qué es un SOC 24/7 y quién lo ofrece en Colombia?', a: 'Un SOC (centro de operaciones de seguridad) vigila los equipos, servidores, correo y red de la empresa las 24 horas, detecta ataques y coordina la respuesta. Star SOC es un servicio de SOC 24/7 en Colombia para empresas de Bogotá y del resto del país que no quieren montar su propio centro.' },
     { q: '¿Qué diferencia hay entre un SOC como servicio y uno propio?', a: 'Un SOC propio exige personal en turnos, herramientas como un SIEM y procesos; un SOC como servicio entrega el monitoreo, la detección y la respuesta a incidentes por una cuota, sin contratar ni comprar infraestructura.' },
-    { q: '¿Cuánto cuesta un SOC en Colombia?', a: 'Depende del número de equipos y fuentes que se monitorean y del nivel de respuesta. Lo cotizamos sin costo después de un diagnóstico.' },
   ],
   acronis: [
     { q: '¿Star Solutions TI vende Acronis en Colombia?', a: 'Sí. Vendemos e implementamos Acronis Cyber Protect en Colombia: backup, recuperación ante ransomware y protección del equipo en una sola consola. Atendemos en Bogotá y de forma remota en Medellín, Cali, Barranquilla y el resto del país.' },
-    { q: '¿Qué es Acronis y para qué sirve el backup de Acronis?', a: 'Acronis es una plataforma de copias de seguridad y ciberprotección. El backup de Acronis respalda equipos, servidores, máquinas virtuales y Microsoft 365, y permite recuperar la información si un ransomware la cifra.' },
-    { q: '¿Cuál es el precio de Acronis para empresas?', a: 'Depende de la edición, del número de equipos y del almacenamiento en la nube. Le enviamos la cotización sin costo.' },
   ],
   venezuela: [
     { q: '¿Star Solutions TI es partner de Bitdefender en Venezuela?', a: 'Sí. Atendemos empresas en Venezuela como partner de Bitdefender, con licencias GravityZone, implementación y soporte en español. También somos partner de Kaspersky para empresas en Venezuela.' },
@@ -132,7 +121,6 @@ export const keywordFaqs: Record<string, KwFaq[]> = {
     { q: 'Which antivirus do you offer for businesses near Miami?', a: 'We license and deploy Bitdefender GravityZone and Kaspersky Next for businesses, with central management, EDR and optional 24/7 monitoring. Quotes are free.' },
   ],
   'calculadora-costo-iso-27001': [
-    { q: '¿Cuál es el precio de la certificación ISO 27001 en Colombia?', a: 'El precio de la certificación ISO 27001 en Colombia suma la consultoría de implementación y la auditoría del organismo certificador. Como referencia, la consultoría va de 25 a 120 millones de pesos según el tamaño de la empresa; esta calculadora le da un rango para su caso.' },
     { q: '¿Cuánto cuesta certificarse en ISO 27001 una empresa pequeña?', a: 'En una empresa pequeña el costo es menor porque hay menos procesos, sedes y sistemas en el alcance. Use la calculadora con sus datos y, si quiere un valor exacto, le hacemos un diagnóstico gratuito.' },
   ],
   'informe-ciberseguridad-colombia-2026': [
@@ -144,7 +132,6 @@ export const keywordFaqs: Record<string, KwFaq[]> = {
     { q: '¿Qué consultoras ayudan con la gestión de riesgos de TI que pide la Superintendencia Financiera?', a: 'Las consultoras que trabajan ISO 27001 y gestión de riesgos de TI pueden alinear el sistema con la Circular 007 de la Superintendencia Financiera. Ese es uno de los casos que atendemos en el sector financiero.' },
   ],
   'revision-dmarc-gratis': [
-    { q: '¿Qué es el protocolo DMARC y cómo se relaciona con SPF y DKIM?', a: 'SPF dice qué servidores pueden enviar correo por su dominio, DKIM firma los mensajes y DMARC le dice al receptor qué hacer con los correos que fallan. Los tres juntos evitan que suplanten su dominio.' },
     { q: '¿Qué entrega la revisión gratuita de DMARC?', a: 'Revisamos los registros SPF, DKIM y DMARC de su dominio y le enviamos qué está bien, qué falta y cómo corregirlo, sin costo.' },
   ],
   'sobre-nosotros': [
@@ -175,25 +162,11 @@ export const keywordFaqs: Record<string, KwFaq[]> = {
     { q: '¿Qué es Hornetsecurity?', a: 'Hornetsecurity es un fabricante alemán de seguridad de correo y backup para Microsoft 365, hoy parte de Proofpoint. Su suite incluye filtro de spam y phishing, cifrado, archivado y backup.' },
     { q: '¿Hornet Security funciona con Google Workspace?', a: 'Sí. El filtro de correo, la protección contra phishing, el cifrado y el archivado funcionan con Google Workspace; el backup de buzones aplica a Microsoft 365.' },
   ],
-  'blog/pentesting-iso-27001': [
-    { q: '¿ISO 27001 exige pentest?', a: 'ISO 27001 no dice la palabra pentest, pero el control 8.8 pide gestionar las vulnerabilidades técnicas y el 8.29 pide pruebas de seguridad. Un pentest es la evidencia más usada ante el auditor.' },
-    { q: '¿Cada cuánto se hace un pentest para ISO 27001?', a: 'Lo habitual es al menos una vez al año y después de cambios importantes en sistemas expuestos.' },
-  ],
   'blog/kaspersky-edr-xdr-mxdr-colombia': [
-    { q: '¿Qué diferencia hay entre Kaspersky EDR y XDR?', a: 'Kaspersky EDR analiza lo que pasa en los equipos; Kaspersky XDR correlaciona además red, correo e identidad para ver el ataque completo.' },
     { q: '¿Qué es Kaspersky MXDR?', a: 'Kaspersky MXDR es XDR con monitoreo 24/7 gestionado por Kaspersky: su equipo vigila las alertas y responde.' },
-  ],
-  'blog/precio-bitdefender-gravityzone-colombia': [
-    { q: '¿Cuál es el precio de Bitdefender GravityZone en Colombia?', a: 'El precio de GravityZone depende del número de equipos, la edición y el plazo. Le enviamos la cotización sin costo como Reseller Platinum en Colombia.' },
   ],
   'blog/bitdefender-vs-kaspersky-empresas': [
     { q: '¿Qué es mejor para empresas, Bitdefender o Kaspersky?', a: 'Los dos son antivirus empresariales con consola central y EDR. La elección depende del tamaño de la empresa, de quién va a operar la consola y de si necesita monitoreo 24/7. Implementamos ambos y le recomendamos uno según su caso.' },
-  ],
-  'blog/comprar-kaspersky-empresas-colombia': [
-    { q: '¿Dónde comprar Kaspersky para empresas en Colombia?', a: 'Kaspersky para empresas se compra a través de un partner autorizado. Star Solutions TI es partner Kaspersky en Colombia con más de 200 implementaciones.' },
-  ],
-  'blog/kaspersky-next-precio-colombia': [
-    { q: '¿Cuánto cuesta Kaspersky Next en Colombia?', a: 'Depende de la edición (EDR Foundations, EDR Optimum, XDR Optimum o MXDR) y del número de equipos. La cotización no tiene costo.' },
   ],
   'blog/ransomware-empresas-colombia': [
     { q: '¿Cómo proteger una empresa del ransomware?', a: 'Con antivirus con EDR, backup aislado y probado, parches al día, MFA, capacitación a los empleados y un plan de respuesta a incidentes.' },

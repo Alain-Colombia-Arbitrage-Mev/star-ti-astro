@@ -2,6 +2,7 @@
 import BaseLayout from '@layouts/BaseLayout.astro';
 import Navbar from '@components/Navbar.astro';
 import Footer from '@components/Footer.astro';
+import NextStep from '@components/NextStep.astro';
 import KeywordFaq from '@components/KeywordFaq.astro';
 import WhatsAppButton from '@components/WhatsAppButton.astro';
 import { seoData } from '@data/seo';
@@ -210,6 +211,8 @@ const compareChecks = [
       </section>
     </div>
   </article>
+
+  <NextStep items={[{"href": "/bitdefender/", "kicker": "Reseller Platinum", "title": "Bitdefender GravityZone", "text": "Licencias, implementación y soporte en Colombia. Cotización sin costo."}, {"href": "/antivirus-empresas/", "kicker": "Comparativa", "title": "Antivirus para empresas", "text": "Bitdefender o Kaspersky: cuál conviene según el tamaño de su empresa."}, {"href": "/kaspersky/", "kicker": "Partner", "title": "Kaspersky Next", "text": "Licencias corporativas, EDR y XDR con soporte en español."}]} />
 
   <KeywordFaq page="blog/precio-bitdefender-gravityzone-colombia" title="Más preguntas frecuentes" />
 
