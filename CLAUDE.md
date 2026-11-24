@@ -212,3 +212,16 @@ descripciones ≤ 160, `lastmod` del sitemap, 301 con barra final faltantes, `no
   /blog/supuesta-filtracion-registraduria-41-millones/.
 - Redes (Metricool, marca starsolutionti): LinkedIn, Facebook, Instagram y Google Business Profile,
   4:41 p. m. X no esta conectada; YouTube exige video.
+
+## 24-nov-2026: palabras clave y SEO (publicado con wrangler desde el PC de George)
+
+- Cloudflare sigue sin compilar desde GitHub: un push a `produccion` NO publica. Despues de cada
+  "publica", George descarga el zip nuevo de `produccion` y corre `npm.cmd ci`, `npm.cmd run build`,
+  `npx.cmd wrangler deploy --keep-vars`. Verificar siempre en vivo (star-ti.com) antes de decir "publicado".
+- `src/data/keywordFaqs.ts` + `src/components/KeywordFaq.astro`: preguntas de compra por pagina (palabras
+  del documento "Palabras clave Star Solutions TI" y consultas reales de Search Console). seo.ts las suma
+  al FAQPage. En /bitdefender/ y /hornetsecurity/ la lista visible sale del FAQPage (una sola seccion).
+- `src/components/NextStep.astro`: bloque "Siguiente paso" en 9 articulos hacia paginas comerciales.
+- George confirmo: Star es distribuidor de TeamViewer y AnyDesk, vende equipos a entidades publicas por
+  SECOP y vende Kaspersky Small Office Security. Pendiente confirmar nivel Partner Silver de Hornetsecurity.
+- Linea base de posiciones: CSV de Search Console del 24-nov (28 dias): 201 clics, 9.256 impresiones.
