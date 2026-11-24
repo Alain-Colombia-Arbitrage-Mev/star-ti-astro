@@ -8,8 +8,6 @@ export interface KwFaq { q: string; a: string }
 
 export const keywordFaqs: Record<string, KwFaq[]> = {
   bitdefender: [
-    { q: '¿Dónde comprar licencias Bitdefender para empresas en Colombia?', a: 'Las licencias Bitdefender para empresas se compran a través de un partner autorizado. Star Solutions TI es partner Bitdefender Platinum en Colombia, con sede en Bogotá y más de 150 implementaciones: cotizamos, activamos la consola Bitdefender GravityZone en Colombia y damos soporte en español.' },
-    { q: '¿Cuál es el precio de Bitdefender GravityZone?', a: 'El precio de Bitdefender GravityZone depende del número de equipos, la edición (Bitdefender Business Security, Premium o las capas EDR, XDR y MDR) y el plazo de la licencia. Le enviamos la cotización sin costo, con descuento por volumen o por licencia multianual.' },
     { q: '¿Cómo funciona la renovación de licencias Bitdefender?', a: 'Para la renovación de licencias Bitdefender le avisamos antes del vencimiento, revisamos cuántos equipos tiene hoy y si conviene subir de edición. La consola y las políticas se mantienen, así que su antivirus Bitdefender corporativo no se interrumpe.' },
     { q: '¿Ofrecen Bitdefender EDR XDR y MDR en Colombia?', a: 'Sí. Implementamos Bitdefender EDR XDR en Colombia sobre la misma consola GravityZone, y Bitdefender MDR para empresas que necesitan monitoreo 24/7 sin armar un equipo propio. Le ayudamos a elegir según el tamaño y el riesgo de su empresa.' },
   ],
@@ -20,9 +18,7 @@ export const keywordFaqs: Record<string, KwFaq[]> = {
     { q: '¿Qué opción de antivirus Kaspersky corporativo conviene a una pyme?', a: 'Para oficinas pequeñas existe Kaspersky Small Office Security; cuando la empresa necesita consola central y detección avanzada recomendamos Kaspersky Next, y para entornos grandes Kaspersky XDR. En Colombia le ayudamos a escoger y a instalarlo, en Bogotá o en remoto.' },
   ],
   hornetsecurity: [
-    { q: '¿Qué incluye la seguridad de correo de Hornetsecurity?', a: 'Es protección de correo electrónico para empresas: filtro antispam empresarial, protección contra phishing en el correo, análisis de adjuntos y enlaces, cifrado de correo empresarial y archivado de correo electrónico. Funciona con Microsoft 365 y Google Workspace.' },
     { q: '¿Hornetsecurity hace backup de Microsoft 365?', a: 'Sí. El backup de Microsoft 365 respalda buzones, OneDrive, SharePoint y Teams, aparte del respaldo nativo de Microsoft. Es la forma de tener un respaldo del correo de Office 365 que no depende de la papelera de reciclaje. En Colombia lo implementamos y lo dejamos programado.' },
-    { q: '¿Cuál es el precio de Hornetsecurity 365 Total Protection?', a: 'Depende del plan (Business, Enterprise, Enterprise Backup o Compliance and Awareness) y del número de buzones. Le enviamos la cotización sin costo, ajustada a su caso.' },
     { q: '¿Sirve como antispam para Exchange Online?', a: 'Sí. Hornetsecurity se integra con Exchange Online y agrega una capa de seguridad de correo para Microsoft 365 por encima del filtro nativo: menos spam, menos phishing y menos suplantación.' },
   ],
   proofpoint: [
