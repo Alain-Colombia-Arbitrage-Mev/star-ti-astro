@@ -223,5 +223,5 @@ descripciones ≤ 160, `lastmod` del sitemap, 301 con barra final faltantes, `no
   al FAQPage. En /bitdefender/ y /hornetsecurity/ la lista visible sale del FAQPage (una sola seccion).
 - `src/components/NextStep.astro`: bloque "Siguiente paso" en 9 articulos hacia paginas comerciales.
 - George confirmo: Star es distribuidor de TeamViewer y AnyDesk, vende equipos a entidades publicas por
-  SECOP y vende Kaspersky Small Office Security. Pendiente confirmar nivel Partner Silver de Hornetsecurity.
+  SECOP y vende Kaspersky Small Office Security. Nivel Partner Silver de Hornetsecurity confirmado por George (24-nov).
 - Linea base de posiciones: CSV de Search Console del 24-nov (28 dias): 201 clics, 9.256 impresiones.
