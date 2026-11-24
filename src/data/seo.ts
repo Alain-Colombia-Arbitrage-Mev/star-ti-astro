@@ -218,9 +218,9 @@ export const seoData: Record<string, SEOData> = {
     ]),
   },
   'hornetsecurity': {
-    title: 'Hornetsecurity Colombia | Seguridad de Correo 365',
-    description: 'Partner Silver de Hornetsecurity en Colombia: seguridad de correo, backup, archivado y cifrado para Microsoft 365. Licencias e implementación local.',
-    keywords: 'Hornetsecurity, Hornetsecurity Colombia, Hornet email security, hornet mail security, seguridad email Microsoft 365, backup email, email encryption, protección correo empresarial Colombia',
+    title: 'Hornetsecurity Colombia | Correo seguro M365 y Google',
+    description: 'Hornetsecurity en Colombia: antiphishing, filtro de spam, cifrado y backup de correo para Microsoft 365 y Google Workspace. Partner Silver, licencias y soporte local.',
+    keywords: 'Hornetsecurity, Hornet Security, qué es Hornetsecurity, Hornetsecurity Colombia, Hornetsecurity Google Workspace, Hornet email security, hornet mail security, seguridad email Microsoft 365, backup email, email encryption, protección correo empresarial Colombia',
     canonical: `${BASE_URL}/hornetsecurity/`,
     ogTitle: 'Hornetsecurity Colombia | Seguridad de Correo Microsoft 365',
     ogType: 'website',
@@ -228,7 +228,7 @@ export const seoData: Record<string, SEOData> = {
     breadcrumb: [{ name: 'Inicio', url: '/' }, { name: 'Star Protection', url: '/#star-protection' }, { name: 'Hornetsecurity', url: '/hornetsecurity/' }],
     jsonLd: resellerService('Hornetsecurity 365 Total Protection', 'Hornetsecurity', 'Seguridad email completa para Microsoft 365 con backup, archiving y cifrado', { image: `${BASE_URL}/og-default.png` }),
     faqJsonLd: faqSchema([
-      { q: '¿Hornetsecurity funciona solo con Microsoft 365?', a: 'Sí, Hornetsecurity 365 Total Protection está diseñado exclusivamente para Microsoft 365. Se integra nativamente con Exchange Online, OneDrive y SharePoint para protección completa del ecosistema Microsoft.' },
+      { q: '¿Hornetsecurity funciona solo con Microsoft 365?', a: 'No. El filtro de spam y malware, la protección contra phishing y adjuntos, el cifrado y el archivo de correo funcionan con Microsoft 365 y con Google Workspace. La suite 365 Total Protection y el backup de buzones, OneDrive, SharePoint y Teams aplican a Microsoft 365.' },
       { q: '¿Qué incluye la protección de Hornetsecurity?', a: 'Incluye filtrado de spam y malware, protección contra phishing y BEC, backup automático de buzones, archiving de email con cumplimiento legal, y cifrado de comunicaciones. Todo gestionado desde una consola cloud única.' },
       { q: '¿Cuánto cuesta Hornetsecurity para empresas?', a: 'Hornetsecurity no publica tarifas fijas; el precio depende del plan (Business, Enterprise, Enterprise Backup o Compliance and Awareness) y del número de buzones de Microsoft 365. Star Solutions TI arma una cotización ajustada a su caso, con descuentos por volumen para más de 100 buzones y precios especiales para sector educativo y sin ánimo de lucro.' },
       { q: '¿Hornetsecurity reemplaza a Microsoft Defender?', a: 'Hornetsecurity complementa y refuerza la seguridad nativa de Microsoft 365. Mientras Defender ofrece protección básica, Hornetsecurity agrega capas avanzadas de filtrado, backup independiente y archiving que Microsoft no incluye.' },
@@ -1225,8 +1225,8 @@ export const seoData: Record<string, SEOData> = {
   },
 
   'blog/certificacion-iso-27001-colombia': {
-    title: 'Certificación ISO 27001 en Colombia: Paso a Paso y Tiempos',
-    description: 'Cómo certificarse en ISO 27001 en Colombia: las 7 fases, cuánto toma cada una, documentos obligatorios, quién certifica y errores que alargan el proceso.',
+    title: 'Certificación ISO 27001 en Colombia: Precio, Tiempos y Pasos',
+    description: 'Cuánto cuesta y cuánto tarda la certificación ISO 27001 en Colombia: las 7 fases, documentos obligatorios, quién certifica y calculadora de costo para su empresa.',
     keywords: 'certificación ISO 27001 Colombia, cómo certificarse ISO 27001, cuánto tiempo toma ISO 27001, quién certifica ISO 27001 Colombia, empresas certificadas ISO 27001 Colombia, documentos obligatorios ISO 27001',
     canonical: `${BASE_URL}/blog/certificacion-iso-27001-colombia/`,
     ogTitle: 'Certificación ISO 27001 en Colombia: paso a paso y tiempos reales',
